@@ -10,7 +10,7 @@ Il existe beaucoup de langages dans lequel le concept de propriété n'existe pa
 Par exemple, en Java, tout le monde et personne n'est propriétaire d'un objet.
 Lorsque vous créez un objet, vous obtenez une référence que vous pouvez ensuite copier et passer à n'importe quelle autre entité du programme.
 Tant qu'il existe encore au moins référence sur l'objet, celui-ci continue d'exister.
-Ce mécanisme est assuré par le garbage-collector, qui s'occupe de traquer le nombre de références de chacun des objets construits.
+Ce mécanisme est assuré par le garbage-collector (parfois appelé *ramasse-miettes* en français), qui s'occupe de traquer le nombre de références de chacun des objets construits.
 Dès qu'un objet n'est plus référencé nulle part, il est ajouté à la liste des ressources pouvant être libérées.
 
 Lorsque les performances ne sont pas critiques, disposer de ce genre d'outil est très pratique, puisque cela permet d'une part de ne pas avoir à libérer la mémoire soi-même, mais aussi et surtout d'éviter de libérer malencontreusement des ressources qui pourraient encore être utilisées.
