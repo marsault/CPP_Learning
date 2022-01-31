@@ -146,6 +146,128 @@ Donc tout comme `static`, si vous définissez une fonction-membre `fcn` en dehor
 {{% /notice %}}
 
 ---
+### Le polymorphisme ne peut pas être utilisé sans pointeur ou référence
+
+En C++, on ne peut pas utiliser directement le type de la classe mère
+(`Animal`) pour utiliser le polymorphisme.  Par exemple, la fonction suivante
+n'a pas de sens.
+```C++
+Animal animal_by_name(const std::string& name)
+{
+  if (name == "dog")
+    return Dog{};
+  else
+    return Cat{};
+}
+```
+En effet, voici un exemple de `main` et ce qu'il affiche.
+```C++
+int main() {
+  Animal a = animal_by_name("dog");
+  a.sing();
+}
+```
+```bash
+...
+```
+
+**D'où vient le problème ?**
+
+L'instruction `return Dog{}` crée un objet de type `Dog` puis le renvoie.
+Mais puisque la fonction déclare renvoyer un `Animal`, 
+un nouvel objet de type `Animal` est créé grâce au constructeur de copie `Animal(const Animal&)`.  
+
+En effet, on ne peut pas stocker un `Dog` dans un `Animal`. (Notez bien au contraire qu'on utilise ici un `const Dog&` comme un `const Animal&`, ce qui sera expliqué plus bas.)
+
+{{% notice%}}
+{{% expand "Explication technique pour les curieux" %}}
+Pour comprendre pourquoi ce n'est pas possible de stocker un `Dog` dans un `Animal`, mettons-nous à la place du compilateur, et considérons le code ci-dessous qui définit notamment la classe `Horse`.
+```C++
+class Horse : public Animal
+{
+  std::string name;
+  void sing() const { std::cout << "Hiiiii" << std::endl; }
+};
+int main() {
+  std::cout << "La taille en mémoire d'un Animal est: " << sizeof(Animal) << std::endl;
+  std::cout << "La taille en mémoire d'un Horse est: " << sizeof(Horse) << std::endl;
+}
+```
+```bash
+La taille en mémoire d'un Animal est: 8
+La taille en mémoire d'un Horse est: 40
+```
+A cause du membre `name`, un `Horse` prend plus d'espace en mémoire qu'un `Animal`.
+
+Si l'on reprend le `main` précédent (rappelé ci-dessous), quelle taille en
+mémoire le compilateur devrait réserver pour `a`?
+```C++
+int main() {
+  Animal a = animal_by_name(name);
+  a.sing();
+}
+```
+On pourrait prendre la taille maximum parmi les classes qui héritent d'`Animal`, mais cela pose plusieurs problèmes.  Entre autres, c'est inefficace en mémoire: dans notre exemple, la variable `a` **ne peut pas** contenir un `Horse` car `animal_by_name` ne peut renvoyer qu'un `Dog` ou un `Cat`.
+
+
+Notez que ce problème illustre une règle générale du C++: pour
+déclarer:
+```C++
+  Type nom_de_variable = ..
+```
+il faut que la taille de `Type` soit connue au moment de la compilation.
+{{% /expand %}}
+{{% /notice %}}
+
+**Que doit-on-faire ?**
+
+Pour profiter du polymorphisme, il faut manipuler des références ou des pointeurs.  Réécrire la fonction `animal_by_name` pour qu'elle
+renvoie un `std::unique_ptr<Animal>` (et adapter le `main`).
+
+En effet, contrairement au cas précédent, on peut stocker un
+`std::unique_ptr<Dog>` dans un `std::unique_ptr<Animal>` (ou un `Dog&` dans un `Animal&`, ou un `Dog*` and un `Animal*`).
+
+{{% expand "Solution" %}}
+```C++
+std::unique_ptr<Animal> animal_by_name(const std::string& name)
+{
+  if (name == "dog")
+    return std::make_unique<Dog>();
+  else
+    return std::make_unique<Cat>();
+}
+int main() {
+  std::unique_ptr<Animal> a = animal_by_name("dog");
+  a->sing();
+}
+```
+```bash
+Waf
+```
+{{% /expand %}}
+
+{{% notice%}}
+{{% expand "Explication technique pour les curieux (suite)" %}}
+On peut vérifier qu'un `std::unique_ptr<Animal>` et `std::unique_ptr<Horse>`
+font la même taille, bien qu'`Animal` et `Horse` soient de taille différente.
+```C++
+int main() {
+  std::cout << "La taille en mémoire d'un std::unique_ptr<Animal> est: " << sizeof(std::unique_ptr<Animal>) << std::endl;
+  std::cout << "La taille en mémoire d'un std::unique_ptr<Horse> est:" << sizeof(std::unique_ptr<Horse>) << std::endl;
+}
+``` 
+```bash
+La taille en mémoire d'un std::unique_ptr<Animal> est: 8
+La taille en mémoire d'un std::unique_ptr<Horse> est:8
+```
+Notez bien qu'il ne suffit pas que deux classes soient de la même taille
+pour qu'on puisse les stocker l'un dans l'autre. Par example `Animal` et `Dog` avaient la même taille.
+
+{{% /expand %}}
+{{% /notice %}}
+
+
+---
 
 ### Conteneurs polymorphes
 
@@ -190,10 +312,12 @@ En testant, on s'aperçoit que c'est de nouveau `Animal::sing` qui est appelé e
 
 **D'où vient le problème ?**
 
-En fait, en créant un `vector<Animal>`, chaque fois que vous avez ajouté un élément dans le tableau, vous avez instancié un nouvel objet de type `Animal`.
-Comme `dog` est un `Dog`, il peut être converti en `const Animal&`, et donc, le constructeur de copie `Animal(const Animal&)` est appelé pour créer chacun des éléments.
-Dans votre tableau, vous avez donc créer des objets de type `Animal`, et non pas de type `Dog` ou `Cat`.
-C'est pour cela que c'est la fonction `sing` de `Animal` qui est appelée.
+Le problème est similaire à celui du paragraphe précédent.
+
+On utilise un `vector<Animal>`, donc chaque fois que vous avez ajouté un élément dans le tableau, vous avez instancié un nouvel objet de type `Animal`
+en utilisant le constructeur de copie `Animal(const Animal&)`.
+Dans votre tableau, vous avez donc créé des objets de type `Animal`, et non pas de type `Dog` ou `Cat`.
+
 
 **Du coup, comment faire pour placer des animaux de type différents dans un conteneur, tout en gardant la possibilité d'appeler sur les éléments les fonctions redéfinies dans les classes-filles ?**
 
