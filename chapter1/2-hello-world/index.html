@@ -1,51 +1,432 @@
-<!doctype html><html lang=fr dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619"><meta name=description content="Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous verrez comment :
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.128.0">
+    <meta name="generator" content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619">
+    <meta name="description" content="Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous verrez comment :
 écrire un programme, déclarer des variables, écrire sur la sortie standard, lire sur l’entrée standard, définir des fonctions, utiliser les structures de contrôle (conditions, boucles, switch, etc.), créer des tableaux et des chaînes de caractères, utiliser des références. Ça fait beaucoup hein ? 😈
-En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà."><meta name=author content><meta name=twitter:card content="summary"><meta name=twitter:title content="Hello World 👋 :: Cours de C++ - Niveau Master"><meta name=twitter:description content="Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous verrez comment :
+En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Hello World 👋 :: Cours de C&#43;&#43; - Niveau Master">
+    <meta name="twitter:description" content="Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous verrez comment :
 écrire un programme, déclarer des variables, écrire sur la sortie standard, lire sur l’entrée standard, définir des fonctions, utiliser les structures de contrôle (conditions, boucles, switch, etc.), créer des tableaux et des chaînes de caractères, utiliser des références. Ça fait beaucoup hein ? 😈
-En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà."><meta property="og:url" content="/chapter1/2-hello-world/index.html"><meta property="og:site_name" content="Cours de C++ - Niveau Master"><meta property="og:title" content="Hello World 👋 :: Cours de C++ - Niveau Master"><meta property="og:description" content="Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous verrez comment :
+En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà.">
+    <meta property="og:url" content="/chapter1/2-hello-world/index.html">
+    <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:title" content="Hello World 👋 :: Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:description" content="Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous verrez comment :
 écrire un programme, déclarer des variables, écrire sur la sortie standard, lire sur l’entrée standard, définir des fonctions, utiliser les structures de contrôle (conditions, boucles, switch, etc.), créer des tableaux et des chaînes de caractères, utiliser des références. Ça fait beaucoup hein ? 😈
-En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà."><meta property="og:locale" content="fr"><meta property="og:type" content="article"><meta property="article:section" content="Introduction au C++"><meta itemprop=name content="Hello World 👋 :: Cours de C++ - Niveau Master"><meta itemprop=description content="Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous verrez comment :
+En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà.">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Introduction au C&#43;&#43;">
+    <meta itemprop="name" content="Hello World 👋 :: Cours de C&#43;&#43; - Niveau Master">
+    <meta itemprop="description" content="Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous verrez comment :
 écrire un programme, déclarer des variables, écrire sur la sortie standard, lire sur l’entrée standard, définir des fonctions, utiliser les structures de contrôle (conditions, boucles, switch, etc.), créer des tableaux et des chaînes de caractères, utiliser des références. Ça fait beaucoup hein ? 😈
-En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà."><meta itemprop=wordCount content="1007"><title>Hello World 👋 :: Cours de C++ - Niveau Master</title>
-<link href=../../css/fontawesome-all.min.css?1729268601 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=../../css/fontawesome-all.min.css?1729268601 rel=stylesheet></noscript><link href=../../css/nucleus.css?1729268601 rel=stylesheet><link href=../../css/auto-complete.css?1729268601 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=../../css/auto-complete.css?1729268601 rel=stylesheet></noscript><link href=../../css/perfect-scrollbar.min.css?1729268601 rel=stylesheet><link href=../../css/fonts.css?1729268601 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=../../css/fonts.css?1729268601 rel=stylesheet></noscript><link href=../../css/theme.css?1729268601 rel=stylesheet><link href=../../css/theme-mine.css?1729268601 rel=stylesheet id=R-variant-style><link href=../../css/chroma-relearn-light.css?1729268601 rel=stylesheet id=R-variant-chroma-style><link href=../../css/print.css?1729268601 rel=stylesheet media=print><script src=../../js/variant.js?1729268601></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../..",window.relearn.absBaseUri="",window.relearn.disableAnchorCopy=!1,window.relearn.disableAnchorScrolling=!1,window.variants&&variants.init(["mine"]),window.T_Copy_to_clipboard=`Copier dans le presse-papiers`,window.T_Copied_to_clipboard=`Copié dans le presse-papiers!`,window.T_Copy_link_to_clipboard=`Copier le lien dans le presse-papiers`,window.T_Link_copied_to_clipboard=`Lien copié dans le presse-papiers!`,window.T_Reset_view=`Réinitialiser la vue`,window.T_View_reset=`Vue réinitialisée!`,window.T_No_results_found=`Aucun résultat trouvé pour "{0}"`,window.T_N_results_found=`{1} résultats trouvés pour "{0}"`</script></head><body class="mobile-support html disableInlineCopyToClipboard" data-url=../../chapter1/2-hello-world/index.html><div id=R-body class=default-animation><div id=R-body-overlay></div><nav id=R-topbar><div class=topbar-wrapper><div class=topbar-sidebar-divider></div><div class="topbar-area topbar-area-start" data-area=start><div class="topbar-button topbar-button-sidebar" data-content-empty=disable data-width-s=show data-width-m=hide data-width-l=hide><button class=topbar-control onclick=toggleNav() type=button title="Menu (CTRL+ALT+n)"><i class="fa-fw fas fa-bars"></i></button></div><div class="topbar-button topbar-button-toc" data-content-empty=hide data-width-s=show data-width-m=show data-width-l=show><button class=topbar-control onclick=toggleTopbarFlyout(this) type=button title="Table des matières (CTRL+ALT+t)"><i class="fa-fw fas fa-list-alt"></i></button><div class=topbar-content><div class=topbar-content-wrapper><nav class=TableOfContents><ul><li><ul><li><a href=#mise-en-place>Mise en place</a></li><li><a href=#la-fonction-main>La fonction main</a></li><li><a href=#ecrire-sur-la-sortie-standard>Ecrire sur la sortie standard</a></li></ul></li></ul></nav></div></div></div></div><ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=../../index.html><span itemprop=name>Accueil</span></a><meta itemprop=position content="1">&nbsp;>&nbsp;</li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=../../chapter1/index.html><span itemprop=name>Introduction au C++</span></a><meta itemprop=position content="2">&nbsp;>&nbsp;</li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>Hello World 👋</span><meta itemprop=position content="3"></li></ol><div class="topbar-area topbar-area-end" data-area=end><div class="topbar-button topbar-button-prev" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=../../chapter1/1-language/index.html title="Présentation du langage (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></div><div class="topbar-button topbar-button-next" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=../../chapter1/3-syntax-elements/index.html title="Eléments de syntaxe ✍ (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></div><div class="topbar-button topbar-button-more" data-content-empty=hide data-width-s=show data-width-m=show data-width-l=show><button class=topbar-control onclick=toggleTopbarFlyout(this) type=button title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button><div class=topbar-content><div class=topbar-content-wrapper><div class="topbar-area topbar-area-more" data-area=more></div></div></div></div></div></div></nav><div id=R-main-overlay></div><main id=R-body-inner class="highlightable chapter1" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><h1 id=hello-world->Hello World 👋</h1><p>Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous verrez comment :</p><ul><li>écrire un programme,</li><li>déclarer des variables,</li><li>écrire sur la sortie standard,</li><li>lire sur l&rsquo;entrée standard,</li><li>définir des fonctions,</li><li>utiliser les structures de contrôle (conditions, boucles, switch, etc.),</li><li>créer des tableaux et des chaînes de caractères,</li><li>utiliser des références.</li></ul><p>Ça fait beaucoup hein ? 😈</p><p>En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà. Le C++ introduit quelques subtilités, mais nous insisterons suffisamment dessus pour que vous les reteniez sans problème 🙂</p><hr><h3 id=mise-en-place>Mise en place</h3><p>Le code initial de tous les exercices proposés dans ce cours en ligne sont présents sur ce dépôt git : <a href=https://github.com/Laefy/CPP_Learning_Code rel=external target=_blank>https://github.com/Laefy/CPP_Learning_Code</a>.</p><p>Clonez-le sur votre machine et ouvrez le répertoire <code>chap-01</code> dans VSCode.<br>Ouvrez ensuite le fichier <code>1-hello_world.cpp</code>.</p><p>Pour votre premier programme, on ne va pas trop faire dans l&rsquo;originalité, il s&rsquo;agira d&rsquo;un Hello World.
-Vous l&rsquo;avez d&rsquo;ailleurs déjà probablement vu dans le chapitre précédent, pour tester vos outils.</p><hr><h3 id=la-fonction-main>La fonction main</h3><p>Tout d&rsquo;abord, commençons par écrire la fonction qui est appelée lorsqu&rsquo;on lance le programme. On parle de <strong>point d&rsquo;entrée</strong>. Comme en C, cette fonction doit s&rsquo;appeler <code>main</code> et renvoyer une valeur de type <code>int</code>. Pour ce premier exercice, nous n&rsquo;aurons pas besoin de lui fournir d&rsquo;arguments.</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>()</span>
-</span></span><span class=line><span class=cl><span class=p>{</span>
-</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><div class="box notices cstyle note"><div class=box-label><i class="fa-fw fas fa-exclamation-circle"></i> Remarque</div><div class=box-content><p>La valeur de retour du <code>main</code> indique si le programme s&rsquo;est terminé sans erreur. Si tout se passe bien, il faut retourner 0. N&rsquo;importe quelle autre valeur indique une erreur.</p></div></div><p>Pour compiler votre programme, commencez par ouvrir un terminal (vous pouvez le faire directement dans l&rsquo;interface de VSCode).<br>Placez-vous dans le répertoire <code>chap-01</code> avec <code>cd</code>, puis taper la commande: <code>g++ -std=c++17 -o hello-world 1-hello_world.cpp</code>.</p><p>L&rsquo;option <code>-std</code> sert à spécifier la version du langage qu&rsquo;on veut utiliser.<br>L&rsquo;option <code>-o</code> permet de spécifier le chemin (dossier + nom) du programme que l&rsquo;on souhaite générer.<br>Tous les autres arguments correspondent aux chemins des fichiers <code>.cpp</code> que l&rsquo;on veut compiler.
-Pour le moment, il n&rsquo;y en a qu&rsquo;un seul, le fichier <code>1-hello_world.cpp</code>.</p><p>Lancez maintenant votre programme pour vérifier qu&rsquo;il s&rsquo;exécute sans erreur.</p><hr><h3 id=ecrire-sur-la-sortie-standard>Ecrire sur la sortie standard</h3><p>L&rsquo;instruction ci-dessous permet d&rsquo;afficher la chaîne de caractères <code>"Hello World"!</code> sur la sortie standard du programme.</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;Hello World!&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span></span></span></code></pre></div><p>Décortiquons la ensemble&mldr;</p><p><code>std::</code><br>En C++, il est possible de définir des <strong>espaces de noms</strong>, ou <strong>namespaces</strong>.<br><code>std</code> fait référence au namespace utilisé pour la librairie standard.
-Si on écrit <code>std::cout</code>, c&rsquo;est donc pour référencer un symbole nommé <code>cout</code> défini par la librairie standard.</p><div class="box notices cstyle note"><div class=box-label><i class="fa-fw fas fa-exclamation-circle"></i> Remarque</div><div class=box-content><p>Les librairies développées en C++ définissent généralement des namespaces pour contenir leurs symboles. Cela permet d&rsquo;éviter des conflits de noms dans les programmes qui les utilisent. Par exemple,
-<a href=https://ogrecave.github.io/ogre/api/latest/ target=_blank rel="noopener noreferrer">Ogre</a> définit ses symboles dans <code>Ogre</code>, la
-<a href=https://www.sfml-dev.org/documentation/ target=_blank rel="noopener noreferrer">SFML</a> dans <code>sf</code>, etc.<br>Ce problème existe aussi en C bien sûr, et pour y pallier, certaines APIs préfixent tous leurs symboles (la
-<a href=https://wiki.libsdl.org/CategoryAPI target=_blank rel="noopener noreferrer">SDL</a> par exemple)&mldr; Ce n&rsquo;est pas très pratique, d&rsquo;où la bonne idée d&rsquo;avoir introduit les namespaces en C++.</p></div></div><p><code>cout</code><br>Il s&rsquo;agit de la variable globale contenant le flux pour écrire sur la sortie standard du programme. Le <code>c</code> indique &ldquo;console&rdquo; et le <code>out</code> indique &ldquo;sortie&rdquo;. Par symétrie, on fera référence au flux pour l&rsquo;entrée standard avec <code>cin</code>.</p><p><code>&lt;&lt;</code><br>Il s&rsquo;agit d&rsquo;un opérateur, un peu comme <code>+</code> ou <code>%</code>. Si on utilise <code>&lt;&lt;</code> entre une variable de flux et une chaîne de caractères, cette dernière sera écrite dans le flux.</p><p><code>"Hello World!"</code><br>Une chaîne de caractères, comme en C.</p><p><code>endl</code><br>Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</code> (<code>endl</code> pour &ldquo;end of line&rdquo;) dans le flux. Il permet également de forcer son flush.</p><div class="box notices cstyle tip"><div class=box-label><i class="fa-fw fas fa-lightbulb"></i> Astuce</div><div class=box-content><p>En C, on a dû vous dire expliquer qu&rsquo;il fallait toujours mettre des <code>\n</code> à la fin de vos écritures avec <code>printf</code>, car cela permet d&rsquo;être sûr que tout est bien écrit dans la console. En effet, les programmes n&rsquo;écrivent pas directement dans la console. Ils écrivent d&rsquo;abord chaque caractère dans un espace-mémoire (généralement aussi appelé espace tampon), puis au moment opportun comme lors d&rsquo;un saut de ligne, le programme transfère tout le bloc de texte en une seule fois dans la console (on parle de flush).<br>En C++, <code>\n</code> ne suffit pas à faire le flush. C&rsquo;est en plaçant la valeur <code>endl</code> dans le flux que l&rsquo;on indique qu&rsquo;on veut à la fois un saut de ligne et l&rsquo;opération de flush.</p></div></div><p>Ajoutez l&rsquo;instruction précédente dans votre fonction <code>main</code> et essayez de recompiler votre programme.<br>Vous devriez obtenir des erreurs de ce style :</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-b data-lang=b><span class=line><span class=cl><span class=c>blabla error ##: &#39;cout&#39;: is not a member of &#39;std&#39; blabla
-</span></span></span><span class=line><span class=cl><span class=c>blabla message : see declaration of &#39;std&#39; blabla
-</span></span></span><span class=line><span class=cl><span class=c>blabla error ##: &#39;cout&#39;: undeclared identifier blabla
-</span></span></span><span class=line><span class=cl><span class=c>blabla error ##: &#39;endl&#39;: is not a member of &#39;std&#39; blabla
-</span></span></span><span class=line><span class=cl><span class=c>blabla message : see declaration of &#39;std&#39; blabla
-</span></span></span><span class=line><span class=cl><span class=c>blabla error ##: &#39;endl&#39;: undeclared identifier blabla</span></span></span></code></pre></div><p>Le premier message indique que le compilateur ne trouve aucun symbole nommé <code>cout</code> dans le namespace <code>std</code>. Eh bien oui, le C++, c&rsquo;est comme le C. Le compilateur est un peu bêbête, et il faut tout lui indiquer, même où trouver les symboles de la librairie standard.</p><p>Allez sur
-<a href=https://en.cppreference.com/w/ target=_blank rel="noopener noreferrer">ce site</a> et recherchez <code>cout</code>. Cela devrait vous permettre de déterminer dans quel header la fonction est déclarée, afin d&rsquo;ajouter la directive d&rsquo;inclusion correspondante au fichier.</p><div class=hidden-solution><button class=show-solution-btn onclick='this.classList.add("off"),this.nextElementSibling.classList.remove("off")'>
-⮟ Afficher la solution ⮟</button><div class=off><button class=hide-solution-btn onclick='this.parentElement.classList.add("off"),this.parentElement.previousElementSibling.classList.remove("off")'>
-⮝ Masquer la solution ⮝</button><div class=hidden-solution-content><p>Vous devriez arriver sur
-<a href=https://en.cppreference.com/w/cpp/io/cout target=_blank rel="noopener noreferrer">cette page</a>, vous indiquant que le header à référencer est <code>&lt;iostream></code> :
-<a href=#R-image-687c1a81f86a8e0242287b087161c676 class=lightbox-link><img class="noborder lazy lightbox noshadow figure-image" loading=lazy src=../../images/doc-cout.png style=height:auto;width:auto></a>
-<a href=javascript:history.back(); class=lightbox-back id=R-image-687c1a81f86a8e0242287b087161c676><img class="noborder lazy lightbox noshadow lightbox-image" loading=lazy src=../../images/doc-cout.png></a></p><p>Placez le code suivant dans votre fichier :</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;iostream&gt;</span><span class=cp>
-</span></span></span><span class=line><span class=cl><span class=cp></span>
-</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>()</span>
-</span></span><span class=line><span class=cl><span class=p>{</span>
-</span></span><span class=line><span class=cl>    <span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;Hello World!&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div></div></div></div><p>Vous devriez maintenant pouvoir compiler le programme sans souci. Exécutez-le et vérifiez que vous obtenez bien un résultat similaire à celui-ci :</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-b data-lang=b><span class=line><span class=cl><span class=c>Hello World!
-</span></span></span><span class=line><span class=cl><span class=c>The program &#39;</span><span class=k>[</span><span class=c>2288</span><span class=k>]</span><span class=c> c1</span><span class=nb>-</span><span class=c>1</span><span class=nb>-</span><span class=c>hello_world</span><span class=nt>.</span><span class=c>exe&#39; has exited with code 0 (0x0)</span><span class=nt>.</span></span></span></code></pre></div><p>Par ailleurs, sachez qu&rsquo;il est possible de chaîner l&rsquo;opérateur <code>&lt;&lt;</code> et de lui fournir d&rsquo;autres éléments que des chaînes de caractères.<br>Vous pouvez donc écrire des choses comme :</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;I have &#34;</span> <span class=o>&lt;&lt;</span> <span class=mi>7</span> <span class=o>&lt;&lt;</span> <span class=s>&#34; dogs.&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span></span></span></code></pre></div><footer class=footline></footer></article></div></main></div><aside id=R-sidebar class="default-animation showVisitedLinks"><div id=R-header-topbar class=default-animation></div><div id=R-header-wrapper class=default-animation><div id=R-header class=default-animation><a id=logo href=../../>🎄 C++ 🎄</a></div></div><div id=R-homelinks class=default-animation><hr class=padding></div><div id=R-content-wrapper class=highlightable><div id=R-topics><ul class="enlarge morespace collapsible-menu"><li data-nav-id=/chapter0/index.html><a class=padding href=../../chapter0/index.html><b>0- </b>Mise en place<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-bb41caf94f12b8a1a4b5e560230e7851 class=collapsible-menu></ul></li><li class=parent data-nav-id=/chapter1/index.html><a class=padding href=../../chapter1/index.html><b>1- </b>Introduction au C++<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-6c398714eae4372920aec3a1e6c2e143 class=collapsible-menu><li data-nav-id=/chapter1/1-language/index.html><a class=padding href=../../chapter1/1-language/index.html>Présentation du langage<i class="fa-fw fas fa-check read-icon"></i></a></li><li class=active data-nav-id=/chapter1/2-hello-world/index.html><a class=padding href=../../chapter1/2-hello-world/index.html>Hello World 👋<i class="fa-fw fas fa-check read-icon"></i></a></li><li data-nav-id=/chapter1/3-syntax-elements/index.html><a class=padding href=../../chapter1/3-syntax-elements/index.html>Eléments de syntaxe ✍<i class="fa-fw fas fa-check read-icon"></i></a></li><li data-nav-id=/chapter1/4-std-lib/index.html><a class=padding href=../../chapter1/4-std-lib/index.html>Librairie standard 📚<i class="fa-fw fas fa-check read-icon"></i></a></li><li data-nav-id=/chapter1/5-compilation/index.html><a class=padding href=../../chapter1/5-compilation/index.html>Compilation ⚙️<i class="fa-fw fas fa-check read-icon"></i></a></li><li data-nav-id=/chapter1/test/index.html><a class=padding href=../../chapter1/test/index.html>Questionnaire ☑<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/chapter2/index.html><a class=padding href=../../chapter2/index.html><b>2- </b>Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-b1df0095a9fd74320697a6d478418ec3 class=collapsible-menu></ul></li><li data-nav-id=/chapter3/index.html><a class=padding href=../../chapter3/index.html><b>3- </b>Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-9f6546bce6f8e9a77063b71c880fd5b8 class=collapsible-menu></ul></li><li data-nav-id=/chapter4/index.html><a class=padding href=../../chapter4/index.html><b>4- </b>Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-48065e8b6e7e69533ca73b3931c8a0a1 class=collapsible-menu></ul></li><li data-nav-id=/chapter5/index.html><a class=padding href=../../chapter5/index.html><b>5- </b>Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-86528e6ba587b53932a1dafaa9cd375c class=collapsible-menu></ul></li><li data-nav-id=/chapter6/index.html><a class=padding href=../../chapter6/index.html><b>6- </b>Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-016ee40825ff7c4aeecbac08a8ca264b class=collapsible-menu></ul></li><li data-nav-id=/chapter9/index.html><a class=padding href=../../chapter9/index.html><b>7- </b>Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-24ddf636ccd0ce3ef39c8060d1779332 class=collapsible-menu></ul></li><li data-nav-id=/chapter10/index.html><a class=padding href=../../chapter10/index.html><b>8- </b>Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-66e6e0c58d73995ecc09e8fbbe358e51 class=collapsible-menu></ul></li></ul></div><div id=R-shortcuts><div class="nav-title padding">Accès rapide</div><ul class=space><li><a class=padding href=https://github.com/Laefy/CPP_Learning_Code/><i class='fab fa-github'></i> Dépôt Cours</a></li><li><a class=padding href=https://github.com/Laefy/CPP_Exercises/><i class='fab fa-github'></i> Dépôt TPs</a></li><li><a class=padding href=../../slides/index.html><i class='far fa-file-powerpoint'></i> Slides</a></li><li><a class=padding href=../../workflow/index.html><i class='far fa-list-alt'></i> Workflow</a></li><li><a class=padding href=../../faq/index.html><i class='fas fa-question-circle'></i> FAQ</a></li><li><a class=padding href=../../chapter0/6-tips/index.html><i class='fa fa-rocket'></i> Astuces</a></li><li><a class=padding href=https://godbolt.org/><i class='fas fa-cog'></i> Compiler Explorer</a></li><li><a class=padding href=https://en.cppreference.com/w/><i class='fas fa-passport'></i> CPP-Ref</a></li></ul></div><div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div><div id=R-menu-footer><hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"><div id=R-prefooter class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVisitedLinks"><ul><li id=R-select-language-container class=footerLangSwitch><div class="padding menu-control"><i class="fa-fw fas fa-language"></i>
-<span>&nbsp;</span><div class=control-style><label class=a11y-only for=R-select-language>Langue</label>
-<select id=R-select-language onchange="location=this.querySelector(this.value).dataset.url"><option id=R-select-language-fr value=#R-select-language-fr data-url=../../chapter1/2-hello-world/index.html lang=fr selected>Français</option></select></div><div class=clear></div></div></li><li id=R-select-variant-container class=footerVariantSwitch><div class="padding menu-control"><i class="fa-fw fas fa-paint-brush"></i>
-<span>&nbsp;</span><div class=control-style><label class=a11y-only for=R-select-variant>Thème</label>
-<select id=R-select-variant onchange=window.variants&&variants.changeVariant(this.value)><option id=R-select-variant-mine value=mine selected>Mine</option></select></div><div class=clear></div></div><script>window.variants&&variants.markSelectedVariant()</script></li><li class="footerVisitedLinks showVisitedLinks"><div class="padding menu-control"><i class="fa-fw fas fa-history"></i>
-<span>&nbsp;</span><div class=control-style><button onclick=clearHistory()>Supprimer l'historique</button></div><div class=clear></div></div></li></ul></div><div id=R-footer class="footerFooter showFooter"><p>Built with <a href=https://github.com/McShelby/hugo-theme-relearn title=love><i class="fas fa-heart"></i></a> by <a href=https://gohugo.io/>Hugo</a></p></div></div></div></aside><script src=../../js/clipboard.min.js?1729268601 defer></script><script src=../../js/perfect-scrollbar.min.js?1729268601 defer></script><script src=../../js/theme.js?1729268601 defer></script><button id=footer-question-btn title="Envoyer un message à propos du texte sélectionné" onclick=openQuestionForm() disabled><i class="fas fa-question-circle"></i></button><div id=footer-question-window disabled><form id=question method=POST action=https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b target=question-submitted onsubmit=cleanQuestionFormContent()><input type=email name=email placeholder=mon_email@smthg.com required onchange=updateQuestionFormSubject()>
-<textarea name=question rows=7 cols=30 placeholder="Mon message..."></textarea>
-<input type=hidden name=selection>
-<input type=hidden name=_replyto>
-<input type=hidden name=_subject>
-<input type=hidden name=_template value=box>
-<input type=hidden name=_captcha value=false>
-<input type=hidden name=_next value=//question-submitted/>
-<input type=submit disabled style=display:none aria-hidden=true>
-<input type=submit value=Envoyer></form><iframe class=hidden name=question-submitted src></iframe></div><script>function updateQuestionFormSubject(){let e=document.querySelector('#question>input[name="email"]').value;document.querySelector('#question>input[name="_subject"]').value="[C++][Chapitre 1] "+e+", retour sur ta question"}function cleanQuestionFormContent(){function e(e){e.value=e.value.replace(/\[\.\./g,"[ ..")}e(document.querySelector('#question>textarea[name="question"]')),e(document.querySelector('#question>input[name="selection"]'))}function openQuestionForm(){document.getElementById("footer-question-window").removeAttribute("disabled");var e=window.getSelection().toString();document.querySelector('#question>input[name="selection"]').value=e}function updateQuestionWidgetState(e){var t=document.getElementById("R-body-inner"),n=window.getSelection(),s=document.getElementById("footer-question-window");document.getElementById("footer-question-btn").disabled=n.isCollapsed||t==null||t.contains(n.anchorNode)==!1||t.contains(n.focusNode)==!1,e!==void 0&&e.type=="mouseup"&&s.contains(e.target)==!1&&s.contains(document.activeElement)==!1&&s.setAttribute("disabled",!0)}updateQuestionFormSubject(),document.onmouseup=document.onkeyup=document.onselectionchange=updateQuestionWidgetState,updateQuestionWidgetState()</script></body></html>
+En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà.">
+    <meta itemprop="wordCount" content="1007">
+    <title>Hello World 👋 :: Cours de C&#43;&#43; - Niveau Master</title>
+    <link href="../../css/fontawesome-all.min.css?1729268734" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1729268734" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1729268734" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1729268734" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1729268734" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1729268734" rel="stylesheet">
+    <link href="../../css/fonts.css?1729268734" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1729268734" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1729268734" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1729268734" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1729268734" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1729268734" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1729268734"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.variants && variants.init( [ 'mine' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copier dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Copié dans le presse-papiers!`;
+      window.T_Copy_link_to_clipboard = `Copier le lien dans le presse-papiers`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../chapter1/2-hello-world/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#mise-en-place">Mise en place</a></li>
+        <li><a href="#la-fonction-main">La fonction main</a></li>
+        <li><a href="#ecrire-sur-la-sortie-standard">Ecrire sur la sortie standard</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">Accueil</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../chapter1/index.html"><span itemprop="name">Introduction au C&#43;&#43;</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Hello World 👋</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter1/1-language/index.html" title="Présentation du langage (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter1/3-syntax-elements/index.html" title="Eléments de syntaxe ✍ (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter1" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="hello-world-">Hello World 👋</h1>
+
+<p>Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous verrez comment :</p>
+<ul>
+<li>écrire un programme,</li>
+<li>déclarer des variables,</li>
+<li>écrire sur la sortie standard,</li>
+<li>lire sur l&rsquo;entrée standard,</li>
+<li>définir des fonctions,</li>
+<li>utiliser les structures de contrôle (conditions, boucles, switch, etc.),</li>
+<li>créer des tableaux et des chaînes de caractères,</li>
+<li>utiliser des références.</li>
+</ul>
+<p>Ça fait beaucoup hein ? 😈</p>
+<p>En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà. Le C++ introduit quelques subtilités, mais nous insisterons suffisamment dessus pour que vous les reteniez sans problème 🙂</p>
+<hr>
+<h3 id="mise-en-place">Mise en place</h3>
+<p>Le code initial de tous les exercices proposés dans ce cours en ligne sont présents sur ce dépôt git : <a href="https://github.com/Laefy/CPP_Learning_Code" rel="external" target="_blank">https://github.com/Laefy/CPP_Learning_Code</a>.</p>
+<p>Clonez-le sur votre machine et ouvrez le répertoire <code>chap-01</code> dans VSCode.<br>
+Ouvrez ensuite le fichier <code>1-hello_world.cpp</code>.</p>
+<p>Pour votre premier programme, on ne va pas trop faire dans l&rsquo;originalité, il s&rsquo;agira d&rsquo;un Hello World.
+Vous l&rsquo;avez d&rsquo;ailleurs déjà probablement vu dans le chapitre précédent, pour tester vos outils.</p>
+<hr>
+<h3 id="la-fonction-main">La fonction main</h3>
+<p>Tout d&rsquo;abord, commençons par écrire la fonction qui est appelée lorsqu&rsquo;on lance le programme. On parle de <strong>point d&rsquo;entrée</strong>. Comme en C, cette fonction doit s&rsquo;appeler <code>main</code> et renvoyer une valeur de type <code>int</code>. Pour ce premier exercice, nous n&rsquo;aurons pas besoin de lui fournir d&rsquo;arguments.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<div class="box notices cstyle note">
+  <div class="box-label">
+    <i class="fa-fw fas fa-exclamation-circle"></i> Remarque
+  </div>
+  <div class="box-content">
+<p>La valeur de retour du <code>main</code> indique si le programme s&rsquo;est terminé sans erreur. Si tout se passe bien, il faut retourner 0. N&rsquo;importe quelle autre valeur indique une erreur.</p>
+  </div>
+</div>
+<p>Pour compiler votre programme, commencez par ouvrir un terminal (vous pouvez le faire directement dans l&rsquo;interface de VSCode).<br>
+Placez-vous dans le répertoire <code>chap-01</code> avec <code>cd</code>, puis taper la commande: <code>g++ -std=c++17 -o hello-world 1-hello_world.cpp</code>.</p>
+<p>L&rsquo;option <code>-std</code> sert à spécifier la version du langage qu&rsquo;on veut utiliser.<br>
+L&rsquo;option <code>-o</code> permet de spécifier le chemin (dossier + nom) du programme que l&rsquo;on souhaite générer.<br>
+Tous les autres arguments correspondent aux chemins des fichiers <code>.cpp</code> que l&rsquo;on veut compiler.
+Pour le moment, il n&rsquo;y en a qu&rsquo;un seul, le fichier <code>1-hello_world.cpp</code>.</p>
+<p>Lancez maintenant votre programme pour vérifier qu&rsquo;il s&rsquo;exécute sans erreur.</p>
+<hr>
+<h3 id="ecrire-sur-la-sortie-standard">Ecrire sur la sortie standard</h3>
+<p>L&rsquo;instruction ci-dessous permet d&rsquo;afficher la chaîne de caractères <code>&quot;Hello World&quot;!</code> sur la sortie standard du programme.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello World!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span></span></span></code></pre></div>
+<p>Décortiquons la ensemble&hellip;</p>
+<p><code>std::</code><br>
+En C++, il est possible de définir des <strong>espaces de noms</strong>, ou <strong>namespaces</strong>.<br>
+<code>std</code> fait référence au namespace utilisé pour la librairie standard.
+Si on écrit <code>std::cout</code>, c&rsquo;est donc pour référencer un symbole nommé <code>cout</code> défini par la librairie standard.</p>
+<div class="box notices cstyle note">
+  <div class="box-label">
+    <i class="fa-fw fas fa-exclamation-circle"></i> Remarque
+  </div>
+  <div class="box-content">
+<p>Les librairies développées en C++ définissent généralement des namespaces pour contenir leurs symboles. Cela permet d&rsquo;éviter des conflits de noms dans les programmes qui les utilisent. Par exemple,
+<a href="https://ogrecave.github.io/ogre/api/latest/" target="_blank" rel="noopener noreferrer">Ogre</a> définit ses symboles dans <code>Ogre</code>, la
+<a href="https://www.sfml-dev.org/documentation/" target="_blank" rel="noopener noreferrer">SFML</a> dans <code>sf</code>, etc.<br>
+Ce problème existe aussi en C bien sûr, et pour y pallier, certaines APIs préfixent tous leurs symboles (la
+<a href="https://wiki.libsdl.org/CategoryAPI" target="_blank" rel="noopener noreferrer">SDL</a> par exemple)&hellip; Ce n&rsquo;est pas très pratique, d&rsquo;où la bonne idée d&rsquo;avoir introduit les namespaces en C++.</p>
+  </div>
+</div>
+<p><code>cout</code><br>
+Il s&rsquo;agit de la variable globale contenant le flux pour écrire sur la sortie standard du programme. Le <code>c</code> indique &ldquo;console&rdquo; et le <code>out</code> indique &ldquo;sortie&rdquo;. Par symétrie, on fera référence au flux pour l&rsquo;entrée standard avec <code>cin</code>.</p>
+<p><code>&lt;&lt;</code><br>
+Il s&rsquo;agit d&rsquo;un opérateur, un peu comme <code>+</code> ou <code>%</code>. Si on utilise <code>&lt;&lt;</code> entre une variable de flux et une chaîne de caractères, cette dernière sera écrite dans le flux.</p>
+<p><code>&quot;Hello World!&quot;</code><br>
+Une chaîne de caractères, comme en C.</p>
+<p><code>endl</code><br>
+Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</code> (<code>endl</code> pour &ldquo;end of line&rdquo;) dans le flux. Il permet également de forcer son flush.</p>
+<div class="box notices cstyle tip">
+  <div class="box-label">
+    <i class="fa-fw fas fa-lightbulb"></i> Astuce
+  </div>
+  <div class="box-content">
+<p>En C, on a dû vous dire expliquer qu&rsquo;il fallait toujours mettre des <code>\n</code> à la fin de vos écritures avec <code>printf</code>, car cela permet d&rsquo;être sûr que tout est bien écrit dans la console. En effet, les programmes n&rsquo;écrivent pas directement dans la console. Ils écrivent d&rsquo;abord chaque caractère dans un espace-mémoire (généralement aussi appelé espace tampon), puis au moment opportun comme lors d&rsquo;un saut de ligne, le programme transfère tout le bloc de texte en une seule fois dans la console (on parle de flush).<br>
+En C++, <code>\n</code> ne suffit pas à faire le flush. C&rsquo;est en plaçant la valeur <code>endl</code> dans le flux que l&rsquo;on indique qu&rsquo;on veut à la fois un saut de ligne et l&rsquo;opération de flush.</p>
+  </div>
+</div>
+<p>Ajoutez l&rsquo;instruction précédente dans votre fonction <code>main</code> et essayez de recompiler votre programme.<br>
+Vous devriez obtenir des erreurs de ce style :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">blabla error ##: &#39;cout&#39;: is not a member of &#39;std&#39; blabla
+</span></span></span><span class="line"><span class="cl"><span class="c">blabla message : see declaration of &#39;std&#39; blabla
+</span></span></span><span class="line"><span class="cl"><span class="c">blabla error ##: &#39;cout&#39;: undeclared identifier blabla
+</span></span></span><span class="line"><span class="cl"><span class="c">blabla error ##: &#39;endl&#39;: is not a member of &#39;std&#39; blabla
+</span></span></span><span class="line"><span class="cl"><span class="c">blabla message : see declaration of &#39;std&#39; blabla
+</span></span></span><span class="line"><span class="cl"><span class="c">blabla error ##: &#39;endl&#39;: undeclared identifier blabla</span></span></span></code></pre></div>
+<p>Le premier message indique que le compilateur ne trouve aucun symbole nommé <code>cout</code> dans le namespace <code>std</code>. Eh bien oui, le C++, c&rsquo;est comme le C. Le compilateur est un peu bêbête, et il faut tout lui indiquer, même où trouver les symboles de la librairie standard.</p>
+<p>Allez sur 
+<a href="https://en.cppreference.com/w/" target="_blank" rel="noopener noreferrer">ce site</a> et recherchez <code>cout</code>. Cela devrait vous permettre de déterminer dans quel header la fonction est déclarée, afin d&rsquo;ajouter la directive d&rsquo;inclusion correspondante au fichier.</p>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Vous devriez arriver sur
+<a href="https://en.cppreference.com/w/cpp/io/cout" target="_blank" rel="noopener noreferrer">cette page</a>, vous indiquant que le header à référencer est <code>&lt;iostream&gt;</code> :
+<a href="#R-image-ae21f188df9f37eb9217b1dc039bffa8" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/doc-cout.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ae21f188df9f37eb9217b1dc039bffa8"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/doc-cout.png"></a></p>
+<p>Placez le code suivant dans votre fichier :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello World!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+
+        </div>
+    </div>
+
+</div>
+<p>Vous devriez maintenant pouvoir compiler le programme sans souci. Exécutez-le et vérifiez que vous obtenez bien un résultat similaire à celui-ci :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">Hello World!
+</span></span></span><span class="line"><span class="cl"><span class="c">The program &#39;</span><span class="k">[</span><span class="c">2288</span><span class="k">]</span><span class="c"> c1</span><span class="nb">-</span><span class="c">1</span><span class="nb">-</span><span class="c">hello_world</span><span class="nt">.</span><span class="c">exe&#39; has exited with code 0 (0x0)</span><span class="nt">.</span></span></span></code></pre></div>
+<p>Par ailleurs, sachez qu&rsquo;il est possible de chaîner l&rsquo;opérateur <code>&lt;&lt;</code> et de lui fournir d&rsquo;autres éléments que des chaînes de caractères. <br>
+Vous pouvez donc écrire des choses comme :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;I have &#34;</span> <span class="o">&lt;&lt;</span> <span class="mi">7</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; dogs.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span></span></span></code></pre></div>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation showVisitedLinks">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="logo" href="../../">🎄 C++ 🎄</a>
+
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/chapter0/index.html"><a class="padding" href="../../chapter0/index.html"><b>0- </b>Mise en place<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb41caf94f12b8a1a4b5e560230e7851" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/chapter1/index.html"><a class="padding" href="../../chapter1/index.html"><b>1- </b>Introduction au C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-6c398714eae4372920aec3a1e6c2e143" class="collapsible-menu">
+            <li class="" data-nav-id="/chapter1/1-language/index.html"><a class="padding" href="../../chapter1/1-language/index.html">Présentation du langage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/chapter1/2-hello-world/index.html"><a class="padding" href="../../chapter1/2-hello-world/index.html">Hello World 👋<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter1/3-syntax-elements/index.html"><a class="padding" href="../../chapter1/3-syntax-elements/index.html">Eléments de syntaxe ✍<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter1/4-std-lib/index.html"><a class="padding" href="../../chapter1/4-std-lib/index.html">Librairie standard 📚<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter1/5-compilation/index.html"><a class="padding" href="../../chapter1/5-compilation/index.html">Compilation ⚙️<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter1/test/index.html"><a class="padding" href="../../chapter1/test/index.html">Questionnaire ☑<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/chapter2/index.html"><a class="padding" href="../../chapter2/index.html"><b>2- </b>Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b1df0095a9fd74320697a6d478418ec3" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><b>3- </b>Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><b>4- </b>Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><b>5- </b>Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><b>6- </b>Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter9/index.html"><a class="padding" href="../../chapter9/index.html"><b>7- </b>Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter10/index.html"><a class="padding" href="../../chapter10/index.html"><b>8- </b>Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-66e6e0c58d73995ecc09e8fbbe358e51" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">Accès rapide</div>
+          <ul class="space">
+            <li><a class="padding" href="https://github.com/Laefy/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt Cours</a></li>
+            <li><a class="padding" href="https://github.com/Laefy/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt TPs</a></li>
+            <li><a class="padding" href="../../slides/index.html"><i class='far fa-file-powerpoint'></i> Slides</a></li>
+            <li><a class="padding" href="../../workflow/index.html"><i class='far fa-list-alt'></i> Workflow</a></li>
+            <li><a class="padding" href="../../faq/index.html"><i class='fas fa-question-circle'></i> FAQ</a></li>
+            <li><a class="padding" href="../../chapter0/6-tips/index.html"><i class='fa fa-rocket'></i> Astuces</a></li>
+            <li><a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a></li>
+            <li><a class="padding" href="https://en.cppreference.com/w/"><i class='fas fa-passport'></i> CPP-Ref</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Langue</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../chapter1/2-hello-world/index.html" lang="fr" selected>Français</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Thème</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-mine" value="mine" selected>Mine</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks showVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Supprimer l&#39;historique</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="../../js/clipboard.min.js?1729268734" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1729268734" defer></script>
+    <script src="../../js/theme.js?1729268734" defer></script>
+
+
+
+    
+
+
+<button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
+
+<div id="footer-question-window" disabled>
+    <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b"
+        target="question-submitted" onsubmit="cleanQuestionFormContent()">
+
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <textarea name="question" rows="7" cols="30" placeholder="Mon message..."></textarea>
+        <input type="hidden" name="selection" />
+
+        <input type="hidden" name="_replyto" />
+        <input type="hidden" name="_subject" />
+        <input type="hidden" name="_template" value="box" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="//question-submitted/" />
+
+        <input type="submit" disabled style="display: none" aria-hidden="true" />
+        <input type="submit" value="Envoyer" />
+    </form>
+
+    <iframe class="hidden" name="question-submitted" src=""></iframe>
+</div>
+
+<script>
+
+    function updateQuestionFormSubject() {
+        let email = document.querySelector('#question>input[name="email"]').value;
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 1] " + email + ", retour sur ta question";
+    }
+
+    function cleanQuestionFormContent() {
+
+        function clean(element) {
+            
+            element.value = element.value.replace(/\[\.\./g, "[ ..");
+        }
+
+        clean(document.querySelector('#question>textarea[name="question"]'))
+        clean(document.querySelector('#question>input[name="selection"]'))
+    }
+
+    function openQuestionForm() {
+        document.getElementById("footer-question-window").removeAttribute("disabled");
+
+        var selection = window.getSelection().toString();
+        document.querySelector('#question>input[name="selection"]').value = selection
+    }
+
+    function updateQuestionWidgetState(event) {
+        var body = document.getElementById("R-body-inner");
+        var selection = window.getSelection();
+        var question_window = document.getElementById("footer-question-window");
+
+        document.getElementById("footer-question-btn").disabled =
+            selection.isCollapsed ||
+            body == null ||
+            body.contains(selection.anchorNode) == false ||
+            body.contains(selection.focusNode) == false;
+
+        if (event !== undefined
+            && event.type == "mouseup"
+            && question_window.contains(event.target) == false
+            && question_window.contains(document.activeElement) == false) {
+            question_window.setAttribute("disabled", true);
+        }
+    }
+
+    updateQuestionFormSubject();
+
+    document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionWidgetState;
+    updateQuestionWidgetState();
+
+</script>
+
+
+  </body>
+</html>

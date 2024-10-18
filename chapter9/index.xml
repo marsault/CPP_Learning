@@ -1,12 +1,46 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Templates :: Cours de C++ - Niveau Master</title><link>/chapter9/index.html</link><description>Les templates, c’est un peu comme un chien qui aboie. Ca fait peur. Si on essaye de s’en approcher trop vite, ça mord. Mais si on prend le temps qu’il faut pour les aborder, il y a de bonnes chances qu’en fait, tout se passe bien. Sauf si on n’aime pas les chiens.</description><generator>Hugo</generator><language>fr</language><atom:link href="/chapter9/index.xml" rel="self" type="application/rss+xml"/><item><title>Introduction</title><link>/chapter9/1-introduction/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter9/1-introduction/index.html</guid><description>Qu’est-ce qu’un template ? Les templates sont un mécanisme du C++ permettant de faire de la programmation générique.
-Le terme “template” se traduit littéralement par “patron” en français (au sens patron de vêtement, pas patron d’entreprise). Les templates vont donc permettre de construire un modèle de classe (ou de fonction) à partir duquel le compilateur pourra de générer de véritables classes (ou fonctions).
-Notez donc bien que malgré le terme, une classe-template n’est pas une classe.</description></item><item><title>Exemples</title><link>/chapter9/2-examples/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter9/2-examples/index.html</guid><description>Nous allons maintenant rentrer dans le vif du sujet en vous présentant le code de différents templates.
-Nous détaillerons ensuite chacun des éléments de la syntaxe, afin que vous puissiez les comprendre pour les réutiliser dans votre propre code.
-Premier exemple de classe-template Cet exemple consiste en l’implémentation d’un tableau de taille statique (un peu comme la classe std::array).
-#include &lt;algorithm> #include &lt;cassert> #include &lt;iostream> template &lt;typename ElementType, size_t Size> class StaticArray { public: // Rappel: l'implémentation par défaut du constructeur par défaut disparaît lorsqu'on // définit explicitement un autre constructeur (ce qui est le cas ici).</description></item><item><title>Débrief</title><link>/chapter9/3-syntaxe/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter9/3-syntaxe/index.html</guid><description>Définition d’un template Pour définir un template, il faut écrire template &lt;...> devant la définition de la classe ou fonction templatée.
-Les chevrons contiennent la liste des paramètres du template. Chaque paramètre est typé par :
-- typename : il faut donc passer un nom de type en paramètre,
-- un type intégral, comme size_t, char, int, … : il faut passer une expression du bon type évaluable à la compilation,</description></item><item><title>Questionnaire ☑</title><link>/chapter9/test/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter9/test/index.html</guid><description>C’est l’heure du test ! N’oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.
-Bon courage à vous 🙂
-Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1 Initiaux 2 Alternants 1- Que faut-il écrire juste avant la définition d’une classe (ou fonction) pour en faire une classe (ou fonction) templatée ?
-2- Pourquoi n’est-il pas toujours possible de placer l’implémentation des fonctions-membres d’une classe-template dans un .</description></item><item><title>Merci !</title><link>/chapter9/test_done/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter9/test_done/index.html</guid><description>Vos réponses nous ont bien été communiquées 😃 N'hésitez pas à nous relancer si vous n'avez pas eu de nouvelles après une semaine !</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Templates :: Cours de C&#43;&#43; - Niveau Master</title>
+    <link>/chapter9/index.html</link>
+    <description>Les templates, c’est un peu comme un chien qui aboie. Ca fait peur. Si on essaye de s’en approcher trop vite, ça mord. Mais si on prend le temps qu’il faut pour les aborder, il y a de bonnes chances qu’en fait, tout se passe bien. Sauf si on n’aime pas les chiens.</description>
+    <generator>Hugo</generator>
+    <language>fr</language>
+    <atom:link href="/chapter9/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction</title>
+      <link>/chapter9/1-introduction/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter9/1-introduction/index.html</guid>
+      <description>Qu’est-ce qu’un template ? Les templates sont un mécanisme du C++ permettant de faire de la programmation générique.&#xA;Le terme “template” se traduit littéralement par “patron” en français (au sens patron de vêtement, pas patron d’entreprise). Les templates vont donc permettre de construire un modèle de classe (ou de fonction) à partir duquel le compilateur pourra de générer de véritables classes (ou fonctions).&#xA;Notez donc bien que malgré le terme, une classe-template n’est pas une classe.</description>
+    </item>
+    <item>
+      <title>Exemples</title>
+      <link>/chapter9/2-examples/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter9/2-examples/index.html</guid>
+      <description>Nous allons maintenant rentrer dans le vif du sujet en vous présentant le code de différents templates.&#xA;Nous détaillerons ensuite chacun des éléments de la syntaxe, afin que vous puissiez les comprendre pour les réutiliser dans votre propre code.&#xA;Premier exemple de classe-template Cet exemple consiste en l’implémentation d’un tableau de taille statique (un peu comme la classe std::array).&#xA;#include &lt;algorithm&gt; #include &lt;cassert&gt; #include &lt;iostream&gt; template &lt;typename ElementType, size_t Size&gt; class StaticArray { public: // Rappel: l&#39;implémentation par défaut du constructeur par défaut disparaît lorsqu&#39;on // définit explicitement un autre constructeur (ce qui est le cas ici).</description>
+    </item>
+    <item>
+      <title>Débrief</title>
+      <link>/chapter9/3-syntaxe/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter9/3-syntaxe/index.html</guid>
+      <description>Définition d’un template Pour définir un template, il faut écrire template &lt;...&gt; devant la définition de la classe ou fonction templatée.&#xA;Les chevrons contiennent la liste des paramètres du template. Chaque paramètre est typé par :&#xA;- typename : il faut donc passer un nom de type en paramètre,&#xA;- un type intégral, comme size_t, char, int, … : il faut passer une expression du bon type évaluable à la compilation,</description>
+    </item>
+    <item>
+      <title>Questionnaire ☑</title>
+      <link>/chapter9/test/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter9/test/index.html</guid>
+      <description>C’est l’heure du test ! N’oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.&#xA;Bon courage à vous 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1 Initiaux 2 Alternants 1- Que faut-il écrire juste avant la définition d’une classe (ou fonction) pour en faire une classe (ou fonction) templatée ?&#xA;2- Pourquoi n’est-il pas toujours possible de placer l’implémentation des fonctions-membres d’une classe-template dans un .</description>
+    </item>
+    <item>
+      <title>Merci !</title>
+      <link>/chapter9/test_done/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter9/test_done/index.html</guid>
+      <description>Vos réponses nous ont bien été communiquées 😃 N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
+    </item>
+  </channel>
+</rss>

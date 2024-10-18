@@ -1,35 +1,67 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Héritage :: Cours de C++ - Niveau Master</title><link>/chapter4/index.html</link><description>Vous apprendrez dans ce chapitre comment fonctionne l’héritage en C++. Vous verrez qu’il existe de nombreuses différences avec l’héritage en Java, bien qu’on retrouve des concepts similaires.
-Pour la pratique, nous vous montrerons comment créer une hiérarchie de classes, puis comment faire pour redéfinir le comportement des classes-filles.</description><generator>Hugo</generator><language>fr</language><atom:link href="/chapter4/index.xml" rel="self" type="application/rss+xml"/><item><title>💼 Hiérarchie professionnelle</title><link>/chapter4/1-hierarchy/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter4/1-hierarchy/index.html</guid><description>Dans cette première partie, vous apprendrez comment définir des relations de parenté entre vos classes.
-Nous ne parlerons sur cette page que d’héritage dit “statique”, c’est-à-dire que nous ne chercherons pas à modifier dans les classes-fille le comportement hérité de la classe-mère.
-Pour cet exercice, vous modifierez les fichiers :
-- chap-04/1-hierarchy/Boss.cpp
-- chap-04/1-hierarchy/Boss.h
-- chap-04/1-hierarchy/Staff.cpp
-- chap-04/1-hierarchy/Staff.h
-- chap-04/1-hierarchy/Intern.cpp
-- chap-04/1-hierarchy/Intern.h
-La cible à compiler est c4-1-hierarchy.
-Définir une classe-mère Commencez par jeter un coup d’oeil à chacun des fichiers fournis.</description></item><item><title>🐮 Concerto animalier</title><link>/chapter4/2-farm/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter4/2-farm/index.html</guid><description>Vous allez maintenant apprendre à définir des classes permettant à leurs enfants de spécialiser leur comportement. On parle alors de classe polymorphe.
-Nous ferons un petit récapitulatif en fin de page, pour rappelez les points essentiels auxquels il faut faire attention lorsque vous définissez des classes polymorphes pour éviter les bugs.
-Pour cet exercice, vous modifierez les fichiers :
-- chap-04/2-farm/FarmHouse.cpp
-- chap-04/2-farm/Animal.h
-- chap-04/2-farm/Dog.h
-- chap-04/2-farm/Cat.h
-- chap-04/2-farm/Chicken.h
-- chap-04/2-farm/Cow.</description></item><item><title>Résolution d'appel virtuel</title><link>/chapter4/3-virtual/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter4/3-virtual/index.html</guid><description>Nous allons maintenant rentrer dans les détails de ce qu’il se passe sous le manteau, lorsque le programme effectue un appel virtuel.
-Virtual table Lorsqu’une classe Parent contenant des fonctions virtuelles est compilée, le compilateur va générer pour l’ensemble des classes qui en dérivent une virtual table. Il s’agit d’une tableau qui contient, pour chaque fonction virtuelle de la classe, un pointeur sur la fonction qui sera vraiment appelée.
-Analysons la hiérarchie suivante :</description></item><item><title>Polymorphisme</title><link>/chapter4/4-polymorphism/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter4/4-polymorphism/index.html</guid><description>Vous avez probablement déjà entendu le terme polymorphisme, vous l’avez peut-être même déjà utilisé, mais quand vous y réfléchissez, si on vous demandait de le définir clairement, vous ne sauriez pas forcément quoi répondre. Cette page sera donc l’occasion de revenir sur sa définition.
-Dans ce chapitre, nous nous sommes intéressés à deux manières de mettre-en-ouvre le polymorphisme en C++ : l’héritage statique et l’héritage dynamique. Nous détaillerons les différences entre les deux et dans quels cas utiliser l’un ou l’autre.</description></item><item><title>🚗 Véhicule partagé</title><link>/chapter4/5-vehicles/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter4/5-vehicles/index.html</guid><description>Pour terminer ce chapitre, nous allons voir comment faire pour accéder directement aux attributs de votre classe de base, comment appeler la fonction parent depuis la rédéfinition de cette fonction dans la classe-fille et enfin, comment modéliser des classes abstraites.
-Pour cet exercice, vous modifierez les fichiers :
-- chap-04/3-vehicles/Program.cpp
-- chap-04/3-vehicles/Vehicle.h
-- chap-04/3-vehicles/Car.h
-- chap-04/3-vehicles/Scooter.h
-La cible à compiler est c4-3-vehicles.
-Introduction du permis Dans le programme que l’on vous fournit, n’importe qui peut conduire n’importe quoi.</description></item><item><title>Questionnaire !</title><link>/chapter4/test/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter4/test/index.html</guid><description>Vous avez terminé le Chapitre 4 ! C’est donc maintenant le moment de connecter vos neurones pour répondre aux questions suivantes.
-Bon courage à vous 🙂
-Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1 Initiaux 2 Alternants 1- Qu’est-ce qu’une classe polymorphe ?
-2- Définissez une classe polymorphe Nothing qui ne fait rien.
-3- Comment représenter une classe abstraite en C++ ?
-Les questions 4 à 6 font référence au code suivant :</description></item><item><title>Synthèse</title><link>/chapter4/summary/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter4/summary/index.html</guid><description>Ce qu’il faut savoir faire Langage Définir une relation de parenté publique entre deux classes : class Child : public Parent { ... }; Définir un membre (fonction ou attribut) accessible uniquement depuis la classe courante et ses enfants : protected : int _a1 = 0; char _a2 = 'a'; Appeler le constructeur de la classe parent : Child(int p1, int p2) : Parent { p1 }, _p2 { p2 } { .</description></item><item><title>Merci !</title><link>/chapter4/test_done/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter4/test_done/index.html</guid><description>Vos réponses nous ont bien été communiquées 😃 N'hésitez pas à nous relancer si vous n'avez pas eu de nouvelles après une semaine !</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Héritage :: Cours de C&#43;&#43; - Niveau Master</title>
+    <link>/chapter4/index.html</link>
+    <description>Vous apprendrez dans ce chapitre comment fonctionne l’héritage en C++. Vous verrez qu’il existe de nombreuses différences avec l’héritage en Java, bien qu’on retrouve des concepts similaires.&#xA;Pour la pratique, nous vous montrerons comment créer une hiérarchie de classes, puis comment faire pour redéfinir le comportement des classes-filles.</description>
+    <generator>Hugo</generator>
+    <language>fr</language>
+    <atom:link href="/chapter4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>💼 Hiérarchie professionnelle</title>
+      <link>/chapter4/1-hierarchy/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter4/1-hierarchy/index.html</guid>
+      <description>Dans cette première partie, vous apprendrez comment définir des relations de parenté entre vos classes.&#xA;Nous ne parlerons sur cette page que d’héritage dit “statique”, c’est-à-dire que nous ne chercherons pas à modifier dans les classes-fille le comportement hérité de la classe-mère.&#xA;Pour cet exercice, vous modifierez les fichiers :&#xA;- chap-04/1-hierarchy/Boss.cpp&#xA;- chap-04/1-hierarchy/Boss.h&#xA;- chap-04/1-hierarchy/Staff.cpp&#xA;- chap-04/1-hierarchy/Staff.h&#xA;- chap-04/1-hierarchy/Intern.cpp&#xA;- chap-04/1-hierarchy/Intern.h&#xA;La cible à compiler est c4-1-hierarchy.&#xA;Définir une classe-mère Commencez par jeter un coup d’oeil à chacun des fichiers fournis.</description>
+    </item>
+    <item>
+      <title>🐮 Concerto animalier</title>
+      <link>/chapter4/2-farm/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter4/2-farm/index.html</guid>
+      <description>Vous allez maintenant apprendre à définir des classes permettant à leurs enfants de spécialiser leur comportement. On parle alors de classe polymorphe.&#xA;Nous ferons un petit récapitulatif en fin de page, pour rappelez les points essentiels auxquels il faut faire attention lorsque vous définissez des classes polymorphes pour éviter les bugs.&#xA;Pour cet exercice, vous modifierez les fichiers :&#xA;- chap-04/2-farm/FarmHouse.cpp&#xA;- chap-04/2-farm/Animal.h&#xA;- chap-04/2-farm/Dog.h&#xA;- chap-04/2-farm/Cat.h&#xA;- chap-04/2-farm/Chicken.h&#xA;- chap-04/2-farm/Cow.</description>
+    </item>
+    <item>
+      <title>Résolution d&#39;appel virtuel</title>
+      <link>/chapter4/3-virtual/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter4/3-virtual/index.html</guid>
+      <description>Nous allons maintenant rentrer dans les détails de ce qu’il se passe sous le manteau, lorsque le programme effectue un appel virtuel.&#xA;Virtual table Lorsqu’une classe Parent contenant des fonctions virtuelles est compilée, le compilateur va générer pour l’ensemble des classes qui en dérivent une virtual table. Il s’agit d’une tableau qui contient, pour chaque fonction virtuelle de la classe, un pointeur sur la fonction qui sera vraiment appelée.&#xA;Analysons la hiérarchie suivante :</description>
+    </item>
+    <item>
+      <title>Polymorphisme</title>
+      <link>/chapter4/4-polymorphism/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter4/4-polymorphism/index.html</guid>
+      <description>Vous avez probablement déjà entendu le terme polymorphisme, vous l’avez peut-être même déjà utilisé, mais quand vous y réfléchissez, si on vous demandait de le définir clairement, vous ne sauriez pas forcément quoi répondre. Cette page sera donc l’occasion de revenir sur sa définition.&#xA;Dans ce chapitre, nous nous sommes intéressés à deux manières de mettre-en-ouvre le polymorphisme en C++ : l’héritage statique et l’héritage dynamique. Nous détaillerons les différences entre les deux et dans quels cas utiliser l’un ou l’autre.</description>
+    </item>
+    <item>
+      <title>🚗 Véhicule partagé</title>
+      <link>/chapter4/5-vehicles/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter4/5-vehicles/index.html</guid>
+      <description>Pour terminer ce chapitre, nous allons voir comment faire pour accéder directement aux attributs de votre classe de base, comment appeler la fonction parent depuis la rédéfinition de cette fonction dans la classe-fille et enfin, comment modéliser des classes abstraites.&#xA;Pour cet exercice, vous modifierez les fichiers :&#xA;- chap-04/3-vehicles/Program.cpp&#xA;- chap-04/3-vehicles/Vehicle.h&#xA;- chap-04/3-vehicles/Car.h&#xA;- chap-04/3-vehicles/Scooter.h&#xA;La cible à compiler est c4-3-vehicles.&#xA;Introduction du permis Dans le programme que l’on vous fournit, n’importe qui peut conduire n’importe quoi.</description>
+    </item>
+    <item>
+      <title>Questionnaire !</title>
+      <link>/chapter4/test/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter4/test/index.html</guid>
+      <description>Vous avez terminé le Chapitre 4 ! C’est donc maintenant le moment de connecter vos neurones pour répondre aux questions suivantes.&#xA;Bon courage à vous 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1 Initiaux 2 Alternants 1- Qu’est-ce qu’une classe polymorphe ?&#xA;2- Définissez une classe polymorphe Nothing qui ne fait rien.&#xA;3- Comment représenter une classe abstraite en C++ ?&#xA;Les questions 4 à 6 font référence au code suivant :</description>
+    </item>
+    <item>
+      <title>Synthèse</title>
+      <link>/chapter4/summary/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter4/summary/index.html</guid>
+      <description>Ce qu’il faut savoir faire Langage Définir une relation de parenté publique entre deux classes : class Child : public Parent { ... }; Définir un membre (fonction ou attribut) accessible uniquement depuis la classe courante et ses enfants : protected : int _a1 = 0; char _a2 = &#39;a&#39;; Appeler le constructeur de la classe parent : Child(int p1, int p2) : Parent { p1 }, _p2 { p2 } { .</description>
+    </item>
+    <item>
+      <title>Merci !</title>
+      <link>/chapter4/test_done/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter4/test_done/index.html</guid>
+      <description>Vos réponses nous ont bien été communiquées 😃 N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
+    </item>
+  </channel>
+</rss>

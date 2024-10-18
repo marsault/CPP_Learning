@@ -1,26 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Astuces :: Cours de C++ - Niveau Master</title><link>/chapter0/6-tips/index.html</link><description>Vous trouverez dans cette section différentes manipulations, astuces et rappels pour vous aider à programmer rapidement en utilisant VSCode.
-Compiler et exécuter des petits programmes Utiliser des projets VSCode Raccourcis &amp; Commandes VSCode Options de compilation</description><generator>Hugo</generator><language>fr</language><atom:link href="/chapter0/6-tips/index.xml" rel="self" type="application/rss+xml"/><item><title>Petits programmes</title><link>/chapter0/6-tips/1-snippets/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter0/6-tips/1-snippets/index.html</guid><description>Voici 2 solutions permettant de compiler et de tester rapidement des petits programme.
-Compiler Explorer Vous pouvez utiliser Compiler Explorer pour compiler du code avec à peu près tous les compilateurs de la Terre.
-Cet utilitaire vous permet également d’exécuter directement votre programme.
-Depuis un terminal Pour compiler Avec g++ :
-g++ f1.cpp f2.cpp f3.cpp -o program -std=c++17 Avec clang :
-clang++ f1.cpp f2.cpp f3.cpp -o program -std=c++17 Vous pouvez ajouter des options de compilation à la fin de la ligne de commande.</description></item><item><title>Projets VSCode</title><link>/chapter0/6-tips/2-vscode/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter0/6-tips/2-vscode/index.html</guid><description>Lorsque vous avez un projet un peu plus conséquent, il est plus pratique de passer par VSCode pour configurer, compiler et tester vos programmes.
-Configuration avec CMake Vous aurez besoin d’un fichier CMakeLists.txt à la racine de votre répertoire pour configurer le projet. Si celui-ci ne contient qu’un seul programme, vous pouvez copier et adapter dans votre CMakeLists.txt les instructions suivantes.
-cmake_minimum_required(VERSION 3.1) project(my_project) add_executable(my_executable my_file1.cpp my_file2.cpp my_file3.h ) target_compile_features(my_executable PUBLIC cxx_std_17) Pour configurer le projet, utilisez la commande CMake: Configure.</description></item><item><title>Raccourcis VSCode</title><link>/chapter0/6-tips/3-keybinds-commands/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter0/6-tips/3-keybinds-commands/index.html</guid><description>Général Ouvrir le panneau de commandes VSCode :
-Ctrl+Shift+P
-Configuration, Compilation, Exécution Configurer le projet :
-CMake: Configure
-Compiler un programme :
-Shift+F7 ou CMake: Build Target
-Changer le programme à exécuter :
-CMake: Set Debug Target
-Lancer le programme :
-F5 ou Debug: Start Debugging
-Debugging Placer un breakpoint à la ligne du curseur :
-F9
-Reprendre l’exécution :
-F5
-Exécuter l’instruction suivante :
-F10
-Entrer dans la fonction :</description></item><item><title>Compilation en terminal</title><link>/chapter0/6-tips/4-terminal/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter0/6-tips/4-terminal/index.html</guid><description>Options g++ et clang++ Si vous compilez via le terminal ou avec Compiler Explorer, nous vous conseillons d’utiliser les options ci-dessous, car nous les activerons pour vos rendus de projet :
--std=c++17 : spécifie que le projet sera compilé en C++17 (sans cette option, certains fichiers peuvent ne pas compiler) -Wall -W : permet d’activer un certain nombre de warnings -Werror : transforme les warnings en erreurs, donc tant qu’il y a des warnings, le programme ne compile pas Sachez par ailleurs que vous pouvez également utiliser :</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Astuces :: Cours de C&#43;&#43; - Niveau Master</title>
+    <link>/chapter0/6-tips/index.html</link>
+    <description>Vous trouverez dans cette section différentes manipulations, astuces et rappels pour vous aider à programmer rapidement en utilisant VSCode.&#xA;Compiler et exécuter des petits programmes Utiliser des projets VSCode Raccourcis &amp; Commandes VSCode Options de compilation</description>
+    <generator>Hugo</generator>
+    <language>fr</language>
+    <atom:link href="/chapter0/6-tips/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Petits programmes</title>
+      <link>/chapter0/6-tips/1-snippets/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter0/6-tips/1-snippets/index.html</guid>
+      <description>Voici 2 solutions permettant de compiler et de tester rapidement des petits programme.&#xA;Compiler Explorer Vous pouvez utiliser Compiler Explorer pour compiler du code avec à peu près tous les compilateurs de la Terre.&#xA;Cet utilitaire vous permet également d’exécuter directement votre programme.&#xA;Depuis un terminal Pour compiler Avec g++ :&#xA;g++ f1.cpp f2.cpp f3.cpp -o program -std=c++17 Avec clang :&#xA;clang++ f1.cpp f2.cpp f3.cpp -o program -std=c++17 Vous pouvez ajouter des options de compilation à la fin de la ligne de commande.</description>
+    </item>
+    <item>
+      <title>Projets VSCode</title>
+      <link>/chapter0/6-tips/2-vscode/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter0/6-tips/2-vscode/index.html</guid>
+      <description>Lorsque vous avez un projet un peu plus conséquent, il est plus pratique de passer par VSCode pour configurer, compiler et tester vos programmes.&#xA;Configuration avec CMake Vous aurez besoin d’un fichier CMakeLists.txt à la racine de votre répertoire pour configurer le projet. Si celui-ci ne contient qu’un seul programme, vous pouvez copier et adapter dans votre CMakeLists.txt les instructions suivantes.&#xA;cmake_minimum_required(VERSION 3.1) project(my_project) add_executable(my_executable my_file1.cpp my_file2.cpp my_file3.h ) target_compile_features(my_executable PUBLIC cxx_std_17) Pour configurer le projet, utilisez la commande CMake: Configure.</description>
+    </item>
+    <item>
+      <title>Raccourcis VSCode</title>
+      <link>/chapter0/6-tips/3-keybinds-commands/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter0/6-tips/3-keybinds-commands/index.html</guid>
+      <description>Général Ouvrir le panneau de commandes VSCode :&#xA;Ctrl+Shift+P&#xA;Configuration, Compilation, Exécution Configurer le projet :&#xA;CMake: Configure&#xA;Compiler un programme :&#xA;Shift+F7 ou CMake: Build Target&#xA;Changer le programme à exécuter :&#xA;CMake: Set Debug Target&#xA;Lancer le programme :&#xA;F5 ou Debug: Start Debugging&#xA;Debugging Placer un breakpoint à la ligne du curseur :&#xA;F9&#xA;Reprendre l’exécution :&#xA;F5&#xA;Exécuter l’instruction suivante :&#xA;F10&#xA;Entrer dans la fonction :</description>
+    </item>
+    <item>
+      <title>Compilation en terminal</title>
+      <link>/chapter0/6-tips/4-terminal/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter0/6-tips/4-terminal/index.html</guid>
+      <description>Options g++ et clang++ Si vous compilez via le terminal ou avec Compiler Explorer, nous vous conseillons d’utiliser les options ci-dessous, car nous les activerons pour vos rendus de projet :&#xA;-std=c++17 : spécifie que le projet sera compilé en C++17 (sans cette option, certains fichiers peuvent ne pas compiler) -Wall -W : permet d’activer un certain nombre de warnings -Werror : transforme les warnings en erreurs, donc tant qu’il y a des warnings, le programme ne compile pas Sachez par ailleurs que vous pouvez également utiliser :</description>
+    </item>
+  </channel>
+</rss>

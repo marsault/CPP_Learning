@@ -1,110 +1,455 @@
-<!doctype html><html lang=fr dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619"><meta name=description content="Maintenant que nous vous avons présenté les fonctions permettant de récupérer des informations à partir d’une plage d’éléments, nous allons vous présenter celles qui permettent de manipuler et de transformer ces plages.
-Suppressions Afin de supprimer des éléments d’une plage, on utilise la fonction std::remove. Cette fonction a pour effet de déplacer les éléments à conserver au début de la plage, en préservant leur ordre. Elle renvoie un itérateur sur le nouvel itérateur de fin de plage."><meta name=author content><meta name=twitter:card content="summary"><meta name=twitter:title content="Transformations :: Cours de C++ - Niveau Master"><meta name=twitter:description content="Maintenant que nous vous avons présenté les fonctions permettant de récupérer des informations à partir d’une plage d’éléments, nous allons vous présenter celles qui permettent de manipuler et de transformer ces plages.
-Suppressions Afin de supprimer des éléments d’une plage, on utilise la fonction std::remove. Cette fonction a pour effet de déplacer les éléments à conserver au début de la plage, en préservant leur ordre. Elle renvoie un itérateur sur le nouvel itérateur de fin de plage."><meta property="og:url" content="/chapter6/2-transformations/index.html"><meta property="og:site_name" content="Cours de C++ - Niveau Master"><meta property="og:title" content="Transformations :: Cours de C++ - Niveau Master"><meta property="og:description" content="Maintenant que nous vous avons présenté les fonctions permettant de récupérer des informations à partir d’une plage d’éléments, nous allons vous présenter celles qui permettent de manipuler et de transformer ces plages.
-Suppressions Afin de supprimer des éléments d’une plage, on utilise la fonction std::remove. Cette fonction a pour effet de déplacer les éléments à conserver au début de la plage, en préservant leur ordre. Elle renvoie un itérateur sur le nouvel itérateur de fin de plage."><meta property="og:locale" content="fr"><meta property="og:type" content="article"><meta property="article:section" content="Algorithmes"><meta itemprop=name content="Transformations :: Cours de C++ - Niveau Master"><meta itemprop=description content="Maintenant que nous vous avons présenté les fonctions permettant de récupérer des informations à partir d’une plage d’éléments, nous allons vous présenter celles qui permettent de manipuler et de transformer ces plages.
-Suppressions Afin de supprimer des éléments d’une plage, on utilise la fonction std::remove. Cette fonction a pour effet de déplacer les éléments à conserver au début de la plage, en préservant leur ordre. Elle renvoie un itérateur sur le nouvel itérateur de fin de plage."><meta itemprop=wordCount content="1042"><title>Transformations :: Cours de C++ - Niveau Master</title>
-<link href=../../css/fontawesome-all.min.css?1729268601 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=../../css/fontawesome-all.min.css?1729268601 rel=stylesheet></noscript><link href=../../css/nucleus.css?1729268601 rel=stylesheet><link href=../../css/auto-complete.css?1729268601 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=../../css/auto-complete.css?1729268601 rel=stylesheet></noscript><link href=../../css/perfect-scrollbar.min.css?1729268601 rel=stylesheet><link href=../../css/fonts.css?1729268601 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=../../css/fonts.css?1729268601 rel=stylesheet></noscript><link href=../../css/theme.css?1729268601 rel=stylesheet><link href=../../css/theme-mine.css?1729268601 rel=stylesheet id=R-variant-style><link href=../../css/chroma-relearn-light.css?1729268601 rel=stylesheet id=R-variant-chroma-style><link href=../../css/print.css?1729268601 rel=stylesheet media=print><script src=../../js/variant.js?1729268601></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../..",window.relearn.absBaseUri="",window.relearn.disableAnchorCopy=!1,window.relearn.disableAnchorScrolling=!1,window.variants&&variants.init(["mine"]),window.T_Copy_to_clipboard=`Copier dans le presse-papiers`,window.T_Copied_to_clipboard=`Copié dans le presse-papiers!`,window.T_Copy_link_to_clipboard=`Copier le lien dans le presse-papiers`,window.T_Link_copied_to_clipboard=`Lien copié dans le presse-papiers!`,window.T_Reset_view=`Réinitialiser la vue`,window.T_View_reset=`Vue réinitialisée!`,window.T_No_results_found=`Aucun résultat trouvé pour "{0}"`,window.T_N_results_found=`{1} résultats trouvés pour "{0}"`</script></head><body class="mobile-support html disableInlineCopyToClipboard" data-url=../../chapter6/2-transformations/index.html><div id=R-body class=default-animation><div id=R-body-overlay></div><nav id=R-topbar><div class=topbar-wrapper><div class=topbar-sidebar-divider></div><div class="topbar-area topbar-area-start" data-area=start><div class="topbar-button topbar-button-sidebar" data-content-empty=disable data-width-s=show data-width-m=hide data-width-l=hide><button class=topbar-control onclick=toggleNav() type=button title="Menu (CTRL+ALT+n)"><i class="fa-fw fas fa-bars"></i></button></div><div class="topbar-button topbar-button-toc" data-content-empty=hide data-width-s=show data-width-m=show data-width-l=show><button class=topbar-control onclick=toggleTopbarFlyout(this) type=button title="Table des matières (CTRL+ALT+t)"><i class="fa-fw fas fa-list-alt"></i></button><div class=topbar-content><div class=topbar-content-wrapper><nav class=TableOfContents><ul><li><ul><li><a href=#suppressions>Suppressions</a></li><li><a href=#copies>Copies</a></li><li><a href=#transformation>Transformation</a></li><li><a href=#remplissages>Remplissages</a></li><li><a href=#réductions>Réductions</a></li><li><a href=#réordonnancement>Réordonnancement</a></li><li><a href=#autres-fonctions>Autres fonctions</a></li></ul></li></ul></nav></div></div></div></div><ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=../../index.html><span itemprop=name>Accueil</span></a><meta itemprop=position content="1">&nbsp;>&nbsp;</li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=../../chapter6/index.html><span itemprop=name>Algorithmes</span></a><meta itemprop=position content="2">&nbsp;>&nbsp;</li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>Transformations</span><meta itemprop=position content="3"></li></ol><div class="topbar-area topbar-area-end" data-area=end><div class="topbar-button topbar-button-prev" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=../../chapter6/1-searches/index.html title="Parcours et recherches (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></div><div class="topbar-button topbar-button-next" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=../../chapter6/3-iterators/index.html title="Itérateurs (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></div><div class="topbar-button topbar-button-more" data-content-empty=hide data-width-s=show data-width-m=show data-width-l=show><button class=topbar-control onclick=toggleTopbarFlyout(this) type=button title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button><div class=topbar-content><div class=topbar-content-wrapper><div class="topbar-area topbar-area-more" data-area=more></div></div></div></div></div></div></nav><div id=R-main-overlay></div><main id=R-body-inner class="highlightable chapter6" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><h1 id=transformations>Transformations</h1><p>Maintenant que nous vous avons présenté les fonctions permettant de récupérer des informations à partir d&rsquo;une plage d&rsquo;éléments, nous allons vous présenter celles qui permettent de manipuler et de transformer ces plages.</p><hr><h3 id=suppressions>Suppressions</h3><p>Afin de supprimer des éléments d&rsquo;une plage, on utilise la fonction <code>std::remove</code>.
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.128.0">
+    <meta name="generator" content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619">
+    <meta name="description" content="Maintenant que nous vous avons présenté les fonctions permettant de récupérer des informations à partir d’une plage d’éléments, nous allons vous présenter celles qui permettent de manipuler et de transformer ces plages.
+Suppressions Afin de supprimer des éléments d’une plage, on utilise la fonction std::remove. Cette fonction a pour effet de déplacer les éléments à conserver au début de la plage, en préservant leur ordre. Elle renvoie un itérateur sur le nouvel itérateur de fin de plage.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Transformations :: Cours de C&#43;&#43; - Niveau Master">
+    <meta name="twitter:description" content="Maintenant que nous vous avons présenté les fonctions permettant de récupérer des informations à partir d’une plage d’éléments, nous allons vous présenter celles qui permettent de manipuler et de transformer ces plages.
+Suppressions Afin de supprimer des éléments d’une plage, on utilise la fonction std::remove. Cette fonction a pour effet de déplacer les éléments à conserver au début de la plage, en préservant leur ordre. Elle renvoie un itérateur sur le nouvel itérateur de fin de plage.">
+    <meta property="og:url" content="/chapter6/2-transformations/index.html">
+    <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:title" content="Transformations :: Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:description" content="Maintenant que nous vous avons présenté les fonctions permettant de récupérer des informations à partir d’une plage d’éléments, nous allons vous présenter celles qui permettent de manipuler et de transformer ces plages.
+Suppressions Afin de supprimer des éléments d’une plage, on utilise la fonction std::remove. Cette fonction a pour effet de déplacer les éléments à conserver au début de la plage, en préservant leur ordre. Elle renvoie un itérateur sur le nouvel itérateur de fin de plage.">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Algorithmes">
+    <meta itemprop="name" content="Transformations :: Cours de C&#43;&#43; - Niveau Master">
+    <meta itemprop="description" content="Maintenant que nous vous avons présenté les fonctions permettant de récupérer des informations à partir d’une plage d’éléments, nous allons vous présenter celles qui permettent de manipuler et de transformer ces plages.
+Suppressions Afin de supprimer des éléments d’une plage, on utilise la fonction std::remove. Cette fonction a pour effet de déplacer les éléments à conserver au début de la plage, en préservant leur ordre. Elle renvoie un itérateur sur le nouvel itérateur de fin de plage.">
+    <meta itemprop="wordCount" content="1042">
+    <title>Transformations :: Cours de C&#43;&#43; - Niveau Master</title>
+    <link href="../../css/fontawesome-all.min.css?1729268734" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1729268734" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1729268734" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1729268734" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1729268734" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1729268734" rel="stylesheet">
+    <link href="../../css/fonts.css?1729268734" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1729268734" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1729268734" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1729268734" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1729268734" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1729268734" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1729268734"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.variants && variants.init( [ 'mine' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copier dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Copié dans le presse-papiers!`;
+      window.T_Copy_link_to_clipboard = `Copier le lien dans le presse-papiers`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../chapter6/2-transformations/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#suppressions">Suppressions</a></li>
+        <li><a href="#copies">Copies</a></li>
+        <li><a href="#transformation">Transformation</a></li>
+        <li><a href="#remplissages">Remplissages</a></li>
+        <li><a href="#réductions">Réductions</a></li>
+        <li><a href="#réordonnancement">Réordonnancement</a></li>
+        <li><a href="#autres-fonctions">Autres fonctions</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">Accueil</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../chapter6/index.html"><span itemprop="name">Algorithmes</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Transformations</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter6/1-searches/index.html" title="Parcours et recherches (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter6/3-iterators/index.html" title="Itérateurs (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter6" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="transformations">Transformations</h1>
+
+<p>Maintenant que nous vous avons présenté les fonctions permettant de récupérer des informations à partir d&rsquo;une plage d&rsquo;éléments, nous allons vous présenter celles qui permettent de manipuler et de transformer ces plages.</p>
+<hr>
+<h3 id="suppressions">Suppressions</h3>
+<p>Afin de supprimer des éléments d&rsquo;une plage, on utilise la fonction <code>std::remove</code>.
 Cette fonction a pour effet de déplacer les éléments à conserver au début de la plage, en préservant leur ordre.
-Elle renvoie un itérateur sur le nouvel itérateur de fin de plage.</p><div class="box notices cstyle warning"><div class=box-label><i class="fa-fw fas fa-exclamation-triangle"></i> Avertissement</div><div class=box-content><p><code>std::remove</code> permet d&rsquo;éliminer des éléments d&rsquo;une plage, pas de les supprimer d&rsquo;un conteneur.
-Si vous voulez supprimer les éléments du conteneur, il faut bien penser à appeler <code>erase</code> sur le conteneur.</p></div></div><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>vector</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;</span> <span class=n>values</span> <span class=p>{</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>6</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>5</span><span class=p>,</span> <span class=o>-</span><span class=mi>4</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>5</span><span class=p>,</span> <span class=mi>3</span> <span class=p>};</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=k>const</span> <span class=k>auto</span> <span class=n>new_end</span> <span class=o>=</span> <span class=n>std</span><span class=o>::</span><span class=n>remove</span><span class=p>(</span><span class=n>values</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span> <span class=n>values</span><span class=p>.</span><span class=n>end</span><span class=p>(),</span> <span class=mi>3</span><span class=p>);</span>
-</span></span><span class=line><span class=cl><span class=c1>// values contient maintenant { 0, 6, 5, -4, 5, ?, ?, ?, ? };
-</span></span></span><span class=line><span class=cl><span class=c1></span>
-</span></span><span class=line><span class=cl><span class=c1>// On utilise values.erase afin de supprimer les éléments &#34;éliminés&#34; par remove.
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>values</span><span class=p>.</span><span class=n>erase</span><span class=p>(</span><span class=n>new_end</span><span class=p>,</span> <span class=n>values</span><span class=p>.</span><span class=n>end</span><span class=p>());</span></span></span></code></pre></div><p>On peut également utiliser la variante <code>std::remove_if</code> afin de retirer tous les éléments vérifiant un prédicat.</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>vector</span><span class=o>&lt;</span><span class=n>std</span><span class=o>::</span><span class=n>string</span><span class=o>&gt;</span> <span class=n>names</span> <span class=p>{</span> <span class=p>...</span> <span class=p>};</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1>// Retire tous les noms vides du tableau.
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>names</span><span class=p>.</span><span class=n>erase</span><span class=p>(</span><span class=n>std</span><span class=o>::</span><span class=n>remove_if</span><span class=p>(</span><span class=n>names</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span> <span class=n>names</span><span class=p>.</span><span class=n>end</span><span class=p>(),</span> <span class=p>[](</span><span class=k>const</span> <span class=n>std</span><span class=o>::</span><span class=n>string</span><span class=o>&amp;</span> <span class=n>n</span><span class=p>)</span> <span class=p>{</span> <span class=k>return</span> <span class=n>n</span><span class=p>.</span><span class=n>empty</span><span class=p>();</span> <span class=p>}),</span>
-</span></span><span class=line><span class=cl>            <span class=n>names</span><span class=p>.</span><span class=n>end</span><span class=p>());</span></span></span></code></pre></div><hr><h3 id=copies>Copies</h3><p>Lorsqu&rsquo;on veut copier une plage d&rsquo;éléments, on peut utiliser <code>std::copy</code> ou <code>std::copy_n</code>.</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>vector</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;</span> <span class=n>src</span> <span class=p>{</span> <span class=p>...</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>vector</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;</span> <span class=n>dst</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=n>dst</span><span class=p>.</span><span class=n>resize</span><span class=p>(</span><span class=n>src</span><span class=p>.</span><span class=n>size</span><span class=p>());</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1>// Avec copy : src_begin, src_end, dst_begin
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>std</span><span class=o>::</span><span class=n>copy</span><span class=p>(</span><span class=n>src</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span> <span class=n>src</span><span class=p>.</span><span class=n>end</span><span class=p>(),</span> <span class=n>dst</span><span class=p>.</span><span class=n>begin</span><span class=p>());</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1>// Avec copy_n : src_begin, nb_elem, dst_begin
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>std</span><span class=o>::</span><span class=n>copy_n</span><span class=p>(</span><span class=n>src</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span> <span class=n>src</span><span class=p>.</span><span class=n>count</span><span class=p>(),</span> <span class=n>dst</span><span class=p>.</span><span class=n>begin</span><span class=p>());</span></span></span></code></pre></div><p>Comme vous pouvez le constater, avant d&rsquo;effectuer l&rsquo;appel à <code>std::copy</code> / <code>std::copy_n</code>, il a fallu appeler <code>dst.resize(...)</code>.
+Elle renvoie un itérateur sur le nouvel itérateur de fin de plage.</p>
+<div class="box notices cstyle warning">
+  <div class="box-label">
+    <i class="fa-fw fas fa-exclamation-triangle"></i> Avertissement
+  </div>
+  <div class="box-content">
+<p><code>std::remove</code> permet d&rsquo;éliminer des éléments d&rsquo;une plage, pas de les supprimer d&rsquo;un conteneur.
+Si vous voulez supprimer les éléments du conteneur, il faut bien penser à appeler <code>erase</code> sur le conteneur.</p>
+  </div>
+</div>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span> <span class="p">{</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">new_end</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">remove</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// values contient maintenant { 0, 6, 5, -4, 5, ?, ?, ?, ? };
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// On utilise values.erase afin de supprimer les éléments &#34;éliminés&#34; par remove.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">values</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">new_end</span><span class="p">,</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">());</span></span></span></code></pre></div>
+<p>On peut également utiliser la variante <code>std::remove_if</code> afin de retirer tous les éléments vérifiant un prédicat.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Retire tous les noms vides du tableau.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">names</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">remove_if</span><span class="p">(</span><span class="n">names</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">names</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[](</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">n</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span> <span class="p">}),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">names</span><span class="p">.</span><span class="n">end</span><span class="p">());</span></span></span></code></pre></div>
+<hr>
+<h3 id="copies">Copies</h3>
+<p>Lorsqu&rsquo;on veut copier une plage d&rsquo;éléments, on peut utiliser <code>std::copy</code> ou <code>std::copy_n</code>.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">src</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dst</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">dst</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Avec copy : src_begin, src_end, dst_begin
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">dst</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Avec copy_n : src_begin, nb_elem, dst_begin
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">copy_n</span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">count</span><span class="p">(),</span> <span class="n">dst</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span></span></span></code></pre></div>
+<p>Comme vous pouvez le constater, avant d&rsquo;effectuer l&rsquo;appel à <code>std::copy</code> / <code>std::copy_n</code>, il a fallu appeler <code>dst.resize(...)</code>.
 Et oui, comme pour <code>remove</code>, <code>copy</code> ne permet pas de modifier la structure du conteneur d&rsquo;éléments.
-On doit donc s&rsquo;assurer du fait que <code>dst</code> pointe sur un emplacement mémoire correctement alloué.</p><p>Une autre manière de gérer ce cas, c&rsquo;est d&rsquo;utiliser la fonction <code>std::back_inserter</code> (dans <code>&lt;iterator></code>)
+On doit donc s&rsquo;assurer du fait que <code>dst</code> pointe sur un emplacement mémoire correctement alloué.</p>
+<p>Une autre manière de gérer ce cas, c&rsquo;est d&rsquo;utiliser la fonction <code>std::back_inserter</code> (dans <code>&lt;iterator&gt;</code>)
 Elle crée un itérateur de type <code>std::back_insert_iterator</code>, qui permet d&rsquo;<strong>insérer</strong> des éléments dans un conteneur chaque fois qu&rsquo;on essaye de l&rsquo;assigner.
-On peut donc réécrire le code de cette manière :</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>vector</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;</span> <span class=n>src</span> <span class=p>{</span> <span class=p>...</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>vector</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;</span> <span class=n>dst</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1>// Chaque fois que l&#39;algorithme va essayer de modifier le contenu de l&#39;itérateur, ce dernier va appeler dst.push_back().
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>std</span><span class=o>::</span><span class=n>copy</span><span class=p>(</span><span class=n>src</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span> <span class=n>src</span><span class=p>.</span><span class=n>end</span><span class=p>(),</span> <span class=n>std</span><span class=o>::</span><span class=n>back_inserter</span><span class=p>(</span><span class=n>dst</span><span class=p>));</span>
-</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>copy_n</span><span class=p>(</span><span class=n>src</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span> <span class=n>src</span><span class=p>.</span><span class=n>count</span><span class=p>(),</span> <span class=n>std</span><span class=o>::</span><span class=n>back_inserter</span><span class=p>(</span><span class=n>dst</span><span class=p>));</span></span></span></code></pre></div><p>La STL propose également la fonction <code>copy_if</code>.
-Celle-ci accepte un prédicat, qui permet de spécifier quels sont les éléments que l&rsquo;on souhaite copier.</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>vector</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;</span> <span class=n>src</span> <span class=p>{</span> <span class=p>...</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>vector</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;</span> <span class=n>dst</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>copy_if</span><span class=p>(</span><span class=n>src</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span> <span class=n>src</span><span class=p>.</span><span class=n>end</span><span class=p>(),</span> <span class=n>std</span><span class=o>::</span><span class=n>back_inserter</span><span class=p>(</span><span class=n>dst</span><span class=p>),</span> <span class=p>[](</span><span class=kt>int</span> <span class=n>v</span><span class=p>)</span> <span class=p>{</span> <span class=k>return</span> <span class=n>v</span> <span class=o>%</span> <span class=mi>2</span> <span class=o>==</span> <span class=mi>0</span><span class=p>;</span> <span class=p>});</span></span></span></code></pre></div><p>Pour le <code>copy_if</code>, l&rsquo;utilisation de <code>back_inserter</code> est vraiment très intéressante, puisque sinon, le code ressemblerait à ça :</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>vector</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;</span> <span class=n>src</span> <span class=p>{</span> <span class=p>...</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>vector</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;</span> <span class=n>dst</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=n>dst</span><span class=p>.</span><span class=n>resize</span><span class=p>(</span><span class=n>src</span><span class=p>.</span><span class=n>size</span><span class=p>());</span>
-</span></span><span class=line><span class=cl><span class=k>auto</span> <span class=n>dst_end</span> <span class=o>=</span> <span class=n>std</span><span class=o>::</span><span class=n>copy_if</span><span class=p>(</span><span class=n>src</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span> <span class=n>src</span><span class=p>.</span><span class=n>end</span><span class=p>(),</span> <span class=n>dst</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span> <span class=p>[](</span><span class=kt>int</span> <span class=n>v</span><span class=p>)</span> <span class=p>{</span> <span class=k>return</span> <span class=n>v</span> <span class=o>%</span> <span class=mi>2</span> <span class=o>==</span> <span class=mi>0</span><span class=p>;</span> <span class=p>});</span>
-</span></span><span class=line><span class=cl><span class=n>dst</span><span class=p>.</span><span class=n>erase</span><span class=p>(</span><span class=n>dst_end</span><span class=p>,</span> <span class=n>dst</span><span class=p>.</span><span class=n>end</span><span class=p>());</span></span></span></code></pre></div><hr><h3 id=transformation>Transformation</h3><p>La fonction <code>std::transform</code> sert à appliquer une fonction (au sens mathématique: <code>y = f(x)</code>) à tous les éléments d&rsquo;une plage.</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>vector</span><span class=o>&lt;</span><span class=n>Dog</span><span class=o>&gt;</span> <span class=n>dogs</span> <span class=p>{</span> <span class=p>...</span> <span class=p>};</span>
-</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>vector</span><span class=o>&lt;</span><span class=n>std</span><span class=o>::</span><span class=n>string</span><span class=o>&gt;</span> <span class=n>names</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>transform</span><span class=p>(</span><span class=n>dogs</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span> <span class=n>dogs</span><span class=p>.</span><span class=n>end</span><span class=p>(),</span> <span class=n>std</span><span class=o>::</span><span class=n>back_inserter</span><span class=p>(</span><span class=n>names</span><span class=p>),</span> <span class=p>[](</span><span class=k>const</span> <span class=n>Dog</span><span class=o>&amp;</span> <span class=n>dog</span><span class=p>)</span> <span class=p>{</span> <span class=k>return</span> <span class=n>dog</span><span class=p>.</span><span class=n>get_name</span><span class=p>();</span> <span class=p>});</span> 
-</span></span></code></pre></div><p>Lorsque la fonction appliquée retourne le même type que celui en paramètre, vous pouvez décider de construire le résultat sur la même plage que celle en entrée.</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>vector</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;</span> <span class=n>values</span> <span class=p>{</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>9</span><span class=p>,</span> <span class=mi>4</span> <span class=p>};</span>
-</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>transform</span><span class=p>(</span><span class=n>values</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span> <span class=n>values</span><span class=p>.</span><span class=n>end</span><span class=p>(),</span> <span class=n>values</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span> <span class=p>[](</span><span class=kt>int</span> <span class=n>v</span><span class=p>)</span> <span class=p>{</span> <span class=k>return</span> <span class=mi>2</span> <span class=o>*</span> <span class=n>v</span> <span class=o>-</span> <span class=mi>3</span><span class=p>;</span> <span class=p>});</span>
-</span></span><span class=line><span class=cl><span class=c1>// =&gt; values = { -3, 15, 5 }
-</span></span></span></code></pre></div><hr><h3 id=remplissages>Remplissages</h3><p>Pour remplir une plage d&rsquo;éléments d&rsquo;une même valeur, vous pouvez utiliser <code>std::fill</code> ou <code>std::fill_n</code>.</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=c1>// fill remplit la plage comprise entre values.begin() et values.end().
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>std</span><span class=o>::</span><span class=n>fill</span><span class=p>(</span><span class=n>values</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span> <span class=n>values</span><span class=p>.</span><span class=n>end</span><span class=p>(),</span> <span class=mi>5</span><span class=p>);</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1>// fill_n remplit la plage de taille values.size() commençant à values.begin().
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>std</span><span class=o>::</span><span class=n>fill_n</span><span class=p>(</span><span class=n>values</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span> <span class=n>values</span><span class=p>.</span><span class=n>size</span><span class=p>(),</span> <span class=mi>5</span><span class=p>);</span></span></span></code></pre></div><p>Et si vous souhaitez remplir la plage avec des valeurs différentes, vous pouvez utiliser <code>std::generate</code> ou <code>std::generate_n</code>.
-Contrairement à <code>fill</code> qui attend une valeur bien précise, <code>generate</code> attend un générateur, c&rsquo;est-à-dire un foncteur à 0 paramètre qui retourne un élément.</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>generate</span><span class=p>(</span><span class=n>values</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span> <span class=n>values</span><span class=p>.</span><span class=n>end</span><span class=p>(),</span> <span class=n>create_random_value</span><span class=p>);</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>generate_n</span><span class=p>(</span><span class=n>values</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span> <span class=n>values</span><span class=p>.</span><span class=n>size</span><span class=p>(),</span> <span class=p>[</span><span class=o>&amp;</span><span class=n>queue</span><span class=p>]()</span>
-</span></span><span class=line><span class=cl><span class=p>{</span>
-</span></span><span class=line><span class=cl>    <span class=k>auto</span> <span class=n>value</span> <span class=o>=</span> <span class=n>queue</span><span class=p>.</span><span class=n>front</span><span class=p>();</span>
-</span></span><span class=line><span class=cl>    <span class=n>queue</span><span class=p>.</span><span class=n>pop</span><span class=p>();</span>
-</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>value</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=p>});</span></span></span></code></pre></div><p>Enfin, sachez qu&rsquo;il est possible d&rsquo;utiliser <code>back_inserter</code> avec <code>fill_n</code> et <code>generate_n</code>.</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>fill_n</span><span class=p>(</span><span class=n>std</span><span class=o>::</span><span class=n>back_inserter</span><span class=p>(</span><span class=n>values</span><span class=p>),</span> <span class=mi>5</span><span class=p>);</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>generate_n</span><span class=p>(</span><span class=n>std</span><span class=o>::</span><span class=n>back_inserter</span><span class=p>(</span><span class=n>values</span><span class=p>),</span> <span class=p>[</span><span class=o>&amp;</span><span class=n>queue</span><span class=p>]()</span>
-</span></span><span class=line><span class=cl><span class=p>{</span>
-</span></span><span class=line><span class=cl>    <span class=k>auto</span> <span class=n>value</span> <span class=o>=</span> <span class=n>queue</span><span class=p>.</span><span class=n>front</span><span class=p>();</span>
-</span></span><span class=line><span class=cl>    <span class=n>queue</span><span class=p>.</span><span class=n>pop</span><span class=p>();</span>
-</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>value</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=p>});</span></span></span></code></pre></div><hr><h3 id=réductions>Réductions</h3><p>Une réduction est une opération qui accepte un ensemble d&rsquo;éléments et retourne une valeur.
-Par exemple, une somme et un produit sont des réductions.</p><p>Dans la librairie standard, a deux fonctions qui permettent de faire des réductions : <code>std::accumulate</code> et <code>std::reduce</code>.
-Attention, elles se trouvent dans <code>&lt;numeric></code> et non pas dans <code>&lt;algorithm></code>.</p><p>La différence entre <code>accumulate</code> et <code>reduce</code>, c&rsquo;est que <code>reduce</code> ne doit être utilisé que pour des opérations à la fois associatives et commutatives.
-En contre-partie, cela fait que <code>reduce</code> peut lancer des opérations sur des paires d&rsquo;éléments en parallèle.</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>vector</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;</span> <span class=n>values</span> <span class=p>{</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>1</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>7</span><span class=p>,</span> <span class=o>-</span><span class=mi>8</span> <span class=p>};</span>
-</span></span><span class=line><span class=cl><span class=c1>// Le 3e paramètre correspond à l&#39;élément initial (on passe en général l&#39;élément neutre pour l&#39;opération).
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>const</span> <span class=k>auto</span> <span class=n>product</span> <span class=o>=</span> <span class=n>std</span><span class=o>::</span><span class=n>reduce</span><span class=p>(</span><span class=n>values</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span> <span class=n>values</span><span class=p>.</span><span class=n>end</span><span class=p>(),</span> <span class=mi>1</span><span class=p>,</span> <span class=p>[](</span><span class=kt>int</span> <span class=n>v1</span><span class=p>,</span> <span class=kt>int</span> <span class=n>v2</span><span class=p>)</span> <span class=p>{</span> <span class=k>return</span> <span class=n>v1</span> <span class=o>*</span> <span class=n>v2</span><span class=p>;</span> <span class=p>});</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>vector</span><span class=o>&lt;</span><span class=n>std</span><span class=o>::</span><span class=n>string</span><span class=o>&gt;</span> <span class=n>names</span> <span class=p>{</span> <span class=p>...</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl><span class=c1>// La concaténation de chaînes de caractères n&#39;étant pas commutative, on ne peut pas utiliser reduce.
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>const</span> <span class=k>auto</span> <span class=n>many_names</span> <span class=o>=</span> <span class=n>std</span><span class=o>::</span><span class=n>accumulate</span><span class=p>(</span><span class=n>names</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span> <span class=n>names</span><span class=p>.</span><span class=n>end</span><span class=p>(),</span> <span class=s>&#34;&gt; &#34;</span><span class=p>,</span> <span class=p>[](</span><span class=k>const</span> <span class=k>auto</span><span class=o>&amp;</span> <span class=n>str1</span><span class=p>,</span> <span class=k>const</span> <span class=k>auto</span><span class=o>&amp;</span> <span class=n>str2</span><span class=p>)</span> <span class=p>{</span> <span class=k>return</span> <span class=n>str1</span> <span class=o>+</span> <span class=s>&#34; &#34;</span> <span class=o>+</span> <span class=n>str2</span><span class=p>;</span> <span class=p>});</span></span></span></code></pre></div><hr><h3 id=réordonnancement>Réordonnancement</h3><h5 id=tri>Tri</h5><p>Pour trier une plage d&rsquo;éléments, on utilise <code>std::sort</code>.</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=c1>// Réordonne en utilisant operator&lt;.
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>std</span><span class=o>::</span><span class=n>sort</span><span class=p>(</span><span class=n>names</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span> <span class=n>names</span><span class=p>.</span><span class=n>end</span><span class=p>());</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1>// On peut également fournir un autre foncteur de comparaison.
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>std</span><span class=o>::</span><span class=n>sort</span><span class=p>(</span><span class=n>names</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span> <span class=n>names</span><span class=p>.</span><span class=n>end</span><span class=p>(),</span> <span class=n>std</span><span class=o>::</span><span class=n>greater</span> <span class=p>{})</span></span></span></code></pre></div><p>Il existe également <code>std::stable_sort</code>, qui permet de trier de manière stable.<br>Trier de manière &ldquo;stable&rdquo; signifie que si deux éléments sont équivalents (il n&rsquo;y en a pas un plus petit que l&rsquo;autre), alors l&rsquo;opération de tri ne les réordonnera pas l&rsquo;un par rapport à l&rsquo;autre.</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>vector</span><span class=o>&lt;</span><span class=n>std</span><span class=o>::</span><span class=n>string</span><span class=o>&gt;</span> <span class=n>names</span> <span class=p>{</span> <span class=s>&#34;Toto&#34;</span><span class=p>,</span> <span class=s>&#34;toto&#34;</span><span class=p>,</span> <span class=s>&#34;tata&#34;</span><span class=p>,</span> <span class=s>&#34;Tata&#34;</span> <span class=p>};</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>stable_sort</span><span class=p>(</span><span class=n>names</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span> <span class=n>names</span><span class=p>.</span><span class=n>end</span><span class=p>(),</span> <span class=n>compare_no_case</span><span class=p>);</span>
-</span></span><span class=line><span class=cl><span class=c1>// =&gt; names = { &#34;tata&#34;, &#34;Tata&#34;, &#34;Toto&#34;, &#34;toto&#34; }
-</span></span></span><span class=line><span class=cl><span class=c1>// &#34;tata&#34; est toujours devant &#34;Tata&#34; et &#34;Toto&#34; est toujours devant &#34;toto&#34;.
-</span></span></span></code></pre></div><hr><h5 id=inversion>Inversion</h5><p>La fonction <code>std::reverse</code> permet de &ldquo;retourner&rdquo; une série d&rsquo;éléments.
-Pour pouvoir s&rsquo;en servir, il faut fournir à l&rsquo;algorithme des itérateurs bidirectionnels.</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>vector</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;</span> <span class=n>values</span> <span class=p>{</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>5</span> <span class=p>};</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>reverse</span><span class=p>(</span><span class=n>values</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span> <span class=n>values</span><span class=p>.</span><span class=n>end</span><span class=p>());</span>
-</span></span><span class=line><span class=cl><span class=c1>// =&gt; values = { 5, 2, 4, 3, 0 }
-</span></span></span></code></pre></div><hr><h3 id=autres-fonctions>Autres fonctions</h3><p>Il existe plein d&rsquo;autres fonctions qui permettent de manipuler des plages de données.
-Avant d&rsquo;implémenter un algorithme à la main, pensez donc toujours à aller vérifier dans la documentation d&rsquo;<code>&lt;algorithm></code> ou de <code>&lt;numeric></code> si ces bibliothèques ne propose pas déjà ce qu&rsquo;il vous faut.</p><footer class=footline></footer></article></div></main></div><aside id=R-sidebar class="default-animation showVisitedLinks"><div id=R-header-topbar class=default-animation></div><div id=R-header-wrapper class=default-animation><div id=R-header class=default-animation><a id=logo href=../../>🎄 C++ 🎄</a></div></div><div id=R-homelinks class=default-animation><hr class=padding></div><div id=R-content-wrapper class=highlightable><div id=R-topics><ul class="enlarge morespace collapsible-menu"><li data-nav-id=/chapter0/index.html><a class=padding href=../../chapter0/index.html><b>0- </b>Mise en place<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-bb41caf94f12b8a1a4b5e560230e7851 class=collapsible-menu></ul></li><li data-nav-id=/chapter1/index.html><a class=padding href=../../chapter1/index.html><b>1- </b>Introduction au C++<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-6c398714eae4372920aec3a1e6c2e143 class=collapsible-menu></ul></li><li data-nav-id=/chapter2/index.html><a class=padding href=../../chapter2/index.html><b>2- </b>Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-b1df0095a9fd74320697a6d478418ec3 class=collapsible-menu></ul></li><li data-nav-id=/chapter3/index.html><a class=padding href=../../chapter3/index.html><b>3- </b>Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-9f6546bce6f8e9a77063b71c880fd5b8 class=collapsible-menu></ul></li><li data-nav-id=/chapter4/index.html><a class=padding href=../../chapter4/index.html><b>4- </b>Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-48065e8b6e7e69533ca73b3931c8a0a1 class=collapsible-menu></ul></li><li data-nav-id=/chapter5/index.html><a class=padding href=../../chapter5/index.html><b>5- </b>Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-86528e6ba587b53932a1dafaa9cd375c class=collapsible-menu></ul></li><li class=parent data-nav-id=/chapter6/index.html><a class=padding href=../../chapter6/index.html><b>6- </b>Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-016ee40825ff7c4aeecbac08a8ca264b class=collapsible-menu><li data-nav-id=/chapter6/1-searches/index.html><a class=padding href=../../chapter6/1-searches/index.html>Parcours et recherches<i class="fa-fw fas fa-check read-icon"></i></a></li><li class=active data-nav-id=/chapter6/2-transformations/index.html><a class=padding href=../../chapter6/2-transformations/index.html>Transformations<i class="fa-fw fas fa-check read-icon"></i></a></li><li data-nav-id=/chapter6/3-iterators/index.html><a class=padding href=../../chapter6/3-iterators/index.html>Itérateurs<i class="fa-fw fas fa-check read-icon"></i></a></li><li data-nav-id=/chapter6/4-lambdas/index.html><a class=padding href=../../chapter6/4-lambdas/index.html>Lambdas<i class="fa-fw fas fa-check read-icon"></i></a></li><li data-nav-id=/chapter6/test/index.html><a class=padding href=../../chapter6/test/index.html>Questionnaire ☑<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/chapter9/index.html><a class=padding href=../../chapter9/index.html><b>7- </b>Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-24ddf636ccd0ce3ef39c8060d1779332 class=collapsible-menu></ul></li><li data-nav-id=/chapter10/index.html><a class=padding href=../../chapter10/index.html><b>8- </b>Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-66e6e0c58d73995ecc09e8fbbe358e51 class=collapsible-menu></ul></li></ul></div><div id=R-shortcuts><div class="nav-title padding">Accès rapide</div><ul class=space><li><a class=padding href=https://github.com/Laefy/CPP_Learning_Code/><i class='fab fa-github'></i> Dépôt Cours</a></li><li><a class=padding href=https://github.com/Laefy/CPP_Exercises/><i class='fab fa-github'></i> Dépôt TPs</a></li><li><a class=padding href=../../slides/index.html><i class='far fa-file-powerpoint'></i> Slides</a></li><li><a class=padding href=../../workflow/index.html><i class='far fa-list-alt'></i> Workflow</a></li><li><a class=padding href=../../faq/index.html><i class='fas fa-question-circle'></i> FAQ</a></li><li><a class=padding href=../../chapter0/6-tips/index.html><i class='fa fa-rocket'></i> Astuces</a></li><li><a class=padding href=https://godbolt.org/><i class='fas fa-cog'></i> Compiler Explorer</a></li><li><a class=padding href=https://en.cppreference.com/w/><i class='fas fa-passport'></i> CPP-Ref</a></li></ul></div><div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div><div id=R-menu-footer><hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"><div id=R-prefooter class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVisitedLinks"><ul><li id=R-select-language-container class=footerLangSwitch><div class="padding menu-control"><i class="fa-fw fas fa-language"></i>
-<span>&nbsp;</span><div class=control-style><label class=a11y-only for=R-select-language>Langue</label>
-<select id=R-select-language onchange="location=this.querySelector(this.value).dataset.url"><option id=R-select-language-fr value=#R-select-language-fr data-url=../../chapter6/2-transformations/index.html lang=fr selected>Français</option></select></div><div class=clear></div></div></li><li id=R-select-variant-container class=footerVariantSwitch><div class="padding menu-control"><i class="fa-fw fas fa-paint-brush"></i>
-<span>&nbsp;</span><div class=control-style><label class=a11y-only for=R-select-variant>Thème</label>
-<select id=R-select-variant onchange=window.variants&&variants.changeVariant(this.value)><option id=R-select-variant-mine value=mine selected>Mine</option></select></div><div class=clear></div></div><script>window.variants&&variants.markSelectedVariant()</script></li><li class="footerVisitedLinks showVisitedLinks"><div class="padding menu-control"><i class="fa-fw fas fa-history"></i>
-<span>&nbsp;</span><div class=control-style><button onclick=clearHistory()>Supprimer l'historique</button></div><div class=clear></div></div></li></ul></div><div id=R-footer class="footerFooter showFooter"><p>Built with <a href=https://github.com/McShelby/hugo-theme-relearn title=love><i class="fas fa-heart"></i></a> by <a href=https://gohugo.io/>Hugo</a></p></div></div></div></aside><script src=../../js/clipboard.min.js?1729268601 defer></script><script src=../../js/perfect-scrollbar.min.js?1729268601 defer></script><script src=../../js/theme.js?1729268601 defer></script><button id=footer-question-btn title="Envoyer un message à propos du texte sélectionné" onclick=openQuestionForm() disabled><i class="fas fa-question-circle"></i></button><div id=footer-question-window disabled><form id=question method=POST action=https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b target=question-submitted onsubmit=cleanQuestionFormContent()><input type=email name=email placeholder=mon_email@smthg.com required onchange=updateQuestionFormSubject()>
-<textarea name=question rows=7 cols=30 placeholder="Mon message..."></textarea>
-<input type=hidden name=selection>
-<input type=hidden name=_replyto>
-<input type=hidden name=_subject>
-<input type=hidden name=_template value=box>
-<input type=hidden name=_captcha value=false>
-<input type=hidden name=_next value=//question-submitted/>
-<input type=submit disabled style=display:none aria-hidden=true>
-<input type=submit value=Envoyer></form><iframe class=hidden name=question-submitted src></iframe></div><script>function updateQuestionFormSubject(){let e=document.querySelector('#question>input[name="email"]').value;document.querySelector('#question>input[name="_subject"]').value="[C++][Chapitre 6] "+e+", retour sur ta question"}function cleanQuestionFormContent(){function e(e){e.value=e.value.replace(/\[\.\./g,"[ ..")}e(document.querySelector('#question>textarea[name="question"]')),e(document.querySelector('#question>input[name="selection"]'))}function openQuestionForm(){document.getElementById("footer-question-window").removeAttribute("disabled");var e=window.getSelection().toString();document.querySelector('#question>input[name="selection"]').value=e}function updateQuestionWidgetState(e){var t=document.getElementById("R-body-inner"),n=window.getSelection(),s=document.getElementById("footer-question-window");document.getElementById("footer-question-btn").disabled=n.isCollapsed||t==null||t.contains(n.anchorNode)==!1||t.contains(n.focusNode)==!1,e!==void 0&&e.type=="mouseup"&&s.contains(e.target)==!1&&s.contains(document.activeElement)==!1&&s.setAttribute("disabled",!0)}updateQuestionFormSubject(),document.onmouseup=document.onkeyup=document.onselectionchange=updateQuestionWidgetState,updateQuestionWidgetState()</script></body></html>
+On peut donc réécrire le code de cette manière :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">src</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dst</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Chaque fois que l&#39;algorithme va essayer de modifier le contenu de l&#39;itérateur, ce dernier va appeler dst.push_back().
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">back_inserter</span><span class="p">(</span><span class="n">dst</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">copy_n</span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">count</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">back_inserter</span><span class="p">(</span><span class="n">dst</span><span class="p">));</span></span></span></code></pre></div>
+<p>La STL propose également la fonction <code>copy_if</code>.
+Celle-ci accepte un prédicat, qui permet de spécifier quels sont les éléments que l&rsquo;on souhaite copier.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">src</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dst</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">copy_if</span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">back_inserter</span><span class="p">(</span><span class="n">dst</span><span class="p">),</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">v</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span> <span class="p">});</span></span></span></code></pre></div>
+<p>Pour le <code>copy_if</code>, l&rsquo;utilisation de <code>back_inserter</code> est vraiment très intéressante, puisque sinon, le code ressemblerait à ça :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">src</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dst</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">dst</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">dst_end</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">copy_if</span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">dst</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">v</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="n">dst</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">dst_end</span><span class="p">,</span> <span class="n">dst</span><span class="p">.</span><span class="n">end</span><span class="p">());</span></span></span></code></pre></div>
+<hr>
+<h3 id="transformation">Transformation</h3>
+<p>La fonction <code>std::transform</code> sert à appliquer une fonction (au sens mathématique: <code>y = f(x)</code>) à tous les éléments d&rsquo;une plage.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">dogs</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">dogs</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">dogs</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">back_inserter</span><span class="p">(</span><span class="n">names</span><span class="p">),</span> <span class="p">[](</span><span class="k">const</span> <span class="n">Dog</span><span class="o">&amp;</span> <span class="n">dog</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">dog</span><span class="p">.</span><span class="n">get_name</span><span class="p">();</span> <span class="p">});</span> 
+</span></span></code></pre></div>
+<p>Lorsque la fonction appliquée retourne le même type que celui en paramètre, vous pouvez décider de construire le résultat sur la même plage que celle en entrée.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v</span> <span class="o">-</span> <span class="mi">3</span><span class="p">;</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// =&gt; values = { -3, 15, 5 }
+</span></span></span></code></pre></div>
+<hr>
+<h3 id="remplissages">Remplissages</h3>
+<p>Pour remplir une plage d&rsquo;éléments d&rsquo;une même valeur, vous pouvez utiliser <code>std::fill</code> ou <code>std::fill_n</code>.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// fill remplit la plage comprise entre values.begin() et values.end().
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">fill</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// fill_n remplit la plage de taille values.size() commençant à values.begin().
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">fill_n</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="mi">5</span><span class="p">);</span></span></span></code></pre></div>
+<p>Et si vous souhaitez remplir la plage avec des valeurs différentes, vous pouvez utiliser <code>std::generate</code> ou <code>std::generate_n</code>.
+Contrairement à <code>fill</code> qui attend une valeur bien précise, <code>generate</code> attend un générateur, c&rsquo;est-à-dire un foncteur à 0 paramètre qui retourne un élément.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">generate</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">create_random_value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">generate_n</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">queue</span><span class="p">]()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="n">value</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">queue</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span></span></span></code></pre></div>
+<p>Enfin, sachez qu&rsquo;il est possible d&rsquo;utiliser <code>back_inserter</code> avec <code>fill_n</code> et <code>generate_n</code>.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">fill_n</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">back_inserter</span><span class="p">(</span><span class="n">values</span><span class="p">),</span> <span class="mi">5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">generate_n</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">back_inserter</span><span class="p">(</span><span class="n">values</span><span class="p">),</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">queue</span><span class="p">]()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="n">value</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">queue</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span></span></span></code></pre></div>
+<hr>
+<h3 id="réductions">Réductions</h3>
+<p>Une réduction est une opération qui accepte un ensemble d&rsquo;éléments et retourne une valeur.
+Par exemple, une somme et un produit sont des réductions.</p>
+<p>Dans la librairie standard, a deux fonctions qui permettent de faire des réductions : <code>std::accumulate</code> et <code>std::reduce</code>.
+Attention, elles se trouvent dans <code>&lt;numeric&gt;</code> et non pas dans <code>&lt;algorithm&gt;</code>.</p>
+<p>La différence entre <code>accumulate</code> et <code>reduce</code>, c&rsquo;est que <code>reduce</code> ne doit être utilisé que pour des opérations à la fois associatives et commutatives.
+En contre-partie, cela fait que <code>reduce</code> peut lancer des opérations sur des paires d&rsquo;éléments en parallèle.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span> <span class="p">{</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Le 3e paramètre correspond à l&#39;élément initial (on passe en général l&#39;élément neutre pour l&#39;opération).
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">const</span> <span class="k">auto</span> <span class="n">product</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">reduce</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">v1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v2</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">v1</span> <span class="o">*</span> <span class="n">v2</span><span class="p">;</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// La concaténation de chaînes de caractères n&#39;étant pas commutative, on ne peut pas utiliser reduce.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">const</span> <span class="k">auto</span> <span class="n">many_names</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">accumulate</span><span class="p">(</span><span class="n">names</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">names</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="s">&#34;&gt; &#34;</span><span class="p">,</span> <span class="p">[](</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">str1</span><span class="p">,</span> <span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">str2</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">str1</span> <span class="o">+</span> <span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">str2</span><span class="p">;</span> <span class="p">});</span></span></span></code></pre></div>
+<hr>
+<h3 id="réordonnancement">Réordonnancement</h3>
+<h5 id="tri">Tri</h5>
+<p>Pour trier une plage d&rsquo;éléments, on utilise <code>std::sort</code>.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Réordonne en utilisant operator&lt;.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">names</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">names</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// On peut également fournir un autre foncteur de comparaison.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">names</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">names</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">greater</span> <span class="p">{})</span></span></span></code></pre></div>
+<p>Il existe également <code>std::stable_sort</code>, qui permet de trier de manière stable.<br>
+Trier de manière &ldquo;stable&rdquo; signifie que si deux éléments sont équivalents (il n&rsquo;y en a pas un plus petit que l&rsquo;autre), alors l&rsquo;opération de tri ne les réordonnera pas l&rsquo;un par rapport à l&rsquo;autre.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span> <span class="p">{</span> <span class="s">&#34;Toto&#34;</span><span class="p">,</span> <span class="s">&#34;toto&#34;</span><span class="p">,</span> <span class="s">&#34;tata&#34;</span><span class="p">,</span> <span class="s">&#34;Tata&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">stable_sort</span><span class="p">(</span><span class="n">names</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">names</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">compare_no_case</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// =&gt; names = { &#34;tata&#34;, &#34;Tata&#34;, &#34;Toto&#34;, &#34;toto&#34; }
+</span></span></span><span class="line"><span class="cl"><span class="c1">// &#34;tata&#34; est toujours devant &#34;Tata&#34; et &#34;Toto&#34; est toujours devant &#34;toto&#34;.
+</span></span></span></code></pre></div>
+<hr>
+<h5 id="inversion">Inversion</h5>
+<p>La fonction <code>std::reverse</code> permet de &ldquo;retourner&rdquo; une série d&rsquo;éléments.
+Pour pouvoir s&rsquo;en servir, il faut fournir à l&rsquo;algorithme des itérateurs bidirectionnels.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">reverse</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// =&gt; values = { 5, 2, 4, 3, 0 }
+</span></span></span></code></pre></div>
+<hr>
+<h3 id="autres-fonctions">Autres fonctions</h3>
+<p>Il existe plein d&rsquo;autres fonctions qui permettent de manipuler des plages de données.
+Avant d&rsquo;implémenter un algorithme à la main, pensez donc toujours à aller vérifier dans la documentation d&rsquo;<code>&lt;algorithm&gt;</code> ou de <code>&lt;numeric&gt;</code> si ces bibliothèques ne propose pas déjà ce qu&rsquo;il vous faut.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation showVisitedLinks">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="logo" href="../../">🎄 C++ 🎄</a>
+
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/chapter0/index.html"><a class="padding" href="../../chapter0/index.html"><b>0- </b>Mise en place<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb41caf94f12b8a1a4b5e560230e7851" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter1/index.html"><a class="padding" href="../../chapter1/index.html"><b>1- </b>Introduction au C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-6c398714eae4372920aec3a1e6c2e143" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter2/index.html"><a class="padding" href="../../chapter2/index.html"><b>2- </b>Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b1df0095a9fd74320697a6d478418ec3" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><b>3- </b>Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><b>4- </b>Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><b>5- </b>Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><b>6- </b>Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu">
+            <li class="" data-nav-id="/chapter6/1-searches/index.html"><a class="padding" href="../../chapter6/1-searches/index.html">Parcours et recherches<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/chapter6/2-transformations/index.html"><a class="padding" href="../../chapter6/2-transformations/index.html">Transformations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter6/3-iterators/index.html"><a class="padding" href="../../chapter6/3-iterators/index.html">Itérateurs<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter6/4-lambdas/index.html"><a class="padding" href="../../chapter6/4-lambdas/index.html">Lambdas<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter6/test/index.html"><a class="padding" href="../../chapter6/test/index.html">Questionnaire ☑<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/chapter9/index.html"><a class="padding" href="../../chapter9/index.html"><b>7- </b>Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter10/index.html"><a class="padding" href="../../chapter10/index.html"><b>8- </b>Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-66e6e0c58d73995ecc09e8fbbe358e51" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">Accès rapide</div>
+          <ul class="space">
+            <li><a class="padding" href="https://github.com/Laefy/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt Cours</a></li>
+            <li><a class="padding" href="https://github.com/Laefy/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt TPs</a></li>
+            <li><a class="padding" href="../../slides/index.html"><i class='far fa-file-powerpoint'></i> Slides</a></li>
+            <li><a class="padding" href="../../workflow/index.html"><i class='far fa-list-alt'></i> Workflow</a></li>
+            <li><a class="padding" href="../../faq/index.html"><i class='fas fa-question-circle'></i> FAQ</a></li>
+            <li><a class="padding" href="../../chapter0/6-tips/index.html"><i class='fa fa-rocket'></i> Astuces</a></li>
+            <li><a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a></li>
+            <li><a class="padding" href="https://en.cppreference.com/w/"><i class='fas fa-passport'></i> CPP-Ref</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Langue</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../chapter6/2-transformations/index.html" lang="fr" selected>Français</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Thème</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-mine" value="mine" selected>Mine</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks showVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Supprimer l&#39;historique</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="../../js/clipboard.min.js?1729268734" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1729268734" defer></script>
+    <script src="../../js/theme.js?1729268734" defer></script>
+
+
+
+    
+
+
+<button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
+
+<div id="footer-question-window" disabled>
+    <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b"
+        target="question-submitted" onsubmit="cleanQuestionFormContent()">
+
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <textarea name="question" rows="7" cols="30" placeholder="Mon message..."></textarea>
+        <input type="hidden" name="selection" />
+
+        <input type="hidden" name="_replyto" />
+        <input type="hidden" name="_subject" />
+        <input type="hidden" name="_template" value="box" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="//question-submitted/" />
+
+        <input type="submit" disabled style="display: none" aria-hidden="true" />
+        <input type="submit" value="Envoyer" />
+    </form>
+
+    <iframe class="hidden" name="question-submitted" src=""></iframe>
+</div>
+
+<script>
+
+    function updateQuestionFormSubject() {
+        let email = document.querySelector('#question>input[name="email"]').value;
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 6] " + email + ", retour sur ta question";
+    }
+
+    function cleanQuestionFormContent() {
+
+        function clean(element) {
+            
+            element.value = element.value.replace(/\[\.\./g, "[ ..");
+        }
+
+        clean(document.querySelector('#question>textarea[name="question"]'))
+        clean(document.querySelector('#question>input[name="selection"]'))
+    }
+
+    function openQuestionForm() {
+        document.getElementById("footer-question-window").removeAttribute("disabled");
+
+        var selection = window.getSelection().toString();
+        document.querySelector('#question>input[name="selection"]').value = selection
+    }
+
+    function updateQuestionWidgetState(event) {
+        var body = document.getElementById("R-body-inner");
+        var selection = window.getSelection();
+        var question_window = document.getElementById("footer-question-window");
+
+        document.getElementById("footer-question-btn").disabled =
+            selection.isCollapsed ||
+            body == null ||
+            body.contains(selection.anchorNode) == false ||
+            body.contains(selection.focusNode) == false;
+
+        if (event !== undefined
+            && event.type == "mouseup"
+            && question_window.contains(event.target) == false
+            && question_window.contains(document.activeElement) == false) {
+            question_window.setAttribute("disabled", true);
+        }
+    }
+
+    updateQuestionFormSubject();
+
+    document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionWidgetState;
+    updateQuestionWidgetState();
+
+</script>
+
+
+  </body>
+</html>

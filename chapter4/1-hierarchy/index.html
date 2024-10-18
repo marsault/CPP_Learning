@@ -1,4 +1,11 @@
-<!doctype html><html lang=fr dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619"><meta name=description content="Dans cette première partie, vous apprendrez comment définir des relations de parenté entre vos classes.
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.128.0">
+    <meta name="generator" content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619">
+    <meta name="description" content="Dans cette première partie, vous apprendrez comment définir des relations de parenté entre vos classes.
 Nous ne parlerons sur cette page que d’héritage dit “statique”, c’est-à-dire que nous ne chercherons pas à modifier dans les classes-fille le comportement hérité de la classe-mère.
 Pour cet exercice, vous modifierez les fichiers :
 - chap-04/1-hierarchy/Boss.cpp
@@ -8,7 +15,11 @@ Pour cet exercice, vous modifierez les fichiers :
 - chap-04/1-hierarchy/Intern.cpp
 - chap-04/1-hierarchy/Intern.h
 La cible à compiler est c4-1-hierarchy.
-Définir une classe-mère Commencez par jeter un coup d’oeil à chacun des fichiers fournis."><meta name=author content><meta name=twitter:card content="summary"><meta name=twitter:title content="💼 Hiérarchie professionnelle :: Cours de C++ - Niveau Master"><meta name=twitter:description content="Dans cette première partie, vous apprendrez comment définir des relations de parenté entre vos classes.
+Définir une classe-mère Commencez par jeter un coup d’oeil à chacun des fichiers fournis.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="💼 Hiérarchie professionnelle :: Cours de C&#43;&#43; - Niveau Master">
+    <meta name="twitter:description" content="Dans cette première partie, vous apprendrez comment définir des relations de parenté entre vos classes.
 Nous ne parlerons sur cette page que d’héritage dit “statique”, c’est-à-dire que nous ne chercherons pas à modifier dans les classes-fille le comportement hérité de la classe-mère.
 Pour cet exercice, vous modifierez les fichiers :
 - chap-04/1-hierarchy/Boss.cpp
@@ -18,7 +29,11 @@ Pour cet exercice, vous modifierez les fichiers :
 - chap-04/1-hierarchy/Intern.cpp
 - chap-04/1-hierarchy/Intern.h
 La cible à compiler est c4-1-hierarchy.
-Définir une classe-mère Commencez par jeter un coup d’oeil à chacun des fichiers fournis."><meta property="og:url" content="/chapter4/1-hierarchy/index.html"><meta property="og:site_name" content="Cours de C++ - Niveau Master"><meta property="og:title" content="💼 Hiérarchie professionnelle :: Cours de C++ - Niveau Master"><meta property="og:description" content="Dans cette première partie, vous apprendrez comment définir des relations de parenté entre vos classes.
+Définir une classe-mère Commencez par jeter un coup d’oeil à chacun des fichiers fournis.">
+    <meta property="og:url" content="/chapter4/1-hierarchy/index.html">
+    <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:title" content="💼 Hiérarchie professionnelle :: Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:description" content="Dans cette première partie, vous apprendrez comment définir des relations de parenté entre vos classes.
 Nous ne parlerons sur cette page que d’héritage dit “statique”, c’est-à-dire que nous ne chercherons pas à modifier dans les classes-fille le comportement hérité de la classe-mère.
 Pour cet exercice, vous modifierez les fichiers :
 - chap-04/1-hierarchy/Boss.cpp
@@ -28,7 +43,12 @@ Pour cet exercice, vous modifierez les fichiers :
 - chap-04/1-hierarchy/Intern.cpp
 - chap-04/1-hierarchy/Intern.h
 La cible à compiler est c4-1-hierarchy.
-Définir une classe-mère Commencez par jeter un coup d’oeil à chacun des fichiers fournis."><meta property="og:locale" content="fr"><meta property="og:type" content="article"><meta property="article:section" content="Héritage"><meta itemprop=name content="💼 Hiérarchie professionnelle :: Cours de C++ - Niveau Master"><meta itemprop=description content="Dans cette première partie, vous apprendrez comment définir des relations de parenté entre vos classes.
+Définir une classe-mère Commencez par jeter un coup d’oeil à chacun des fichiers fournis.">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Héritage">
+    <meta itemprop="name" content="💼 Hiérarchie professionnelle :: Cours de C&#43;&#43; - Niveau Master">
+    <meta itemprop="description" content="Dans cette première partie, vous apprendrez comment définir des relations de parenté entre vos classes.
 Nous ne parlerons sur cette page que d’héritage dit “statique”, c’est-à-dire que nous ne chercherons pas à modifier dans les classes-fille le comportement hérité de la classe-mère.
 Pour cet exercice, vous modifierez les fichiers :
 - chap-04/1-hierarchy/Boss.cpp
@@ -38,172 +58,504 @@ Pour cet exercice, vous modifierez les fichiers :
 - chap-04/1-hierarchy/Intern.cpp
 - chap-04/1-hierarchy/Intern.h
 La cible à compiler est c4-1-hierarchy.
-Définir une classe-mère Commencez par jeter un coup d’oeil à chacun des fichiers fournis."><meta itemprop=wordCount content="1109"><title>💼 Hiérarchie professionnelle :: Cours de C++ - Niveau Master</title>
-<link href=../../css/fontawesome-all.min.css?1729268601 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=../../css/fontawesome-all.min.css?1729268601 rel=stylesheet></noscript><link href=../../css/nucleus.css?1729268601 rel=stylesheet><link href=../../css/auto-complete.css?1729268601 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=../../css/auto-complete.css?1729268601 rel=stylesheet></noscript><link href=../../css/perfect-scrollbar.min.css?1729268601 rel=stylesheet><link href=../../css/fonts.css?1729268601 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=../../css/fonts.css?1729268601 rel=stylesheet></noscript><link href=../../css/theme.css?1729268601 rel=stylesheet><link href=../../css/theme-mine.css?1729268601 rel=stylesheet id=R-variant-style><link href=../../css/chroma-relearn-light.css?1729268601 rel=stylesheet id=R-variant-chroma-style><link href=../../css/print.css?1729268601 rel=stylesheet media=print><script src=../../js/variant.js?1729268601></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../..",window.relearn.absBaseUri="",window.relearn.disableAnchorCopy=!1,window.relearn.disableAnchorScrolling=!1,window.variants&&variants.init(["mine"]),window.T_Copy_to_clipboard=`Copier dans le presse-papiers`,window.T_Copied_to_clipboard=`Copié dans le presse-papiers!`,window.T_Copy_link_to_clipboard=`Copier le lien dans le presse-papiers`,window.T_Link_copied_to_clipboard=`Lien copié dans le presse-papiers!`,window.T_Reset_view=`Réinitialiser la vue`,window.T_View_reset=`Vue réinitialisée!`,window.T_No_results_found=`Aucun résultat trouvé pour "{0}"`,window.T_N_results_found=`{1} résultats trouvés pour "{0}"`</script></head><body class="mobile-support html disableInlineCopyToClipboard" data-url=../../chapter4/1-hierarchy/index.html><div id=R-body class=default-animation><div id=R-body-overlay></div><nav id=R-topbar><div class=topbar-wrapper><div class=topbar-sidebar-divider></div><div class="topbar-area topbar-area-start" data-area=start><div class="topbar-button topbar-button-sidebar" data-content-empty=disable data-width-s=show data-width-m=hide data-width-l=hide><button class=topbar-control onclick=toggleNav() type=button title="Menu (CTRL+ALT+n)"><i class="fa-fw fas fa-bars"></i></button></div><div class="topbar-button topbar-button-toc" data-content-empty=hide data-width-s=show data-width-m=show data-width-l=show><button class=topbar-control onclick=toggleTopbarFlyout(this) type=button title="Table des matières (CTRL+ALT+t)"><i class="fa-fw fas fa-list-alt"></i></button><div class=topbar-content><div class=topbar-content-wrapper><nav class=TableOfContents><ul><li><ul><li><a href=#définir-une-classe-mère>Définir une classe-mère</a></li><li><a href=#visibilité-de-la-relation-de-parenté>Visibilité de la relation de parenté</a></li></ul></li></ul></nav></div></div></div></div><ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=../../index.html><span itemprop=name>Accueil</span></a><meta itemprop=position content="1">&nbsp;>&nbsp;</li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=../../chapter4/index.html><span itemprop=name>Héritage</span></a><meta itemprop=position content="2">&nbsp;>&nbsp;</li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>💼 Hiérarchie professionnelle</span><meta itemprop=position content="3"></li></ol><div class="topbar-area topbar-area-end" data-area=end><div class="topbar-button topbar-button-prev" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=../../chapter4/index.html title="Héritage (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></div><div class="topbar-button topbar-button-next" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=../../chapter4/2-farm/index.html title="🐮 Concerto animalier (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></div><div class="topbar-button topbar-button-more" data-content-empty=hide data-width-s=show data-width-m=show data-width-l=show><button class=topbar-control onclick=toggleTopbarFlyout(this) type=button title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button><div class=topbar-content><div class=topbar-content-wrapper><div class="topbar-area topbar-area-more" data-area=more></div></div></div></div></div></div></nav><div id=R-main-overlay></div><main id=R-body-inner class="highlightable chapter4" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><h1 id=-hiérarchie-professionnelle>💼 Hiérarchie professionnelle</h1><p>Dans cette première partie, vous apprendrez comment définir des relations de parenté entre vos classes.<br>Nous ne parlerons sur cette page que d&rsquo;héritage dit &ldquo;statique&rdquo;, c&rsquo;est-à-dire que nous ne chercherons pas à modifier dans les <strong>classes-fille</strong> le comportement hérité de la <strong>classe-mère</strong>.</p><hr><p>Pour cet exercice, vous modifierez les fichiers :<br>- <code>chap-04/1-hierarchy/Boss.cpp</code><br>- <code>chap-04/1-hierarchy/Boss.h</code><br>- <code>chap-04/1-hierarchy/Staff.cpp</code><br>- <code>chap-04/1-hierarchy/Staff.h</code><br>- <code>chap-04/1-hierarchy/Intern.cpp</code><br>- <code>chap-04/1-hierarchy/Intern.h</code></p><p>La cible à compiler est <code>c4-1-hierarchy</code>.</p><hr><h3 id=définir-une-classe-mère>Définir une classe-mère</h3><p>Commencez par jeter un coup d&rsquo;oeil à chacun des fichiers fournis.<br>Comme vous pouvez le constater, les différentes classes partagent beaucoup de code.</p><p>Vous allez commencer par créer une classe contenant l&rsquo;ensemble du code dupliqué par les autres classes.
+Définir une classe-mère Commencez par jeter un coup d’oeil à chacun des fichiers fournis.">
+    <meta itemprop="wordCount" content="1109">
+    <title>💼 Hiérarchie professionnelle :: Cours de C&#43;&#43; - Niveau Master</title>
+    <link href="../../css/fontawesome-all.min.css?1729268734" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1729268734" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1729268734" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1729268734" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1729268734" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1729268734" rel="stylesheet">
+    <link href="../../css/fonts.css?1729268734" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1729268734" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1729268734" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1729268734" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1729268734" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1729268734" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1729268734"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.variants && variants.init( [ 'mine' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copier dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Copié dans le presse-papiers!`;
+      window.T_Copy_link_to_clipboard = `Copier le lien dans le presse-papiers`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../chapter4/1-hierarchy/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#définir-une-classe-mère">Définir une classe-mère</a></li>
+        <li><a href="#visibilité-de-la-relation-de-parenté">Visibilité de la relation de parenté</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">Accueil</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../chapter4/index.html"><span itemprop="name">Héritage</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">💼 Hiérarchie professionnelle</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter4/index.html" title="Héritage (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter4/2-farm/index.html" title="🐮 Concerto animalier (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter4" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="-hiérarchie-professionnelle">💼 Hiérarchie professionnelle</h1>
+
+<p>Dans cette première partie, vous apprendrez comment définir des relations de parenté entre vos classes.<br>
+Nous ne parlerons sur cette page que d&rsquo;héritage dit &ldquo;statique&rdquo;, c&rsquo;est-à-dire que nous ne chercherons pas à modifier dans les <strong>classes-fille</strong> le comportement hérité de la <strong>classe-mère</strong>.</p>
+<hr>
+<p>Pour cet exercice, vous modifierez les fichiers :<br>
+- <code>chap-04/1-hierarchy/Boss.cpp</code><br>
+- <code>chap-04/1-hierarchy/Boss.h</code><br>
+- <code>chap-04/1-hierarchy/Staff.cpp</code><br>
+- <code>chap-04/1-hierarchy/Staff.h</code><br>
+- <code>chap-04/1-hierarchy/Intern.cpp</code><br>
+- <code>chap-04/1-hierarchy/Intern.h</code></p>
+<p>La cible à compiler est <code>c4-1-hierarchy</code>.</p>
+<hr>
+<h3 id="définir-une-classe-mère">Définir une classe-mère</h3>
+<p>Commencez par jeter un coup d&rsquo;oeil à chacun des fichiers fournis.<br>
+Comme vous pouvez le constater, les différentes classes partagent beaucoup de code.</p>
+<p>Vous allez commencer par créer une classe contenant l&rsquo;ensemble du code dupliqué par les autres classes.
 Placez-la dans un ou des fichiers séparés et modifiez le CMakeLists.txt (celui dans chap-04) pour qu&rsquo;il les ajoute bien à la compilation de l&rsquo;exécutable.
-Pour le nom de la classe, essayez de trouver quelque chose qui soit digne de son contenu.</p><div class=expand><input type=checkbox id=R-expand-5ba898314b0403ce488977a4340b1cdc aria-controls=R-expandcontent-5ba898314b0403ce488977a4340b1cdc>
-<label class=expand-label for=R-expand-5ba898314b0403ce488977a4340b1cdc><i class="expander-icon fa-fw fas fa-chevron-down"></i>
-<i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution</label><div id=R-expandcontent-5ba898314b0403ce488977a4340b1cdc class=expand-content><p>Afin de pouvoir retourner le grade (<code>get_rank()</code>) de chaque employé, on ajoute un attribut <code>_rank</code> à la classe.<br>Et on n&rsquo;oublie pas de définir un constructeur pour initialiser chacun des membres de la nouvelle classe.</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&#34;Rank.h&#34;</span><span class=cp>
-</span></span></span><span class=line><span class=cl><span class=cp></span>
-</span></span><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;string&gt;</span><span class=cp>
-</span></span></span><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;string_view&gt;</span><span class=cp>
-</span></span></span><span class=line><span class=cl><span class=cp></span>
-</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Employee</span>
-</span></span><span class=line><span class=cl><span class=p>{</span>
-</span></span><span class=line><span class=cl><span class=k>public</span><span class=o>:</span>
-</span></span><span class=line><span class=cl>    <span class=n>Employee</span><span class=p>(</span><span class=n>std</span><span class=o>::</span><span class=n>string_view</span> <span class=n>name</span><span class=p>,</span> <span class=n>std</span><span class=o>::</span><span class=n>string_view</span> <span class=n>surname</span><span class=p>,</span> <span class=kt>unsigned</span> <span class=kt>int</span> <span class=n>salary</span><span class=p>,</span> <span class=n>Rank</span> <span class=n>rank</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>        <span class=o>:</span> <span class=n>_name</span> <span class=p>{</span> <span class=n>name</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl>        <span class=p>,</span> <span class=n>_surname</span> <span class=p>{</span> <span class=n>surname</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl>        <span class=p>,</span> <span class=n>_salary</span> <span class=p>{</span> <span class=n>salary</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl>        <span class=p>,</span> <span class=n>_rank</span> <span class=p>{</span> <span class=n>rank</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl>    <span class=p>{}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=k>const</span> <span class=n>std</span><span class=o>::</span><span class=n>string</span><span class=o>&amp;</span> <span class=n>get_name</span><span class=p>()</span> <span class=k>const</span> <span class=p>{</span> <span class=k>return</span> <span class=n>_name</span><span class=p>;</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl>    <span class=k>const</span> <span class=n>std</span><span class=o>::</span><span class=n>string</span><span class=o>&amp;</span> <span class=n>get_surname</span><span class=p>()</span> <span class=k>const</span> <span class=p>{</span> <span class=k>return</span> <span class=n>_surname</span><span class=p>;</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=kt>unsigned</span> <span class=kt>int</span> <span class=nf>get_salary</span><span class=p>()</span> <span class=k>const</span> <span class=p>{</span> <span class=k>return</span> <span class=n>_salary</span><span class=p>;</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl>    <span class=kt>void</span>         <span class=nf>increase_salary</span><span class=p>(</span><span class=kt>unsigned</span> <span class=kt>int</span> <span class=n>raise</span><span class=p>)</span> <span class=p>{</span> <span class=n>_salary</span> <span class=o>+=</span> <span class=n>raise</span><span class=p>;</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=n>Rank</span> <span class=nf>get_rank</span><span class=p>()</span> <span class=k>const</span> <span class=p>{</span> <span class=k>return</span> <span class=n>_rank</span><span class=p>;</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=k>private</span><span class=o>:</span>
-</span></span><span class=line><span class=cl>    <span class=k>const</span> <span class=n>std</span><span class=o>::</span><span class=n>string</span> <span class=n>_name</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=k>const</span> <span class=n>std</span><span class=o>::</span><span class=n>string</span> <span class=n>_surname</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=kt>unsigned</span> <span class=kt>int</span>      <span class=n>_salary</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=n>Rank</span>              <span class=n>_rank</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=p>};</span></span></span></code></pre></div></div></div><p>Vous allez maintenant modifier la définition de la classe <code>Boss</code> afin de la faire hériter de votre nouvelle classe.
-Pour cela, il faut écrire le code suivant :</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&#34;Employee.h&#34;</span><span class=cp>
-</span></span></span><span class=line><span class=cl><span class=cp></span><span class=p>...</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Boss</span> <span class=o>:</span> <span class=k>public</span> <span class=n>Employee</span>
-</span></span><span class=line><span class=cl><span class=p>{</span>
-</span></span><span class=line><span class=cl>    <span class=p>...</span>
-</span></span><span class=line><span class=cl><span class=p>};</span></span></span></code></pre></div><p>La deuxième étape est de supprimer l&rsquo;ensemble des champs (attributs et fonctions-membres) déjà définies dans la <strong>classe-mère</strong>.<br>Il ne devrait vous rester que ceci :</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=k>class</span> <span class=nc>Boss</span> <span class=o>:</span> <span class=k>public</span> <span class=n>Employee</span>
-</span></span><span class=line><span class=cl><span class=p>{</span>
-</span></span><span class=line><span class=cl><span class=k>public</span><span class=o>:</span>
-</span></span><span class=line><span class=cl>    <span class=n>Boss</span><span class=p>(</span><span class=n>std</span><span class=o>::</span><span class=n>string_view</span> <span class=n>name</span><span class=p>,</span> <span class=n>std</span><span class=o>::</span><span class=n>string_view</span> <span class=n>surname</span><span class=p>,</span> <span class=kt>unsigned</span> <span class=kt>int</span> <span class=n>salary</span><span class=p>,</span> <span class=kt>bool</span> <span class=n>is_nice</span><span class=p>);</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=kt>void</span> <span class=nf>assign_task</span><span class=p>(</span><span class=n>Staff</span><span class=o>&amp;</span> <span class=n>staff</span><span class=p>)</span> <span class=k>const</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=kt>void</span> <span class=nf>ask_coffee</span><span class=p>(</span><span class=n>Intern</span><span class=o>&amp;</span> <span class=n>intern</span><span class=p>)</span> <span class=k>const</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=k>private</span><span class=o>:</span>
-</span></span><span class=line><span class=cl>    <span class=kt>bool</span> <span class=n>_is_nice</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=p>};</span></span></span></code></pre></div><p>Pour terminer, vous devez modifier l&rsquo;implémentation du constructeur afin d&rsquo;appeler le constructeur parent :</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=n>Boss</span><span class=o>::</span><span class=n>Boss</span><span class=p>(</span><span class=n>std</span><span class=o>::</span><span class=n>string_view</span> <span class=n>name</span><span class=p>,</span> <span class=n>std</span><span class=o>::</span><span class=n>string_view</span> <span class=n>surname</span><span class=p>,</span> <span class=kt>unsigned</span> <span class=kt>int</span> <span class=n>salary</span><span class=p>,</span> <span class=kt>bool</span> <span class=n>is_nice</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>    <span class=o>:</span> <span class=n>Employee</span> <span class=p>{</span> <span class=n>name</span><span class=p>,</span> <span class=n>surname</span><span class=p>,</span> <span class=n>salary</span><span class=p>,</span> <span class=n>Rank</span><span class=o>::</span><span class=n>TopManagement</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl>    <span class=p>,</span> <span class=n>_is_nice</span> <span class=p>{</span> <span class=n>is_nice</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl><span class=p>{}</span></span></span></code></pre></div><p>Comme vous pouvez le constater, c&rsquo;est un peu la même syntaxe que lorsque vous souhaitez déléguer la construction à un autre constructeur, si ce n&rsquo;est
-que vous devez initialiser vos propres attributs à la suite de l&rsquo;appel au constructeur de la classe-mère.</p><p>Refactorisez maintenant les deux autres classes <code>Staff</code> et <code>Intern</code> de manière à supprimer le code dupliqué en les faisant hériter de <code>Employee</code>.</p><div class=expand><input type=checkbox id=R-expand-b4a270b87b65a5bbd9ee883fe0443de0 aria-controls=R-expandcontent-b4a270b87b65a5bbd9ee883fe0443de0>
-<label class=expand-label for=R-expand-b4a270b87b65a5bbd9ee883fe0443de0><i class="expander-icon fa-fw fas fa-chevron-down"></i>
-<i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution</label><div id=R-expandcontent-b4a270b87b65a5bbd9ee883fe0443de0 class=expand-content><p>Staff.h:</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&#34;Employee.h&#34;</span><span class=cp>
-</span></span></span><span class=line><span class=cl><span class=cp></span>
-</span></span><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;string&gt;</span><span class=cp>
-</span></span></span><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;string_view&gt;</span><span class=cp>
-</span></span></span><span class=line><span class=cl><span class=cp></span>
-</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Staff</span> <span class=o>:</span> <span class=k>public</span> <span class=n>Employee</span>
-</span></span><span class=line><span class=cl><span class=p>{</span>
-</span></span><span class=line><span class=cl><span class=k>public</span><span class=o>:</span>
-</span></span><span class=line><span class=cl>    <span class=n>Staff</span><span class=p>(</span><span class=n>std</span><span class=o>::</span><span class=n>string_view</span> <span class=n>name</span><span class=p>,</span> <span class=n>std</span><span class=o>::</span><span class=n>string_view</span> <span class=n>surname</span><span class=p>,</span> <span class=kt>unsigned</span> <span class=kt>int</span> <span class=n>salary</span><span class=p>);</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=kt>void</span> <span class=nf>receive_task</span><span class=p>();</span>
-</span></span><span class=line><span class=cl>    <span class=kt>void</span> <span class=nf>complete_task</span><span class=p>();</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=kt>unsigned</span> <span class=kt>int</span> <span class=nf>get_assigned_tasks</span><span class=p>()</span> <span class=k>const</span> <span class=p>{</span> <span class=k>return</span> <span class=n>_assigned_tasks</span><span class=p>;</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl>    <span class=kt>unsigned</span> <span class=kt>int</span> <span class=nf>get_done_tasks</span><span class=p>()</span> <span class=k>const</span> <span class=p>{</span> <span class=k>return</span> <span class=n>_done_tasks</span><span class=p>;</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=k>private</span><span class=o>:</span>
-</span></span><span class=line><span class=cl>    <span class=kt>unsigned</span> <span class=kt>int</span> <span class=n>_assigned_tasks</span> <span class=o>=</span> <span class=mi>0u</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=kt>unsigned</span> <span class=kt>int</span> <span class=n>_done_tasks</span> <span class=o>=</span> <span class=mi>0u</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=p>};</span></span></span></code></pre></div><p>Staff.cpp:</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&#34;Staff.h&#34;</span><span class=cp>
-</span></span></span><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&#34;Rank.h&#34;</span><span class=cp>
-</span></span></span><span class=line><span class=cl><span class=cp></span>
-</span></span><span class=line><span class=cl><span class=n>Staff</span><span class=o>::</span><span class=n>Staff</span><span class=p>(</span><span class=n>std</span><span class=o>::</span><span class=n>string_view</span> <span class=n>name</span><span class=p>,</span> <span class=n>std</span><span class=o>::</span><span class=n>string_view</span> <span class=n>surname</span><span class=p>,</span> <span class=kt>unsigned</span> <span class=kt>int</span> <span class=n>salary</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>    <span class=o>:</span> <span class=n>Employee</span> <span class=p>{</span> <span class=n>name</span><span class=p>,</span> <span class=n>surname</span><span class=p>,</span> <span class=n>salary</span><span class=p>,</span> <span class=n>Rank</span><span class=o>::</span><span class=n>Default</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl><span class=p>{}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>...</span></span></span></code></pre></div><p>Intern.h:</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&#34;Employee.h&#34;</span><span class=cp>
-</span></span></span><span class=line><span class=cl><span class=cp></span>
-</span></span><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;string&gt;</span><span class=cp>
-</span></span></span><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;string_view&gt;</span><span class=cp>
-</span></span></span><span class=line><span class=cl><span class=cp></span>
-</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Intern</span> <span class=o>:</span> <span class=k>public</span> <span class=n>Employee</span>
-</span></span><span class=line><span class=cl><span class=p>{</span>
-</span></span><span class=line><span class=cl><span class=k>public</span><span class=o>:</span>
-</span></span><span class=line><span class=cl>    <span class=n>Intern</span><span class=p>(</span><span class=n>std</span><span class=o>::</span><span class=n>string_view</span> <span class=n>name</span><span class=p>,</span> <span class=n>std</span><span class=o>::</span><span class=n>string_view</span> <span class=n>surname</span><span class=p>,</span> <span class=kt>unsigned</span> <span class=kt>int</span> <span class=n>salary</span><span class=p>,</span> <span class=kt>bool</span> <span class=n>is_clumsy</span><span class=p>);</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=kt>void</span> <span class=nf>fetch_coffee</span><span class=p>();</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=kt>unsigned</span> <span class=kt>int</span> <span class=nf>get_nb_broken_cups</span><span class=p>()</span> <span class=k>const</span> <span class=p>{</span> <span class=k>return</span> <span class=n>_nb_broken_cups</span><span class=p>;</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=k>private</span><span class=o>:</span>
-</span></span><span class=line><span class=cl>    <span class=kt>bool</span>         <span class=n>_is_clumsy</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=kt>unsigned</span> <span class=kt>int</span> <span class=n>_nb_broken_cups</span> <span class=o>=</span> <span class=mi>0u</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=p>};</span></span></span></code></pre></div><p>Intern.cpp:</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&#34;Intern.h&#34;</span><span class=cp>
-</span></span></span><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&#34;Rank.h&#34;</span><span class=cp>
-</span></span></span><span class=line><span class=cl><span class=cp></span>
-</span></span><span class=line><span class=cl><span class=n>Intern</span><span class=o>::</span><span class=n>Intern</span><span class=p>(</span><span class=n>std</span><span class=o>::</span><span class=n>string_view</span> <span class=n>name</span><span class=p>,</span> <span class=n>std</span><span class=o>::</span><span class=n>string_view</span> <span class=n>surname</span><span class=p>,</span> <span class=kt>unsigned</span> <span class=kt>int</span> <span class=n>salary</span><span class=p>,</span> <span class=kt>bool</span> <span class=n>is_clumsy</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>    <span class=o>:</span> <span class=n>Employee</span> <span class=p>{</span> <span class=n>name</span><span class=p>,</span> <span class=n>surname</span><span class=p>,</span> <span class=n>salary</span><span class=p>,</span> <span class=n>Rank</span><span class=o>::</span><span class=n>Slave</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl>    <span class=p>,</span> <span class=n>_is_clumsy</span> <span class=p>{</span> <span class=n>is_clumsy</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl><span class=p>{}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>...</span></span></span></code></pre></div></div></div><hr><h3 id=visibilité-de-la-relation-de-parenté>Visibilité de la relation de parenté</h3><p>Vous vous demandez peut-être pourquoi il fallait mettre <code>public</code> devant le nom de la classe-mère au moment de déclarer votre héritage.<br>En fait, en C++, il est possible de définir la visibilité d&rsquo;une relation d&rsquo;héritage. Celle-ci peut aussi bien être privée que publique.</p><p>Par exemple, dans le cas suivant :</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=k>class</span> <span class=nc>Child</span> <span class=o>:</span> <span class=k>private</span> <span class=n>Parent</span>
-</span></span><span class=line><span class=cl><span class=p>{</span>
-</span></span><span class=line><span class=cl>    <span class=p>...</span>
-</span></span><span class=line><span class=cl><span class=p>};</span></span></span></code></pre></div><p>Si <code>Parent</code> déclare une fonction <code>get_parent_name()</code>, alors il ne sera possible d&rsquo;utiliser cette fonction qu&rsquo;à l&rsquo;intérieur de la classe <code>Child</code>.<br>C&rsquo;est comme si tous les attributs et fonctions héritées de <code>Parent</code> étaient placés dans la partie privée de <code>Child</code>.</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=c1>// In member function of Child:
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>void</span> <span class=n>Child</span><span class=o>::</span><span class=n>get_child_name</span><span class=p>()</span> <span class=k>const</span>
-</span></span><span class=line><span class=cl><span class=p>{</span>
-</span></span><span class=line><span class=cl>    <span class=c1>// The following line compile.
-</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>return</span> <span class=nf>get_parent_name</span><span class=p>();</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1>// In main function:
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=nf>main</span><span class=p>()</span>
-</span></span><span class=line><span class=cl><span class=p>{</span>
-</span></span><span class=line><span class=cl>    <span class=n>Child</span> <span class=n>child</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=c1>// The following line doesn&#39;t compile, because Child is &#34;hiding&#34; the fact that it inherits from Parent. 
-</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=n>child</span><span class=p>.</span><span class=n>get_parent_name</span><span class=p>();</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>A part pour de très rares cas (comme des patterns de programmation un peu particuliers), il est déconseillé d&rsquo;employer de l&rsquo;héritage privé, car on peut alors généralement remplacer la relation &ldquo;is-a&rdquo; par une relation &ldquo;has-a&rdquo;, c&rsquo;est-à-dire une composition.</p><p><strong>Mais dans ce cas, pourquoi avoir aborder le sujet ?</strong></p><p>Tout simplement parce qu&rsquo;en faisant de l&rsquo;héritage, vous allez vous retrouver au moins une fois avec une erreur de ce type :</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>error: <span class=s1>&#39;some variable or function&#39;</span> is inaccessible within this context</span></span></code></pre></div><p>La visibilité par défaut dans une <code>class</code> est privée.
-Cela signifie que si vous ne spécifiez par la visibilité au début de la définition de la classe, tout ce qui se trouve derrière est privée :</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=k>class</span> <span class=nc>A</span>
-</span></span><span class=line><span class=cl><span class=p>{</span>
-</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>_a</span><span class=p>;</span>                             <span class=c1>// -&gt; private by default
-</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kt>int</span> <span class=nf>get_a</span><span class=p>()</span> <span class=k>const</span> <span class=p>{</span> <span class=k>return</span> <span class=n>_a</span><span class=p>;</span> <span class=p>}</span>    <span class=c1>// -&gt; private by default
-</span></span></span><span class=line><span class=cl><span class=c1></span>
-</span></span><span class=line><span class=cl><span class=k>public</span><span class=o>:</span>
-</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>_b</span><span class=p>;</span>                             <span class=c1>// -&gt; public
-</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kt>int</span> <span class=nf>get_b</span><span class=p>()</span> <span class=k>const</span> <span class=p>{</span> <span class=k>return</span> <span class=n>_b</span><span class=p>;</span> <span class=p>}</span>    <span class=c1>// -&gt; public
-</span></span></span><span class=line><span class=cl><span class=c1></span>    
-</span></span><span class=line><span class=cl><span class=k>private</span><span class=o>:</span>
-</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>_b</span><span class=p>;</span>                             <span class=c1>// -&gt; private
-</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kt>int</span> <span class=nf>get_b</span><span class=p>()</span> <span class=k>const</span> <span class=p>{</span> <span class=k>return</span> <span class=n>_b</span><span class=p>;</span> <span class=p>}</span>    <span class=c1>// -&gt; private
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span></span></span></code></pre></div><p>En C++, on peut aussi utiliser des <code>struct</code>.
-La seule différence syntaxique avec <code>class</code>, c&rsquo;est que la visibilité par défaut est publique :</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=k>struct</span> <span class=nc>B</span>
-</span></span><span class=line><span class=cl><span class=p>{</span>
-</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>_a</span><span class=p>;</span>                             <span class=c1>// -&gt; public by default
-</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kt>int</span> <span class=nf>get_a</span><span class=p>()</span> <span class=k>const</span> <span class=p>{</span> <span class=k>return</span> <span class=n>_a</span><span class=p>;</span> <span class=p>}</span>    <span class=c1>// -&gt; public by default
-</span></span></span><span class=line><span class=cl><span class=c1></span>
-</span></span><span class=line><span class=cl><span class=k>public</span><span class=o>:</span>
-</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>_b</span><span class=p>;</span>                             <span class=c1>// -&gt; public
-</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kt>int</span> <span class=nf>get_b</span><span class=p>()</span> <span class=k>const</span> <span class=p>{</span> <span class=k>return</span> <span class=n>_b</span><span class=p>;</span> <span class=p>}</span>    <span class=c1>// -&gt; public
-</span></span></span><span class=line><span class=cl><span class=c1></span>    
-</span></span><span class=line><span class=cl><span class=k>private</span><span class=o>:</span>
-</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>_b</span><span class=p>;</span>                             <span class=c1>// -&gt; private
-</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kt>int</span> <span class=nf>get_b</span><span class=p>()</span> <span class=k>const</span> <span class=p>{</span> <span class=k>return</span> <span class=n>_b</span><span class=p>;</span> <span class=p>}</span>    <span class=c1>// -&gt; private
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span></span></span></code></pre></div><p>Cette visibilité par défaut s&rsquo;applique également à la relation d&rsquo;héritage.</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=k>class</span> <span class=nc>A</span>  <span class=o>:</span> <span class=n>B</span> <span class=p>{};</span>    <span class=c1>// private inheritance, because the default visibility for a class is &#39;private&#39;
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>struct</span> <span class=nc>A</span> <span class=o>:</span> <span class=n>B</span> <span class=p>{};</span>    <span class=c1>// public inheritance, because the default visibility for a struct is &#39;public&#39;
-</span></span></span></code></pre></div><p>Donc lorsque vous faites de l&rsquo;héritage avec des <code>class</code>, <strong>n&rsquo;oubliez pas de placer le mot-clef <code>public</code> devant le nom de la classe-mère</strong>.<br>Autrement, la relation d&rsquo;héritage sera privée et le compilateur ne vous laissera pas accéder aux fonctions-membres du parent en dehors de la classe.</p><footer class=footline></footer></article></div></main></div><aside id=R-sidebar class="default-animation showVisitedLinks"><div id=R-header-topbar class=default-animation></div><div id=R-header-wrapper class=default-animation><div id=R-header class=default-animation><a id=logo href=../../>🎄 C++ 🎄</a></div></div><div id=R-homelinks class=default-animation><hr class=padding></div><div id=R-content-wrapper class=highlightable><div id=R-topics><ul class="enlarge morespace collapsible-menu"><li data-nav-id=/chapter0/index.html><a class=padding href=../../chapter0/index.html><b>0- </b>Mise en place<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-bb41caf94f12b8a1a4b5e560230e7851 class=collapsible-menu></ul></li><li data-nav-id=/chapter1/index.html><a class=padding href=../../chapter1/index.html><b>1- </b>Introduction au C++<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-6c398714eae4372920aec3a1e6c2e143 class=collapsible-menu></ul></li><li data-nav-id=/chapter2/index.html><a class=padding href=../../chapter2/index.html><b>2- </b>Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-b1df0095a9fd74320697a6d478418ec3 class=collapsible-menu></ul></li><li data-nav-id=/chapter3/index.html><a class=padding href=../../chapter3/index.html><b>3- </b>Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-9f6546bce6f8e9a77063b71c880fd5b8 class=collapsible-menu></ul></li><li class=parent data-nav-id=/chapter4/index.html><a class=padding href=../../chapter4/index.html><b>4- </b>Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-48065e8b6e7e69533ca73b3931c8a0a1 class=collapsible-menu><li class=active data-nav-id=/chapter4/1-hierarchy/index.html><a class=padding href=../../chapter4/1-hierarchy/index.html>💼 Hiérarchie professionnelle<i class="fa-fw fas fa-check read-icon"></i></a></li><li data-nav-id=/chapter4/2-farm/index.html><a class=padding href=../../chapter4/2-farm/index.html>🐮 Concerto animalier<i class="fa-fw fas fa-check read-icon"></i></a></li><li data-nav-id=/chapter4/3-virtual/index.html><a class=padding href=../../chapter4/3-virtual/index.html>Résolution d'appel virtuel<i class="fa-fw fas fa-check read-icon"></i></a></li><li data-nav-id=/chapter4/4-polymorphism/index.html><a class=padding href=../../chapter4/4-polymorphism/index.html>Polymorphisme<i class="fa-fw fas fa-check read-icon"></i></a></li><li data-nav-id=/chapter4/5-vehicles/index.html><a class=padding href=../../chapter4/5-vehicles/index.html>🚗 Véhicule partagé<i class="fa-fw fas fa-check read-icon"></i></a></li><li data-nav-id=/chapter4/test/index.html><a class=padding href=../../chapter4/test/index.html>Questionnaire !<i class="fa-fw fas fa-check read-icon"></i></a></li><li data-nav-id=/chapter4/summary/index.html><a class=padding href=../../chapter4/summary/index.html>Synthèse<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/chapter5/index.html><a class=padding href=../../chapter5/index.html><b>5- </b>Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-86528e6ba587b53932a1dafaa9cd375c class=collapsible-menu></ul></li><li data-nav-id=/chapter6/index.html><a class=padding href=../../chapter6/index.html><b>6- </b>Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-016ee40825ff7c4aeecbac08a8ca264b class=collapsible-menu></ul></li><li data-nav-id=/chapter9/index.html><a class=padding href=../../chapter9/index.html><b>7- </b>Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-24ddf636ccd0ce3ef39c8060d1779332 class=collapsible-menu></ul></li><li data-nav-id=/chapter10/index.html><a class=padding href=../../chapter10/index.html><b>8- </b>Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-66e6e0c58d73995ecc09e8fbbe358e51 class=collapsible-menu></ul></li></ul></div><div id=R-shortcuts><div class="nav-title padding">Accès rapide</div><ul class=space><li><a class=padding href=https://github.com/Laefy/CPP_Learning_Code/><i class='fab fa-github'></i> Dépôt Cours</a></li><li><a class=padding href=https://github.com/Laefy/CPP_Exercises/><i class='fab fa-github'></i> Dépôt TPs</a></li><li><a class=padding href=../../slides/index.html><i class='far fa-file-powerpoint'></i> Slides</a></li><li><a class=padding href=../../workflow/index.html><i class='far fa-list-alt'></i> Workflow</a></li><li><a class=padding href=../../faq/index.html><i class='fas fa-question-circle'></i> FAQ</a></li><li><a class=padding href=../../chapter0/6-tips/index.html><i class='fa fa-rocket'></i> Astuces</a></li><li><a class=padding href=https://godbolt.org/><i class='fas fa-cog'></i> Compiler Explorer</a></li><li><a class=padding href=https://en.cppreference.com/w/><i class='fas fa-passport'></i> CPP-Ref</a></li></ul></div><div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div><div id=R-menu-footer><hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"><div id=R-prefooter class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVisitedLinks"><ul><li id=R-select-language-container class=footerLangSwitch><div class="padding menu-control"><i class="fa-fw fas fa-language"></i>
-<span>&nbsp;</span><div class=control-style><label class=a11y-only for=R-select-language>Langue</label>
-<select id=R-select-language onchange="location=this.querySelector(this.value).dataset.url"><option id=R-select-language-fr value=#R-select-language-fr data-url=../../chapter4/1-hierarchy/index.html lang=fr selected>Français</option></select></div><div class=clear></div></div></li><li id=R-select-variant-container class=footerVariantSwitch><div class="padding menu-control"><i class="fa-fw fas fa-paint-brush"></i>
-<span>&nbsp;</span><div class=control-style><label class=a11y-only for=R-select-variant>Thème</label>
-<select id=R-select-variant onchange=window.variants&&variants.changeVariant(this.value)><option id=R-select-variant-mine value=mine selected>Mine</option></select></div><div class=clear></div></div><script>window.variants&&variants.markSelectedVariant()</script></li><li class="footerVisitedLinks showVisitedLinks"><div class="padding menu-control"><i class="fa-fw fas fa-history"></i>
-<span>&nbsp;</span><div class=control-style><button onclick=clearHistory()>Supprimer l'historique</button></div><div class=clear></div></div></li></ul></div><div id=R-footer class="footerFooter showFooter"><p>Built with <a href=https://github.com/McShelby/hugo-theme-relearn title=love><i class="fas fa-heart"></i></a> by <a href=https://gohugo.io/>Hugo</a></p></div></div></div></aside><script src=../../js/clipboard.min.js?1729268601 defer></script><script src=../../js/perfect-scrollbar.min.js?1729268601 defer></script><script src=../../js/theme.js?1729268601 defer></script><button id=footer-question-btn title="Envoyer un message à propos du texte sélectionné" onclick=openQuestionForm() disabled><i class="fas fa-question-circle"></i></button><div id=footer-question-window disabled><form id=question method=POST action=https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b target=question-submitted onsubmit=cleanQuestionFormContent()><input type=email name=email placeholder=mon_email@smthg.com required onchange=updateQuestionFormSubject()>
-<textarea name=question rows=7 cols=30 placeholder="Mon message..."></textarea>
-<input type=hidden name=selection>
-<input type=hidden name=_replyto>
-<input type=hidden name=_subject>
-<input type=hidden name=_template value=box>
-<input type=hidden name=_captcha value=false>
-<input type=hidden name=_next value=//question-submitted/>
-<input type=submit disabled style=display:none aria-hidden=true>
-<input type=submit value=Envoyer></form><iframe class=hidden name=question-submitted src></iframe></div><script>function updateQuestionFormSubject(){let e=document.querySelector('#question>input[name="email"]').value;document.querySelector('#question>input[name="_subject"]').value="[C++][Chapitre 4] "+e+", retour sur ta question"}function cleanQuestionFormContent(){function e(e){e.value=e.value.replace(/\[\.\./g,"[ ..")}e(document.querySelector('#question>textarea[name="question"]')),e(document.querySelector('#question>input[name="selection"]'))}function openQuestionForm(){document.getElementById("footer-question-window").removeAttribute("disabled");var e=window.getSelection().toString();document.querySelector('#question>input[name="selection"]').value=e}function updateQuestionWidgetState(e){var t=document.getElementById("R-body-inner"),n=window.getSelection(),s=document.getElementById("footer-question-window");document.getElementById("footer-question-btn").disabled=n.isCollapsed||t==null||t.contains(n.anchorNode)==!1||t.contains(n.focusNode)==!1,e!==void 0&&e.type=="mouseup"&&s.contains(e.target)==!1&&s.contains(document.activeElement)==!1&&s.setAttribute("disabled",!0)}updateQuestionFormSubject(),document.onmouseup=document.onkeyup=document.onselectionchange=updateQuestionWidgetState,updateQuestionWidgetState()</script></body></html>
+Pour le nom de la classe, essayez de trouver quelque chose qui soit digne de son contenu.</p>
+<div class="expand">
+  <input type="checkbox" id="R-expand-14b86d09c4497e16d75e02ee50358ab1" aria-controls="R-expandcontent-14b86d09c4497e16d75e02ee50358ab1">
+  <label class="expand-label" for="R-expand-14b86d09c4497e16d75e02ee50358ab1">
+    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
+  </label>
+  <div id="R-expandcontent-14b86d09c4497e16d75e02ee50358ab1" class="expand-content">
+<p>Afin de pouvoir retourner le grade (<code>get_rank()</code>) de chaque employé, on ajoute un attribut <code>_rank</code> à la classe.<br>
+Et on n&rsquo;oublie pas de définir un constructeur pour initialiser chacun des membres de la nouvelle classe.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Rank.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string_view&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Employee</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Employee</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">name</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">surname</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">salary</span><span class="p">,</span> <span class="n">Rank</span> <span class="n">rank</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">,</span> <span class="n">_surname</span> <span class="p">{</span> <span class="n">surname</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">,</span> <span class="n">_salary</span> <span class="p">{</span> <span class="n">salary</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">,</span> <span class="n">_rank</span> <span class="p">{</span> <span class="n">rank</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">get_name</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_name</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">get_surname</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_surname</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nf">get_salary</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_salary</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span>         <span class="nf">increase_salary</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">raise</span><span class="p">)</span> <span class="p">{</span> <span class="n">_salary</span> <span class="o">+=</span> <span class="n">raise</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Rank</span> <span class="nf">get_rank</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_rank</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_surname</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">int</span>      <span class="n">_salary</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Rank</span>              <span class="n">_rank</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div>
+  </div>
+</div>
+<p>Vous allez maintenant modifier la définition de la classe <code>Boss</code> afin de la faire hériter de votre nouvelle classe.
+Pour cela, il faut écrire le code suivant :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Employee.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Boss</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Employee</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div>
+<p>La deuxième étape est de supprimer l&rsquo;ensemble des champs (attributs et fonctions-membres) déjà définies dans la <strong>classe-mère</strong>.<br>
+Il ne devrait vous rester que ceci :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Boss</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Employee</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Boss</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">name</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">surname</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">salary</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">is_nice</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">assign_task</span><span class="p">(</span><span class="n">Staff</span><span class="o">&amp;</span> <span class="n">staff</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">ask_coffee</span><span class="p">(</span><span class="n">Intern</span><span class="o">&amp;</span> <span class="n">intern</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">_is_nice</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div>
+<p>Pour terminer, vous devez modifier l&rsquo;implémentation du constructeur afin d&rsquo;appeler le constructeur parent :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Boss</span><span class="o">::</span><span class="n">Boss</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">name</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">surname</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">salary</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">is_nice</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">:</span> <span class="n">Employee</span> <span class="p">{</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">,</span> <span class="n">salary</span><span class="p">,</span> <span class="n">Rank</span><span class="o">::</span><span class="n">TopManagement</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">_is_nice</span> <span class="p">{</span> <span class="n">is_nice</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">{}</span></span></span></code></pre></div>
+<p>Comme vous pouvez le constater, c&rsquo;est un peu la même syntaxe que lorsque vous souhaitez déléguer la construction à un autre constructeur, si ce n&rsquo;est
+que vous devez initialiser vos propres attributs à la suite de l&rsquo;appel au constructeur de la classe-mère.</p>
+<p>Refactorisez maintenant les deux autres classes <code>Staff</code> et <code>Intern</code> de manière à supprimer le code dupliqué en les faisant hériter de <code>Employee</code>.</p>
+<div class="expand">
+  <input type="checkbox" id="R-expand-d2dc5f97bd79a6a4806701f77e65b6d3" aria-controls="R-expandcontent-d2dc5f97bd79a6a4806701f77e65b6d3">
+  <label class="expand-label" for="R-expand-d2dc5f97bd79a6a4806701f77e65b6d3">
+    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
+  </label>
+  <div id="R-expandcontent-d2dc5f97bd79a6a4806701f77e65b6d3" class="expand-content">
+<p>Staff.h:</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Employee.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string_view&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Staff</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Employee</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Staff</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">name</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">surname</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">salary</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">receive_task</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">complete_task</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nf">get_assigned_tasks</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_assigned_tasks</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nf">get_done_tasks</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_done_tasks</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">_assigned_tasks</span> <span class="o">=</span> <span class="mi">0u</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">_done_tasks</span> <span class="o">=</span> <span class="mi">0u</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div>
+<p>Staff.cpp:</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Staff.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Rank.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="n">Staff</span><span class="o">::</span><span class="n">Staff</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">name</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">surname</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">salary</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">:</span> <span class="n">Employee</span> <span class="p">{</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">,</span> <span class="n">salary</span><span class="p">,</span> <span class="n">Rank</span><span class="o">::</span><span class="n">Default</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">...</span></span></span></code></pre></div>
+<p>Intern.h:</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Employee.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string_view&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Intern</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Employee</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Intern</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">name</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">surname</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">salary</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">is_clumsy</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">fetch_coffee</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nf">get_nb_broken_cups</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_nb_broken_cups</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span>         <span class="n">_is_clumsy</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">_nb_broken_cups</span> <span class="o">=</span> <span class="mi">0u</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div>
+<p>Intern.cpp:</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Intern.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Rank.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="n">Intern</span><span class="o">::</span><span class="n">Intern</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">name</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">surname</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">salary</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">is_clumsy</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">:</span> <span class="n">Employee</span> <span class="p">{</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">,</span> <span class="n">salary</span><span class="p">,</span> <span class="n">Rank</span><span class="o">::</span><span class="n">Slave</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">_is_clumsy</span> <span class="p">{</span> <span class="n">is_clumsy</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">...</span></span></span></code></pre></div>
+  </div>
+</div>
+<hr>
+<h3 id="visibilité-de-la-relation-de-parenté">Visibilité de la relation de parenté</h3>
+<p>Vous vous demandez peut-être pourquoi il fallait mettre <code>public</code> devant le nom de la classe-mère au moment de déclarer votre héritage.<br>
+En fait, en C++, il est possible de définir la visibilité d&rsquo;une relation d&rsquo;héritage. Celle-ci peut aussi bien être privée que publique.</p>
+<p>Par exemple, dans le cas suivant :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Child</span> <span class="o">:</span> <span class="k">private</span> <span class="n">Parent</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div>
+<p>Si <code>Parent</code> déclare une fonction <code>get_parent_name()</code>, alors il ne sera possible d&rsquo;utiliser cette fonction qu&rsquo;à l&rsquo;intérieur de la classe <code>Child</code>.<br>
+C&rsquo;est comme si tous les attributs et fonctions héritées de <code>Parent</code> étaient placés dans la partie privée de <code>Child</code>.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// In member function of Child:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="n">Child</span><span class="o">::</span><span class="n">get_child_name</span><span class="p">()</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// The following line compile.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="nf">get_parent_name</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// In main function:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Child</span> <span class="n">child</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// The following line doesn&#39;t compile, because Child is &#34;hiding&#34; the fact that it inherits from Parent. 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">child</span><span class="p">.</span><span class="n">get_parent_name</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<p>A part pour de très rares cas (comme des patterns de programmation un peu particuliers), il est déconseillé d&rsquo;employer de l&rsquo;héritage privé, car on peut alors généralement remplacer la relation &ldquo;is-a&rdquo; par une relation &ldquo;has-a&rdquo;, c&rsquo;est-à-dire une composition.</p>
+<p><strong>Mais dans ce cas, pourquoi avoir aborder le sujet ?</strong></p>
+<p>Tout simplement parce qu&rsquo;en faisant de l&rsquo;héritage, vous allez vous retrouver au moins une fois avec une erreur de ce type :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">error: <span class="s1">&#39;some variable or function&#39;</span> is inaccessible within this context</span></span></code></pre></div>
+<p>La visibilité par défaut dans une <code>class</code> est privée.
+Cela signifie que si vous ne spécifiez par la visibilité au début de la définition de la classe, tout ce qui se trouve derrière est privée :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">A</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">_a</span><span class="p">;</span>                             <span class="c1">// -&gt; private by default
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="nf">get_a</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_a</span><span class="p">;</span> <span class="p">}</span>    <span class="c1">// -&gt; private by default
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">_b</span><span class="p">;</span>                             <span class="c1">// -&gt; public
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="nf">get_b</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_b</span><span class="p">;</span> <span class="p">}</span>    <span class="c1">// -&gt; public
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">_b</span><span class="p">;</span>                             <span class="c1">// -&gt; private
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="nf">get_b</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_b</span><span class="p">;</span> <span class="p">}</span>    <span class="c1">// -&gt; private
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span></span></span></code></pre></div>
+<p>En C++, on peut aussi utiliser des <code>struct</code>.
+La seule différence syntaxique avec <code>class</code>, c&rsquo;est que la visibilité par défaut est publique :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">B</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">_a</span><span class="p">;</span>                             <span class="c1">// -&gt; public by default
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="nf">get_a</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_a</span><span class="p">;</span> <span class="p">}</span>    <span class="c1">// -&gt; public by default
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">_b</span><span class="p">;</span>                             <span class="c1">// -&gt; public
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="nf">get_b</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_b</span><span class="p">;</span> <span class="p">}</span>    <span class="c1">// -&gt; public
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">_b</span><span class="p">;</span>                             <span class="c1">// -&gt; private
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="nf">get_b</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_b</span><span class="p">;</span> <span class="p">}</span>    <span class="c1">// -&gt; private
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span></span></span></code></pre></div>
+<p>Cette visibilité par défaut s&rsquo;applique également à la relation d&rsquo;héritage.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">A</span>  <span class="o">:</span> <span class="n">B</span> <span class="p">{};</span>    <span class="c1">// private inheritance, because the default visibility for a class is &#39;private&#39;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">struct</span> <span class="nc">A</span> <span class="o">:</span> <span class="n">B</span> <span class="p">{};</span>    <span class="c1">// public inheritance, because the default visibility for a struct is &#39;public&#39;
+</span></span></span></code></pre></div>
+<p>Donc lorsque vous faites de l&rsquo;héritage avec des <code>class</code>, <strong>n&rsquo;oubliez pas de placer le mot-clef <code>public</code> devant le nom de la classe-mère</strong>.<br>
+Autrement, la relation d&rsquo;héritage sera privée et le compilateur ne vous laissera pas accéder aux fonctions-membres du parent en dehors de la classe.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation showVisitedLinks">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="logo" href="../../">🎄 C++ 🎄</a>
+
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/chapter0/index.html"><a class="padding" href="../../chapter0/index.html"><b>0- </b>Mise en place<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb41caf94f12b8a1a4b5e560230e7851" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter1/index.html"><a class="padding" href="../../chapter1/index.html"><b>1- </b>Introduction au C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-6c398714eae4372920aec3a1e6c2e143" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter2/index.html"><a class="padding" href="../../chapter2/index.html"><b>2- </b>Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b1df0095a9fd74320697a6d478418ec3" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><b>3- </b>Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><b>4- </b>Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu">
+            <li class="active " data-nav-id="/chapter4/1-hierarchy/index.html"><a class="padding" href="../../chapter4/1-hierarchy/index.html">💼 Hiérarchie professionnelle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter4/2-farm/index.html"><a class="padding" href="../../chapter4/2-farm/index.html">🐮 Concerto animalier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter4/3-virtual/index.html"><a class="padding" href="../../chapter4/3-virtual/index.html">Résolution d&#39;appel virtuel<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter4/4-polymorphism/index.html"><a class="padding" href="../../chapter4/4-polymorphism/index.html">Polymorphisme<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter4/5-vehicles/index.html"><a class="padding" href="../../chapter4/5-vehicles/index.html">🚗 Véhicule partagé<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter4/test/index.html"><a class="padding" href="../../chapter4/test/index.html">Questionnaire !<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter4/summary/index.html"><a class="padding" href="../../chapter4/summary/index.html">Synthèse<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><b>5- </b>Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><b>6- </b>Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter9/index.html"><a class="padding" href="../../chapter9/index.html"><b>7- </b>Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter10/index.html"><a class="padding" href="../../chapter10/index.html"><b>8- </b>Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-66e6e0c58d73995ecc09e8fbbe358e51" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">Accès rapide</div>
+          <ul class="space">
+            <li><a class="padding" href="https://github.com/Laefy/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt Cours</a></li>
+            <li><a class="padding" href="https://github.com/Laefy/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt TPs</a></li>
+            <li><a class="padding" href="../../slides/index.html"><i class='far fa-file-powerpoint'></i> Slides</a></li>
+            <li><a class="padding" href="../../workflow/index.html"><i class='far fa-list-alt'></i> Workflow</a></li>
+            <li><a class="padding" href="../../faq/index.html"><i class='fas fa-question-circle'></i> FAQ</a></li>
+            <li><a class="padding" href="../../chapter0/6-tips/index.html"><i class='fa fa-rocket'></i> Astuces</a></li>
+            <li><a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a></li>
+            <li><a class="padding" href="https://en.cppreference.com/w/"><i class='fas fa-passport'></i> CPP-Ref</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Langue</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../chapter4/1-hierarchy/index.html" lang="fr" selected>Français</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Thème</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-mine" value="mine" selected>Mine</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks showVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Supprimer l&#39;historique</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="../../js/clipboard.min.js?1729268734" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1729268734" defer></script>
+    <script src="../../js/theme.js?1729268734" defer></script>
+
+
+
+    
+
+
+<button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
+
+<div id="footer-question-window" disabled>
+    <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b"
+        target="question-submitted" onsubmit="cleanQuestionFormContent()">
+
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <textarea name="question" rows="7" cols="30" placeholder="Mon message..."></textarea>
+        <input type="hidden" name="selection" />
+
+        <input type="hidden" name="_replyto" />
+        <input type="hidden" name="_subject" />
+        <input type="hidden" name="_template" value="box" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="//question-submitted/" />
+
+        <input type="submit" disabled style="display: none" aria-hidden="true" />
+        <input type="submit" value="Envoyer" />
+    </form>
+
+    <iframe class="hidden" name="question-submitted" src=""></iframe>
+</div>
+
+<script>
+
+    function updateQuestionFormSubject() {
+        let email = document.querySelector('#question>input[name="email"]').value;
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 4] " + email + ", retour sur ta question";
+    }
+
+    function cleanQuestionFormContent() {
+
+        function clean(element) {
+            
+            element.value = element.value.replace(/\[\.\./g, "[ ..");
+        }
+
+        clean(document.querySelector('#question>textarea[name="question"]'))
+        clean(document.querySelector('#question>input[name="selection"]'))
+    }
+
+    function openQuestionForm() {
+        document.getElementById("footer-question-window").removeAttribute("disabled");
+
+        var selection = window.getSelection().toString();
+        document.querySelector('#question>input[name="selection"]').value = selection
+    }
+
+    function updateQuestionWidgetState(event) {
+        var body = document.getElementById("R-body-inner");
+        var selection = window.getSelection();
+        var question_window = document.getElementById("footer-question-window");
+
+        document.getElementById("footer-question-btn").disabled =
+            selection.isCollapsed ||
+            body == null ||
+            body.contains(selection.anchorNode) == false ||
+            body.contains(selection.focusNode) == false;
+
+        if (event !== undefined
+            && event.type == "mouseup"
+            && question_window.contains(event.target) == false
+            && question_window.contains(document.activeElement) == false) {
+            question_window.setAttribute("disabled", true);
+        }
+    }
+
+    updateQuestionFormSubject();
+
+    document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionWidgetState;
+    updateQuestionWidgetState();
+
+</script>
+
+
+  </body>
+</html>

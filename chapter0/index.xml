@@ -1,17 +1,67 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mise en place :: Cours de C++ - Niveau Master</title><link>/chapter0/index.html</link><description>Cette première partie a pour objectif de vous permettre d’installer et de configurer tous les outils qui vous serons nécessaires pour suivre ce cours dans les meilleures conditions.
-Vous aurez besoin d’un compilateur, d’un IDE (éditeur + debugger), d’un outil pour générer les projets de code et d’un gestionnaire de version. Nous vous fournirons des liens pour télécharger les logiciels à installer. Si vous préférez utiliser d’autres logiciels que ceux que nous proposons ici, le choix vous appartient, mais nous ne pourrons pas vous aidez à les configurer au cours des TPs.</description><generator>Hugo</generator><language>fr</language><atom:link href="/chapter0/index.xml" rel="self" type="application/rss+xml"/><item><title>Compilateur</title><link>/chapter0/1-compiler/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter0/1-compiler/index.html</guid><description>Pour le compilateur, vous devrez utiliser g++ (version >= 9) si vous êtes sous Windows ou Linux, et clang si vous êtes sous MacOS.
-Windows Ouvrez un terminal et exécutez g++ -v. Si la commande réussit, assurez-vous que la dernière ligne indique bien une version de gcc >= 9. Si ce n’est pas le cas, installez le gestionnaire de paquet MSYS2 en suivant les instructions sur cette page.
-MSYS2 contient en particulier MinGW, qui est l’équivalent du compilateur gcc/g++ pour Windows.</description></item><item><title>Visual Studio Code</title><link>/chapter0/2-vscode/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter0/2-vscode/index.html</guid><description>Pour l’IDE, nous vous conseillons d’utiliser Visual Studio Code, car celui-ci est disponible sur toutes les plateformes (contrairement à Visual Studio tout court), qu’il est très bien documenté et que vous pourrez trouvez de nombreux tutoriels en ligne pour apprendre à l’utiliser.
-Vous trouverez ci-dessous les instructions permettant d’installer VSCode.
-Windows Installez VSCode en suivant les instructions du paragraphe Installation. Si l’installeur vous propose d’installer git, vous pouvez acceptez, cela vous fera gagner du temps pour la suite.</description></item><item><title>CMake</title><link>/chapter0/3-cmake/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter0/3-cmake/index.html</guid><description>Afin de générer les artéfacts pour la compilation, nous utiliserons CMake.
-Installation Windows Ouvrez un terminal MSYS2 UCRT64. Installez les paquets cmake et make avec l’instruction suivante : pacman -S mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-make Linux / MacOS Ouvrez un terminal. Utilisez votre gestionnaire de package afin d’installer cmake. Intégration à VSCode Afin de pouvoir utiliser CMake facilement depuis VSCode, il faut installer les extensions CMake et CMakeTools.
-Démarrez VSCode. Ouvrez le panneau des extensions et recherchez les extensions CMake et CMakeTools.</description></item><item><title>Git</title><link>/chapter0/4-git/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter0/4-git/index.html</guid><description>Pour le gestionnaire de version, nous utiliserons git et nous utiliserons GitHub pour l’hébergement des dépôts.
-GitHub Création de compte Commencez par créer un compte si vous n’en avez pas déjà un.
-Génération de clef SSHs Depuis quelques années, pour pouvoir push sur un dépôt, il est nécessaire de passer par la méthode SSH (HTML ne permet plus d’éditer, juste de consulter).
-Pour associer une nouvelle clef SSH à votre machine, suivez les instructions du paragraphe “Generating a new SSH key” et enregistrez la clef à l’emplacement par défaut (c’est-à-dire sans spécifier de chemin de sauvegarde).</description></item><item><title>Clang-Format</title><link>/chapter0/5-clang-format/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter0/5-clang-format/index.html</guid><description>Clang-Format est un outil permettant de formatter automatiquement vos fichiers (indentation, espaces, retours à la ligne, etc).
-Comme le C++ est un langage avec une syntaxe un peu lourde, utiliser ce type d’outils permet de faciliter la lecture du code.
-Configuration de VSCode Clang-Format est déjà disponible dans l’extension C/C++ installée précédemment. Pour qu’il se lance automatiquement lorsque vous sauvegardez vos fichiers, suivez les instructions ci-dessous.
-Ouvrez le panneau de commandes VSCode (Ctrl + Shift + P).</description></item><item><title>Astuces</title><link>/chapter0/6-tips/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter0/6-tips/index.html</guid><description>Vous trouverez dans cette section différentes manipulations, astuces et rappels pour vous aider à programmer rapidement en utilisant VSCode.
-Compiler et exécuter des petits programmes Utiliser des projets VSCode Raccourcis &amp; Commandes VSCode Options de compilation</description></item><item><title>Retours ?</title><link>/chapter0/test/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter0/test/index.html</guid><description>Si vous avez rencontré des problèmes lors de l’installation d’un des logiciels, n’hésitez pas à nous l’indiquer, afin que nous puissions améliorer nos explications. Merci d’avance ! 🙂
-Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1 Initiaux 2 Alternants 1- Avez-vous rencontré des difficultés lors de l’installation d’un des composants ? Si oui, du ou desquels s’agit-il ?
-2- Si une erreur est survenue à un moment, pouvez-vous la copier-coller ci-dessous et indiquer le contexte dans lequel celle-ci a eu lieu ?</description></item><item><title>Merci !</title><link>/chapter0/test_done/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter0/test_done/index.html</guid><description>Vos réponses nous ont bien été communiquées 😃 N'hésitez pas à nous relancer si vous n'avez pas eu de nouvelles après une semaine !</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mise en place :: Cours de C&#43;&#43; - Niveau Master</title>
+    <link>/chapter0/index.html</link>
+    <description>Cette première partie a pour objectif de vous permettre d’installer et de configurer tous les outils qui vous serons nécessaires pour suivre ce cours dans les meilleures conditions.&#xA;Vous aurez besoin d’un compilateur, d’un IDE (éditeur + debugger), d’un outil pour générer les projets de code et d’un gestionnaire de version. Nous vous fournirons des liens pour télécharger les logiciels à installer. Si vous préférez utiliser d’autres logiciels que ceux que nous proposons ici, le choix vous appartient, mais nous ne pourrons pas vous aidez à les configurer au cours des TPs.</description>
+    <generator>Hugo</generator>
+    <language>fr</language>
+    <atom:link href="/chapter0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Compilateur</title>
+      <link>/chapter0/1-compiler/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter0/1-compiler/index.html</guid>
+      <description>Pour le compilateur, vous devrez utiliser g++ (version &gt;= 9) si vous êtes sous Windows ou Linux, et clang si vous êtes sous MacOS.&#xA;Windows Ouvrez un terminal et exécutez g++ -v. Si la commande réussit, assurez-vous que la dernière ligne indique bien une version de gcc &gt;= 9. Si ce n’est pas le cas, installez le gestionnaire de paquet MSYS2 en suivant les instructions sur cette page.&#xA;MSYS2 contient en particulier MinGW, qui est l’équivalent du compilateur gcc/g++ pour Windows.</description>
+    </item>
+    <item>
+      <title>Visual Studio Code</title>
+      <link>/chapter0/2-vscode/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter0/2-vscode/index.html</guid>
+      <description>Pour l’IDE, nous vous conseillons d’utiliser Visual Studio Code, car celui-ci est disponible sur toutes les plateformes (contrairement à Visual Studio tout court), qu’il est très bien documenté et que vous pourrez trouvez de nombreux tutoriels en ligne pour apprendre à l’utiliser.&#xA;Vous trouverez ci-dessous les instructions permettant d’installer VSCode.&#xA;Windows Installez VSCode en suivant les instructions du paragraphe Installation. Si l’installeur vous propose d’installer git, vous pouvez acceptez, cela vous fera gagner du temps pour la suite.</description>
+    </item>
+    <item>
+      <title>CMake</title>
+      <link>/chapter0/3-cmake/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter0/3-cmake/index.html</guid>
+      <description>Afin de générer les artéfacts pour la compilation, nous utiliserons CMake.&#xA;Installation Windows Ouvrez un terminal MSYS2 UCRT64. Installez les paquets cmake et make avec l’instruction suivante : pacman -S mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-make Linux / MacOS Ouvrez un terminal. Utilisez votre gestionnaire de package afin d’installer cmake. Intégration à VSCode Afin de pouvoir utiliser CMake facilement depuis VSCode, il faut installer les extensions CMake et CMakeTools.&#xA;Démarrez VSCode. Ouvrez le panneau des extensions et recherchez les extensions CMake et CMakeTools.</description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>/chapter0/4-git/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter0/4-git/index.html</guid>
+      <description>Pour le gestionnaire de version, nous utiliserons git et nous utiliserons GitHub pour l’hébergement des dépôts.&#xA;GitHub Création de compte Commencez par créer un compte si vous n’en avez pas déjà un.&#xA;Génération de clef SSHs Depuis quelques années, pour pouvoir push sur un dépôt, il est nécessaire de passer par la méthode SSH (HTML ne permet plus d’éditer, juste de consulter).&#xA;Pour associer une nouvelle clef SSH à votre machine, suivez les instructions du paragraphe “Generating a new SSH key” et enregistrez la clef à l’emplacement par défaut (c’est-à-dire sans spécifier de chemin de sauvegarde).</description>
+    </item>
+    <item>
+      <title>Clang-Format</title>
+      <link>/chapter0/5-clang-format/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter0/5-clang-format/index.html</guid>
+      <description>Clang-Format est un outil permettant de formatter automatiquement vos fichiers (indentation, espaces, retours à la ligne, etc).&#xA;Comme le C++ est un langage avec une syntaxe un peu lourde, utiliser ce type d’outils permet de faciliter la lecture du code.&#xA;Configuration de VSCode Clang-Format est déjà disponible dans l’extension C/C++ installée précédemment. Pour qu’il se lance automatiquement lorsque vous sauvegardez vos fichiers, suivez les instructions ci-dessous.&#xA;Ouvrez le panneau de commandes VSCode (Ctrl + Shift + P).</description>
+    </item>
+    <item>
+      <title>Astuces</title>
+      <link>/chapter0/6-tips/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter0/6-tips/index.html</guid>
+      <description>Vous trouverez dans cette section différentes manipulations, astuces et rappels pour vous aider à programmer rapidement en utilisant VSCode.&#xA;Compiler et exécuter des petits programmes Utiliser des projets VSCode Raccourcis &amp; Commandes VSCode Options de compilation</description>
+    </item>
+    <item>
+      <title>Retours ?</title>
+      <link>/chapter0/test/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter0/test/index.html</guid>
+      <description>Si vous avez rencontré des problèmes lors de l’installation d’un des logiciels, n’hésitez pas à nous l’indiquer, afin que nous puissions améliorer nos explications. Merci d’avance ! 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1 Initiaux 2 Alternants 1- Avez-vous rencontré des difficultés lors de l’installation d’un des composants ? Si oui, du ou desquels s’agit-il ?&#xA;2- Si une erreur est survenue à un moment, pouvez-vous la copier-coller ci-dessous et indiquer le contexte dans lequel celle-ci a eu lieu ?</description>
+    </item>
+    <item>
+      <title>Merci !</title>
+      <link>/chapter0/test_done/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter0/test_done/index.html</guid>
+      <description>Vos réponses nous ont bien été communiquées 😃 N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
+    </item>
+  </channel>
+</rss>

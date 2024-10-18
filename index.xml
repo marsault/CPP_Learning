@@ -1,10 +1,102 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Accueil :: Cours de C++ - Niveau Master</title><link>/index.html</link><description>Bienvenue sur 🎄 C++ 🎄 Sur ce site, vous trouverez le cours de C++ destiné à l’enseignement des Master 1 de l’Universisté Gustave-Eiffel. Si vous ne faites pas partie des étudiants de cette section, vous êtes tout de même les bienvenus. Sachez juste que d’une part, ce cours étant un cours d’introduction, nous nous concentrerons sur les concepts de base du langage, ainsi que sur les mécanismes permettant d’écrire du code plus simplement ou de le rendre plus sûr.</description><generator>Hugo</generator><language>fr</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Mise en place</title><link>/chapter0/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter0/index.html</guid><description>Cette première partie a pour objectif de vous permettre d’installer et de configurer tous les outils qui vous serons nécessaires pour suivre ce cours dans les meilleures conditions.
-Vous aurez besoin d’un compilateur, d’un IDE (éditeur + debugger), d’un outil pour générer les projets de code et d’un gestionnaire de version. Nous vous fournirons des liens pour télécharger les logiciels à installer. Si vous préférez utiliser d’autres logiciels que ceux que nous proposons ici, le choix vous appartient, mais nous ne pourrons pas vous aidez à les configurer au cours des TPs.</description></item><item><title>Introduction au C++</title><link>/chapter1/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter1/index.html</guid><description>Dans ce premier chapitre, nous commencerons par présenter les principales caractéristiques du langage. Juste après, nous débuterons la pratique en vous montrant comment implémenter vos premiers programmes et comment utiliser quelques fonctionnalités basiques du C++ et de sa librairie standard.</description></item><item><title>Classes</title><link>/chapter2/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter2/index.html</guid><description>L’objectif de ce chapitre est de vous apprendre à créer et utiliser des classes en C++.</description></item><item><title>Cycle de vie</title><link>/chapter3/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter3/index.html</guid><description>En C++, lorsque vous allouez une donnée, celle-ci ne reste pas miraculement accessible durant toute l’exécution de votre programme.
-Contrairement à des langages comme Java ou C#, qui disposent d’un garbage-collector pour libérer automatiquement la mémoire lorsque celle-ci n’est plus nécessaire, c’est ici au développeur de faire ce travail.
-Il doit penser à libérer la mémoire lorsqu’il ne compte plus s’en servir, mais surtout, il doit faire attention à ne pas tenter d’accéder à des données si celles-ci n’existent déjà plus 😬</description></item><item><title>Héritage</title><link>/chapter4/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter4/index.html</guid><description>Vous apprendrez dans ce chapitre comment fonctionne l’héritage en C++. Vous verrez qu’il existe de nombreuses différences avec l’héritage en Java, bien qu’on retrouve des concepts similaires.
-Pour la pratique, nous vous montrerons comment créer une hiérarchie de classes, puis comment faire pour redéfinir le comportement des classes-filles.</description></item><item><title>Librairie standard</title><link>/chapter5/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter5/index.html</guid><description>Dans ce chapitre, nous vous présenterons les différents types de conteneurs que vous pourrez trouver dans la librairie standard. Les exercices vous permettrons de vous familiariser avec certains d’entre-eux : vector et string bien sûr, mais aussi array, string_view, list, map ou encore pair. Nous en profiterons également pour vous expliquer comment la documentation est organisée sur le site cppreference, afin que vous sachiez toujours à quel endroit d’une page regarder pour trouver les informations dont vous avez besoin.</description></item><item><title>Algorithmes</title><link>/chapter6/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter6/index.html</guid><description>Comme vous le savez déjà, la STL fournit tout un tas de conteneurs pour répondre à différents usages. Ces conteneurs proposent des fonctions permettant l’insertion et la suppression d’éléments, mais rarement de quoi effectuer des recherches ou des transformations. Le but de ce chapitre sera donc de vous présenter comment faire pour réaliser ces opérations, notamment en s’appuyant sur la bibliothèque algorithmique fournie par la librairie standard.
-Nous ne présenterons pas l’ensemble des fonctions de la librairie (il y en a beaucoup trop), mais si cela vous intéresse, vous pourrez retrouver tout ce qu’elle propose sur cette page.</description></item><item><title>Templates</title><link>/chapter9/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter9/index.html</guid><description>Les templates, c’est un peu comme un chien qui aboie. Ca fait peur. Si on essaye de s’en approcher trop vite, ça mord. Mais si on prend le temps qu’il faut pour les aborder, il y a de bonnes chances qu’en fait, tout se passe bien. Sauf si on n’aime pas les chiens.</description></item><item><title>Paramètres de templates</title><link>/chapter10/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter10/index.html</guid><description>Dans ce deuxième chapitre sur les templates, nous parlerons de tout un tas de fonctionnalités et subtilités liées aux paramètres de templates. Installez-vous bien confortablement, faites-vous un ptit café, et n’hésitez pas à prendre une pause de temps en temps, parce que vous allez découvrir beaucoup de choses pas forcément faciles à intégrer du premier coup.</description></item><item><title>FAQ</title><link>/faq/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/faq/index.html</guid><description>Pourquoi je n’arrive pas à lancer mon projet avec CMake ? Cela peut-être dû à plusieurs raisons :
-1. Vous n’avez pas ouvert le bon dossier dans VSCode. Il faut toujours ouvrir le dossier qui contient tous les chapitres et tous les TPs, pas le dossier d’un chapitre ou d’un TP en particulier.
-2. Vous avez essayé de lancer le programme via le menu Run de VSCode. Si vous tentez de lancer un programme de cette manière, VSCode va générer un fichier launch.</description></item><item><title>Question Submitted</title><link>/question-submitted/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/question-submitted/index.html</guid><description/></item><item><title>Slides</title><link>/slides/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/slides/index.html</guid><description>Ci-dessous, vous trouverez le lien pour télécharger les slides de chaque séance de cours magistraux.
-Cours 1 Cours 2 Cours 3</description></item><item><title>Workflow</title><link>/workflow/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/workflow/index.html</guid><description>Afin de pouvoir mettre en place votre environnement de travail rapidement, vous pouvez suivre les étapes ci-dessous.
-Récupérer le dépôt Git du cours et des TPs Forkez le dépôt https://github.com/Laefy/CPP_Learning_Code/. Ouvrez une nouvelle fenêtre dans VSCode et cliquez sur “clone repository…” Copiez le lien de votre dépôt créé par le fork. Collez ce lien dans la fenêtre de VSCode et sélectionnez “Clone from URL”. Choisissez le répertoire dans lequel le dépôt sera cloné.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Accueil :: Cours de C&#43;&#43; - Niveau Master</title>
+    <link>/index.html</link>
+    <description>Bienvenue sur 🎄 C++ 🎄 Sur ce site, vous trouverez le cours de C++ destiné à l’enseignement des Master 1 de l’Universisté Gustave-Eiffel. Si vous ne faites pas partie des étudiants de cette section, vous êtes tout de même les bienvenus. Sachez juste que d’une part, ce cours étant un cours d’introduction, nous nous concentrerons sur les concepts de base du langage, ainsi que sur les mécanismes permettant d’écrire du code plus simplement ou de le rendre plus sûr.</description>
+    <generator>Hugo</generator>
+    <language>fr</language>
+    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mise en place</title>
+      <link>/chapter0/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter0/index.html</guid>
+      <description>Cette première partie a pour objectif de vous permettre d’installer et de configurer tous les outils qui vous serons nécessaires pour suivre ce cours dans les meilleures conditions.&#xA;Vous aurez besoin d’un compilateur, d’un IDE (éditeur + debugger), d’un outil pour générer les projets de code et d’un gestionnaire de version. Nous vous fournirons des liens pour télécharger les logiciels à installer. Si vous préférez utiliser d’autres logiciels que ceux que nous proposons ici, le choix vous appartient, mais nous ne pourrons pas vous aidez à les configurer au cours des TPs.</description>
+    </item>
+    <item>
+      <title>Introduction au C&#43;&#43;</title>
+      <link>/chapter1/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter1/index.html</guid>
+      <description>Dans ce premier chapitre, nous commencerons par présenter les principales caractéristiques du langage. Juste après, nous débuterons la pratique en vous montrant comment implémenter vos premiers programmes et comment utiliser quelques fonctionnalités basiques du C++ et de sa librairie standard.</description>
+    </item>
+    <item>
+      <title>Classes</title>
+      <link>/chapter2/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter2/index.html</guid>
+      <description>L’objectif de ce chapitre est de vous apprendre à créer et utiliser des classes en C++.</description>
+    </item>
+    <item>
+      <title>Cycle de vie</title>
+      <link>/chapter3/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter3/index.html</guid>
+      <description>En C++, lorsque vous allouez une donnée, celle-ci ne reste pas miraculement accessible durant toute l’exécution de votre programme.&#xA;Contrairement à des langages comme Java ou C#, qui disposent d’un garbage-collector pour libérer automatiquement la mémoire lorsque celle-ci n’est plus nécessaire, c’est ici au développeur de faire ce travail.&#xA;Il doit penser à libérer la mémoire lorsqu’il ne compte plus s’en servir, mais surtout, il doit faire attention à ne pas tenter d’accéder à des données si celles-ci n’existent déjà plus 😬</description>
+    </item>
+    <item>
+      <title>Héritage</title>
+      <link>/chapter4/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter4/index.html</guid>
+      <description>Vous apprendrez dans ce chapitre comment fonctionne l’héritage en C++. Vous verrez qu’il existe de nombreuses différences avec l’héritage en Java, bien qu’on retrouve des concepts similaires.&#xA;Pour la pratique, nous vous montrerons comment créer une hiérarchie de classes, puis comment faire pour redéfinir le comportement des classes-filles.</description>
+    </item>
+    <item>
+      <title>Librairie standard</title>
+      <link>/chapter5/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter5/index.html</guid>
+      <description>Dans ce chapitre, nous vous présenterons les différents types de conteneurs que vous pourrez trouver dans la librairie standard. Les exercices vous permettrons de vous familiariser avec certains d’entre-eux : vector et string bien sûr, mais aussi array, string_view, list, map ou encore pair. Nous en profiterons également pour vous expliquer comment la documentation est organisée sur le site cppreference, afin que vous sachiez toujours à quel endroit d’une page regarder pour trouver les informations dont vous avez besoin.</description>
+    </item>
+    <item>
+      <title>Algorithmes</title>
+      <link>/chapter6/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter6/index.html</guid>
+      <description>Comme vous le savez déjà, la STL fournit tout un tas de conteneurs pour répondre à différents usages. Ces conteneurs proposent des fonctions permettant l’insertion et la suppression d’éléments, mais rarement de quoi effectuer des recherches ou des transformations. Le but de ce chapitre sera donc de vous présenter comment faire pour réaliser ces opérations, notamment en s’appuyant sur la bibliothèque algorithmique fournie par la librairie standard.&#xA;Nous ne présenterons pas l’ensemble des fonctions de la librairie (il y en a beaucoup trop), mais si cela vous intéresse, vous pourrez retrouver tout ce qu’elle propose sur cette page.</description>
+    </item>
+    <item>
+      <title>Templates</title>
+      <link>/chapter9/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter9/index.html</guid>
+      <description>Les templates, c’est un peu comme un chien qui aboie. Ca fait peur. Si on essaye de s’en approcher trop vite, ça mord. Mais si on prend le temps qu’il faut pour les aborder, il y a de bonnes chances qu’en fait, tout se passe bien. Sauf si on n’aime pas les chiens.</description>
+    </item>
+    <item>
+      <title>Paramètres de templates</title>
+      <link>/chapter10/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter10/index.html</guid>
+      <description>Dans ce deuxième chapitre sur les templates, nous parlerons de tout un tas de fonctionnalités et subtilités liées aux paramètres de templates. Installez-vous bien confortablement, faites-vous un ptit café, et n’hésitez pas à prendre une pause de temps en temps, parce que vous allez découvrir beaucoup de choses pas forcément faciles à intégrer du premier coup.</description>
+    </item>
+    <item>
+      <title>FAQ</title>
+      <link>/faq/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/faq/index.html</guid>
+      <description>Pourquoi je n’arrive pas à lancer mon projet avec CMake ? Cela peut-être dû à plusieurs raisons :&#xA;1. Vous n’avez pas ouvert le bon dossier dans VSCode. Il faut toujours ouvrir le dossier qui contient tous les chapitres et tous les TPs, pas le dossier d’un chapitre ou d’un TP en particulier.&#xA;2. Vous avez essayé de lancer le programme via le menu Run de VSCode. Si vous tentez de lancer un programme de cette manière, VSCode va générer un fichier launch.</description>
+    </item>
+    <item>
+      <title>Question Submitted</title>
+      <link>/question-submitted/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/question-submitted/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Slides</title>
+      <link>/slides/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/slides/index.html</guid>
+      <description>Ci-dessous, vous trouverez le lien pour télécharger les slides de chaque séance de cours magistraux.&#xA;Cours 1 Cours 2 Cours 3</description>
+    </item>
+    <item>
+      <title>Workflow</title>
+      <link>/workflow/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/workflow/index.html</guid>
+      <description>Afin de pouvoir mettre en place votre environnement de travail rapidement, vous pouvez suivre les étapes ci-dessous.&#xA;Récupérer le dépôt Git du cours et des TPs Forkez le dépôt https://github.com/Laefy/CPP_Learning_Code/. Ouvrez une nouvelle fenêtre dans VSCode et cliquez sur “clone repository…” Copiez le lien de votre dépôt créé par le fork. Collez ce lien dans la fenêtre de VSCode et sélectionnez “Clone from URL”. Choisissez le répertoire dans lequel le dépôt sera cloné.</description>
+    </item>
+  </channel>
+</rss>

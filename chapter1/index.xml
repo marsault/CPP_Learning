@@ -1,14 +1,60 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Introduction au C++ :: Cours de C++ - Niveau Master</title><link>/chapter1/index.html</link><description>Dans ce premier chapitre, nous commencerons par présenter les principales caractéristiques du langage. Juste après, nous débuterons la pratique en vous montrant comment implémenter vos premiers programmes et comment utiliser quelques fonctionnalités basiques du C++ et de sa librairie standard.</description><generator>Hugo</generator><language>fr</language><atom:link href="/chapter1/index.xml" rel="self" type="application/rss+xml"/><item><title>Présentation du langage</title><link>/chapter1/1-language/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter1/1-language/index.html</guid><description>Cette page vous présentera quelques caractéristiques du C++, les différences avec d’autres langages que vous avez étudiés jusque là, pourquoi est-ce que certains disent que C++ est compliqué, alors que pas forcément, et ce qui fait que le langage est aussi utilisé aujourd’hui. Promis, c’est la seule page du cours où vous trouverez autant de pavés 🙂
-Quelques caractéristiques C++ est un langage de programmation informatique inventé dans les années 1980 par un informaticien nommé Bjarne Stroustrup.</description></item><item><title>Hello World 👋</title><link>/chapter1/2-hello-world/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter1/2-hello-world/index.html</guid><description>Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous verrez comment :
-écrire un programme, déclarer des variables, écrire sur la sortie standard, lire sur l’entrée standard, définir des fonctions, utiliser les structures de contrôle (conditions, boucles, switch, etc.), créer des tableaux et des chaînes de caractères, utiliser des références. Ça fait beaucoup hein ? 😈
-En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà.</description></item><item><title>Eléments de syntaxe ✍</title><link>/chapter1/3-syntax-elements/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter1/3-syntax-elements/index.html</guid><description>Nous allons vous présenter les éléments de syntaxe de base du langage.
-Comme vous pourrez le constater, mis à part quelques subtilités, la plupart des informations que vous allez lire ici devrait être similaire à ce que vous avez déjà appris en C ou en Java.
-Variables et types fondamentaux Comme dans tous les langages ou presque, on retrouve :
-les entiers (signés ou non-signés) : int, short, unsigned int, … les flottants : float, double les types caractère : char, unsigned char le type booléen : bool (et non pas boolean comme en Java ⚠️) Pour définir des variables, c’est comme d’habitude : &lt;type> &lt;nom> = &lt;valeur>;</description></item><item><title>Librairie standard 📚</title><link>/chapter1/4-std-lib/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter1/4-std-lib/index.html</guid><description>Sur cette page, vous allez apprendre à utiliser quelques classes fournies par la librarie standard pour manipuler chaînes de caractères et tableaux. Vous verrez également comment écrire ou lire dans des flux pour intéragir avec l’utilisateur.
-Chaînes de caractères Comme en C, const char* est le type fondamental associé à une chaîne de caractères littérale (c’est-à-dire écrite en dur, avec les guillemets autour) :
-auto str = "hello"; // -> str est de type const char* Cependant, ce n’est pas du tout pratique pour faire des opérations comme des concaténations, des recherches, ou même simplement récupérer la taille de la chaîne.</description></item><item><title>Compilation ⚙️</title><link>/chapter1/5-compilation/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter1/5-compilation/index.html</guid><description>En théorie, le contenu de cette page ne devrait être qu’une redite de vos cours de C et de compilation de l’an dernier.
-Cependant, je sais qu’à la réminiscence des moments passés à réviser ces matières, la plupart d’entre vous sentez la chaleur de vos larmes couler le long de vos joues.
-Nous allons donc reprendre le sujet en douceur pour faire en sorte que vous compreniez un peu mieux ce qu’il se passe pendant la compilation et à quoi elle sert.</description></item><item><title>Questionnaire ☑</title><link>/chapter1/test/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter1/test/index.html</guid><description>Félicitations !! Vous avez enfin terminé le Chapitre 1 ! 🥳🎉
-Le questionnaire ci-dessous vous aidera à savoir si vous avez bien compris le cours ou non.
-Il n’a donc pas vocation à vous évaluer, mais à vous donner une idée de ce que vous auriez lu trop vite ou n’auriez pas assez pratiqué.
-Dans tous les cas, si vous répondez à ce questionnaire et cliquez sur le bouton Valider, vos réponses nous seront envoyées par mail et nous vous ferons un petit retour sur ce que vous avez réussi ou non 😉</description></item><item><title>Merci !</title><link>/chapter1/test_done/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter1/test_done/index.html</guid><description>Vos réponses nous ont bien été communiquées 😃 N'hésitez pas à nous relancer si vous n'avez pas eu de nouvelles après une semaine !</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Introduction au C&#43;&#43; :: Cours de C&#43;&#43; - Niveau Master</title>
+    <link>/chapter1/index.html</link>
+    <description>Dans ce premier chapitre, nous commencerons par présenter les principales caractéristiques du langage. Juste après, nous débuterons la pratique en vous montrant comment implémenter vos premiers programmes et comment utiliser quelques fonctionnalités basiques du C++ et de sa librairie standard.</description>
+    <generator>Hugo</generator>
+    <language>fr</language>
+    <atom:link href="/chapter1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Présentation du langage</title>
+      <link>/chapter1/1-language/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter1/1-language/index.html</guid>
+      <description>Cette page vous présentera quelques caractéristiques du C++, les différences avec d’autres langages que vous avez étudiés jusque là, pourquoi est-ce que certains disent que C++ est compliqué, alors que pas forcément, et ce qui fait que le langage est aussi utilisé aujourd’hui. Promis, c’est la seule page du cours où vous trouverez autant de pavés 🙂&#xA;Quelques caractéristiques C++ est un langage de programmation informatique inventé dans les années 1980 par un informaticien nommé Bjarne Stroustrup.</description>
+    </item>
+    <item>
+      <title>Hello World 👋</title>
+      <link>/chapter1/2-hello-world/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter1/2-hello-world/index.html</guid>
+      <description>Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous verrez comment :&#xA;écrire un programme, déclarer des variables, écrire sur la sortie standard, lire sur l’entrée standard, définir des fonctions, utiliser les structures de contrôle (conditions, boucles, switch, etc.), créer des tableaux et des chaînes de caractères, utiliser des références. Ça fait beaucoup hein ? 😈&#xA;En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà.</description>
+    </item>
+    <item>
+      <title>Eléments de syntaxe ✍</title>
+      <link>/chapter1/3-syntax-elements/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter1/3-syntax-elements/index.html</guid>
+      <description>Nous allons vous présenter les éléments de syntaxe de base du langage.&#xA;Comme vous pourrez le constater, mis à part quelques subtilités, la plupart des informations que vous allez lire ici devrait être similaire à ce que vous avez déjà appris en C ou en Java.&#xA;Variables et types fondamentaux Comme dans tous les langages ou presque, on retrouve :&#xA;les entiers (signés ou non-signés) : int, short, unsigned int, … les flottants : float, double les types caractère : char, unsigned char le type booléen : bool (et non pas boolean comme en Java ⚠️) Pour définir des variables, c’est comme d’habitude : &lt;type&gt; &lt;nom&gt; = &lt;valeur&gt;;</description>
+    </item>
+    <item>
+      <title>Librairie standard 📚</title>
+      <link>/chapter1/4-std-lib/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter1/4-std-lib/index.html</guid>
+      <description>Sur cette page, vous allez apprendre à utiliser quelques classes fournies par la librarie standard pour manipuler chaînes de caractères et tableaux. Vous verrez également comment écrire ou lire dans des flux pour intéragir avec l’utilisateur.&#xA;Chaînes de caractères Comme en C, const char* est le type fondamental associé à une chaîne de caractères littérale (c’est-à-dire écrite en dur, avec les guillemets autour) :&#xA;auto str = &#34;hello&#34;; // -&gt; str est de type const char* Cependant, ce n’est pas du tout pratique pour faire des opérations comme des concaténations, des recherches, ou même simplement récupérer la taille de la chaîne.</description>
+    </item>
+    <item>
+      <title>Compilation ⚙️</title>
+      <link>/chapter1/5-compilation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter1/5-compilation/index.html</guid>
+      <description>En théorie, le contenu de cette page ne devrait être qu’une redite de vos cours de C et de compilation de l’an dernier.&#xA;Cependant, je sais qu’à la réminiscence des moments passés à réviser ces matières, la plupart d’entre vous sentez la chaleur de vos larmes couler le long de vos joues.&#xA;Nous allons donc reprendre le sujet en douceur pour faire en sorte que vous compreniez un peu mieux ce qu’il se passe pendant la compilation et à quoi elle sert.</description>
+    </item>
+    <item>
+      <title>Questionnaire ☑</title>
+      <link>/chapter1/test/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter1/test/index.html</guid>
+      <description>Félicitations !! Vous avez enfin terminé le Chapitre 1 ! 🥳🎉&#xA;Le questionnaire ci-dessous vous aidera à savoir si vous avez bien compris le cours ou non.&#xA;Il n’a donc pas vocation à vous évaluer, mais à vous donner une idée de ce que vous auriez lu trop vite ou n’auriez pas assez pratiqué.&#xA;Dans tous les cas, si vous répondez à ce questionnaire et cliquez sur le bouton Valider, vos réponses nous seront envoyées par mail et nous vous ferons un petit retour sur ce que vous avez réussi ou non 😉</description>
+    </item>
+    <item>
+      <title>Merci !</title>
+      <link>/chapter1/test_done/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter1/test_done/index.html</guid>
+      <description>Vos réponses nous ont bien été communiquées 😃 N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
+    </item>
+  </channel>
+</rss>

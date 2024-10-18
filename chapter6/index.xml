@@ -1,11 +1,53 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Algorithmes :: Cours de C++ - Niveau Master</title><link>/chapter6/index.html</link><description>Comme vous le savez déjà, la STL fournit tout un tas de conteneurs pour répondre à différents usages. Ces conteneurs proposent des fonctions permettant l’insertion et la suppression d’éléments, mais rarement de quoi effectuer des recherches ou des transformations. Le but de ce chapitre sera donc de vous présenter comment faire pour réaliser ces opérations, notamment en s’appuyant sur la bibliothèque algorithmique fournie par la librairie standard.
-Nous ne présenterons pas l’ensemble des fonctions de la librairie (il y en a beaucoup trop), mais si cela vous intéresse, vous pourrez retrouver tout ce qu’elle propose sur cette page.</description><generator>Hugo</generator><language>fr</language><atom:link href="/chapter6/index.xml" rel="self" type="application/rss+xml"/><item><title>Parcours et recherches</title><link>/chapter6/1-searches/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter6/1-searches/index.html</guid><description>Parcours de plages Pour parcourir une plage d’éléments, vous devriez normalement déjà savoir qu’il faut utiliser une boucle for ou foreach. Les boucles while et do-while ne sont en effet pas vraiment adaptées à ce type d’usage.
-Vous trouverez quelques conseils dans cette partie pour rendre votre code plus lisible, concis et fiable.
-Boucle foreach Lorsqu’on itère sur un conteneur avec une boucle foreach, il faut faire attention à si l’on souhaite récupérer une copie de l’élément ou une référence.</description></item><item><title>Transformations</title><link>/chapter6/2-transformations/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter6/2-transformations/index.html</guid><description>Maintenant que nous vous avons présenté les fonctions permettant de récupérer des informations à partir d’une plage d’éléments, nous allons vous présenter celles qui permettent de manipuler et de transformer ces plages.
-Suppressions Afin de supprimer des éléments d’une plage, on utilise la fonction std::remove. Cette fonction a pour effet de déplacer les éléments à conserver au début de la plage, en préservant leur ordre. Elle renvoie un itérateur sur le nouvel itérateur de fin de plage.</description></item><item><title>Itérateurs</title><link>/chapter6/3-iterators/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter6/3-iterators/index.html</guid><description>Normalement, avec tout ce que vous avez vu jusqu’ici, vous devriez être capable d’utiliser correctement un itérateur :
-déréférencement avec *it incrémentation avec ++it récupérer les itérateurs de début et de fin d’un conteneur avec ctn.begin() et ctn.end() insérer un élément dans un conteneur avec auto it_on_new = ctn.insert(it, new_value) supprimer un élément d’un conteneur avec auto it_on_next = ctn.erase(it) Vous allez maintenant voir ce qu’il faut faire pour implémenter vos propres itérateurs.</description></item><item><title>Lambdas</title><link>/chapter6/4-lambdas/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter6/4-lambdas/index.html</guid><description>Les lambdas sont des objets-fonction un peu spéciaux, que l’on peut facilement définir depuis le corps d’une fonction. Vous avez déjà dû voir de nombreux exemples d’utilisation de lambda tout au long de ce cours. Nous allons maintenant revenir plus en détail sur leur fonctionnement et vous montrez tout ce qu’il est possible de faire avec.
-Syntaxe La définition d’une lambda est composée en général de trois parties :
-[c1, c2, c3](int p1, int p2, int p3) { return c1 * p1 + c2 * p2 + c3 * p3; } La partie entre crochet s’appelle la capture.</description></item><item><title>Questionnaire ☑</title><link>/chapter6/test/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter6/test/index.html</guid><description>C’est l’heure du test ! N’oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.
-Bon courage à vous 🙂
-Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1 Initiaux 2 Alternants 1- Quel type de boucle faut-il utiliser pour modifier la structure d’un conteneur lors d’un parcours ?
-2- Dans quel cas peut-il être intéressant d’utiliser la fonction std::for_each ?</description></item><item><title>Merci !</title><link>/chapter6/test_done/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/chapter6/test_done/index.html</guid><description>Vos réponses nous ont bien été communiquées 😃 N'hésitez pas à nous relancer si vous n'avez pas eu de nouvelles après une semaine !</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Algorithmes :: Cours de C&#43;&#43; - Niveau Master</title>
+    <link>/chapter6/index.html</link>
+    <description>Comme vous le savez déjà, la STL fournit tout un tas de conteneurs pour répondre à différents usages. Ces conteneurs proposent des fonctions permettant l’insertion et la suppression d’éléments, mais rarement de quoi effectuer des recherches ou des transformations. Le but de ce chapitre sera donc de vous présenter comment faire pour réaliser ces opérations, notamment en s’appuyant sur la bibliothèque algorithmique fournie par la librairie standard.&#xA;Nous ne présenterons pas l’ensemble des fonctions de la librairie (il y en a beaucoup trop), mais si cela vous intéresse, vous pourrez retrouver tout ce qu’elle propose sur cette page.</description>
+    <generator>Hugo</generator>
+    <language>fr</language>
+    <atom:link href="/chapter6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Parcours et recherches</title>
+      <link>/chapter6/1-searches/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter6/1-searches/index.html</guid>
+      <description>Parcours de plages Pour parcourir une plage d’éléments, vous devriez normalement déjà savoir qu’il faut utiliser une boucle for ou foreach. Les boucles while et do-while ne sont en effet pas vraiment adaptées à ce type d’usage.&#xA;Vous trouverez quelques conseils dans cette partie pour rendre votre code plus lisible, concis et fiable.&#xA;Boucle foreach Lorsqu’on itère sur un conteneur avec une boucle foreach, il faut faire attention à si l’on souhaite récupérer une copie de l’élément ou une référence.</description>
+    </item>
+    <item>
+      <title>Transformations</title>
+      <link>/chapter6/2-transformations/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter6/2-transformations/index.html</guid>
+      <description>Maintenant que nous vous avons présenté les fonctions permettant de récupérer des informations à partir d’une plage d’éléments, nous allons vous présenter celles qui permettent de manipuler et de transformer ces plages.&#xA;Suppressions Afin de supprimer des éléments d’une plage, on utilise la fonction std::remove. Cette fonction a pour effet de déplacer les éléments à conserver au début de la plage, en préservant leur ordre. Elle renvoie un itérateur sur le nouvel itérateur de fin de plage.</description>
+    </item>
+    <item>
+      <title>Itérateurs</title>
+      <link>/chapter6/3-iterators/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter6/3-iterators/index.html</guid>
+      <description>Normalement, avec tout ce que vous avez vu jusqu’ici, vous devriez être capable d’utiliser correctement un itérateur :&#xA;déréférencement avec *it incrémentation avec ++it récupérer les itérateurs de début et de fin d’un conteneur avec ctn.begin() et ctn.end() insérer un élément dans un conteneur avec auto it_on_new = ctn.insert(it, new_value) supprimer un élément d’un conteneur avec auto it_on_next = ctn.erase(it) Vous allez maintenant voir ce qu’il faut faire pour implémenter vos propres itérateurs.</description>
+    </item>
+    <item>
+      <title>Lambdas</title>
+      <link>/chapter6/4-lambdas/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter6/4-lambdas/index.html</guid>
+      <description>Les lambdas sont des objets-fonction un peu spéciaux, que l’on peut facilement définir depuis le corps d’une fonction. Vous avez déjà dû voir de nombreux exemples d’utilisation de lambda tout au long de ce cours. Nous allons maintenant revenir plus en détail sur leur fonctionnement et vous montrez tout ce qu’il est possible de faire avec.&#xA;Syntaxe La définition d’une lambda est composée en général de trois parties :&#xA;[c1, c2, c3](int p1, int p2, int p3) { return c1 * p1 + c2 * p2 + c3 * p3; } La partie entre crochet s’appelle la capture.</description>
+    </item>
+    <item>
+      <title>Questionnaire ☑</title>
+      <link>/chapter6/test/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter6/test/index.html</guid>
+      <description>C’est l’heure du test ! N’oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.&#xA;Bon courage à vous 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1 Initiaux 2 Alternants 1- Quel type de boucle faut-il utiliser pour modifier la structure d’un conteneur lors d’un parcours ?&#xA;2- Dans quel cas peut-il être intéressant d’utiliser la fonction std::for_each ?</description>
+    </item>
+    <item>
+      <title>Merci !</title>
+      <link>/chapter6/test_done/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter6/test_done/index.html</guid>
+      <description>Vos réponses nous ont bien été communiquées 😃 N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
+    </item>
+  </channel>
+</rss>

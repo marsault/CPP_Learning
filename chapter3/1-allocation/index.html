@@ -1,35 +1,341 @@
-<!doctype html><html lang=fr dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619"><meta name=description content="Cette première page sera assez courte, elle vous présentera simplement la syntaxe permettant d’allouer dynamiquement de la mémoire et de la libérer.
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.128.0">
+    <meta name="generator" content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619">
+    <meta name="description" content="Cette première page sera assez courte, elle vous présentera simplement la syntaxe permettant d’allouer dynamiquement de la mémoire et de la libérer.
 Allouer un seul élément Pour allouer un bloc de mémoire, on utilise le mot-clef new, suivi du type de donnée que l’on souhaite y placer, puis de la valeur avec laquelle on souhaite l’initialiser.
 Cette instruction retourne un pointeur.
-int* ptr_5 = new int { 5 }; std::cout << *ptr_5 << std::endl; // --> 5 Comme pour une variable classique, on peut utiliser des {} ou des () pour indiquer la valeur initiale."><meta name=author content><meta name=twitter:card content="summary"><meta name=twitter:title content="Allocation dynamique 🎇 :: Cours de C++ - Niveau Master"><meta name=twitter:description content="Cette première page sera assez courte, elle vous présentera simplement la syntaxe permettant d’allouer dynamiquement de la mémoire et de la libérer.
+int* ptr_5 = new int { 5 }; std::cout &lt;&lt; *ptr_5 &lt;&lt; std::endl; // --&gt; 5 Comme pour une variable classique, on peut utiliser des {} ou des () pour indiquer la valeur initiale.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Allocation dynamique 🎇 :: Cours de C&#43;&#43; - Niveau Master">
+    <meta name="twitter:description" content="Cette première page sera assez courte, elle vous présentera simplement la syntaxe permettant d’allouer dynamiquement de la mémoire et de la libérer.
 Allouer un seul élément Pour allouer un bloc de mémoire, on utilise le mot-clef new, suivi du type de donnée que l’on souhaite y placer, puis de la valeur avec laquelle on souhaite l’initialiser.
 Cette instruction retourne un pointeur.
-int* ptr_5 = new int { 5 }; std::cout << *ptr_5 << std::endl; // --> 5 Comme pour une variable classique, on peut utiliser des {} ou des () pour indiquer la valeur initiale."><meta property="og:url" content="/chapter3/1-allocation/index.html"><meta property="og:site_name" content="Cours de C++ - Niveau Master"><meta property="og:title" content="Allocation dynamique 🎇 :: Cours de C++ - Niveau Master"><meta property="og:description" content="Cette première page sera assez courte, elle vous présentera simplement la syntaxe permettant d’allouer dynamiquement de la mémoire et de la libérer.
+int* ptr_5 = new int { 5 }; std::cout &lt;&lt; *ptr_5 &lt;&lt; std::endl; // --&gt; 5 Comme pour une variable classique, on peut utiliser des {} ou des () pour indiquer la valeur initiale.">
+    <meta property="og:url" content="/chapter3/1-allocation/index.html">
+    <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:title" content="Allocation dynamique 🎇 :: Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:description" content="Cette première page sera assez courte, elle vous présentera simplement la syntaxe permettant d’allouer dynamiquement de la mémoire et de la libérer.
 Allouer un seul élément Pour allouer un bloc de mémoire, on utilise le mot-clef new, suivi du type de donnée que l’on souhaite y placer, puis de la valeur avec laquelle on souhaite l’initialiser.
 Cette instruction retourne un pointeur.
-int* ptr_5 = new int { 5 }; std::cout << *ptr_5 << std::endl; // --> 5 Comme pour une variable classique, on peut utiliser des {} ou des () pour indiquer la valeur initiale."><meta property="og:locale" content="fr"><meta property="og:type" content="article"><meta property="article:section" content="Cycle de vie"><meta itemprop=name content="Allocation dynamique 🎇 :: Cours de C++ - Niveau Master"><meta itemprop=description content="Cette première page sera assez courte, elle vous présentera simplement la syntaxe permettant d’allouer dynamiquement de la mémoire et de la libérer.
+int* ptr_5 = new int { 5 }; std::cout &lt;&lt; *ptr_5 &lt;&lt; std::endl; // --&gt; 5 Comme pour une variable classique, on peut utiliser des {} ou des () pour indiquer la valeur initiale.">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Cycle de vie">
+    <meta itemprop="name" content="Allocation dynamique 🎇 :: Cours de C&#43;&#43; - Niveau Master">
+    <meta itemprop="description" content="Cette première page sera assez courte, elle vous présentera simplement la syntaxe permettant d’allouer dynamiquement de la mémoire et de la libérer.
 Allouer un seul élément Pour allouer un bloc de mémoire, on utilise le mot-clef new, suivi du type de donnée que l’on souhaite y placer, puis de la valeur avec laquelle on souhaite l’initialiser.
 Cette instruction retourne un pointeur.
-int* ptr_5 = new int { 5 }; std::cout << *ptr_5 << std::endl; // --> 5 Comme pour une variable classique, on peut utiliser des {} ou des () pour indiquer la valeur initiale."><meta itemprop=wordCount content="297"><title>Allocation dynamique 🎇 :: Cours de C++ - Niveau Master</title>
-<link href=../../css/fontawesome-all.min.css?1729268601 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=../../css/fontawesome-all.min.css?1729268601 rel=stylesheet></noscript><link href=../../css/nucleus.css?1729268601 rel=stylesheet><link href=../../css/auto-complete.css?1729268601 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=../../css/auto-complete.css?1729268601 rel=stylesheet></noscript><link href=../../css/perfect-scrollbar.min.css?1729268601 rel=stylesheet><link href=../../css/fonts.css?1729268601 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=../../css/fonts.css?1729268601 rel=stylesheet></noscript><link href=../../css/theme.css?1729268601 rel=stylesheet><link href=../../css/theme-mine.css?1729268601 rel=stylesheet id=R-variant-style><link href=../../css/chroma-relearn-light.css?1729268601 rel=stylesheet id=R-variant-chroma-style><link href=../../css/print.css?1729268601 rel=stylesheet media=print><script src=../../js/variant.js?1729268601></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../..",window.relearn.absBaseUri="",window.relearn.disableAnchorCopy=!1,window.relearn.disableAnchorScrolling=!1,window.variants&&variants.init(["mine"]),window.T_Copy_to_clipboard=`Copier dans le presse-papiers`,window.T_Copied_to_clipboard=`Copié dans le presse-papiers!`,window.T_Copy_link_to_clipboard=`Copier le lien dans le presse-papiers`,window.T_Link_copied_to_clipboard=`Lien copié dans le presse-papiers!`,window.T_Reset_view=`Réinitialiser la vue`,window.T_View_reset=`Vue réinitialisée!`,window.T_No_results_found=`Aucun résultat trouvé pour "{0}"`,window.T_N_results_found=`{1} résultats trouvés pour "{0}"`</script></head><body class="mobile-support html disableInlineCopyToClipboard" data-url=../../chapter3/1-allocation/index.html><div id=R-body class=default-animation><div id=R-body-overlay></div><nav id=R-topbar><div class=topbar-wrapper><div class=topbar-sidebar-divider></div><div class="topbar-area topbar-area-start" data-area=start><div class="topbar-button topbar-button-sidebar" data-content-empty=disable data-width-s=show data-width-m=hide data-width-l=hide><button class=topbar-control onclick=toggleNav() type=button title="Menu (CTRL+ALT+n)"><i class="fa-fw fas fa-bars"></i></button></div><div class="topbar-button topbar-button-toc" data-content-empty=hide data-width-s=show data-width-m=show data-width-l=show><button class=topbar-control onclick=toggleTopbarFlyout(this) type=button title="Table des matières (CTRL+ALT+t)"><i class="fa-fw fas fa-list-alt"></i></button><div class=topbar-content><div class=topbar-content-wrapper><nav class=TableOfContents><ul><li><ul><li><a href=#allouer-un-seul-élément>Allouer un seul élément</a></li><li><a href=#allouer-un-tableau-déléments>Allouer un tableau d&rsquo;éléments</a></li><li><a href=#pas-dexercice->Pas d&rsquo;exercice ?</a></li></ul></li></ul></nav></div></div></div></div><ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=../../index.html><span itemprop=name>Accueil</span></a><meta itemprop=position content="1">&nbsp;>&nbsp;</li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=../../chapter3/index.html><span itemprop=name>Cycle de vie</span></a><meta itemprop=position content="2">&nbsp;>&nbsp;</li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>Allocation dynamique 🎇</span><meta itemprop=position content="3"></li></ol><div class="topbar-area topbar-area-end" data-area=end><div class="topbar-button topbar-button-prev" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=../../chapter3/index.html title="Cycle de vie (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></div><div class="topbar-button topbar-button-next" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=../../chapter3/2-lifespan/index.html title="Durée de vie ⏳ (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></div><div class="topbar-button topbar-button-more" data-content-empty=hide data-width-s=show data-width-m=show data-width-l=show><button class=topbar-control onclick=toggleTopbarFlyout(this) type=button title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button><div class=topbar-content><div class=topbar-content-wrapper><div class="topbar-area topbar-area-more" data-area=more></div></div></div></div></div></div></nav><div id=R-main-overlay></div><main id=R-body-inner class="highlightable chapter3" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><h1 id=allocation-dynamique->Allocation dynamique 🎇</h1><p>Cette première page sera assez courte, elle vous présentera simplement la syntaxe permettant d&rsquo;allouer dynamiquement de la mémoire et de la libérer.</p><hr><h3 id=allouer-un-seul-élément>Allouer un seul élément</h3><p>Pour allouer un bloc de mémoire, on utilise le mot-clef <code>new</code>, suivi du type de donnée que l&rsquo;on souhaite y placer, puis de la valeur avec laquelle on souhaite l&rsquo;initialiser.<br>Cette instruction retourne un pointeur.</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=kt>int</span><span class=o>*</span> <span class=n>ptr_5</span> <span class=o>=</span> <span class=k>new</span> <span class=kt>int</span> <span class=p>{</span> <span class=mi>5</span> <span class=p>};</span>
-</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=o>*</span><span class=n>ptr_5</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span>   <span class=c1>// --&gt; 5
-</span></span></span></code></pre></div><p>Comme pour une variable classique, on peut utiliser des <code>{}</code> ou des <code>()</code> pour indiquer la valeur initiale.</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=kt>int</span><span class=o>*</span> <span class=n>ptr_3</span> <span class=o>=</span> <span class=k>new</span> <span class=kt>int</span><span class=p>(</span><span class=mi>3</span><span class=p>);</span>
-</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=o>*</span><span class=n>ptr_3</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span>   <span class=c1>// --&gt; 3
-</span></span></span></code></pre></div><p>Lorsque de la mémoire a été allouée dynamiquement, il faut penser à la libérer.<br>Pour cela, on utilise le mot-clef <code>delete</code> :</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=k>delete</span> <span class=n>ptr_3</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=k>delete</span> <span class=n>ptr_5</span><span class=p>;</span></span></span></code></pre></div><hr><h3 id=allouer-un-tableau-déléments>Allouer un tableau d&rsquo;éléments</h3><p>Pour allouer plusieurs éléments à la fois, c&rsquo;est quasiment pareil, si ce n&rsquo;est que juste derrière <code>new</code>, on indique entre <code>[]</code> le nombre d&rsquo;éléments souhaités.<br>L&rsquo;initialisation se fait forcément avec des <code>{}</code>.</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=kt>char</span><span class=o>*</span> <span class=n>many_chars</span> <span class=o>=</span> <span class=k>new</span> <span class=kt>char</span><span class=p>[</span><span class=mi>3</span><span class=p>]</span> <span class=p>{</span> <span class=sc>&#39;a&#39;</span><span class=p>,</span> <span class=sc>&#39;b&#39;</span><span class=p>,</span> <span class=sc>&#39;c&#39;</span> <span class=p>};</span>
-</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>many_chars</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>&lt;&lt;</span> <span class=n>many_chars</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span> <span class=o>&lt;&lt;</span> <span class=n>many_chars</span><span class=p>[</span><span class=mi>2</span><span class=p>]</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span>   <span class=c1>// --&gt; abc
-</span></span></span></code></pre></div><p>Attention, pour la libération du bloc mémoire, il faut écrire <code>delete</code> suivi de <code>[]</code> vides !</p><div class="highlight wrap-code"><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=k>delete</span><span class=p>[]</span> <span class=n>many_chars</span><span class=p>;</span></span></span></code></pre></div><hr><h3 id=pas-dexercice->Pas d&rsquo;exercice ?</h3><p>Eh bien non, pas sur cette partie.</p><p>En effet, en C++, même si vous en faites votre métier, vous n&rsquo;aurez quasiment jamais besoin de vous servir de <code>new</code> et <code>delete</code>.<br>Ce sont des classes, telles que <code>std::vector</code> ou <code>std::string</code>, qui se chargeront de faire ce sale boulot pour vous !</p><p>C&rsquo;est néanmoins utile pour la culture d&rsquo;avoir vu comment on écrivait des allocations à la mano.<br>Et surtout, cela vous permettra de comprendre les extraits de code présentés dans la suite de ce chapitre.</p><footer class=footline></footer></article></div></main></div><aside id=R-sidebar class="default-animation showVisitedLinks"><div id=R-header-topbar class=default-animation></div><div id=R-header-wrapper class=default-animation><div id=R-header class=default-animation><a id=logo href=../../>🎄 C++ 🎄</a></div></div><div id=R-homelinks class=default-animation><hr class=padding></div><div id=R-content-wrapper class=highlightable><div id=R-topics><ul class="enlarge morespace collapsible-menu"><li data-nav-id=/chapter0/index.html><a class=padding href=../../chapter0/index.html><b>0- </b>Mise en place<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-bb41caf94f12b8a1a4b5e560230e7851 class=collapsible-menu></ul></li><li data-nav-id=/chapter1/index.html><a class=padding href=../../chapter1/index.html><b>1- </b>Introduction au C++<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-6c398714eae4372920aec3a1e6c2e143 class=collapsible-menu></ul></li><li data-nav-id=/chapter2/index.html><a class=padding href=../../chapter2/index.html><b>2- </b>Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-b1df0095a9fd74320697a6d478418ec3 class=collapsible-menu></ul></li><li class=parent data-nav-id=/chapter3/index.html><a class=padding href=../../chapter3/index.html><b>3- </b>Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-9f6546bce6f8e9a77063b71c880fd5b8 class=collapsible-menu><li class=active data-nav-id=/chapter3/1-allocation/index.html><a class=padding href=../../chapter3/1-allocation/index.html>Allocation dynamique 🎇<i class="fa-fw fas fa-check read-icon"></i></a></li><li data-nav-id=/chapter3/2-lifespan/index.html><a class=padding href=../../chapter3/2-lifespan/index.html>Durée de vie ⏳<i class="fa-fw fas fa-check read-icon"></i></a></li><li data-nav-id=/chapter3/3-storage/index.html><a class=padding href=../../chapter3/3-storage/index.html>Espace de stockage 💾<i class="fa-fw fas fa-check read-icon"></i></a></li><li data-nav-id=/chapter3/4-references/index.html><a class=padding href=../../chapter3/4-references/index.html>Usage des références 🔀<i class="fa-fw fas fa-check read-icon"></i></a></li><li data-nav-id=/chapter3/5-ownership/index.html><a class=padding href=../../chapter3/5-ownership/index.html>Ownership 🏘️<i class="fa-fw fas fa-check read-icon"></i></a></li><li data-nav-id=/chapter3/test/index.html><a class=padding href=../../chapter3/test/index.html>Questionnaire ☑<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/chapter4/index.html><a class=padding href=../../chapter4/index.html><b>4- </b>Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-48065e8b6e7e69533ca73b3931c8a0a1 class=collapsible-menu></ul></li><li data-nav-id=/chapter5/index.html><a class=padding href=../../chapter5/index.html><b>5- </b>Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-86528e6ba587b53932a1dafaa9cd375c class=collapsible-menu></ul></li><li data-nav-id=/chapter6/index.html><a class=padding href=../../chapter6/index.html><b>6- </b>Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-016ee40825ff7c4aeecbac08a8ca264b class=collapsible-menu></ul></li><li data-nav-id=/chapter9/index.html><a class=padding href=../../chapter9/index.html><b>7- </b>Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-24ddf636ccd0ce3ef39c8060d1779332 class=collapsible-menu></ul></li><li data-nav-id=/chapter10/index.html><a class=padding href=../../chapter10/index.html><b>8- </b>Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id=R-subsections-66e6e0c58d73995ecc09e8fbbe358e51 class=collapsible-menu></ul></li></ul></div><div id=R-shortcuts><div class="nav-title padding">Accès rapide</div><ul class=space><li><a class=padding href=https://github.com/Laefy/CPP_Learning_Code/><i class='fab fa-github'></i> Dépôt Cours</a></li><li><a class=padding href=https://github.com/Laefy/CPP_Exercises/><i class='fab fa-github'></i> Dépôt TPs</a></li><li><a class=padding href=../../slides/index.html><i class='far fa-file-powerpoint'></i> Slides</a></li><li><a class=padding href=../../workflow/index.html><i class='far fa-list-alt'></i> Workflow</a></li><li><a class=padding href=../../faq/index.html><i class='fas fa-question-circle'></i> FAQ</a></li><li><a class=padding href=../../chapter0/6-tips/index.html><i class='fa fa-rocket'></i> Astuces</a></li><li><a class=padding href=https://godbolt.org/><i class='fas fa-cog'></i> Compiler Explorer</a></li><li><a class=padding href=https://en.cppreference.com/w/><i class='fas fa-passport'></i> CPP-Ref</a></li></ul></div><div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div><div id=R-menu-footer><hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"><div id=R-prefooter class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVisitedLinks"><ul><li id=R-select-language-container class=footerLangSwitch><div class="padding menu-control"><i class="fa-fw fas fa-language"></i>
-<span>&nbsp;</span><div class=control-style><label class=a11y-only for=R-select-language>Langue</label>
-<select id=R-select-language onchange="location=this.querySelector(this.value).dataset.url"><option id=R-select-language-fr value=#R-select-language-fr data-url=../../chapter3/1-allocation/index.html lang=fr selected>Français</option></select></div><div class=clear></div></div></li><li id=R-select-variant-container class=footerVariantSwitch><div class="padding menu-control"><i class="fa-fw fas fa-paint-brush"></i>
-<span>&nbsp;</span><div class=control-style><label class=a11y-only for=R-select-variant>Thème</label>
-<select id=R-select-variant onchange=window.variants&&variants.changeVariant(this.value)><option id=R-select-variant-mine value=mine selected>Mine</option></select></div><div class=clear></div></div><script>window.variants&&variants.markSelectedVariant()</script></li><li class="footerVisitedLinks showVisitedLinks"><div class="padding menu-control"><i class="fa-fw fas fa-history"></i>
-<span>&nbsp;</span><div class=control-style><button onclick=clearHistory()>Supprimer l'historique</button></div><div class=clear></div></div></li></ul></div><div id=R-footer class="footerFooter showFooter"><p>Built with <a href=https://github.com/McShelby/hugo-theme-relearn title=love><i class="fas fa-heart"></i></a> by <a href=https://gohugo.io/>Hugo</a></p></div></div></div></aside><script src=../../js/clipboard.min.js?1729268601 defer></script><script src=../../js/perfect-scrollbar.min.js?1729268601 defer></script><script src=../../js/theme.js?1729268601 defer></script><button id=footer-question-btn title="Envoyer un message à propos du texte sélectionné" onclick=openQuestionForm() disabled><i class="fas fa-question-circle"></i></button><div id=footer-question-window disabled><form id=question method=POST action=https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b target=question-submitted onsubmit=cleanQuestionFormContent()><input type=email name=email placeholder=mon_email@smthg.com required onchange=updateQuestionFormSubject()>
-<textarea name=question rows=7 cols=30 placeholder="Mon message..."></textarea>
-<input type=hidden name=selection>
-<input type=hidden name=_replyto>
-<input type=hidden name=_subject>
-<input type=hidden name=_template value=box>
-<input type=hidden name=_captcha value=false>
-<input type=hidden name=_next value=//question-submitted/>
-<input type=submit disabled style=display:none aria-hidden=true>
-<input type=submit value=Envoyer></form><iframe class=hidden name=question-submitted src></iframe></div><script>function updateQuestionFormSubject(){let e=document.querySelector('#question>input[name="email"]').value;document.querySelector('#question>input[name="_subject"]').value="[C++][Chapitre 3] "+e+", retour sur ta question"}function cleanQuestionFormContent(){function e(e){e.value=e.value.replace(/\[\.\./g,"[ ..")}e(document.querySelector('#question>textarea[name="question"]')),e(document.querySelector('#question>input[name="selection"]'))}function openQuestionForm(){document.getElementById("footer-question-window").removeAttribute("disabled");var e=window.getSelection().toString();document.querySelector('#question>input[name="selection"]').value=e}function updateQuestionWidgetState(e){var t=document.getElementById("R-body-inner"),n=window.getSelection(),s=document.getElementById("footer-question-window");document.getElementById("footer-question-btn").disabled=n.isCollapsed||t==null||t.contains(n.anchorNode)==!1||t.contains(n.focusNode)==!1,e!==void 0&&e.type=="mouseup"&&s.contains(e.target)==!1&&s.contains(document.activeElement)==!1&&s.setAttribute("disabled",!0)}updateQuestionFormSubject(),document.onmouseup=document.onkeyup=document.onselectionchange=updateQuestionWidgetState,updateQuestionWidgetState()</script></body></html>
+int* ptr_5 = new int { 5 }; std::cout &lt;&lt; *ptr_5 &lt;&lt; std::endl; // --&gt; 5 Comme pour une variable classique, on peut utiliser des {} ou des () pour indiquer la valeur initiale.">
+    <meta itemprop="wordCount" content="297">
+    <title>Allocation dynamique 🎇 :: Cours de C&#43;&#43; - Niveau Master</title>
+    <link href="../../css/fontawesome-all.min.css?1729268734" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1729268734" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1729268734" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1729268734" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1729268734" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1729268734" rel="stylesheet">
+    <link href="../../css/fonts.css?1729268734" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1729268734" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1729268734" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1729268734" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1729268734" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1729268734" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1729268734"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.variants && variants.init( [ 'mine' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copier dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Copié dans le presse-papiers!`;
+      window.T_Copy_link_to_clipboard = `Copier le lien dans le presse-papiers`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../chapter3/1-allocation/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#allouer-un-seul-élément">Allouer un seul élément</a></li>
+        <li><a href="#allouer-un-tableau-déléments">Allouer un tableau d&rsquo;éléments</a></li>
+        <li><a href="#pas-dexercice-">Pas d&rsquo;exercice ?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">Accueil</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../chapter3/index.html"><span itemprop="name">Cycle de vie</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Allocation dynamique 🎇</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter3/index.html" title="Cycle de vie (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter3/2-lifespan/index.html" title="Durée de vie ⏳ (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter3" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="allocation-dynamique-">Allocation dynamique 🎇</h1>
+
+<p>Cette première page sera assez courte, elle vous présentera simplement la syntaxe permettant d&rsquo;allouer dynamiquement de la mémoire et de la libérer.</p>
+<hr>
+<h3 id="allouer-un-seul-élément">Allouer un seul élément</h3>
+<p>Pour allouer un bloc de mémoire, on utilise le mot-clef <code>new</code>, suivi du type de donnée que l&rsquo;on souhaite y placer, puis de la valeur avec laquelle on souhaite l&rsquo;initialiser.<br>
+Cette instruction retourne un pointeur.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span><span class="o">*</span> <span class="n">ptr_5</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span> <span class="p">{</span> <span class="mi">5</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">ptr_5</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>   <span class="c1">// --&gt; 5
+</span></span></span></code></pre></div>
+<p>Comme pour une variable classique, on peut utiliser des <code>{}</code> ou des <code>()</code> pour indiquer la valeur initiale.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span><span class="o">*</span> <span class="n">ptr_3</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">ptr_3</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>   <span class="c1">// --&gt; 3
+</span></span></span></code></pre></div>
+<p>Lorsque de la mémoire a été allouée dynamiquement, il faut penser à la libérer.<br>
+Pour cela, on utilise le mot-clef <code>delete</code> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">delete</span> <span class="n">ptr_3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">delete</span> <span class="n">ptr_5</span><span class="p">;</span></span></span></code></pre></div>
+<hr>
+<h3 id="allouer-un-tableau-déléments">Allouer un tableau d&rsquo;éléments</h3>
+<p>Pour allouer plusieurs éléments à la fois, c&rsquo;est quasiment pareil, si ce n&rsquo;est que juste derrière <code>new</code>, on indique entre <code>[]</code> le nombre d&rsquo;éléments souhaités.<br>
+L&rsquo;initialisation se fait forcément avec des <code>{}</code>.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">char</span><span class="o">*</span> <span class="n">many_chars</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">{</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="sc">&#39;c&#39;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">many_chars</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">many_chars</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">many_chars</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>   <span class="c1">// --&gt; abc
+</span></span></span></code></pre></div>
+<p>Attention, pour la libération du bloc mémoire, il faut écrire <code>delete</code> suivi de <code>[]</code> vides !</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">delete</span><span class="p">[]</span> <span class="n">many_chars</span><span class="p">;</span></span></span></code></pre></div>
+<hr>
+<h3 id="pas-dexercice-">Pas d&rsquo;exercice ?</h3>
+<p>Eh bien non, pas sur cette partie.</p>
+<p>En effet, en C++, même si vous en faites votre métier, vous n&rsquo;aurez quasiment jamais besoin de vous servir de <code>new</code> et <code>delete</code>.<br>
+Ce sont des classes, telles que <code>std::vector</code> ou <code>std::string</code>, qui se chargeront de faire ce sale boulot pour vous !</p>
+<p>C&rsquo;est néanmoins utile pour la culture d&rsquo;avoir vu comment on écrivait des allocations à la mano.<br>
+Et surtout, cela vous permettra de comprendre les extraits de code présentés dans la suite de ce chapitre.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation showVisitedLinks">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="logo" href="../../">🎄 C++ 🎄</a>
+
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/chapter0/index.html"><a class="padding" href="../../chapter0/index.html"><b>0- </b>Mise en place<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb41caf94f12b8a1a4b5e560230e7851" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter1/index.html"><a class="padding" href="../../chapter1/index.html"><b>1- </b>Introduction au C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-6c398714eae4372920aec3a1e6c2e143" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter2/index.html"><a class="padding" href="../../chapter2/index.html"><b>2- </b>Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b1df0095a9fd74320697a6d478418ec3" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><b>3- </b>Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu">
+            <li class="active " data-nav-id="/chapter3/1-allocation/index.html"><a class="padding" href="../../chapter3/1-allocation/index.html">Allocation dynamique 🎇<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter3/2-lifespan/index.html"><a class="padding" href="../../chapter3/2-lifespan/index.html">Durée de vie ⏳<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter3/3-storage/index.html"><a class="padding" href="../../chapter3/3-storage/index.html">Espace de stockage 💾<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter3/4-references/index.html"><a class="padding" href="../../chapter3/4-references/index.html">Usage des références 🔀<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter3/5-ownership/index.html"><a class="padding" href="../../chapter3/5-ownership/index.html">Ownership 🏘️<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter3/test/index.html"><a class="padding" href="../../chapter3/test/index.html">Questionnaire ☑<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><b>4- </b>Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><b>5- </b>Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><b>6- </b>Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter9/index.html"><a class="padding" href="../../chapter9/index.html"><b>7- </b>Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter10/index.html"><a class="padding" href="../../chapter10/index.html"><b>8- </b>Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-66e6e0c58d73995ecc09e8fbbe358e51" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">Accès rapide</div>
+          <ul class="space">
+            <li><a class="padding" href="https://github.com/Laefy/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt Cours</a></li>
+            <li><a class="padding" href="https://github.com/Laefy/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt TPs</a></li>
+            <li><a class="padding" href="../../slides/index.html"><i class='far fa-file-powerpoint'></i> Slides</a></li>
+            <li><a class="padding" href="../../workflow/index.html"><i class='far fa-list-alt'></i> Workflow</a></li>
+            <li><a class="padding" href="../../faq/index.html"><i class='fas fa-question-circle'></i> FAQ</a></li>
+            <li><a class="padding" href="../../chapter0/6-tips/index.html"><i class='fa fa-rocket'></i> Astuces</a></li>
+            <li><a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a></li>
+            <li><a class="padding" href="https://en.cppreference.com/w/"><i class='fas fa-passport'></i> CPP-Ref</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Langue</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../chapter3/1-allocation/index.html" lang="fr" selected>Français</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Thème</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-mine" value="mine" selected>Mine</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks showVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Supprimer l&#39;historique</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="../../js/clipboard.min.js?1729268734" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1729268734" defer></script>
+    <script src="../../js/theme.js?1729268734" defer></script>
+
+
+
+    
+
+
+<button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
+
+<div id="footer-question-window" disabled>
+    <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b"
+        target="question-submitted" onsubmit="cleanQuestionFormContent()">
+
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <textarea name="question" rows="7" cols="30" placeholder="Mon message..."></textarea>
+        <input type="hidden" name="selection" />
+
+        <input type="hidden" name="_replyto" />
+        <input type="hidden" name="_subject" />
+        <input type="hidden" name="_template" value="box" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="//question-submitted/" />
+
+        <input type="submit" disabled style="display: none" aria-hidden="true" />
+        <input type="submit" value="Envoyer" />
+    </form>
+
+    <iframe class="hidden" name="question-submitted" src=""></iframe>
+</div>
+
+<script>
+
+    function updateQuestionFormSubject() {
+        let email = document.querySelector('#question>input[name="email"]').value;
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 3] " + email + ", retour sur ta question";
+    }
+
+    function cleanQuestionFormContent() {
+
+        function clean(element) {
+            
+            element.value = element.value.replace(/\[\.\./g, "[ ..");
+        }
+
+        clean(document.querySelector('#question>textarea[name="question"]'))
+        clean(document.querySelector('#question>input[name="selection"]'))
+    }
+
+    function openQuestionForm() {
+        document.getElementById("footer-question-window").removeAttribute("disabled");
+
+        var selection = window.getSelection().toString();
+        document.querySelector('#question>input[name="selection"]').value = selection
+    }
+
+    function updateQuestionWidgetState(event) {
+        var body = document.getElementById("R-body-inner");
+        var selection = window.getSelection();
+        var question_window = document.getElementById("footer-question-window");
+
+        document.getElementById("footer-question-btn").disabled =
+            selection.isCollapsed ||
+            body == null ||
+            body.contains(selection.anchorNode) == false ||
+            body.contains(selection.focusNode) == false;
+
+        if (event !== undefined
+            && event.type == "mouseup"
+            && question_window.contains(event.target) == false
+            && question_window.contains(document.activeElement) == false) {
+            question_window.setAttribute("disabled", true);
+        }
+    }
+
+    updateQuestionFormSubject();
+
+    document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionWidgetState;
+    updateQuestionWidgetState();
+
+</script>
+
+
+  </body>
+</html>
