@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/chapter0/index.html</loc>
+  </url>
+  <url>
     <loc>/chapter4/1-hierarchy/index.html</loc>
   </url>
   <url>
@@ -22,7 +25,7 @@
     <loc>/chapter9/1-introduction/index.html</loc>
   </url>
   <url>
-    <loc>/chapter0/index.html</loc>
+    <loc>/chapter1/index.html</loc>
   </url>
   <url>
     <loc>/chapter6/1-searches/index.html</loc>
@@ -49,6 +52,9 @@
     <loc>/chapter4/2-farm/index.html</loc>
   </url>
   <url>
+    <loc>/chapter2/index.html</loc>
+  </url>
+  <url>
     <loc>/chapter3/2-lifespan/index.html</loc>
   </url>
   <url>
@@ -59,9 +65,6 @@
   </url>
   <url>
     <loc>/chapter1/2-hello-world/index.html</loc>
-  </url>
-  <url>
-    <loc>/chapter1/index.html</loc>
   </url>
   <url>
     <loc>/chapter3-old/2-ownership/index.html</loc>
@@ -88,13 +91,13 @@
     <loc>/chapter5/3-sequentials/index.html</loc>
   </url>
   <url>
-    <loc>/chapter2/index.html</loc>
-  </url>
-  <url>
     <loc>/chapter0/3-cmake/index.html</loc>
   </url>
   <url>
     <loc>/chapter2/3-constructor/index.html</loc>
+  </url>
+  <url>
+    <loc>/chapter3/index.html</loc>
   </url>
   <url>
     <loc>/chapter9/3-syntaxe/index.html</loc>
@@ -121,9 +124,6 @@
     <loc>/chapter5/4-associatives/index.html</loc>
   </url>
   <url>
-    <loc>/chapter3/index.html</loc>
-  </url>
-  <url>
     <loc>/chapter3-old/4-move-sem/index.html</loc>
   </url>
   <url>
@@ -131,6 +131,9 @@
   </url>
   <url>
     <loc>/chapter0/4-git/index.html</loc>
+  </url>
+  <url>
+    <loc>/chapter4/index.html</loc>
   </url>
   <url>
     <loc>/chapter6/4-lambdas/index.html</loc>
@@ -157,7 +160,7 @@
     <loc>/chapter1/5-compilation/index.html</loc>
   </url>
   <url>
-    <loc>/chapter4/index.html</loc>
+    <loc>/chapter5/index.html</loc>
   </url>
   <url>
     <loc>/chapter5/5-strings/index.html</loc>
@@ -169,19 +172,16 @@
     <loc>/chapter3/5-ownership/index.html</loc>
   </url>
   <url>
-    <loc>/chapter0/6-tips/index.html</loc>
+    <loc>/chapter6/index.html</loc>
   </url>
   <url>
-    <loc>/chapter5/index.html</loc>
+    <loc>/chapter0/6-tips/index.html</loc>
   </url>
   <url>
     <loc>/chapter2/6-polygon/index.html</loc>
   </url>
   <url>
     <loc>/chapter5/6-tuples/index.html</loc>
-  </url>
-  <url>
-    <loc>/chapter6/index.html</loc>
   </url>
   <url>
     <loc>/chapter9/index.html</loc>
