@@ -1,9 +1,8 @@
 ---
 title: "Templates"
-chapter: true
-chapterName: Chapitre 7
-pre: "<b>7- </b>"
-weight: 8
+type: "chapter"
+pre: "<span class=\"chapnum\">7.</span>&ensp;"
+weight: 7
 ---
 
 Les templates, c'est un peu comme un chien qui aboie. 

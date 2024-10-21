@@ -1,8 +1,7 @@
 ---
 title: "Mise en place"
-chapter: true
-pre: "<b>0- </b>"
-weight: 1
+weight: -1
+pre: "<span class=\"chapnum\">0.</span>&ensp;"
 ---
 
 Cette première partie a pour objectif de vous permettre d'installer et de configurer tous les outils qui vous serons nécessaires pour suivre ce cours dans les meilleures conditions.

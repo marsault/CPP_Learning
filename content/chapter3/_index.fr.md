@@ -1,9 +1,8 @@
 ---
 title: "Cycle de vie"
-chapter: true
-chapterName: Chapitre 3
-pre: "<b>3- </b>"
-weight: 4
+type: "chapter"
+pre: "<span class=\"chapnum\">3.</span>&ensp;"
+weight: 3
 ---
 
 En C++, lorsque vous allouez une donnée, celle-ci ne reste pas miraculement accessible durant toute l'exécution de votre programme.  

@@ -1,9 +1,8 @@
 ---
 title: "Librairie standard"
-chapter: true
-chapterName: Chapitre 5
-pre: "<b>5- </b>"
-weight: 6
+type: "chapter"
+weight: 5
+pre: "<span class=\"chapnum\">5.</span>&ensp;"
 ---
 
 Dans ce chapitre, nous vous présenterons les différents types de conteneurs que vous pourrez trouver dans la librairie standard.

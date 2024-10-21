@@ -1,9 +1,8 @@
 ---
 title: "Introduction au C++"
-chapter: true
-chapterName: Chapitre 1
-pre: "<b>1- </b>"
-weight: 2
+type: "chapter"
+weight: 1
+pre: "<span class=\"chapnum\">1.</span>&ensp;"
 ---
 
 Dans ce premier chapitre, nous commencerons par présenter les principales caractéristiques du langage.
