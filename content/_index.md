@@ -2,8 +2,8 @@
 title: "Accueil"
 ---
 
-# Bienvenue sur
-# 🎄 C++ 🎄
+## Bienvenue sur
+## 🎄 C++ 🎄
 
 Sur ce site, vous trouverez le cours de C++ destiné à l'enseignement des Master 1 de l'Universisté Gustave-Eiffel. Si vous ne faites pas partie des étudiants de cette section, vous êtes tout de même les bienvenus. Sachez juste que d'une part, ce cours étant un cours d'introduction, nous nous concentrerons sur les concepts de base du langage, ainsi que sur les mécanismes permettant d'écrire du code plus simplement ou de le rendre plus sûr. Et d'autre part, il est fortement recommandé pour pouvoir suivre ce cours d'avoir de bonnes bases en C et en Java.
 
