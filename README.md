@@ -13,7 +13,7 @@ You need to install the tool in order to rebuild the site locally.
 
 To obtain the sources:
 ```b
-git clone https://github.com/Laefy/CPP_Learning.git  
+git clone https://github.com/marsault/CPP_Learning.git  
 git submodule update --init --recursive
 ```
 
