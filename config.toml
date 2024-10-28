@@ -23,11 +23,6 @@ title = "Cours de C++ - Niveau Master"
 weight = 1
 languageName = "Français"
 
-[Languages.en]
-title = "C++ Master Courses"
-weight = 2
-languageName = "English"
-
 [[menu.shortcuts]]
 name = "<i class='fab fa-github'></i> Dépôt Cours"
 url = "https://github.com/Laefy/CPP_Learning_Code/"
