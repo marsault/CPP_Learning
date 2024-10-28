@@ -60,5 +60,5 @@ weight = 7
 
 [[menu.shortcuts]]
 name = "<i class='fas fa-passport'></i> CPP-Ref"
-url = "https://en.cppreference.com/w/"
+url = "../ref/"
 weight = 8
