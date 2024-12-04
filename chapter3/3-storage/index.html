@@ -33,16 +33,16 @@ Cela vous aidera, j’espère, à visualiser mentalement quelles sont les donné
 Représentation Variables Une variable est un identifiant permettant d’accéder à une donnée de taille fixe en mémoire.">
     <meta itemprop="wordCount" content="1249">
     <title>Espace de stockage 💾 :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1730123461" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1730123461" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1730123461" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1730123461" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1730123461" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1730123461" rel="stylesheet">
-    <link href="../../css/fonts.css?1730123461" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1730123461" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1730123461" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1730123461" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1730123461" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1730123461" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1730123461"></script>
+    <link href="../../css/fontawesome-all.min.css?1733301742" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1733301742" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1733301742" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1733301742" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1733301742" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1733301742" rel="stylesheet">
+    <link href="../../css/fonts.css?1733301742" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1733301742" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1733301742" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1733301742" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1733301742" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1733301742" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1733301742"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -135,22 +135,22 @@ Sur un ordinateur moderne, il s&rsquo;agira généralement d&rsquo;un entier enc
 <p>Supposons que le code suivant alloue <code>var</code> à l&rsquo;adresse <code>0x00e8</code> (attention pour la suite, on compte en hexadécimal !).</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">var</span> <span class="o">=</span> <span class="mi">145</span><span class="p">;</span></span></span></code></pre></div>
 <p>Comme <code>var</code> est de type entier, la zone mémoire s&rsquo;étend sur 4 octets, c&rsquo;est-à-dire entre <code>0x00e8</code> et <code>0x00eb</code>.</p>
-<p><a href="#R-image-078c3dfd60dfe6321243de302b63c8db" class="lightbox-link"><img alt="Représentation d&rsquo;une variable en mémoire" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/storage/01-var.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-078c3dfd60dfe6321243de302b63c8db"><img alt="Représentation d&rsquo;une variable en mémoire" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/storage/01-var.svg"></a></p>
+<p><a href="#R-image-bdc4c93cceb00e9dbd63d016d3a3ac6c" class="lightbox-link"><img alt="Représentation d&rsquo;une variable en mémoire" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/storage/01-var.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-bdc4c93cceb00e9dbd63d016d3a3ac6c"><img alt="Représentation d&rsquo;une variable en mémoire" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/storage/01-var.svg"></a></p>
 <h4 id="pointeurs">Pointeurs</h4>
 <p>Un pointeur est une variable dont le rôle est de stocker l&rsquo;adresse d&rsquo;une autre variable.<br>
 Si les adresses sont encodées sur 64 bits, la taille d&rsquo;un pointeur est de 8 octets.</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span><span class="o">*</span> <span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">var</span><span class="p">;</span></span></span></code></pre></div>
-<p><a href="#R-image-be2127f3257e35ddfc99515f084c2609" class="lightbox-link"><img alt="Représentation d&rsquo;un pointeur en mémoire" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/storage/02-ptr.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-be2127f3257e35ddfc99515f084c2609"><img alt="Représentation d&rsquo;un pointeur en mémoire" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/storage/02-ptr.svg"></a></p>
+<p><a href="#R-image-0ebfb478b4a878bdf3f4c4512e1b3680" class="lightbox-link"><img alt="Représentation d&rsquo;un pointeur en mémoire" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/storage/02-ptr.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0ebfb478b4a878bdf3f4c4512e1b3680"><img alt="Représentation d&rsquo;un pointeur en mémoire" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/storage/02-ptr.svg"></a></p>
 <h4 id="références">Références</h4>
 <p>Une référence est un alias de variable.
 Elle identifie le même emplacement que la variable d&rsquo;origine.</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span><span class="o">&amp;</span> <span class="n">ref</span> <span class="o">=</span> <span class="n">var</span><span class="p">;</span></span></span></code></pre></div>
 <p>Ci-dessous, <code>ref</code> correspond donc au même bloc que <code>var</code>.<br>
 Nous l&rsquo;avons représenté en italique pour indiquer que la durée de vie de la donnée n&rsquo;est pas couplée à l&rsquo;identifiant <code>ref</code>.</p>
-<p><a href="#R-image-b37016cb38eed9bc84f6f47c72f57a75" class="lightbox-link"><img alt="Représentation d&rsquo;une référence en mémoire" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/storage/03-ref.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-b37016cb38eed9bc84f6f47c72f57a75"><img alt="Représentation d&rsquo;une référence en mémoire" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/storage/03-ref.svg"></a></p>
+<p><a href="#R-image-9fb512d0f44735d023d98eaaac535677" class="lightbox-link"><img alt="Représentation d&rsquo;une référence en mémoire" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/storage/03-ref.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9fb512d0f44735d023d98eaaac535677"><img alt="Représentation d&rsquo;une référence en mémoire" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/storage/03-ref.svg"></a></p>
 <h4 id="type-structuré">Type-structuré</h4>
 <p>Dans le cas des types-structurés, les attributs d&rsquo;un objet sont alloués au sein de l&rsquo;espace alloué pour l&rsquo;objet lui-même.</p>
 <p>La taille d&rsquo;un objet est donc souvent égale à la somme des tailles de ses attributs, mais ce n&rsquo;est pas toujours le cas&hellip;<br>
@@ -165,8 +165,8 @@ Le compilateur pourra donc décider de laisser du vide entre un attribut de type
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">Box</span> <span class="n">box</span><span class="p">;</span></span></span></code></pre></div>
-<p><a href="#R-image-a751c1dbd3a553d4914c05c928ec89a3" class="lightbox-link"><img alt="Représentation d&rsquo;un objet en mémoire" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/storage/04-struct.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a751c1dbd3a553d4914c05c928ec89a3"><img alt="Représentation d&rsquo;un objet en mémoire" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/storage/04-struct.svg"></a></p>
+<p><a href="#R-image-4fde0da2112a7d37d17f118cbbc9c708" class="lightbox-link"><img alt="Représentation d&rsquo;un objet en mémoire" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/storage/04-struct.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4fde0da2112a7d37d17f118cbbc9c708"><img alt="Représentation d&rsquo;un objet en mémoire" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/storage/04-struct.svg"></a></p>
 <div class="box notices cstyle tip">
   <div class="box-label">
     <i class="fa-fw fas fa-lightbulb"></i> Astuce
@@ -222,8 +222,8 @@ De plus, l&rsquo;allocation est <strong>immédiate</strong>, car cet espace est 
 </div>
 </div>
 <p>A l&rsquo;exécution, la pile pourrait avoir le contenu suivant :
-<a href="#R-image-d050cc25421e0dd8c2c6c1b291f6488a" class="lightbox-link"><img alt="Contenu de la pile" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/storage/05-stack.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d050cc25421e0dd8c2c6c1b291f6488a"><img alt="Contenu de la pile" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/storage/05-stack.svg"></a></p>
+<a href="#R-image-51c46b1842d48071f1c0f57426996b23" class="lightbox-link"><img alt="Contenu de la pile" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/storage/05-stack.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-51c46b1842d48071f1c0f57426996b23"><img alt="Contenu de la pile" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/storage/05-stack.svg"></a></p>
 <p>Le haut de la pile est indiqué par la flèche.<br>
 <code>l.9</code>: On entre d&rsquo;abord dans la fonction <code>f1</code>.<br>
 <code>l.10</code>: On ajoute la variable <code>v1</code> dans la pile et on l&rsquo;initialise à <code>5</code>.<br>
@@ -289,8 +289,8 @@ Cela permet d&rsquo;instancier des objets dans une fonction et qu&rsquo;ils ne s
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
-<p><a href="#R-image-459027d3fabd8d6817bf9ee603f15c0b" class="lightbox-link"><img alt="Contenu de la pile et du tas" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/storage/06-heap.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-459027d3fabd8d6817bf9ee603f15c0b"><img alt="Contenu de la pile et du tas" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/storage/06-heap.svg"></a></p>
+<p><a href="#R-image-e3bd7721096a9523878c090480a4dbb9" class="lightbox-link"><img alt="Contenu de la pile et du tas" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/storage/06-heap.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e3bd7721096a9523878c090480a4dbb9"><img alt="Contenu de la pile et du tas" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/storage/06-heap.svg"></a></p>
 <p><code>l.9</code>: On appelle la fonction <code>make_int</code> avec l&rsquo;argument <code>1</code>.<br>
 <code>l.2</code>: On entre dans la fonction, on ajoute le paramètre <code>value</code> dans la pile.<br>
 <code>l.3</code>: On alloue un entier de valeur <code>1</code> sur le tas, et on stocke l&rsquo;adresse dans <code>ptr</code>.<br>
@@ -408,9 +408,9 @@ L&rsquo;allocation et les accès peuvent être longs, mais la quantité d&rsquo;
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1730123461" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1730123461" defer></script>
-    <script src="../../js/theme.js?1730123461" defer></script>
+    <script src="../../js/clipboard.min.js?1733301742" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1733301742" defer></script>
+    <script src="../../js/theme.js?1733301742" defer></script>
 
 
 
