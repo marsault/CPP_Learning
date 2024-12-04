@@ -16,26 +16,23 @@ Sur ce site, vous trouverez le cours de C++ destiné à l'enseignement des Maste
 Le module sera constitué de 3 séances de cours magistraux, 12 séances de travaux pratiques et 3 séances d'évaluation.
 
 Le planning est le suivant :
-| Séance | Date | Description |
+| | Dates | Séance | Chapitre à lire <br>(avant le TP)|
 | - | - | - | - |
-| Cours 1 | 17/01 | |
-| TP 1 | Groupe I1 - 19/01<br/>Groupe I2 - 22/01<br/>Groupe Alt - 19/01 | * Compilation<br/>* Entrée / sortie<br/>* std::string et std::vector<br/>* Classes |
-| TP 2 | Groupe I1 - 26/01<br/>Groupe I2 - 29/01<br/>Groupe Alt - 26/01 | * Classes<br/>* Constructeurs<br/>* Membres statiques<br/>* Opérateurs |
-| TP 3 | Groupe I1 - 02/02<br/>Groupe I2 - 05/02<br/>Groupe Alt - 02/02 | * Références<br/>* Ownership |
-| TP 4 | Groupe I1 - 09/02<br/>Groupe I2 - 12/02<br/>Groupe Alt - 09/02 | * Révisions |
-| TP noté 1 | 21/02 | * Compilation<br/>* Entrée / sortie<br/>* std::string et std::vector<br/>* Classes<br/>* Constructeurs<br/>* Opérateurs<br/>* Références |
-| Cours 2 | 21/02 | |
-| TP 5 | Groupe I1 - 23/02<br/>Groupe I2 - 26/02<br/>Groupe Alt - 23/02 | * Copie<br/>* Déplacement<br/>* l-value / r-value<br/>* std::unique_ptr |
-| TP 6 | Groupe I1 - 29/02<br/>Groupe I2 - 04/03<br/>Groupe Alt - 29/02 | TBD |
-| TP 7 | Groupe I1 - 08/03<br/>Groupe I2 - 11/03<br/>Groupe Alt - 08/03 | TBD |
-| TP 8 | Groupe I1 - 15/03<br/>Groupe I2 - 18/03<br/>Groupe Alt - 15/03 | * Révisions |
-| TP noté 2 | 21/03 | TBD |
-| Cours 3 | 21/03 | |
-| TP 9 | Groupe I1 - 29/03<br/>Groupe I2 - 25/03<br/>Groupe Alt - 29/03 | TBD |
-| TP 10 | Groupe I1 - 04/04<br/>Groupe I2 - 02/04<br/>Groupe Alt - 04/04 | TBD |
-| TP 11 | Groupe I1 - 11/04<br/>Groupe I2 - 08/04<br/>Groupe Alt - 18/04 | TBD |
-| TP 12 | Groupe I1 - 18/04<br/>Groupe I2 - 15/04<br/>Groupe Alt - 18/04 | TBD |
-| TP noté 3 | 22/04 | TBD |
+|S1 | 13 - 17 janvier | ▹ Cours 1 <br> ▹ TP 1 (Compilation, Entrée / sortie, `std::string`/`std::vector`,Classes) | 0, 1, 2.1, 2.2 |
+|S2 | 20 - 24 janvier | ▹ TP 2 (Classes, Constructeurs, Membres statiques, Opérateurs) | 2 |
+|S3 | 27 - 31 janvier | ▹ TP 3 (Références, Ownership) | 3 |
+|S4 | 3 - 7 février   | ▹ TP 4 (Révisions, Framework de TP noté) |
+|S5 | 10 - 14 février | ▹ TP noté 1 (sur les chapitres 0 à 3) <br> ▹ Cours 2 |
+|S6 | 17 - 21 février | ▹ TP 5 (Copie, Déplacement, l-value / r-value, `std::unique_ptr`) |
+|S7 | 24 - 28 février | ▹ TP 6 (`std::unique_ptr`, Pointeurs observants)|
+|S8 | 3 - 7 mars  | ▹ TP 7 (Polymorphisme, Héritage) | 4 | 
+|S9 | 10 - 14 mars| ▹ TP 8 (Révisions, Framework de TP noté) |
+|10 | 17 - 21 mars| ▹ TP noté 2 (sur les chapitres 0 à 4) <br> ▹ Cours 3 |
+|11 | 24 - 28 mars| ▹ TP 9 (conteneurs, Lambdas, Algorithmes) | 5 et 6 |
+|12 | 31 mars - 3 avril| ▹ TP 10 (Templates) | 7 |
+|13 | 7 - 12 avril| ▹ TP 11 (Templates, Perfect forwarding, SFINAE) | 8 |
+|14 | 14 - 18 avril| ▹ TP 12 (Révisions) |
+|15 | 21 - 24 | ▹ TP noté 3 (3h) |
 
 #### Cours magistraux
 
