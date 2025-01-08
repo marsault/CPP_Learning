@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.128.0">
+    <meta name="generator" content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619">
+    <meta name="description" content="Dans cette première section, nous commencerons par introduire les concepts de l-value et r-value.
+Cela nous conduira à vous présenter la notion de référence universelle. Nous vous expliquerons ensuite quand et comment vous en servir dans votre code.
+l-value / r-value Avant de parler concrètement des références universelles, il faut aborder un point essentiel à leur compréhension.
+En C&#43;&#43;, une expression est une suite d’opérateurs et d’opérandes pouvant être évaluée. L’évaluation d’une expression peut parfois produire une valeur.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Référence universelle :: Cours de C&#43;&#43; - Niveau Master">
+    <meta name="twitter:description" content="Dans cette première section, nous commencerons par introduire les concepts de l-value et r-value.
+Cela nous conduira à vous présenter la notion de référence universelle. Nous vous expliquerons ensuite quand et comment vous en servir dans votre code.
+l-value / r-value Avant de parler concrètement des références universelles, il faut aborder un point essentiel à leur compréhension.
+En C&#43;&#43;, une expression est une suite d’opérateurs et d’opérandes pouvant être évaluée. L’évaluation d’une expression peut parfois produire une valeur.">
+    <meta property="og:url" content="/chapter9/1-universal-ref/index.html">
+    <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:title" content="Référence universelle :: Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:description" content="Dans cette première section, nous commencerons par introduire les concepts de l-value et r-value.
+Cela nous conduira à vous présenter la notion de référence universelle. Nous vous expliquerons ensuite quand et comment vous en servir dans votre code.
+l-value / r-value Avant de parler concrètement des références universelles, il faut aborder un point essentiel à leur compréhension.
+En C&#43;&#43;, une expression est une suite d’opérateurs et d’opérandes pouvant être évaluée. L’évaluation d’une expression peut parfois produire une valeur.">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Paramètres de templates">
+    <meta itemprop="name" content="Référence universelle :: Cours de C&#43;&#43; - Niveau Master">
+    <meta itemprop="description" content="Dans cette première section, nous commencerons par introduire les concepts de l-value et r-value.
+Cela nous conduira à vous présenter la notion de référence universelle. Nous vous expliquerons ensuite quand et comment vous en servir dans votre code.
+l-value / r-value Avant de parler concrètement des références universelles, il faut aborder un point essentiel à leur compréhension.
+En C&#43;&#43;, une expression est une suite d’opérateurs et d’opérandes pouvant être évaluée. L’évaluation d’une expression peut parfois produire une valeur.">
+    <meta itemprop="wordCount" content="2851">
+    <title>Référence universelle :: Cours de C&#43;&#43; - Niveau Master</title>
+    <link href="../../css/fontawesome-all.min.css?1736349601" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1736349601" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1736349601" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1736349601" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1736349601" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1736349601" rel="stylesheet">
+    <link href="../../css/fonts.css?1736349601" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1736349601" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1736349601" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1736349601" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1736349601" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1736349601" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1736349601"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.variants && variants.init( [ 'mine' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copier dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Copié dans le presse-papiers!`;
+      window.T_Copy_link_to_clipboard = `Copier le lien dans le presse-papiers`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../chapter9/1-universal-ref/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#l-value--r-value">l-value / r-value</a></li>
+        <li><a href="#surcharge-par-l-value-ou-r-value-reference">Surcharge par l-value ou r-value reference</a></li>
+        <li><a href="#référence-universelle-et-perfect-forwarding">Référence universelle et perfect-forwarding</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">Accueil</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../chapter9/index.html"><span itemprop="name">Paramètres de templates</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Référence universelle</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter9/index.html" title="Paramètres de templates (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter9/2-variadiac/index.html" title="Template variadique (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter9" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="référence-universelle">Référence universelle</h1>
+
+<p>Dans cette première section, nous commencerons par introduire les concepts de l-value et r-value.<br>
+Cela nous conduira à vous présenter la notion de référence universelle.
+Nous vous expliquerons ensuite quand et comment vous en servir dans votre code.</p>
+<hr>
+<h3 id="l-value--r-value">l-value / r-value</h3>
+<p>Avant de parler concrètement des références universelles, il faut aborder un point essentiel à leur compréhension.</p>
+<p>En C++, une expression est une suite d&rsquo;opérateurs et d&rsquo;opérandes pouvant être évaluée.
+L&rsquo;évaluation d&rsquo;une expression peut parfois produire une valeur.<br>
+Voici quelques exemples d&rsquo;expressions :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="mi">15</span>
+</span></span><span class="line"><span class="cl"><span class="o">&amp;</span><span class="n">r</span>
+</span></span><span class="line"><span class="cl"><span class="n">fcn</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">=</span> <span class="n">c</span>
+</span></span><span class="line"><span class="cl"><span class="n">r</span> <span class="o">==</span> <span class="mi">8</span> <span class="o">||</span> <span class="n">call</span><span class="p">(</span><span class="n">g</span><span class="p">)</span> <span class="o">==</span> <span class="sc">&#39;c&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">++</span><span class="n">it</span></span></span></code></pre></div>
+<p>Notez bien qu&rsquo;une expression peut bien composée de plusieurs sous-expressions.
+Par exemple, dans la première ligne, <code>(a + b) / 3</code> est une expression composée des sous-expressions <code>(a + b)</code> et <code>3</code>, et <code>(a + b)</code> est elle-même composée des sous-expressions <code>a</code> et <code>b</code>.</p>
+<p>La plupart des expressions peuvent être catégorisées en tant que l-value ou r-value.
+Pour faire la différence entre une l-value et une r-value, il suffit de se poser deux questions.</p>
+<ol>
+<li>Est-ce que l&rsquo;expression fait référence à un objet précis stocké en mémoire ?
+Si oui, on passe à la question 2, si non, c&rsquo;est une r-value.</li>
+<li>Est-ce cet objet risque d&rsquo;être détruit ou invalidé si le résultat n&rsquo;est pas stocké dans une variable avant la fin de l&rsquo;instruction ?
+Si oui, c&rsquo;est une r-value, si non, c&rsquo;est une l-value.</li>
+</ol>
+<p>Par exemple :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">v1</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// `5` est une r-value.
+</span></span></span><span class="line"><span class="cl"><span class="c1">// C&#39;est un litéral entier, et il n&#39;a donc pas d&#39;adresse en mémoire.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">v2</span> <span class="o">=</span> <span class="n">v1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// `v1` est une l-value.
+</span></span></span><span class="line"><span class="cl"><span class="c1">// L&#39;expression fait référence à la variable v1, qui a bien une adresse en mémoire.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">v3</span> <span class="o">=</span> <span class="n">v2</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">-</span> <span class="n">v1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// `v2 + 5 - v1` est une r-value.
+</span></span></span><span class="line"><span class="cl"><span class="c1">// C&#39;est une suite d&#39;opérations qui ne fait pas référence à un objet en particulier.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">v4</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// `std::vector { 1, 2, 3 }` est une r-value.
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Bien qu&#39;il s&#39;agisse d&#39;un objet, si on ne l&#39;avait pas mis dans une variable, celui-ci aurait été détruit à la fin de l&#39;instruction.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">v5</span> <span class="o">=</span> <span class="n">v4</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// `v4.emplace_back(4)` est une l-value.
+</span></span></span><span class="line"><span class="cl"><span class="c1">// emplace_back retourne une référence sur l&#39;élément ajouté dans le tableau.
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Si on n&#39;avait pas stocké le résultat, cet élément n&#39;aurait pas pour autant été détruit.
+</span></span></span></code></pre></div>
+<p><strong>Petit exercice</strong><br>
+Essayez de déterminer la catégorie des expressions indiquées dans chacun des commentaires.
+Vous pouvez utiliser 
+<a href="https://www.godbolt.org/z/YT9Ef889f" target="_blank" rel="noopener noreferrer">ce petit programme</a> pour obtenir les solutions et testez d&rsquo;autres expressions.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">return_3</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">3</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">return_copy</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">ref</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">ref</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span><span class="o">&amp;</span> <span class="n">return_ref</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">ref</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">ref</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// `value`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// `3+4`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// `&#34;tata&#34;`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// `std::string { &#34;toto&#34; }`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// `std::move(value)`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// `&amp;value`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// `return_3()`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// `return_ref(value)`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// `return_copy(value)`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span></span></span></code></pre></div>
+<div class="expand">
+  <input type="checkbox" id="R-expand-8ba44c4e48237cfa2dae02c2166e73dc" aria-controls="R-expandcontent-8ba44c4e48237cfa2dae02c2166e73dc">
+  <label class="expand-label" for="R-expand-8ba44c4e48237cfa2dae02c2166e73dc">
+    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Explications
+  </label>
+  <div id="R-expandcontent-8ba44c4e48237cfa2dae02c2166e73dc" class="expand-content">
+<ol>
+<li>
+<p><code>value</code><br>
+Il s&rsquo;agit d&rsquo;une l-value, puisque <code>value</code> est une variable.</p>
+</li>
+<li>
+<p><code>3+4</code><br>
+Il s&rsquo;agit d&rsquo;une r-value, puisque c&rsquo;est un calcul (donc pas d&rsquo;adresse en mémoire).</p>
+</li>
+<li>
+<p><code>&quot;tata&quot;</code><br>
+On pourrait penser qu&rsquo;il s&rsquo;agit d&rsquo;une r-value, mais c&rsquo;est en fait une l-value.
+En effet, contrairement aux litéraux de type <code>int</code>, <code>char</code> ou <code>bool</code>, les chaînes de caractères en dur sont enregistrées dans la mémoire statique du programme au moment de la compilation.
+Donc si vous écrivez <code>&quot;tata&quot;</code> sans placer le résultat dans une variable, cet objet continuera d&rsquo;exister quand même.
+Pour vous en convaincre, vous pouvez placer cette chaîne dans plusieurs <code>const char*</code> et affichez le contenu des pointeurs (c&rsquo;est-à-dire les adresses, pas la chaîne).
+Vous pourrez constatez qu&rsquo;ils pointent tous sur la même case de la mémoire.</p>
+</li>
+<li>
+<p><code>std::string { &quot;toto&quot; }</code><br>
+Ici, il s&rsquo;agit par contre d&rsquo;une r-value.
+Si cette <code>std::string</code> n&rsquo;est pas placée dans une variable, alors elle sera détruite une fois l&rsquo;instruction terminée.</p>
+</li>
+<li>
+<p><code>std::move(value)</code><br>
+Il s&rsquo;agit d&rsquo;une r-value, car le rôle de <code>std::move</code> est en fait de transformer des l-values en r-values afin de pouvoir déplacer les objets.</p>
+</li>
+<li>
+<p><code>&amp;value</code><br>
+Il s&rsquo;agit d&rsquo;une r-value.
+On réalise une opération avec la variable <code>value</code> (de la même manière que si on avait écrit <code>value + 1</code>) et si le résultat n&rsquo;est pas stocké, alors il sera détruit une fois l&rsquo;instruction terminée.</p>
+</li>
+<li>
+<p><code>return_3()</code><br>
+Il s&rsquo;agit d&rsquo;une r-value.
+L&rsquo;appel à <code>return_3()</code> renvoie un entier, et si celui-ci n&rsquo;est pas stocké, alors il est détruit à la fin de l&rsquo;instruction réalisant l&rsquo;appel.</p>
+</li>
+<li>
+<p><code>return_ref(value)</code><br>
+Il s&rsquo;agit d&rsquo;une l-value.
+Contrairement à la fonction précédente, on retourne une référence sur un entier.
+Ne pas stocker cette référence ne conduira pas à la destruction de l&rsquo;objet référencé.</p>
+</li>
+<li>
+<p><code>return_copy(value)</code><br>
+Cette expression est une r-value, puisqu&rsquo;on retourne une copie temporaire de l&rsquo;objet passé en paramètre.
+Si celle-ci n&rsquo;est pas stockée, elle sera détruit.</p>
+</li>
+</ol>
+  </div>
+</div>
+<div class="box notices cstyle note">
+  <div class="box-label">
+    <i class="fa-fw fas fa-exclamation-circle"></i> Remarque
+  </div>
+  <div class="box-content">
+<p>Les termes l-value et r-value signifient en fait &ldquo;left-value&rdquo; et &ldquo;right-value&rdquo;.
+Ils ont été choisis car on peut placer une l-value à gauche d&rsquo;un signe <code>=</code> alors qu&rsquo;on ne pourra jamais le faire avec une r-value.
+Mais ce n&rsquo;est pas vraiment très représentatif, car une l-value peut très bien être placée à droite d&rsquo;un signe <code>=</code> (par exemple <code>v1 = v2</code>).
+Et quand une l-value est constante, on ne peut pas la mettre à gauche d&rsquo;un signe <code>=</code>, puisqu&rsquo;une constante n&rsquo;est pas réassignable.<br>
+Retenez donc qu&rsquo;étymologiquement, les noms signifient &ldquo;left-value&rdquo; et &ldquo;right-value&rdquo;, mais qu&rsquo;en pratique, ça ne vous aidera pas vraiment à savoir si vous avez affaire à une l-value ou une r-value.</p>
+  </div>
+</div>
+<hr>
+<h3 id="surcharge-par-l-value-ou-r-value-reference">Surcharge par l-value ou r-value reference</h3>
+<p>Comme vous le savez, il est possible de surcharger des fonctions.</p>
+<p>Mais ce que vous ne saviez probablement pas, c&rsquo;est qu&rsquo;il est possible de définir une surcharge qui sera utilisée uniquement si on lui passe une expression r-value.<br>
+Voici la syntaxe :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">str</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;l-value contains &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">str</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;&amp;</span> <span class="n">str</span><span class="p">)</span> <span class="c1">// &lt;- on utilise &#39;&amp;&amp;&#39; derrière le type pour définir une r-value reference
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;r-value contains &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">str</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;toto&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fcn</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>                       <span class="c1">// =&gt; fcn(const std::string&amp;)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">fcn</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="p">{</span> <span class="s">&#34;tata&#34;</span> <span class="p">});</span>    <span class="c1">// =&gt; fcn(std::string&amp;&amp;)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<p>Bien sûr, si vous retirez la surcharge <code>fcn(std::string&amp;&amp;)</code>, le programme continuera de compiler puisque jusqu&rsquo;ici, vos programmes ont compilés (enfin j&rsquo;espère) sans que vous ayiez eu besoin d&rsquo;écrire <code>&amp;&amp;</code>.
+En effet, si le compilateur ne trouve pas de surcharge acceptant une <code>T&amp;&amp;</code>, alors il se rabattera sur une surcharge acceptant un <code>T</code> ou un <code>const T&amp;</code>.</p>
+<p>Bien qu&rsquo;une r-value puisse être convertie en const l-value, sachez que l&rsquo;inverse n&rsquo;est pas possible.
+Si le seul overload de votre fonction attend une r-value, vous ne pourrez pas compiler un appel fournissant une l-value.
+Essayez donc de commenter la surcharge <code>fcn(const std::string&amp;)</code> dans le snippet de code ci-dessus.
+L&rsquo;instruction <code>fcn(str)</code> ne devrait plus compiler, alors que <code>fcn(std::string { &quot;tata&quot; })</code> ne posera pas de problème.</p>
+<p><strong>Mais quel est l&rsquo;intérêt d&rsquo;avoir tout ce bazar ?</strong></p>
+<p>Revenons sur votre chapitre préféré : l&rsquo;ownership 😈</p>
+<p>En fait, lorsque vous définissez une fonction qui attend une r-value, vous êtes en train d&rsquo;indiquer à l&rsquo;appelant que vous souhaiteriez voler l&rsquo;argument qu&rsquo;il vous envoie.
+L&rsquo;intérêt est d&rsquo;éviter des copies coûteuse, puisque quand on vole / déplace quelque chose, on ne le copie pas.</p>
+<p>Dans le cas où l&rsquo;appelant vous envoie une r-value directement, cela n&rsquo;a pas d&rsquo;importance, parce qu&rsquo;il n&rsquo;avait pas encore stocké cet objet de son côté.
+En revanche, s&rsquo;il cherchait à passer une l-value, il serait obligé d&rsquo;utiliser <code>std::move</code> pour indiquer qu&rsquo;il est prêt à céder cet objet à la fonction appelante et à ne plus le réutiliser ensuite.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">steal_and_assign_name</span><span class="p">(</span><span class="n">Person</span><span class="o">&amp;</span> <span class="n">person</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;&amp;</span> <span class="n">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">person</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Le buffer alloué pour `name` a été déplacé dans `person.name`.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// A partir de maintenant, l&#39;utilisation de `name` n&#39;est plus valide.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Person</span> <span class="n">p</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;Toto&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">steal_and_assign_name</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">name</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// On est obligé d&#39;utiliser `std::move`, car `steal_and_assign_name` attend une r-value.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// Si le compilateur ne nous avait pas obligé à le faire, il aurait fallu regarder l&#39;implémentation
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// de `steal_and_assign_name` pour comprendre que `name` a été invalidé.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<div class="box notices cstyle tip">
+  <div class="box-label">
+    <i class="fa-fw fas fa-lightbulb"></i> Astuce
+  </div>
+  <div class="box-content">
+<p>Après avoir <code>std::move</code> un objet, il faut être prudent, car son contenu a probablement été extrait par la fonction à laquelle il a été passé.</p>
+  </div>
+</div>
+<p>Un autre intérêt des r-values, c&rsquo;est de pouvoir manipuler certains objets non-copiables.
+Si vous consultez la documentation de <code>std::unique_ptr</code> par exemple, vous pourrez voir que son constructeur de copie ainsi que son opérateur d&rsquo;assignation par copie sont supprimés.
+En revanche, il est tout de même possible de construire un <code>unique_ptr</code> à partir d&rsquo;un autre <code>unique_ptr</code>, du moment que l&rsquo;on déplace ce dernier.</p>
+<p>Cela est possible parce que <code>unique_ptr</code> définit un move-constructor et un opérateur d&rsquo;assignation par déplacement.
+Il s&rsquo;agit de surcharges acceptant des r-value references de <code>unique_ptr</code> au lieu de const-ref.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">unique_ptr</span><span class="p">(</span><span class="n">unique_ptr</span><span class="o">&amp;&amp;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">unique_ptr</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">unique_ptr</span><span class="o">&amp;&amp;</span><span class="p">);</span></span></span></code></pre></div>
+<p>Le code suivant est donc tout à fait valide, puisque le compilateur réussira bien à trouver les fonctions permettant de compiler ses instructions :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">p2</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span> <span class="p">};</span> <span class="c1">// =&gt; appel à unique_ptr(unique_ptr&amp;&amp;)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">p3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">p3</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">p2</span><span class="p">);</span>                        <span class="c1">// =&gt; appel à operator=(unique_ptr&amp;&amp;)
+</span></span></span></code></pre></div>
+<hr>
+<h3 id="référence-universelle-et-perfect-forwarding">Référence universelle et perfect-forwarding</h3>
+<p>Revenons maintenant à nos moutons et parlons template !</p>
+<p>Supposons que vous avez cette superbe fonction, permettant d&rsquo;insérer une valeur dans un conteneur disposant d&rsquo;une fonction <code>emplace_back</code> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Ctn</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">generic_emplace</span><span class="p">(</span><span class="n">Ctn</span><span class="o">&amp;</span> <span class="n">ctn</span><span class="p">,</span> <span class="n">T</span> <span class="n">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ctn</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<p>Voici différents appels à cette fonction, ainsi que le code généré par le compilateur pour chacun d&rsquo;entre eux :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">generic_emplace</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// void generic_emplace(std::list&lt;int&gt;&amp; ctn, int value)
+</span></span></span><span class="line"><span class="cl"><span class="c1">// {
+</span></span></span><span class="line"><span class="cl"><span class="c1">//     ctn.emplace_back(value);
+</span></span></span><span class="line"><span class="cl"><span class="c1">// }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;toto&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">generic_emplace</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// void generic_emplace(std::vector&lt;std::string&gt;&amp; ctn, std::string value)
+</span></span></span><span class="line"><span class="cl"><span class="c1">// {
+</span></span></span><span class="line"><span class="cl"><span class="c1">//     ctn.emplace_back(value);
+</span></span></span><span class="line"><span class="cl"><span class="c1">// }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">deque</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">ptrs</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">generic_emplace</span><span class="p">(</span><span class="n">ptrs</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// void generic_emplace(std::deque&lt;std::unique_ptr&lt;int&gt;&gt;&amp; ctn, std::unique_ptr&lt;int&gt; value)
+</span></span></span><span class="line"><span class="cl"><span class="c1">// {
+</span></span></span><span class="line"><span class="cl"><span class="c1">//     ctn.emplace_back(value);
+</span></span></span><span class="line"><span class="cl"><span class="c1">// }
+</span></span></span></code></pre></div>
+<p>Le premier appel va compiler sans aucun problème.<br>
+Le second appel va également compiler, mais on note qu&rsquo;on réalise une copie inutile.<br>
+Par contre, le troisième appel ne va pas compiler du tout, car <code>ctn.emplace_back(value)</code> va tenter d&rsquo;appeler le constructeur de copie de <code>unique_ptr</code>, qui n&rsquo;existe pas.</p>
+<p>Ce qu&rsquo;on aimerait idéalement avoir au moment de la génération, c&rsquo;est donc plutôt cela :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">generic_emplace</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// void generic_emplace(std::list&lt;int&gt;&amp; ctn, int value)
+</span></span></span><span class="line"><span class="cl"><span class="c1">// {
+</span></span></span><span class="line"><span class="cl"><span class="c1">//     ctn.emplace_back(value);
+</span></span></span><span class="line"><span class="cl"><span class="c1">// }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;toto&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">generic_emplace</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// void generic_emplace(std::vector&lt;std::string&gt;&amp; ctn, const std::string&amp; value) -&gt; const-ref pour économiser une copie
+</span></span></span><span class="line"><span class="cl"><span class="c1">// {
+</span></span></span><span class="line"><span class="cl"><span class="c1">//     ctn.emplace_back(value);
+</span></span></span><span class="line"><span class="cl"><span class="c1">// }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">deque</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">ptrs</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">generic_emplace</span><span class="p">(</span><span class="n">ptrs</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// void generic_emplace(std::deque&lt;std::unique_ptr&lt;int&gt;&gt;&amp; ctn, std::unique_ptr&lt;int&gt;&amp;&amp; value) -&gt; r-value car on vole le ptr
+</span></span></span><span class="line"><span class="cl"><span class="c1">// {
+</span></span></span><span class="line"><span class="cl"><span class="c1">//     ctn.emplace_back(std::move(value)); -&gt; pour le placer dans ctn avec un move
+</span></span></span><span class="line"><span class="cl"><span class="c1">// }
+</span></span></span></code></pre></div>
+<p>Afin de pouvoir arriver à un comportement approximativement similaire, il faut utiliser des références universelles d&rsquo;une part, et du perfect-forwarding de l&rsquo;autre.</p>
+<p>Commençons par les références universelles.
+Voici la syntaxe :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Ctn</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">generic_emplace</span><span class="p">(</span><span class="n">Ctn</span><span class="o">&amp;</span> <span class="n">ctn</span><span class="p">,</span> <span class="n">T</span><span class="o">&amp;&amp;</span> <span class="n">value</span><span class="p">)</span> <span class="c1">// &lt;- on ajoute &amp;&amp; sur T
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ctn</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<p><strong>Heeeeeein ? Mais on vient de voir que <code>&amp;&amp;</code>, ça sert à faire des r-value references !</strong></p>
+<p>Et bah pas dans ce cas&hellip;<br>
+Si vous mettez <code>&amp;&amp;</code> sur un type précis, comme <code>int&amp;&amp;</code> ou <code>std::string&amp;&amp;</code>, vous êtes effectivement en train d&rsquo;attendre qu&rsquo;on vous passe une r-value de ce type.<br>
+En revanche, si vous mettez <code>&amp;&amp;</code> sur un type générique défini comme argument de template de la fonction, vous êtes en train de définir une référence universelle.<br>
+Cela signifie que <strong>votre fonction pourra attendre n&rsquo;importe quoi, qu&rsquo;il s&rsquo;agisse d&rsquo;une ref, d&rsquo;une const-ref ou d&rsquo;une r-value reference.</strong></p>
+<p>Personnellement, je pense qu&rsquo;il s&rsquo;agit du pire choix de réutilisation de syntaxe qui a été fait en C++&hellip;
+D&rsquo;une part, ça fait qu&rsquo;il n&rsquo;est pas possible d&rsquo;utiliser <code>T&amp;&amp;</code> pour restreindre l&rsquo;usage d&rsquo;une fonction-template à une r-value.
+Et d&rsquo;autre part, c&rsquo;est le troll ultime du mec qu&rsquo;a décidé que le C++, fallait que ça soit dur.
+Déjà que c&rsquo;est pas simple de comprendre la différence entre l-value et r-value, que c&rsquo;est pas simple non plus d&rsquo;apprendre à faire des templates, il fallait en plus qu&rsquo;ils choisissent la même syntaxe pour exprimer deux notions complètement différentes, mais qui sont un peu liées quand même&hellip;</p>
+<p>Enfin bref, retenez simplement que si vous écrivez <code>T&amp;&amp;</code> dans le cas où <code>T</code> est un argument de template de la fonction, alors c&rsquo;est une référence universelle (c&rsquo;est-à-dire que <code>T&amp;&amp;</code> sera remplacé par le type exact de l&rsquo;expression passée en paramètre à la fonction) et pas une r-value reference.
+Vous pouvez aussi lire 
+<a href="https://isocpp.org/blog/2012/11/universal-references-in-c11-scott-meyers" target="_blank" rel="noopener noreferrer">cet article</a> si vous souhaitez apprendre à distinguer une r-value reference d&rsquo;une référence universelle à tous les coups !</p>
+<p>Revenons au code précédent.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Ctn</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">generic_emplace</span><span class="p">(</span><span class="n">Ctn</span><span class="o">&amp;</span> <span class="n">ctn</span><span class="p">,</span> <span class="n">T</span><span class="o">&amp;&amp;</span> <span class="n">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ctn</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<p>Voici les fonctions qui seront maintenant générées par chacun des appels :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">generic_emplace</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Comme on passe `3` qui est une r-value, la référence universelle est transformée en r-value reference
+</span></span></span><span class="line"><span class="cl"><span class="c1">// void generic_emplace(std::list&lt;int&gt;&amp; ctn, int&amp;&amp; value)
+</span></span></span><span class="line"><span class="cl"><span class="c1">// {
+</span></span></span><span class="line"><span class="cl"><span class="c1">//     ctn.emplace_back(value);
+</span></span></span><span class="line"><span class="cl"><span class="c1">// }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;toto&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">generic_emplace</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Comme on passe `str` qui est une l-value constante, la référence universelle est transformée en const-ref
+</span></span></span><span class="line"><span class="cl"><span class="c1">// void generic_emplace(std::vector&lt;std::string&gt;&amp; ctn, const std::string&amp; value)
+</span></span></span><span class="line"><span class="cl"><span class="c1">// {
+</span></span></span><span class="line"><span class="cl"><span class="c1">//     ctn.emplace_back(value);
+</span></span></span><span class="line"><span class="cl"><span class="c1">// }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">deque</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">ptrs</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">generic_emplace</span><span class="p">(</span><span class="n">ptrs</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Comme on passe `std::make_unique&lt;int&gt;(3)` qui est une r-value, la référence universelle est transformée en r-value reference
+</span></span></span><span class="line"><span class="cl"><span class="c1">// void generic_emplace(std::deque&lt;std::unique_ptr&lt;int&gt;&gt;&amp; ctn, std::unique_ptr&lt;int&gt;&amp;&amp; value)
+</span></span></span><span class="line"><span class="cl"><span class="c1">// {
+</span></span></span><span class="line"><span class="cl"><span class="c1">//     ctn.emplace_back(value);
+</span></span></span><span class="line"><span class="cl"><span class="c1">// }
+</span></span></span></code></pre></div>
+<p>Le premier appel compile toujours.
+Le second appel compile lui aussi, et on a réussi à économiser la copie inutile que l&rsquo;on faisait avant.<br>
+En revanche, le troisième appel ne toujours compile pas, car bien que la signature de <code>generic_emplace</code> ait changée, une fois à l&rsquo;intérieur de la fonction, c&rsquo;est toujours le constructeur de copie de <code>unique_ptr</code> que le compilateur tente d&rsquo;utiliser.</p>
+<p>Eh oui, même si <code>value</code> est de type <code>std::unique_ptr&lt;int&gt;&amp;&amp;</code>, l&rsquo;expression <code>value</code> est une l-value (contre-intuitif n&rsquo;est-ce pas ? 🤪).
+Rappelez-vous, si une expression fait référence à un objet particulier, et que cet objet n&rsquo;est pas détruit une fois l&rsquo;instruction exécutée, c&rsquo;est qu&rsquo;il s&rsquo;agit d&rsquo;une l-value.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;&amp;</span> <span class="n">str</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// str n&#39;a pas été détruite à la fin de l&#39;instruction précédente =&gt; l-value
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="p">{</span> <span class="s">&#34;toto&#34;</span> <span class="p">}</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// la std::string construite a été détruite à la fin de l&#39;instruction =&gt; r-value
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span></span></span></code></pre></div>
+<p>Du coup, pour en revenir à <code>generic_emplace</code>, lorsqu&rsquo;on écrit <code>ctn.emplace_back(value)</code>, on appelle le copy-constructor de <code>unique_ptr</code> au lieu du move-constructor, car l&rsquo;expression <code>value</code> est une l-value et non pas une r-value.</p>
+<p>Afin de transformer cette l-value en r-value, on utilise une technique nommée <strong>perfect-forwarding</strong>, reposant sur l&rsquo;utilisation de la fonction <code>std::forward</code> définie dans <code>&lt;utility&gt;</code>.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">perfect_forwarder</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span> <span class="n">universal_ref</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// std::forward, c&#39;est un peu comme std::move, si ce n&#39;est qu&#39;il faut rajouter &lt;T&gt; (sans les &amp;&amp;) à l&#39;appel.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">do_something</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">universal_ref</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<p>Le comportement de <code>std::forward</code> est le suivant :<br>
+- si <code>universal_ref</code> est de type <code>const T&amp;</code>, alors l&rsquo;expression <code>std::forward&lt;T&gt;(universal_ref)</code> est une l-value de type <code>const T&amp;</code>,<br>
+- si <code>universal_ref</code> est de type <code>T&amp;</code>, alors l&rsquo;expression <code>std::forward&lt;T&gt;(universal_ref)</code> est une l-value de type <code>T&amp;</code>,<br>
+- si <code>universal_ref</code> est de type <code>T&amp;&amp;</code> (au sens r-value reference et pas référence universelle), alors l&rsquo;expression <code>std::forward&lt;T&gt;(universal_ref)</code> est une r-value de type <code>T&amp;&amp;</code>.</p>
+<p>Du coup, on peut réécrire <code>generic_emplace</code> de cette manière :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Ctn</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">generic_emplace</span><span class="p">(</span><span class="n">Ctn</span><span class="o">&amp;</span> <span class="n">ctn</span><span class="p">,</span> <span class="n">T</span><span class="o">&amp;&amp;</span> <span class="n">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ctn</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">value</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<p>Ainsi, le code généré sera le suivant, et il n&rsquo;y aura plus d&rsquo;erreur de compilation :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">generic_emplace</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// void generic_emplace(std::list&lt;int&gt;&amp; ctn, int&amp;&amp; value)
+</span></span></span><span class="line"><span class="cl"><span class="c1">// {
+</span></span></span><span class="line"><span class="cl"><span class="c1">//     ctn.emplace_back(static_cast&lt;int&amp;&amp;&gt;(value));
+</span></span></span><span class="line"><span class="cl"><span class="c1">//     -&gt; Le static_cast ne change rien ici, vu que int est un type primitif
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        Il n&#39;y a effectivement pas de move-constructor ni de copy-constructor, juste le processeur qui change la valeur des octets en mémoire
+</span></span></span><span class="line"><span class="cl"><span class="c1">// }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;toto&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">generic_emplace</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// void generic_emplace(std::vector&lt;std::string&gt;&amp; ctn, const std::string&amp; value)
+</span></span></span><span class="line"><span class="cl"><span class="c1">// {
+</span></span></span><span class="line"><span class="cl"><span class="c1">//     ctn.emplace_back(static_cast&lt;const std::string&amp;&gt;(value));
+</span></span></span><span class="line"><span class="cl"><span class="c1">//     -&gt; Le static_cast ne change rien ici non plus, mais pour une autre raison.
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        `value` est déjà une l-value de type `const std::string&amp;`, ce qui est aussi le cas de `static_cast&lt;const std::string&amp;&gt;(value)`.
+</span></span></span><span class="line"><span class="cl"><span class="c1">// }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">deque</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">ptrs</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">generic_emplace</span><span class="p">(</span><span class="n">ptrs</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// void generic_emplace(std::deque&lt;std::unique_ptr&lt;int&gt;&gt;&amp; ctn, std::unique_ptr&lt;int&gt;&amp;&amp; value)
+</span></span></span><span class="line"><span class="cl"><span class="c1">// {
+</span></span></span><span class="line"><span class="cl"><span class="c1">//     ctn.emplace_back(static_cast&lt;std::unique_ptr&lt;int&gt;&amp;&amp;&gt;(value));
+</span></span></span><span class="line"><span class="cl"><span class="c1">//     -&gt; Le static_cast permet ici d&#39;appeler `unique_ptr(unique_ptr&amp;&amp;)` plutôt que `unique_ptr(const unique_ptr&amp;)`.
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        `value` est une l-value de type `std::unique_ptr&lt;int&gt;&amp;&amp;`, alors que `static_cast&lt;std::unique_ptr&lt;int&gt;&amp;&amp;&gt;` est une r-value de type `std::unique_ptr&lt;int&gt;&amp;&amp;`.
+</span></span></span><span class="line"><span class="cl"><span class="c1">// }
+</span></span></span></code></pre></div>
+<hr>
+<h3 id="conclusion">Conclusion</h3>
+<p>En C++, la plupart des expressions sont classées en deux grandes catégories : les l-values et les r-values.<br>
+Les expressions l-values sont généralement des noms de variables, comme <code>value</code>, ou bien des appels de fonctions qui renvoient des l-value references, comme <code>vec.emplace_back(3)</code>.<br>
+Les expressions r-values englobent à peu près tout le reste, à savoir les calculs, les litéraux qui ne sont pas des chaînes de caractères, les appels de fonctions qui renvoient un temporaire, les appels à <code>std::move</code>, etc.</p>
+<p>Lorsque que dans une fonction-template, vous souhaitez transmettre à une autre fonction l&rsquo;un de vos paramètres par l-value si on vous l&rsquo;avait passé par l-value, et par r-value si on vous l&rsquo;avait passé par r-value, il faut :</p>
+<ol>
+<li>utiliser une référence universelle pour définir ce paramètre,</li>
+<li>passer ce paramètre à l&rsquo;autre fonction en utilisant <code>std::forward</code>.</li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Plat</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">passe_plat</span><span class="p">(</span><span class="n">Serveur</span><span class="o">&amp;</span> <span class="n">serveur</span><span class="p">,</span> <span class="n">Plat</span><span class="o">&amp;&amp;</span> <span class="n">plat</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">serveur</span><span class="p">.</span><span class="n">recoit</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">Plat</span><span class="o">&gt;</span><span class="p">(</span><span class="n">plat</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation showVisitedLinks">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="logo" href="../../">🎄 C++ 🎄</a>
+
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/chapter0/index.html"><a class="padding" href="../../chapter0/index.html"><span class="chapnum">0.</span>&ensp;Mise en place<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb41caf94f12b8a1a4b5e560230e7851" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter1/index.html"><a class="padding" href="../../chapter1/index.html"><span class="chapnum">1.</span>&ensp;Introduction au C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-6c398714eae4372920aec3a1e6c2e143" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter2/index.html"><a class="padding" href="../../chapter2/index.html"><span class="chapnum">2.</span>&ensp;Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b1df0095a9fd74320697a6d478418ec3" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter8/index.html"><a class="padding" href="../../chapter8/index.html"><span class="chapnum">8.</span>&ensp;Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7cf6d9bdd794f38d7006506bdc38c58f" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/chapter9/index.html"><a class="padding" href="../../chapter9/index.html"><span class="chapnum">9.</span>&ensp;Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu">
+            <li class="active " data-nav-id="/chapter9/1-universal-ref/index.html"><a class="padding" href="../../chapter9/1-universal-ref/index.html">Référence universelle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter9/2-variadiac/index.html"><a class="padding" href="../../chapter9/2-variadiac/index.html">Template variadique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter9/3-specializations/index.html"><a class="padding" href="../../chapter9/3-specializations/index.html">Spécialisations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter9/4-sfinae/index.html"><a class="padding" href="../../chapter9/4-sfinae/index.html">SFINAE<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter9/test/index.html"><a class="padding" href="../../chapter9/test/index.html">Questionnaire ☑<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">Accès rapide</div>
+          <ul class="space">
+            <li><a class="padding" href="https://github.com/marsault/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt exo du Cours</a></li>
+            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt TPs</a></li>
+            <li><a class="padding" href="../../slides/index.html"><i class='far fa-file-powerpoint'></i> Slides</a></li>
+            <li><a class="padding" href="../../workflow/index.html"><i class='far fa-list-alt'></i> Workflow</a></li>
+            <li><a class="padding" href="../../faq/index.html"><i class='fas fa-question-circle'></i> FAQ</a></li>
+            <li><a class="padding" href="../../chapter0/6-tips/index.html"><i class='fa fa-rocket'></i> Astuces</a></li>
+            <li><a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a></li>
+            <li><a class="padding" href="https://www-igm.univ-mlv.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> CPP-Ref</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Langue</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../chapter9/1-universal-ref/index.html" lang="fr" selected>Français</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Thème</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-mine" value="mine" selected>Mine</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks showVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Supprimer l&#39;historique</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="../../js/clipboard.min.js?1736349601" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1736349601" defer></script>
+    <script src="../../js/theme.js?1736349601" defer></script>
+
+
+
+    
+
+
+<button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
+
+<div id="footer-question-window" disabled>
+    <form id="question" method=POST action="https://formsubmit.co/98b3a83ac420e4e66d9af9f25fbc3890"
+        target="question-submitted" onsubmit="cleanQuestionFormContent()">
+
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <textarea name="question" rows="7" cols="30" placeholder="Mon message..."></textarea>
+        <input type="hidden" name="selection" />
+
+        <input type="hidden" name="_replyto" />
+        <input type="hidden" name="_subject" />
+        <input type="hidden" name="_template" value="box" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://igm.univ-mlv.fr/~marsault/cpp/cours/question-submitted/" />
+
+        <input type="submit" disabled style="display: none" aria-hidden="true" />
+        <input type="submit" value="Envoyer" />
+    </form>
+
+    <iframe class="hidden" name="question-submitted" src=""></iframe>
+</div>
+
+<script>
+
+    function updateQuestionFormSubject() {
+        let email = document.querySelector('#question>input[name="email"]').value;
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 8] " + email + ", retour sur ta question";
+    }
+
+    function cleanQuestionFormContent() {
+        function clean(element) {
+            
+            element.value = element.value.replace(/\[\.\./g, "[ ..");
+        }
+
+        clean(document.querySelector('#question>textarea[name="question"]'))
+        clean(document.querySelector('#question>input[name="selection"]'))
+    }
+
+    function openQuestionForm() {
+        document.getElementById("footer-question-window").removeAttribute("disabled");
+
+        var selection = window.getSelection().toString();
+        document.querySelector('#question>input[name="selection"]').value = selection
+    }
+
+    function updateQuestionWidgetState(event) {
+        var body = document.getElementById("R-body-inner");
+        var selection = window.getSelection();
+        var question_window = document.getElementById("footer-question-window");
+
+        document.getElementById("footer-question-btn").disabled =
+            selection.isCollapsed ||
+            body == null ||
+            body.contains(selection.anchorNode) == false ||
+            body.contains(selection.focusNode) == false;
+
+        if (event !== undefined
+            && event.type == "mouseup"
+            && question_window.contains(event.target) == false
+            && question_window.contains(document.activeElement) == false) {
+            question_window.setAttribute("disabled", true);
+        }
+    }
+
+    updateQuestionFormSubject();
+
+    document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionWidgetState;
+    updateQuestionWidgetState();
+
+</script>
+
+
+
+  </body>
+</html>

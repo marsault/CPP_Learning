@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.128.0">
+    <meta name="generator" content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619">
+    <meta name="description" content="Ownership On dit qu’un objet A est le propriétaire, ou le owner, d’un objet B lorsque la destruction de A entraîne la destruction de B.
+Dans l’exercice précédent, on peut donc dire que box était propriétaire de box._content.
+Considérons un autre exemple :
+std::vector&lt;Box&gt; boxes; boxes.emplace_back(&#34;gift1&#34;); Box&amp; gift2 = boxes.emplace_back(&#34;gift2&#34;); Box gift3 = boxes.emplace_back(&#34;gift3&#34;); Ici, le tableau boxes est le propriétaire des objets boxes[0], boxes[1] et boxes[2]. Il est également propriétaire de l’objet gift2, puisqu’il s’agit d’une référence sur boxes[1].">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Ownership :: Cours de C&#43;&#43; - Niveau Master">
+    <meta name="twitter:description" content="Ownership On dit qu’un objet A est le propriétaire, ou le owner, d’un objet B lorsque la destruction de A entraîne la destruction de B.
+Dans l’exercice précédent, on peut donc dire que box était propriétaire de box._content.
+Considérons un autre exemple :
+std::vector&lt;Box&gt; boxes; boxes.emplace_back(&#34;gift1&#34;); Box&amp; gift2 = boxes.emplace_back(&#34;gift2&#34;); Box gift3 = boxes.emplace_back(&#34;gift3&#34;); Ici, le tableau boxes est le propriétaire des objets boxes[0], boxes[1] et boxes[2]. Il est également propriétaire de l’objet gift2, puisqu’il s’agit d’une référence sur boxes[1].">
+    <meta property="og:url" content="/old-2223-chapter3-memoire/2-ownership/index.html">
+    <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:title" content="Ownership :: Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:description" content="Ownership On dit qu’un objet A est le propriétaire, ou le owner, d’un objet B lorsque la destruction de A entraîne la destruction de B.
+Dans l’exercice précédent, on peut donc dire que box était propriétaire de box._content.
+Considérons un autre exemple :
+std::vector&lt;Box&gt; boxes; boxes.emplace_back(&#34;gift1&#34;); Box&amp; gift2 = boxes.emplace_back(&#34;gift2&#34;); Box gift3 = boxes.emplace_back(&#34;gift3&#34;); Ici, le tableau boxes est le propriétaire des objets boxes[0], boxes[1] et boxes[2]. Il est également propriétaire de l’objet gift2, puisqu’il s’agit d’une référence sur boxes[1].">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Gestion mémoire (2022-2023)">
+    <meta itemprop="name" content="Ownership :: Cours de C&#43;&#43; - Niveau Master">
+    <meta itemprop="description" content="Ownership On dit qu’un objet A est le propriétaire, ou le owner, d’un objet B lorsque la destruction de A entraîne la destruction de B.
+Dans l’exercice précédent, on peut donc dire que box était propriétaire de box._content.
+Considérons un autre exemple :
+std::vector&lt;Box&gt; boxes; boxes.emplace_back(&#34;gift1&#34;); Box&amp; gift2 = boxes.emplace_back(&#34;gift2&#34;); Box gift3 = boxes.emplace_back(&#34;gift3&#34;); Ici, le tableau boxes est le propriétaire des objets boxes[0], boxes[1] et boxes[2]. Il est également propriétaire de l’objet gift2, puisqu’il s’agit d’une référence sur boxes[1].">
+    <meta itemprop="wordCount" content="575">
+    <title>Ownership :: Cours de C&#43;&#43; - Niveau Master</title>
+    <link href="../../css/fontawesome-all.min.css?1736349601" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1736349601" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1736349601" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1736349601" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1736349601" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1736349601" rel="stylesheet">
+    <link href="../../css/fonts.css?1736349601" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1736349601" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1736349601" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1736349601" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1736349601" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1736349601" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1736349601"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.variants && variants.init( [ 'mine' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copier dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Copié dans le presse-papiers!`;
+      window.T_Copy_link_to_clipboard = `Copier le lien dans le presse-papiers`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../old-2223-chapter3-memoire/2-ownership/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#ownership">Ownership</a></li>
+        <li><a href="#les-pièges-de-la-mémoire">Les pièges de la mémoire</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">Accueil</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../old-2223-chapter3-memoire/index.html"><span itemprop="name">Gestion mémoire (2022-2023)</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Ownership</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../old-2223-chapter3-memoire/1-lifespan/index.html" title="Durée de vie (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../old-2223-chapter3-memoire/3-allocation/index.html" title="Allocation dynamique (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable old-2223-chapter3-memoire" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="ownership">Ownership</h1>
+
+<hr>
+<h3 id="ownership">Ownership</h3>
+<p>On dit qu&rsquo;un objet A est le <strong>propriétaire</strong>, ou le <strong>owner</strong>, d&rsquo;un objet B lorsque la destruction de A entraîne la destruction de B.<br>
+Dans l&rsquo;exercice précédent, on peut donc dire que <code>box</code> était propriétaire de <code>box._content</code>.</p>
+<p>Considérons un autre exemple :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Box</span><span class="o">&gt;</span> <span class="n">boxes</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">             <span class="n">boxes</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="s">&#34;gift1&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">Box</span><span class="o">&amp;</span> <span class="n">gift2</span> <span class="o">=</span> <span class="n">boxes</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="s">&#34;gift2&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">Box</span>  <span class="n">gift3</span> <span class="o">=</span> <span class="n">boxes</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="s">&#34;gift3&#34;</span><span class="p">);</span></span></span></code></pre></div>
+<p>Ici, le tableau <code>boxes</code> est le propriétaire des objets <code>boxes[0]</code>, <code>boxes[1]</code> et <code>boxes[2]</code>.
+Il est également propriétaire de l&rsquo;objet <code>gift2</code>, puisqu&rsquo;il s&rsquo;agit d&rsquo;une référence sur <code>boxes[1]</code>.<br>
+En revanche, il n&rsquo;est pas propriétaire de <code>gift3</code>, car <code>gift3</code> est une copie de <code>boxes[2]</code>, et que la destruction de <code>boxes</code> n&rsquo;entrainera donc pas la destruction de <code>gift3</code>.</p>
+<p>Considérons un exemple supplémentaire :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Content</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Content</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">:</span> <span class="n">name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Bag</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Content</span><span class="o">&amp;</span> <span class="n">add</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_contents</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">name</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Content</span><span class="o">&gt;</span> <span class="n">_contents</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Bag</span> <span class="n">bag</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">bag</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#34;thing1&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">bag</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#34;thing2&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<p>Dans le code ci-dessus, <code>bag._contents</code> est le propriétaire de <code>bag._contents[0]</code> et <code>bag._contents[1]</code>.
+Aussi, <code>bag</code> est le propriétaire de <code>bag._contents</code>.</p>
+<p>La destruction de <code>bag</code> entraînera donc la destruction de <code>bag._contents</code>, qui elle-même entraînera la destruction de <code>bag._contents[0]</code> et <code>bag._contents[1]</code>.<br>
+La relation d&rsquo;ownership est donc une relation transitive.
+Si un objet A est propriétaire d&rsquo;un objet B, qui lui-même est propriétaire d&rsquo;un objet C, alors A est également propriétaire de C.</p>
+<p>Analysez maintenant le code du programme <code>Reminders</code> du TP2 (vous pouvez trouver la correction <a href="https://github.com/Laefy/CPP_Learning_Code/tree/tp2_solution/tp-02" rel="external" target="_blank">ici</a>) et essayez d&rsquo;identifier toutes les relations d&rsquo;ownership qu&rsquo;il contient.<br>
+Déduisez-en les durées de vie des différents objets du programme.</p>
+<div class="expand">
+  <input type="checkbox" id="R-expand-f1fc44fd47365870b7d196a8078f0eb1" aria-controls="R-expandcontent-f1fc44fd47365870b7d196a8078f0eb1">
+  <label class="expand-label" for="R-expand-f1fc44fd47365870b7d196a8078f0eb1">
+    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
+  </label>
+  <div id="R-expandcontent-f1fc44fd47365870b7d196a8078f0eb1" class="expand-content">
+<p><code>clock</code>:</p>
+<ul>
+<li>la durée de vie de <code>clock</code> va de la ligne 15 à la ligne 33 du <code>main</code></li>
+<li>propriétaire de <code>clock._min_hand</code>, <code>clock._sec_hand</code> et <code>clock._events</code></li>
+<li>mais pas de <code>events</code> (celui du <code>main</code>)</li>
+</ul>
+<p><code>clock._min_hand</code>:</p>
+<ul>
+<li>même durée de vie que <code>clock</code>, donc <code>main</code>: 15-33</li>
+<li>propriétaire de <code>clock._min_hand._minutes</code></li>
+</ul>
+<p><code>clock._min_hand._minutes</code>:</p>
+<ul>
+<li>même durée de vie que <code>clock._min_hand</code>, donc <code>main</code>: 15-33</li>
+</ul>
+<p><code>clock._sec_hand</code>:</p>
+<ul>
+<li>même durée de vie que <code>clock</code>, donc <code>main</code>: 15-33</li>
+<li>propriétaire de <code>clock._sec_hand._seconds</code></li>
+<li>mais pas de <code>clock._sec_hand._min_hand</code> (équivalent à <code>clock._min_hand</code>)</li>
+</ul>
+<p><code>clock._events</code>:</p>
+<ul>
+<li>même durée de vie que <code>clock</code>, donc <code>main</code>: 15-33</li>
+<li>propriétaire des éléments du tableau <code>clock._events</code></li>
+<li>mais pas des éléments du tableau <code>events</code> (celui du <code>main</code>), car les éléments ont été copiés</li>
+</ul>
+<p><code>events</code>:</p>
+<ul>
+<li>sa durée de vie s&rsquo;étend de <code>main</code> : 13-33</li>
+<li>propriétaire des éléments du tableau <code>events</code></li>
+<li>mais pas des éléments du tableau <code>clock._events</code></li>
+</ul>
+  </div>
+</div>
+<hr>
+<h3 id="les-pièges-de-la-mémoire">Les pièges de la mémoire</h3>
+<p>Etre attentifs aux relations d&rsquo;ownership permet généralement de déterminer les durées de vie des objets.
+Il existe cependent des cas où cela n&rsquo;est pas tout à fait vrai&hellip;</p>
+<p>Par exemple, prenons chacun des éléments du tableau <code>clock._events</code>.
+On pourrait supposer, en raison du fait que leur propriétaire est <code>clock._events</code> qu&rsquo;ils ont la même durée de vie que ce dernier, mais cela n&rsquo;est pas vrai.</p>
+<p>Puisqu&rsquo;un <code>std::vector</code> n&rsquo;est finalement qu&rsquo;un tableau dynamique, lorsque la capacité mémoire réservée pour ce dernier est atteinte, une nouvelle zone est réallouée, et les objets sont copiés dedans.<br>
+Cela signifie donc que chaque fois qu&rsquo;une réallocation mémoire a lieu, la durée de vie de chacun des <code>clock._events[i]</code> se termine, et de nouveaux objets sont créés ailleurs.</p>
+<p>Si l&rsquo;on voulait conserver des références sur les éléments de <code>clock._events</code>, il serait dans ce cas impossible de garantir la sécurité du programme.<br>
+En effet, les objets référencés pourraient être détruits à tout moment, et leurs références invalidées sans qu&rsquo;on ne le sache.</p>
+<p>La prochaine étape de ce chapitre sera donc de vous montrer comment contourner ce problème pour coder de manière sécurisée.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation showVisitedLinks">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="logo" href="../../">🎄 C++ 🎄</a>
+
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/chapter0/index.html"><a class="padding" href="../../chapter0/index.html"><span class="chapnum">0.</span>&ensp;Mise en place<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb41caf94f12b8a1a4b5e560230e7851" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter1/index.html"><a class="padding" href="../../chapter1/index.html"><span class="chapnum">1.</span>&ensp;Introduction au C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-6c398714eae4372920aec3a1e6c2e143" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter2/index.html"><a class="padding" href="../../chapter2/index.html"><span class="chapnum">2.</span>&ensp;Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b1df0095a9fd74320697a6d478418ec3" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter8/index.html"><a class="padding" href="../../chapter8/index.html"><span class="chapnum">8.</span>&ensp;Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7cf6d9bdd794f38d7006506bdc38c58f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter9/index.html"><a class="padding" href="../../chapter9/index.html"><span class="chapnum">9.</span>&ensp;Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu"></ul></li>
+            <li class="parent hidden " data-nav-id="/old-2223-chapter3-memoire/index.html"><a class="padding" href="../../old-2223-chapter3-memoire/index.html">Gestion mémoire (2022-2023)<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e2b2fe39bbf9794869eeec25a6a70c68" class="collapsible-menu">
+            <li class="" data-nav-id="/old-2223-chapter3-memoire/1-lifespan/index.html"><a class="padding" href="../../old-2223-chapter3-memoire/1-lifespan/index.html">Durée de vie<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/old-2223-chapter3-memoire/2-ownership/index.html"><a class="padding" href="../../old-2223-chapter3-memoire/2-ownership/index.html">Ownership<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/old-2223-chapter3-memoire/3-allocation/index.html"><a class="padding" href="../../old-2223-chapter3-memoire/3-allocation/index.html">Allocation dynamique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/old-2223-chapter3-memoire/4-move-sem/index.html"><a class="padding" href="../../old-2223-chapter3-memoire/4-move-sem/index.html">Déplacement<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/old-2223-chapter3-memoire/test/index.html"><a class="padding" href="../../old-2223-chapter3-memoire/test/index.html">Questionnaire !<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/old-2223-chapter3-memoire/summary/index.html"><a class="padding" href="../../old-2223-chapter3-memoire/summary/index.html">Synthèse<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">Accès rapide</div>
+          <ul class="space">
+            <li><a class="padding" href="https://github.com/marsault/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt exo du Cours</a></li>
+            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt TPs</a></li>
+            <li><a class="padding" href="../../slides/index.html"><i class='far fa-file-powerpoint'></i> Slides</a></li>
+            <li><a class="padding" href="../../workflow/index.html"><i class='far fa-list-alt'></i> Workflow</a></li>
+            <li><a class="padding" href="../../faq/index.html"><i class='fas fa-question-circle'></i> FAQ</a></li>
+            <li><a class="padding" href="../../chapter0/6-tips/index.html"><i class='fa fa-rocket'></i> Astuces</a></li>
+            <li><a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a></li>
+            <li><a class="padding" href="https://www-igm.univ-mlv.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> CPP-Ref</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Langue</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../old-2223-chapter3-memoire/2-ownership/index.html" lang="fr" selected>Français</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Thème</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-mine" value="mine" selected>Mine</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks showVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Supprimer l&#39;historique</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="../../js/clipboard.min.js?1736349601" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1736349601" defer></script>
+    <script src="../../js/theme.js?1736349601" defer></script>
+
+
+
+    
+
+
+<button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
+
+<div id="footer-question-window" disabled>
+    <form id="question" method=POST action="https://formsubmit.co/98b3a83ac420e4e66d9af9f25fbc3890"
+        target="question-submitted" onsubmit="cleanQuestionFormContent()">
+
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <textarea name="question" rows="7" cols="30" placeholder="Mon message..."></textarea>
+        <input type="hidden" name="selection" />
+
+        <input type="hidden" name="_replyto" />
+        <input type="hidden" name="_subject" />
+        <input type="hidden" name="_template" value="box" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://igm.univ-mlv.fr/~marsault/cpp/cours/question-submitted/" />
+
+        <input type="submit" disabled style="display: none" aria-hidden="true" />
+        <input type="submit" value="Envoyer" />
+    </form>
+
+    <iframe class="hidden" name="question-submitted" src=""></iframe>
+</div>
+
+<script>
+
+    function updateQuestionFormSubject() {
+        let email = document.querySelector('#question>input[name="email"]').value;
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 98] " + email + ", retour sur ta question";
+    }
+
+    function cleanQuestionFormContent() {
+        function clean(element) {
+            
+            element.value = element.value.replace(/\[\.\./g, "[ ..");
+        }
+
+        clean(document.querySelector('#question>textarea[name="question"]'))
+        clean(document.querySelector('#question>input[name="selection"]'))
+    }
+
+    function openQuestionForm() {
+        document.getElementById("footer-question-window").removeAttribute("disabled");
+
+        var selection = window.getSelection().toString();
+        document.querySelector('#question>input[name="selection"]').value = selection
+    }
+
+    function updateQuestionWidgetState(event) {
+        var body = document.getElementById("R-body-inner");
+        var selection = window.getSelection();
+        var question_window = document.getElementById("footer-question-window");
+
+        document.getElementById("footer-question-btn").disabled =
+            selection.isCollapsed ||
+            body == null ||
+            body.contains(selection.anchorNode) == false ||
+            body.contains(selection.focusNode) == false;
+
+        if (event !== undefined
+            && event.type == "mouseup"
+            && question_window.contains(event.target) == false
+            && question_window.contains(document.activeElement) == false) {
+            question_window.setAttribute("disabled", true);
+        }
+    }
+
+    updateQuestionFormSubject();
+
+    document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionWidgetState;
+    updateQuestionWidgetState();
+
+</script>
+
+
+
+  </body>
+</html>

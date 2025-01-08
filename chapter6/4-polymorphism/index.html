@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.128.0">
+    <meta name="generator" content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619">
+    <meta name="description" content="Vous avez probablement déjà entendu le terme polymorphisme, vous l’avez peut-être même déjà utilisé, mais quand vous y réfléchissez, si on vous demandait de le définir clairement, vous ne sauriez pas forcément quoi répondre. Cette page sera donc l’occasion de revenir sur sa définition.
+Dans ce chapitre, nous nous sommes intéressés à deux manières de mettre-en-ouvre le polymorphisme en C&#43;&#43; : l’héritage statique et l’héritage dynamique. Nous détaillerons les différences entre les deux et dans quels cas utiliser l’un ou l’autre.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Polymorphisme :: Cours de C&#43;&#43; - Niveau Master">
+    <meta name="twitter:description" content="Vous avez probablement déjà entendu le terme polymorphisme, vous l’avez peut-être même déjà utilisé, mais quand vous y réfléchissez, si on vous demandait de le définir clairement, vous ne sauriez pas forcément quoi répondre. Cette page sera donc l’occasion de revenir sur sa définition.
+Dans ce chapitre, nous nous sommes intéressés à deux manières de mettre-en-ouvre le polymorphisme en C&#43;&#43; : l’héritage statique et l’héritage dynamique. Nous détaillerons les différences entre les deux et dans quels cas utiliser l’un ou l’autre.">
+    <meta property="og:url" content="/chapter6/4-polymorphism/index.html">
+    <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:title" content="Polymorphisme :: Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:description" content="Vous avez probablement déjà entendu le terme polymorphisme, vous l’avez peut-être même déjà utilisé, mais quand vous y réfléchissez, si on vous demandait de le définir clairement, vous ne sauriez pas forcément quoi répondre. Cette page sera donc l’occasion de revenir sur sa définition.
+Dans ce chapitre, nous nous sommes intéressés à deux manières de mettre-en-ouvre le polymorphisme en C&#43;&#43; : l’héritage statique et l’héritage dynamique. Nous détaillerons les différences entre les deux et dans quels cas utiliser l’un ou l’autre.">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Héritage">
+    <meta itemprop="name" content="Polymorphisme :: Cours de C&#43;&#43; - Niveau Master">
+    <meta itemprop="description" content="Vous avez probablement déjà entendu le terme polymorphisme, vous l’avez peut-être même déjà utilisé, mais quand vous y réfléchissez, si on vous demandait de le définir clairement, vous ne sauriez pas forcément quoi répondre. Cette page sera donc l’occasion de revenir sur sa définition.
+Dans ce chapitre, nous nous sommes intéressés à deux manières de mettre-en-ouvre le polymorphisme en C&#43;&#43; : l’héritage statique et l’héritage dynamique. Nous détaillerons les différences entre les deux et dans quels cas utiliser l’un ou l’autre.">
+    <meta itemprop="wordCount" content="842">
+    <title>Polymorphisme :: Cours de C&#43;&#43; - Niveau Master</title>
+    <link href="../../css/fontawesome-all.min.css?1736349601" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1736349601" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1736349601" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1736349601" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1736349601" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1736349601" rel="stylesheet">
+    <link href="../../css/fonts.css?1736349601" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1736349601" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1736349601" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1736349601" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1736349601" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1736349601" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1736349601"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.variants && variants.init( [ 'mine' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copier dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Copié dans le presse-papiers!`;
+      window.T_Copy_link_to_clipboard = `Copier le lien dans le presse-papiers`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../chapter6/4-polymorphism/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#polymorphisme">Polymorphisme</a></li>
+        <li><a href="#lhéritage-statique">L&rsquo;héritage statique</a></li>
+        <li><a href="#héritage-dynamique-et-classes-polymorphes">Héritage dynamique et classes polymorphes</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">Accueil</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../chapter6/index.html"><span itemprop="name">Héritage</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Polymorphisme</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter6/3-virtual/index.html" title="Résolution d&#39;appel virtuel (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter6/5-vehicles/index.html" title="🚗 Véhicule partagé (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter6" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="polymorphisme">Polymorphisme</h1>
+
+<p>Vous avez probablement déjà entendu le terme <strong>polymorphisme</strong>, vous l&rsquo;avez peut-être même déjà utilisé, mais quand vous y réfléchissez, si on vous demandait
+de le définir clairement, vous ne sauriez pas forcément quoi répondre. Cette page sera donc l&rsquo;occasion de revenir sur sa définition.</p>
+<p>Dans ce chapitre, nous nous sommes intéressés à deux manières de mettre-en-ouvre le polymorphisme en C++ : l&rsquo;héritage statique et l&rsquo;héritage dynamique.
+Nous détaillerons les différences entre les deux et dans quels cas utiliser l&rsquo;un ou l&rsquo;autre.</p>
+<hr>
+<h3 id="polymorphisme">Polymorphisme</h3>
+<p>En programmation, le polymorphisme est un concept consistant à fournir une interface unique pouvant accepter des objets de types différents (merci Wikipédia).</p>
+<p>La surcharge est donc un type de polymorphisme, puisque du point de vue de l&rsquo;utilisateur, si on écrit <code>std::cout &lt;&lt; &quot;aaaaaah&quot;</code> ou <code>std::cout &lt;&lt; 3</code>, on a l&rsquo;impression
+d&rsquo;utiliser la même fonction (ou en tout cas, le même algorithme), bien qu&rsquo;on ne passe pas des arguments du même type.</p>
+<p>Le terme polymorphe peut également faire référence à un objet. Dans ce cas, cela signifie qu&rsquo;il est possible de faire référence à cet objet via différents types.
+Par exemple, si une classe <code>Dog</code> hérite de <code>Animal</code>, et qu&rsquo;on instancie un objet <code>Dog dog</code>, alors <code>dog</code> est polymorphe, puisqu&rsquo;on peut le référencer aussi bien depuis <code>Dog</code> que depuis <code>Animal</code>.</p>
+<p>Enfin, on pourra également parler de classe polymorphe. En C++, ce terme sera employé pour désigner les classes contenant des fonctions virtuelles. On ne parlera donc pas de classes polymorphes
+pour de l&rsquo;héritage statique.</p>
+<hr>
+<h3 id="lhéritage-statique">L&rsquo;héritage statique</h3>
+<p>L&rsquo;héritage statique est une forme de sous-typage un peu particulière, puisqu&rsquo;elle n&rsquo;est pas faite pour modifier le comportement des classes dérivées.
+Son seul et unique intérêt, c&rsquo;est de partager du code entre plusieurs classe, par exemple pour éviter la duplication, ou encore pour employer du code déjà prêt et testé.</p>
+<p>Il existe deux grandes manières de partager du code entre des classes :</p>
+<ol>
+<li>L&rsquo;héritage statique, comme nous venons de le voir, qui permet à une classe d&rsquo;hériter de l&rsquo;ensemble des champs (attributs et fonctions) d&rsquo;une autre classe,</li>
+<li>La <strong>composition</strong>, c&rsquo;est-à-dire que l&rsquo;on place dans sa classe un attribut du type dont on souhaite pouvoir réutiliser le code.</li>
+</ol>
+<p>La composition permet une meilleure maîtrise de ce que l&rsquo;on souhaite exposer de l&rsquo;attribut.
+En effet, il suffit de définir les fonctions-membres que l&rsquo;on souhaite exposer, et d&rsquo;appeler dedans la fonction-membre correspondante de l&rsquo;attribut.
+Vous devriez donc préférer la composition à un héritage statique, dès lors que vous ne souhaitez pas exposer l&rsquo;intégralité de l&rsquo;interface du type à réutiliser
+(meilleure encapsulation, et donc plus simple d&rsquo;enforcer les invariants de classe).</p>
+<p>Voici un exemple permettant d&rsquo;illustrer un cas d&rsquo;utilisation pour un héritage statique, et un cas d&rsquo;utilisation pour une composition :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Shared class
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">SharedStuff</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">set_stuff1</span><span class="p">(</span><span class="kt">int</span> <span class="n">stuff1</span><span class="p">)</span>   <span class="p">{</span> <span class="n">_stuff1</span> <span class="o">=</span> <span class="n">stuff1</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">set_stuff2</span><span class="p">(</span><span class="kt">float</span> <span class="n">stuff2</span><span class="p">)</span> <span class="p">{</span> <span class="n">_stuff2</span> <span class="o">=</span> <span class="n">stuff2</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span>   <span class="n">_stuff1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">_stuff2</span> <span class="o">=</span> <span class="mf">0.f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Static inheritance
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">OMGYouReallyGotALotOfStuff</span> <span class="o">:</span> <span class="k">public</span> <span class="n">SharedStuff</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">set_stuff3</span><span class="p">(</span><span class="kt">char</span> <span class="n">stuff3</span><span class="p">)</span> <span class="p">{</span> <span class="n">_stuff3</span> <span class="o">=</span> <span class="n">stuff3</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">_stuff3</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Composition
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">DontBuyMoreStuffIfYouCantKeepItNeat</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">set_stuff1</span><span class="p">(</span><span class="kt">int</span> <span class="n">stuff1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">check_room_tidy</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_the_stuff</span><span class="p">.</span><span class="n">set_stuff1</span><span class="p">(</span><span class="n">stuff1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_is_tidy</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">set_stuff2</span><span class="p">(</span><span class="kt">float</span> <span class="n">stuff2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">check_room_tidy</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_the_stuff</span><span class="p">.</span><span class="n">set_stuff2</span><span class="p">(</span><span class="n">stuff2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_is_tidy</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">tidy_the_room</span><span class="p">()</span> <span class="p">{</span> <span class="n">_is_tidy</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">check_room_tidy</span><span class="p">()</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">_is_tidy</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Clean your room before starting to put new stuff in it!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">SharedStuff</span> <span class="n">_the_stuff</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span>        <span class="n">_is_tidy</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div>
+<hr>
+<h3 id="héritage-dynamique-et-classes-polymorphes">Héritage dynamique et classes polymorphes</h3>
+<p>L&rsquo;intérêt de l&rsquo;héritage dynamique, c&rsquo;est de pouvoir définir des interfaces génériques (= polymorphisme), dans lesquelles une ou plusieurs parties de l&rsquo;algorithme vont être spécialisées en fonction du type réel de l&rsquo;objet passé en paramètre.
+Sans ce mécanisme, le C++ ne serait plus vraiment un langage orienté-objet. Il s&rsquo;agit donc de quelque chose de très important, mais qu&rsquo;il faut apprendre à manipuler avec soin :</p>
+<ul>
+<li>il faut penser à rendre le destructeur de la classe de base virtuel,</li>
+<li>il faut penser à écrire override sur les fonctions redéfinies,</li>
+<li>il faut comprendre comment les virtual tables sont construites pour savoir quelle fonction sera exécutée,</li>
+<li>il faut faire attention à passer ses objets par références (ou par pointeurs dans les conteneurs) pour que les appels virtuels soient correctement exécutés,</li>
+<li>etc.</li>
+</ul>
+<div class="box notices cstyle note">
+  <div class="box-label">
+    <i class="fa-fw fas fa-exclamation-circle"></i> Remarque
+  </div>
+  <div class="box-content">
+<p>Il faut savoir qu&rsquo;un appel virtuel est beaucoup plus coûteux à réaliser à l&rsquo;exécution qu&rsquo;un appel de fonction classique : il faut accéder à la VTable de l&rsquo;objet, récupérer le pointeur sur la bonne fonction, jumper à la bonne adresse (potentiellement à l&rsquo;autre bout de la mémoire du programme), mettre les instructions de cette fonction dans le cache du processeur, etc.<br>
+Lorsque l&rsquo;appel n&rsquo;est pas virtuel, des mécanismes permettent d&rsquo;optimiser beaucoup plus facilement le code, par exemple, l&rsquo;inlining de fonction, ou l&rsquo;anticipation de la mise en cache des instructions grâce à la prédiction.<br>
+Du coup, n&rsquo;hésitez pas à utiliser des fonctions virtuelles, mais évitez de les utiliser pour tout et n&rsquo;importe quoi. Par exemple, un getter n&rsquo;a pas besoin d&rsquo;être virtuel si vous stocker le membre à retourner dans la classe de base.</p>
+  </div>
+</div>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation showVisitedLinks">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="logo" href="../../">🎄 C++ 🎄</a>
+
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/chapter0/index.html"><a class="padding" href="../../chapter0/index.html"><span class="chapnum">0.</span>&ensp;Mise en place<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb41caf94f12b8a1a4b5e560230e7851" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter1/index.html"><a class="padding" href="../../chapter1/index.html"><span class="chapnum">1.</span>&ensp;Introduction au C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-6c398714eae4372920aec3a1e6c2e143" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter2/index.html"><a class="padding" href="../../chapter2/index.html"><span class="chapnum">2.</span>&ensp;Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b1df0095a9fd74320697a6d478418ec3" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu">
+            <li class="" data-nav-id="/chapter6/1-hierarchy/index.html"><a class="padding" href="../../chapter6/1-hierarchy/index.html">💼 Hiérarchie professionnelle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter6/2-farm/index.html"><a class="padding" href="../../chapter6/2-farm/index.html">🐮 Concerto animalier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter6/3-virtual/index.html"><a class="padding" href="../../chapter6/3-virtual/index.html">Résolution d&#39;appel virtuel<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/chapter6/4-polymorphism/index.html"><a class="padding" href="../../chapter6/4-polymorphism/index.html">Polymorphisme<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter6/5-vehicles/index.html"><a class="padding" href="../../chapter6/5-vehicles/index.html">🚗 Véhicule partagé<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter6/test/index.html"><a class="padding" href="../../chapter6/test/index.html">Questionnaire !<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter6/summary/index.html"><a class="padding" href="../../chapter6/summary/index.html">Synthèse<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter8/index.html"><a class="padding" href="../../chapter8/index.html"><span class="chapnum">8.</span>&ensp;Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7cf6d9bdd794f38d7006506bdc38c58f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter9/index.html"><a class="padding" href="../../chapter9/index.html"><span class="chapnum">9.</span>&ensp;Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">Accès rapide</div>
+          <ul class="space">
+            <li><a class="padding" href="https://github.com/marsault/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt exo du Cours</a></li>
+            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt TPs</a></li>
+            <li><a class="padding" href="../../slides/index.html"><i class='far fa-file-powerpoint'></i> Slides</a></li>
+            <li><a class="padding" href="../../workflow/index.html"><i class='far fa-list-alt'></i> Workflow</a></li>
+            <li><a class="padding" href="../../faq/index.html"><i class='fas fa-question-circle'></i> FAQ</a></li>
+            <li><a class="padding" href="../../chapter0/6-tips/index.html"><i class='fa fa-rocket'></i> Astuces</a></li>
+            <li><a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a></li>
+            <li><a class="padding" href="https://www-igm.univ-mlv.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> CPP-Ref</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Langue</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../chapter6/4-polymorphism/index.html" lang="fr" selected>Français</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Thème</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-mine" value="mine" selected>Mine</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks showVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Supprimer l&#39;historique</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="../../js/clipboard.min.js?1736349601" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1736349601" defer></script>
+    <script src="../../js/theme.js?1736349601" defer></script>
+
+
+
+    
+
+
+<button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
+
+<div id="footer-question-window" disabled>
+    <form id="question" method=POST action="https://formsubmit.co/98b3a83ac420e4e66d9af9f25fbc3890"
+        target="question-submitted" onsubmit="cleanQuestionFormContent()">
+
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <textarea name="question" rows="7" cols="30" placeholder="Mon message..."></textarea>
+        <input type="hidden" name="selection" />
+
+        <input type="hidden" name="_replyto" />
+        <input type="hidden" name="_subject" />
+        <input type="hidden" name="_template" value="box" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://igm.univ-mlv.fr/~marsault/cpp/cours/question-submitted/" />
+
+        <input type="submit" disabled style="display: none" aria-hidden="true" />
+        <input type="submit" value="Envoyer" />
+    </form>
+
+    <iframe class="hidden" name="question-submitted" src=""></iframe>
+</div>
+
+<script>
+
+    function updateQuestionFormSubject() {
+        let email = document.querySelector('#question>input[name="email"]').value;
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 5] " + email + ", retour sur ta question";
+    }
+
+    function cleanQuestionFormContent() {
+        function clean(element) {
+            
+            element.value = element.value.replace(/\[\.\./g, "[ ..");
+        }
+
+        clean(document.querySelector('#question>textarea[name="question"]'))
+        clean(document.querySelector('#question>input[name="selection"]'))
+    }
+
+    function openQuestionForm() {
+        document.getElementById("footer-question-window").removeAttribute("disabled");
+
+        var selection = window.getSelection().toString();
+        document.querySelector('#question>input[name="selection"]').value = selection
+    }
+
+    function updateQuestionWidgetState(event) {
+        var body = document.getElementById("R-body-inner");
+        var selection = window.getSelection();
+        var question_window = document.getElementById("footer-question-window");
+
+        document.getElementById("footer-question-btn").disabled =
+            selection.isCollapsed ||
+            body == null ||
+            body.contains(selection.anchorNode) == false ||
+            body.contains(selection.focusNode) == false;
+
+        if (event !== undefined
+            && event.type == "mouseup"
+            && question_window.contains(event.target) == false
+            && question_window.contains(document.activeElement) == false) {
+            question_window.setAttribute("disabled", true);
+        }
+    }
+
+    updateQuestionFormSubject();
+
+    document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionWidgetState;
+    updateQuestionWidgetState();
+
+</script>
+
+
+
+  </body>
+</html>

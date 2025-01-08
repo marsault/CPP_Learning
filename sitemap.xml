@@ -4,13 +4,13 @@
     <loc>/chapter0/index.html</loc>
   </url>
   <url>
-    <loc>/chapter4/1-hierarchy/index.html</loc>
+    <loc>/chapter6/1-hierarchy/index.html</loc>
   </url>
   <url>
     <loc>/chapter3/1-allocation/index.html</loc>
   </url>
   <url>
-    <loc>/chapter8-old/1-assertions/index.html</loc>
+    <loc>/old-2223-chapter8-exceptions-assert/1-assertions/index.html</loc>
   </url>
   <url>
     <loc>/chapter2/1-poo/index.html</loc>
@@ -19,16 +19,16 @@
     <loc>/chapter0/1-compiler/index.html</loc>
   </url>
   <url>
-    <loc>/chapter3-old/1-lifespan/index.html</loc>
+    <loc>/old-2223-chapter3-memoire/1-lifespan/index.html</loc>
   </url>
   <url>
-    <loc>/chapter9/1-introduction/index.html</loc>
+    <loc>/chapter8/1-introduction/index.html</loc>
   </url>
   <url>
     <loc>/chapter1/index.html</loc>
   </url>
   <url>
-    <loc>/chapter6/1-searches/index.html</loc>
+    <loc>/chapter7/1-searches/index.html</loc>
   </url>
   <url>
     <loc>/chapter0/6-tips/1-snippets/index.html</loc>
@@ -43,13 +43,13 @@
     <loc>/chapter0/6-tips/3-keybinds-commands/index.html</loc>
   </url>
   <url>
-    <loc>/chapter10/1-universal-ref/index.html</loc>
+    <loc>/chapter9/1-universal-ref/index.html</loc>
   </url>
   <url>
     <loc>/chapter5/1-doc/index.html</loc>
   </url>
   <url>
-    <loc>/chapter4/2-farm/index.html</loc>
+    <loc>/chapter6/2-farm/index.html</loc>
   </url>
   <url>
     <loc>/chapter2/index.html</loc>
@@ -58,16 +58,16 @@
     <loc>/chapter3/2-lifespan/index.html</loc>
   </url>
   <url>
-    <loc>/chapter8-old/2-exceptions/index.html</loc>
+    <loc>/old-2223-chapter8-exceptions-assert/2-exceptions/index.html</loc>
   </url>
   <url>
-    <loc>/chapter9/2-examples/index.html</loc>
+    <loc>/chapter8/2-examples/index.html</loc>
   </url>
   <url>
     <loc>/chapter1/2-hello-world/index.html</loc>
   </url>
   <url>
-    <loc>/chapter3-old/2-ownership/index.html</loc>
+    <loc>/old-2223-chapter3-memoire/2-ownership/index.html</loc>
   </url>
   <url>
     <loc>/chapter2/2-first-class/index.html</loc>
@@ -76,16 +76,16 @@
     <loc>/chapter5/2-vectors/index.html</loc>
   </url>
   <url>
-    <loc>/chapter10/2-variadiac/index.html</loc>
+    <loc>/chapter9/2-variadiac/index.html</loc>
   </url>
   <url>
-    <loc>/chapter6/2-transformations/index.html</loc>
+    <loc>/chapter7/2-transformations/index.html</loc>
   </url>
   <url>
     <loc>/chapter0/2-vscode/index.html</loc>
   </url>
   <url>
-    <loc>/chapter3-old/3-allocation/index.html</loc>
+    <loc>/old-2223-chapter3-memoire/3-allocation/index.html</loc>
   </url>
   <url>
     <loc>/chapter5/3-sequentials/index.html</loc>
@@ -100,7 +100,7 @@
     <loc>/chapter3/index.html</loc>
   </url>
   <url>
-    <loc>/chapter9/3-syntaxe/index.html</loc>
+    <loc>/chapter8/3-syntaxe/index.html</loc>
   </url>
   <url>
     <loc>/chapter1/3-syntax-elements/index.html</loc>
@@ -109,13 +109,13 @@
     <loc>/chapter3/3-storage/index.html</loc>
   </url>
   <url>
-    <loc>/chapter6/3-iterators/index.html</loc>
+    <loc>/chapter7/3-iterators/index.html</loc>
   </url>
   <url>
-    <loc>/chapter4/3-virtual/index.html</loc>
+    <loc>/chapter6/3-virtual/index.html</loc>
   </url>
   <url>
-    <loc>/chapter10/3-specializations/index.html</loc>
+    <loc>/chapter9/3-specializations/index.html</loc>
   </url>
   <url>
     <loc>/chapter0/6-tips/4-terminal/index.html</loc>
@@ -124,7 +124,10 @@
     <loc>/chapter5/4-associatives/index.html</loc>
   </url>
   <url>
-    <loc>/chapter3-old/4-move-sem/index.html</loc>
+    <loc>/chapter4/index.html</loc>
+  </url>
+  <url>
+    <loc>/old-2223-chapter3-memoire/4-move-sem/index.html</loc>
   </url>
   <url>
     <loc>/chapter2/4-destructor/index.html</loc>
@@ -133,25 +136,22 @@
     <loc>/chapter0/4-git/index.html</loc>
   </url>
   <url>
-    <loc>/chapter4/index.html</loc>
-  </url>
-  <url>
-    <loc>/chapter6/4-lambdas/index.html</loc>
+    <loc>/chapter7/4-lambdas/index.html</loc>
   </url>
   <url>
     <loc>/chapter1/4-std-lib/index.html</loc>
   </url>
   <url>
-    <loc>/chapter4/4-polymorphism/index.html</loc>
+    <loc>/chapter6/4-polymorphism/index.html</loc>
   </url>
   <url>
-    <loc>/chapter10/4-sfinae/index.html</loc>
+    <loc>/chapter9/4-sfinae/index.html</loc>
   </url>
   <url>
     <loc>/chapter3/4-references/index.html</loc>
   </url>
   <url>
-    <loc>/chapter4/5-vehicles/index.html</loc>
+    <loc>/chapter6/5-vehicles/index.html</loc>
   </url>
   <url>
     <loc>/chapter0/5-clang-format/index.html</loc>
@@ -172,10 +172,10 @@
     <loc>/chapter3/5-ownership/index.html</loc>
   </url>
   <url>
-    <loc>/chapter6/index.html</loc>
+    <loc>/chapter0/6-tips/index.html</loc>
   </url>
   <url>
-    <loc>/chapter0/6-tips/index.html</loc>
+    <loc>/chapter6/index.html</loc>
   </url>
   <url>
     <loc>/chapter2/6-polygon/index.html</loc>
@@ -184,25 +184,31 @@
     <loc>/chapter5/6-tuples/index.html</loc>
   </url>
   <url>
+    <loc>/chapter7/index.html</loc>
+  </url>
+  <url>
+    <loc>/chapter8/index.html</loc>
+  </url>
+  <url>
     <loc>/chapter9/index.html</loc>
   </url>
   <url>
-    <loc>/chapter10/index.html</loc>
+    <loc>/old-2223-chapter3-memoire/index.html</loc>
   </url>
   <url>
-    <loc>/chapter3-old/test/index.html</loc>
+    <loc>/old-2223-chapter8-exceptions-assert/index.html</loc>
   </url>
   <url>
-    <loc>/chapter4/test/index.html</loc>
+    <loc>/chapter6/test/index.html</loc>
   </url>
   <url>
-    <loc>/chapter8-old/test/index.html</loc>
+    <loc>/old-2223-chapter3-memoire/test/index.html</loc>
+  </url>
+  <url>
+    <loc>/old-2223-chapter8-exceptions-assert/test/index.html</loc>
   </url>
   <url>
     <loc>/chapter1/test/index.html</loc>
-  </url>
-  <url>
-    <loc>/chapter10/test/index.html</loc>
   </url>
   <url>
     <loc>/chapter2/test/index.html</loc>
@@ -214,7 +220,10 @@
     <loc>/chapter5/test/index.html</loc>
   </url>
   <url>
-    <loc>/chapter6/test/index.html</loc>
+    <loc>/chapter7/test/index.html</loc>
+  </url>
+  <url>
+    <loc>/chapter8/test/index.html</loc>
   </url>
   <url>
     <loc>/chapter9/test/index.html</loc>
@@ -223,13 +232,13 @@
     <loc>/chapter0/test/index.html</loc>
   </url>
   <url>
-    <loc>/chapter3-old/summary/index.html</loc>
-  </url>
-  <url>
-    <loc>/chapter4/summary/index.html</loc>
-  </url>
-  <url>
     <loc>/chapter5/summary/index.html</loc>
+  </url>
+  <url>
+    <loc>/chapter6/summary/index.html</loc>
+  </url>
+  <url>
+    <loc>/old-2223-chapter3-memoire/summary/index.html</loc>
   </url>
   <url>
     <loc>/index.html</loc>
@@ -247,19 +256,10 @@
     <loc>/chapter1/test_done/index.html</loc>
   </url>
   <url>
-    <loc>/chapter10/test_done/index.html</loc>
-  </url>
-  <url>
     <loc>/chapter2/test_done/index.html</loc>
   </url>
   <url>
-    <loc>/chapter3-old/test_done/index.html</loc>
-  </url>
-  <url>
     <loc>/chapter3/test_done/index.html</loc>
-  </url>
-  <url>
-    <loc>/chapter4/test_done/index.html</loc>
   </url>
   <url>
     <loc>/chapter5/test_done/index.html</loc>
@@ -268,10 +268,19 @@
     <loc>/chapter6/test_done/index.html</loc>
   </url>
   <url>
-    <loc>/chapter8-old/test_done/index.html</loc>
+    <loc>/chapter7/test_done/index.html</loc>
+  </url>
+  <url>
+    <loc>/chapter8/test_done/index.html</loc>
   </url>
   <url>
     <loc>/chapter9/test_done/index.html</loc>
+  </url>
+  <url>
+    <loc>/old-2223-chapter3-memoire/test_done/index.html</loc>
+  </url>
+  <url>
+    <loc>/old-2223-chapter8-exceptions-assert/test_done/index.html</loc>
   </url>
   <url>
     <loc>/question-submitted/index.html</loc>

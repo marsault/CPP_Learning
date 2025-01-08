@@ -1,46 +1,60 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Algorithmes :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Héritage :: Cours de C&#43;&#43; - Niveau Master</title>
     <link>/chapter6/index.html</link>
-    <description>Comme vous le savez déjà, la STL fournit tout un tas de conteneurs pour répondre à différents usages. Ces conteneurs proposent des fonctions permettant l’insertion et la suppression d’éléments, mais rarement de quoi effectuer des recherches ou des transformations. Le but de ce chapitre sera donc de vous présenter comment faire pour réaliser ces opérations, notamment en s’appuyant sur la bibliothèque algorithmique fournie par la librairie standard.&#xA;Nous ne présenterons pas l’ensemble des fonctions de la librairie (il y en a beaucoup trop), mais si cela vous intéresse, vous pourrez retrouver tout ce qu’elle propose sur cette page.</description>
+    <description>Vous apprendrez dans ce chapitre comment fonctionne l’héritage en C++. Vous verrez qu’il existe de nombreuses différences avec l’héritage en Java, bien qu’on retrouve des concepts similaires.&#xA;Pour la pratique, nous vous montrerons comment créer une hiérarchie de classes, puis comment faire pour redéfinir le comportement des classes-filles.</description>
     <generator>Hugo</generator>
     <language>fr</language>
     <atom:link href="/chapter6/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Parcours et recherches</title>
-      <link>/chapter6/1-searches/index.html</link>
+      <title>💼 Hiérarchie professionnelle</title>
+      <link>/chapter6/1-hierarchy/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/chapter6/1-searches/index.html</guid>
-      <description>Parcours de plages Pour parcourir une plage d’éléments, vous devriez normalement déjà savoir qu’il faut utiliser une boucle for ou foreach. Les boucles while et do-while ne sont en effet pas vraiment adaptées à ce type d’usage.&#xA;Vous trouverez quelques conseils dans cette partie pour rendre votre code plus lisible, concis et fiable.&#xA;Boucle foreach Lorsqu’on itère sur un conteneur avec une boucle foreach, il faut faire attention à si l’on souhaite récupérer une copie de l’élément ou une référence.</description>
+      <guid>/chapter6/1-hierarchy/index.html</guid>
+      <description>Dans cette première partie, vous apprendrez comment définir des relations de parenté entre vos classes.&#xA;Nous ne parlerons sur cette page que d’héritage dit “statique”, c’est-à-dire que nous ne chercherons pas à modifier dans les classes-fille le comportement hérité de la classe-mère.&#xA;Pour cet exercice, vous modifierez les fichiers :&#xA;- chap-04/1-hierarchy/Boss.cpp&#xA;- chap-04/1-hierarchy/Boss.h&#xA;- chap-04/1-hierarchy/Staff.cpp&#xA;- chap-04/1-hierarchy/Staff.h&#xA;- chap-04/1-hierarchy/Intern.cpp&#xA;- chap-04/1-hierarchy/Intern.h&#xA;La cible à compiler est c4-1-hierarchy.&#xA;Définir une classe-mère Commencez par jeter un coup d’oeil à chacun des fichiers fournis.</description>
     </item>
     <item>
-      <title>Transformations</title>
-      <link>/chapter6/2-transformations/index.html</link>
+      <title>🐮 Concerto animalier</title>
+      <link>/chapter6/2-farm/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/chapter6/2-transformations/index.html</guid>
-      <description>Maintenant que nous vous avons présenté les fonctions permettant de récupérer des informations à partir d’une plage d’éléments, nous allons vous présenter celles qui permettent de manipuler et de transformer ces plages.&#xA;Suppressions Afin de supprimer des éléments d’une plage, on utilise la fonction std::remove. Cette fonction a pour effet de déplacer les éléments à conserver au début de la plage, en préservant leur ordre. Elle renvoie un itérateur sur le nouvel itérateur de fin de plage.</description>
+      <guid>/chapter6/2-farm/index.html</guid>
+      <description>Vous allez maintenant apprendre à définir des classes permettant à leurs enfants de spécialiser leur comportement. On parle alors de classe polymorphe.&#xA;Nous ferons un petit récapitulatif en fin de page, pour rappelez les points essentiels auxquels il faut faire attention lorsque vous définissez des classes polymorphes pour éviter les bugs.&#xA;Pour cet exercice, vous modifierez les fichiers :&#xA;- chap-04/2-farm/FarmHouse.cpp&#xA;- chap-04/2-farm/Animal.h&#xA;- chap-04/2-farm/Dog.h&#xA;- chap-04/2-farm/Cat.h&#xA;- chap-04/2-farm/Chicken.h&#xA;- chap-04/2-farm/Cow.</description>
     </item>
     <item>
-      <title>Itérateurs</title>
-      <link>/chapter6/3-iterators/index.html</link>
+      <title>Résolution d&#39;appel virtuel</title>
+      <link>/chapter6/3-virtual/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/chapter6/3-iterators/index.html</guid>
-      <description>Normalement, avec tout ce que vous avez vu jusqu’ici, vous devriez être capable d’utiliser correctement un itérateur :&#xA;déréférencement avec *it incrémentation avec ++it récupérer les itérateurs de début et de fin d’un conteneur avec ctn.begin() et ctn.end() insérer un élément dans un conteneur avec auto it_on_new = ctn.insert(it, new_value) supprimer un élément d’un conteneur avec auto it_on_next = ctn.erase(it) Vous allez maintenant voir ce qu’il faut faire pour implémenter vos propres itérateurs.</description>
+      <guid>/chapter6/3-virtual/index.html</guid>
+      <description>Nous allons maintenant rentrer dans les détails de ce qu’il se passe sous le manteau, lorsque le programme effectue un appel virtuel.&#xA;Virtual table Lorsqu’une classe Parent contenant des fonctions virtuelles est compilée, le compilateur va générer pour l’ensemble des classes qui en dérivent une virtual table. Il s’agit d’une tableau qui contient, pour chaque fonction virtuelle de la classe, un pointeur sur la fonction qui sera vraiment appelée.&#xA;Analysons la hiérarchie suivante :</description>
     </item>
     <item>
-      <title>Lambdas</title>
-      <link>/chapter6/4-lambdas/index.html</link>
+      <title>Polymorphisme</title>
+      <link>/chapter6/4-polymorphism/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/chapter6/4-lambdas/index.html</guid>
-      <description>Les lambdas sont des objets-fonction un peu spéciaux, que l’on peut facilement définir depuis le corps d’une fonction. Vous avez déjà dû voir de nombreux exemples d’utilisation de lambda tout au long de ce cours. Nous allons maintenant revenir plus en détail sur leur fonctionnement et vous montrez tout ce qu’il est possible de faire avec.&#xA;Syntaxe La définition d’une lambda est composée en général de trois parties :&#xA;[c1, c2, c3](int p1, int p2, int p3) { return c1 * p1 + c2 * p2 + c3 * p3; } La partie entre crochet s’appelle la capture.</description>
+      <guid>/chapter6/4-polymorphism/index.html</guid>
+      <description>Vous avez probablement déjà entendu le terme polymorphisme, vous l’avez peut-être même déjà utilisé, mais quand vous y réfléchissez, si on vous demandait de le définir clairement, vous ne sauriez pas forcément quoi répondre. Cette page sera donc l’occasion de revenir sur sa définition.&#xA;Dans ce chapitre, nous nous sommes intéressés à deux manières de mettre-en-ouvre le polymorphisme en C++ : l’héritage statique et l’héritage dynamique. Nous détaillerons les différences entre les deux et dans quels cas utiliser l’un ou l’autre.</description>
     </item>
     <item>
-      <title>Questionnaire ☑</title>
+      <title>🚗 Véhicule partagé</title>
+      <link>/chapter6/5-vehicles/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter6/5-vehicles/index.html</guid>
+      <description>Pour terminer ce chapitre, nous allons voir comment faire pour accéder directement aux attributs de votre classe de base, comment appeler la fonction parent depuis la rédéfinition de cette fonction dans la classe-fille et enfin, comment modéliser des classes abstraites.&#xA;Pour cet exercice, vous modifierez les fichiers :&#xA;- chap-04/3-vehicles/Program.cpp&#xA;- chap-04/3-vehicles/Vehicle.h&#xA;- chap-04/3-vehicles/Car.h&#xA;- chap-04/3-vehicles/Scooter.h&#xA;La cible à compiler est c4-3-vehicles.&#xA;Introduction du permis Dans le programme que l’on vous fournit, n’importe qui peut conduire n’importe quoi.</description>
+    </item>
+    <item>
+      <title>Questionnaire !</title>
       <link>/chapter6/test/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter6/test/index.html</guid>
-      <description>C’est l’heure du test ! N’oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.&#xA;Bon courage à vous 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1 Initiaux 2 Alternants 1- Quel type de boucle faut-il utiliser pour modifier la structure d’un conteneur lors d’un parcours ?&#xA;2- Dans quel cas peut-il être intéressant d’utiliser la fonction std::for_each ?</description>
+      <description>Vous avez terminé le Chapitre 4 ! C’est donc maintenant le moment de connecter vos neurones pour répondre aux questions suivantes.&#xA;Bon courage à vous 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1 Initiaux 2 Alternants 1- Qu’est-ce qu’une classe polymorphe ?&#xA;2- Définissez une classe polymorphe Nothing qui ne fait rien.&#xA;3- Comment représenter une classe abstraite en C++ ?&#xA;Les questions 4 à 6 font référence au code suivant :</description>
+    </item>
+    <item>
+      <title>Synthèse</title>
+      <link>/chapter6/summary/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter6/summary/index.html</guid>
+      <description>Ce qu’il faut savoir faire Langage Définir une relation de parenté publique entre deux classes : class Child : public Parent { ... }; Définir un membre (fonction ou attribut) accessible uniquement depuis la classe courante et ses enfants : protected : int _a1 = 0; char _a2 = &#39;a&#39;; Appeler le constructeur de la classe parent : Child(int p1, int p2) : Parent { p1 }, _p2 { p2 } { .</description>
     </item>
     <item>
       <title>Merci !</title>

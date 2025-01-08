@@ -36,7 +36,7 @@
       <description>En C++, lorsque vous allouez une donnée, celle-ci ne reste pas miraculement accessible durant toute l’exécution de votre programme.&#xA;Contrairement à des langages comme Java ou C#, qui disposent d’un garbage-collector pour libérer automatiquement la mémoire lorsque celle-ci n’est plus nécessaire, c’est ici au développeur de faire ce travail.&#xA;Il doit penser à libérer la mémoire lorsqu’il ne compte plus s’en servir, mais surtout, il doit faire attention à ne pas tenter d’accéder à des données si celles-ci n’existent déjà plus 😬</description>
     </item>
     <item>
-      <title>Héritage</title>
+      <title>Copie et déplacement</title>
       <link>/chapter4/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter4/index.html</guid>
@@ -50,25 +50,46 @@
       <description>Dans ce chapitre, nous vous présenterons les différents types de conteneurs que vous pourrez trouver dans la librairie standard. Les exercices vous permettrons de vous familiariser avec certains d’entre-eux : vector et string bien sûr, mais aussi array, string_view, list, map ou encore pair. Nous en profiterons également pour vous expliquer comment la documentation est organisée sur le site cppreference, afin que vous sachiez toujours à quel endroit d’une page regarder pour trouver les informations dont vous avez besoin.</description>
     </item>
     <item>
-      <title>Algorithmes</title>
+      <title>Héritage</title>
       <link>/chapter6/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter6/index.html</guid>
+      <description>Vous apprendrez dans ce chapitre comment fonctionne l’héritage en C++. Vous verrez qu’il existe de nombreuses différences avec l’héritage en Java, bien qu’on retrouve des concepts similaires.&#xA;Pour la pratique, nous vous montrerons comment créer une hiérarchie de classes, puis comment faire pour redéfinir le comportement des classes-filles.</description>
+    </item>
+    <item>
+      <title>Algorithmes</title>
+      <link>/chapter7/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter7/index.html</guid>
       <description>Comme vous le savez déjà, la STL fournit tout un tas de conteneurs pour répondre à différents usages. Ces conteneurs proposent des fonctions permettant l’insertion et la suppression d’éléments, mais rarement de quoi effectuer des recherches ou des transformations. Le but de ce chapitre sera donc de vous présenter comment faire pour réaliser ces opérations, notamment en s’appuyant sur la bibliothèque algorithmique fournie par la librairie standard.&#xA;Nous ne présenterons pas l’ensemble des fonctions de la librairie (il y en a beaucoup trop), mais si cela vous intéresse, vous pourrez retrouver tout ce qu’elle propose sur cette page.</description>
     </item>
     <item>
       <title>Templates</title>
-      <link>/chapter9/index.html</link>
+      <link>/chapter8/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/chapter9/index.html</guid>
+      <guid>/chapter8/index.html</guid>
       <description>Les templates, c’est un peu comme un chien qui aboie. Ca fait peur. Si on essaye de s’en approcher trop vite, ça mord. Mais si on prend le temps qu’il faut pour les aborder, il y a de bonnes chances qu’en fait, tout se passe bien. Sauf si on n’aime pas les chiens.</description>
     </item>
     <item>
       <title>Paramètres de templates</title>
-      <link>/chapter10/index.html</link>
+      <link>/chapter9/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/chapter10/index.html</guid>
+      <guid>/chapter9/index.html</guid>
       <description>Dans ce deuxième chapitre sur les templates, nous parlerons de tout un tas de fonctionnalités et subtilités liées aux paramètres de templates. Installez-vous bien confortablement, faites-vous un ptit café, et n’hésitez pas à prendre une pause de temps en temps, parce que vous allez découvrir beaucoup de choses pas forcément faciles à intégrer du premier coup.</description>
+    </item>
+    <item>
+      <title>Gestion mémoire (2022-2023)</title>
+      <link>/old-2223-chapter3-memoire/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/old-2223-chapter3-memoire/index.html</guid>
+      <description>Il existe beaucoup de langages dans lequel le concept de propriété n’existe pas. Par exemple, en Java, tout le monde et personne n’est propriétaire d’un objet. Lorsque vous créez un objet, vous obtenez une référence que vous pouvez ensuite copier et passer à n’importe quelle autre entité du programme. Tant qu’il existe encore au moins référence sur l’objet, celui-ci continue d’exister. Ce mécanisme est assuré par le garbage-collector, qui s’occupe de traquer le nombre de références de chacun des objets construits.</description>
+    </item>
+    <item>
+      <title>Traitement d&#39;erreurs (2022-22023)</title>
+      <link>/old-2223-chapter8-exceptions-assert/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/old-2223-chapter8-exceptions-assert/index.html</guid>
+      <description>Dans ce court chapitre, nous allons présenter deux mécanismes permettant traiter les erreurs dans un programme : les assertions et les exceptions.</description>
     </item>
     <item>
       <title>FAQ</title>

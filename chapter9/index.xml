@@ -1,39 +1,46 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Templates :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Paramètres de templates :: Cours de C&#43;&#43; - Niveau Master</title>
     <link>/chapter9/index.html</link>
-    <description>Les templates, c’est un peu comme un chien qui aboie. Ca fait peur. Si on essaye de s’en approcher trop vite, ça mord. Mais si on prend le temps qu’il faut pour les aborder, il y a de bonnes chances qu’en fait, tout se passe bien. Sauf si on n’aime pas les chiens.</description>
+    <description>Dans ce deuxième chapitre sur les templates, nous parlerons de tout un tas de fonctionnalités et subtilités liées aux paramètres de templates. Installez-vous bien confortablement, faites-vous un ptit café, et n’hésitez pas à prendre une pause de temps en temps, parce que vous allez découvrir beaucoup de choses pas forcément faciles à intégrer du premier coup.</description>
     <generator>Hugo</generator>
     <language>fr</language>
     <atom:link href="/chapter9/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Introduction</title>
-      <link>/chapter9/1-introduction/index.html</link>
+      <title>Référence universelle</title>
+      <link>/chapter9/1-universal-ref/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/chapter9/1-introduction/index.html</guid>
-      <description>Qu’est-ce qu’un template ? Les templates sont un mécanisme du C++ permettant de faire de la programmation générique.&#xA;Le terme “template” se traduit littéralement par “patron” en français (au sens patron de vêtement, pas patron d’entreprise). Les templates vont donc permettre de construire un modèle de classe (ou de fonction) à partir duquel le compilateur pourra de générer de véritables classes (ou fonctions).&#xA;Notez donc bien que malgré le terme, une classe-template n’est pas une classe.</description>
+      <guid>/chapter9/1-universal-ref/index.html</guid>
+      <description>Dans cette première section, nous commencerons par introduire les concepts de l-value et r-value.&#xA;Cela nous conduira à vous présenter la notion de référence universelle. Nous vous expliquerons ensuite quand et comment vous en servir dans votre code.&#xA;l-value / r-value Avant de parler concrètement des références universelles, il faut aborder un point essentiel à leur compréhension.&#xA;En C++, une expression est une suite d’opérateurs et d’opérandes pouvant être évaluée. L’évaluation d’une expression peut parfois produire une valeur.</description>
     </item>
     <item>
-      <title>Exemples</title>
-      <link>/chapter9/2-examples/index.html</link>
+      <title>Template variadique</title>
+      <link>/chapter9/2-variadiac/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/chapter9/2-examples/index.html</guid>
-      <description>Nous allons maintenant rentrer dans le vif du sujet en vous présentant le code de différents templates.&#xA;Nous détaillerons ensuite chacun des éléments de la syntaxe, afin que vous puissiez les comprendre pour les réutiliser dans votre propre code.&#xA;Premier exemple de classe-template Cet exemple consiste en l’implémentation d’un tableau de taille statique (un peu comme la classe std::array).&#xA;#include &lt;algorithm&gt; #include &lt;cassert&gt; #include &lt;iostream&gt; template &lt;typename ElementType, size_t Size&gt; class StaticArray { public: // Rappel: l&#39;implémentation par défaut du constructeur par défaut disparaît lorsqu&#39;on // définit explicitement un autre constructeur (ce qui est le cas ici).</description>
+      <guid>/chapter9/2-variadiac/index.html</guid>
+      <description>Un template variadique, c’est un template qui attend un nombre variable de paramètres. Vous en avez déjà utilisé plusieurs, comme :&#xA;- la fonction-template emplace_back de std::vector, qui attend n’importe quels nombres et types d’arguments, et les utilisent pour construire le nouvel élément,&#xA;- la fonction-template std::make_unique, qui fonctionne sur le même principe,&#xA;- la classe-template std::tuple, qui permet de représenter un N-uplet contenant n’importe quels types.&#xA;L’objectif de cette section sera de vous apprendre à définir vos propres templates variadiques.</description>
     </item>
     <item>
-      <title>Débrief</title>
-      <link>/chapter9/3-syntaxe/index.html</link>
+      <title>Spécialisations</title>
+      <link>/chapter9/3-specializations/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/chapter9/3-syntaxe/index.html</guid>
-      <description>Définition d’un template Pour définir un template, il faut écrire template &lt;...&gt; devant la définition de la classe ou fonction templatée.&#xA;Les chevrons contiennent la liste des paramètres du template. Chaque paramètre est typé par :&#xA;- typename : il faut donc passer un nom de type en paramètre,&#xA;- un type intégral, comme size_t, char, int, … : il faut passer une expression du bon type évaluable à la compilation,</description>
+      <guid>/chapter9/3-specializations/index.html</guid>
+      <description>Cette section sera consacrée à la spécialisation de templates de fonctions et de classes.&#xA;Une spécialisation est la redéfinition d’une entitée templatée, qui va s’appliquer pour des paramètres particuliers. Il y a de nombreux cas d’utilisation des spécialisation, l’un d’entre eux étant de définir de traiter des cas particuliers.&#xA;Spécialisation de fonctions Soit la fonction templatée suivante, permettant d’afficher des valeurs dans le terminal :&#xA;template &lt;typename T&gt; void print(const T&amp; value) { std::cout &lt;&lt; value &lt;&lt; std::endl; } Si on lui passe des booléens, cette fonction affichera 0 ou 1.</description>
+    </item>
+    <item>
+      <title>SFINAE</title>
+      <link>/chapter9/4-sfinae/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter9/4-sfinae/index.html</guid>
+      <description>Nous allons maintenant vous expliquer ce que signifie SFINAE, le besoin auquel ce mécanisme répond et comment le mettre en oeuvre dans votre code.&#xA;Le besoin Supposons que nous souhaitions pouvoir récupérer une clef pour différents type à l’aide d’une fonction get_key(const Type&amp;), en utilisant des overloads.&#xA;class Person { public: Person(const std::string&amp; name) : _name { name } {} const std::string&amp; get_name() const { return _name; } private: const std::string _name; }; // Overload pour notre classe Person.</description>
     </item>
     <item>
       <title>Questionnaire ☑</title>
       <link>/chapter9/test/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter9/test/index.html</guid>
-      <description>C’est l’heure du test ! N’oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.&#xA;Bon courage à vous 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1 Initiaux 2 Alternants 1- Que faut-il écrire juste avant la définition d’une classe (ou fonction) pour en faire une classe (ou fonction) templatée ?&#xA;2- Pourquoi n’est-il pas toujours possible de placer l’implémentation des fonctions-membres d’une classe-template dans un .</description>
+      <description>Pas de questionnaire cette semaine, parce que mis en ligne trop tard.&#xA;N’hésitez néanmoins pas à utiliser le formulaire pour envoyer vos questions.&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1 Initiaux 2 Alternants Combien de temps avez-vous mis à compléter ce chapitre ? Avez-vous des questions suite à sa lecture ? Avez-vous des commentaires concernant le chapitre et/ou le site ?</description>
     </item>
     <item>
       <title>Merci !</title>

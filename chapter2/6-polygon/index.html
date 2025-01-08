@@ -37,16 +37,16 @@ Prenons l’exemple de la concaténation de std::string :
 auto a = std::string { &#34;a&#34; }; auto b = std::string { &#34;b&#34; }; auto ab = a &#43; b; Dans le code ci-dessus, l’expression a &#43; b est en fait un appel à une fonction dont la signature est quelque chose comme: operator&#43;(std::string, std::string).">
     <meta itemprop="wordCount" content="719">
     <title>Opérateurs ➗ :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1736343321" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1736343321" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1736343321" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1736343321" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1736343321" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1736343321" rel="stylesheet">
-    <link href="../../css/fonts.css?1736343321" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1736343321" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1736343321" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1736343321" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1736343321" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1736343321" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1736343321"></script>
+    <link href="../../css/fontawesome-all.min.css?1736349601" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1736349601" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1736349601" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1736349601" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1736349601" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1736349601" rel="stylesheet">
+    <link href="../../css/fonts.css?1736349601" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1736349601" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1736349601" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1736349601" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1736349601" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1736349601" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1736349601"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -356,18 +356,18 @@ Plutôt pratique, non ?</p>
 <p>Pour vérifier que le programme fonctionne correctement, vous allez utiliser le debuggeur.<br>
 Pensez bien à compiler votre programme avec <code>-g</code> et à modifier la valeur de <code>program</code> dans le fichier <code>.vscode/launch.json</code>.</p>
 <p>Placez ensuite un breakpoint sur la ligne <code>polygon.add_vertex(2, 3);</code> du <code>main</code>.<br>
-<a href="#R-image-8baddc0a4d3c652198f29ab8c42634c7" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter2/6-breakpoint-v2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8baddc0a4d3c652198f29ab8c42634c7"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter2/6-breakpoint-v2.png"></a></p>
+<a href="#R-image-47b66a2a214c5fe6b532c634946f2d63" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter2/6-breakpoint-v2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-47b66a2a214c5fe6b532c634946f2d63"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter2/6-breakpoint-v2.png"></a></p>
 <p>Lancez ensuite le programme avec F5.<br>
 Votre vue devrait désormais ressembler à celle-ci si vous vous placez dans l&rsquo;onglet <code>Exécution</code> à gauche :
-<a href="#R-image-94c2cec8caf7c50251b3e85612d4e863" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter2/6-execution-v2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-94c2cec8caf7c50251b3e85612d4e863"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter2/6-execution-v2.png"></a></p>
+<a href="#R-image-bcb26697b4b76bed1b3a73a8e9f352c1" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter2/6-execution-v2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-bcb26697b4b76bed1b3a73a8e9f352c1"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter2/6-execution-v2.png"></a></p>
 <p>Dans la fenêtre des variables, en haut à gauche, cliquez sur la variable <code>polygon</code>, puis sur son membre <code>_vertices</code>.<br>
 Celui-ci ne devrait rien contenir.</p>
 <p>Appuyez sur F10 pour exécuter l&rsquo;instruction sur la ligne 9.<br>
 Vous devriez constater que <code>_vertices</code> contient désormais le sommet (2, 3).
-<a href="#R-image-f68fd170d6ffe68de9aa450b50a7b608" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter2/6-vertices.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f68fd170d6ffe68de9aa450b50a7b608"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter2/6-vertices.png"></a></p>
+<a href="#R-image-37e268660aa8bca17b8580a5351523e9" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter2/6-vertices.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-37e268660aa8bca17b8580a5351523e9"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter2/6-vertices.png"></a></p>
 <hr>
 <h3 id="opérateur-dindice">Opérateur d&rsquo;indice</h3>
 <p>Décommentez les instructions :</p>
@@ -617,18 +617,19 @@ Dans le cas ci-dessus, c&rsquo;est acceptable car on ne peut pas définir l&rsqu
             <li class="active " data-nav-id="/chapter2/6-polygon/index.html"><a class="padding" href="../../chapter2/6-polygon/index.html">Opérateurs ➗<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter2/test/index.html"><a class="padding" href="../../chapter2/test/index.html">Questionnaire ☑<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/chapter9/index.html"><a class="padding" href="../../chapter9/index.html"><span class="chapnum">7.</span>&ensp;Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/chapter10/index.html"><a class="padding" href="../../chapter10/index.html"><b>8- </b>Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-66e6e0c58d73995ecc09e8fbbe358e51" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter8/index.html"><a class="padding" href="../../chapter8/index.html"><span class="chapnum">8.</span>&ensp;Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7cf6d9bdd794f38d7006506bdc38c58f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter9/index.html"><a class="padding" href="../../chapter9/index.html"><span class="chapnum">9.</span>&ensp;Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu"></ul></li>
           </ul>
         </div>
         <div id="R-shortcuts">
           <div class="nav-title padding">Accès rapide</div>
           <ul class="space">
-            <li><a class="padding" href="https://github.com/Laefy/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt Cours</a></li>
-            <li><a class="padding" href="https://github.com/Laefy/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt TPs</a></li>
+            <li><a class="padding" href="https://github.com/marsault/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt exo du Cours</a></li>
+            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt TPs</a></li>
             <li><a class="padding" href="../../slides/index.html"><i class='far fa-file-powerpoint'></i> Slides</a></li>
             <li><a class="padding" href="../../workflow/index.html"><i class='far fa-list-alt'></i> Workflow</a></li>
             <li><a class="padding" href="../../faq/index.html"><i class='fas fa-question-circle'></i> FAQ</a></li>
@@ -687,9 +688,9 @@ Dans le cas ci-dessus, c&rsquo;est acceptable car on ne peut pas définir l&rsqu
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1736343321" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1736343321" defer></script>
-    <script src="../../js/theme.js?1736343321" defer></script>
+    <script src="../../js/clipboard.min.js?1736349601" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1736349601" defer></script>
+    <script src="../../js/theme.js?1736349601" defer></script>
 
 
 

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gestion mémoire (2022-2023) :: Cours de C&#43;&#43; - Niveau Master</title>
+    <link>/old-2223-chapter3-memoire/index.html</link>
+    <description>Il existe beaucoup de langages dans lequel le concept de propriété n’existe pas. Par exemple, en Java, tout le monde et personne n’est propriétaire d’un objet. Lorsque vous créez un objet, vous obtenez une référence que vous pouvez ensuite copier et passer à n’importe quelle autre entité du programme. Tant qu’il existe encore au moins référence sur l’objet, celui-ci continue d’exister. Ce mécanisme est assuré par le garbage-collector, qui s’occupe de traquer le nombre de références de chacun des objets construits.</description>
+    <generator>Hugo</generator>
+    <language>fr</language>
+    <atom:link href="/old-2223-chapter3-memoire/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Durée de vie</title>
+      <link>/old-2223-chapter3-memoire/1-lifespan/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/old-2223-chapter3-memoire/1-lifespan/index.html</guid>
+      <description>Portée d’une variable locale Afin de parler de durée de vie, nous allons commencer par parler de la portée de nos variables. Comme vous le savez peut-être, la portée d’une variable définit la portion de code dans laquelle le compilateur nous permet de l’utiliser.&#xA;Si on définit une variable dans une fonction, la portée de celle-ci démarre à sa définition et se termine à la fin du bloc dans lequel celle-ci a été définie.</description>
+    </item>
+    <item>
+      <title>Ownership</title>
+      <link>/old-2223-chapter3-memoire/2-ownership/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/old-2223-chapter3-memoire/2-ownership/index.html</guid>
+      <description>Ownership On dit qu’un objet A est le propriétaire, ou le owner, d’un objet B lorsque la destruction de A entraîne la destruction de B.&#xA;Dans l’exercice précédent, on peut donc dire que box était propriétaire de box._content.&#xA;Considérons un autre exemple :&#xA;std::vector&lt;Box&gt; boxes; boxes.emplace_back(&#34;gift1&#34;); Box&amp; gift2 = boxes.emplace_back(&#34;gift2&#34;); Box gift3 = boxes.emplace_back(&#34;gift3&#34;); Ici, le tableau boxes est le propriétaire des objets boxes[0], boxes[1] et boxes[2]. Il est également propriétaire de l’objet gift2, puisqu’il s’agit d’une référence sur boxes[1].</description>
+    </item>
+    <item>
+      <title>Allocation dynamique</title>
+      <link>/old-2223-chapter3-memoire/3-allocation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/old-2223-chapter3-memoire/3-allocation/index.html</guid>
+      <description>Nous allons maintenant voir comment il est possible d’allouer de la mémoire simplement, en particulier sans avoir à se soucier des fuites mémoire.&#xA;Allocation d’une primitive Pour créer un objet sur le tas, nous allons nous servir d’un petit utilitaire appelé std::unique_ptr et de la fonction std::make_unique. Ces deux symboles se trouvent dans le header &lt;memory&gt;.&#xA;Voici la syntaxe permettant d’allouer de la mémoire pour un entier :&#xA;#include &lt;iostream&gt; #include &lt;memory&gt; void fcn() { std::unique_ptr&lt;int&gt; int_on_heap = std::make_unique&lt;int&gt;(3); std::cout &lt;&lt; *int_on_heap &lt;&lt; std::endl; // affiche 3 *int_on_heap = 5; std::cout &lt;&lt; *int_on_heap &lt;&lt; std::endl; // affiche 5 } La classe unique_ptr est donc un symbole que l’on template par le type qu’il doit contenir.</description>
+    </item>
+    <item>
+      <title>Déplacement</title>
+      <link>/old-2223-chapter3-memoire/4-move-sem/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/old-2223-chapter3-memoire/4-move-sem/index.html</guid>
+      <description>Nous avons vu précédement que les unique_ptr ne pouvaient pas être copiés. Cependant, le vector a réussi à provoquer leur “déplacement” en mémoire pour effectuer sa réallocation.&#xA;Nous allons voir comment faire de même afin de pouvoir manipuler les unique_ptr avec un peu plus de souplesse.&#xA;Construction sur place Lorsqu’une fonction retourne un objet et que celui-ci est utilisé pour initialiser une variable, aucune copie n’a lieu. L’objet est directement construit à l’adresse mémoire qui lui était réservée dans le code appelant.</description>
+    </item>
+    <item>
+      <title>Questionnaire !</title>
+      <link>/old-2223-chapter3-memoire/test/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/old-2223-chapter3-memoire/test/index.html</guid>
+      <description>C’est l’heure du test ! Bon courage 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1 Initiaux 2 Alternants 1- Comment définir la période de validité d’un objet ?&#xA;2- Citez une bonne raison d’allouer de la mémoire via un unique_ptr plutôt que via un pointeur simple (avec new).&#xA;3- Quelle fonction de la librarie standard permet de transférer le contenu d’un objet dans un autre ?</description>
+    </item>
+    <item>
+      <title>Synthèse</title>
+      <link>/old-2223-chapter3-memoire/summary/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/old-2223-chapter3-memoire/summary/index.html</guid>
+      <description>Ce qu’il faut retenir Théorie La durée de vie d’un objet s’étend de sa construction à sa destruction. Lorsque la durée de vie d’un objet s’achève, il n’est plus valide de l’utiliser. La portée d’une référence peut excéder la durée de vie de l’objet référencé (=&gt; dangling reference). Un objet A est propriétaire d’un objet B si la destruction de A entraîne celle de B. Aucune copie n’est faite lorsqu’on initialise une variable avec la valeur de retour d’une fonction (mandatory copy-elision) Pratique Un unique_ptr n’est pas copiable.</description>
+    </item>
+    <item>
+      <title>Merci !</title>
+      <link>/old-2223-chapter3-memoire/test_done/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/old-2223-chapter3-memoire/test_done/index.html</guid>
+      <description>Vos réponses nous ont bien été communiquées 😃 N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
+    </item>
+  </channel>
+</rss>
