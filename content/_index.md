@@ -18,21 +18,21 @@ Le module sera constitué de 3 séances de cours magistraux, 12 séances de trav
 Le planning est le suivant :
 | | Dates | Séance | Chapitre à lire <br>(avant le TP)|
 | - | - | - | - |
-|S1 | 13 - 17 janvier | ▹ Cours 1 <br> ▹ TP 1 (Compilation, Entrée / sortie, `std::string`/`std::vector`,Classes) | 0, 1, 2.1, 2.2 |
-|S2 | 20 - 24 janvier | ▹ TP 2 (Classes, Constructeurs, Membres statiques, Opérateurs) | 2 |
-|S3 | 27 - 31 janvier | ▹ TP 3 (Références, Ownership) | 3 |
+|S1 | 13 - 17 janvier | ▹ Cours 1 <br> ▹ TP 1 (Compilation, Entrée / sortie, `std::string`/`std::vector`) | [0]({{< ref chapter0 >}}) et [1]({{< ref chapter1 >}})  |
+|S2 | 20 - 24 janvier | ▹ TP 2 (Classes, Constructeurs, Membres statiques, Opérateurs) |  [2]({{< ref chapter2 >}})  |
+|S3 | 27 - 31 janvier | ▹ TP 3 (Références, Ownership) | [3]({{< ref chapter3 >}}) |
 |S4 | 3 - 7 février   | ▹ TP 4 (Révisions, Framework de TP noté) |
-|S5 | 10 - 14 février | ▹ TP noté 1 (sur les chapitres 0 à 3) <br> ▹ Cours 2 |
-|S6 | 17 - 21 février | ▹ TP 5 (Copie, Déplacement, l-value / r-value, `std::unique_ptr`) |
-|S7 | 24 - 28 février | ▹ TP 6 (`std::unique_ptr`, Pointeurs observants)|
-|S8 | 3 - 7 mars  | ▹ TP 7 (Polymorphisme, Héritage) | 4 | 
+|S5 | 10 - 14 février | ▹ TP noté 1 (sur les chapitres 0 à 3, 2h) <br> ▹ Cours 2 |
+|S6 | 17 - 21 février | ▹ TP 5 (Copie, Déplacement, l-value / r-value) | [4]({{< ref chapter4 >}}) |
+|S7 | 24 - 28 février | ▹ TP 6 (stdlib, en particulier `std::unique_ptr`) | [5]({{< ref chapter5 >}}) |
+|S8 | 3 - 7 mars  | ▹ TP 7 (Polymorphisme, Héritage) | [6]({{< ref chapter6 >}}) | 
 |S9 | 10 - 14 mars| ▹ TP 8 (Révisions, Framework de TP noté) |
-|10 | 17 - 21 mars| ▹ TP noté 2 (sur les chapitres 0 à 4) <br> ▹ Cours 3 |
-|11 | 24 - 28 mars| ▹ TP 9 (conteneurs, Lambdas, Algorithmes) | 5 et 6 |
-|12 | 31 mars - 3 avril| ▹ TP 10 (Templates) | 7 |
-|13 | 7 - 12 avril| ▹ TP 11 (Templates, Perfect forwarding, SFINAE) | 8 |
-|14 | 14 - 18 avril| ▹ TP 12 (Révisions) |
-|15 | 21 - 24 | ▹ TP noté 3 (3h) |
+|10 | 17 - 21 mars| ▹ TP noté 2 (sur les chapitres 0 à 6, 2h) <br> ▹ Cours 3 |
+|11 | 24 - 28 mars| ▹ TP 9 (Conteneurs, Lambdas, Algorithmes) | [7]({{< ref chapter7 >}}) |
+|12 | 31 mars - 3 avril| ▹ TP 10 (Templates) | [8]({{< ref chapter8 >}}) |
+|13 | 7 - 12 avril| ▹ TP 11 (Templates, Perfect forwarding, SFINAE) | [9]({{< ref chapter9 >}}) |
+|14 | 14 - 18 avril| ▹ TP 12 (Révisions) en autonomie |
+|15 | 21 - 24 avril | ▹ TP noté 3 (sur tous les chapitres, 3h) |
 
 #### Cours magistraux
 
@@ -44,7 +44,7 @@ Les slides sont disponible [ici](slides).
 
 Chaque semaine, **avant votre séance de TP**, vous devrez lire et comprendre le chapitre associé du cours en ligne.
 
-Il faudra également réaliser les exercices proposés, afin d'assimiler rapidement ce que vous aurez lu. Pour cela, vous devrez partir du contenu de ce {{% open_in_new_tab "https://github.com/Laefy/CPP_Learning_Code" "dépôt git" /%}}.
+Il faudra également réaliser les exercices proposés, afin d'assimiler rapidement ce que vous aurez lu. Pour cela, vous devrez partir du contenu de ce [dépôt git]({{< param exoducoursURL >}}).
 Il est recommandé d'essayer de faire les exercices une première fois sans regarder les solutions.
 Si vous êtes bloqués, recherchez d'abord de l'aide sur Internet ou en demandant à vos camarades de classe.
 
@@ -70,7 +70,7 @@ N'hésitez vraiment surtout pas à poser vos questions dans le formulaire, mais 
 
 ### Séances de TP
 
-L'énoncé pour chaque séance de TP sera disponible au format Markdown sur {{% open_in_new_tab "https://github.com/Laefy/CPP_Exercises" "ce dépôt" /%}}.
+L'énoncé pour chaque séance de TP sera disponible au format Markdown sur [dépôt git]({{< param tpURL >}}).
 
 Certaines parties de la séance seront à réaliser en autonomie, tandis que d'autres parties devront se faire avec l'ensemble du groupe, de manière à ce que la correction puisse être comprise par tous. 
 

@@ -1,10 +1,8 @@
 ---
-title: "Gestion mémoire"
-chapter: true
-chapterName: Chapitre 3
-pre: "<b>3- </b>"
-weight: 4
-draft: true
+title: "Gestion mémoire (2022-2023)"
+type: "chapter"
+weight: 99
+hidden: true
 ---
 
 Il existe beaucoup de langages dans lequel le concept de propriété n'existe pas.

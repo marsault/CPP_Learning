@@ -1,12 +1,9 @@
 ---
-title: "Algorithmes"
+title: "Héritage"
 type: "chapter"
 weight: 6
 pre: "<span class=\"chapnum\">6.</span>&ensp;"
 ---
 
-Comme vous le savez déjà, la STL fournit tout un tas de conteneurs pour répondre à différents usages.
-Ces conteneurs proposent des fonctions permettant l'insertion et la suppression d'éléments, mais rarement de quoi effectuer des recherches ou des transformations.
-Le but de ce chapitre sera donc de vous présenter comment faire pour réaliser ces opérations, notamment en s'appuyant sur la bibliothèque algorithmique fournie par la librairie standard.
-
-Nous ne présenterons pas l'ensemble des fonctions de la librairie (il y en a beaucoup trop), mais si cela vous intéresse, vous pourrez retrouver tout ce qu'elle propose sur [cette page](https://en.cppreference.com/w/cpp/algorithm).
+Vous apprendrez dans ce chapitre comment fonctionne l'héritage en C++. Vous verrez qu'il existe de nombreuses différences avec l'héritage en Java, bien qu'on retrouve des concepts similaires.\
+Pour la pratique, nous vous montrerons comment créer une hiérarchie de classes, puis comment faire pour redéfinir le comportement des classes-filles.

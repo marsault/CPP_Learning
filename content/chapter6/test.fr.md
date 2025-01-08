@@ -1,110 +1,77 @@
 ---
-title: "Questionnaire ☑"
+title: "Questionnaire !"
 weight: 100
 ---
 
-C'est l'heure du test ! N'oubliez pas que vous pouvez utiliser [Godbolt](https://www.godbolt.org/z/ofohb4) pour compiler et tester des petits bouts de code.  
+Vous avez terminé le Chapitre 4 ! C'est donc maintenant le moment de connecter vos neurones pour répondre aux questions suivantes.\
 Bon courage à vous 🙂
 
 ---
 
-{{% test chapter=6 %}}
+{{% test chapter=4 %}}
 
-{{% test_item %}}
-Quel type de boucle faut-il utiliser pour modifier la structure d'un conteneur lors d'un parcours ?
-{{% /test_item %}}
+{{% test_item id=1 desc="class-polymorph" %}}Qu'est-ce qu'une classe polymorphe ?{{% /test_item %}}
+{{% test_item id=2 lines="5" desc="poly-code" %}}Définissez une classe polymorphe `Nothing` qui ne fait rien.{{% /test_item %}}
+{{% test_item id=3 lines="2" desc="abstract-class" %}}Comment représenter une classe abstraite en C++ ?{{% /test_item %}}
+---
+Les questions 4 à 6 font référence au code suivant :
 
-{{% test_item %}}
-Dans quel cas peut-il être intéressant d'utiliser la fonction `std::for_each` ?
-{{% /test_item %}}
+```cpp
+class A
+{
+public:
+    virtual int  fcn1(int p1, int p2) const { return p1 * p2; }
+    virtual void fcn2(const char* str) = 0;
+    virtual void fcn3(bool) {}
+    const char*  fcn4() { return "artichaut"; }
+};
+
+class B : A
+{
+public:
+    int fcn1(int p1, int p2) { return p1 + p2; }
+
+    void fcn2(const char*) override {}
+
+    void fcn3(bool b)
+    {
+        if (b)
+        {
+            A::fcn3(b);
+        }
+    }
+    
+    const char* fcn4() { return "sopalin"; }
+};
+
+int main()
+{
+    A* a = new B();
+
+    a->fcn1(1, 3);
+    a->fcn2("la la la");
+    a->fcn3(false);
+    a->fcn4();
+
+    return 0;
+}
+```
+
+{{% test_item id=4 lines=3 desc="compile-error" %}}Le programme ci-dessus ne compile pas. Pourquoi et que faut-il faire pour le corriger ?{{% /test_item %}}
+{{% test_item id=5 lines=3 desc="exec-issues" %}}En plus du problème de compilation, on peut relever trois erreurs de programmation qui pourraient générer des problèmes à l'exécution. Quelles sont-elles et que faut-il faire pour les corriger ?{{% /test_item %}}
+{{% test_item id=6 lines=4 desc="called-fcns" %}}Pour chacun des appels sur `a`, indiquez quelle fonction sera appelée (`A::fcnX` ou `B::fcnX`) et justifiez. Vous considérerez que vous n'avez pas effectué les corrections de la question précédente.{{% /test_item %}}
 
 ---
 
-{{% test_item %}}
-Quels headers contiennent les algorithmes de la STL ?
-{{% /test_item %}}
-
-{{% test_item %}}
-Donnez un exemple d'utilisation de `std::find_if`. Vous pouvez considérer que les variables dont vous auriez besoin ont déjà été définies plus haut (ça s'applique aux prochaines questions aussi).
-{{% /test_item %}}
-
-{{% test_item %}}
-Qu'est-ce qu'un prédicat ?
-{{% /test_item %}}
-
-{{% test_item %}}
-Quelle fonction permet de savoir si l'ensemble des éléments d'un conteneur vérifie un prédicat ?
-{{% /test_item %}}
-
-{{% test_item %}}
-Donnez un exemple d'utilisation de cette fonction sur un `std::vector`.
-{{% /test_item %}}
-
-{{% test_item %}}
-Quelle fonction permet de récupérer le minimum et le maximum d'une plage d'éléments en une seule passe ?
-{{% /test_item %}}
+Pour les questions 7 et 8, vous pouvez partir de [là](https://godbolt.org/z/nzsWWszvP) pour tester votre code.
+{{% test_item id=7 lines=10 desc="some-code" %}}Définissez une classe `SharedStuff` contenant un attribut `_value` accessible uniquement depuis ses classes dérivées. Ajoutez un constructeur à 1 paramètre pour initialiser ce membre.{{% /test_item %}}
+{{% test_item id=8 lines=10 desc="some-code" %}}Définissez une classe `MoreStuff` héritant de `SharedStuff` et contenant un attribut `_value2`. Définissez les fonctions nécessaires permettant d'instancier un objet de ce type, et d'afficher les valeurs de ses deux membres dans la console.{{% /test_item %}}
 
 ---
 
-{{% test_item lines="3" %}}
-Ecrivez les instructions permettant de retirer tous les noms commençant par un 'A' d'un `vector<string>`.
-{{% /test_item %}}
-
-{{% test_item %}}
-A quoi sert `std::back_inserter` ?
-{{% /test_item %}}
-
-{{% test_item lines="2" %}}
-Soit une `list<string>`. Ecrivez les instructions permettant de créer un tableau contenant le nombre de caractères de chaque élément de cette liste.
-{{% /test_item %}}
-
-{{% test_item lines="2" %}}
-Qu'est-ce qu'une réduction ? Quelles fonctions permettent d'effectuer ce genre d'opération ?
-{{% /test_item %}}
-
----
-
-{{% test_item %}}
-Quelle catégorie d'itérateur permet d'accéder à n'importe quel élément d'une plage en temps constant ?
-{{% /test_item %}}
-
-{{% test_item lines="2" %}}
-En supposant que vous avez un itérateur permettant d'itérer sur une plage de `Donkey`, quelles peuvent-être les signatures de ses opérateurs de déréférencement ?
-{{% /test_item %}}
-
-{{% test_item %}}
-Comment appelle-t-on l'opérateur ayant la signature suivante : `It operator++(int)` ?
-{{% /test_item %}}
-
----
-
-{{% test_item %}}
-A quoi sert la capture dans une lambda ?
-{{% /test_item %}}
-
-{{% test_item %}}
-Quelle classe de la librairie standard permet de stocker des lambdas ?
-{{% /test_item %}}
-
-{{% test_item %}}
-Comment savoir si une variable est capturée par référence ou par valeur ?
-{{% /test_item %}}
-
-{{% test_item %}}
-Comment faut-il faire pour capturer les attributs d'une classe ?
-{{% /test_item %}}
-
-{{% test_item %}}
-Que faut-il faire pour pouvoir modifier un objet capturé par valeur ?
-{{% /test_item %}}
-
-{{% test_item %}}
-Pourquoi doit-on souvent utiliser `auto` pour définir des variables contenant des lambdas ?
-{{% /test_item %}}
-
-{{% test_item %}}
-Soit une lambda nommée `is_finished`, capturant un entier par référence, prenant en paramètre une `string_view` et un 
-`float`, et retournant un `bool`. Donnez une instruction permettant d'exécuter cette lambda.
-{{% /test_item %}}
+Pour les questions 9 et 10, vous pouvez partir de [là](https://godbolt.org/z/vfzzGTsTT) pour tester votre code.
+{{% test_item id=9 lines=10 desc="some-code" %}}Définissez une classe `Food` contenant une fonction virtuelle pure `miam_miam`. Cette fonction doit servir à afficher le nom de l'aliment dans la console.{{% /test_item %}}
+{{% test_item id=10 lines=10 desc="some-code" %}}Définissez une classe `Nutella` héritant de `Food`. Ajoutez ce qu'il faut pour rendre cette classe instanciable.{{% /test_item %}}
 
 {{% /test %}}
+
