@@ -29,16 +29,16 @@ Windows Ouvrez un terminal et exécutez g&#43;&#43; -v. Si la commande réussit,
 MSYS2 contient en particulier MinGW, qui est l’équivalent du compilateur gcc/g&#43;&#43; pour Windows.">
     <meta itemprop="wordCount" content="459">
     <title>Compilateur :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1733301742" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1733301742" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1733301742" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1733301742" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1733301742" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1733301742" rel="stylesheet">
-    <link href="../../css/fonts.css?1733301742" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1733301742" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1733301742" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1733301742" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1733301742" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1733301742" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1733301742"></script>
+    <link href="../../css/fontawesome-all.min.css?1736343321" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1736343321" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1736343321" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1736343321" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1736343321" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1736343321" rel="stylesheet">
+    <link href="../../css/fonts.css?1736343321" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1736343321" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1736343321" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1736343321" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1736343321" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1736343321" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1736343321"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -130,14 +130,14 @@ MSYS2 contient en particulier MinGW, qui est l&rsquo;équivalent du compilateur 
 </span></span><span class="line"><span class="cl">pacman -S mingw-w64-ucrt-x86_64-gdb</span></span></code></pre></div>
 </li>
 <li>Ouvrez l&rsquo;éditeur de variables d&rsquo;environnement Windows.
-<a href="#R-image-995dacb64dd29d45136a497c29c764f2" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/env-var.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-995dacb64dd29d45136a497c29c764f2"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/env-var.png"></a></li>
+<a href="#R-image-a2e55620a79cd4ab824f328db8a0c370" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/env-var.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a2e55620a79cd4ab824f328db8a0c370"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/env-var.png"></a></li>
 <li>Dans la variable <code>Path</code> (utilisateur ou système, peu importe), ajoutez <code>&quot;C:\msys64\ucrt64\bin&quot;</code>.
-<a href="#R-image-55c51f0cce595f1caac0d5fe1ecbe0e8" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/add-path-v2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-55c51f0cce595f1caac0d5fe1ecbe0e8"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/add-path-v2.png"></a></li>
+<a href="#R-image-971f299a652136fe6c3cf9e401a65c8a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/add-path-v2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-971f299a652136fe6c3cf9e401a65c8a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/add-path-v2.png"></a></li>
 <li>Si vous aviez une autre version de MinGW d&rsquo;installée (en général dans C:\mingw), c&rsquo;est <strong>très important</strong> que vous supprimiez son répertoire bin/ du <code>Path</code> utilisateur <strong>et</strong> du <code>Path</code> système.
-<a href="#R-image-6b47dbb8480018a6f46137cb6cadde17" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/rm-path-v2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6b47dbb8480018a6f46137cb6cadde17"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/rm-path-v2.png"></a></li>
+<a href="#R-image-0e616d8d03537b63d09caaadf1ae3696" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/rm-path-v2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0e616d8d03537b63d09caaadf1ae3696"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/rm-path-v2.png"></a></li>
 <li>Ouvrez un terminal Window et exécutez <code>g++ -v</code><br>
 La dernière ligne devrait maintenant indiquer une version de gcc &gt;= 9.</li>
 </ol>
@@ -146,8 +146,8 @@ La dernière ligne devrait maintenant indiquer une version de gcc &gt;= 9.</li>
 <li>Téléchargez 
 <a href="../../code/helloworld.cpp" target="_blank" rel="noopener noreferrer">ce fichier</a>.</li>
 <li>Ouvrez une fenêtre Powershell dans le répertoire contenant le fichier (vous pouvez utiliser <code>Shift + Clic Droit</code> depuis l&rsquo;explorateur de fichiers pour faire apparaître l&rsquo;option dans le menu contextuel).
-<a href="#R-image-c3d65c3dac8f86b4728e8fd405784f23" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/powershell.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c3d65c3dac8f86b4728e8fd405784f23"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/powershell.png"></a></li>
+<a href="#R-image-0f3bb545ef386809dbad49e9954e5f6f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/powershell.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0f3bb545ef386809dbad49e9954e5f6f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/powershell.png"></a></li>
 <li>Exécutez la commande <code>g++ .\helloworld.cpp -o hello</code><br>
 Un fichier <code>hello.exe</code> devrait avoir été généré.</li>
 <li>Exécutez <code>.\hello.exe</code>.
@@ -290,9 +290,9 @@ Le programme devrait vous répondre <code>&quot;Hello!&quot;</code>.</li>
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1733301742" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1733301742" defer></script>
-    <script src="../../js/theme.js?1733301742" defer></script>
+    <script src="../../js/clipboard.min.js?1736343321" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1736343321" defer></script>
+    <script src="../../js/theme.js?1736343321" defer></script>
 
 
 
@@ -302,7 +302,7 @@ Le programme devrait vous répondre <code>&quot;Hello!&quot;</code>.</li>
 <button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
 
 <div id="footer-question-window" disabled>
-    <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b"
+    <form id="question" method=POST action="https://formsubmit.co/98b3a83ac420e4e66d9af9f25fbc3890"
         target="question-submitted" onsubmit="cleanQuestionFormContent()">
 
         <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
@@ -313,7 +313,7 @@ Le programme devrait vous répondre <code>&quot;Hello!&quot;</code>.</li>
         <input type="hidden" name="_subject" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="//question-submitted/" />
+        <input type="hidden" name="_next" value="https://igm.univ-mlv.fr/~marsault/cpp/cours/question-submitted/" />
 
         <input type="submit" disabled style="display: none" aria-hidden="true" />
         <input type="submit" value="Envoyer" />
@@ -330,7 +330,6 @@ Le programme devrait vous répondre <code>&quot;Hello!&quot;</code>.</li>
     }
 
     function cleanQuestionFormContent() {
-
         function clean(element) {
             
             element.value = element.value.replace(/\[\.\./g, "[ ..");
@@ -372,6 +371,7 @@ Le programme devrait vous répondre <code>&quot;Hello!&quot;</code>.</li>
     updateQuestionWidgetState();
 
 </script>
+
 
 
   </body>

@@ -33,16 +33,16 @@ Voici la syntaxe permettant d’allouer de la mémoire pour un entier :
 #include &lt;iostream&gt; #include &lt;memory&gt; void fcn() { std::unique_ptr&lt;int&gt; int_on_heap = std::make_unique&lt;int&gt;(3); std::cout &lt;&lt; *int_on_heap &lt;&lt; std::endl; // affiche 3 *int_on_heap = 5; std::cout &lt;&lt; *int_on_heap &lt;&lt; std::endl; // affiche 5 } La classe unique_ptr est donc un symbole que l’on template par le type qu’il doit contenir.">
     <meta itemprop="wordCount" content="1512">
     <title>Allocation dynamique :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1733301742" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1733301742" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1733301742" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1733301742" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1733301742" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1733301742" rel="stylesheet">
-    <link href="../../css/fonts.css?1733301742" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1733301742" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1733301742" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1733301742" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1733301742" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1733301742" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1733301742"></script>
+    <link href="../../css/fontawesome-all.min.css?1736343321" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1736343321" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1736343321" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1736343321" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1736343321" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1736343321" rel="stylesheet">
+    <link href="../../css/fonts.css?1736343321" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1736343321" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1736343321" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1736343321" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1736343321" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1736343321" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1736343321"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -268,12 +268,12 @@ Si on appelle <code>rename</code> sur <code>dog_copy</code>, le nom de <code>dog
 <p>Pour vous habituez à manipuler les <code>unique_ptr</code>, vous allez modifier le code du programme <code>c3-3-cat</code>.</p>
 <p>Commencez par allouer dynamiquement un objet de type <code>Cat</code> et affichez son contenu à l&rsquo;aide de l&rsquo;opérateur <code>&lt;&lt;</code> déjà défini.
 <div class="expand">
-  <input type="checkbox" id="R-expand-6e4fb49e874db40d8942d320f3496be7" aria-controls="R-expandcontent-6e4fb49e874db40d8942d320f3496be7">
-  <label class="expand-label" for="R-expand-6e4fb49e874db40d8942d320f3496be7">
+  <input type="checkbox" id="R-expand-dd859736574be96b9815e4de44bbd249" aria-controls="R-expandcontent-dd859736574be96b9815e4de44bbd249">
+  <label class="expand-label" for="R-expand-dd859736574be96b9815e4de44bbd249">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-6e4fb49e874db40d8942d320f3496be7" class="expand-content">
+  <div id="R-expandcontent-dd859736574be96b9815e4de44bbd249" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Cat.h&#34;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
@@ -289,24 +289,24 @@ Si on appelle <code>rename</code> sur <code>dog_copy</code>, le nom de <code>dog
 </div></p>
 <p>Redéfinissez le destructeur de <code>Cat</code> pour afficher du texte et vérifier que l&rsquo;objet pointé est bien détruit à la sortie du scope, lorsque le <code>unique_ptr</code> est détruit.
 <div class="expand">
-  <input type="checkbox" id="R-expand-b08e53d20febf3fbec6419de8c9f0c7f" aria-controls="R-expandcontent-b08e53d20febf3fbec6419de8c9f0c7f">
-  <label class="expand-label" for="R-expand-b08e53d20febf3fbec6419de8c9f0c7f">
+  <input type="checkbox" id="R-expand-d426efae0af59b536abfdc10a54bb4a7" aria-controls="R-expandcontent-d426efae0af59b536abfdc10a54bb4a7">
+  <label class="expand-label" for="R-expand-d426efae0af59b536abfdc10a54bb4a7">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-b08e53d20febf3fbec6419de8c9f0c7f" class="expand-content">
+  <div id="R-expandcontent-d426efae0af59b536abfdc10a54bb4a7" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="o">~</span><span class="n">Cat</span><span class="p">()</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Cat &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">_name</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; has died...&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="p">}</span></span></span></code></pre></div>
   </div>
 </div></p>
 <p>Ajoutez un constructeur à 1 paramètre à la classe <code>Cat</code> pour initialiser son attribut <code>_name</code>.<br>
 Adaptez l&rsquo;initialisation du <code>unique_ptr</code> afin que le programme puisse compiler.
 <div class="expand">
-  <input type="checkbox" id="R-expand-e53389c01a85d2c8e1603e4c0ace498e" aria-controls="R-expandcontent-e53389c01a85d2c8e1603e4c0ace498e">
-  <label class="expand-label" for="R-expand-e53389c01a85d2c8e1603e4c0ace498e">
+  <input type="checkbox" id="R-expand-ef8d84289b1132caf658e2b670134d6d" aria-controls="R-expandcontent-ef8d84289b1132caf658e2b670134d6d">
+  <label class="expand-label" for="R-expand-ef8d84289b1132caf658e2b670134d6d">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-e53389c01a85d2c8e1603e4c0ace498e" class="expand-content">
+  <div id="R-expandcontent-ef8d84289b1132caf658e2b670134d6d" class="expand-content">
 <p><code>Cat.h</code> :</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Cat</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -333,12 +333,12 @@ Adaptez l&rsquo;initialisation du <code>unique_ptr</code> afin que le programme 
 </div></p>
 <p>Créez maintenant un <code>unique_ptr&lt;Cat&gt;</code> vide et vérifiez que celui-ci est bien égal à <code>nullptr</code>.
 <div class="expand">
-  <input type="checkbox" id="R-expand-2019fcf5d080a80db65bdbf8e8653402" aria-controls="R-expandcontent-2019fcf5d080a80db65bdbf8e8653402">
-  <label class="expand-label" for="R-expand-2019fcf5d080a80db65bdbf8e8653402">
+  <input type="checkbox" id="R-expand-6f908cd1ee0ba3f5cbf96e7c5618b23d" aria-controls="R-expandcontent-6f908cd1ee0ba3f5cbf96e7c5618b23d">
+  <label class="expand-label" for="R-expand-6f908cd1ee0ba3f5cbf96e7c5618b23d">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-2019fcf5d080a80db65bdbf8e8653402" class="expand-content">
+  <div id="R-expandcontent-6f908cd1ee0ba3f5cbf96e7c5618b23d" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span> <span class="n">cat1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&#34;Felix&#34;</span><span class="p">);</span>
@@ -356,12 +356,12 @@ Adaptez l&rsquo;initialisation du <code>unique_ptr</code> afin que le programme 
 </div></p>
 <p>Réassignez ce dernier à une nouvelle instance de <code>Cat</code> allouée dynamiquement.
 <div class="expand">
-  <input type="checkbox" id="R-expand-247e8c9faf900ee1fedb072b57cacace" aria-controls="R-expandcontent-247e8c9faf900ee1fedb072b57cacace">
-  <label class="expand-label" for="R-expand-247e8c9faf900ee1fedb072b57cacace">
+  <input type="checkbox" id="R-expand-1795cdb8641fcd0f5d5b2a0c04d260b4" aria-controls="R-expandcontent-1795cdb8641fcd0f5d5b2a0c04d260b4">
+  <label class="expand-label" for="R-expand-1795cdb8641fcd0f5d5b2a0c04d260b4">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-247e8c9faf900ee1fedb072b57cacace" class="expand-content">
+  <div id="R-expandcontent-1795cdb8641fcd0f5d5b2a0c04d260b4" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span> <span class="n">cat1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&#34;Felix&#34;</span><span class="p">);</span>
@@ -381,12 +381,12 @@ Adaptez l&rsquo;initialisation du <code>unique_ptr</code> afin que le programme 
 </div></p>
 <p>Affichez si les deux <code>unique_ptr</code> sont égaux, puis si les deux objets pointés sont égaux.
 <div class="expand">
-  <input type="checkbox" id="R-expand-57ce08ebae6edac944bb3d8b3afe877a" aria-controls="R-expandcontent-57ce08ebae6edac944bb3d8b3afe877a">
-  <label class="expand-label" for="R-expand-57ce08ebae6edac944bb3d8b3afe877a">
+  <input type="checkbox" id="R-expand-c955c2fa9cc126143fefc49cf76c459f" aria-controls="R-expandcontent-c955c2fa9cc126143fefc49cf76c459f">
+  <label class="expand-label" for="R-expand-c955c2fa9cc126143fefc49cf76c459f">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-57ce08ebae6edac944bb3d8b3afe877a" class="expand-content">
+  <div id="R-expandcontent-c955c2fa9cc126143fefc49cf76c459f" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span> <span class="n">cat1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&#34;Felix&#34;</span><span class="p">);</span>
@@ -410,12 +410,12 @@ Adaptez l&rsquo;initialisation du <code>unique_ptr</code> afin que le programme 
 <p>Réinitialisez le premier <code>unique_ptr</code> afin que celui-ci détruise l&rsquo;objet sur lequel il pointe.<br>
 Vérifiez que celui-ci est maintenant bien égal à <code>nullptr</code>.
 <div class="expand">
-  <input type="checkbox" id="R-expand-af95c6f2227175ff8e82c9b2e6a87263" aria-controls="R-expandcontent-af95c6f2227175ff8e82c9b2e6a87263">
-  <label class="expand-label" for="R-expand-af95c6f2227175ff8e82c9b2e6a87263">
+  <input type="checkbox" id="R-expand-480d53b0aa88b548f0b1a2e491c419f7" aria-controls="R-expandcontent-480d53b0aa88b548f0b1a2e491c419f7">
+  <label class="expand-label" for="R-expand-480d53b0aa88b548f0b1a2e491c419f7">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-af95c6f2227175ff8e82c9b2e6a87263" class="expand-content">
+  <div id="R-expandcontent-480d53b0aa88b548f0b1a2e491c419f7" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span> <span class="n">cat1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&#34;Felix&#34;</span><span class="p">);</span>
@@ -537,13 +537,13 @@ Testez le code suivant et vérifiez qu&rsquo;il fonctionne correctement :</p>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 <p>Le programme fonctionne comme attendu car nous avons introduit un niveau intermédiaire entre la mémoire du <code>vector</code> à la mémoire des objets de type <code>Content</code>.</p>
 <p>Avant, pendant la réallocation, chacun des objets <code>Content</code> était déplacé vers une nouvelle zone de la mémoire, d&rsquo;où l&rsquo;invalidation des références.
-<a href="#R-image-f2ff93a16fdf9f9ce5b1ec58c768a029" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/bag-realloc-content.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f2ff93a16fdf9f9ce5b1ec58c768a029"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/bag-realloc-content.svg"></a></p>
+<a href="#R-image-5a43f57edf44204a64876836d9ccddf2" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/bag-realloc-content.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5a43f57edf44204a64876836d9ccddf2"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/bag-realloc-content.svg"></a></p>
 <p>Désormais, ce sont les <code>unique_ptr</code> qui sont déplacés ailleurs.
 Les éléments de type <code>Content</code> restent à leur place.<br>
 La référence <code>my_thing</code> qui pointe sur l&rsquo;un d&rsquo;entre eux reste donc valide aussi longtemps que <code>bag</code> l&rsquo;est aussi.
-<a href="#R-image-211e4d48cdf6c543b792146c1bc073ae" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/bag-realloc-ptr.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-211e4d48cdf6c543b792146c1bc073ae"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/bag-realloc-ptr.svg"></a></p>
+<a href="#R-image-6be4f58518f587d673bd87b787f66cc1" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/bag-realloc-ptr.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6be4f58518f587d673bd87b787f66cc1"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/bag-realloc-ptr.svg"></a></p>
 
   <footer class="footline">
   </footer>
@@ -639,9 +639,9 @@ La référence <code>my_thing</code> qui pointe sur l&rsquo;un d&rsquo;entre eux
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1733301742" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1733301742" defer></script>
-    <script src="../../js/theme.js?1733301742" defer></script>
+    <script src="../../js/clipboard.min.js?1736343321" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1736343321" defer></script>
+    <script src="../../js/theme.js?1736343321" defer></script>
 
 
 
@@ -651,7 +651,7 @@ La référence <code>my_thing</code> qui pointe sur l&rsquo;un d&rsquo;entre eux
 <button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
 
 <div id="footer-question-window" disabled>
-    <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b"
+    <form id="question" method=POST action="https://formsubmit.co/98b3a83ac420e4e66d9af9f25fbc3890"
         target="question-submitted" onsubmit="cleanQuestionFormContent()">
 
         <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
@@ -662,7 +662,7 @@ La référence <code>my_thing</code> qui pointe sur l&rsquo;un d&rsquo;entre eux
         <input type="hidden" name="_subject" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="//question-submitted/" />
+        <input type="hidden" name="_next" value="https://igm.univ-mlv.fr/~marsault/cpp/cours/question-submitted/" />
 
         <input type="submit" disabled style="display: none" aria-hidden="true" />
         <input type="submit" value="Envoyer" />
@@ -679,7 +679,6 @@ La référence <code>my_thing</code> qui pointe sur l&rsquo;un d&rsquo;entre eux
     }
 
     function cleanQuestionFormContent() {
-
         function clean(element) {
             
             element.value = element.value.replace(/\[\.\./g, "[ ..");
@@ -721,6 +720,7 @@ La référence <code>my_thing</code> qui pointe sur l&rsquo;un d&rsquo;entre eux
     updateQuestionWidgetState();
 
 </script>
+
 
 
   </body>

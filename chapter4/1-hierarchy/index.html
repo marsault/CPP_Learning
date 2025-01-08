@@ -61,16 +61,16 @@ La cible à compiler est c4-1-hierarchy.
 Définir une classe-mère Commencez par jeter un coup d’oeil à chacun des fichiers fournis.">
     <meta itemprop="wordCount" content="1109">
     <title>💼 Hiérarchie professionnelle :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1733301742" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1733301742" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1733301742" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1733301742" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1733301742" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1733301742" rel="stylesheet">
-    <link href="../../css/fonts.css?1733301742" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1733301742" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1733301742" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1733301742" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1733301742" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1733301742" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1733301742"></script>
+    <link href="../../css/fontawesome-all.min.css?1736343321" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1736343321" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1736343321" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1736343321" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1736343321" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1736343321" rel="stylesheet">
+    <link href="../../css/fonts.css?1736343321" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1736343321" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1736343321" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1736343321" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1736343321" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1736343321" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1736343321"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -166,12 +166,12 @@ Comme vous pouvez le constater, les différentes classes partagent beaucoup de c
 Placez-la dans un ou des fichiers séparés et modifiez le CMakeLists.txt (celui dans chap-04) pour qu&rsquo;il les ajoute bien à la compilation de l&rsquo;exécutable.
 Pour le nom de la classe, essayez de trouver quelque chose qui soit digne de son contenu.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-3de56c345bf27f69ae73863d4b25381b" aria-controls="R-expandcontent-3de56c345bf27f69ae73863d4b25381b">
-  <label class="expand-label" for="R-expand-3de56c345bf27f69ae73863d4b25381b">
+  <input type="checkbox" id="R-expand-7ee47be64b4c8822b3048c002f0df05b" aria-controls="R-expandcontent-7ee47be64b4c8822b3048c002f0df05b">
+  <label class="expand-label" for="R-expand-7ee47be64b4c8822b3048c002f0df05b">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-3de56c345bf27f69ae73863d4b25381b" class="expand-content">
+  <div id="R-expandcontent-7ee47be64b4c8822b3048c002f0df05b" class="expand-content">
 <p>Afin de pouvoir retourner le grade (<code>get_rank()</code>) de chaque employé, on ajoute un attribut <code>_rank</code> à la classe.<br>
 Et on n&rsquo;oublie pas de définir un constructeur pour initialiser chacun des membres de la nouvelle classe.</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Rank.h&#34;</span><span class="cp">
@@ -236,12 +236,12 @@ Il ne devrait vous rester que ceci :</p>
 que vous devez initialiser vos propres attributs à la suite de l&rsquo;appel au constructeur de la classe-mère.</p>
 <p>Refactorisez maintenant les deux autres classes <code>Staff</code> et <code>Intern</code> de manière à supprimer le code dupliqué en les faisant hériter de <code>Employee</code>.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-5c217e7a2d77c9f62e18bc201f40a6b9" aria-controls="R-expandcontent-5c217e7a2d77c9f62e18bc201f40a6b9">
-  <label class="expand-label" for="R-expand-5c217e7a2d77c9f62e18bc201f40a6b9">
+  <input type="checkbox" id="R-expand-6025ae79461a7e00c1386dbb7ddd4605" aria-controls="R-expandcontent-6025ae79461a7e00c1386dbb7ddd4605">
+  <label class="expand-label" for="R-expand-6025ae79461a7e00c1386dbb7ddd4605">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-5c217e7a2d77c9f62e18bc201f40a6b9" class="expand-content">
+  <div id="R-expandcontent-6025ae79461a7e00c1386dbb7ddd4605" class="expand-content">
 <p>Staff.h:</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Employee.h&#34;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
@@ -473,9 +473,9 @@ Autrement, la relation d&rsquo;héritage sera privée et le compilateur ne vous 
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1733301742" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1733301742" defer></script>
-    <script src="../../js/theme.js?1733301742" defer></script>
+    <script src="../../js/clipboard.min.js?1736343321" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1736343321" defer></script>
+    <script src="../../js/theme.js?1736343321" defer></script>
 
 
 
@@ -485,7 +485,7 @@ Autrement, la relation d&rsquo;héritage sera privée et le compilateur ne vous 
 <button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
 
 <div id="footer-question-window" disabled>
-    <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b"
+    <form id="question" method=POST action="https://formsubmit.co/98b3a83ac420e4e66d9af9f25fbc3890"
         target="question-submitted" onsubmit="cleanQuestionFormContent()">
 
         <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
@@ -496,7 +496,7 @@ Autrement, la relation d&rsquo;héritage sera privée et le compilateur ne vous 
         <input type="hidden" name="_subject" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="//question-submitted/" />
+        <input type="hidden" name="_next" value="https://igm.univ-mlv.fr/~marsault/cpp/cours/question-submitted/" />
 
         <input type="submit" disabled style="display: none" aria-hidden="true" />
         <input type="submit" value="Envoyer" />
@@ -513,7 +513,6 @@ Autrement, la relation d&rsquo;héritage sera privée et le compilateur ne vous 
     }
 
     function cleanQuestionFormContent() {
-
         function clean(element) {
             
             element.value = element.value.replace(/\[\.\./g, "[ ..");
@@ -555,6 +554,7 @@ Autrement, la relation d&rsquo;héritage sera privée et le compilateur ne vous 
     updateQuestionWidgetState();
 
 </script>
+
 
 
   </body>
