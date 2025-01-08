@@ -7,6 +7,7 @@ Ci-dessous, vous trouverez le lien pour télécharger les slides de chaque séan
 
 ---
 
-- [Cours 1](cm1.pptx)
-- [Cours 2](cm2.pptx)
-- [Cours 3](cm3.pdf)
+- Cours 1 (Pas encore disponible)
+- Cours 2 (Pas encore disponible)
+- Cours 3 (Pas encore disponible)
+
