@@ -29,16 +29,16 @@ Nous allons voir comment faire de même afin de pouvoir manipuler les unique_ptr
 Construction sur place Lorsqu’une fonction retourne un objet et que celui-ci est utilisé pour initialiser une variable, aucune copie n’a lieu. L’objet est directement construit à l’adresse mémoire qui lui était réservée dans le code appelant.">
     <meta itemprop="wordCount" content="1149">
     <title>Déplacement :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1736349601" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1736349601" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1736349601" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1736349601" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1736349601" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1736349601" rel="stylesheet">
-    <link href="../../css/fonts.css?1736349601" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1736349601" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1736349601" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1736349601" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1736349601" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1736349601" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1736349601"></script>
+    <link href="../../css/fontawesome-all.min.css?1736350748" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1736350748" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1736350748" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1736350748" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1736350748" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1736350748" rel="stylesheet">
+    <link href="../../css/fonts.css?1736350748" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1736350748" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1736350748" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1736350748" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1736350748" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1736350748" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1736350748"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -285,12 +285,12 @@ Pour vous en convaincre, testez le code suivant :</p>
 <p>Il est donc possible de transférer des données d&rsquo;une variable à une autre en utilisant <code>std::move</code>.<br>
 Remplacez les <code>unique_ptr&lt;int&gt;</code> par des <code>string</code> et adaptez le restant du programme pour vérifier que les <code>string</code> peuvent également être déplacées.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-4b53e3bd7814b57034a2d5c71b41d550" aria-controls="R-expandcontent-4b53e3bd7814b57034a2d5c71b41d550">
-  <label class="expand-label" for="R-expand-4b53e3bd7814b57034a2d5c71b41d550">
+  <input type="checkbox" id="R-expand-0117830031a4190e6a403e4d6fe0d771" aria-controls="R-expandcontent-0117830031a4190e6a403e4d6fe0d771">
+  <label class="expand-label" for="R-expand-0117830031a4190e6a403e4d6fe0d771">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-4b53e3bd7814b57034a2d5c71b41d550" class="expand-content">
+  <div id="R-expandcontent-0117830031a4190e6a403e4d6fe0d771" class="expand-content">
 <p>Attention à bien spécifier que l&rsquo;on construit une <code>std::string</code> et pas un <code>const char*</code> en remplaçant le <code>auto</code> ou bien en écrivant le type à droite du <code>=</code>.</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
@@ -332,12 +332,12 @@ Voici sa signature :</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">display</span><span class="p">(</span><span class="s">&#34;i1&#34;</span><span class="p">,</span> <span class="n">i1</span><span class="p">);</span> <span class="c1">// -&gt; affiche &#34;i1 contains X&#34; ou &#34;i1 is empty&#34;
 </span></span></span></code></pre></div>
 <div class="expand">
-  <input type="checkbox" id="R-expand-5fe167923f84cd2369b45ba08fa1abb9" aria-controls="R-expandcontent-5fe167923f84cd2369b45ba08fa1abb9">
-  <label class="expand-label" for="R-expand-5fe167923f84cd2369b45ba08fa1abb9">
+  <input type="checkbox" id="R-expand-a59ef1fe07023061e7dfea564f76d1a3" aria-controls="R-expandcontent-a59ef1fe07023061e7dfea564f76d1a3">
+  <label class="expand-label" for="R-expand-a59ef1fe07023061e7dfea564f76d1a3">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-5fe167923f84cd2369b45ba08fa1abb9" class="expand-content">
+  <div id="R-expandcontent-a59ef1fe07023061e7dfea564f76d1a3" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp">
@@ -451,7 +451,7 @@ Voici sa signature :</p>
         <div id="R-shortcuts">
           <div class="nav-title padding">Accès rapide</div>
           <ul class="space">
-            <li><a class="padding" href="https://github.com/marsault/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt exo du Cours</a></li>
+            <li><a class="padding" href="https://github.com/marsault/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt exercice du cours</a></li>
             <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt TPs</a></li>
             <li><a class="padding" href="../../slides/index.html"><i class='far fa-file-powerpoint'></i> Slides</a></li>
             <li><a class="padding" href="../../workflow/index.html"><i class='far fa-list-alt'></i> Workflow</a></li>
@@ -511,9 +511,9 @@ Voici sa signature :</p>
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1736349601" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1736349601" defer></script>
-    <script src="../../js/theme.js?1736349601" defer></script>
+    <script src="../../js/clipboard.min.js?1736350748" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1736350748" defer></script>
+    <script src="../../js/theme.js?1736350748" defer></script>
 
 
 
