@@ -4,6 +4,6 @@ hidden: true
 ---
 
 <script>
-    alert("Your question has been sent correctly.");
+    alert("Votre question a été envoyée correctement.");
     parent.parent.document.getElementById("footer-question-window").setAttribute("disabled", true)
 </script>

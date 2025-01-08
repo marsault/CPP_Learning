@@ -13,6 +13,7 @@ relativeURLs = true
   disableLanguageSwitchingButton = true
   disableSearch = true
   custom_css = ["css/syntax.css"]
+  finalURL = "https://igm.univ-mlv.fr/~marsault/cpp/cours/"
 
 [markup.goldmark.renderer]
   unsafe = true

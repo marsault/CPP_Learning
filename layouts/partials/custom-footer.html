@@ -10,7 +10,7 @@
 <button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
 
 <div id="footer-question-window" disabled>
-    <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b"
+    <form id="question" method=POST action="https://formsubmit.co/98b3a83ac420e4e66d9af9f25fbc3890"
         target="question-submitted" onsubmit="cleanQuestionFormContent()">
 
         <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
@@ -21,7 +21,7 @@
         <input type="hidden" name="_subject" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="{{ .Site.BaseURL }}/question-submitted/" />
+        <input type="hidden" name="_next" value="{{ .Site.Params.finalURL }}question-submitted/" />
 
         <input type="submit" disabled style="display: none" aria-hidden="true" />
         <input type="submit" value="Envoyer" />
@@ -38,7 +38,6 @@
     }
 
     function cleanQuestionFormContent() {
-
         function clean(element) {
             // The following sequences are not handled by FormSubmit.
             element.value = element.value.replace(/\[\.\./g, "[ ..");
