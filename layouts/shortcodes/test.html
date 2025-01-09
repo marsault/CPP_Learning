@@ -5,10 +5,11 @@
 
   function updateTestSubject() {
     let name = document.querySelector('#test>input[name="name"]').value;
-    document.querySelector('#test>input[name="_subject"]').value = "[C++][Chapitre {{ .Params.chapter }}] " + name + ", retour sur ton questionnaire";
+    let group = document.querySelector('#test>select[name="group"]').value;
+    document.querySelector('#test>input[name="_subject"]').value = "[C++]["+group+"][Chap {{ .Params.chapter }}] " + name + ", retour sur ton questionnaire";
   }
 
-  updateQuestionFormSubject();
+ //updateQuestionFormSubject();
 
 </script>
 
@@ -19,14 +20,14 @@
   <label>Votre adresse mail :</label>
   <input type="email" name="email" placeholder="mail@smthg.com" required />
 
-  <label>Votre groupe :</label>
-  <select name="group">
+  <label>Votre groupe de TP:</label>
+  <select name="group" onchange="updateTestSubject()">
   {{ if or .Page.Draft .Page.Parent.Draft }}
-    <option value="group-Draft">Draft</option>
+    <option value="Draft">Draft</option>
   {{ end }}
-    <option value="group-I1">Initiaux 1</option>
-    <option value="group-I2">Initiaux 2</option>
-    <option value="group-Alt">Alternants</option>
+    <option value="GR1">Initiaux GR1 (avec Henri Derycke)</option>
+    <option value="GR2">Initiaux GR2 (avec Anthony Labarre)</option>
+    <option value="GR3">Alternants GR3 (avec Victor Marsault)</option>
   </select>
 
   <input type="hidden" name="_subject" />
@@ -49,7 +50,7 @@
 
   <input type="hidden" name="_template" value="box" />
   <input type="hidden" name="_captcha" value="false" />
-  <input type="hidden" name="_next" value="{{ .Site.Params.finalURL }}common/test_submitted/" />
+  <input type="hidden" name="_next" value="{{ .Site.Params.finalURL }}common/test_submitted" />
 
   <input type="submit" disabled style="display: none" aria-hidden="true" />
   <input type="submit" value="Valider" />
