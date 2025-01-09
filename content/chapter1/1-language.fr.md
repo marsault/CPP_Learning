@@ -9,23 +9,24 @@ Cette page vous présentera quelques caractéristiques du C++, les différences 
 
 ### Quelques caractéristiques
 
-C++ est un langage de programmation informatique inventé dans les années 1980 par un informaticien nommé Bjarne Stroustrup. Il s'agit d'un langage...
+C++ est un langage de programmation informatique inventé dans les années 1980 par un informaticien nommé Bjarne Stroustrup.
 
-##### ... Compilé
 
-Tout comme le C, le C++ est un langage compilé. Nous aurons donc besoin d'un compilateur afin de générer le programme exécutable à partir de son code source. \
+##### Un langage compilé
+
+Tout comme le C, le C++ est un langage compilé. Nous avons donc besoin d'un compilateur afin de générer le programme exécutable à partir de son code source. \
 Contrairement aux langages interprétés (Python) ou semi-interprétés (Java), une fois le programme compilé, celui-ci peut directement être exécuté par le système d'exploitation. \
 L'avantage est que le programme est généralement plus rapide à exécuter, puisqu'il n'est pas nécessaire de passer par un interpréteur. \
-En revanche, l'exécutable ne sera pas portable et il faudra recompiler le programme pour chacun des systèmes sur lequel il devra être exécuté.
+En revanche, l'exécutable n'est pas portable:  il faut compiler le programme pour le système sur lequel il doit être exécuté.
 Cela implique donc soit de fournir les exécutables pour l'ensemble des systèmes que l'on souhaite supporter, soit de distribuer son code-source pour que chacun puisse compiler le programme pour le système qu'il utilise.
 
-##### ... Orienté-objet
+##### Un langage orienté-objet
 
 Comme le Java, C++ est un langage orienté-objet.
-On pourra donc y définir des classes, dotées de fonctions membres et d'attributs, définir des relations d'héritage entre elles et redéfinir le comportement de base des classes mères dans les classes filles. \
+On pourra donc y définir des classes, dotées de fonctions membres (appelées méthodes en Java) et d'attributs, définir des relations d'héritage entre elles et redéfinir le comportement de base des classes mères dans les classes filles. \
 Cependant, le C++ n'est pas un langage purement orienté-objet. On peut définir des fonctions en dehors de toute classe (on parle alors de fonctions libres), voire même implémenter des programmes complets sans définir la moindre classe.
 
-##### ... Générique
+##### Un langage générique
 
 Un langage est dit générique s'il permet d'appliquer un même algorithme sur différents types de données. Dans le cas du C++, la généricité s'exprime via les mécanismes suivants : \
 \- Le polymorphisme : on peut passer un objet de type `Chien` à une fonction recevant un objet de type `Animal`, \
@@ -75,7 +76,7 @@ Un autre aspect important et apprécié du C++ est qu'il s'agit d'un langage san
 
 ### Liens utiles
 
-- {{< open_in_new_tab "https://en.cppreference.com/w/" "Documentation du langage et de la librairie standard" />}}
+- {{< open_in_new_tab "https://en.cppreference.com/w/" "Documentation du langage et de la librairie standard" />}} et [son miroir hébergé localement à l'université]({{% param cpprefURL %}})
 - {{< open_in_new_tab "https://www.godbolt.org/" "Pour compiler du code avec plein de compilateurs différents, et même l'exécuter" />}}
 - {{< open_in_new_tab "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines" "Bonnes pratiques" />}}
 - {{< open_in_new_tab "https://isocpp.org/faq" "Une super FAQ" />}}

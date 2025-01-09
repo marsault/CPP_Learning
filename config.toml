@@ -17,10 +17,15 @@ relativeURLs = true
   cpprefURL = "https://igm.univ-mlv.fr/~marsault/cpp/ref/"
   tpURL = "https://github.com/marsault/CPP_Exercises/"
   exoducoursURL = "https://github.com/marsault/CPP_Learning_Code/"
+  formsubmitco_token = "98b3a83ac420e4e66d9af9f25fbc3890"
 
 
-[markup.goldmark.renderer]
-  unsafe = true
+  
+[markup]
+  [markup.highlight]
+    guessSyntax = false 
+  [markup.goldmark.renderer]
+    unsafe = true
 
 [Languages]
 [Languages.fr]

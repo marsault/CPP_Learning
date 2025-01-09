@@ -27,7 +27,7 @@ Lorsque vous exécutez `g++ -o program.exe a.cpp b.cpp c.cpp`, l'outil réalise 
 3. La compilation de `c.cpp` ➔ `g++ -c c.cpp`
 4. L'édition des liens pour générer `program.exe` ➔ `g++ -o program.exe a.o b.o c.o`
 
-```mermaid
+{{< mermaid >}}
 flowchart TD;
     L(Edition des liens)
     C1(Compilation)
@@ -40,7 +40,7 @@ flowchart TD;
     Bo --- L
     Co --- L
     L --> E[program.exe]
-```
+{{< /mermaid >}}
 
 ---
 

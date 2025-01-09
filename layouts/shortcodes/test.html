@@ -1,4 +1,5 @@
 {{ $_hugo_config := `{ "version": 1 }` }}
+{{ .Page.Scratch.Set "questioncounter" 0 }}
 
 <script>
 
@@ -11,7 +12,7 @@
 
 </script>
 
-<form id="test" data-chapter="{{ .Params.chapter }}" data-year="2024" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b">
+<form id="test" data-chapter="{{ .Params.chapter }}" data-year="2024" method=POST action="https://formsubmit.co/{{ .Site.Params.formsubmitco_token }}">
   <label>Vous êtes :</label>
   <input type="text" name="name" placeholder="Prénom Nom" required onchange="updateTestSubject()" />
 
@@ -48,7 +49,7 @@
 
   <input type="hidden" name="_template" value="box" />
   <input type="hidden" name="_captcha" value="false" />
-  <input type="hidden" name="_next" value="{{ .Site.BaseURL }}/chapter{{ .Params.chapter }}/test_done/" />
+  <input type="hidden" name="_next" value="{{ .Site.Params.finalURL }}common/test_submitted/" />
 
   <input type="submit" disabled style="display: none" aria-hidden="true" />
   <input type="submit" value="Valider" />

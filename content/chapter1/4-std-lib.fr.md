@@ -125,7 +125,7 @@ report << "Operation done!" << std::endl;
 ```
 
 {{% notice note %}}
-Le second paramètre du constructeur de `fstream` est le mode d'ouverture.
+Le second paramètre du constructeur de `fstream` (avant dernière ligne du bout de code au dessus) est le mode d'ouverture.
 Par défaut, le fichier est ouvert en lecture et en écriture.  
 Dans le cas d'une ouverture en écriture seule, le fichier est créé automatiquement s'il n'existe pas.
 {{% /notice %}}

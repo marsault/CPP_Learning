@@ -10,7 +10,7 @@
 <button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
 
 <div id="footer-question-window" disabled>
-    <form id="question" method=POST action="https://formsubmit.co/98b3a83ac420e4e66d9af9f25fbc3890"
+    <form id="question" method=POST action="https://formsubmit.co/{{ .Site.Params.formsubmitco_token }}"
         target="question-submitted" onsubmit="cleanQuestionFormContent()">
 
         <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />

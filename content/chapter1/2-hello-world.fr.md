@@ -21,7 +21,7 @@ En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de cho
 
 ### Mise en place
 
-Le code initial de tous les exercices proposés dans ce cours en ligne sont présents sur ce dépôt git : https://github.com/Laefy/CPP_Learning_Code.
+Le code initial de tous les exercices proposés dans ce cours en ligne sont présents sur [ce dépôt git]({{% param exoducoursURL %}}).
 
 Clonez-le sur votre machine et ouvrez le répertoire `chap-01` dans VSCode.  
 Ouvrez ensuite le fichier `1-hello_world.cpp`.
@@ -47,10 +47,14 @@ La valeur de retour du `main` indique si le programme s'est terminé sans erreur
 {{% /notice %}}
 
 Pour compiler votre programme, commencez par ouvrir un terminal (vous pouvez le faire directement dans l'interface de VSCode).  
-Placez-vous dans le répertoire `chap-01` avec `cd`, puis taper la commande: `g++ -std=c++17 -o hello-world 1-hello_world.cpp`.
+Placez-vous dans le répertoire `chap-01` avec `cd`, puis taper la commande: 
 
-L'option `-std` sert à spécifier la version du langage qu'on veut utiliser.  
-L'option `-o` permet de spécifier le chemin (dossier + nom) du programme que l'on souhaite générer.  
+```
+g++ -std=c++17 -o hello-world 1-hello_world.cpp
+```
+
+L'option `-std` sert à spécifier la version du langage qu'on veut utiliser, dans ce cours nous utiliserons la version 2017 du standard.  
+L'option `-o` permet de spécifier le nom du programme généré par le compilateur.  
 Tous les autres arguments correspondent aux chemins des fichiers `.cpp` que l'on veut compiler.
 Pour le moment, il n'y en a qu'un seul, le fichier `1-hello_world.cpp`.
 

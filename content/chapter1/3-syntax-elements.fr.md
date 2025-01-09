@@ -14,17 +14,16 @@ Comme dans tous les langages ou presque, on retrouve :
 - les entiers (signés ou non-signés) : `int`, `short`, `unsigned int`, ...
 - les flottants : `float`, `double`
 - les types caractère : `char`, `unsigned char`
-- le type booléen : `bool` (et non pas `boolean` comme en Java ⚠️)
+- le type booléen : `bool` (et non pas `boolean` comme en Java ⚠️) dont les deux valeurs sont `true` et `false`
 
 Pour définir des variables, c'est comme d'habitude : `<type> <nom> = <valeur>;`
 
-{{% notice tip %}}
-Faites bien attention à initialiser vos variables si elles ont un type fondamental pour éviter de vous retrouver avec des valeurs "aléatoires".  
-En effet, ces variables ne sont pas toujours mises à 0 par défaut, comme en témoigne [ce programme](https://godbolt.org/z/P4Kr44q5s).
-{{% /notice %}}
+> [!tip]
+> Faites bien attention à initialiser vos variables si elles ont un type fondamental pour éviter de vous retrouver avec des valeurs "aléatoires".  
+> En effet, ces variables ne sont pas toujours mises à 0 par défaut, comme en témoigne [ce programme](https://godbolt.org/z/P4Kr44q5s).
 
 En ce qui concerne les spécificités du C++ maintenant...    
-Contrairement au C, les pointeurs null ne sont plus représentés par la constante `NULL` (c'est-à-dire à 0, donc de type entier) mais par le mot-clef `nullptr` (en minuscules) de type `nullptr_t`.
+Contrairement au C, les pointeurs null ne sont plus représentés par la constante `NULL` (c'est-à-dire à 0, casté en `void *`) mais par le mot-clef `nullptr` (en minuscules) et ils ont un type spécifique, `nullptr_t`.
 
 Autre particularité, vous n'êtes pas obligé de respécifier le type de la variable que vous déclarez si vous l'initialisez en même temps : si vous définissez votre variable avec le mot-clef `auto` (équivalent à `var` en Java >= 10), le compilateur utilise le type de la valeur utilisée pour l'initialisation (on parle d'inférence de type).
 
@@ -40,13 +39,13 @@ float        f7 = 3;        // type f7 = float
 auto         b8 = true;     // type b8 = bool
 ```
 
-La liste complète des types fondamentaux est accessible [ici](https://en.cppreference.com/w/cpp/language/types).
+La liste complète des types fondamentaux est accessible [ici]({{% param cpprefURL %}}en/cpp/language/types.html).
 
 ---
 
 ### Structures de contrôle
 
-En ce qui concerne les structures de contrôle qui sont similaires à celles que vous avez déjà rencontrées, on retrouve le `if` / `else if` / `else` et le `switch` pour les conditions, et le `while`, le `do-while` et le `for` pour les boucles.
+En ce qui concerne les structures de contrôle qui sont similaires à celles que vous avez déjà rencontrées en C, on retrouve le `if` / `else if` / `else` et le `switch` pour les conditions, et le `while`, le `do-while` et le `for` pour les boucles.
 
 ```cpp
 // Ex1: affiche si les éléments d'un tableau sont pairs ou impairs
@@ -207,14 +206,14 @@ Mais si vous définissez votre paramètre comme étant une référence, alors le
 void set_variables_to_3(int p1, int& p2)
 {
     // p1 est une copie de v1
-    // p2 est un alias de v2
+    // p2 est une référence vers la zone mémoire où est stockée v2
 
     p1 = 3;
     // on a modifié la copie de v1
     // => pas d'effet de bord, v1 reste inchangé
 
     p2 = 3;
-    // on a modifié un alias de v2
+    // on a modifié la zone mémoire de v2
     // => il y a bien un effet de bord sur v2, sa valeur change
 }
 
