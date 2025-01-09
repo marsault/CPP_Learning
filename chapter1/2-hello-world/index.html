@@ -27,18 +27,18 @@ En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de cho
     <meta itemprop="description" content="Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous verrez comment :
 écrire un programme, déclarer des variables, écrire sur la sortie standard, lire sur l’entrée standard, définir des fonctions, utiliser les structures de contrôle (conditions, boucles, switch, etc.), créer des tableaux et des chaînes de caractères, utiliser des références. Ça fait beaucoup hein ? 😈
 En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà.">
-    <meta itemprop="wordCount" content="1007">
+    <meta itemprop="wordCount" content="1012">
     <title>Hello World 👋 :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1736350748" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1736350748" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1736350748" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1736350748" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1736350748" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1736350748" rel="stylesheet">
-    <link href="../../css/fonts.css?1736350748" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1736350748" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1736350748" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1736350748" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1736350748" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1736350748" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1736350748"></script>
+    <link href="../../css/fontawesome-all.min.css?1736418928" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1736418928" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1736418928" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1736418928" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1736418928" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1736418928" rel="stylesheet">
+    <link href="../../css/fonts.css?1736418928" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1736418928" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1736418928" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1736418928" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1736418928" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1736418928" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1736418928"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -131,7 +131,7 @@ En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de cho
 <p>En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà. Le C++ introduit quelques subtilités, mais nous insisterons suffisamment dessus pour que vous les reteniez sans problème 🙂</p>
 <hr>
 <h3 id="mise-en-place">Mise en place</h3>
-<p>Le code initial de tous les exercices proposés dans ce cours en ligne sont présents sur ce dépôt git : <a href="https://github.com/Laefy/CPP_Learning_Code" rel="external" target="_blank">https://github.com/Laefy/CPP_Learning_Code</a>.</p>
+<p>Le code initial de tous les exercices proposés dans ce cours en ligne sont présents sur <a href="https://github.com/marsault/CPP_Learning_Code/" rel="external" target="_blank">ce dépôt git</a>.</p>
 <p>Clonez-le sur votre machine et ouvrez le répertoire <code>chap-01</code> dans VSCode.<br>
 Ouvrez ensuite le fichier <code>1-hello_world.cpp</code>.</p>
 <p>Pour votre premier programme, on ne va pas trop faire dans l&rsquo;originalité, il s&rsquo;agira d&rsquo;un Hello World.
@@ -152,9 +152,10 @@ Vous l&rsquo;avez d&rsquo;ailleurs déjà probablement vu dans le chapitre préc
   </div>
 </div>
 <p>Pour compiler votre programme, commencez par ouvrir un terminal (vous pouvez le faire directement dans l&rsquo;interface de VSCode).<br>
-Placez-vous dans le répertoire <code>chap-01</code> avec <code>cd</code>, puis taper la commande: <code>g++ -std=c++17 -o hello-world 1-hello_world.cpp</code>.</p>
-<p>L&rsquo;option <code>-std</code> sert à spécifier la version du langage qu&rsquo;on veut utiliser.<br>
-L&rsquo;option <code>-o</code> permet de spécifier le chemin (dossier + nom) du programme que l&rsquo;on souhaite générer.<br>
+Placez-vous dans le répertoire <code>chap-01</code> avec <code>cd</code>, puis taper la commande:</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>g++ -std=c++17 -o hello-world 1-hello_world.cpp</code></pre></div>
+<p>L&rsquo;option <code>-std</code> sert à spécifier la version du langage qu&rsquo;on veut utiliser, dans ce cours nous utiliserons la version 2017 du standard.<br>
+L&rsquo;option <code>-o</code> permet de spécifier le nom du programme généré par le compilateur.<br>
 Tous les autres arguments correspondent aux chemins des fichiers <code>.cpp</code> que l&rsquo;on veut compiler.
 Pour le moment, il n&rsquo;y en a qu&rsquo;un seul, le fichier <code>1-hello_world.cpp</code>.</p>
 <p>Lancez maintenant votre programme pour vérifier qu&rsquo;il s&rsquo;exécute sans erreur.</p>
@@ -222,8 +223,8 @@ Vous devriez obtenir des erreurs de ce style :</p>
         <div class="hidden-solution-content">
             <p>Vous devriez arriver sur
 <a href="https://en.cppreference.com/w/cpp/io/cout" target="_blank" rel="noopener noreferrer">cette page</a>, vous indiquant que le header à référencer est <code>&lt;iostream&gt;</code> :
-<a href="#R-image-690b21ef6a172f10a477355ab27bf6a6" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/doc-cout.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-690b21ef6a172f10a477355ab27bf6a6"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/doc-cout.png"></a></p>
+<a href="#R-image-b01bf94cd8dabe5f4c2f6016e37f0a92" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/doc-cout.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b01bf94cd8dabe5f4c2f6016e37f0a92"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/doc-cout.png"></a></p>
 <p>Placez le code suivant dans votre fichier :</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
@@ -345,9 +346,9 @@ Vous pouvez donc écrire des choses comme :</p>
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1736350748" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1736350748" defer></script>
-    <script src="../../js/theme.js?1736350748" defer></script>
+    <script src="../../js/clipboard.min.js?1736418928" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1736418928" defer></script>
+    <script src="../../js/theme.js?1736418928" defer></script>
 
 
 

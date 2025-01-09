@@ -47,7 +47,7 @@
       <link>/chapter6/test/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter6/test/index.html</guid>
-      <description>Vous avez terminé le Chapitre 4 ! C’est donc maintenant le moment de connecter vos neurones pour répondre aux questions suivantes.&#xA;Bon courage à vous 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1 Initiaux 2 Alternants 1- Qu’est-ce qu’une classe polymorphe ?&#xA;2- Définissez une classe polymorphe Nothing qui ne fait rien.&#xA;3- Comment représenter une classe abstraite en C++ ?&#xA;Les questions 4 à 6 font référence au code suivant :</description>
+      <description>Vous avez terminé le Chapitre 4 ! C’est donc maintenant le moment de connecter vos neurones pour répondre aux questions suivantes.&#xA;Bon courage à vous 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1 Initiaux 2 Alternants 1. Qu’est-ce qu’une classe polymorphe ?&#xA;2. Définissez une classe polymorphe Nothing qui ne fait rien.&#xA;3. Comment représenter une classe abstraite en C++ ?&#xA;Les questions 4 à 6 font référence au code suivant :</description>
     </item>
     <item>
       <title>Synthèse</title>
@@ -55,13 +55,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter6/summary/index.html</guid>
       <description>Ce qu’il faut savoir faire Langage Définir une relation de parenté publique entre deux classes : class Child : public Parent { ... }; Définir un membre (fonction ou attribut) accessible uniquement depuis la classe courante et ses enfants : protected : int _a1 = 0; char _a2 = &#39;a&#39;; Appeler le constructeur de la classe parent : Child(int p1, int p2) : Parent { p1 }, _p2 { p2 } { .</description>
-    </item>
-    <item>
-      <title>Merci !</title>
-      <link>/chapter6/test_done/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/chapter6/test_done/index.html</guid>
-      <description>Vos réponses nous ont bien été communiquées 😃 N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
     </item>
   </channel>
 </rss>

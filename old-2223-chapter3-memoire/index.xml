@@ -40,7 +40,7 @@
       <link>/old-2223-chapter3-memoire/test/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/old-2223-chapter3-memoire/test/index.html</guid>
-      <description>C’est l’heure du test ! Bon courage 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1 Initiaux 2 Alternants 1- Comment définir la période de validité d’un objet ?&#xA;2- Citez une bonne raison d’allouer de la mémoire via un unique_ptr plutôt que via un pointeur simple (avec new).&#xA;3- Quelle fonction de la librarie standard permet de transférer le contenu d’un objet dans un autre ?</description>
+      <description>C’est l’heure du test ! Bon courage 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1 Initiaux 2 Alternants 1. Comment définir la période de validité d’un objet ?&#xA;2. Citez une bonne raison d’allouer de la mémoire via un unique_ptr plutôt que via un pointeur simple (avec new).&#xA;3. Quelle fonction de la librarie standard permet de transférer le contenu d’un objet dans un autre ?</description>
     </item>
     <item>
       <title>Synthèse</title>
@@ -48,13 +48,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/old-2223-chapter3-memoire/summary/index.html</guid>
       <description>Ce qu’il faut retenir Théorie La durée de vie d’un objet s’étend de sa construction à sa destruction. Lorsque la durée de vie d’un objet s’achève, il n’est plus valide de l’utiliser. La portée d’une référence peut excéder la durée de vie de l’objet référencé (=&gt; dangling reference). Un objet A est propriétaire d’un objet B si la destruction de A entraîne celle de B. Aucune copie n’est faite lorsqu’on initialise une variable avec la valeur de retour d’une fonction (mandatory copy-elision) Pratique Un unique_ptr n’est pas copiable.</description>
-    </item>
-    <item>
-      <title>Merci !</title>
-      <link>/old-2223-chapter3-memoire/test_done/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/old-2223-chapter3-memoire/test_done/index.html</guid>
-      <description>Vos réponses nous ont bien été communiquées 😃 N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
     </item>
   </channel>
 </rss>

@@ -23,18 +23,18 @@ Quelques caractéristiques C&#43;&#43; est un langage de programmation informati
     <meta itemprop="name" content="Présentation du langage :: Cours de C&#43;&#43; - Niveau Master">
     <meta itemprop="description" content="Cette page vous présentera quelques caractéristiques du C&#43;&#43;, les différences avec d’autres langages que vous avez étudiés jusque là, pourquoi est-ce que certains disent que C&#43;&#43; est compliqué, alors que pas forcément, et ce qui fait que le langage est aussi utilisé aujourd’hui. Promis, c’est la seule page du cours où vous trouverez autant de pavés 🙂
 Quelques caractéristiques C&#43;&#43; est un langage de programmation informatique inventé dans les années 1980 par un informaticien nommé Bjarne Stroustrup.">
-    <meta itemprop="wordCount" content="970">
+    <meta itemprop="wordCount" content="977">
     <title>Présentation du langage :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1736350748" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1736350748" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1736350748" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1736350748" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1736350748" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1736350748" rel="stylesheet">
-    <link href="../../css/fonts.css?1736350748" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1736350748" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1736350748" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1736350748" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1736350748" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1736350748" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1736350748"></script>
+    <link href="../../css/fontawesome-all.min.css?1736418928" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1736418928" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1736418928" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1736418928" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1736418928" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1736418928" rel="stylesheet">
+    <link href="../../css/fonts.css?1736418928" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1736418928" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1736418928" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1736418928" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1736418928" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1736418928" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1736418928"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -116,18 +116,18 @@ Quelques caractéristiques C&#43;&#43; est un langage de programmation informati
 <p>Cette page vous présentera quelques caractéristiques du C++, les différences avec d&rsquo;autres langages que vous avez étudiés jusque là, pourquoi est-ce que certains disent que C++ est compliqué, alors que pas forcément, et ce qui fait que le langage est aussi utilisé aujourd&rsquo;hui. Promis, c&rsquo;est la seule page du cours où vous trouverez autant de pavés 🙂</p>
 <hr>
 <h3 id="quelques-caractéristiques">Quelques caractéristiques</h3>
-<p>C++ est un langage de programmation informatique inventé dans les années 1980 par un informaticien nommé Bjarne Stroustrup. Il s&rsquo;agit d&rsquo;un langage&hellip;</p>
-<h5 id="-compilé">&hellip; Compilé</h5>
-<p>Tout comme le C, le C++ est un langage compilé. Nous aurons donc besoin d&rsquo;un compilateur afin de générer le programme exécutable à partir de son code source. <br>
+<p>C++ est un langage de programmation informatique inventé dans les années 1980 par un informaticien nommé Bjarne Stroustrup.</p>
+<h5 id="un-langage-compilé">Un langage compilé</h5>
+<p>Tout comme le C, le C++ est un langage compilé. Nous avons donc besoin d&rsquo;un compilateur afin de générer le programme exécutable à partir de son code source. <br>
 Contrairement aux langages interprétés (Python) ou semi-interprétés (Java), une fois le programme compilé, celui-ci peut directement être exécuté par le système d&rsquo;exploitation. <br>
 L&rsquo;avantage est que le programme est généralement plus rapide à exécuter, puisqu&rsquo;il n&rsquo;est pas nécessaire de passer par un interpréteur. <br>
-En revanche, l&rsquo;exécutable ne sera pas portable et il faudra recompiler le programme pour chacun des systèmes sur lequel il devra être exécuté.
+En revanche, l&rsquo;exécutable n&rsquo;est pas portable:  il faut compiler le programme pour le système sur lequel il doit être exécuté.
 Cela implique donc soit de fournir les exécutables pour l&rsquo;ensemble des systèmes que l&rsquo;on souhaite supporter, soit de distribuer son code-source pour que chacun puisse compiler le programme pour le système qu&rsquo;il utilise.</p>
-<h5 id="-orienté-objet">&hellip; Orienté-objet</h5>
+<h5 id="un-langage-orienté-objet">Un langage orienté-objet</h5>
 <p>Comme le Java, C++ est un langage orienté-objet.
-On pourra donc y définir des classes, dotées de fonctions membres et d&rsquo;attributs, définir des relations d&rsquo;héritage entre elles et redéfinir le comportement de base des classes mères dans les classes filles. <br>
+On pourra donc y définir des classes, dotées de fonctions membres (appelées méthodes en Java) et d&rsquo;attributs, définir des relations d&rsquo;héritage entre elles et redéfinir le comportement de base des classes mères dans les classes filles. <br>
 Cependant, le C++ n&rsquo;est pas un langage purement orienté-objet. On peut définir des fonctions en dehors de toute classe (on parle alors de fonctions libres), voire même implémenter des programmes complets sans définir la moindre classe.</p>
-<h5 id="-générique">&hellip; Générique</h5>
+<h5 id="un-langage-générique">Un langage générique</h5>
 <p>Un langage est dit générique s&rsquo;il permet d&rsquo;appliquer un même algorithme sur différents types de données. Dans le cas du C++, la généricité s&rsquo;exprime via les mécanismes suivants : <br>
 - Le polymorphisme : on peut passer un objet de type <code>Chien</code> à une fonction recevant un objet de type <code>Animal</code>, <br>
 - La surcharge : on peut définir différentes fonctions avec le même nom, dès lors qu&rsquo;elles acceptent un nombre différent de paramètres, ou que ces paramètres ne sont pas de même type, <br>
@@ -167,7 +167,7 @@ On peut aussi supposer que les nombreuses évolutions qu&rsquo;il a connues depu
 <h3 id="liens-utiles">Liens utiles</h3>
 <ul>
 <li>
-<a href="https://en.cppreference.com/w/" target="_blank" rel="noopener noreferrer">Documentation du langage et de la librairie standard</a></li>
+<a href="https://en.cppreference.com/w/" target="_blank" rel="noopener noreferrer">Documentation du langage et de la librairie standard</a> et <a href="https://igm.univ-mlv.fr/~marsault/cpp/ref/" rel="external" target="_blank">son miroir hébergé localement à l&rsquo;université</a></li>
 <li>
 <a href="https://www.godbolt.org/" target="_blank" rel="noopener noreferrer">Pour compiler du code avec plein de compilateurs différents, et même l&#39;exécuter</a></li>
 <li>
@@ -279,9 +279,9 @@ On peut aussi supposer que les nombreuses évolutions qu&rsquo;il a connues depu
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1736350748" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1736350748" defer></script>
-    <script src="../../js/theme.js?1736350748" defer></script>
+    <script src="../../js/clipboard.min.js?1736418928" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1736418928" defer></script>
+    <script src="../../js/theme.js?1736418928" defer></script>
 
 
 

@@ -47,14 +47,7 @@
       <link>/chapter3/test/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter3/test/index.html</guid>
-      <description>Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1 Initiaux 2 Alternants 1- Quels sont les avantages et les inconvénients de la pile par rapport du tas ?&#xA;2- A quoi sert le mot-clef delete[] ?&#xA;3- Quels sont les deux événements qui délimitent la durée de vie d’une donnée ?&#xA;4- Qu’est-ce qu’une dangling-reference ?&#xA;Donnez un exemple de situation dans lequel on peut en avoir une.</description>
-    </item>
-    <item>
-      <title>Merci !</title>
-      <link>/chapter3/test_done/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/chapter3/test_done/index.html</guid>
-      <description>Vos réponses nous ont bien été communiquées 😃 N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
+      <description>Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1 Initiaux 2 Alternants 1. Quels sont les avantages et les inconvénients de la pile par rapport du tas ?&#xA;2. A quoi sert le mot-clef delete[] ?&#xA;3. Quels sont les deux événements qui délimitent la durée de vie d’une donnée ?&#xA;4. Qu’est-ce qu’une dangling-reference ?&#xA;Donnez un exemple de situation dans lequel on peut en avoir une.</description>
     </item>
   </channel>
 </rss>

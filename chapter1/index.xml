@@ -3,7 +3,7 @@
   <channel>
     <title>Introduction au C&#43;&#43; :: Cours de C&#43;&#43; - Niveau Master</title>
     <link>/chapter1/index.html</link>
-    <description>Dans ce premier chapitre, nous commencerons par présenter les principales caractéristiques du langage. Juste après, nous débuterons la pratique en vous montrant comment implémenter vos premiers programmes et comment utiliser quelques fonctionnalités basiques du C++ et de sa librairie standard.</description>
+    <description>Dans ce premier chapitre, nous commençons par présenter les principales caractéristiques du langage. Juste après, nous débutons la pratique en montrant comment implémenter des premiers programmes et comment utiliser quelques fonctionnalités basiques du C++ et de sa librairie standard.</description>
     <generator>Hugo</generator>
     <language>fr</language>
     <atom:link href="/chapter1/index.xml" rel="self" type="application/rss+xml" />
@@ -26,7 +26,7 @@
       <link>/chapter1/3-syntax-elements/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter1/3-syntax-elements/index.html</guid>
-      <description>Nous allons vous présenter les éléments de syntaxe de base du langage.&#xA;Comme vous pourrez le constater, mis à part quelques subtilités, la plupart des informations que vous allez lire ici devrait être similaire à ce que vous avez déjà appris en C ou en Java.&#xA;Variables et types fondamentaux Comme dans tous les langages ou presque, on retrouve :&#xA;les entiers (signés ou non-signés) : int, short, unsigned int, … les flottants : float, double les types caractère : char, unsigned char le type booléen : bool (et non pas boolean comme en Java ⚠️) Pour définir des variables, c’est comme d’habitude : &lt;type&gt; &lt;nom&gt; = &lt;valeur&gt;;</description>
+      <description>Nous allons vous présenter les éléments de syntaxe de base du langage.&#xA;Comme vous pourrez le constater, mis à part quelques subtilités, la plupart des informations que vous allez lire ici devrait être similaire à ce que vous avez déjà appris en C ou en Java.&#xA;Variables et types fondamentaux Comme dans tous les langages ou presque, on retrouve :&#xA;les entiers (signés ou non-signés) : int, short, unsigned int, … les flottants : float, double les types caractère : char, unsigned char le type booléen : bool (et non pas boolean comme en Java ⚠️) dont les deux valeurs sont true et false Pour définir des variables, c’est comme d’habitude : &lt;type&gt; &lt;nom&gt; = &lt;valeur&gt;;</description>
     </item>
     <item>
       <title>Librairie standard 📚</title>
@@ -48,13 +48,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter1/test/index.html</guid>
       <description>Félicitations !! Vous avez enfin terminé le Chapitre 1 ! 🥳🎉&#xA;Le questionnaire ci-dessous vous aidera à savoir si vous avez bien compris le cours ou non.&#xA;Il n’a donc pas vocation à vous évaluer, mais à vous donner une idée de ce que vous auriez lu trop vite ou n’auriez pas assez pratiqué.&#xA;Dans tous les cas, si vous répondez à ce questionnaire et cliquez sur le bouton Valider, vos réponses nous seront envoyées par mail et nous vous ferons un petit retour sur ce que vous avez réussi ou non 😉</description>
-    </item>
-    <item>
-      <title>Merci !</title>
-      <link>/chapter1/test_done/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/chapter1/test_done/index.html</guid>
-      <description>Vos réponses nous ont bien été communiquées 😃 N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
     </item>
   </channel>
 </rss>

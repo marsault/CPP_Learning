@@ -19,7 +19,7 @@
       <link>/chapter1/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter1/index.html</guid>
-      <description>Dans ce premier chapitre, nous commencerons par présenter les principales caractéristiques du langage. Juste après, nous débuterons la pratique en vous montrant comment implémenter vos premiers programmes et comment utiliser quelques fonctionnalités basiques du C++ et de sa librairie standard.</description>
+      <description>Dans ce premier chapitre, nous commençons par présenter les principales caractéristiques du langage. Juste après, nous débutons la pratique en montrant comment implémenter des premiers programmes et comment utiliser quelques fonctionnalités basiques du C++ et de sa librairie standard.</description>
     </item>
     <item>
       <title>Classes</title>
@@ -40,7 +40,7 @@
       <link>/chapter4/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter4/index.html</guid>
-      <description>Vous apprendrez dans ce chapitre comment fonctionne l’héritage en C++. Vous verrez qu’il existe de nombreuses différences avec l’héritage en Java, bien qu’on retrouve des concepts similaires.&#xA;Pour la pratique, nous vous montrerons comment créer une hiérarchie de classes, puis comment faire pour redéfinir le comportement des classes-filles.</description>
+      <description>En construction</description>
     </item>
     <item>
       <title>Librairie standard</title>
@@ -97,13 +97,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/faq/index.html</guid>
       <description>Pourquoi je n’arrive pas à lancer mon projet avec CMake ? Cela peut-être dû à plusieurs raisons :&#xA;1. Vous n’avez pas ouvert le bon dossier dans VSCode. Il faut toujours ouvrir le dossier qui contient tous les chapitres et tous les TPs, pas le dossier d’un chapitre ou d’un TP en particulier.&#xA;2. Vous avez essayé de lancer le programme via le menu Run de VSCode. Si vous tentez de lancer un programme de cette manière, VSCode va générer un fichier launch.</description>
-    </item>
-    <item>
-      <title>Question Submitted</title>
-      <link>/question-submitted/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/question-submitted/index.html</guid>
-      <description></description>
     </item>
     <item>
       <title>Slides</title>

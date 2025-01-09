@@ -54,14 +54,7 @@
       <link>/chapter0/test/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter0/test/index.html</guid>
-      <description>Si vous avez rencontré des problèmes lors de l’installation d’un des logiciels, n’hésitez pas à nous l’indiquer, afin que nous puissions améliorer nos explications. Merci d’avance ! 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1 Initiaux 2 Alternants 1- Avez-vous rencontré des difficultés lors de l’installation d’un des composants ? Si oui, du ou desquels s’agit-il ?&#xA;2- Si une erreur est survenue à un moment, pouvez-vous la copier-coller ci-dessous et indiquer le contexte dans lequel celle-ci a eu lieu ?</description>
-    </item>
-    <item>
-      <title>Merci !</title>
-      <link>/chapter0/test_done/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/chapter0/test_done/index.html</guid>
-      <description>Vos réponses nous ont bien été communiquées 😃 N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
+      <description>Si vous avez rencontré des problèmes lors de l’installation d’un des logiciels, n’hésitez pas à nous l’indiquer, afin que nous puissions améliorer nos explications. Merci d’avance ! 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1 Initiaux 2 Alternants 1. Avez-vous rencontré des difficultés lors de l’installation d’un des composants ? Si oui, du ou desquels s’agit-il ?&#xA;2. Si une erreur est survenue à un moment, pouvez-vous la copier-coller ci-dessous et indiquer le contexte dans lequel celle-ci a eu lieu ?</description>
     </item>
   </channel>
 </rss>

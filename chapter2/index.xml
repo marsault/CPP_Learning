@@ -54,14 +54,7 @@
       <link>/chapter2/test/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter2/test/index.html</guid>
-      <description>Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1 Initiaux 2 Alternants 1- Quel est le terme C++ permettant de désigner les “méthodes” d’une classe ?&#xA;2- Supposons une classe Cercle disposant d’un attribut _points de type std::vector&lt;point&gt;. Quel invariant cette classe pourrait-elle décider d’enforcer ?&#xA;3- Citez une règle permettant de respecter le principe d’encapsulation en C++.&#xA;4- En quoi consiste la méthodologie TDD ?</description>
-    </item>
-    <item>
-      <title>Merci !</title>
-      <link>/chapter2/test_done/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/chapter2/test_done/index.html</guid>
-      <description>Vos réponses nous ont bien été communiquées 😃 N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
+      <description>Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1 Initiaux 2 Alternants 1. Quel est le terme C++ permettant de désigner les “méthodes” d’une classe ?&#xA;2. Supposons une classe Cercle disposant d’un attribut _points de type std::vector&lt;point&gt;. Quel invariant cette classe pourrait-elle décider d’enforcer ?&#xA;3. Citez une règle permettant de respecter le principe d’encapsulation en C++.&#xA;4. En quoi consiste la méthodologie TDD ?</description>
     </item>
   </channel>
 </rss>

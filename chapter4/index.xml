@@ -3,7 +3,7 @@
   <channel>
     <title>Copie et déplacement :: Cours de C&#43;&#43; - Niveau Master</title>
     <link>/chapter4/index.html</link>
-    <description>Vous apprendrez dans ce chapitre comment fonctionne l’héritage en C++. Vous verrez qu’il existe de nombreuses différences avec l’héritage en Java, bien qu’on retrouve des concepts similaires.&#xA;Pour la pratique, nous vous montrerons comment créer une hiérarchie de classes, puis comment faire pour redéfinir le comportement des classes-filles.</description>
+    <description>En construction</description>
     <generator>Hugo</generator>
     <language>fr</language>
     <atom:link href="/chapter4/index.xml" rel="self" type="application/rss+xml" />

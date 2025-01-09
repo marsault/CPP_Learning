@@ -63,12 +63,5 @@
       <guid>/chapter5/summary/index.html</guid>
       <description>Ce qu’il faut retenir Théorie Un conteneur séquentiel est un conteneur dans lequel les élements se suivent (tableaux, listes, …). Un conteneur associatif est un conteneur dans lequel chaque élément est indexé par une clef (l’élément pouvant être la clef elle-même). Les types passés en paramètre de template doivent parfois respecter des contraintes pour compiler (ces contraintes sont spécifiées dans la documentation). Librairie standard Tableau de taille dynamique : vector Tableau de taille fixe : array Listes chaînées : list ou forward_list Ensembles : set ou unordered_set Dictionnaires : map ou unordered_map Pratique On peut passer les chaînes de caractères constantes par std::string_view plutôt que const std::string&amp; ou const char*.</description>
     </item>
-    <item>
-      <title>Merci !</title>
-      <link>/chapter5/test_done/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/chapter5/test_done/index.html</guid>
-      <description>Vos réponses nous ont bien été communiquées 😃 N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
-    </item>
   </channel>
 </rss>

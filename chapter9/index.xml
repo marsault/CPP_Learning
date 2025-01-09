@@ -42,12 +42,5 @@
       <guid>/chapter9/test/index.html</guid>
       <description>Pas de questionnaire cette semaine, parce que mis en ligne trop tard.&#xA;N’hésitez néanmoins pas à utiliser le formulaire pour envoyer vos questions.&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1 Initiaux 2 Alternants Combien de temps avez-vous mis à compléter ce chapitre ? Avez-vous des questions suite à sa lecture ? Avez-vous des commentaires concernant le chapitre et/ou le site ?</description>
     </item>
-    <item>
-      <title>Merci !</title>
-      <link>/chapter9/test_done/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/chapter9/test_done/index.html</guid>
-      <description>Vos réponses nous ont bien été communiquées 😃 N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
-    </item>
   </channel>
 </rss>

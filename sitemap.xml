@@ -250,40 +250,10 @@
     <loc>/faq/index.html</loc>
   </url>
   <url>
-    <loc>/chapter0/test_done/index.html</loc>
+    <loc>/common/question-submitted/index.html</loc>
   </url>
   <url>
-    <loc>/chapter1/test_done/index.html</loc>
-  </url>
-  <url>
-    <loc>/chapter2/test_done/index.html</loc>
-  </url>
-  <url>
-    <loc>/chapter3/test_done/index.html</loc>
-  </url>
-  <url>
-    <loc>/chapter5/test_done/index.html</loc>
-  </url>
-  <url>
-    <loc>/chapter6/test_done/index.html</loc>
-  </url>
-  <url>
-    <loc>/chapter7/test_done/index.html</loc>
-  </url>
-  <url>
-    <loc>/chapter8/test_done/index.html</loc>
-  </url>
-  <url>
-    <loc>/chapter9/test_done/index.html</loc>
-  </url>
-  <url>
-    <loc>/old-2223-chapter3-memoire/test_done/index.html</loc>
-  </url>
-  <url>
-    <loc>/old-2223-chapter8-exceptions-assert/test_done/index.html</loc>
-  </url>
-  <url>
-    <loc>/question-submitted/index.html</loc>
+    <loc>/common/test-submitted/index.html</loc>
   </url>
   <url>
     <loc>/slides/index.html</loc>

@@ -186,13 +186,13 @@ p+ul {
 }
 
 /* {{% notice %}} */
-div.notices.tip p:first-child:after {
+/*div.notices.tip p:first-child:after {
     content: 'Conseil';
-}
+} Commented out by VM on 2025-01-09*/
 
-div.notices.warning p:first-child:after {
+/*div.notices.warning p:first-child:after {
     content: 'Attention';
-}
+}Commented out by VM on 2025-01-09*/
 
 /* {{% expand }%} */
 .expand-content {
