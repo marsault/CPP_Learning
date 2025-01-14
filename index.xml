@@ -3,7 +3,7 @@
   <channel>
     <title>Accueil :: Cours de C&#43;&#43; - Niveau Master</title>
     <link>/index.html</link>
-    <description>Bienvenue sur 🎄 C++ 🎄 Sur ce site, vous trouverez le cours de C++ destiné à l’enseignement des Master 1 de l’Universisté Gustave-Eiffel. Si vous ne faites pas partie des étudiants de cette section, vous êtes tout de même les bienvenus. Sachez juste que d’une part, ce cours étant un cours d’introduction, nous nous concentrerons sur les concepts de base du langage, ainsi que sur les mécanismes permettant d’écrire du code plus simplement ou de le rendre plus sûr.</description>
+    <description>Bienvenue Sur ce site, vous trouverez le cours de C++ destiné à l’enseignement des Master 1 de l’Universisté Gustave-Eiffel. Si vous ne faites pas partie des étudiants de cette section, vous êtes tout de même les bienvenus. Sachez juste que d’une part, ce cours étant un cours d’introduction, nous nous concentrerons sur les concepts de base du langage, ainsi que sur les mécanismes permettant d’écrire du code plus simplement ou de le rendre plus sûr.</description>
     <generator>Hugo</generator>
     <language>fr</language>
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
@@ -99,11 +99,11 @@
       <description>Pourquoi je n’arrive pas à lancer mon projet avec CMake ? Cela peut-être dû à plusieurs raisons :&#xA;1. Vous n’avez pas ouvert le bon dossier dans VSCode. Il faut toujours ouvrir le dossier qui contient tous les chapitres et tous les TPs, pas le dossier d’un chapitre ou d’un TP en particulier.&#xA;2. Vous avez essayé de lancer le programme via le menu Run de VSCode. Si vous tentez de lancer un programme de cette manière, VSCode va générer un fichier launch.</description>
     </item>
     <item>
-      <title>Slides</title>
+      <title>Planches du CM</title>
       <link>/slides/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/slides/index.html</guid>
-      <description>Ci-dessous, vous trouverez le lien pour télécharger les slides de chaque séance de cours magistraux.&#xA;Cours 1 (Pas encore disponible) Cours 2 (Pas encore disponible) Cours 3 (Pas encore disponible)</description>
+      <description>Voici les planches utilisés en cours magistral.&#xA;CM du Segment 1 CM du Segment 2 (Pas en core disponible) CM du Segment 3 (Pas encore disponible)</description>
     </item>
     <item>
       <title>Workflow</title>
