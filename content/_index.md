@@ -113,4 +113,4 @@ Cette introduction étant terminée, j'espère que vous vous amuserez et que vou
 ### Création et maintenance de ce site
 
 Ce site a été créé en 2021 et maintenu par Céline Noël jusqu'en 2024. 
-Depuis, il est maintenu et mis à jour par Henri Dericke et Victor Marsault.
+Depuis, il est maintenu et mis à jour par Henri Derycke et Victor Marsault.
