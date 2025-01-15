@@ -44,9 +44,9 @@
     </item>
     <item>
       <title>Opérateurs ➗</title>
-      <link>/chapter2/6-polygon/index.html</link>
+      <link>/chapter2/6-operators/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/chapter2/6-polygon/index.html</guid>
+      <guid>/chapter2/6-operators/index.html</guid>
       <description>Sur cette page, nous vous montrerons comment implémenter vos propres opérateurs.&#xA;Nous en profiterons aussi pour vous expliquer comment définir un alias de type et comment définir des fonctions amies.&#xA;Définition Un opérateur est une fonction, mais qui peut être appelée avec une syntaxe “simplifiée”.&#xA;Prenons l’exemple de la concaténation de std::string :&#xA;auto a = std::string { &#34;a&#34; }; auto b = std::string { &#34;b&#34; }; auto ab = a + b; Dans le code ci-dessus, l’expression a + b est en fait un appel à une fonction dont la signature est quelque chose comme: operator+(std::string, std::string).</description>
     </item>
     <item>
@@ -54,7 +54,7 @@
       <link>/chapter2/test/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter2/test/index.html</guid>
-      <description>Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Henri Derycke) Initiaux GR2 (avec Anthony Labarre) Alternants GR3 (avec Victor Marsault) 1. Quel est le terme C++ permettant de désigner les “méthodes” d’une classe ?&#xA;2. Supposons une classe Cercle disposant d’un attribut _points de type std::vector&lt;point&gt;. Quel invariant cette classe pourrait-elle décider d’enforcer ?&#xA;3. Citez une règle permettant de respecter le principe d’encapsulation en C++.</description>
+      <description>Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Henri Derycke) Initiaux GR2 (avec Anthony Labarre) Alternants GR3 (avec Victor Marsault) 1. Quel est le terme C++ permettant de désigner les “méthodes” d’une classe ?&#xA;2. Supposons deux classes: Points qui implémente un point dans le plan et Cercle disposant d’un attribut _points de type std::vector&lt;point&gt;. Quel invariant cette classe pourrait-on décider d’implémenter dans Cercle ?</description>
     </item>
   </channel>
 </rss>

@@ -31,18 +31,18 @@ int main() { // Person p; // p.set_name(&#34;Batman&#34;); // p.set_age(23); // 
 Commencez par ouvrir le dépôt d’exercices dans VSCode.
 Méthodologie Ouvrez le fichier chap-02/1-first_class.cpp, dans lequel on vous fournit le code de la fonction main.
 int main() { // Person p; // p.set_name(&#34;Batman&#34;); // p.set_age(23); // std::cout &lt;&lt; &#34;Person named &#39;&#34; &lt;&lt; p.get_name() &lt;&lt; &#34;&#39; is &#34; &lt;&lt; p.get_age() &lt;&lt; &#34; years old.">
-    <meta itemprop="wordCount" content="1697">
+    <meta itemprop="wordCount" content="1699">
     <title>Première classe ✨ :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1736852604" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1736852604" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1736852604" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1736852604" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1736852604" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1736852604" rel="stylesheet">
-    <link href="../../css/fonts.css?1736852604" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1736852604" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1736852604" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1736852604" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1736852604" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1736852604" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1736852604"></script>
+    <link href="../../css/fontawesome-all.min.css?1736936971" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1736936971" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1736936971" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1736936971" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1736936971" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1736936971" rel="stylesheet">
+    <link href="../../css/fonts.css?1736936971" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1736936971" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1736936971" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1736936971" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1736936971" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1736936971" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1736936971"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -190,10 +190,10 @@ Compilez et testez que le programme se lance correctement.</p>
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Person</span> <span class="n">p</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* ... */</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 <p>Pour la compilation, on peut se placer dans le répertoire <code>chap-02</code> et exécuter :</p>
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">g</span><span class="nb">++</span><span class="c"> </span><span class="nb">-</span><span class="c">std=c</span><span class="nb">++</span><span class="c">17 </span><span class="nb">-</span><span class="c">o 1</span><span class="nb">-</span><span class="c">first_class 1</span><span class="nb">-</span><span class="c">first_class</span><span class="nt">.</span><span class="c">cpp</span></span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0"><code>g++ -std=c++17 -o 1-first_class 1-first_class.cpp</code></pre></div>
 
         </div>
     </div>
@@ -284,15 +284,15 @@ Par exemple, si vous avez suivi la correction, vous pouvez indiquer :</p>
 </ul>
 <p>Ici, vous allez placer un breakpoint sur l&rsquo;instruction <code>return 0;</code> du <code>main</code>.
 Pour cela, placez votre curseur sur la ligne en question et appuyez sur F9. Vous pouvez aussi cliquer directement à gauche du numéro de ligne.
-<a href="#R-image-f6c609ee31ebaca2067771880b049a16" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-breakpoint.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f6c609ee31ebaca2067771880b049a16"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-breakpoint.png"></a></p>
+<a href="#R-image-b5e863bf71e35a489cf89fe5cf10de6a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-breakpoint.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b5e863bf71e35a489cf89fe5cf10de6a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-breakpoint.png"></a></p>
 <p>Utilisez ensuite F5 pour lancer le programme.
 L&rsquo;éditeur devrait prendre cette apparence, indiquant que le programme est en pause juste avant l&rsquo;exécution de l&rsquo;instruction surlignée :
-<a href="#R-image-ae26c40275ff8ecbf5945b0adc9676bc" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-breaking.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ae26c40275ff8ecbf5945b0adc9676bc"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-breaking.png"></a></p>
+<a href="#R-image-b74437466564670879fc0e781f6b8df5" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-breaking.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b74437466564670879fc0e781f6b8df5"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-breaking.png"></a></p>
 <p>Ouvrez maintenant le panneau d&rsquo;exécution en allant dans <code>View &gt; Run</code>.
-<a href="#R-image-b91a8bd7c9d3df3c1c769582df78b7e2" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-locals.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-b91a8bd7c9d3df3c1c769582df78b7e2"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-locals.png"></a></p>
+<a href="#R-image-fd22aaef276fc0fdf1dfcd9667663add" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-locals.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-fd22aaef276fc0fdf1dfcd9667663add"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-locals.png"></a></p>
 <p>Ce panneau contient 3 sections :</p>
 <ul>
 <li>La section <strong>Variables</strong>, dans laquelle vous pouvez voir le contenu de chacune des variables locales à votre fonction.</li>
@@ -359,8 +359,8 @@ Quel type avez-vous utilisé pour l&rsquo;âge de Batman ?</p>
 
         <div class="hidden-solution-content">
             <p>Pour s&rsquo;arrêter au bon endroit, il faut placer le breakpoint sur la ligne de l&rsquo;instruction <code>p.set_age(23);</code>.
-<a href="#R-image-15a882fa0f1f82ed3943d41cd9849fd5" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chap2-ex1-break.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-15a882fa0f1f82ed3943d41cd9849fd5"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chap2-ex1-break.png"></a></p>
+<a href="#R-image-b45909041deb17ed574e949b0bfd43b9" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chap2-ex1-break.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b45909041deb17ed574e949b0bfd43b9"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chap2-ex1-break.png"></a></p>
 
         </div>
     </div>
@@ -487,7 +487,7 @@ Par conséquent, il est fortement recommandé de se <strong>relire systématique
             <li class="" data-nav-id="/chapter2/3-constructor/index.html"><a class="padding" href="../../chapter2/3-constructor/index.html">Constructeur 🔨<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter2/4-destructor/index.html"><a class="padding" href="../../chapter2/4-destructor/index.html">Destructeur 💣<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter2/5-modules/index.html"><a class="padding" href="../../chapter2/5-modules/index.html">Modularité 🧱<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter2/6-polygon/index.html"><a class="padding" href="../../chapter2/6-polygon/index.html">Opérateurs ➗<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter2/6-operators/index.html"><a class="padding" href="../../chapter2/6-operators/index.html">Opérateurs ➗<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter2/test/index.html"><a class="padding" href="../../chapter2/test/index.html">Questionnaire ☑<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -561,9 +561,9 @@ Par conséquent, il est fortement recommandé de se <strong>relire systématique
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1736852604" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1736852604" defer></script>
-    <script src="../../js/theme.js?1736852604" defer></script>
+    <script src="../../js/clipboard.min.js?1736936971" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1736936971" defer></script>
+    <script src="../../js/theme.js?1736936971" defer></script>
 
 
 

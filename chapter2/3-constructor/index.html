@@ -27,18 +27,18 @@ Vous aviez implémenté une fonction-membre set_name dans la classe Person pour 
     <meta itemprop="description" content="Dans cet exercice, vous apprendrez à paramétrer la construction de vos objets.
 Constructeur à paramètres Ouvrez le fichier chap-02/2-constructor.cpp. Il contient une correction de l’exercice précédent.
 Vous aviez implémenté une fonction-membre set_name dans la classe Person pour initialiser l’attribut _name. Or, ce serait bien d’une part de réellement pouvoir initialiser cet attribut plutôt que de le modifier après l’instanciation, et d’autre part, de supprimer ce setter, afin qu’une fois initialisé, il ne soit plus possible de modifier _name.">
-    <meta itemprop="wordCount" content="1527">
+    <meta itemprop="wordCount" content="1677">
     <title>Constructeur 🔨 :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1736852604" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1736852604" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1736852604" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1736852604" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1736852604" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1736852604" rel="stylesheet">
-    <link href="../../css/fonts.css?1736852604" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1736852604" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1736852604" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1736852604" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1736852604" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1736852604" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1736852604"></script>
+    <link href="../../css/fontawesome-all.min.css?1736936971" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1736936971" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1736936971" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1736936971" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1736936971" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1736936971" rel="stylesheet">
+    <link href="../../css/fonts.css?1736936971" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1736936971" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1736936971" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1736936971" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1736936971" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1736936971" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1736936971"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -254,6 +254,23 @@ Ajoutez l&rsquo;attribut correspondant <code>_surname</code> à la classe et mod
 </div>
 <p>Pour terminer, supprimez le setter pour <code>_name</code>, puisque celui-ci n&rsquo;est plus utilisé.</p>
 <hr>
+<div class="box notices cstyle warning">
+  <div class="box-label">
+    <i class="fa-fw fas fa-exclamation-triangle"></i> Avertissement
+  </div>
+  <div class="box-content">
+<p>Pour des raisons techniques et historiques, il y a en C++ plusieurs façon d&rsquo;appeler les constructeurs.  Pour la classe <code>Dog</code> définie plus haut, les instructions ci-dessous vont créer un nouvel objet dog en appelant le même constructeur.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Dog</span>  <span class="n">dog1</span> <span class="p">{</span> <span class="s">&#34;Colley&#34;</span><span class="p">,</span> <span class="s">&#34;Lassie&#34;</span> <span class="p">};</span>       <span class="cm">/* 1 */</span>
+</span></span><span class="line"><span class="cl"><span class="n">Dog</span>  <span class="nf">dog2</span> <span class="p">(</span> <span class="s">&#34;Colley&#34;</span><span class="p">,</span> <span class="s">&#34;Lassie&#34;</span> <span class="p">);</span>       <span class="cm">/* 2 */</span>
+</span></span><span class="line"><span class="cl"><span class="n">Dog</span>  <span class="n">dog3</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#34;Colley&#34;</span><span class="p">,</span> <span class="s">&#34;Lassie&#34;</span><span class="p">};</span>       <span class="cm">/* 3 */</span>
+</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">dog4</span> <span class="o">=</span> <span class="n">Dog</span> <span class="p">{</span> <span class="s">&#34;Colley&#34;</span><span class="p">,</span> <span class="s">&#34;Lassie&#34;</span> <span class="p">};</span> <span class="cm">/* 4 */</span>
+</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">dog5</span> <span class="o">=</span> <span class="n">Dog</span> <span class="p">(</span> <span class="s">&#34;Colley&#34;</span><span class="p">,</span> <span class="s">&#34;Lassie&#34;</span> <span class="p">);</span> <span class="cm">/* 5 */</span></span></span></code></pre></div>
+<p>En revanche, dans d&rsquo;autres circonstances, ces lignes pourraient appeler des constructeurs différents.
+Par exemple, nous verrons dans le <a href="../../chapter5/index.html">chapitre 5</a> que <code>std::vector&lt;int&gt;(1,2)</code> et <code>std::vector&lt;int&gt;{1,2}</code> ne construisent pas le même objet.</p>
+<p>En général dans ce cours, on utilisera les méthodes 1 et 4, sauf si on doit utiliser une des autres.</p>
+  </div>
+</div>
+<hr>
 <h3 id="le-constructeur-par-défaut">Le constructeur par défaut</h3>
 <p>Modifiez l&rsquo;instanciation de <code>p</code> dans la fonction <code>main</code> de manière à ne plus lui passer d&rsquo;arguments (comme c&rsquo;était le cas avant de commencer l&rsquo;exercice) :</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Person</span> <span class="n">p</span><span class="p">;</span></span></span></code></pre></div>
@@ -294,8 +311,11 @@ Il n&rsquo;était alors plus possible d&rsquo;instancier la classe <code>Person<
     <i class="fa-fw fas fa-exclamation-circle"></i> Remarque
   </div>
   <div class="box-content">
-<p>1. Si aucun attribut n&rsquo;est initialisé dans la liste d&rsquo;initialisation d&rsquo;un constructeur, il est nécessaire d&rsquo;omettre complètement cette liste (c&rsquo;est-à-dire écrire <code>Person() {}</code> plutôt que <code>Person() : {}</code>).<br>
-2. Si un attribut n&rsquo;est pas initialisé via la liste d&rsquo;initialisation, il est automatiquement initialisé selon les mêmes règles que celles définies pour l&rsquo;implémentation par défaut du constructeur par défaut. C&rsquo;est la raison pour laquelle il n&rsquo;est pas nécessaire de spécifier à nouveau <code>_age</code> dans la liste d&rsquo;initialisation du constructeur à 2 paramètres.</p>
+<ol>
+<li>Si aucun attribut n&rsquo;est initialisé dans la liste d&rsquo;initialisation d&rsquo;un constructeur, il faut omettre complètement cette liste (c&rsquo;est-à-dire écrire <code>Person() {}</code> plutôt que <code>Person() : {}</code>).</li>
+<li>Si un attribut n&rsquo;est pas initialisé via la liste d&rsquo;initialisation, il est automatiquement initialisé selon les mêmes règles que celles définies pour l&rsquo;implémentation par défaut du constructeur par défaut. C&rsquo;est la raison pour laquelle il n&rsquo;est pas nécessaire de spécifier à nouveau <code>_age</code> dans la liste d&rsquo;initialisation du constructeur à 2 paramètres.</li>
+<li>On verra plus tard que le compilateur fournit une implémentation par défaut pour d&rsquo;autres constructeurs et opérateurs.</li>
+</ol>
   </div>
 </div>
 <hr>
@@ -415,7 +435,7 @@ Vous pouvez très bien implémenter vous-même un constructeur par défaut, et l
             <li class="active " data-nav-id="/chapter2/3-constructor/index.html"><a class="padding" href="../../chapter2/3-constructor/index.html">Constructeur 🔨<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter2/4-destructor/index.html"><a class="padding" href="../../chapter2/4-destructor/index.html">Destructeur 💣<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter2/5-modules/index.html"><a class="padding" href="../../chapter2/5-modules/index.html">Modularité 🧱<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter2/6-polygon/index.html"><a class="padding" href="../../chapter2/6-polygon/index.html">Opérateurs ➗<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter2/6-operators/index.html"><a class="padding" href="../../chapter2/6-operators/index.html">Opérateurs ➗<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter2/test/index.html"><a class="padding" href="../../chapter2/test/index.html">Questionnaire ☑<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -489,9 +509,9 @@ Vous pouvez très bien implémenter vous-même un constructeur par défaut, et l
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1736852604" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1736852604" defer></script>
-    <script src="../../js/theme.js?1736852604" defer></script>
+    <script src="../../js/clipboard.min.js?1736936971" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1736936971" defer></script>
+    <script src="../../js/theme.js?1736936971" defer></script>
 
 
 

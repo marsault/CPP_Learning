@@ -31,18 +31,18 @@ Etat L’état d’un objet est composé de valeurs, pouvant ou non varier au co
 Objet Dans un programme, un objet est un élément constitué d’un état, et disposant d’une interface permettant d’intéragir avec cet état.
 Classe Un objet est généralement créé à partir d’un modèle, que l’on appelle classe. Un objet créé à partir d’une classe constitue une instance de cette classe.
 Etat L’état d’un objet est composé de valeurs, pouvant ou non varier au cours de l’exécution du programme.">
-    <meta itemprop="wordCount" content="482">
+    <meta itemprop="wordCount" content="486">
     <title>C&#39;est quoi un objet déjà ? :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1736852604" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1736852604" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1736852604" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1736852604" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1736852604" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1736852604" rel="stylesheet">
-    <link href="../../css/fonts.css?1736852604" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1736852604" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1736852604" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1736852604" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1736852604" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1736852604" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1736852604"></script>
+    <link href="../../css/fontawesome-all.min.css?1736936971" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1736936971" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1736936971" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1736936971" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1736936971" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1736936971" rel="stylesheet">
+    <link href="../../css/fonts.css?1736936971" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1736936971" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1736936971" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1736936971" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1736936971" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1736936971" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1736936971"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -122,7 +122,7 @@ Etat L’état d’un objet est composé de valeurs, pouvant ou non varier au co
 Si une classe <code>Personne</code> définit deux attributs <code>nom</code> et <code>age</code>, alors l&rsquo;état de chaque instance de <code>Personne</code> sera composé d&rsquo;une valeur pour le nom, et d&rsquo;une valeur pour l&rsquo;âge.</p>
 <h4 id="interface">Interface</h4>
 <p>L&rsquo;interface est l&rsquo;ensemble des procédés permettant d&rsquo;accéder à l&rsquo;état d&rsquo;un objet ou de le modifier.<br>
-Selon les langages, elle ne se présente pas de la même manière. En C++, elle se compose des <strong>fonctions-membres</strong> de la classe, ainsi que de ses éventuels attributs publics.</p>
+Selon les langages, elle ne se présente pas de la même manière. En C++, elle se compose des <strong>fonctions-membres</strong> de la classe (appelées <strong>méthodes</strong> en Java), ainsi que de ses éventuels attributs publics.</p>
 <h4 id="invariant-de-classe">Invariant de classe</h4>
 <p>Un <strong>invariant de classe</strong> est une condition que toutes les instances de cette classe doivent vérifier. Par exemple :</p>
 <ul>
@@ -132,14 +132,14 @@ Selon les langages, elle ne se présente pas de la même manière. En C++, elle 
 </ul>
 <p>Lorsqu&rsquo;une fonction-membre publique est appelée, on peut toujours supposer qu&rsquo;à son entrée, les invariants sont garantis.
 En contre-partie, il faut que l&rsquo;implémentation de la fonction garantisse également qu&rsquo;à la sortie, les invariants seront toujours vrais.<br>
-Par exemple, la fonction <code>SortedList::insert()</code> n&rsquo;a pas besoin de vérifier que la liste est triée au début, car on part du principe que l&rsquo;invariant est forcément vrai dès l&rsquo;entrée.
+Par exemple, la fonction <code>ListeCroissante::insert()</code> n&rsquo;a pas besoin de vérifier que la liste est triée au début, car on part du principe que l&rsquo;invariant est forcément vrai dès l&rsquo;entrée.
 On peut donc utiliser la recherche dichotomique pour trouver où doit être inséré le nouvel élément, ce qui est moins coûteux que si on avait à faire une recherche linéaire.<br>
 L&rsquo;invariant permet donc ici de gagner en temps de calcul.</p>
 <h4 id="encapsulation">Encapsulation</h4>
 <p>L&rsquo;<strong>encapsulation</strong> est le principe stipulant que pour pour accéder à l&rsquo;état d&rsquo;un objet ou le modifier, il faut passer par des &ldquo;routines&rdquo; (fonction-membre en C++, méthode en Java, &hellip;).
 Ce principe s&rsquo;accompagne souvent du masquage de l&rsquo;état des objets, c&rsquo;est-à-dire de la déclaration des attributs dans la partie privée de la classe.<br>
 Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de classe plus facilement.</p>
-<p>Reprenons l&rsquo;exemple de la classe <code>SortedList</code>.
+<p>Reprenons l&rsquo;exemple de la classe <code>ListeCroissante</code>.
 On ne laissera pas l&rsquo;utilisateur accéder directement au tableau contenant les valeurs.
 En effet, il pourrait ajouter un élément à la fin, ce qui aurait de grandes chances de briser l&rsquo;invariant de classe.
 S&rsquo;il veut ajouter un élément, on le forcera à passer par notre fonction-membre qui fera respecter cet invariant.</p>
@@ -172,7 +172,7 @@ S&rsquo;il veut ajouter un élément, on le forcera à passer par notre fonction
             <li class="" data-nav-id="/chapter2/3-constructor/index.html"><a class="padding" href="../../chapter2/3-constructor/index.html">Constructeur 🔨<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter2/4-destructor/index.html"><a class="padding" href="../../chapter2/4-destructor/index.html">Destructeur 💣<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter2/5-modules/index.html"><a class="padding" href="../../chapter2/5-modules/index.html">Modularité 🧱<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter2/6-polygon/index.html"><a class="padding" href="../../chapter2/6-polygon/index.html">Opérateurs ➗<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter2/6-operators/index.html"><a class="padding" href="../../chapter2/6-operators/index.html">Opérateurs ➗<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter2/test/index.html"><a class="padding" href="../../chapter2/test/index.html">Questionnaire ☑<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -246,9 +246,9 @@ S&rsquo;il veut ajouter un élément, on le forcera à passer par notre fonction
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1736852604" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1736852604" defer></script>
-    <script src="../../js/theme.js?1736852604" defer></script>
+    <script src="../../js/clipboard.min.js?1736936971" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1736936971" defer></script>
+    <script src="../../js/theme.js?1736936971" defer></script>
 
 
 

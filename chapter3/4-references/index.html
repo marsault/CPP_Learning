@@ -29,16 +29,16 @@ Modifier un argument Le premier cas d’utilisation des références avait déj�
 Pour rappel, lorsque vous passez un objet par valeur en paramètre d’une fonction, l’intégralité de l’instance est copiée !">
     <meta itemprop="wordCount" content="304">
     <title>Usage des références 🔀 :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1736852604" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1736852604" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1736852604" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1736852604" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1736852604" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1736852604" rel="stylesheet">
-    <link href="../../css/fonts.css?1736852604" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1736852604" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1736852604" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1736852604" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1736852604" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1736852604" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1736852604"></script>
+    <link href="../../css/fontawesome-all.min.css?1736936971" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1736936971" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1736936971" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1736936971" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1736936971" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1736936971" rel="stylesheet">
+    <link href="../../css/fonts.css?1736936971" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1736936971" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1736936971" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1736936971" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1736936971" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1736936971" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1736936971"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -529,16 +529,18 @@ Conclusion, on a généré un undefined behavior !</p>
 </ul>
 <p>Attention à bien prendre en compte <strong>la durée de vie des données</strong> lorsque vous définissez une fonction qui renvoie son résultat par référence, ou lorsque vous initialisez des attributs-références.</p>
 <p>Aide-mémoire pour le passage des paramètres (fonctionne dans la plupart des cas) :</p>
-<pre class="mermaid">flowchart TD;
-    Q1(Est-ce que la fonction est censée<br/>avoir un effet de bord sur l'argument ?)
+<pre class="mermaid align-center ">
+%%{init: {&#34;flowchart&#34;: {&#34;htmlLabels&#34;: false}} }%%
+flowchart TD;
+    Q1(Est-ce que la fonction est censée avoir un effet de bord sur le paramètre ?)
     Ref[Passage par référence non-constante]
-    Q2("Est-ce que la copie de l'argument est coûteuse ?<br/>(allocation dynamique, appels-système, calculs complexes, ...)")
-    CRef[Passage par référence constante]
+    Q2(&#34;Est-ce que la copie du parametre est couteux?&lt;br/&gt;(allocation dynamique, appels-système, calculs complexes, ...)&#34;)
+    CRef[Passage par reference constante]
     Value[Passage par valeur]
-    Q1 -->|Oui| Ref
-    Q1 -->|Non| Q2
-    Q2 -->|Oui| CRef
-    Q2 -->|Non| Value
+    Q1 --&gt;|Oui| Ref
+    Q1 --&gt;|Non| Q2
+    Q2 --&gt;|Oui| CRef
+    Q2 --&gt;|Non| Value
 </pre>
 
   <footer class="footline">
@@ -642,9 +644,23 @@ Conclusion, on a généré un undefined behavior !</p>
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1736852604" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1736852604" defer></script>
-    <script src="../../js/theme.js?1736852604" defer></script>
+    <script src="../../js/clipboard.min.js?1736936971" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1736936971" defer></script>
+    <script src="../../js/d3/d3-color.min.js?1736936971" defer></script>
+    <script src="../../js/d3/d3-dispatch.min.js?1736936971" defer></script>
+    <script src="../../js/d3/d3-drag.min.js?1736936971" defer></script>
+    <script src="../../js/d3/d3-ease.min.js?1736936971" defer></script>
+    <script src="../../js/d3/d3-interpolate.min.js?1736936971" defer></script>
+    <script src="../../js/d3/d3-selection.min.js?1736936971" defer></script>
+    <script src="../../js/d3/d3-timer.min.js?1736936971" defer></script>
+    <script src="../../js/d3/d3-transition.min.js?1736936971" defer></script>
+    <script src="../../js/d3/d3-zoom.min.js?1736936971" defer></script>
+    <script src="../../js/js-yaml.min.js?1736936971" defer></script>
+    <script src="../../js/mermaid.min.js?1736936971" defer></script>
+    <script>
+      window.themeUseMermaid = JSON.parse("{}");
+    </script>
+    <script src="../../js/theme.js?1736936971" defer></script>
 
 
 

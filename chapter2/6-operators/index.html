@@ -18,7 +18,7 @@ Nous en profiterons aussi pour vous expliquer comment définir un alias de type 
 Définition Un opérateur est une fonction, mais qui peut être appelée avec une syntaxe “simplifiée”.
 Prenons l’exemple de la concaténation de std::string :
 auto a = std::string { &#34;a&#34; }; auto b = std::string { &#34;b&#34; }; auto ab = a &#43; b; Dans le code ci-dessus, l’expression a &#43; b est en fait un appel à une fonction dont la signature est quelque chose comme: operator&#43;(std::string, std::string).">
-    <meta property="og:url" content="/chapter2/6-polygon/index.html">
+    <meta property="og:url" content="/chapter2/6-operators/index.html">
     <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
     <meta property="og:title" content="Opérateurs ➗ :: Cours de C&#43;&#43; - Niveau Master">
     <meta property="og:description" content="Sur cette page, nous vous montrerons comment implémenter vos propres opérateurs.
@@ -37,16 +37,16 @@ Prenons l’exemple de la concaténation de std::string :
 auto a = std::string { &#34;a&#34; }; auto b = std::string { &#34;b&#34; }; auto ab = a &#43; b; Dans le code ci-dessus, l’expression a &#43; b est en fait un appel à une fonction dont la signature est quelque chose comme: operator&#43;(std::string, std::string).">
     <meta itemprop="wordCount" content="719">
     <title>Opérateurs ➗ :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1736852604" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1736852604" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1736852604" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1736852604" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1736852604" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1736852604" rel="stylesheet">
-    <link href="../../css/fonts.css?1736852604" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1736852604" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1736852604" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1736852604" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1736852604" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1736852604" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1736852604"></script>
+    <link href="../../css/fontawesome-all.min.css?1736936971" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1736936971" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1736936971" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1736936971" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1736936971" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1736936971" rel="stylesheet">
+    <link href="../../css/fonts.css?1736936971" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1736936971" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1736936971" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1736936971" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1736936971" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1736936971" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1736936971"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -67,7 +67,7 @@ auto a = std::string { &#34;a&#34; }; auto b = std::string { &#34;b&#34; }; auto
       window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../chapter2/6-polygon/index.html">
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../chapter2/6-operators/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -356,18 +356,18 @@ Plutôt pratique, non ?</p>
 <p>Pour vérifier que le programme fonctionne correctement, vous allez utiliser le debuggeur.<br>
 Pensez bien à compiler votre programme avec <code>-g</code> et à modifier la valeur de <code>program</code> dans le fichier <code>.vscode/launch.json</code>.</p>
 <p>Placez ensuite un breakpoint sur la ligne <code>polygon.add_vertex(2, 3);</code> du <code>main</code>.<br>
-<a href="#R-image-93afc6cfb88ad03d6da07f7091bb9564" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter2/6-breakpoint-v2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-93afc6cfb88ad03d6da07f7091bb9564"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter2/6-breakpoint-v2.png"></a></p>
+<a href="#R-image-ffe00f8da45a2604af2b9427df77f71f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter2/6-breakpoint-v2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ffe00f8da45a2604af2b9427df77f71f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter2/6-breakpoint-v2.png"></a></p>
 <p>Lancez ensuite le programme avec F5.<br>
 Votre vue devrait désormais ressembler à celle-ci si vous vous placez dans l&rsquo;onglet <code>Exécution</code> à gauche :
-<a href="#R-image-1a079a676e2b34c5d519561ef0dc305e" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter2/6-execution-v2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-1a079a676e2b34c5d519561ef0dc305e"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter2/6-execution-v2.png"></a></p>
+<a href="#R-image-e6bb3a4ec997247ad3827229cdb935f1" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter2/6-execution-v2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e6bb3a4ec997247ad3827229cdb935f1"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter2/6-execution-v2.png"></a></p>
 <p>Dans la fenêtre des variables, en haut à gauche, cliquez sur la variable <code>polygon</code>, puis sur son membre <code>_vertices</code>.<br>
 Celui-ci ne devrait rien contenir.</p>
 <p>Appuyez sur F10 pour exécuter l&rsquo;instruction sur la ligne 9.<br>
 Vous devriez constater que <code>_vertices</code> contient désormais le sommet (2, 3).
-<a href="#R-image-f75e586570992cb0ff268fb289a7e820" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter2/6-vertices.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f75e586570992cb0ff268fb289a7e820"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter2/6-vertices.png"></a></p>
+<a href="#R-image-cdb7fae179d7f5b1ae47f79055b3c23b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter2/6-vertices.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-cdb7fae179d7f5b1ae47f79055b3c23b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter2/6-vertices.png"></a></p>
 <hr>
 <h3 id="opérateur-dindice">Opérateur d&rsquo;indice</h3>
 <p>Décommentez les instructions :</p>
@@ -424,9 +424,10 @@ Ce flux est ensuite renvoyé comme valeur de retour, afin de pouvoir chaîner l&
 </span></span><span class="line"><span class="cl"><span class="c1">// =&gt; std::cout &lt;&lt; polygon
 </span></span></span><span class="line"><span class="cl"><span class="c1">//    ^^^^^^^^^^^^^^^^^^^^ &lt;&lt; std::endl
 </span></span></span></code></pre></div>
-<p>Comme la première opérande n&rsquo;est pas de type <code>Polygon</code>, nous ne pouvons pas implémenter l&rsquo;opérateur <code>&lt;&lt;</code> en tant que fonction-membre de <code>Polygon</code>.<br>
-On peut néanmoins définir une fonction libre, dont le prototype est :</p>
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="n">Polygon</span> <span class="n">polygon</span><span class="p">);</span></span></span></code></pre></div>
+<p>Comme la première opérande n&rsquo;est pas de type <code>Polygon</code>, nous ne pouvons pas implémenter l&rsquo;opérateur <code>&lt;&lt;</code> en tant que fonction-membre de <code>Polygon</code>
+On doit définir une fonction libre dont le prototype est le suivant.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Polygon</span><span class="o">&amp;</span> <span class="n">polygon</span><span class="p">);</span></span></span></code></pre></div>
+<p>On peut voir qu&rsquo;on utilise une référence (<code>std::ostream&amp;</code>) et une référence constante (<code>const Polygon&amp;</code>).  Nous verrons pourquoi plus en détail dans le <a href="../../chapter3/index.html">chapitre suivant</a>.</p>
 <p>Essayez d&rsquo;implémenter cette fonction.
 Vous placerez la déclaration dans <code>Polygon.h</code> et la définition dans <code>Polygon.cpp</code>.
 Pour son contenu, faites pour le moment en sorte qu&rsquo;elle affiche <code>&quot;This is a polygon&quot;</code> dans le flux.</p>
@@ -457,9 +458,9 @@ Pour son contenu, faites pour le moment en sorte qu&rsquo;elle affiche <code>&qu
 </span></span><span class="line"><span class="cl">    <span class="p">...</span>
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line hl"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="n">Polygon</span> <span class="n">polygon</span><span class="p">);</span></span></span></code></pre></div>
+</span></span><span class="line hl"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Polygon</span><span class="o">&amp;</span> <span class="n">polygon</span><span class="p">);</span></span></span></code></pre></div>
 <p>Dans <code>Polygon.cpp</code> :</p>
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="n">Polygon</span> <span class="n">polygon</span><span class="p">)</span>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Polygon</span><span class="o">&amp;</span> <span class="n">polygon</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;This is a polygon&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">stream</span><span class="p">;</span>
@@ -614,7 +615,7 @@ Dans le cas ci-dessus, c&rsquo;est acceptable car on ne peut pas définir l&rsqu
             <li class="" data-nav-id="/chapter2/3-constructor/index.html"><a class="padding" href="../../chapter2/3-constructor/index.html">Constructeur 🔨<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter2/4-destructor/index.html"><a class="padding" href="../../chapter2/4-destructor/index.html">Destructeur 💣<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter2/5-modules/index.html"><a class="padding" href="../../chapter2/5-modules/index.html">Modularité 🧱<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active " data-nav-id="/chapter2/6-polygon/index.html"><a class="padding" href="../../chapter2/6-polygon/index.html">Opérateurs ➗<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/chapter2/6-operators/index.html"><a class="padding" href="../../chapter2/6-operators/index.html">Opérateurs ➗<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter2/test/index.html"><a class="padding" href="../../chapter2/test/index.html">Questionnaire ☑<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -650,7 +651,7 @@ Dans le cas ci-dessus, c&rsquo;est acceptable car on ne peut pas définir l&rsqu
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Langue</label>
                     <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
-                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../chapter2/6-polygon/index.html" lang="fr" selected>Français</option>
+                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../chapter2/6-operators/index.html" lang="fr" selected>Français</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -688,9 +689,9 @@ Dans le cas ci-dessus, c&rsquo;est acceptable car on ne peut pas définir l&rsqu
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1736852604" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1736852604" defer></script>
-    <script src="../../js/theme.js?1736852604" defer></script>
+    <script src="../../js/clipboard.min.js?1736936971" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1736936971" defer></script>
+    <script src="../../js/theme.js?1736936971" defer></script>
 
 
 
