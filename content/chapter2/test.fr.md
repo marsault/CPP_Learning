@@ -10,7 +10,7 @@ Quel est le terme C++ permettant de désigner les "méthodes" d'une classe ?
 {{% /test_item %}}
 
 {{% test_item %}}
-Supposons une classe `Cercle` disposant d'un attribut `_points` de type `std::vector<point>`. Quel invariant cette classe pourrait-elle décider d'enforcer ?
+Supposons deux classes: `Points` qui implémente un point dans le plan et `Cercle` disposant d'un attribut `_points` de type `std::vector<point>`. Quel invariant cette classe pourrait-on décider d'implémenter dans `Cercle` ?
 {{% /test_item %}}
 
 {{% test_item %}}
@@ -42,14 +42,14 @@ Dans un constructeur, comment s'appelle la zone dans laquelle on initialise les 
 {{% /test_item %}}
 
 {{% test_item %}}
-A quoi fait-on généralement référence lorsque l'on parle d'implémentation par défaut ?
+A quoi fait-on référence lorsque l'on parle d'implémentation par défaut ?
 {{% /test_item %}}
 
 ---
 
 {{% test_item %}}
 Supposons une fonction-membre `bool hello() const` définie dans une classe `Greetings`.  
-Que faut-il faire pour l'implémenter dans un .cpp séparé ?
+Que faut-il écrire pour l'implémenter dans un .cpp séparé ?
 {{% /test_item %}}
 
 {{% test_item %}}
@@ -66,7 +66,7 @@ Quel est le problème ?
 ---
 
 {{% test_item %}}
-Donnez la signature de l'opérateur `<<` permettant d'afficher le contenu une variable de type `Cat` dans un flux de sortie.
+Donnez la signature de l'opérateur `<<` que l'on doit définir pour afficher notre classe `Cat` grâce à un flux de sortie.
 {{% /test_item %}}
 
 {{% test_item %}}
@@ -97,7 +97,7 @@ Ce code ne compile pas pour deux raisons. Quelles sont-elles ?
 {{% /test_item %}}
 
 {{% test_item %}}
-Essayez d'identifier un autre problème lié au constructeur à 1 paramètre.  
+Identifiez un autre problème lié au constructeur à 1 paramètre.  
 Il ne s'agit pas d'un problème de compilation.
 {{% /test_item %}}
 

@@ -398,16 +398,18 @@ Les références permettent :
 Attention à bien prendre en compte **la durée de vie des données** lorsque vous définissez une fonction qui renvoie son résultat par référence, ou lorsque vous initialisez des attributs-références.
 
 Aide-mémoire pour le passage des paramètres (fonctionne dans la plupart des cas) :
-```mermaid
+
+{{< mermaid >}}
+%%{init: {"flowchart": {"htmlLabels": false}} }%%
 flowchart TD;
-    Q1(Est-ce que la fonction est censée<br/>avoir un effet de bord sur l'argument ?)
+    Q1(Est-ce que la fonction est censée avoir un effet de bord sur le paramètre ?)
     Ref[Passage par référence non-constante]
-    Q2("Est-ce que la copie de l'argument est coûteuse ?<br/>(allocation dynamique, appels-système, calculs complexes, ...)")
-    CRef[Passage par référence constante]
+    Q2("Est-ce que la copie du parametre est couteux?<br/>(allocation dynamique, appels-système, calculs complexes, ...)")
+    CRef[Passage par reference constante]
     Value[Passage par valeur]
     Q1 -->|Oui| Ref
     Q1 -->|Non| Q2
     Q2 -->|Oui| CRef
     Q2 -->|Non| Value
-```
+{{< /mermaid >}}
 

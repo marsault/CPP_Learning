@@ -27,7 +27,7 @@ Si une classe `Personne` définit deux attributs `nom` et `age`, alors l'état d
 #### Interface
 
 L'interface est l'ensemble des procédés permettant d'accéder à l'état d'un objet ou de le modifier.  
-Selon les langages, elle ne se présente pas de la même manière. En C++, elle se compose des **fonctions-membres** de la classe, ainsi que de ses éventuels attributs publics.
+Selon les langages, elle ne se présente pas de la même manière. En C++, elle se compose des **fonctions-membres** de la classe (appelées **méthodes** en Java), ainsi que de ses éventuels attributs publics.
 
 #### Invariant de classe
 
@@ -38,7 +38,7 @@ Un **invariant de classe** est une condition que toutes les instances de cette c
 
 Lorsqu'une fonction-membre publique est appelée, on peut toujours supposer qu'à son entrée, les invariants sont garantis.
 En contre-partie, il faut que l'implémentation de la fonction garantisse également qu'à la sortie, les invariants seront toujours vrais.  
-Par exemple, la fonction `SortedList::insert()` n'a pas besoin de vérifier que la liste est triée au début, car on part du principe que l'invariant est forcément vrai dès l'entrée.
+Par exemple, la fonction `ListeCroissante::insert()` n'a pas besoin de vérifier que la liste est triée au début, car on part du principe que l'invariant est forcément vrai dès l'entrée.
 On peut donc utiliser la recherche dichotomique pour trouver où doit être inséré le nouvel élément, ce qui est moins coûteux que si on avait à faire une recherche linéaire.  
 L'invariant permet donc ici de gagner en temps de calcul.
 
@@ -48,7 +48,7 @@ L'**encapsulation** est le principe stipulant que pour pour accéder à l'état 
 Ce principe s'accompagne souvent du masquage de l'état des objets, c'est-à-dire de la déclaration des attributs dans la partie privée de la classe.  
 Respecter le principe d'encapsulation permet de garantir les invariants de classe plus facilement.
 
-Reprenons l'exemple de la classe `SortedList`.
+Reprenons l'exemple de la classe `ListeCroissante`.
 On ne laissera pas l'utilisateur accéder directement au tableau contenant les valeurs.
 En effet, il pourrait ajouter un élément à la fin, ce qui aurait de grandes chances de briser l'invariant de classe.
 S'il veut ajouter un élément, on le forcera à passer par notre fonction-membre qui fera respecter cet invariant.

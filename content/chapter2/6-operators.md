@@ -285,11 +285,14 @@ std::cout << polygon << std::endl;
 //    ^^^^^^^^^^^^^^^^^^^^ << std::endl
 ```
 
-Comme la première opérande n'est pas de type `Polygon`, nous ne pouvons pas implémenter l'opérateur `<<` en tant que fonction-membre de `Polygon`.  
-On peut néanmoins définir une fonction libre, dont le prototype est :
+Comme la première opérande n'est pas de type `Polygon`, nous ne pouvons pas implémenter l'opérateur `<<` en tant que fonction-membre de `Polygon` 
+On doit définir une fonction libre dont le prototype est le suivant.
 ```cpp
-std::ostream& operator<<(std::ostream& stream, Polygon polygon);
+std::ostream& operator<<(std::ostream& stream, const Polygon& polygon);
 ```
+On peut voir qu'on utilise une référence (`std::ostream&`) et une référence constante (`const Polygon&`).  Nous verrons pourquoi plus en détail dans le [chapitre suivant]({{% ref chapter3 %}}).
+
+
 
 Essayez d'implémenter cette fonction.
 Vous placerez la déclaration dans `Polygon.h` et la définition dans `Polygon.cpp`.
@@ -311,12 +314,12 @@ class Polygon
     ...
 };
 
-std::ostream& operator<<(std::ostream& stream, Polygon polygon);
+std::ostream& operator<<(std::ostream& stream, const Polygon& polygon);
 ```
 
 Dans `Polygon.cpp` :
 ```cpp
-std::ostream& operator<<(std::ostream& stream, Polygon polygon)
+std::ostream& operator<<(std::ostream& stream, const Polygon& polygon)
 {
     stream << "This is a polygon";
     return stream;

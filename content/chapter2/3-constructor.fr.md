@@ -126,6 +126,26 @@ Pour terminer, supprimez le setter pour `_name`, puisque celui-ci n'est plus uti
 
 ---
 
+
+{{% notice warning %}}
+Pour des raisons techniques et historiques, il y a en C++ plusieurs façon d'appeler les constructeurs.  Pour la classe `Dog` définie plus haut, les instructions ci-dessous vont créer un nouvel objet dog en appelant le même constructeur.
+```cpp
+Dog  dog1 { "Colley", "Lassie" };       /* 1 */
+Dog  dog2 ( "Colley", "Lassie" );       /* 2 */
+Dog  dog3 = {"Colley", "Lassie"};       /* 3 */
+auto dog4 = Dog { "Colley", "Lassie" }; /* 4 */
+auto dog5 = Dog ( "Colley", "Lassie" ); /* 5 */
+```
+En revanche, dans d'autres circonstances, ces lignes pourraient appeler des constructeurs différents.
+Par exemple, nous verrons dans le [chapitre 5]({{% ref chapter5 %}}) que `std::vector<int>(1,2)` et `std::vector<int>{1,2}` ne construisent pas le même objet.  
+
+
+
+En général dans ce cours, on utilisera les méthodes 1 et 4, sauf si on doit utiliser une des autres.
+{{% /notice %}}
+
+---
+
 ### Le constructeur par défaut
 
 Modifiez l'instanciation de `p` dans la fonction `main` de manière à ne plus lui passer d'arguments (comme c'était le cas avant de commencer l'exercice) :
@@ -173,8 +193,9 @@ public:
 ```
 
 {{% notice note %}}
-1\. Si aucun attribut n'est initialisé dans la liste d'initialisation d'un constructeur, il est nécessaire d'omettre complètement cette liste (c'est-à-dire écrire `Person() {}` plutôt que `Person() : {}`).  
-2\. Si un attribut n'est pas initialisé via la liste d'initialisation, il est automatiquement initialisé selon les mêmes règles que celles définies pour l'implémentation par défaut du constructeur par défaut. C'est la raison pour laquelle il n'est pas nécessaire de spécifier à nouveau `_age` dans la liste d'initialisation du constructeur à 2 paramètres.
+1. Si aucun attribut n'est initialisé dans la liste d'initialisation d'un constructeur, il faut omettre complètement cette liste (c'est-à-dire écrire `Person() {}` plutôt que `Person() : {}`).  
+2. Si un attribut n'est pas initialisé via la liste d'initialisation, il est automatiquement initialisé selon les mêmes règles que celles définies pour l'implémentation par défaut du constructeur par défaut. C'est la raison pour laquelle il n'est pas nécessaire de spécifier à nouveau `_age` dans la liste d'initialisation du constructeur à 2 paramètres. 
+3. On verra plus tard que le compilateur fournit une implémentation par défaut pour d'autres constructeurs et opérateurs.
 {{% /notice %}}
 
 ---

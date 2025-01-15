@@ -67,11 +67,11 @@ class Person
 int main()
 {
     Person p;
-    ...
+    /* ... */
 }
 ```
 Pour la compilation, on peut se placer dans le répertoire `chap-02` et exécuter :
-```b
+```
 g++ -std=c++17 -o 1-first_class 1-first_class.cpp
 ```
 {{% /hidden-solution %}}
