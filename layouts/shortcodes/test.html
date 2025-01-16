@@ -13,7 +13,7 @@
 
 </script>
 
-<form id="test" data-chapter="{{ .Params.chapter }}" data-year="2024" method=POST action="https://formsubmit.co/{{ .Site.Params.formsubmitco_token }}">
+<form id="test" data-chapter="{{ .Params.chapter }}" target="test-submitted" data-year="2024" method=POST action="https://formsubmit.co/{{ .Site.Params.formsubmitco_token }}">
   <label>Vous êtes :</label>
   <input type="text" name="name" placeholder="Prénom Nom" required onchange="updateTestSubject()" />
 
@@ -55,5 +55,6 @@
   <input type="submit" disabled style="display: none" aria-hidden="true" />
   <input type="submit" value="Valider" />
 </form>
+<iframe class="hidden" name="test-submitted" src=""></iframe>
 
 <script src="{{"js/save-test-answers-v2.js"| relURL}}"></script>
