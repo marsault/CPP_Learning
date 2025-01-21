@@ -1,5 +1,5 @@
 ---
-title: "Copie"
+title: "Copie 📋"
 weight: 2
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Minimiser les copies"
+title: "Minimiser les copies 🔥"
 weight: 6
 ---
 

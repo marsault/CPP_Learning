@@ -1,5 +1,5 @@
 ---
-title: "Affectation"
+title: "Affectation 📝"
 weight: 4
 ---
 

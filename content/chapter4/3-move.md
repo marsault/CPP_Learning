@@ -1,5 +1,5 @@
 ---
-title: "Déplacement"
+title: "Déplacement ✂"
 weight: 3
 ---
 

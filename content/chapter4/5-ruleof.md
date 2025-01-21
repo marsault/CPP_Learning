@@ -1,5 +1,5 @@
 ---
-title: "Règle des 0, 3 ou 5"
+title: "Règle des 0, 3 ou 5 📐"
 weight: 5
 ---
 
