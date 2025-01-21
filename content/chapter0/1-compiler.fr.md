@@ -28,7 +28,7 @@ MSYS2 contient en particulier MinGW, qui est l'équivalent du compilateur gcc/g+
 La dernière ligne devrait maintenant indiquer une version de gcc >= 9.
 
 Testez maintenant que tout fonctionne en suivant les étapes ci-dessous.
-1. Téléchargez {{< open_in_new_tab "/code/helloworld.cpp" "ce fichier" />}}.
+1. Téléchargez [ce fichier](/chapter0/helloworld.cpp).
 2. Ouvrez une fenêtre Powershell dans le répertoire contenant le fichier (vous pouvez utiliser `Shift + Clic Droit` depuis l'explorateur de fichiers pour faire apparaître l'option dans le menu contextuel).
 ![](/images/chapter0/powershell.png)
 3. Exécutez la commande `g++ .\helloworld.cpp -o hello`\

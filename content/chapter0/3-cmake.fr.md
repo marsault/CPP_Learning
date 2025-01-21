@@ -36,7 +36,7 @@ Afin de pouvoir utiliser CMake facilement depuis VSCode, il faut installer les e
 5. Vérifiez que vous avez accès aux commandes `CMake` depuis le panneau de commandes (`View > Command Palette ...` ou `Ctrl + Shift + P`).
 
 Vérifiez maintenant votre installation.
-1. Téléchargez et extrayez {{< open_in_new_tab "/code/hello.zip" "cette archive" />}} dans un nouveau dossier.
+1. Téléchargez et extrayez [cette archive](../hello.zip) dans un nouveau dossier.
 2. Ouvrez ce dossier depuis VSCode.
 ![](/images/chapter0/folder-vscode.png)
 3. Exécutez la commande `CMake: Configure`.
