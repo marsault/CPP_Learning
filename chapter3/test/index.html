@@ -31,18 +31,18 @@
 2. A quoi sert le mot-clef delete[] ?
 3. Quels sont les deux événements qui délimitent la durée de vie d’une donnée ?
 4. Qu’est-ce qu’une dangling-reference ?">
-    <meta itemprop="wordCount" content="380">
+    <meta itemprop="wordCount" content="427">
     <title>Questionnaire ☑ :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1737544953" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737544953" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737544953" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737544953" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737544953" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737544953" rel="stylesheet">
-    <link href="../../css/fonts.css?1737544953" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737544953" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737544953" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737544953" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737544953" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737544953" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737544953"></script>
+    <link href="../../css/fontawesome-all.min.css?1737574881" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737574881" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737574881" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737574881" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737574881" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737574881" rel="stylesheet">
+    <link href="../../css/fonts.css?1737574881" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737574881" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737574881" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737574881" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737574881" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737574881" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737574881"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -216,15 +216,26 @@ Donnez un exemple de situation dans lequel on peut en avoir une." rows="1" cols=
 (N’hésitez pas à aller voir la documentation de map si vous ne comprenez pas ce que font certaines instructions)" rows="10" cols="50"></textarea>
 <hr>
 <p>Les prochaines questions concernent le code suivant :</p>
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Person</span>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Person</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>    
+</span></span><span class="line"><span class="cl">    <span class="n">Person</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span> <span class="o">:</span> <span class="n">_name</span><span class="p">{</span><span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">{</span><span class="n">name</span><span class="p">}}</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">~</span><span class="n">Person</span><span class="p">()</span> <span class="p">{</span> <span class="k">delete</span> <span class="n">_name</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">*</span> <span class="n">_name</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Dog</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Dog</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Person</span><span class="o">&amp;</span> <span class="n">human</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Person</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">human</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="o">:</span> <span class="n">_name</span><span class="p">{</span><span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">{</span><span class="n">name</span><span class="p">}}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">_owner</span><span class="p">{</span><span class="n">human</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">_owner_name</span><span class="p">{</span><span class="n">human</span><span class="p">.</span><span class="n">name</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Person</span><span class="o">&amp;</span> <span class="n">_owner</span>
+</span></span><span class="line"><span class="cl">    <span class="nl">std</span><span class="p">:</span><span class="n">string</span><span class="o">*</span> <span class="n">_owner_name</span>
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
@@ -238,16 +249,18 @@ Donnez un exemple de situation dans lequel on peut en avoir une." rows="1" cols=
 <textarea id="q8" name="8- Qui own jean ?" rows="1" cols="50"></textarea>
 <p><label for="q9">9. Qui own <code>attila</code> ?</label></p>
 <textarea id="q9" name="9- Qui own attila ?" rows="1" cols="50"></textarea>
-<p><label for="q10">10. Qui own <code>attila.human</code> ?</label></p>
-<textarea id="q10" name="10- Qui own attila.human ?" rows="1" cols="50"></textarea>
-<p><label for="q11">11. Qui own <code>attila.name</code> ?</label></p>
-<textarea id="q11" name="11- Qui own attila.name ?" rows="1" cols="50"></textarea>
-<p><label for="q12">12. <code>people[0]</code> et <code>people[1]</code> sont-ils plutôt des pointeurs ownants ou observants ?<br>
-Justifiez.</label></p>
-<textarea id="q12" name="12- people［0］ et people［1］ sont-ils plutôt des pointeurs ownants ou observants ?
-Justifiez." rows="3" cols="50"></textarea>
-<p><label for="q13">13. Quel problème associé à la mémoire peut-on relever dans ce code ?</label></p>
-<textarea id="q13" name="13- Quel problème associé à la mémoire peut-on relever dans ce code ?" rows="1" cols="50"></textarea>
+<p><label for="q10">10. Qui own <code>attila.owner</code> ?</label></p>
+<textarea id="q10" name="10- Qui own attila.owner ?" rows="1" cols="50"></textarea>
+<p><label for="q11">11. Qui own <code>attila._name</code> ?</label></p>
+<textarea id="q11" name="11- Qui own attila._name ?" rows="1" cols="50"></textarea>
+<p><label for="q12">12. Pensez-vous que <code>jean._name</code> est un pointeur ownant?  Justifiez.</label></p>
+<textarea id="q12" name="12- Pensez-vous que jean._name est un pointeur ownant? Justifiez." rows="3" cols="50"></textarea>
+<p><label for="q13">13. Pensez-vous que <code>attila._owner_name</code> est un pointeur ownant?  Justifiez.</label></p>
+<textarea id="q13" name="13- Pensez-vous que attila._owner_name est un pointeur ownant? Justifiez." rows="3" cols="50"></textarea>
+<p><label for="q14">14. Pensez-vous que les pointeurs dans <code>people</code> sont ownants ou observants ?  Justifiez.</label></p>
+<textarea id="q14" name="14- Pensez-vous que les pointeurs dans people sont ownants ou observants ? Justifiez." rows="3" cols="50"></textarea>
+<p><label for="q15">15. Quel problème associé à la mémoire peut-on relever dans ce code ?</label></p>
+<textarea id="q15" name="15- Quel problème associé à la mémoire peut-on relever dans ce code ?" rows="1" cols="50"></textarea>
 
 
   <hr/>
@@ -373,9 +386,9 @@ Justifiez." rows="3" cols="50"></textarea>
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737544953" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737544953" defer></script>
-    <script src="../../js/theme.js?1737544953" defer></script>
+    <script src="../../js/clipboard.min.js?1737574881" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737574881" defer></script>
+    <script src="../../js/theme.js?1737574881" defer></script>
 
 
 
