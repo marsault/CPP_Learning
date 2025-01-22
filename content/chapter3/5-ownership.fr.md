@@ -200,7 +200,7 @@ Dans cette seconde implémentation, il est probable que c'est `my_int_vect` qui 
 
 {{% notice warning %}}
 Sans preuve du contraire, il faut considérer un pointeur comme observant.
-En effet, c'est le comportement par défaut: la destruction d'un pointeur n'entraine **pas** la destructionn de la donnée pointée.
+En effet, c'est le comportement par défaut: la destruction d'un pointeur n'entraine **pas** la destruction de la donnée pointée.
 Pour qu'un pointeur soit ownant, il faut en avoir une preuve *manifeste*.
 {{% /notice %}}
 
@@ -347,9 +347,11 @@ Les références n'ayant pas d'impact sur le cycle de vie des données, lorsque 
 
 ### Synthèse
 
-- L'élément responsable du cycle de vie d'une donnée est son **owner**.  
-- Un **pointeur** est généralement **observant**.  Dans ce cas, il a le même rôle qu'une référence, si ce n'est qu'il peut être vide (= `nullptr`) et est réassignable.  
-- Un **pointeur** peut néanmoins être **ownant** dans certains cas.  Dans une classe, c'est souvent parce que la destruction de la classe se charge de détruire les objets pointées.
+- L'élément responsable du cycle de vie d'une donnée est son **owner**.
+- Une classe own ses champs qui ne sont pas des références.
+- Une fonction own ses variables locales qui ne sont pas des références.
+- Un **pointeur** est généralement **observant**, c'est-à-dire qu'il n'own pas la donnée pointée.  Dans ce cas, il a le même rôle qu'une référence, si ce n'est qu'il peut être vide (= `nullptr`) et est réassignable.  
+- Un **pointeur** peut néanmoins être **ownant** dans certains cas.  Dans une classe, c'est souvent parce que le destructeur de la classe détruit explicitement les données pointées.
 - Un graphe d'ownership permet de détecter différents problèmes :
   - Si une donnée est ownée par plusieurs éléments ➔ libération multiple,
   - Si on référence une donnée qui n'existe plus ➔ dangling-reference.
