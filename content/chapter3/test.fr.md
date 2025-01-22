@@ -98,15 +98,26 @@ Réécrivez les fonctions-membres de la classe `Dictionary` de manière à élim
 
 Les prochaines questions concernent le code suivant :
 ```cpp
-struct Person
+class Person
 {
-    std::string name;
+public:    
+    Person(const std::string& name) : _name{new std::string{name}} {}
+    ~Person() { delete _name; }
+    std::string* _name;
 };
 
-struct Dog
+class Dog
 {
-    std::string name;
-    Person& human
+public:
+    Person(const std::string& name, Person& human) 
+    : _name{new std::string{name}}
+    , _owner{human}
+    , _owner_name{human.name}
+    {}
+      
+    std::string _name;
+    Person& _owner
+    std:string* _owner_name
 };
 
 int main()
@@ -127,16 +138,23 @@ Qui own `attila` ?
 {{% /test_item %}}
 
 {{% test_item %}}
-Qui own `attila.human` ?
+Qui own `attila.owner` ?
 {{% /test_item %}}
 
 {{% test_item %}}
-Qui own `attila.name` ?
+Qui own `attila._name` ?
 {{% /test_item %}}
 
 {{% test_item lines=3 %}}
-`people[0]` et `people[1]` sont-ils plutôt des pointeurs ownants ou observants ?  
-Justifiez.
+Pensez-vous que `jean._name` est un pointeur ownant?  Justifiez.
+{{% /test_item %}}
+
+{{% test_item lines=3 %}}
+Pensez-vous que `attila._owner_name` est un pointeur ownant?  Justifiez.
+{{% /test_item %}}
+
+{{% test_item lines=3 %}}
+Pensez-vous que les pointeurs dans `people` sont ownants ou observants ?  Justifiez.
 {{% /test_item %}}
 
 {{% test_item %}}

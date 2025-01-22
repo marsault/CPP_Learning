@@ -155,9 +155,9 @@ En revanche, comme ces pointeurs ne contrôlent pas le cycle de vie de chacun de
 #### Pointeur-ownant
 
 En C++, rien  n'est simple, et les pointeurs sont parfois des **pointer-ownant**, c'est-à-dire des pointeurs responsables de la ressource pointée.
-C'est généralement déconseillé et on trouve ça plutôt dans le code légacy.  Si on veut un pointer qui own la ressource pointée, il faut utiliser des `std::unique_ptr` que l'on verra dans le [chapitre 5](chapter5).
+C'est généralement déconseillé et on trouve ça plutôt dans le code légacy.  Si on veut un pointer qui own la ressource pointée, on utilise plutôt des `std::unique_ptr` que l'on verra dans le [chapitre 5](chapter5).
 
-Un pointer est ownant s'il est **manifestement** le seul à avoir accès à la donnée pointé;  le problème avec cette phrase est le "manifestement", qui demande de lire le code en détail.
+Un pointer est ownant s'il gère *manifestement* la donnée pointée.  Le problème avec cette phrase est le "manifestement", qui demande d'analyser le code en détail.
 
 ```cpp
 int* get_int(int value)
@@ -176,12 +176,11 @@ void calling_function()
 
 Dans le code ci-dessus, à l'intérieur de la fonction `get_int`, `ptr` est un pointeur-ownant.
 En effet, on l'a défini dans l'objectif de stocker l'adresse d'un bloc mémoire fraîchement alloué pour stocker un entier.
-Il est par conséquent *manifestement* responsable du cycle de vie de cet entier.
-Puisque `get_int` renvoie ce pointeur, c'est ensuite `calling_function` qui en devient *manifestement* responsable.
+Il devrait par conséquent *manifestement* responsable du cycle de vie de cet entier.
+Puisque `get_int` renvoie ce pointeur, c'est ensuite `calling_function` qui en devient *manifestement* responsable, puisqu'il détruit.
 
-On voit bien que c'est une mauvaise pratique, car du point de vue de `calling_function`, il est impossible de savoir
-s'il faut détruire `five` ou non.
-Par exemple, si on implémente `get_int`, il ne faudrait pas.
+On voit bien que c'est une mauvaise pratique.  Imaginons que c'est à vous d'écrire `calling_function`. Pour savoir si vous devez détruire `five` ou on, il faut analyser le code de `get_int`.
+Par exemple, si on implémente `get_int` comme en dessous, il ne faudrait pas.
 
 ```cpp
 std::vector<int*> my_int_vect;
@@ -197,8 +196,13 @@ int* get_int(int value)
 }
 ```
 
-Dans cette seconde implémentation, il est probable que c'est `my_int_vect` qui soit responsable de libérer le pointeur retourné par `get_int` (etça n'a rien de manifeste).
+Dans cette seconde implémentation, il est probable que c'est `my_int_vect` qui soit responsable de libérer le pointeur retourné par `get_int` (et ça n'a rien de manifeste).
 
+{{% notice warning %}}
+Sans preuve du contraire, il faut considérer un pointeur comme observant.
+En effet, c'est le comportement par défaut: la destruction d'un pointeur n'entraine **pas** la destructionn de la donnée pointée.
+Pour qu'un pointeur soit ownant, il faut en avoir une preuve *manifeste*.
+{{% /notice %}}
 
 ### Exercices pratiques
 
@@ -343,9 +347,9 @@ Les références n'ayant pas d'impact sur le cycle de vie des données, lorsque 
 
 ### Synthèse
 
-- L'élément responsable du cycle de vie d'une donnée est son **owner**.
-- Un **pointeur-ownant** doit libérer la donnée allouée ou bien transmettre cette responsabilité à un autre pointeur. 
-- Un **pointeur-observant** a le même rôle qu'une référence, si ce n'est qu'il peut être vide (= `nullptr`) et est réassignable.
+- L'élément responsable du cycle de vie d'une donnée est son **owner**.  
+- Un **pointeur** est généralement **observant**.  Dans ce cas, il a le même rôle qu'une référence, si ce n'est qu'il peut être vide (= `nullptr`) et est réassignable.  
+- Un **pointeur** peut néanmoins être **ownant** dans certains cas.  Dans une classe, c'est souvent parce que la destruction de la classe se charge de détruire les objets pointées.
 - Un graphe d'ownership permet de détecter différents problèmes :
   - Si une donnée est ownée par plusieurs éléments ➔ libération multiple,
   - Si on référence une donnée qui n'existe plus ➔ dangling-reference.
