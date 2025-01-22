@@ -103,38 +103,12 @@ On peut donc dire que `drivers` own chacun des éléments de type `Driver` ajout
 
 ![std::vector](/images/chapter3/ownership/04-vector.svg)
 
-#### Pointeur-ownant
 
-Si on considère qu'un pointeur est responsable du cyle de vie de la donnée pointée, on parlera de **pointeurs-ownants**.
 
-```cpp
-int* create_int(int value)
-{
-    auto* ptr = new int { value };
-    return ptr;
-}
+#### Pointeur(-observant)
 
-int main()
-{
-    auto* five = create_int(5);
-    std::cout << *five << std::endl; 
-    delete five;
-
-    return 0;
-}
-```
-
-Dans le code ci-dessus, à l'intérieur de la fonction `create_int`, `ptr` est un pointeur-ownant.  
-En effet, on l'a défini dans l'objectif de stocker l'adresse d'un bloc mémoire fraîchement alloué pour stocker un entier.
-Il est par conséquent responsable du cycle de vie de cet entier.  
-Comme `ptr` est la valeur de retour de `create_int`, cette responsabilité est transmise à `five` au retour dans la fonction `main`, faisant de lui un pointeur-ownant.  
-La responsabilité de la désinstanciation de l'entier étant attribué à `five`, on a pensé à exécuter `delete five` avant de sortir du `main`.
-
-![Pointeur-ownant](/images/chapter3/ownership/05-owning-ptr.svg)
-
-#### Pointeur-observant
-
-Un **pointeur-observant** est un pointeur qui n'est pas ownant. Ils servent simplement à référencer des données pré-existantes.  
+Un **pointeur** n'est pas ownant.  Comme les références, ils servent simplement à référencer des données pré-existantes.  
+Si un pointeur est désinstanciée, la donnée pointée ne l'est généralement pas !
 
 Mais du coup, vous devez vous demander quel est leur intérêt, sachant qu'on a déjà les références...  
 Eh bien les références ne permettent pas de faire autant de choses que les pointeurs.  
@@ -157,7 +131,7 @@ ptr = &data_2;
 // => data_1 n'a pas changé et ptr pointe désormais sur data_2
 ```
 
-Sachant qu'un pointeur-observant ne own pas son contenu, comment pourriez-vous dessiner le graphe d'ownership du programme suivant, une fois arrivé à la ligne 8 :
+Comment pourriez-vous dessiner le graphe d'ownership du programme suivant, une fois arrivé à la ligne 8 :
 ```cpp {linenos=table}
 int main()
 {
@@ -178,6 +152,53 @@ En revanche, comme ces pointeurs ne contrôlent pas le cycle de vie de chacun de
 {{% /hidden-solution %}}
 
 ---
+#### Pointeur-ownant
+
+En C++, rien  n'est simple, et les pointeurs sont parfois des **pointer-ownant**, c'est-à-dire des pointeurs responsables de la ressource pointée.
+C'est généralement déconseillé et on trouve ça plutôt dans le code légacy.  Si on veut un pointer qui own la ressource pointée, il faut utiliser des `std::unique_ptr` que l'on verra dans le [chapitre 5](chapter5).
+
+Un pointer est ownant s'il est **manifestement** le seul à avoir accès à la donnée pointé;  le problème avec cette phrase est le "manifestement", qui demande de lire le code en détail.
+
+```cpp
+int* get_int(int value)
+{
+    auto* ptr = new int { value };
+    return ptr;
+}
+
+void calling_function()
+{
+    auto* five = get_int(5);
+    std::cout << *five << std::endl; 
+    delete five; // Doit-ton détruire five ou pas ?
+}
+```
+
+Dans le code ci-dessus, à l'intérieur de la fonction `get_int`, `ptr` est un pointeur-ownant.
+En effet, on l'a défini dans l'objectif de stocker l'adresse d'un bloc mémoire fraîchement alloué pour stocker un entier.
+Il est par conséquent *manifestement* responsable du cycle de vie de cet entier.
+Puisque `get_int` renvoie ce pointeur, c'est ensuite `calling_function` qui en devient *manifestement* responsable.
+
+On voit bien que c'est une mauvaise pratique, car du point de vue de `calling_function`, il est impossible de savoir
+s'il faut détruire `five` ou non.
+Par exemple, si on implémente `get_int`, il ne faudrait pas.
+
+```cpp
+std::vector<int*> my_int_vect;
+
+int* get_int(int value)
+{
+    for (auto p : my_int_vect) 
+    {
+        if (*p == value)
+            return p
+    }
+    return nullptr;
+}
+```
+
+Dans cette seconde implémentation, il est probable que c'est `my_int_vect` qui soit responsable de libérer le pointeur retourné par `get_int` (etça n'a rien de manifeste).
+
 
 ### Exercices pratiques
 
