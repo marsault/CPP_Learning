@@ -25,16 +25,16 @@ Usage de la fonction std::move sur un exemple /// Passage par valeur // vvvvvvvv
 Usage de la fonction std::move sur un exemple /// Passage par valeur // vvvvvvvvvvv void f(std::vector&lt;std::string&gt; my_own_data) { for (auto&amp; s : my_own_data) std::cout &lt;&lt; &amp;s &lt;&lt; &#34; &#34;; // ^^ // On affiche l&#39;adresse des chaines de caractères std::cout &lt;&lt; std::endl; } int main() { std::vector&lt;std::string&gt; data = {&#34;Hello&#34;, &#34;World&#34;, &#34;!">
     <meta itemprop="wordCount" content="758">
     <title>Déplacement :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737667506" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737667506" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737667506" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737667506" rel="stylesheet">
-    <link href="../../css/fonts.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737667506" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737667506" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737667506" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737667506" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737667506" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737667506"></script>
+    <link href="../../css/fontawesome-all.min.css?1737668212" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737668212" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737668212" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737668212" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737668212" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737668212" rel="stylesheet">
+    <link href="../../css/fonts.css?1737668212" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737668212" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737668212" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737668212" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737668212" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737668212" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737668212"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -153,11 +153,11 @@ Le tableau dynamique <code>data</code> est maintenant vide.</p>
 <p>Rappelez-vous qu&rsquo;un <code>std::vector</code> est un tableau dynamique, donc ses éléments sont en fait sur le tas,
 et ce sont elles qui vont être copiées ou réattribuées à <code>my_own_data</code>, comme le montrent les deux diagrammes en dessous.</p>
 <h4 id="effet-sur-la-mémoire-du-premier-appel-à-f-copie">Effet sur la mémoire du premier appel à <code>f</code> (copie)</h4>
-<p><a href="#R-image-652aa9994aad1af2568f0d98ab28d56f" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_copy.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-652aa9994aad1af2568f0d98ab28d56f"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_copy.svg"></a></p>
+<p><a href="#R-image-60583d5c3effd141d124098cef1dbbbf" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_copy.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-60583d5c3effd141d124098cef1dbbbf"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_copy.svg"></a></p>
 <h4 id="effet-sur-la-mémoire-du-deuxième-appel-à-f-déplacement">Effet sur la mémoire du deuxième appel à <code>f</code> (déplacement)</h4>
-<p><a href="#R-image-9c54b53c09c26df0e1734f0cd1089ee8" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_move.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-9c54b53c09c26df0e1734f0cd1089ee8"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_move.svg"></a></p>
+<p><a href="#R-image-40b346cc9a808e4b72fb71f003a76aa5" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_move.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-40b346cc9a808e4b72fb71f003a76aa5"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_move.svg"></a></p>
 <h3 id="constructeur-de-déplacement">Constructeur de déplacement</h3>
 <p>Maintenant qu&rsquo;on a compris le principe du déplacement, encore faut-il pouvoir définir comment se déplace
 nos propres classes.  Etant donné une classe <code>MaClasse</code> le constructeur de déplacement a le prototype suivant.</p>
@@ -311,9 +311,9 @@ En fait, suivant le contenu de <code>f</code>, le compilateur peut décider de n
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737667506" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737667506" defer></script>
-    <script src="../../js/theme.js?1737667506" defer></script>
+    <script src="../../js/clipboard.min.js?1737668212" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737668212" defer></script>
+    <script src="../../js/theme.js?1737668212" defer></script>
 
 
 
