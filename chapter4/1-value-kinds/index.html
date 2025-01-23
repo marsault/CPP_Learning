@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.128.0">
+    <meta name="generator" content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619">
+    <meta name="description" content="Sur cette page, on va parler des catégories des expressions (L-value et R-values), ce qui permet de mieux comprendre comment le compilateur les traite.
+Remarque La catégorisation des expressions est en fait encore plus complexe que celle décrite ici. Il existe en C&#43;&#43; des GL-value, PR-value et X-value, mais ces notions ne sont pas au programme du cours.
+L-value Pour illustrer ce que sont les L-value, on utilisera le bout de code ci-dessous.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="L-value vs R-value :: Cours de C&#43;&#43; - Niveau Master">
+    <meta name="twitter:description" content="Sur cette page, on va parler des catégories des expressions (L-value et R-values), ce qui permet de mieux comprendre comment le compilateur les traite.
+Remarque La catégorisation des expressions est en fait encore plus complexe que celle décrite ici. Il existe en C&#43;&#43; des GL-value, PR-value et X-value, mais ces notions ne sont pas au programme du cours.
+L-value Pour illustrer ce que sont les L-value, on utilisera le bout de code ci-dessous.">
+    <meta property="og:url" content="/chapter4/1-value-kinds/index.html">
+    <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:title" content="L-value vs R-value :: Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:description" content="Sur cette page, on va parler des catégories des expressions (L-value et R-values), ce qui permet de mieux comprendre comment le compilateur les traite.
+Remarque La catégorisation des expressions est en fait encore plus complexe que celle décrite ici. Il existe en C&#43;&#43; des GL-value, PR-value et X-value, mais ces notions ne sont pas au programme du cours.
+L-value Pour illustrer ce que sont les L-value, on utilisera le bout de code ci-dessous.">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Copie et déplacement">
+    <meta itemprop="name" content="L-value vs R-value :: Cours de C&#43;&#43; - Niveau Master">
+    <meta itemprop="description" content="Sur cette page, on va parler des catégories des expressions (L-value et R-values), ce qui permet de mieux comprendre comment le compilateur les traite.
+Remarque La catégorisation des expressions est en fait encore plus complexe que celle décrite ici. Il existe en C&#43;&#43; des GL-value, PR-value et X-value, mais ces notions ne sont pas au programme du cours.
+L-value Pour illustrer ce que sont les L-value, on utilisera le bout de code ci-dessous.">
+    <meta itemprop="wordCount" content="920">
+    <title>L-value vs R-value :: Cours de C&#43;&#43; - Niveau Master</title>
+    <link href="../../css/fontawesome-all.min.css?1737661126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737661126" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737661126" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737661126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737661126" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737661126" rel="stylesheet">
+    <link href="../../css/fonts.css?1737661126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737661126" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737661126" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737661126" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737661126" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737661126" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737661126"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.variants && variants.init( [ 'mine' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copier dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Copié dans le presse-papiers!`;
+      window.T_Copy_link_to_clipboard = `Copier le lien dans le presse-papiers`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../chapter4/1-value-kinds/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#l-value">L-value</a></li>
+    <li><a href="#r-value">R-value</a></li>
+    <li><a href="#la-fonction-stdmove">La fonction <code>std::move</code></a></li>
+    <li><a href="#pourquoi-l-et-r-">Pourquoi L et R ?</a></li>
+    <li><a href="#chaînes-de-caractères-litérales">Chaînes de caractères litérales</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">Accueil</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../chapter4/index.html"><span itemprop="name">Copie et déplacement</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">L-value vs R-value</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter4/index.html" title="Copie et déplacement (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter4/2-copy/index.html" title="Copie (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter4" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="l-value-vs-r-value">L-value vs R-value</h1>
+
+<p>Sur cette page, on va parler des catégories des expressions (L-value et R-values),
+ce qui permet de mieux comprendre comment le compilateur les traite.</p>
+<div class="box notices cstyle note">
+  <div class="box-label">
+    <i class="fa-fw fas fa-exclamation-circle"></i> Remarque
+  </div>
+  <div class="box-content">
+<p>La catégorisation des expressions est en fait encore plus complexe que celle décrite ici.
+Il existe en C++ des GL-value, PR-value et X-value, mais ces notions ne sont pas au programme du cours.</p>
+  </div>
+</div>
+<hr>
+<h2 id="l-value">L-value</h2>
+<p>Pour illustrer ce que sont les L-value, on utilisera le bout de code ci-dessous.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">MyClass</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">my_att</span><span class="p">{};</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"><span class="kt">int</span><span class="o">&amp;</span> <span class="n">my_func</span><span class="p">(</span><span class="k">const</span> <span class="n">MyClass</span><span class="o">&amp;</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* .. */</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MyClass</span> <span class="n">mon_instance</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//                  Expression 1
+</span></span></span><span class="line"><span class="cl"><span class="c1">//                  vvvvvvvvvvvv
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">my_func</span><span class="p">(</span><span class="n">mon_instance</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//          ^^^^^^^^^^^^^^^^^^^^^
+</span></span></span><span class="line"><span class="cl"><span class="c1">//          Expression 2 
+</span></span></span><span class="line"><span class="cl"><span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1">//                 Expression 3
+</span></span></span><span class="line"><span class="cl"><span class="c1">//          vvvvvvvvvvvvvvvvvvv
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="p">(</span><span class="n">mon_instance</span><span class="p">.</span><span class="n">my_att</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<p>Les L-values sont des expressions dont la valeur est stockée quelque part en mémoire.
+Etant donné une variable <code>a</code>, l&rsquo;expression <code>a</code> est une L-value.
+Ceci est vrai que <code>a</code> soit une variable locale ou globale, et quel que soit le type déclarée de <code>a</code>.
+Par exemple, l&rsquo;expression 1 <code>mon_instance</code> est une L-value dans le code ci-dessus.
+En effet dans ce cas, <code>a</code> n&rsquo;est rien d&rsquo;autre que le nom donné à une case mémoire.  La plupart du temps, l&rsquo;expression <code>a</code> ne va utiliser que la valeur stockée dans cette case
+mais parfois, c&rsquo;est l&rsquo;adresse de cette case qui est utilisée, comme dans l&rsquo;expression <code>&amp;a</code>, ou si <code>a</code> est passé
+par référence à une fonction (comme dans l&rsquo;expression 2 <code>my_func(mon_instance)</code>).</p>
+<p>Si un expression <em>E</em> est une L-value dont le type est une classe qui a un attribut <code>c</code>, alors <em>E</em><code>.c</code> est aussi une L-value.
+Par exemple, l&rsquo;expression 3 <code>mon_instance.my_att</code> est une L-value dans le code
+au dessus.
+En effet, comme expliqué dans le <a href="../../chapter3/index.html">chapitre 3</a> les attributs d&rsquo;un objet sont stockées dans l&rsquo;espace allouée pour l&rsquo;objet lui-même donc on sait où est chaque attribut est stockée dès qu&rsquo;on sait où l&rsquo;objet est stockée.</p>
+<p>L&rsquo;expression <code>f(..)</code> est une L-value si la fonction  <code>f</code> renvoie une référence ou une référence constante, comme l&rsquo;expression 3 <code>my_func(mon_instance)</code>.
+C&rsquo;est la même chose pour les fonction-membre ou les opérateurs.</p>
+<p>Finalement, l&rsquo;expression <code>*</code><em>E</em> est une L-value dès lors que le type de <em>E</em> est un pointeur.
+En effet, on sait explicitement où cette valeur est stockée.</p>
+<h2 id="r-value">R-value</h2>
+<p>Pour illustrer ce que sont les R-values, on utilisera le bout de code ci-dessous.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">MyClass</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">my_att</span> <span class="o">=</span> <span class="mi">41</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">my_func</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="k">const</span> <span class="n">MyClass</span><span class="o">&amp;</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//        Expression 1  Expression 2
+</span></span></span><span class="line"><span class="cl"><span class="c1">//                  vv  vvvvvvvvv
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">my_func</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="n">MyClass</span><span class="p">{});</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//          ^^^^^^^^^^^^^^^^^^^^^
+</span></span></span><span class="line"><span class="cl"><span class="c1">//          Expression 3
+</span></span></span><span class="line"><span class="cl"><span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1">//                   Expression 4
+</span></span></span><span class="line"><span class="cl"><span class="c1">//             vvvvvvvvvvvvvvvvvv
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="n">i</span> <span class="o">+</span> <span class="p">(</span><span class="n">MyClass</span><span class="p">{}).</span><span class="n">my_att</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//         ^^^^^^^^^^^^^^^^^^^^^^
+</span></span></span><span class="line"><span class="cl"><span class="c1">//         Expression 5
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span></span></span></code></pre></div>
+<p>Par opposition aux L-values, les R-values sont les expressions qui n&rsquo;ont pas d&rsquo;adresse en mémoire.
+Par exemple, un literal, comme <code>42</code> (expression 1 dans le code ci-dessus), n&rsquo;est stockée nulle-part en mémoire.
+En fait, le compilateur la stockera directement dans la case mémoire
+réservée pour l&rsquo;argument <code>x</code> de la function <code>my_func</code>.
+C&rsquo;est la même chose pour <code>MyClass{}</code> (expression 2), il s&rsquo;agit d&rsquo;une
+nouvelle instance de <code>MyClass</code> qui sera construite directement dans la case <code>y</code> de <code>my_func</code>.</p>
+<p>Si un expression <em>E</em> est une R-value dont le type est une classe qui a un attribut <code>c</code>, alors <em>R</em><code>.c</code> est aussi une R-value.
+C&rsquo;est pour cela que <code>(MyClass{}).my_att</code> (l&rsquo;expression 4) est une R-value.</p>
+<p>L&rsquo;expression <code>f(..)</code> est une R-value si la fonction  <code>f</code> ne renvoie pas
+une référence, comme <code>my_func(MyClass{}, 42)</code> (expresion 3) dans le code ci-dessus.
+C&rsquo;est la même chose pour les fonctions-membres ou les opérateurs (par exemple
+l&rsquo;expression 5).</p>
+<h2 id="la-fonction-stdmove">La fonction <code>std::move</code></h2>
+<p>La fonction <code>std::move</code> permet de transformer une L-value en R-value. Nous verrons à quoi cela sert dans la <a href="../../chapter4/3-move/index.html">section sur le déplacement</a> de ce chapitre.</p>
+<h2 id="pourquoi-l-et-r-">Pourquoi L et R ?</h2>
+<p>Historiquement les L et R dans L-value et R-value signifient &ldquo;left&rdquo; et &ldquo;right&rdquo; en référence à la position du signe <code>=</code> lors d&rsquo;une affectation.
+Les R-value ne peuvent apparaître qu&rsquo;à droite d&rsquo;un <code>=</code> alors que les L-value peuvent apparaître à droite et à gauche d&rsquo;un <code>=</code>.</p>
+<p>Le bout de code ci-dessous illustre ceci pour les expressions <code>6</code>, <code>a</code> et <code>(a+6)</code>.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span> <span class="c1">// Cette affectation a un sens
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="o">+</span><span class="n">a</span><span class="p">);</span> <span class="c1">// Cette affectation a un sens
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">6</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span> <span class="c1">// Cette affectation n&#39;a aucun sens
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">6</span><span class="p">)</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span> <span class="c1">// Cette affectation n&#39;a aucun sens
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// a peut apparaître à gauche de = donc c&#39;est une L-value
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 6 ne peut apparaître qu&#39;à droite du signe = donc c&#39;est une R-value
+</span></span></span><span class="line"><span class="cl"><span class="c1">// (a+6) ne peut apparaître qu&#39;à droite du signe = donc c&#39;est une R-value
+</span></span></span></code></pre></div>
+<p>Cette explication par <em>left/right</em> est un bon moyen mnémotechnique, mais n&rsquo;est plus parfaitement alignée avec ce qu&rsquo;il se passe réellement en C++.
+Référez-vous plutôt aux définitions ci-dessous.</p>
+<div class="box notices cstyle tip">
+  <div class="box-label">
+    <i class="fa-fw fas fa-lightbulb"></i> Astuce
+  </div>
+  <div class="box-content">
+<p>Pour comprendre cette histoire de stockage en mémoire d&rsquo;une expression <em>E</em>, on peut se poser la question suivante : Est-ce que l&rsquo;expression <code>&amp;</code><em>E</em> a un sens?</p>
+<p>Par exemple, on voit bien que <code>&amp;42</code> n&rsquo;a pas de sens alors que <code>&amp;a</code> oui.</p>
+  </div>
+</div>
+<h2 id="chaînes-de-caractères-litérales">Chaînes de caractères litérales</h2>
+<p>Attenion, les chaînes de caractères litérales, comme <code>&quot;Hello World!&quot;</code> sont des <em>L</em>-value comme le montre le code en dessous.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">&amp;</span><span class="p">(</span><span class="s">&#34;Hello World&#34;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; and &#34;</span> <span class="o">&lt;&lt;</span> <span class="o">&amp;</span><span class="p">(</span><span class="s">&#34;Hello World&#34;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//               ^^^^^^^^^^^^^^^^               ^^^^^^^^^^^^^^^^
+</span></span></span><span class="line"><span class="cl"><span class="c1">// On peut demander l&#39;addresse mémoire de chaînes de caractères litérales.
+</span></span></span><span class="line"><span class="cl"><span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Deux chaînes identiques dans le même module sont stockées au même endroit:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">boolalpha</span> <span class="o">&lt;&lt;</span> <span class="o">&amp;</span><span class="p">(</span><span class="s">&#34;Hello World&#34;</span><span class="p">)</span> <span class="o">==</span>  <span class="o">&amp;</span><span class="p">(</span><span class="s">&#34;Hello World&#34;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<p>Ceci est une conséquence du <em>string pooling</em>, une optimisation dont le but est de réduire la taille du binaire.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation showVisitedLinks">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="logo" href="../../">🎄 C++ 🎄</a>
+
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/chapter0/index.html"><a class="padding" href="../../chapter0/index.html"><span class="chapnum">0.</span>&ensp;Mise en place<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb41caf94f12b8a1a4b5e560230e7851" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter1/index.html"><a class="padding" href="../../chapter1/index.html"><span class="chapnum">1.</span>&ensp;Introduction au C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-6c398714eae4372920aec3a1e6c2e143" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter2/index.html"><a class="padding" href="../../chapter2/index.html"><span class="chapnum">2.</span>&ensp;Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b1df0095a9fd74320697a6d478418ec3" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu">
+            <li class="active " data-nav-id="/chapter4/1-value-kinds/index.html"><a class="padding" href="../../chapter4/1-value-kinds/index.html"><span class="presection-icon">⇄</span>L-value vs R-value<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter4/2-copy/index.html"><a class="padding" href="../../chapter4/2-copy/index.html"><span class="presection-icon">🧬</span>Copie<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter4/3-move/index.html"><a class="padding" href="../../chapter4/3-move/index.html"><span class="presection-icon">🚚</span>Déplacement<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter4/4-assign/index.html"><a class="padding" href="../../chapter4/4-assign/index.html"><span class="presection-icon">📝</span>Affectation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter4/5-ruleof/index.html"><a class="padding" href="../../chapter4/5-ruleof/index.html"><span class="presection-icon">📐</span>Règle des 0, 3 ou 5<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter4/6-copy-minim/index.html"><a class="padding" href="../../chapter4/6-copy-minim/index.html"><span class="presection-icon">🔥</span>Minimiser les copies<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter4/9-test/index.html"><a class="padding" href="../../chapter4/9-test/index.html"><span class="presection-icon">☑</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter8/index.html"><a class="padding" href="../../chapter8/index.html"><span class="chapnum">8.</span>&ensp;Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7cf6d9bdd794f38d7006506bdc38c58f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter9/index.html"><a class="padding" href="../../chapter9/index.html"><span class="chapnum">9.</span>&ensp;Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">Accès rapide</div>
+          <ul class="space">
+            <li><a class="padding" href="https://github.com/marsault/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt exercice du cours</a></li>
+            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt TPs</a></li>
+            <li><a class="padding" href="../../slides/index.html"><i class='far fa-file-powerpoint'></i> Slides</a></li>
+            <li><a class="padding" href="../../workflow/index.html"><i class='far fa-list-alt'></i> Workflow</a></li>
+            <li><a class="padding" href="../../faq/index.html"><i class='fas fa-question-circle'></i> FAQ</a></li>
+            <li><a class="padding" href="../../chapter0/6-tips/index.html"><i class='fa fa-rocket'></i> Astuces</a></li>
+            <li><a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a></li>
+            <li><a class="padding" href="https://www-igm.univ-mlv.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> CPP-Ref</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Langue</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../chapter4/1-value-kinds/index.html" lang="fr" selected>Français</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Thème</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-mine" value="mine" selected>Mine</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks showVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Supprimer l&#39;historique</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="../../js/clipboard.min.js?1737661126" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737661126" defer></script>
+    <script src="../../js/theme.js?1737661126" defer></script>
+
+
+
+    
+
+
+<button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
+
+<div id="footer-question-window" disabled>
+    <form id="question" method=POST action="https://formsubmit.co/08af4b8e13fc3ec785faa99820631150"
+        target="question-submitted" onsubmit="cleanQuestionFormContent()">
+
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <textarea name="question" rows="7" cols="30" placeholder="Mon message..."></textarea>
+        <input type="hidden" name="selection" />
+
+        <input type="hidden" name="_replyto" />
+        <input type="hidden" name="_subject" />
+        <input type="hidden" name="_template" value="box" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://igm.univ-mlv.fr/~marsault/cpp/cours/common/question-submitted" />
+
+        <input type="submit" disabled style="display: none" aria-hidden="true" />
+        <input type="submit" value="Envoyer" />
+    </form>
+
+    <iframe class="hidden" name="question-submitted" src=""></iframe>
+</div>
+
+<script>
+
+    function updateQuestionFormSubject() {
+        let email = document.querySelector('#question>input[name="email"]').value;
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 3] " + email + ", retour sur ta question";
+    }
+
+    function cleanQuestionFormContent() {
+        function clean(element) {
+            
+            element.value = element.value.replace(/\[\.\./g, "[ ..");
+        }
+
+        clean(document.querySelector('#question>textarea[name="question"]'))
+        clean(document.querySelector('#question>input[name="selection"]'))
+    }
+
+    function openQuestionForm() {
+        document.getElementById("footer-question-window").removeAttribute("disabled");
+
+        var selection = window.getSelection().toString();
+        document.querySelector('#question>input[name="selection"]').value = selection
+    }
+
+    function updateQuestionWidgetState(event) {
+        var body = document.getElementById("R-body-inner");
+        var selection = window.getSelection();
+        var question_window = document.getElementById("footer-question-window");
+
+        document.getElementById("footer-question-btn").disabled =
+            selection.isCollapsed ||
+            body == null ||
+            body.contains(selection.anchorNode) == false ||
+            body.contains(selection.focusNode) == false;
+
+        if (event !== undefined
+            && event.type == "mouseup"
+            && question_window.contains(event.target) == false
+            && question_window.contains(document.activeElement) == false) {
+            question_window.setAttribute("disabled", true);
+        }
+    }
+
+    updateQuestionFormSubject();
+
+    document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionWidgetState;
+    updateQuestionWidgetState();
+
+</script>
+
+
+
+  </body>
+</html>

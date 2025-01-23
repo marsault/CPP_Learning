@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.128.0">
+    <meta name="generator" content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619">
+    <meta name="description" content="Un conteneur associatif est un conteneur dans lequel les éléments peuvent être indexés par des objets, et non plus seulement par des entiers.
+Vous allez donc ici voir les différents types de conteneurs associatifs proposés par la STL.
+Pour cet exercice, vous modifierez les fichiers :
+- chap-05/3-associatives/main.cpp
+- chap-05/3-associatives/keys.h
+La cible à compiler est c5-3-associatives.
+Les sets (ensembles) Un set est un conteneur dans lequel les éléments sont “indexés par eux-mêmes”.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Conteneurs associatifs :: Cours de C&#43;&#43; - Niveau Master">
+    <meta name="twitter:description" content="Un conteneur associatif est un conteneur dans lequel les éléments peuvent être indexés par des objets, et non plus seulement par des entiers.
+Vous allez donc ici voir les différents types de conteneurs associatifs proposés par la STL.
+Pour cet exercice, vous modifierez les fichiers :
+- chap-05/3-associatives/main.cpp
+- chap-05/3-associatives/keys.h
+La cible à compiler est c5-3-associatives.
+Les sets (ensembles) Un set est un conteneur dans lequel les éléments sont “indexés par eux-mêmes”.">
+    <meta property="og:url" content="/chapter5/4-associatives/index.html">
+    <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:title" content="Conteneurs associatifs :: Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:description" content="Un conteneur associatif est un conteneur dans lequel les éléments peuvent être indexés par des objets, et non plus seulement par des entiers.
+Vous allez donc ici voir les différents types de conteneurs associatifs proposés par la STL.
+Pour cet exercice, vous modifierez les fichiers :
+- chap-05/3-associatives/main.cpp
+- chap-05/3-associatives/keys.h
+La cible à compiler est c5-3-associatives.
+Les sets (ensembles) Un set est un conteneur dans lequel les éléments sont “indexés par eux-mêmes”.">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Librairie standard">
+    <meta itemprop="name" content="Conteneurs associatifs :: Cours de C&#43;&#43; - Niveau Master">
+    <meta itemprop="description" content="Un conteneur associatif est un conteneur dans lequel les éléments peuvent être indexés par des objets, et non plus seulement par des entiers.
+Vous allez donc ici voir les différents types de conteneurs associatifs proposés par la STL.
+Pour cet exercice, vous modifierez les fichiers :
+- chap-05/3-associatives/main.cpp
+- chap-05/3-associatives/keys.h
+La cible à compiler est c5-3-associatives.
+Les sets (ensembles) Un set est un conteneur dans lequel les éléments sont “indexés par eux-mêmes”.">
+    <meta itemprop="wordCount" content="1983">
+    <title>Conteneurs associatifs :: Cours de C&#43;&#43; - Niveau Master</title>
+    <link href="../../css/fontawesome-all.min.css?1737661126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737661126" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737661126" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737661126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737661126" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737661126" rel="stylesheet">
+    <link href="../../css/fonts.css?1737661126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737661126" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737661126" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737661126" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737661126" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737661126" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737661126"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.variants && variants.init( [ 'mine' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copier dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Copié dans le presse-papiers!`;
+      window.T_Copy_link_to_clipboard = `Copier le lien dans le presse-papiers`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../chapter5/4-associatives/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#les-sets-ensembles">Les sets (ensembles)</a></li>
+        <li><a href="#les-maps-dictionnaires">Les maps (dictionnaires)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">Accueil</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../chapter5/index.html"><span itemprop="name">Librairie standard</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Conteneurs associatifs</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter5/3-sequentials/index.html" title="Autres conteneurs séquentiels (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter5/5-strings/index.html" title="Manipulation de chaînes (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter5" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="conteneurs-associatifs">Conteneurs associatifs</h1>
+
+<p>Un conteneur associatif est un conteneur dans lequel les éléments peuvent être indexés par des objets, et non plus seulement par des entiers.<br>
+Vous allez donc ici voir les différents types de conteneurs associatifs proposés par la STL.</p>
+<hr>
+<p>Pour cet exercice, vous modifierez les fichiers :<br>
+- <code>chap-05/3-associatives/main.cpp</code><br>
+- <code>chap-05/3-associatives/keys.h</code></p>
+<p>La cible à compiler est <code>c5-3-associatives</code>.</p>
+<hr>
+<h3 id="les-sets-ensembles">Les sets (ensembles)</h3>
+<p>Un set est un conteneur dans lequel les éléments sont &ldquo;indexés par eux-mêmes&rdquo;. Il y a deux cas d&rsquo;utilisation classiques d&rsquo;un <code>set</code>:</p>
+<ul>
+<li>disposer d&rsquo;un conteneur qui ne peut contenir qu&rsquo;une seule fois un même élément,</li>
+<li>savoir si un conteneur contient ou non un élément très rapidement.</li>
+</ul>
+<p>Dans la librairie standard, vous pouvez trouver <code>std::set</code> et <code>std::unordered_set</code> qui permettent de manipuler des sets. En analysant leur documentation, pouvez-vous identifier les différences principales entre ces deux classes ?</p>
+<div class="expand">
+  <input type="checkbox" id="R-expand-73aa88535ddbb526f55f9a79bf9eb439" aria-controls="R-expandcontent-73aa88535ddbb526f55f9a79bf9eb439">
+  <label class="expand-label" for="R-expand-73aa88535ddbb526f55f9a79bf9eb439">
+    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
+  </label>
+  <div id="R-expandcontent-73aa88535ddbb526f55f9a79bf9eb439" class="expand-content">
+<p>Complexité :</p>
+<ul>
+<li><code>std::set</code> est implémenté (généralement) comme un arbre binaire de recherche. Les opérations d&rsquo;insertions, de recherches et de comparaison s&rsquo;effectuent donc en temps logarithmique. En ce qui concerne l&rsquo;espace mémoire utilisé, les arbres binaires de recherche ont généralement besoin d&rsquo;autant de mémoire qu&rsquo;il y a d&rsquo;éléments à stocker, c&rsquo;est-à-dire O(n).</li>
+<li><code>std::unordered_set</code> est implémenté en utilisant des &ldquo;buckets&rdquo;, indexés par le hash de l&rsquo;objet (comme dans une hashmap). Les opérations d&rsquo;insertions, de recherches et de comparaison s&rsquo;effectuent donc en temps constant amorti (&ldquo;amorti&rdquo;, car si deux objets ont le même hash, il faut potentiellement parcourir une liste d&rsquo;objects ensuite). La documentation ne donne pas de détail concernant l&rsquo;espace mémoire alloué par un <code>unordered_set</code>, mais si vous vous rappelez de votre cours d&rsquo;algorithmique, pour qu&rsquo;une hashmap soit efficace, il faut limiter le nombre de conflits possibles. Cela implique que l&rsquo;espace alloué doit être très largement supérieur à l&rsquo;espace réellement occupé par les éléments.</li>
+</ul>
+<p>Contraintes :</p>
+<ul>
+<li><code>std::set</code> attend que ses éléments soient comparables (= qu&rsquo;il existe une fonction permettant de dire si un élément est plus petit qu&rsquo;un autre).</li>
+<li><code>std::unordered_set</code> attend que ses éléments soient hashables (= qu&rsquo;il existe une fonction permettant de convertir un élément en un entier, respectant le fait que si deux éléments sont considérés égaux, alors les deux entiers obtenus sont égaux également) et qu&rsquo;il existe une fonction permettant de savoir si deux éléments sont égaux ou non (il n&rsquo;est pas nécessaire ici d&rsquo;avoir une relation d&rsquo;ordre sur les éléments).</li>
+</ul>
+  </div>
+</div>
+<p>Dans les fichiers de l&rsquo;exercice, on vous fournit deux classes <code>ComparableDog</code> et <code>HashableDog</code>. Ces deux classes sont pour le moment identique : elles contiennent deux attributs <code>_name</code> et <code>_species</code>.<br>
+Votre objectif sera d&rsquo;ajouter les fonctions nécessaires pour utiliser ces classes dans des sets.</p>
+<h4 id="stdset"><code>std::set</code></h4>
+<p>Pour pouvoir placer des éléments dans un <code>set</code>, nous avons dit qu&rsquo;ils devaient être comparables. Le plus simple pour cela, c&rsquo;est de créer un <code>operator&lt;</code> pour la classe. Les opérateurs de comparaison peuvent être définis soit en tant que fonction-membre, soit en tant que fonction libre.</p>
+<p>Fonction-membre :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">SomeClass</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="k">const</span> <span class="n">SomeClass</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="cm">/* whether this and other are equal */</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div>
+<p>Fonction libre :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// SomeClass.h
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">SomeClass</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="k">const</span> <span class="n">SomeClass</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">SomeClass</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// SomeClass.cpp
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="k">const</span> <span class="n">SomeClass</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">SomeClass</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="cm">/* whether a and b are equal */</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fa-fw fas fa-info-circle"></i> Information
+  </div>
+  <div class="box-content">
+<p>Notez bien que si vous voulez utiliser une fonction libre, vous devrez peut-être exposer vos attributs dans des getters ou déclarer <code>operator&lt;</code> comme une fonction amie de la classe.</p>
+  </div>
+</div>
+<p>Commencez par définir un <code>set</code> contenant des <code>ComparableDog</code> dans la fonction <code>main</code>. Essayez de compiler. Jusque là, tout devrait bien se passer.<br>
+Instanciez maintenant une variable de type <code>ComparableDog</code>, et ajoutez-là à votre <code>set</code>.</p>
+<div class="expand">
+  <input type="checkbox" id="R-expand-56c4545dfab2dad359aedd124babdeea" aria-controls="R-expandcontent-56c4545dfab2dad359aedd124babdeea">
+  <label class="expand-label" for="R-expand-56c4545dfab2dad359aedd124babdeea">
+    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
+  </label>
+  <div id="R-expandcontent-56c4545dfab2dad359aedd124babdeea" class="expand-content">
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">set</span><span class="o">&lt;</span><span class="n">ComparableDog</span><span class="o">&gt;</span> <span class="n">dogs</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">ComparableDog</span> <span class="n">medor</span> <span class="p">{</span> <span class="s">&#34;medor&#34;</span><span class="p">,</span> <span class="s">&#34;labrador&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">dogs</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">medor</span><span class="p">);</span></span></span></code></pre></div>
+  </div>
+</div>
+<p>Essayez à nouveau de compiler. Vos yeux devraient désormais commencer à saigner, ce qui est normal. Je vous rassure, avec un peu d&rsquo;entraînement, cela n&rsquo;arrivera plus.<br>
+Du coup, essuyez vos larmes et enfilez vos lunettes si vous en avez, et tentez d&rsquo;identifier ce que le compilateur essaye de vous communiquer.</p>
+<div class="expand">
+  <input type="checkbox" id="R-expand-91c96cd329542406c98ead32bc5cd37a" aria-controls="R-expandcontent-91c96cd329542406c98ead32bc5cd37a">
+  <label class="expand-label" for="R-expand-91c96cd329542406c98ead32bc5cd37a">
+    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
+  </label>
+  <div id="R-expandcontent-91c96cd329542406c98ead32bc5cd37a" class="expand-content">
+<p>Le compilateur essaye simplement de vous dire qu&rsquo;il n&rsquo;arrive pas à trouver de fonction permettant d&rsquo;évaluer l&rsquo;expression <code>x &lt; y</code>.<br>
+Vous allez donc devoir définir un opérateur de comparaison pour la classe <code>ComparableDog</code>.</p>
+  </div>
+</div>
+<p>Implémentez ce qu&rsquo;il manque pour que votre programme compile.</p>
+<div class="expand">
+  <input type="checkbox" id="R-expand-9fabee90d68471b228376e6f1f4b3439" aria-controls="R-expandcontent-9fabee90d68471b228376e6f1f4b3439">
+  <label class="expand-label" for="R-expand-9fabee90d68471b228376e6f1f4b3439">
+    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
+  </label>
+  <div id="R-expandcontent-9fabee90d68471b228376e6f1f4b3439" class="expand-content">
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ComparableDog</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ComparableDog</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">species</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">},</span> <span class="n">_species</span> <span class="p">{</span> <span class="n">species</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="k">const</span> <span class="n">ComparableDog</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">_name</span> <span class="o">&lt;</span> <span class="n">other</span><span class="p">.</span><span class="n">_name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">_name</span> <span class="o">&gt;</span> <span class="n">other</span><span class="p">.</span><span class="n">_name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">_species</span> <span class="o">&lt;</span> <span class="n">other</span><span class="p">.</span><span class="n">_species</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_species</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div>
+  </div>
+</div>
+<p>Créez maintenant une nouvelle instance de <code>ComparableDog</code>, différente de la première, et ajoutez-là au set.<br>
+Affichez le nombre d&rsquo;éléments du set pour vérifier qu&rsquo;il en contient maintenant 2.</p>
+<div class="expand">
+  <input type="checkbox" id="R-expand-44a4b7368c458dcc07d411a962cf7aa2" aria-controls="R-expandcontent-44a4b7368c458dcc07d411a962cf7aa2">
+  <label class="expand-label" for="R-expand-44a4b7368c458dcc07d411a962cf7aa2">
+    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
+  </label>
+  <div id="R-expandcontent-44a4b7368c458dcc07d411a962cf7aa2" class="expand-content">
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">ComparableDog</span> <span class="n">gus</span> <span class="p">{</span> <span class="s">&#34;gus&#34;</span><span class="p">,</span> <span class="s">&#34;bordercollie&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">dogs</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">gus</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">dogs</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span></span></span></code></pre></div>
+  </div>
+</div>
+<p>Instanciez maintenant une copie de votre premier chien, et ajoutez-là à votre set.<br>
+Combien y a-t-il d&rsquo;éléments dans le <code>set</code> après cette opération ? Pourquoi ?</p>
+<div class="expand">
+  <input type="checkbox" id="R-expand-76cfff49c45004469a979f59511e51a7" aria-controls="R-expandcontent-76cfff49c45004469a979f59511e51a7">
+  <label class="expand-label" for="R-expand-76cfff49c45004469a979f59511e51a7">
+    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
+  </label>
+  <div id="R-expandcontent-76cfff49c45004469a979f59511e51a7" class="expand-content">
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">ComparableDog</span> <span class="n">medor_clone</span> <span class="o">=</span> <span class="n">medor</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">dogs</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">medor_clone</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">dogs</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span></span></span></code></pre></div>
+<p>Votre <code>set</code> ne devrait contenir que 2 éléments, car par définition, dans un set, les éléments sont uniques. Comme <code>medor</code> existe déjà dans l&rsquo;ensemble, <code>medor_clone</code> qui lui est égal n&rsquo;est pas ajouté.</p>
+<p>Si ce n&rsquo;est pas le cas chez vous et que la copie est ajoutée malgré tout, c&rsquo;est probablement que l&rsquo;implémentation de votre opérateur de comparaison est un peu bancale.</p>
+  </div>
+</div>
+<h4 id="stdunordered_set"><code>std::unordered_set</code></h4>
+<p>Vous allez maintenant faire le même exercice, mais avec un <code>std::unordered_set</code> plutôt qu&rsquo;un <code>set</code>.</p>
+<p>Commencez par définir un <code>unordered_set</code> contenant des <code>HashableDog</code> dans la fonction <code>main</code> et essayez de compiler. Vous devriez vous retrouver avec un paquet d&rsquo;erreurs.<br>
+Comme tout à l&rsquo;heure, essayez d&rsquo;identifier la cause de leur déclenchement.</p>
+<div class="expand">
+  <input type="checkbox" id="R-expand-423105df9e171ac4b3322c82d6d24dac" aria-controls="R-expandcontent-423105df9e171ac4b3322c82d6d24dac">
+  <label class="expand-label" for="R-expand-423105df9e171ac4b3322c82d6d24dac">
+    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
+  </label>
+  <div id="R-expandcontent-423105df9e171ac4b3322c82d6d24dac" class="expand-content">
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">HashableDog</span><span class="o">&gt;</span> <span class="n">dogs</span><span class="p">;</span></span></span></code></pre></div>
+<p>Ici, la première erreur n&rsquo;aide pas du tout : &ldquo;use of deleted function &lsquo;std::unordered_set&lt;$£^p%*ù$&gt;&rsquo;&rdquo;.<br>
+Il faut donc scroller plus bas, jusqu&rsquo;à tomber sur celle-ci : &ldquo;use of deleted function &lsquo;std::hash<HashableDog>::hash()&rsquo;.</p>
+<p>Rappelez-vous, pour utiliser un <code>unordered_set</code>, une des contraintes est que le type des éléments doit être hashable. Et d&rsquo;après l&rsquo;erreur, ce n&rsquo;est pas le cas de <code>HashableDog</code>.</p>
+  </div>
+</div>
+<p>Afin de rendre une classe hashable, il faut spécialiser une fonction de la librairie standard que l&rsquo;on appelle <code>hash</code>. Pour ce faire, vous devez d&rsquo;abord inclure le header <code>&lt;functional&gt;</code>, puis écrire le code suivant :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">namespace</span> <span class="n">std</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">hash</span><span class="o">&lt;</span><span class="n">ClassToMakeHashable</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">size_t</span> <span class="nf">operator</span><span class="p">()(</span><span class="k">const</span> <span class="n">ClassToMakeHashable</span><span class="o">&amp;</span> <span class="n">c</span><span class="p">)</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="cm">/* some value that can be computed from c */</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> 
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<p>Ne vous posez pas trop de questions pour le moment sur la syntaxe du code ci-dessus. Vous pouvez directement le copier-coller à la fin du fichier <code>keys.h</code>, en remplaçant <code>ClassToMakeHashable</code> par le nom de votre classe.
+En ce qui concerne le contenu de la fonction, vous allez devoir générer un hash en combinant les hashs des attributs de la classe <code>HashableDog</code>.</p>
+<p>Pour récupérer le hash d&rsquo;une <code>string</code>, vous devez déclarer une variable de type <code>std::hash&lt;std::string&gt;</code>, puis appeler son <code>operator()</code> sur la <code>string</code> en question. Ca donne quelque chose comme ça :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">hash</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">hash_fcn</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">size_t</span>                 <span class="n">hash_of_blablabla</span> <span class="o">=</span> <span class="n">hash_fcn</span><span class="p">(</span><span class="s">&#34;blablabla&#34;</span><span class="p">);</span></span></span></code></pre></div>
+<p>Vous pouvez ensuite combiner plusieurs valeurs de hash ensemble en utilisant des opérateurs binaires (<code>^</code>, <code>+</code>, <code>*</code>, ou n&rsquo;importe quoi d&rsquo;autres, ce n&rsquo;est pas vraiment important du moment que vous renvoyer bien quelque chose à la fin) :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">hash</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">hash_fcn</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">size_t</span>                 <span class="n">hash_final</span> <span class="o">=</span> <span class="n">hash_fcn</span><span class="p">(</span><span class="s">&#34;first&#34;</span><span class="p">)</span> <span class="o">^</span> <span class="n">hash_fcn</span><span class="p">(</span><span class="s">&#34;second&#34;</span><span class="p">)</span> <span class="o">^</span> <span class="n">hash_fcn</span><span class="p">(</span><span class="s">&#34;third&#34;</span><span class="p">);</span></span></span></code></pre></div>
+<div class="box notices cstyle note">
+  <div class="box-label">
+    <i class="fa-fw fas fa-exclamation-circle"></i> Remarque
+  </div>
+  <div class="box-content">
+<p>Lorsqu&rsquo;on défini un <code>operator()</code> dans une classe, il est ensuite possible d&rsquo;utiliser les instances de cette classe comme des fonctions. C&rsquo;est pour cela que ce genre d&rsquo;objets est appelé <strong>foncteur</strong>.</p>
+  </div>
+</div>
+<p>Implémentez le contenu de <code>hash&lt;HashableDog&gt;::operator()</code>.<br>
+Afin de pouvoir accéder aux attributs de <code>HashableDog</code> depuis cette fonction, vous pouvez les déplacer dans la partie publique.</p>
+<div class="expand">
+  <input type="checkbox" id="R-expand-d6608a9e64939550934d2f8d777b9102" aria-controls="R-expandcontent-d6608a9e64939550934d2f8d777b9102">
+  <label class="expand-label" for="R-expand-d6608a9e64939550934d2f8d777b9102">
+    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
+  </label>
+  <div id="R-expandcontent-d6608a9e64939550934d2f8d777b9102" class="expand-content">
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">size_t</span> <span class="nf">operator</span><span class="p">()(</span><span class="k">const</span> <span class="n">HashableDog</span><span class="o">&amp;</span> <span class="n">dog</span><span class="p">)</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">hash</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">hash_fcn</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">hash_fcn</span><span class="p">(</span><span class="n">dog</span><span class="p">.</span><span class="n">_name</span><span class="p">)</span> <span class="o">^</span> <span class="n">hash_fcn</span><span class="p">(</span><span class="n">dog</span><span class="p">.</span><span class="n">_species</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> 
+</span></span></code></pre></div>
+  </div>
+</div>
+<p>Une fois que cela compile, refactorisez votre code pour remettre les attributs dans la partie privée.<br>
+Pour cela, définissez une fonction-membre publique <code>get_hash</code> dans la classe <code>HashableDog</code>, que vous appelerez depuis <code>hash&lt;HashableDog&gt;::operator()</code>.</p>
+<div class="expand">
+  <input type="checkbox" id="R-expand-7d7cac37ee26c16b41b373e837e394ea" aria-controls="R-expandcontent-7d7cac37ee26c16b41b373e837e394ea">
+  <label class="expand-label" for="R-expand-7d7cac37ee26c16b41b373e837e394ea">
+    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
+  </label>
+  <div id="R-expandcontent-7d7cac37ee26c16b41b373e837e394ea" class="expand-content">
+<p>N&rsquo;oubliez pas le <code>const</code> dans la signature de <code>get_hash</code>. En effet, vous ne pourrez pas appeler <code>get_hash</code> sur un <code>const HashableDog&amp;</code> si vous oubliez de le mettre.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">HashableDog</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">size_t</span> <span class="n">get_hash</span><span class="p">()</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">hash</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">hash_fcn</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nf">hash_fcn</span><span class="p">(</span><span class="n">_name</span><span class="p">)</span> <span class="o">^</span> <span class="n">hash_fcn</span><span class="p">(</span><span class="n">_species</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="n">std</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">hash</span><span class="o">&lt;</span><span class="n">HashableDog</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">size_t</span> <span class="nf">operator</span><span class="p">()(</span><span class="k">const</span> <span class="n">HashableDog</span><span class="o">&amp;</span> <span class="n">dog</span><span class="p">)</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">dog</span><span class="p">.</span><span class="n">get_hash</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </div>
+</div>
+<p>Instanciez maintenant une variable de type <code>HashableDog</code>, ajoutez-là à votre set et essayez de compiler.<br>
+Comme vous pouvez le voir, aujourd&rsquo;hui, le compilateur de vous apprécie pas. Déterminez à partir des erreurs de compilation ce qu&rsquo;il manque dans la classe <code>HashableDog</code> pour que le programme compile.</p>
+<div class="expand">
+  <input type="checkbox" id="R-expand-68dc980df495c63c928d76eaa9f28182" aria-controls="R-expandcontent-68dc980df495c63c928d76eaa9f28182">
+  <label class="expand-label" for="R-expand-68dc980df495c63c928d76eaa9f28182">
+    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
+  </label>
+  <div id="R-expandcontent-68dc980df495c63c928d76eaa9f28182" class="expand-content">
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">HashableDog</span><span class="o">&gt;</span> <span class="n">dogs</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">HashableDog</span> <span class="n">medor</span> <span class="p">{</span> <span class="s">&#34;medor&#34;</span><span class="p">,</span> <span class="s">&#34;labrador&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">dogs</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">medor</span><span class="p">);</span></span></span></code></pre></div>
+<p>D&rsquo;après l&rsquo;erreur, il faut implémentez un <code>operator==</code> dans la classe.</p>
+  </div>
+</div>
+<p>Ajoutez la fonction manquante (même signature que <code>operator&lt;</code>) et vérifiez ensuite que tout fonctionne.</p>
+<div class="expand">
+  <input type="checkbox" id="R-expand-8c18d498d4e363138fb6e878dc3824ea" aria-controls="R-expandcontent-8c18d498d4e363138fb6e878dc3824ea">
+  <label class="expand-label" for="R-expand-8c18d498d4e363138fb6e878dc3824ea">
+    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
+  </label>
+  <div id="R-expandcontent-8c18d498d4e363138fb6e878dc3824ea" class="expand-content">
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">HashableDog</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span> <span class="n">HashableDog</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">_name</span> <span class="o">==</span> <span class="n">other</span><span class="p">.</span><span class="n">_name</span> <span class="o">&amp;&amp;</span> <span class="n">_species</span> <span class="o">==</span> <span class="n">other</span><span class="p">.</span><span class="n">_species</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div>
+  </div>
+</div>
+<p>Vous pouvez ensuite essayer d&rsquo;ajouter de nouveaux éléments dans votre <code>unordered_set</code>. Vous devriez avoir le même comportement qu&rsquo;avec la classe <code>set</code> : les éléments sont ajoutés seulement s&rsquo;ils n&rsquo;apparaissent pas déjà dans le conteneur.</p>
+<hr>
+<h3 id="les-maps-dictionnaires">Les maps (dictionnaires)</h3>
+<p>Une map est un conteneur dans lequel chaque valeur est indexé par une clef. Dans la STL, vous pouvez trouver les classes <code>std::map</code> et <code>std::unordered_map</code>.</p>
+<p>Les différences entre <code>map</code> et <code>unordered_map</code> sont exactement les mêmes que les différences entre <code>set</code> et <code>unordered_set</code>. D&rsquo;ailleurs, <code>std::[unordered_]map</code>, c&rsquo;est la même chose que <code>std::[unordered_]set</code>, si ce n&rsquo;est que pour chaque élément du conteneur, on stocke une valeur en plus de la clef.<br>
+En particulier, vous retrouvez les mêmes contraintes sur le type des clefs :</p>
+<ul>
+<li>opérateur de comparaison pour la clef d&rsquo;une <code>map</code>,</li>
+<li>fonction de hash et opérateur d&rsquo;égalité pour la clef d&rsquo;une <code>unordered_map</code>.</li>
+</ul>
+<p>Vous allez maintenant définir une variable de type <code>std::map&lt;key, value&gt;</code> qui stocke pour chaque chien (= clef) le nom et prénom de son propriétaire (= valeur).<br>
+Quel type pouvez-vous utiliser pour la clef ? Pour la valeur, vous pouvez utiliser une <code>std::pair&lt;std::string, std::string&gt;</code> (n&rsquo;hésitez pas à créer un alias).</p>
+<div class="expand">
+  <input type="checkbox" id="R-expand-14551b887790d7524f0e3bdfb952e1c3" aria-controls="R-expandcontent-14551b887790d7524f0e3bdfb952e1c3">
+  <label class="expand-label" for="R-expand-14551b887790d7524f0e3bdfb952e1c3">
+    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
+  </label>
+  <div id="R-expandcontent-14551b887790d7524f0e3bdfb952e1c3" class="expand-content">
+<p>Pour la clef, on peut réutiliser la classe <code>ComparableDog</code>, qui dispose déjà d&rsquo;un opérateur de comparaison.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">using</span> <span class="n">Owner</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">ComparableDog</span><span class="p">,</span> <span class="n">Owner</span><span class="o">&gt;</span> <span class="n">owners_by_dog</span><span class="p">;</span></span></span></code></pre></div>
+  </div>
+</div>
+<p>Pour insérer des éléments dans une <code>map</code>, vous pouvez utiliser plein de fonctions différentes. Consultez la documentation pour trouver le nom de ces fonctions et identifiez leurs différences (comportement / syntaxe).</p>
+<div class="expand">
+  <input type="checkbox" id="R-expand-fb98bf15d6708ea87937e3f84b3e8def" aria-controls="R-expandcontent-fb98bf15d6708ea87937e3f84b3e8def">
+  <label class="expand-label" for="R-expand-fb98bf15d6708ea87937e3f84b3e8def">
+    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
+  </label>
+  <div id="R-expandcontent-fb98bf15d6708ea87937e3f84b3e8def" class="expand-content">
+<p>Comportement :</p>
+<ul>
+<li><code>insert</code> / <code>emplace</code> / <code>try_emplace</code> : insère l&rsquo;élément dans la map seulement si la clef n&rsquo;est pas déjà présente,</li>
+<li><code>insert_or_assign</code> : insère l&rsquo;élément dans la map et remplace l&rsquo;élément existant si la clef était déjà présente,</li>
+</ul>
+<p>Syntaxe :</p>
+<ul>
+<li><code>insert</code> : la fonction attend une <code>pair</code> : <code>dict.insert(std::make_pair(key, value));</code> / <code>dict.insert({ key, value });</code></li>
+<li><code>insert_or_assign</code> : on peut passer la clef et la valeur directement : <code>dict.insert_or_assign(key, value);</code></li>
+<li><code>emplace</code> : on peut aussi passer la clef et la valeur directement : <code>dict.emplace(key, value);</code></li>
+<li><code>try_emplace</code> : on peut passer la clef en premier, puis les paramètres de construction de la valeur à la suite : <code>dict.try_emplace(key, p1, p2, p3);</code></li>
+</ul>
+  </div>
+</div>
+<p>Essayez d&rsquo;ajouter plusieurs éléments à votre map, en utilisant chacune de ces fonctions.<br>
+<div class="expand">
+  <input type="checkbox" id="R-expand-40017d7262e77539fdd0361ea6b40c0d" aria-controls="R-expandcontent-40017d7262e77539fdd0361ea6b40c0d">
+  <label class="expand-label" for="R-expand-40017d7262e77539fdd0361ea6b40c0d">
+    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
+  </label>
+  <div id="R-expandcontent-40017d7262e77539fdd0361ea6b40c0d" class="expand-content">
+<p>Pour la clef, on peut réutiliser la classe <code>ComparableDog</code>, qui dispose déjà d&rsquo;un opérateur de comparaison.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">ComparableDog</span><span class="p">,</span> <span class="n">Owner</span><span class="o">&gt;</span> <span class="n">owners_by_dog</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">ComparableDog</span> <span class="n">medor</span> <span class="p">{</span> <span class="s">&#34;medor&#34;</span><span class="p">,</span> <span class="s">&#34;labrador&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">ComparableDog</span> <span class="n">gus</span> <span class="p">{</span> <span class="s">&#34;gus&#34;</span><span class="p">,</span> <span class="s">&#34;bordercollie&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">ComparableDog</span> <span class="n">zim</span> <span class="p">{</span> <span class="s">&#34;zim&#34;</span><span class="p">,</span> <span class="s">&#34;poodle&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">ComparableDog</span> <span class="n">flippy</span> <span class="p">{</span> <span class="s">&#34;flippy&#34;</span><span class="p">,</span> <span class="s">&#34;spaniel&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">owners_by_dog</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="n">medor</span><span class="p">,</span> <span class="n">Owner</span> <span class="p">{</span> <span class="s">&#34;Claire&#34;</span><span class="p">,</span> <span class="s">&#34;David&#34;</span> <span class="p">}));</span>
+</span></span><span class="line"><span class="cl"><span class="n">owners_by_dog</span><span class="p">.</span><span class="n">insert_or_assign</span><span class="p">(</span><span class="n">gus</span><span class="p">,</span> <span class="n">Owner</span> <span class="p">{</span> <span class="s">&#34;Marc&#34;</span><span class="p">,</span> <span class="s">&#34;Zipstein&#34;</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="n">owners_by_dog</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">zim</span><span class="p">,</span> <span class="n">Owner</span> <span class="p">{</span> <span class="s">&#34;Céline&#34;</span><span class="p">,</span> <span class="s">&#34;Noël&#34;</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="n">owners_by_dog</span><span class="p">.</span><span class="n">try_emplace</span><span class="p">(</span><span class="n">flippy</span><span class="p">,</span> <span class="s">&#34;Vincent&#34;</span><span class="p">,</span> <span class="s">&#34;Nozick&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">owners_by_dog</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">gus</span><span class="p">,</span> <span class="n">Owner</span> <span class="p">{</span> <span class="s">&#34;Claire&#34;</span><span class="p">,</span> <span class="s">&#34;David&#34;</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// -&gt; gus is still owned by Marc (emplace does not modify values with existing keys, neither does insert or try_emplace)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">owners_by_dog</span><span class="p">.</span><span class="n">insert_or_assign</span><span class="p">(</span><span class="n">gus</span><span class="p">,</span> <span class="n">Owner</span> <span class="p">{</span> <span class="s">&#34;Vincent&#34;</span><span class="p">,</span> <span class="s">&#34;Nozick&#34;</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// -&gt; gus is now owned by Vincent (insert_or_assign reassign values with existing keys)
+</span></span></span></code></pre></div>
+  </div>
+</div></p>
+<p>Que faut-il maintenant faire si vous souhaitez utiliser une <code>unordered_map</code> plutôt qu&rsquo;une <code>map</code> ?</p>
+<div class="expand">
+  <input type="checkbox" id="R-expand-88d64c8d0a228eeea7075416a81609b2" aria-controls="R-expandcontent-88d64c8d0a228eeea7075416a81609b2">
+  <label class="expand-label" for="R-expand-88d64c8d0a228eeea7075416a81609b2">
+    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
+  </label>
+  <div id="R-expandcontent-88d64c8d0a228eeea7075416a81609b2" class="expand-content">
+<p>Il suffit d&rsquo;utiliser des clefs de type <code>HashableDog</code> plutôt que <code>ComparableDog</code>.</p>
+  </div>
+</div>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation showVisitedLinks">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="logo" href="../../">🎄 C++ 🎄</a>
+
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/chapter0/index.html"><a class="padding" href="../../chapter0/index.html"><span class="chapnum">0.</span>&ensp;Mise en place<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb41caf94f12b8a1a4b5e560230e7851" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter1/index.html"><a class="padding" href="../../chapter1/index.html"><span class="chapnum">1.</span>&ensp;Introduction au C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-6c398714eae4372920aec3a1e6c2e143" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter2/index.html"><a class="padding" href="../../chapter2/index.html"><span class="chapnum">2.</span>&ensp;Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b1df0095a9fd74320697a6d478418ec3" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu">
+            <li class="" data-nav-id="/chapter5/1-doc/index.html"><a class="padding" href="../../chapter5/1-doc/index.html">Un peu de doc...<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/2-vectors/index.html"><a class="padding" href="../../chapter5/2-vectors/index.html">Tableaux dynamiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/3-sequentials/index.html"><a class="padding" href="../../chapter5/3-sequentials/index.html">Autres conteneurs séquentiels<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/chapter5/4-associatives/index.html"><a class="padding" href="../../chapter5/4-associatives/index.html">Conteneurs associatifs<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/5-strings/index.html"><a class="padding" href="../../chapter5/5-strings/index.html">Manipulation de chaînes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/6-tuples/index.html"><a class="padding" href="../../chapter5/6-tuples/index.html">Paires et tuples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/test/index.html"><a class="padding" href="../../chapter5/test/index.html">Questionnaire ☑<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/summary/index.html"><a class="padding" href="../../chapter5/summary/index.html">Synthèse<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter8/index.html"><a class="padding" href="../../chapter8/index.html"><span class="chapnum">8.</span>&ensp;Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7cf6d9bdd794f38d7006506bdc38c58f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter9/index.html"><a class="padding" href="../../chapter9/index.html"><span class="chapnum">9.</span>&ensp;Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">Accès rapide</div>
+          <ul class="space">
+            <li><a class="padding" href="https://github.com/marsault/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt exercice du cours</a></li>
+            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt TPs</a></li>
+            <li><a class="padding" href="../../slides/index.html"><i class='far fa-file-powerpoint'></i> Slides</a></li>
+            <li><a class="padding" href="../../workflow/index.html"><i class='far fa-list-alt'></i> Workflow</a></li>
+            <li><a class="padding" href="../../faq/index.html"><i class='fas fa-question-circle'></i> FAQ</a></li>
+            <li><a class="padding" href="../../chapter0/6-tips/index.html"><i class='fa fa-rocket'></i> Astuces</a></li>
+            <li><a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a></li>
+            <li><a class="padding" href="https://www-igm.univ-mlv.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> CPP-Ref</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Langue</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../chapter5/4-associatives/index.html" lang="fr" selected>Français</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Thème</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-mine" value="mine" selected>Mine</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks showVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Supprimer l&#39;historique</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="../../js/clipboard.min.js?1737661126" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737661126" defer></script>
+    <script src="../../js/theme.js?1737661126" defer></script>
+
+
+
+    
+
+
+<button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
+
+<div id="footer-question-window" disabled>
+    <form id="question" method=POST action="https://formsubmit.co/08af4b8e13fc3ec785faa99820631150"
+        target="question-submitted" onsubmit="cleanQuestionFormContent()">
+
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <textarea name="question" rows="7" cols="30" placeholder="Mon message..."></textarea>
+        <input type="hidden" name="selection" />
+
+        <input type="hidden" name="_replyto" />
+        <input type="hidden" name="_subject" />
+        <input type="hidden" name="_template" value="box" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://igm.univ-mlv.fr/~marsault/cpp/cours/common/question-submitted" />
+
+        <input type="submit" disabled style="display: none" aria-hidden="true" />
+        <input type="submit" value="Envoyer" />
+    </form>
+
+    <iframe class="hidden" name="question-submitted" src=""></iframe>
+</div>
+
+<script>
+
+    function updateQuestionFormSubject() {
+        let email = document.querySelector('#question>input[name="email"]').value;
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 4] " + email + ", retour sur ta question";
+    }
+
+    function cleanQuestionFormContent() {
+        function clean(element) {
+            
+            element.value = element.value.replace(/\[\.\./g, "[ ..");
+        }
+
+        clean(document.querySelector('#question>textarea[name="question"]'))
+        clean(document.querySelector('#question>input[name="selection"]'))
+    }
+
+    function openQuestionForm() {
+        document.getElementById("footer-question-window").removeAttribute("disabled");
+
+        var selection = window.getSelection().toString();
+        document.querySelector('#question>input[name="selection"]').value = selection
+    }
+
+    function updateQuestionWidgetState(event) {
+        var body = document.getElementById("R-body-inner");
+        var selection = window.getSelection();
+        var question_window = document.getElementById("footer-question-window");
+
+        document.getElementById("footer-question-btn").disabled =
+            selection.isCollapsed ||
+            body == null ||
+            body.contains(selection.anchorNode) == false ||
+            body.contains(selection.focusNode) == false;
+
+        if (event !== undefined
+            && event.type == "mouseup"
+            && question_window.contains(event.target) == false
+            && question_window.contains(document.activeElement) == false) {
+            question_window.setAttribute("disabled", true);
+        }
+    }
+
+    updateQuestionFormSubject();
+
+    document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionWidgetState;
+    updateQuestionWidgetState();
+
+</script>
+
+
+
+  </body>
+</html>

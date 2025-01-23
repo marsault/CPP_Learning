@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.128.0">
+    <meta name="generator" content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619">
+    <meta name="description" content="Nous allons maintenant revenir sur l’instanciation et la désinstanciation des données, car ce sont les deux événements qui délimitent leur période de validité.
+Donnée de type fondamental L’instanciation d’une donnée de type fondamental est constitué de deux phases.
+Le programme alloue l’espace nécessaire pour stocker la donnée. Si spécifié par le programmeur, le contenu de la donnée est initialisé. En ce qui concerne la désinstanciation, le programme désalloue l’espace réservé pour la donnée.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Durée de vie  :: Cours de C&#43;&#43; - Niveau Master">
+    <meta name="twitter:description" content="Nous allons maintenant revenir sur l’instanciation et la désinstanciation des données, car ce sont les deux événements qui délimitent leur période de validité.
+Donnée de type fondamental L’instanciation d’une donnée de type fondamental est constitué de deux phases.
+Le programme alloue l’espace nécessaire pour stocker la donnée. Si spécifié par le programmeur, le contenu de la donnée est initialisé. En ce qui concerne la désinstanciation, le programme désalloue l’espace réservé pour la donnée.">
+    <meta property="og:url" content="/chapter3/2-lifespan/index.html">
+    <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:title" content="Durée de vie  :: Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:description" content="Nous allons maintenant revenir sur l’instanciation et la désinstanciation des données, car ce sont les deux événements qui délimitent leur période de validité.
+Donnée de type fondamental L’instanciation d’une donnée de type fondamental est constitué de deux phases.
+Le programme alloue l’espace nécessaire pour stocker la donnée. Si spécifié par le programmeur, le contenu de la donnée est initialisé. En ce qui concerne la désinstanciation, le programme désalloue l’espace réservé pour la donnée.">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Cycle de vie">
+    <meta itemprop="name" content="Durée de vie  :: Cours de C&#43;&#43; - Niveau Master">
+    <meta itemprop="description" content="Nous allons maintenant revenir sur l’instanciation et la désinstanciation des données, car ce sont les deux événements qui délimitent leur période de validité.
+Donnée de type fondamental L’instanciation d’une donnée de type fondamental est constitué de deux phases.
+Le programme alloue l’espace nécessaire pour stocker la donnée. Si spécifié par le programmeur, le contenu de la donnée est initialisé. En ce qui concerne la désinstanciation, le programme désalloue l’espace réservé pour la donnée.">
+    <meta itemprop="wordCount" content="1827">
+    <title>Durée de vie  :: Cours de C&#43;&#43; - Niveau Master</title>
+    <link href="../../css/fontawesome-all.min.css?1737661126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737661126" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737661126" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737661126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737661126" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737661126" rel="stylesheet">
+    <link href="../../css/fonts.css?1737661126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737661126" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737661126" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737661126" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737661126" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737661126" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737661126"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.variants && variants.init( [ 'mine' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copier dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Copié dans le presse-papiers!`;
+      window.T_Copy_link_to_clipboard = `Copier le lien dans le presse-papiers`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../chapter3/2-lifespan/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#donnée-de-type-fondamental">Donnée de type fondamental</a></li>
+        <li><a href="#donnée-de-type-structuré">Donnée de type-structuré</a></li>
+        <li><a href="#références">Références</a></li>
+        <li><a href="#validité-des-données">Validité des données</a></li>
+        <li><a href="#synthèse">Synthèse</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">Accueil</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../chapter3/index.html"><span itemprop="name">Cycle de vie</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Durée de vie </span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter3/1-allocation/index.html" title="Allocation dynamique (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter3/3-storage/index.html" title="Espace de stockage (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter3" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="durée-de-vie">Durée de vie </h1>
+
+<p>Nous allons maintenant revenir sur l&rsquo;instanciation et la désinstanciation des données, car ce sont les deux événements qui délimitent leur période de validité.</p>
+<hr>
+<h3 id="donnée-de-type-fondamental">Donnée de type fondamental</h3>
+<p>L&rsquo;instanciation d&rsquo;une donnée de type fondamental est constitué de deux phases.</p>
+<ol>
+<li>Le programme alloue l&rsquo;espace nécessaire pour stocker la donnée.</li>
+<li><strong>Si spécifié par le programmeur</strong>, le contenu de la donnée est initialisé.</li>
+</ol>
+<p>En ce qui concerne la désinstanciation, le programme désalloue l&rsquo;espace réservé pour la donnée.</p>
+<p>Dans le cas d&rsquo;une <strong>allocation automatique</strong>, l&rsquo;instanciation a lieu au moment de la définition de la variable, et la désinstanciation a lieu lorsque l&rsquo;on sort du bloc dans lequel elle est définie.</p>
+<div class="highlight wrap-code" linenos="table"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">twice_sum</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">auto</span> <span class="n">twice</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sum</span> <span class="o">+=</span> <span class="n">twice</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Dans l&rsquo;exemple ci-dessus :</p>
+<ul>
+<li><code>sum</code> est instancié à la ligne 3 et désinstancié à la ligne 12</li>
+<li><code>i</code> est instancié à la ligne 5 et désinstancié à la ligne 9 (après la dernière itération de la boucle)</li>
+<li><code>twice</code> est instancié à la ligne 7 et désinstancié à la ligne 9 (à la fin de chaque itération)</li>
+</ul>
+<p>Dans le cas d&rsquo;une <strong>allocation dynamique</strong>, l&rsquo;instanciation a lieu à l&rsquo;appel à <code>new</code> (ou <code>new[]</code>) et la désinstanciation à l&rsquo;appel à <code>delete</code> (ou <code>delete[]</code>).</p>
+<div class="highlight wrap-code" linenos="table"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span><span class="o">*</span> <span class="nf">make_int</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span><span class="o">*</span> <span class="n">ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span> <span class="p">{</span> <span class="n">value</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span><span class="o">*</span> <span class="n">five</span> <span class="o">=</span> <span class="n">make_int</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">five</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">delete</span> <span class="n">five</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Dans ce nouvel exemple :</p>
+<ul>
+<li>la variable <code>value</code> est instanciée ligne 1 et désinstanciée ligne 6,</li>
+<li>la variable <code>ptr</code> (le pointeur !) est instanciée ligne 3 et désinstanciée ligne 6,</li>
+<li>l&rsquo;entier alloué dynamiquement (et référencé par <code>*ptr</code> puis <code>*five</code>) est instancié ligne 4 et désinstancié ligne 54,</li>
+<li>la variable <code>five</code> (encore le pointeur) est instanciée à la ligne 10 et désinstanciée ligne 15.</li>
+</ul>
+<hr>
+<h3 id="donnée-de-type-structuré">Donnée de type-structuré</h3>
+<p>Pour les types-structurés (c&rsquo;est-à-dire <code>class</code> et <code>struct</code>), le comportement à l&rsquo;instanciation et désinstanciation est un peu différent.</p>
+<p>À l&rsquo;instanciation :</p>
+<ol>
+<li>le programme alloue l&rsquo;espace nécessaire pour stocker la donnée,</li>
+<li>le constructeur de la donnée est appelé <strong>quoi qu&rsquo;il arrive</strong>.</li>
+</ol>
+<p>À la désinstanciation :</p>
+<ol>
+<li>le destructeur de la donnée est appelé,</li>
+<li>le programme désalloue l&rsquo;espace réservé pour la donnée.</li>
+</ol>
+<p>Prenons l&rsquo;exemple suivant :</p>
+<div class="highlight wrap-code" linenos="table"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Person</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Person</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">surname</span><span class="p">)</span> <span class="o">:</span> <span class="n">_surname</span> <span class="p">{</span> <span class="n">surname</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                                                  <span class="p">,</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>                                                    
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; is born&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">~</span><span class="n">Person</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; is dead&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span>         <span class="n">_age</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_surname</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Person</span> <span class="n">p</span> <span class="p">{</span> <span class="s">&#34;Jean&#34;</span><span class="p">,</span> <span class="s">&#34;Paul&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Voici ce qu&rsquo;il se passe au moment de l&rsquo;instanciation de <code>p</code> (ligne 23) :</p>
+<ol>
+<li>Le programme alloue l&rsquo;espace nécessaire pour stocker un objet de type <code>Person</code>,</li>
+<li>Il appelle le constructeur de <code>Person</code> à deux paramètres qui :
+<ol>
+<li>instancie <code>_name</code> :
+<ol>
+<li>Le programme lui alloue le bloc mémoire nécessaire (au sein de l&rsquo;espace déjà réservé pour <code>p</code>).</li>
+<li>Il appelle le constructeur de <code>std::string</code> à un paramètre.</li>
+</ol>
+</li>
+<li>instancie <code>_age</code> :
+<ol>
+<li>Le programme lui alloue le bloc mémoire nécessaire (au sein de l&rsquo;espace déjà réservé pour <code>p</code>).</li>
+<li>Il lui assigne la valeur <code>3</code>.</li>
+</ol>
+</li>
+<li>instancie <code>_surname</code> :
+<ol>
+<li>Le programme lui alloue le bloc mémoire nécessaire (au sein de l&rsquo;espace déjà réservé pour <code>p</code>).</li>
+<li>Il appelle le constructeur de <code>std::string</code> à un paramètre.</li>
+</ol>
+</li>
+<li>exécute les instructions présentes dans le corps du constructeur (en l&rsquo;occurrence, cela affiche <code>Jean is born</code> dans la console).</li>
+</ol>
+</li>
+</ol>
+<div class="box notices cstyle note">
+  <div class="box-label">
+    <i class="fa-fw fas fa-exclamation-circle"></i> Remarque
+  </div>
+  <div class="box-content">
+<p>Notez bien ici que <code>_name</code> est instancié en premier, puis <code>_age</code>, puis <code>_surname</code>, malgré l&rsquo;ordre dans lequel les attributs apparaissent dans la liste d&rsquo;initialisation du constructeur.<br>
+En effet, c&rsquo;est l&rsquo;ordre de définition des attributs dans la classe qui fait foi et détermine qui est instancié avant qui.</p>
+  </div>
+</div>
+<div class="box notices cstyle note">
+  <div class="box-label">
+    <i class="fa-fw fas fa-exclamation-circle"></i> Remarque
+  </div>
+  <div class="box-content">
+<p>Lorsqu&rsquo;un attribut est mentionné dans la liste d&rsquo;initialisation, il est initialisé en fonction de ce qui est spécifié dans cette liste.
+En l&rsquo;absence de cette mention, l&rsquo;initialisation se fait à partir du class-initializer.
+Si ce dernier n&rsquo;est pas défini, le constructeur par défaut est invoqué pour un type structuré, tandis que pour un type fondamental, rien n&rsquo;est fait.</p>
+  </div>
+</div>
+<p>Voici maintenant ce qu&rsquo;il se passe au moment de sa désinstanciation (ligne 25) :</p>
+<ol>
+<li>Le programme appelle le destructeur de <code>Person</code> qui :
+<ol>
+<li>exécute les instructions présentes dans le corps du destructeur (en l&rsquo;occurrence, cela affiche <code>Jean is dead</code> dans la console),</li>
+<li>désinstancie <code>_surname</code> :
+<ol>
+<li>Le programme appelle le destructeur de <code>std::string</code>.</li>
+<li>Il désalloue l&rsquo;espace réservé pour <code>_surname</code>.</li>
+</ol>
+</li>
+<li>désinstancie <code>_age</code>, c&rsquo;est-à-dire qu&rsquo;il désalloue l&rsquo;espace qui lui est réservé,</li>
+<li>désinstancie <code>_name</code> :
+<ol>
+<li>Le programme appelle le destructeur de <code>std::string</code>.</li>
+<li>Il désalloue l&rsquo;espace réservé pour <code>_name</code>.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>le programme désalloue entièrement l&rsquo;espace réservé à <code>p</code>.</li>
+</ol>
+<p>Pour résumer, en plus de l&rsquo;allocation et la désallocation mémoire, l&rsquo;instanciation et la désinstanciation d&rsquo;un objet de type-structuré comprennent sa construction et sa destruction.<br>
+Ces deux étapes entraînent récursivement l&rsquo;instanciation et la désinstanciation de ses attributs.</p>
+<hr>
+<h3 id="références">Références</h3>
+<p>Une référence est un alias d&rsquo;une donnée.<br>
+Contrairement à la définition d&rsquo;une variable classique, la définition d&rsquo;une référence ou la sortie du bloc dans lequel elle est définie n&rsquo;a absolument <strong>aucun impact</strong> sur l&rsquo;instanciation ou la désinstanciation de la donnée :</p>
+<div class="highlight wrap-code" linenos="table"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span><span class="o">&amp;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>La donnée représentée par <code>a</code>, mais également par <code>b</code>, est instanciée ligne 3 et désinstanciée ligne 11.<br>
+La ligne 6 n&rsquo;a absolument aucun impact sur la mémoire : aucune nouvelle instanciation n&rsquo;est réalisée.<br>
+Idem pour la ligne 8, rien n&rsquo;est désinstancié, la donnée correspondant à <code>a</code> est toujours bien présente.</p>
+<p>En revanche, il faut faire attention au cas inverse : conserver une référence sur une donnée qui va être désinstanciée !<br>
+Voici un exemple :</p>
+<div class="highlight wrap-code" linenos="table"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">person</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">default_name</span> <span class="o">=</span> <span class="s">&#34;stranger&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">name</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">?</span> <span class="nl">default_name</span> <span class="p">:</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">person</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Ici, <code>default_name</code> est instancié ligne 3 et désinstancié ligne 5 (lorsqu&rsquo;on sort de la fonction <code>fcn</code>).<br>
+Dans le cas où <code>name</code> est vide, on renvoie une référence sur <code>default_name</code>, qui n&rsquo;a par conséquent plus d&rsquo;espace mémoire attribué une fois revenu dans la fonction <code>main</code>.<br>
+Ce qui est affiché dans la console à la ligne 11 est donc indéterminé (et encore, moyennant que le programme ne crash pas 😬).</p>
+<p>On utilise le terme <strong>dangling-reference</strong> pour parler de cette situation.
+C&rsquo;est un problème que l&rsquo;on rencontre souvent, surtout lorsqu&rsquo;on est débutant.</p>
+<hr>
+<h3 id="validité-des-données">Validité des données</h3>
+<p>L&rsquo;accès à une donnée (en écriture ou en lecture) est valide <strong>si et seulement si</strong> cet accès est effectué après son instanciation et avant sa désinstanciation.</p>
+<p>Pourquoi ? Eh bien, tout simplement parce que le support d&rsquo;existence d&rsquo;une donnée est le segment mémoire dans lequel elle est écrite, et ce segment est réservé au cours de l&rsquo;instanciation puis libéré à la désinstanciation.<br>
+C&rsquo;est d&rsquo;ailleurs la cause des dangling-references, que nous avons présentées dans le paragraphe précédent.</p>
+<p>La période entre ces deux événements est appelée <strong>durée de vie</strong> de la donnée, ou encore <strong>lifespan</strong> en anglais.</p>
+<p>Si l&rsquo;accès à la donnée est fait en dehors de sa durée de vie, le comportement du programme est indéterminé (= <strong>undefined behavior</strong>).<br>
+Dans le cas d&rsquo;un accès en lecture, si le programme ne génère pas immédiatement une segfault, vous pourrez vous retrouver avec une valeur complètement aléatoire (ce ne sera pas forcément la dernière valeur portée par la donnée).<br>
+Dans le cas d&rsquo;un accès en écriture, on aura au mieux une segfault qui permettra de localiser rapidement à quel endroit du code l&rsquo;accès invalide a été fait, et dans le pire des cas on écrira dans une zone mémoire désormais allouée à une autre donnée.
+Il devient alors extrêmement difficile de comprendre d&rsquo;où vient le problème&hellip;</p>
+<p>Petit exercice, dans le code ci-dessous, essayez d&rsquo;anticiper quelles seront les valeurs affichées dans la console :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fcn1</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span><span class="o">*</span> <span class="n">ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1200</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// =&gt; ?
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Values</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fcn2</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Values</span><span class="o">*</span> <span class="n">ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Values</span> <span class="n">values</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">values</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ptr</span><span class="o">-&gt;</span><span class="n">values</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// =&gt; ?
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ptr</span><span class="o">-&gt;</span><span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// =&gt; ?
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fcn3</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span><span class="o">*</span> <span class="n">ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">1200</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">delete</span> <span class="n">ptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// =&gt; ?
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span><span class="o">&amp;</span> <span class="n">fcn4</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">v</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fcn1</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fcn2</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fcn3</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">fcn4</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// =&gt; ?
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<p>Ouvrez maintenant le code dans <a href="https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGe1wAyeAyYAHI%2BAEaYxCBmGqQADqgKhE4MHt6%2BekkpjgJBIeEsUTFxtpj2eQxCBEzEBBk%2BflzllWk1dQQFYZHRsfEKtfWNWS2Dnd1FJf0AlLaoXsTI7BzmAMzByN5YANQma25Og8SYrPvYJhoAguub25h7BwBumA4k55c310%2BoeOg7VGQDC4EBmnxMAHYrNcdrCdsECAAqHYJAjER4AER2DC8tFoqOI%2B2hVzheyhn1JpIROyYmJ2XDiGiJFMpsIJdPMADYmMyYXDIRjwXzYYN0CAUAsCI83Ps3DtEezZbKdqLxa5aLySXCAPTanYAWn15xpyFMbjWJiuAA4FPCGE8xH9MKQdiwmHhbSciIsQjsInhGPTGeCIYLrp9jl4HDsAGpiLyYBQh4mk1UgF5vQkHBHGh3eRMcqH0l1mF1rMmCtbEgWaz4/P4AoFmUHJlmwuP5hTIxVrLE4vEEzWkyEp1mx%2BMFvMJpNVtuUntYrlTxND/mhoVakUEMUSrxSpUHFFoo1rbDLhQAOhSAC9MKDpcq0%2BrV7DdQaT9gTWaLdbbcE806Lpuh6OxegsxC%2Bv6gYWsKKrbuKaB7g%2Bh4Eh%2B54mAArBYXCYYuByPvBIDPrOsFvoaxpMKaJjmpaNp2gBWAumBPoPBhNJeDstABhxuxmI8ABi%2ByCWsgnhuu4bfL8/yAgwawtmJo6wgi3ZonSIQAO52gQEAMhoGhgiRm47Fg9AEA8g6GXOaaIfu%2BGHgqqkHnKT4MOgGqGaSZEfl%2B1E/nR/6OoxoGYN6EEPAwYAcHgLBJPUDwAI5eL8OxgGAIZhl8Vw5mYnKNgwkjyTc5KwdSTx0pIL7BQQPo7E8tbiZlnzUsBDCFSOc4ySCBmKXlzbdR1QJyf1ElGdZkrIXKMkFTME1wTuxE9V5FFUTRv70YFzquu6noheBkEBgwOwVSNpJejVTKWQ1HBzLQnAYbwfgcFopCoJwMqWNYKrgcsexmGsPCkAQmjXXMADWIAYfEt0cJID3Ay9nC8AoIDxEDT3XaQcCwEgmCqK8e4kOQlB1MACjKIYFRCAgqDqY9z1oDFdBMFU5MhLQVM03TvAMwkdB9FshjAFwEIaC0PN88QoSsCs3OoIz9DEAA8nuHO0/DuOvFcxCk4jpAa8gNT4I9vD8IIIhiOwUgyIIigqOo6OkLoLQGEYKDWNY%2Bh4BEyOQHMqComkyMcPqor7BipgfZYwu8KgLzEMQTo%2B6CpDEF4gjRZgAAqqCeEncwKN9lu2NuwSs5T1Nq9wvDqcQTAJJwPA3XdcMO69HDYHjyAE%2BiqhWpy%2BqcpIOwC0Y9IQheGgXlwOwQO9ViWC6uCECQv3/TMvBo1oMxzAgpxYDEyfg5D%2BicLDpBcwjHBIyjgPA9vJ8cGYLfPW3G933MccpM4khAA" rel="external" target="_blank">Compiler Explorer</a> et regardez ce qu&rsquo;il se passe vraiment.<br>
+Changez ensuite de compilateur et sélectionnez <code>x86-64 gcc 13.2</code>.
+Que constatez-vous ?</p>
+<div class="box notices cstyle tip">
+  <div class="box-label">
+    <i class="fa-fw fas fa-lightbulb"></i> Astuce
+  </div>
+  <div class="box-content">
+<p>Le terme <strong>undefined behavior</strong> signifie littéralement &ldquo;comportement indéfini&rdquo;.
+En réalité, il s&rsquo;agit d&rsquo;un comportement indéfini <strong>par le standard</strong>.<br>
+Cela comporte donc les cas où le programme ne donne pas les mêmes résultats d&rsquo;une exécution à l&rsquo;autre (<code>fcn3</code>), mais également les cas où le comportement semble stable, jusqu&rsquo;à ce que l&rsquo;on change de compilateur ou de machine (<code>fcn2</code> et <code>fcn4</code>).<br>
+Et comme on ne peut pas tester son code sur tous les compilateurs et toutes les machines, même si certaines instructions ont l&rsquo;air de toujours se comporter comme on le voudrait (<code>fcn1</code>), il faudra éviter d&rsquo;écrire du code dont le comportement n&rsquo;est pas garanti par le standard.</p>
+  </div>
+</div>
+<hr>
+<h3 id="synthèse">Synthèse</h3>
+<ul>
+<li>L&rsquo;<strong>instanciation</strong> comporte :
+<ul>
+<li>l&rsquo;allocation de la mémoire pour la donnée,</li>
+<li>son éventuelle initialisation : constructeur pour les types-structurés, initialiseur (seulement si spécifié) pour les types fondamentaux.</li>
+</ul>
+</li>
+<li>La <strong>désinstanciation</strong> comporte :
+<ul>
+<li>la destruction de la donnée s&rsquo;il s&rsquo;agit d&rsquo;une instance de type-structuré,</li>
+<li>la désallocation de la mémoire réservée.</li>
+</ul>
+</li>
+<li>On parle d&rsquo;<strong>allocation automatique</strong> lorsque la donnée est instanciée via la définition d&rsquo;une variable locale.<br>
+La désinstanciation a lieu lorsque l&rsquo;on sort du bloc dans lequel elle est définie.</li>
+<li>On parle d&rsquo;<strong>allocation dynamique</strong> lorsque la donnée est instanciée via l&rsquo;utilisation de <code>new</code> (ou <code>new[]</code>).<br>
+La désinstanciation se fait explicitement avec l&rsquo;appel <code>delete</code> (ou <code>delete[]</code>).</li>
+<li>Le constructeur d&rsquo;un objet déclenche l&rsquo;instanciation de chacun de ses attributs, dans l&rsquo;ordre dans lequel ils ont été définis.</li>
+<li>La <strong>durée de vie</strong> d&rsquo;une donnée est la période durant laquelle il est valide d&rsquo;y accéder : entre son instanciation et sa désinstanciation.</li>
+<li>Les références n&rsquo;ont pas d&rsquo;impact sur la durée de vie des données référencées.
+En revanche, il faut faire attention à ne pas conserver une référence sur une donnée déjà désinstanciée (= <strong>dangling-reference</strong>).</li>
+<li>Accéder à une donnée déjà désinstanciée constitue un <strong>undefined behavior</strong>.
+L&rsquo;utilisation d&rsquo;une dangling-reference est un bon exemple.</li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation showVisitedLinks">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="logo" href="../../">🎄 C++ 🎄</a>
+
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/chapter0/index.html"><a class="padding" href="../../chapter0/index.html"><span class="chapnum">0.</span>&ensp;Mise en place<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb41caf94f12b8a1a4b5e560230e7851" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter1/index.html"><a class="padding" href="../../chapter1/index.html"><span class="chapnum">1.</span>&ensp;Introduction au C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-6c398714eae4372920aec3a1e6c2e143" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter2/index.html"><a class="padding" href="../../chapter2/index.html"><span class="chapnum">2.</span>&ensp;Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b1df0095a9fd74320697a6d478418ec3" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu">
+            <li class="" data-nav-id="/chapter3/1-allocation/index.html"><a class="padding" href="../../chapter3/1-allocation/index.html"><span class="presection-icon">🎇</span>Allocation dynamique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/chapter3/2-lifespan/index.html"><a class="padding" href="../../chapter3/2-lifespan/index.html"><span class="presection-icon">⏳</span>Durée de vie <i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter3/3-storage/index.html"><a class="padding" href="../../chapter3/3-storage/index.html"><span class="presection-icon">💾</span>Espace de stockage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter3/4-references/index.html"><a class="padding" href="../../chapter3/4-references/index.html"><span class="presection-icon">🔀</span>Usage des références<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter3/5-ownership/index.html"><a class="padding" href="../../chapter3/5-ownership/index.html"><span class="presection-icon">🏘️</span>Ownership<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter3/test/index.html"><a class="padding" href="../../chapter3/test/index.html"><span class="presection-icon">☑</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter8/index.html"><a class="padding" href="../../chapter8/index.html"><span class="chapnum">8.</span>&ensp;Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7cf6d9bdd794f38d7006506bdc38c58f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter9/index.html"><a class="padding" href="../../chapter9/index.html"><span class="chapnum">9.</span>&ensp;Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">Accès rapide</div>
+          <ul class="space">
+            <li><a class="padding" href="https://github.com/marsault/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt exercice du cours</a></li>
+            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt TPs</a></li>
+            <li><a class="padding" href="../../slides/index.html"><i class='far fa-file-powerpoint'></i> Slides</a></li>
+            <li><a class="padding" href="../../workflow/index.html"><i class='far fa-list-alt'></i> Workflow</a></li>
+            <li><a class="padding" href="../../faq/index.html"><i class='fas fa-question-circle'></i> FAQ</a></li>
+            <li><a class="padding" href="../../chapter0/6-tips/index.html"><i class='fa fa-rocket'></i> Astuces</a></li>
+            <li><a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a></li>
+            <li><a class="padding" href="https://www-igm.univ-mlv.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> CPP-Ref</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Langue</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../chapter3/2-lifespan/index.html" lang="fr" selected>Français</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Thème</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-mine" value="mine" selected>Mine</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks showVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Supprimer l&#39;historique</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="../../js/clipboard.min.js?1737661126" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737661126" defer></script>
+    <script src="../../js/theme.js?1737661126" defer></script>
+
+
+
+    
+
+
+<button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
+
+<div id="footer-question-window" disabled>
+    <form id="question" method=POST action="https://formsubmit.co/08af4b8e13fc3ec785faa99820631150"
+        target="question-submitted" onsubmit="cleanQuestionFormContent()">
+
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <textarea name="question" rows="7" cols="30" placeholder="Mon message..."></textarea>
+        <input type="hidden" name="selection" />
+
+        <input type="hidden" name="_replyto" />
+        <input type="hidden" name="_subject" />
+        <input type="hidden" name="_template" value="box" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://igm.univ-mlv.fr/~marsault/cpp/cours/common/question-submitted" />
+
+        <input type="submit" disabled style="display: none" aria-hidden="true" />
+        <input type="submit" value="Envoyer" />
+    </form>
+
+    <iframe class="hidden" name="question-submitted" src=""></iframe>
+</div>
+
+<script>
+
+    function updateQuestionFormSubject() {
+        let email = document.querySelector('#question>input[name="email"]').value;
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 2] " + email + ", retour sur ta question";
+    }
+
+    function cleanQuestionFormContent() {
+        function clean(element) {
+            
+            element.value = element.value.replace(/\[\.\./g, "[ ..");
+        }
+
+        clean(document.querySelector('#question>textarea[name="question"]'))
+        clean(document.querySelector('#question>input[name="selection"]'))
+    }
+
+    function openQuestionForm() {
+        document.getElementById("footer-question-window").removeAttribute("disabled");
+
+        var selection = window.getSelection().toString();
+        document.querySelector('#question>input[name="selection"]').value = selection
+    }
+
+    function updateQuestionWidgetState(event) {
+        var body = document.getElementById("R-body-inner");
+        var selection = window.getSelection();
+        var question_window = document.getElementById("footer-question-window");
+
+        document.getElementById("footer-question-btn").disabled =
+            selection.isCollapsed ||
+            body == null ||
+            body.contains(selection.anchorNode) == false ||
+            body.contains(selection.focusNode) == false;
+
+        if (event !== undefined
+            && event.type == "mouseup"
+            && question_window.contains(event.target) == false
+            && question_window.contains(document.activeElement) == false) {
+            question_window.setAttribute("disabled", true);
+        }
+    }
+
+    updateQuestionFormSubject();
+
+    document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionWidgetState;
+    updateQuestionWidgetState();
+
+</script>
+
+
+
+  </body>
+</html>

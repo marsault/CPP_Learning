@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cycle de vie :: Cours de C&#43;&#43; - Niveau Master</title>
+    <link>/chapter3/index.html</link>
+    <description>En C++, lorsque vous allouez une donnée, celle-ci ne reste pas miraculement accessible durant toute l’exécution de votre programme.&#xA;Contrairement à des langages comme Java ou C#, qui disposent d’un garbage-collector pour libérer automatiquement la mémoire lorsque celle-ci n’est plus nécessaire, c’est ici au développeur de faire ce travail.&#xA;Il doit penser à libérer la mémoire lorsqu’il ne compte plus s’en servir, mais surtout, il doit faire attention à ne pas tenter d’accéder à des données si celles-ci n’existent déjà plus 😬</description>
+    <generator>Hugo</generator>
+    <language>fr</language>
+    <atom:link href="/chapter3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Allocation dynamique</title>
+      <link>/chapter3/1-allocation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter3/1-allocation/index.html</guid>
+      <description>Cette première page sera assez courte, elle vous présentera simplement la syntaxe permettant d’allouer dynamiquement de la mémoire et de la libérer.&#xA;Allouer un seul élément Pour allouer un bloc de mémoire, on utilise le mot-clef new, suivi du type de donnée que l’on souhaite y placer, puis de la valeur avec laquelle on souhaite l’initialiser.&#xA;Cette instruction retourne un pointeur.&#xA;int* ptr_5 = new int { 5 }; std::cout &lt;&lt; *ptr_5 &lt;&lt; std::endl; // --&gt; 5 Comme pour une variable classique, on peut utiliser des {} ou des () pour indiquer la valeur initiale.</description>
+    </item>
+    <item>
+      <title>Durée de vie </title>
+      <link>/chapter3/2-lifespan/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter3/2-lifespan/index.html</guid>
+      <description>Nous allons maintenant revenir sur l’instanciation et la désinstanciation des données, car ce sont les deux événements qui délimitent leur période de validité.&#xA;Donnée de type fondamental L’instanciation d’une donnée de type fondamental est constitué de deux phases.&#xA;Le programme alloue l’espace nécessaire pour stocker la donnée. Si spécifié par le programmeur, le contenu de la donnée est initialisé. En ce qui concerne la désinstanciation, le programme désalloue l’espace réservé pour la donnée.</description>
+    </item>
+    <item>
+      <title>Espace de stockage</title>
+      <link>/chapter3/3-storage/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter3/3-storage/index.html</guid>
+      <description>Sur cette page, nous rappelerons ce que sont les variables et les pointeurs, et comment ils peuvent être représentés en mémoire, puis nous ferons de même pour les références.&#xA;Nous présenterons ensuite les spécificités des trois zones dans lesquelles le programme alloue de la mémoire : la mémoire statique, la pile et le tas.&#xA;Cela vous aidera, j’espère, à visualiser mentalement quelles sont les données valides du programme.&#xA;Représentation Variables Une variable est un identifiant permettant d’accéder à une donnée de taille fixe en mémoire.</description>
+    </item>
+    <item>
+      <title>Usage des références</title>
+      <link>/chapter3/4-references/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter3/4-references/index.html</guid>
+      <description>Comme cela doit paraître encore un peu abstrait, nous allons vous présenter concrètement les principaux cas d’utilisation des références. Notez qu’il en existe un autre, mais vous le découvrirez dans le chapitre sur l’héritage !&#xA;Modifier un argument Le premier cas d’utilisation des références avait déjà été décrit dans le Chapitre 1 : il s’agit de pouvoir modifier la valeur ou le contenu d’un argument passé à une fonction.&#xA;Pour rappel, lorsque vous passez un objet par valeur en paramètre d’une fonction, l’intégralité de l’instance est copiée !</description>
+    </item>
+    <item>
+      <title>Ownership</title>
+      <link>/chapter3/5-ownership/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter3/5-ownership/index.html</guid>
+      <description>Jusqu’ici, nous vous avons expliqué que contrairement au Java, les données que vous instanciez ne restent pas magiquement en vie tant que vous en avez besoin.&#xA;C’est donc à vous de garantir que vos données ne seront pas désinstanciées avant d’avoir fini de les utiliser.&#xA;Sur cette page, nous allons introduire le concept d’ownership, qui vous aidera à mieux architecturer votre code pour éviter de vous retrouver avec des dangling-references.</description>
+    </item>
+    <item>
+      <title>Questionnaire</title>
+      <link>/chapter3/test/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter3/test/index.html</guid>
+      <description>Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Henri Derycke) Initiaux GR2 (avec Anthony Labarre) Alternants GR3 (avec Victor Marsault) 1. Quels sont les avantages et les inconvénients de la pile par rapport du tas ?&#xA;2. A quoi sert le mot-clef delete[] ?&#xA;3. Quels sont les deux événements qui délimitent la durée de vie d’une donnée ?&#xA;4. Qu’est-ce qu’une dangling-reference ?</description>
+    </item>
+  </channel>
+</rss>

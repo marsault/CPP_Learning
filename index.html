@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.128.0">
+    <meta name="generator" content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619">
+    <meta name="description" content="Bienvenue Sur ce site, vous trouverez le cours de C&#43;&#43; destiné à l’enseignement des Master 1 de l’Universisté Gustave-Eiffel. Si vous ne faites pas partie des étudiants de cette section, vous êtes tout de même les bienvenus. Sachez juste que d’une part, ce cours étant un cours d’introduction, nous nous concentrerons sur les concepts de base du langage, ainsi que sur les mécanismes permettant d’écrire du code plus simplement ou de le rendre plus sûr.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Accueil :: Cours de C&#43;&#43; - Niveau Master">
+    <meta name="twitter:description" content="Bienvenue Sur ce site, vous trouverez le cours de C&#43;&#43; destiné à l’enseignement des Master 1 de l’Universisté Gustave-Eiffel. Si vous ne faites pas partie des étudiants de cette section, vous êtes tout de même les bienvenus. Sachez juste que d’une part, ce cours étant un cours d’introduction, nous nous concentrerons sur les concepts de base du langage, ainsi que sur les mécanismes permettant d’écrire du code plus simplement ou de le rendre plus sûr.">
+    <meta property="og:url" content="/index.html">
+    <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:title" content="Accueil :: Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:description" content="Bienvenue Sur ce site, vous trouverez le cours de C&#43;&#43; destiné à l’enseignement des Master 1 de l’Universisté Gustave-Eiffel. Si vous ne faites pas partie des étudiants de cette section, vous êtes tout de même les bienvenus. Sachez juste que d’une part, ce cours étant un cours d’introduction, nous nous concentrerons sur les concepts de base du langage, ainsi que sur les mécanismes permettant d’écrire du code plus simplement ou de le rendre plus sûr.">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Accueil :: Cours de C&#43;&#43; - Niveau Master">
+    <meta itemprop="description" content="Bienvenue Sur ce site, vous trouverez le cours de C&#43;&#43; destiné à l’enseignement des Master 1 de l’Universisté Gustave-Eiffel. Si vous ne faites pas partie des étudiants de cette section, vous êtes tout de même les bienvenus. Sachez juste que d’une part, ce cours étant un cours d’introduction, nous nous concentrerons sur les concepts de base du langage, ainsi que sur les mécanismes permettant d’écrire du code plus simplement ou de le rendre plus sûr.">
+    <meta itemprop="wordCount" content="1189">
+    <title>Accueil :: Cours de C&#43;&#43; - Niveau Master</title>
+    <link href="./index.xml" rel="alternate" type="application/rss+xml" title="Accueil :: Cours de C++ - Niveau Master">
+    <link href="./css/fontawesome-all.min.css?1737661126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="./css/fontawesome-all.min.css?1737661126" rel="stylesheet"></noscript>
+    <link href="./css/nucleus.css?1737661126" rel="stylesheet">
+    <link href="./css/auto-complete.css?1737661126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="./css/auto-complete.css?1737661126" rel="stylesheet"></noscript>
+    <link href="./css/perfect-scrollbar.min.css?1737661126" rel="stylesheet">
+    <link href="./css/fonts.css?1737661126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="./css/fonts.css?1737661126" rel="stylesheet"></noscript>
+    <link href="./css/theme.css?1737661126" rel="stylesheet">
+    <link href="./css/theme-mine.css?1737661126" rel="stylesheet" id="R-variant-style">
+    <link href="./css/chroma-relearn-light.css?1737661126" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="./css/print.css?1737661126" rel="stylesheet" media="print">
+    <script src="./js/variant.js?1737661126"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='.';
+      window.relearn.relBaseUri='.';
+      window.relearn.absBaseUri='';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.variants && variants.init( [ 'mine' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copier dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Copié dans le presse-papiers!`;
+      window.T_Copy_link_to_clipboard = `Copier le lien dans le presse-papiers`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="./index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#bienvenue">Bienvenue</a>
+      <ul>
+        <li><a href="#déroulement-du-module">Déroulement du module</a></li>
+        <li><a href="#séances-de-tp">Séances de TP</a></li>
+        <li><a href="#notation">Notation</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#création-et-maintenance-de-ce-site">Création et maintenance de ce site</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Accueil</span><meta itemprop="position" content="1"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-left"></i></span>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="./chapter0/index.html" title="Mise en place (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable page" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="accueil">Accueil</h1>
+
+<h2 id="bienvenue">Bienvenue</h2>
+<p>Sur ce site, vous trouverez le cours de C++ destiné à l&rsquo;enseignement des Master 1 de l&rsquo;Universisté Gustave-Eiffel. Si vous ne faites pas partie des étudiants de cette section, vous êtes tout de même les bienvenus. Sachez juste que d&rsquo;une part, ce cours étant un cours d&rsquo;introduction, nous nous concentrerons sur les concepts de base du langage, ainsi que sur les mécanismes permettant d&rsquo;écrire du code plus simplement ou de le rendre plus sûr. Et d&rsquo;autre part, il est fortement recommandé pour pouvoir suivre ce cours d&rsquo;avoir de bonnes bases en C et en Java.</p>
+<p>À nos très chers étudiants et étudiantes de Master 1, merci de lire la suite de cette page attentivement.</p>
+<hr>
+<h3 id="déroulement-du-module">Déroulement du module</h3>
+<p>Le module sera constitué de 3 séances de cours magistraux, 12 séances de travaux pratiques et 3 séances d&rsquo;évaluation.</p>
+<p>Le planning est le suivant :</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Dates</th>
+<th>Séances</th>
+<th>Chapitre à lire <br>(avant le TP)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S1</td>
+<td>13 - 17 janvier</td>
+<td>▹ Cours 1 <br> ▹ TP 1 (Compilation, Entrée / sortie, <code>std::string</code>, <code>std::vector</code>)</td>
+<td><a href="./chapter0/index.html">0</a> et <a href="./chapter1/index.html">1</a></td>
+</tr>
+<tr>
+<td>S2</td>
+<td>20 - 24 janvier</td>
+<td>▹ TP 2 (Classes, Constructeurs, Membres statiques, Opérateurs)</td>
+<td><a href="./chapter2/index.html">2</a></td>
+</tr>
+<tr>
+<td>S3</td>
+<td>27 - 31 janvier</td>
+<td>▹ TP 3 (Références, Ownership)</td>
+<td><a href="./chapter3/index.html">3</a></td>
+</tr>
+<tr>
+<td>S4</td>
+<td>3 - 7 février</td>
+<td>▹ TP 4 (Révisions, Framework de TP noté)</td>
+<td></td>
+</tr>
+<tr>
+<td>S5</td>
+<td>10 - 14 février</td>
+<td>▹ TP noté 1 (sur les chapitres 0 à 3, 2h) <br> ▹ Cours 2</td>
+<td></td>
+</tr>
+<tr>
+<td>S6</td>
+<td>17 - 21 février</td>
+<td>▹ TP 5 (Copie, Déplacement, l-value / r-value)</td>
+<td><a href="./chapter4/index.html">4</a></td>
+</tr>
+<tr>
+<td>S7</td>
+<td>24 - 28 février</td>
+<td>▹ TP 6 (stdlib, conteneurs, <code>std::unique_ptr</code>)</td>
+<td><a href="./chapter5/index.html">5</a></td>
+</tr>
+<tr>
+<td>S8</td>
+<td>3 - 7 mars</td>
+<td>▹ TP 7 (Polymorphisme, Héritage)</td>
+<td><a href="./chapter6/index.html">6</a></td>
+</tr>
+<tr>
+<td>S9</td>
+<td>10 - 14 mars</td>
+<td>▹ TP 8 (Révisions, Framework de TP noté)</td>
+<td></td>
+</tr>
+<tr>
+<td>S10</td>
+<td>17 - 21 mars</td>
+<td>▹ TP noté 2 (sur les chapitres 0 à 6, 2h) <br> ▹ Cours 3</td>
+<td></td>
+</tr>
+<tr>
+<td>S11</td>
+<td>24 - 28 mars</td>
+<td>▹ TP 9 (Lambdas, Algorithmes)</td>
+<td><a href="./chapter7/index.html">7</a></td>
+</tr>
+<tr>
+<td>S12</td>
+<td>31 mars - 3 avril</td>
+<td>▹ TP 10 (Templates)</td>
+<td><a href="./chapter8/index.html">8</a></td>
+</tr>
+<tr>
+<td>S13</td>
+<td>7 - 12 avril</td>
+<td>▹ TP 11 (Templates, Perfect forwarding, SFINAE)</td>
+<td><a href="./chapter9/index.html">9</a></td>
+</tr>
+<tr>
+<td>S14</td>
+<td>14 - 18 avril</td>
+<td>▹ TP 12 (Révisions) en autonomie</td>
+<td></td>
+</tr>
+<tr>
+<td>S15</td>
+<td>21 - 24 avril</td>
+<td>▹ TP noté 3 (sur tous les chapitres, 3h)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="cours-magistraux">Cours magistraux</h4>
+<p>Les cours magistraux sont l&rsquo;occasion d&rsquo;aborder les notions que vous pourrez revoir et creuser dans les chapitres du cours en ligne.<br>
+C&rsquo;est également un bon moment pour poser des questions sur le cours ou les TPs précédents.<br>
+Les slides sont disponible <a href="./slides/index.html">ici</a>.</p>
+<h4 id="cours-en-ligne">Cours en ligne</h4>
+<p>Chaque semaine, <strong>avant votre séance de TP</strong>, vous devrez lire et comprendre le chapitre associé du cours en ligne.</p>
+<p>Il faudra également réaliser les exercices proposés, afin d&rsquo;assimiler rapidement ce que vous aurez lu. Pour cela, vous devrez partir du contenu de ce <a href="https://github.com/marsault/CPP_Learning_Code/" rel="external" target="_blank">dépôt git</a>.
+Il est recommandé d&rsquo;essayer de faire les exercices une première fois sans regarder les solutions.
+Si vous êtes bloqués, recherchez d&rsquo;abord de l&rsquo;aide sur Internet ou en demandant à vos camarades de classe.</p>
+<p>Une fois que vous avez quelque chose qui a l&rsquo;air de fonctionner, regardez la solution pour vérifier que ce que vous avez fait est correct.
+Si votre code n&rsquo;est pas identique, c&rsquo;est probablement parce qu&rsquo;il n&rsquo;y a pas qu&rsquo;une seule bonne réponse.
+Et si vous n&rsquo;êtes vraiment pas sûr(e)s de votre solution, n&rsquo;hésitez pas à m&rsquo;envoyer ce que vous avez fait par mail ou Discord, ou à l&rsquo;indiquer dans le formulaire de fin de chapitre afin que l&rsquo;on vous donne un retour.</p>
+<div class="box notices cstyle tip">
+  <div class="box-label">
+    <i class="fa-fw fas fa-lightbulb"></i> Astuce
+  </div>
+  <div class="box-content">
+<p>Si vous avez une question ou une remarque (typo par exemple) sur un endroit très précis du cours, <strong>vous pouvez sélectionner la zone concernée et cliquer sur le point d&rsquo;interrogation</strong> qui s&rsquo;affiche en bas à droite de l&rsquo;écran pour nous envoyer votre message.<br>
+On pourra ainsi vous répondre et éventuellement retravailler cette partie du site pour qu&rsquo;elle soit plus claire pour tout le monde ! 😄</p>
+  </div>
+</div>
+<h4 id="questionnaires">Questionnaires</h4>
+<p>Le questionnaire de fin de chapitre sera composé comme suit :</p>
+<ul>
+<li>nom et prénom,</li>
+<li>adresse mail,</li>
+<li>des questions sur le contenu du chapitre,</li>
+<li>un champ pour entrer vos propres questions (nous enverrons les réponses au mail indiqué plus haut),</li>
+<li>un champ pour laisser des commentaires sur le format du cours et me prévenir si j&rsquo;ai écrit des bêtises</li>
+</ul>
+<p>N&rsquo;hésitez vraiment surtout pas à poser vos questions dans le formulaire, mais aussi à nous les envoyer directement par mail ou Discord, en particulier si cela vous bloque pour avancer.</p>
+<h3 id="séances-de-tp">Séances de TP</h3>
+<p>L&rsquo;énoncé pour chaque séance de TP sera disponible au format Markdown sur <a href="https://github.com/marsault/CPP_Exercises/" rel="external" target="_blank">dépôt git</a>.</p>
+<p>Certaines parties de la séance seront à réaliser en autonomie, tandis que d&rsquo;autres parties devront se faire avec l&rsquo;ensemble du groupe, de manière à ce que la correction puisse être comprise par tous.</p>
+<h4 id="questions">Questions</h4>
+<p>Si vous avez des questions sur le TP ou le cours, le meilleur moment pour les poser est pendant les séances de TP.</p>
+<p>Si vous n&rsquo;avez pas terminé le TP avant la fin de la séance, et que vous avez des questions pendant que vous êtes en train de le terminer chez vous, vous pouvez contacter votre chargé de TP par mail ou sur Discord. Vous pouvez également demander de l&rsquo;aide à vos camarades de classe, car c&rsquo;est toujours intéressant de travailler en groupe.</p>
+<hr>
+<h3 id="notation">Notation</h3>
+<p>Votre note finale sera composée des notes obtenues aux trois séances de TPs notés.
+La pondération sera établie et communiquée une fois l&rsquo;ensemble des rendus corrigés.</p>
+<hr>
+<h3 id="conclusion">Conclusion</h3>
+<p>Au final, ce cours a pour objectif les points suivants :</p>
+<ul>
+<li>que vous soyiez capables de comprendre la plupart des bouts de code auxquels vous pourrez être confrontés dans le futur,</li>
+<li>que vous appreniez à programmer à peu près tout ce dont vous avez envie, sans être obligé(e)s de consulter Internet en permanence,</li>
+<li>que vous puissiez éviter les erreurs de compilation et de programmation classiques,</li>
+<li>que vous acquiériez l&rsquo;autonomie et les réflexes indispensables permettant de vous débloquer lorsque vous rencontrez un problème.</li>
+</ul>
+<p>Bien entendu, comme n&rsquo;importe quel autre cours que vous trouverez sur Internet, vous aurez à fournir un minimum d&rsquo;investissement si vous souhaitez en tirer quoi que ce soit.
+N&rsquo;hésitez pas à prendre connaissance du paragraphe (volontairement moralisateur 💩) ci-dessous.</p>
+<div class="box notices cstyle warning">
+  <div class="box-label">
+    <i class="fa-fw fas fa-exclamation-triangle"></i> Avertissement
+  </div>
+  <div class="box-content">
+<p>Si cela ne vous intéresse vraiment pas, je ne souhaite pas vous forcer à travailler et je vous conseille grandement d&rsquo;aller acquérir vos crédits universitaires dans d&rsquo;autres matières.
+Le C++ n&rsquo;étant pas un langage facile à aborder, sachez que la méthode : &ldquo;je lis le chapitre vite fait la veille du TP noté&rdquo;, ne vous suffira pas à avoir une note potable à la fin du semestre.
+Je préfère donc vous prévenir à l&rsquo;avance que si vous souhaitez effectivement apprendre le langage via ce cours, il faudra accepter d&rsquo;y consacrer le temps nécessaire : 6h par semaine me paraîssent être le minimum à consacrer à cette matière.
+Réservez-vous donc à l&rsquo;avance des créneaux sur votre emploi du temps pour pouvoir travailler et apprendre dans de bonnes conditions.</p>
+  </div>
+</div>
+<p>Cette introduction étant terminée, j&rsquo;espère que vous vous amuserez et que vous apprendrez plein de choses. Bon courage pour la suite ! 😊🎉</p>
+<hr>
+<h3 id="création-et-maintenance-de-ce-site">Création et maintenance de ce site</h3>
+<p>Ce site a été créé en 2021 et maintenu par Céline Noël jusqu&rsquo;en 2024.
+Depuis, il est maintenu et mis à jour par Henri Derycke et Victor Marsault.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation showVisitedLinks">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="logo" href="./">🎄 C++ 🎄</a>
+
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/chapter0/index.html"><a class="padding" href="./chapter0/index.html"><span class="chapnum">0.</span>&ensp;Mise en place<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb41caf94f12b8a1a4b5e560230e7851" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter1/index.html"><a class="padding" href="./chapter1/index.html"><span class="chapnum">1.</span>&ensp;Introduction au C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-6c398714eae4372920aec3a1e6c2e143" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter2/index.html"><a class="padding" href="./chapter2/index.html"><span class="chapnum">2.</span>&ensp;Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b1df0095a9fd74320697a6d478418ec3" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="./chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="./chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="./chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="./chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="./chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter8/index.html"><a class="padding" href="./chapter8/index.html"><span class="chapnum">8.</span>&ensp;Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7cf6d9bdd794f38d7006506bdc38c58f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter9/index.html"><a class="padding" href="./chapter9/index.html"><span class="chapnum">9.</span>&ensp;Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">Accès rapide</div>
+          <ul class="space">
+            <li><a class="padding" href="https://github.com/marsault/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt exercice du cours</a></li>
+            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt TPs</a></li>
+            <li><a class="padding" href="./slides/index.html"><i class='far fa-file-powerpoint'></i> Slides</a></li>
+            <li><a class="padding" href="./workflow/index.html"><i class='far fa-list-alt'></i> Workflow</a></li>
+            <li><a class="padding" href="./faq/index.html"><i class='fas fa-question-circle'></i> FAQ</a></li>
+            <li><a class="padding" href="./chapter0/6-tips/index.html"><i class='fa fa-rocket'></i> Astuces</a></li>
+            <li><a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a></li>
+            <li><a class="padding" href="https://www-igm.univ-mlv.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> CPP-Ref</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Langue</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="./index.html" lang="fr" selected>Français</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Thème</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-mine" value="mine" selected>Mine</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks showVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Supprimer l&#39;historique</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="./js/clipboard.min.js?1737661126" defer></script>
+    <script src="./js/perfect-scrollbar.min.js?1737661126" defer></script>
+    <script src="./js/theme.js?1737661126" defer></script>
+
+
+
+    
+
+
+<button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
+
+<div id="footer-question-window" disabled>
+    <form id="question" method=POST action="https://formsubmit.co/08af4b8e13fc3ec785faa99820631150"
+        target="question-submitted" onsubmit="cleanQuestionFormContent()">
+
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <textarea name="question" rows="7" cols="30" placeholder="Mon message..."></textarea>
+        <input type="hidden" name="selection" />
+
+        <input type="hidden" name="_replyto" />
+        <input type="hidden" name="_subject" />
+        <input type="hidden" name="_template" value="box" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://igm.univ-mlv.fr/~marsault/cpp/cours/common/question-submitted" />
+
+        <input type="submit" disabled style="display: none" aria-hidden="true" />
+        <input type="submit" value="Envoyer" />
+    </form>
+
+    <iframe class="hidden" name="question-submitted" src=""></iframe>
+</div>
+
+<script>
+
+    function updateQuestionFormSubject() {
+        let email = document.querySelector('#question>input[name="email"]').value;
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre -1] " + email + ", retour sur ta question";
+    }
+
+    function cleanQuestionFormContent() {
+        function clean(element) {
+            
+            element.value = element.value.replace(/\[\.\./g, "[ ..");
+        }
+
+        clean(document.querySelector('#question>textarea[name="question"]'))
+        clean(document.querySelector('#question>input[name="selection"]'))
+    }
+
+    function openQuestionForm() {
+        document.getElementById("footer-question-window").removeAttribute("disabled");
+
+        var selection = window.getSelection().toString();
+        document.querySelector('#question>input[name="selection"]').value = selection
+    }
+
+    function updateQuestionWidgetState(event) {
+        var body = document.getElementById("R-body-inner");
+        var selection = window.getSelection();
+        var question_window = document.getElementById("footer-question-window");
+
+        document.getElementById("footer-question-btn").disabled =
+            selection.isCollapsed ||
+            body == null ||
+            body.contains(selection.anchorNode) == false ||
+            body.contains(selection.focusNode) == false;
+
+        if (event !== undefined
+            && event.type == "mouseup"
+            && question_window.contains(event.target) == false
+            && question_window.contains(document.activeElement) == false) {
+            question_window.setAttribute("disabled", true);
+        }
+    }
+
+    updateQuestionFormSubject();
+
+    document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionWidgetState;
+    updateQuestionWidgetState();
+
+</script>
+
+
+
+  </body>
+</html>

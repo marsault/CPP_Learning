@@ -1,0 +1,2 @@
+Old chapters are not visible in the website but they are still compiled:
+- just visit http://localhost:1313/<dir name>/

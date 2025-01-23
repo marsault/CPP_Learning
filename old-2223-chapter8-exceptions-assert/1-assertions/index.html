@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.128.0">
+    <meta name="generator" content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619">
+    <meta name="description" content="Types d’erreurs Lorsqu’une erreur se produit dans un logiciel, il s’agit soit d’une erreur de programmation, soit d’une erreur d’utilisation du logiciel.
+Voici quelques exemples :
+Un pointeur null a été déréférencé : erreur de programmation. Le programme a demandé à l’utilisateur de rentrer une image, mais celui-ci a fournit un fichier texte : erreur d’utilisation. On a écrit dans la case array.size() de array : erreur de programmation. L’utilisateur a entraîné “-34” alors que le programme attendait un entier positif : erreur d’utilisation.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Assertions :: Cours de C&#43;&#43; - Niveau Master">
+    <meta name="twitter:description" content="Types d’erreurs Lorsqu’une erreur se produit dans un logiciel, il s’agit soit d’une erreur de programmation, soit d’une erreur d’utilisation du logiciel.
+Voici quelques exemples :
+Un pointeur null a été déréférencé : erreur de programmation. Le programme a demandé à l’utilisateur de rentrer une image, mais celui-ci a fournit un fichier texte : erreur d’utilisation. On a écrit dans la case array.size() de array : erreur de programmation. L’utilisateur a entraîné “-34” alors que le programme attendait un entier positif : erreur d’utilisation.">
+    <meta property="og:url" content="/old-2223-chapter8-exceptions-assert/1-assertions/index.html">
+    <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:title" content="Assertions :: Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:description" content="Types d’erreurs Lorsqu’une erreur se produit dans un logiciel, il s’agit soit d’une erreur de programmation, soit d’une erreur d’utilisation du logiciel.
+Voici quelques exemples :
+Un pointeur null a été déréférencé : erreur de programmation. Le programme a demandé à l’utilisateur de rentrer une image, mais celui-ci a fournit un fichier texte : erreur d’utilisation. On a écrit dans la case array.size() de array : erreur de programmation. L’utilisateur a entraîné “-34” alors que le programme attendait un entier positif : erreur d’utilisation.">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Traitement d&#39;erreurs (2022-22023)">
+    <meta itemprop="name" content="Assertions :: Cours de C&#43;&#43; - Niveau Master">
+    <meta itemprop="description" content="Types d’erreurs Lorsqu’une erreur se produit dans un logiciel, il s’agit soit d’une erreur de programmation, soit d’une erreur d’utilisation du logiciel.
+Voici quelques exemples :
+Un pointeur null a été déréférencé : erreur de programmation. Le programme a demandé à l’utilisateur de rentrer une image, mais celui-ci a fournit un fichier texte : erreur d’utilisation. On a écrit dans la case array.size() de array : erreur de programmation. L’utilisateur a entraîné “-34” alors que le programme attendait un entier positif : erreur d’utilisation.">
+    <meta itemprop="wordCount" content="1175">
+    <title>Assertions :: Cours de C&#43;&#43; - Niveau Master</title>
+    <link href="../../css/fontawesome-all.min.css?1737661126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737661126" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737661126" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737661126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737661126" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737661126" rel="stylesheet">
+    <link href="../../css/fonts.css?1737661126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737661126" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737661126" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737661126" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737661126" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737661126" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737661126"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.variants && variants.init( [ 'mine' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copier dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Copié dans le presse-papiers!`;
+      window.T_Copy_link_to_clipboard = `Copier le lien dans le presse-papiers`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../old-2223-chapter8-exceptions-assert/1-assertions/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#types-derreurs">Types d&rsquo;erreurs</a></li>
+        <li><a href="#quest-ce-quune-assertion-">Qu&rsquo;est-ce qu&rsquo;une assertion ?</a></li>
+        <li><a href="#comment-asserter-">Comment asserter ?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">Accueil</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../old-2223-chapter8-exceptions-assert/index.html"><span itemprop="name">Traitement d&#39;erreurs (2022-22023)</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Assertions</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../old-2223-chapter8-exceptions-assert/index.html" title="Traitement d&#39;erreurs (2022-22023) (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../old-2223-chapter8-exceptions-assert/2-exceptions/index.html" title="Exceptions (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable old-2223-chapter8-exceptions-assert" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="assertions">Assertions</h1>
+
+<hr>
+<h3 id="types-derreurs">Types d&rsquo;erreurs</h3>
+<p>Lorsqu&rsquo;une erreur se produit dans un logiciel, il s&rsquo;agit soit d&rsquo;une erreur de programmation, soit d&rsquo;une erreur d&rsquo;utilisation du logiciel.</p>
+<p>Voici quelques exemples :</p>
+<ol>
+<li>Un pointeur null a été déréférencé : erreur de programmation.</li>
+<li>Le programme a demandé à l&rsquo;utilisateur de rentrer une image, mais celui-ci a fournit un fichier texte : erreur d&rsquo;utilisation.</li>
+<li>On a écrit dans la case <code>array.size()</code> de <code>array</code> : erreur de programmation.</li>
+<li>L&rsquo;utilisateur a entraîné &ldquo;-34&rdquo; alors que le programme attendait un entier positif : erreur d&rsquo;utilisation.</li>
+<li>On a inversé une condition dans un <code>if</code>, ce qui fait que le résultat n&rsquo;était pas le bon : erreur de programmation.</li>
+</ol>
+<p>Qu&rsquo;il s&rsquo;agisse d&rsquo;une erreur de programmation ou d&rsquo;une erreur d&rsquo;utilisation, le programme peut parfois entrer dans un état instable.
+Si on est chanceux, il va crasher immédiatement.
+Si on n&rsquo;est moins chanceux, on peut se retrouver avec un crash à l&rsquo;autre bout du programme (le cauchemar de l&rsquo;écrasement mémoire 😱), ou encore un bug qui semble n&rsquo;avoir aucun rapport avec l&rsquo;erreur d&rsquo;origine, et qui n&rsquo;arrive qu&rsquo;une fois tous les 3 mois, quand les planètes sont alignées.</p>
+<p>Afin d&rsquo;éviter ce genre de déboires, il est nécessaire de détecter les erreurs le plus tôt possible pour adapter le comportement du programme.</p>
+<p>Dans le cas des erreurs de programmation, on interrompera son exécution immédiatement.
+Si possible, on essayera de fournir des détails sur l&rsquo;origine du problème (nom du fichier, numéro de ligne, instruction, raison du crash, &hellip;).</p>
+<p>Et dans le cas des erreurs d&rsquo;utilisation, on indiquera à l&rsquo;utilisateur avec un joli message d&rsquo;erreur ce qu&rsquo;il a mal fait, et comment il aurait dû le faire.
+On essayera aussi de faire en sorte que le programme puisse continuer son exécution normalement.</p>
+<hr>
+<h3 id="quest-ce-quune-assertion-">Qu&rsquo;est-ce qu&rsquo;une assertion ?</h3>
+<p>Une assertion est une expression qui doit toujours être évaluée à vraie.</p>
+<p>En C++, le but des assertions, c&rsquo;est de faire crasher brutalement le programme si une condition n&rsquo;est pas respectée, afin d&rsquo;éviter que des problèmes plus difficiles à identifier ne se manifestent par la suite.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">AnimalCenter</span><span class="o">::</span><span class="n">adopt_dog</span><span class="p">(</span><span class="n">Someone</span><span class="o">&amp;</span> <span class="n">someone</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// If you don&#39;t like dogs, then you shouldn&#39;t end up here!
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">assert</span><span class="p">(</span><span class="n">someone</span><span class="p">.</span><span class="n">like_dog</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">someone</span><span class="p">.</span><span class="n">receive</span><span class="p">(</span><span class="n">_dogs</span><span class="p">.</span><span class="n">front</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_dogs</span><span class="p">.</span><span class="n">pop_front</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<p>Comme on l&rsquo;a dit plus haut, seules les erreurs de programmation sont censées entraîner la fin du programme.
+Les assertions vont donc servir à identifier ce type d&rsquo;erreurs, pour aider les programmeurs à corriger les failles de leur programme.</p>
+<p>Normalement, une fois la phase de production et de debug d&rsquo;un logiciel terminée, plus aucune assertion n&rsquo;est censée échouée.
+Puisqu&rsquo;il n&rsquo;est pas nécessaire d&rsquo;évaluer des conditions supposées être toujours vraies, les assertions sont du coup généralement désactivées avant de déployer le programme chez le client.
+Cela permet de gagner en performances.</p>
+<div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fa-fw fas fa-info-circle"></i> Information
+  </div>
+  <div class="box-content">
+<p>Il ne faut <strong>jamais</strong> utiliser des assertions pour traiter des erreurs d&rsquo;utilisation.
+Personne n&rsquo;a envie de voir son logiciel crasher juste avant la sauvegarde d&rsquo;un document, parce qu&rsquo;il a essayé de mettre un accent dans le nom du fichier, ou parce que le disque dur était plein.
+En plus, comme les assertions sont désactivées une fois le logiciel déployé, votre client risque de se retrouver avec des bugs que vous n&rsquo;aurez jamais rencontrés.</p>
+  </div>
+</div>
+<hr>
+<h3 id="comment-asserter-">Comment asserter ?</h3>
+<p>En C++, il est possible d&rsquo;utiliser la macro <code>assert</code> disponible dans le header <code>&lt;cassert&gt;</code>.</p>
+<hr>
+<h5 id="utilisation-de-assert">Utilisation de <code>assert</code></h5>
+<p>Celle-ci prend en paramètre une condition.
+Si elle est évaluée à vraie, alors le programme continue.
+Autrement, le programme est interrompu et un message d&rsquo;erreur est affiché.
+Ce dernier présente le contenu de l&rsquo;assertion, le chemin du fichier et le numéro de la ligne où elle est écrite.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Class</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">initialize</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// On peut vérifier la validité des paramètres qu&#39;on nous donne (IllegalArgumentException en Java).
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">assert</span><span class="p">(</span><span class="n">p1</span> <span class="o">&lt;</span> <span class="n">p2</span> <span class="o">&amp;&amp;</span> <span class="n">p2</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// On peut aussi vérifier les pré-conditions de la fonction courante (IllegalStateException en Java).
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">assert</span><span class="p">(</span><span class="o">!</span><span class="n">_attr</span><span class="p">.</span><span class="n">is_valid</span><span class="p">());</span> <span class="c1">// on n&#39;est pas censé appeler Class::initialize() si _attr est déjà valide. 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// On peut également vérifier les post-conditions d&#39;une fonction que l&#39;on appelle.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">_attr</span><span class="p">.</span><span class="n">set_params</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">assert</span><span class="p">(</span><span class="n">_attr</span><span class="p">.</span><span class="n">is_valid</span><span class="p">());</span> <span class="c1">// _attr.set_params() est censé rendre _attr valid. 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">process</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Paramètre
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">assert</span><span class="p">(</span><span class="n">value</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">);</span> <span class="c1">// On attend un pointeur non-null.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Pré-condition de Class::process
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">assert</span><span class="p">(</span><span class="n">_attr</span><span class="p">.</span><span class="n">is_valid</span><span class="p">());</span> <span class="c1">// Class::process() ne doit pas être appelée si _attr n&#39;est pas valide. 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Post-condition de _attr::process
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">_attr</span><span class="p">.</span><span class="n">process</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">value</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">        <span class="n">assert</span><span class="p">(</span><span class="n">_attr</span><span class="p">.</span><span class="n">is_valid</span><span class="p">());</span> <span class="c1">// _attr.process() n&#39;est pas censé modifier la validité de _attr.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Attr</span> <span class="n">_attr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Square</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">do_stuff</span><span class="p">(...)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// On peut également vérifier les invariants d&#39;une classe.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">assert</span><span class="p">(</span><span class="n">all_segments_have_same_length</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">        <span class="n">do_some_stuff</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">assert</span><span class="p">(</span><span class="n">all_segments_have_same_length</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">        <span class="n">do_some_other_stuff</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">assert</span><span class="p">(</span><span class="n">all_segments_have_same_length</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">all_segments_have_same_length</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="p">...;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">Point</span><span class="p">,</span> <span class="mi">4</span><span class="o">&gt;</span> <span class="n">_points</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div>
+<div class="box notices cstyle note">
+  <div class="box-label">
+    <i class="fa-fw fas fa-exclamation-circle"></i> Remarque
+  </div>
+  <div class="box-content">
+<p>La <a href="https://fr.wikipedia.org/wiki/Programmation_par_contrat" rel="external" target="_blank">programmation par contrat</a> est un paradigme qui consiste à vérifier tout un tas d&rsquo;assertions au cours de l&rsquo;exécution d&rsquo;un programme pour s&rsquo;assurer qu&rsquo;il est bien dans l&rsquo;état attendu.
+Un mécanisme de programmation par contrat aurait dû être introduit nativement dans le langage en C++20, mais cela n&rsquo;a finalement pas eu lieu.
+Pour l&rsquo;instant, les macros de type <code>assert</code> restent donc l&rsquo;outil standard pour essayer de programmer par contrat en C++.</p>
+  </div>
+</div>
+<p>Comme <code>assert</code> n&rsquo;est pas très verbeux, il est possible d&rsquo;ajouter <code>&amp;&amp; &quot;un message&quot;</code> au contenu de l&rsquo;assertion.
+Si la condition est vérifiée, alors <code>&amp;&amp; &quot;un message&quot;</code> ne changera rien, car une chaîne de caractères convertie en <code>bool</code> vaut forcément <code>true</code>.
+Et si l&rsquo;assertion échoue, la condition complète sera affichée dans le message d&rsquo;erreur.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Si l&#39;assertion échoue, on aura comme message :
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Assertion failed: _attr_.is_valid() &amp;&amp; &#34;you probably need to call Initialize() function&#34;, file ###.cpp, line ### 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">assert</span><span class="p">(</span><span class="n">_attr_</span><span class="p">.</span><span class="n">is_valid</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="s">&#34;you probably need to call initialize() function&#34;</span><span class="p">);</span></span></span></code></pre></div>
+<hr>
+<h5 id="désactivation-en-release">Désactivation en Release</h5>
+<p>Il faut savoir que lorsque la constante <code>NDEBUG</code> est définie, la macro <code>assert</code> ne fait plus rien.
+En particulier, son contenu n&rsquo;est plus évalué.
+Ce système permet donc de désactiver les assertions en release.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#define NDEBUG
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;cassert&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">this_will_never_be_called</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;You can&#39;t see me... I&#39;m a shadow...&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">assert</span><span class="p">(</span><span class="n">this_will_never_be_called</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<div class="box notices cstyle warning">
+  <div class="box-label">
+    <i class="fa-fw fas fa-exclamation-triangle"></i> Avertissement
+  </div>
+  <div class="box-content">
+<p>Attention à ne pas appeler n&rsquo;importe quelle fonction à l&rsquo;intérieur d&rsquo;un <code>assert</code>.
+Par exemple, si vous écrivez quelque chose comme <code>assert(my_set.insert(value))</code>, soyez bien conscient que l&rsquo;insertion n&rsquo;aura lieu que si vous êtes en mode debug.</p>
+  </div>
+</div>
+<div class="box notices cstyle tip">
+  <div class="box-label">
+    <i class="fa-fw fas fa-lightbulb"></i> Astuce
+  </div>
+  <div class="box-content">
+<p>Il n&rsquo;est pas nécessaire d&rsquo;écrire <code>#define NDEBUG</code> dans tous les fichiers lorsqu&rsquo;on veut passer en Release.
+Des arguments peuvent être fournis à la commande de compilation pour définir des constantes (<code>gcc -c *.cpp -o program -DNDEBUG</code>) sans avoir à changer les sources.
+D&rsquo;ailleurs, par défaut, CMake ajoute tout seul <code>-DNDEBUG</code> à la ligne de commande de la build Release.</p>
+  </div>
+</div>
+<hr>
+<h5 id="redéfinir-son-propre-assert">Redéfinir son propre assert</h5>
+<p>Si vous trouvez que <code>assert</code> ne vous donne pas suffisamment d&rsquo;informations, vous pouvez tout à fait définir votre propre macro d&rsquo;assertion.
+Par exemple, celle-ci vous permettra d&rsquo;afficher le contenu d&rsquo;une variable :</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#ifndef NDEBUG
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define super_assert(cdn, msg)                                                  \
+</span></span></span><span class="line"><span class="cl"><span class="cp">    if (!cdn)                                                                   \
+</span></span></span><span class="line"><span class="cl"><span class="cp">    {                                                                           \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        std::cerr &lt;&lt; &#34;Assertion failed: &#34; &lt;&lt; #cdn                               \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                  &lt;&lt; &#34;\nLocation: &#34; &lt;&lt; __FILE__ &lt;&lt; &#34; (ln.&#34; &lt;&lt; __LINE__ &lt;&lt; &#34;)&#34;   \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                  &lt;&lt; &#34;\nReason: &#34; &lt;&lt; msg                                        \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                  &lt;&lt; std::endl;                                                 \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        std::terminate();                                                       \
+</span></span></span><span class="line"><span class="cl"><span class="cp">    }
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#else
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define super_assert(cdn, msg) ;
+</span></span></span><span class="line"><span class="cl"><span class="cp">#endif
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">super_assert</span><span class="p">(</span><span class="n">value</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">100</span> <span class="o">&amp;&amp;</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation showVisitedLinks">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="logo" href="../../">🎄 C++ 🎄</a>
+
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/chapter0/index.html"><a class="padding" href="../../chapter0/index.html"><span class="chapnum">0.</span>&ensp;Mise en place<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb41caf94f12b8a1a4b5e560230e7851" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter1/index.html"><a class="padding" href="../../chapter1/index.html"><span class="chapnum">1.</span>&ensp;Introduction au C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-6c398714eae4372920aec3a1e6c2e143" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter2/index.html"><a class="padding" href="../../chapter2/index.html"><span class="chapnum">2.</span>&ensp;Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b1df0095a9fd74320697a6d478418ec3" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter8/index.html"><a class="padding" href="../../chapter8/index.html"><span class="chapnum">8.</span>&ensp;Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7cf6d9bdd794f38d7006506bdc38c58f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter9/index.html"><a class="padding" href="../../chapter9/index.html"><span class="chapnum">9.</span>&ensp;Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu"></ul></li>
+            <li class="parent hidden " data-nav-id="/old-2223-chapter8-exceptions-assert/index.html"><a class="padding" href="../../old-2223-chapter8-exceptions-assert/index.html">Traitement d&#39;erreurs (2022-22023)<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-1dbd34000e19cc0adf82fd36079dd581" class="collapsible-menu">
+            <li class="active " data-nav-id="/old-2223-chapter8-exceptions-assert/1-assertions/index.html"><a class="padding" href="../../old-2223-chapter8-exceptions-assert/1-assertions/index.html">Assertions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/old-2223-chapter8-exceptions-assert/2-exceptions/index.html"><a class="padding" href="../../old-2223-chapter8-exceptions-assert/2-exceptions/index.html">Exceptions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/old-2223-chapter8-exceptions-assert/test/index.html"><a class="padding" href="../../old-2223-chapter8-exceptions-assert/test/index.html">Questionnaire !<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">Accès rapide</div>
+          <ul class="space">
+            <li><a class="padding" href="https://github.com/marsault/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt exercice du cours</a></li>
+            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt TPs</a></li>
+            <li><a class="padding" href="../../slides/index.html"><i class='far fa-file-powerpoint'></i> Slides</a></li>
+            <li><a class="padding" href="../../workflow/index.html"><i class='far fa-list-alt'></i> Workflow</a></li>
+            <li><a class="padding" href="../../faq/index.html"><i class='fas fa-question-circle'></i> FAQ</a></li>
+            <li><a class="padding" href="../../chapter0/6-tips/index.html"><i class='fa fa-rocket'></i> Astuces</a></li>
+            <li><a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a></li>
+            <li><a class="padding" href="https://www-igm.univ-mlv.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> CPP-Ref</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Langue</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../old-2223-chapter8-exceptions-assert/1-assertions/index.html" lang="fr" selected>Français</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Thème</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-mine" value="mine" selected>Mine</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks showVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Supprimer l&#39;historique</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="../../js/clipboard.min.js?1737661126" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737661126" defer></script>
+    <script src="../../js/theme.js?1737661126" defer></script>
+
+
+
+    
+
+
+<button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
+
+<div id="footer-question-window" disabled>
+    <form id="question" method=POST action="https://formsubmit.co/08af4b8e13fc3ec785faa99820631150"
+        target="question-submitted" onsubmit="cleanQuestionFormContent()">
+
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <textarea name="question" rows="7" cols="30" placeholder="Mon message..."></textarea>
+        <input type="hidden" name="selection" />
+
+        <input type="hidden" name="_replyto" />
+        <input type="hidden" name="_subject" />
+        <input type="hidden" name="_template" value="box" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://igm.univ-mlv.fr/~marsault/cpp/cours/common/question-submitted" />
+
+        <input type="submit" disabled style="display: none" aria-hidden="true" />
+        <input type="submit" value="Envoyer" />
+    </form>
+
+    <iframe class="hidden" name="question-submitted" src=""></iframe>
+</div>
+
+<script>
+
+    function updateQuestionFormSubject() {
+        let email = document.querySelector('#question>input[name="email"]').value;
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 98] " + email + ", retour sur ta question";
+    }
+
+    function cleanQuestionFormContent() {
+        function clean(element) {
+            
+            element.value = element.value.replace(/\[\.\./g, "[ ..");
+        }
+
+        clean(document.querySelector('#question>textarea[name="question"]'))
+        clean(document.querySelector('#question>input[name="selection"]'))
+    }
+
+    function openQuestionForm() {
+        document.getElementById("footer-question-window").removeAttribute("disabled");
+
+        var selection = window.getSelection().toString();
+        document.querySelector('#question>input[name="selection"]').value = selection
+    }
+
+    function updateQuestionWidgetState(event) {
+        var body = document.getElementById("R-body-inner");
+        var selection = window.getSelection();
+        var question_window = document.getElementById("footer-question-window");
+
+        document.getElementById("footer-question-btn").disabled =
+            selection.isCollapsed ||
+            body == null ||
+            body.contains(selection.anchorNode) == false ||
+            body.contains(selection.focusNode) == false;
+
+        if (event !== undefined
+            && event.type == "mouseup"
+            && question_window.contains(event.target) == false
+            && question_window.contains(document.activeElement) == false) {
+            question_window.setAttribute("disabled", true);
+        }
+    }
+
+    updateQuestionFormSubject();
+
+    document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionWidgetState;
+    updateQuestionWidgetState();
+
+</script>
+
+
+
+  </body>
+</html>

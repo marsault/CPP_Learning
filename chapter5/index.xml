@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Librairie standard :: Cours de C&#43;&#43; - Niveau Master</title>
+    <link>/chapter5/index.html</link>
+    <description>Dans ce chapitre, nous vous présenterons les différents types de conteneurs que vous pourrez trouver dans la librairie standard. Les exercices vous permettrons de vous familiariser avec certains d’entre-eux : vector et string bien sûr, mais aussi array, string_view, list, map ou encore pair. Nous en profiterons également pour vous expliquer comment la documentation est organisée sur le site cppreference, afin que vous sachiez toujours à quel endroit d’une page regarder pour trouver les informations dont vous avez besoin.</description>
+    <generator>Hugo</generator>
+    <language>fr</language>
+    <atom:link href="/chapter5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Un peu de doc...</title>
+      <link>/chapter5/1-doc/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter5/1-doc/index.html</guid>
+      <description>Pour démarrez ce chapitre, nous allons vous expliquer comment parcourir la documentation que vous trouverez sur le site cppreference.&#xA;Commencez par ouvrir cette page. Vous y trouverez la documentation de la classe vector.&#xA;A première vue, son contenu peut paraître indigeste. Nous allons donc vous expliquer comment il est structuré afin que vous puissiez vous y repérer plus facilement.&#xA;Documentation d’une classe 1. En-tête Dans l’en-tête de la documentation, vous trouverez le nom de la classe, suivi du header à inclure afin de pouvoir l’utiliser.</description>
+    </item>
+    <item>
+      <title>Tableaux dynamiques</title>
+      <link>/chapter5/2-vectors/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter5/2-vectors/index.html</guid>
+      <description>Vous apprendrez ici à utiliser des vector de manière un peu plus avancée : construction, accès, insertions, suppressions et recherches n’auront plus de secrets pour vous !&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-05/1-vectors.cpp&#xA;La cible à compiler est c5-1-vectors.&#xA;Construction Au chapitre précédent, nous vous avions présenté différentes syntaxes permettant d’instancier une classe. Nous vous avions en particulier indiquer qu’il était possible d’utiliser la syntaxe Class c { p1, p2 }; ou bien la syntaxe Class c(p1, p2);.</description>
+    </item>
+    <item>
+      <title>Autres conteneurs séquentiels</title>
+      <link>/chapter5/3-sequentials/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter5/3-sequentials/index.html</guid>
+      <description>Vous allez maintenant manipuler les autres conteneurs séquentiels que la libraire propose.&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-05/2-sequentials.cpp&#xA;La cible à compiler est c5-2-sequentials.&#xA;Tableaux de taille fixe Pour créer des tableaux de taille fixe, il est bien entendu possible d’utiliser les tableaux primitifs. L’inconvénient, c’est qu’il faut penser à les initialiser, ce que tout le monde ne pense pas toujours à faire….&#xA;Du coup, pour pallier à ce problème, il est possible d’utiliser la classe std::array.</description>
+    </item>
+    <item>
+      <title>Conteneurs associatifs</title>
+      <link>/chapter5/4-associatives/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter5/4-associatives/index.html</guid>
+      <description>Un conteneur associatif est un conteneur dans lequel les éléments peuvent être indexés par des objets, et non plus seulement par des entiers.&#xA;Vous allez donc ici voir les différents types de conteneurs associatifs proposés par la STL.&#xA;Pour cet exercice, vous modifierez les fichiers :&#xA;- chap-05/3-associatives/main.cpp&#xA;- chap-05/3-associatives/keys.h&#xA;La cible à compiler est c5-3-associatives.&#xA;Les sets (ensembles) Un set est un conteneur dans lequel les éléments sont “indexés par eux-mêmes”.</description>
+    </item>
+    <item>
+      <title>Manipulation de chaînes</title>
+      <link>/chapter5/5-strings/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter5/5-strings/index.html</guid>
+      <description>Dans cette partie, nous reviendrons sur les fonctions fournies par la librairie permettant de manipuler des string. Vous apprendrez aussi ce que sont les string_view et à quoi elles servent.&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-05/4-strings.cpp&#xA;La cible à compiler est c5-4-strings.&#xA;Opérations standards Parmis les opérations standards que l’on peut effectuer sur des chaînes de caractère, on retrouve :&#xA;la concaténation, l’extration de sous-chaîne, la recherche de caractère ou de sous-chaîne, la comparaison, le remplacement d’une partie de la chaîne.</description>
+    </item>
+    <item>
+      <title>Paires et tuples</title>
+      <link>/chapter5/6-tuples/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter5/6-tuples/index.html</guid>
+      <description>Vous avez déjà utilisé le type pair au cours d’exercices précédents. Nous allons maintenant vous présenter son cousin, la classe tuple.&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-05/5-tuples.cpp&#xA;La cible à compiler est c5-5-tuples.&#xA;Micro rappel sur les pair La classe pair est un type templaté avec deux paramètres :&#xA;std::pair&lt;int, float&gt; such_a_nice_pair { 1, 3.f }; On accède aux éléments de la pair directement via ses attributs first et second (pas de getters) :</description>
+    </item>
+    <item>
+      <title>Questionnaire ☑</title>
+      <link>/chapter5/test/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter5/test/index.html</guid>
+      <description>Le premier objectif de ce chapitre était de vous présenter quelques classes de la STL, leurs rôles, leurs différences, dans quelles situations les utiliser et comment.&#xA;Il avait également un deuxième objectif, qui était en quelque sorte de vous apprendre à vous débrouiller tout seul : vous devriez désormais être capable de rechercher par vous-même des informations dans la documentation, et vous devriez aussi appréhender un peu mieux qu’avant les messages du compilateur.</description>
+    </item>
+    <item>
+      <title>Synthèse</title>
+      <link>/chapter5/summary/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter5/summary/index.html</guid>
+      <description>Ce qu’il faut retenir Théorie Un conteneur séquentiel est un conteneur dans lequel les élements se suivent (tableaux, listes, …). Un conteneur associatif est un conteneur dans lequel chaque élément est indexé par une clef (l’élément pouvant être la clef elle-même). Les types passés en paramètre de template doivent parfois respecter des contraintes pour compiler (ces contraintes sont spécifiées dans la documentation). Librairie standard Tableau de taille dynamique : vector Tableau de taille fixe : array Listes chaînées : list ou forward_list Ensembles : set ou unordered_set Dictionnaires : map ou unordered_map Pratique On peut passer les chaînes de caractères constantes par std::string_view plutôt que const std::string&amp; ou const char*.</description>
+    </item>
+  </channel>
+</rss>
