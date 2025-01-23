@@ -29,16 +29,16 @@ Virtual table Lorsqu’une classe Parent contenant des fonctions virtuelles est 
 Analysons la hiérarchie suivante :">
     <meta itemprop="wordCount" content="1074">
     <title>Résolution d&#39;appel virtuel :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1737668212" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737668212" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737668212" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737668212" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737668212" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737668212" rel="stylesheet">
-    <link href="../../css/fonts.css?1737668212" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737668212" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737668212" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737668212" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737668212" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737668212" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737668212"></script>
+    <link href="../../css/fontawesome-all.min.css?1737670836" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737670836" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737670836" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737670836" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737670836" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737670836" rel="stylesheet">
+    <link href="../../css/fonts.css?1737670836" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737670836" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737670836" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737670836" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737670836" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737670836" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737670836"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -92,7 +92,7 @@ Analysons la hiérarchie suivante :">
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Résolution d&#39;appel virtuel</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter6/2-farm/index.html" title="🐮 Concerto animalier (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter6/2-farm/index.html" title="Concerto animalier (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter6/4-polymorphism/index.html" title="Polymorphisme (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
@@ -275,12 +275,12 @@ Si non, alors la résolution de l&rsquo;appel s&rsquo;achève pendant la compila
 </span></span></span></code></pre></div>
 <p>Attention, il y a des vilains pièges, donc vérifiez bien la solution à la fin !</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-d8bd8687eca65c5800ba1c7bcc5e5b92" aria-controls="R-expandcontent-d8bd8687eca65c5800ba1c7bcc5e5b92">
-  <label class="expand-label" for="R-expand-d8bd8687eca65c5800ba1c7bcc5e5b92">
+  <input type="checkbox" id="R-expand-092640f0554a23a63cde36b9bd11bb31" aria-controls="R-expandcontent-092640f0554a23a63cde36b9bd11bb31">
+  <label class="expand-label" for="R-expand-092640f0554a23a63cde36b9bd11bb31">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-d8bd8687eca65c5800ba1c7bcc5e5b92" class="expand-content">
+  <div id="R-expandcontent-092640f0554a23a63cde36b9bd11bb31" class="expand-content">
 <p>1/ Ca ne compile pas.<br>
 La résolution statique n&rsquo;identifie aucun candidat pour <code>fcn_a(char, int)</code> ni dans <code>Father</code>, ni dans son parent <code>GrandFather</code>.</p>
 <p>2/ Ca ne compile pas non plus.<br>
@@ -324,12 +324,12 @@ Comme <code>grand_son_copy_as_father</code> n&rsquo;est pas une référence, il 
             <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu">
-            <li class="" data-nav-id="/chapter6/1-hierarchy/index.html"><a class="padding" href="../../chapter6/1-hierarchy/index.html">💼 Hiérarchie professionnelle<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter6/2-farm/index.html"><a class="padding" href="../../chapter6/2-farm/index.html">🐮 Concerto animalier<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active " data-nav-id="/chapter6/3-virtual/index.html"><a class="padding" href="../../chapter6/3-virtual/index.html">Résolution d&#39;appel virtuel<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter6/4-polymorphism/index.html"><a class="padding" href="../../chapter6/4-polymorphism/index.html">Polymorphisme<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter6/5-vehicles/index.html"><a class="padding" href="../../chapter6/5-vehicles/index.html">🚗 Véhicule partagé<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter6/test/index.html"><a class="padding" href="../../chapter6/test/index.html">Questionnaire !<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter6/1-hierarchy/index.html"><a class="padding" href="../../chapter6/1-hierarchy/index.html"><span class="presection-icon">💼</span>Hiérarchie professionnelle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter6/2-farm/index.html"><a class="padding" href="../../chapter6/2-farm/index.html"><span class="presection-icon">🐮</span>Concerto animalier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/chapter6/3-virtual/index.html"><a class="padding" href="../../chapter6/3-virtual/index.html"><span class="presection-icon">👪</span>Résolution d&#39;appel virtuel<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter6/4-polymorphism/index.html"><a class="padding" href="../../chapter6/4-polymorphism/index.html"><span class="presection-icon">👥</span>Polymorphisme<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter6/5-vehicles/index.html"><a class="padding" href="../../chapter6/5-vehicles/index.html"><span class="presection-icon">🚗</span>Véhicule partagé<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter6/test/index.html"><a class="padding" href="../../chapter6/test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter6/summary/index.html"><a class="padding" href="../../chapter6/summary/index.html">Synthèse<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter8/index.html"><a class="padding" href="../../chapter8/index.html"><span class="chapnum">8.</span>&ensp;Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7cf6d9bdd794f38d7006506bdc38c58f" class="collapsible-menu"></ul></li>
@@ -399,9 +399,9 @@ Comme <code>grand_son_copy_as_father</code> n&rsquo;est pas une référence, il 
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737668212" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737668212" defer></script>
-    <script src="../../js/theme.js?1737668212" defer></script>
+    <script src="../../js/clipboard.min.js?1737670836" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737670836" defer></script>
+    <script src="../../js/theme.js?1737670836" defer></script>
 
 
 

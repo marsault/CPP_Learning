@@ -15,7 +15,7 @@ La cible à compiler est c4-3-vehicles.
 Introduction du permis Dans le programme que l’on vous fournit, n’importe qui peut conduire n’importe quoi.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="🚗 Véhicule partagé :: C&#43;&#43;">
+    <meta name="twitter:title" content="Véhicule partagé :: C&#43;&#43;">
     <meta name="twitter:description" content="Pour terminer ce chapitre, nous allons voir comment faire pour accéder directement aux attributs de votre classe de base, comment appeler la fonction parent depuis la rédéfinition de cette fonction dans la classe-fille et enfin, comment modéliser des classes abstraites.
 Pour cet exercice, vous modifierez les fichiers :
 - chap-04/3-vehicles/Program.cpp
@@ -26,7 +26,7 @@ La cible à compiler est c4-3-vehicles.
 Introduction du permis Dans le programme que l’on vous fournit, n’importe qui peut conduire n’importe quoi.">
     <meta property="og:url" content="/chapter6/5-vehicles/index.html">
     <meta property="og:site_name" content="C&#43;&#43;">
-    <meta property="og:title" content="🚗 Véhicule partagé :: C&#43;&#43;">
+    <meta property="og:title" content="Véhicule partagé :: C&#43;&#43;">
     <meta property="og:description" content="Pour terminer ce chapitre, nous allons voir comment faire pour accéder directement aux attributs de votre classe de base, comment appeler la fonction parent depuis la rédéfinition de cette fonction dans la classe-fille et enfin, comment modéliser des classes abstraites.
 Pour cet exercice, vous modifierez les fichiers :
 - chap-04/3-vehicles/Program.cpp
@@ -38,7 +38,7 @@ Introduction du permis Dans le programme que l’on vous fournit, n’importe qu
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Héritage">
-    <meta itemprop="name" content="🚗 Véhicule partagé :: C&#43;&#43;">
+    <meta itemprop="name" content="Véhicule partagé :: C&#43;&#43;">
     <meta itemprop="description" content="Pour terminer ce chapitre, nous allons voir comment faire pour accéder directement aux attributs de votre classe de base, comment appeler la fonction parent depuis la rédéfinition de cette fonction dans la classe-fille et enfin, comment modéliser des classes abstraites.
 Pour cet exercice, vous modifierez les fichiers :
 - chap-04/3-vehicles/Program.cpp
@@ -48,17 +48,17 @@ Pour cet exercice, vous modifierez les fichiers :
 La cible à compiler est c4-3-vehicles.
 Introduction du permis Dans le programme que l’on vous fournit, n’importe qui peut conduire n’importe quoi.">
     <meta itemprop="wordCount" content="1105">
-    <title>🚗 Véhicule partagé :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1737668212" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737668212" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737668212" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737668212" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737668212" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737668212" rel="stylesheet">
-    <link href="../../css/fonts.css?1737668212" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737668212" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737668212" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737668212" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737668212" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737668212" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737668212"></script>
+    <title>Véhicule partagé :: C&#43;&#43;</title>
+    <link href="../../css/fontawesome-all.min.css?1737670836" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737670836" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737670836" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737670836" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737670836" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737670836" rel="stylesheet">
+    <link href="../../css/fonts.css?1737670836" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737670836" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737670836" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737670836" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737670836" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737670836" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737670836"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -109,12 +109,12 @@ Introduction du permis Dans le programme que l’on vous fournit, n’importe qu
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">Accueil</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../chapter6/index.html"><span itemprop="name">Héritage</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">🚗 Véhicule partagé</span><meta itemprop="position" content="3"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Véhicule partagé</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter6/4-polymorphism/index.html" title="Polymorphisme (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter6/test/index.html" title="Questionnaire ! (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter6/test/index.html" title="Questionnaire (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -134,7 +134,7 @@ Introduction du permis Dans le programme que l’on vous fournit, n’importe qu
   <header class="headline">
   </header>
 
-<h1 id="-véhicule-partagé">🚗 Véhicule partagé</h1>
+<h1 id="véhicule-partagé">Véhicule partagé</h1>
 
 <p>Pour terminer ce chapitre, nous allons voir comment faire pour accéder directement aux attributs de votre classe de base,
 comment appeler la fonction parent depuis la rédéfinition de cette fonction dans la classe-fille et enfin, comment modéliser des classes abstraites.</p>
@@ -152,12 +152,12 @@ Mais avec les nouvelles régulations, les conducteurs de voiture doivent mainten
 <p>Modifiez la classe <code>Driver</code> de manière à pouvoir savoir si un conducteur à passer son permis ou non.
 A la construction, aucun conducteur n&rsquo;a son permis et il peut l&rsquo;obtenir ensuite via une fonction <code>pass_car_licence_exam</code>.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-f825a081026c7cbc60dbe831224c4afa" aria-controls="R-expandcontent-f825a081026c7cbc60dbe831224c4afa">
-  <label class="expand-label" for="R-expand-f825a081026c7cbc60dbe831224c4afa">
+  <input type="checkbox" id="R-expand-da435af52a6bae0d055ee7bcd59cb1b1" aria-controls="R-expandcontent-da435af52a6bae0d055ee7bcd59cb1b1">
+  <label class="expand-label" for="R-expand-da435af52a6bae0d055ee7bcd59cb1b1">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-f825a081026c7cbc60dbe831224c4afa" class="expand-content">
+  <div id="R-expandcontent-da435af52a6bae0d055ee7bcd59cb1b1" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Driver</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
@@ -181,12 +181,12 @@ Le problème, c&rsquo;est que <code>_driver</code> n&rsquo;est accessible que de
 Afin de pouvoir y accéder depuis les sous-classes, changez sa visibilité à <code>protected</code>.</p>
 <p>Modifiez ensuite l&rsquo;implémentation de <code>Car::drive</code>, de façon à ce que si le conduteur n&rsquo;ait pas son permis, la voiture n&rsquo;avance pas.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-b1c027573d55e6628977871ef7c38666" aria-controls="R-expandcontent-b1c027573d55e6628977871ef7c38666">
-  <label class="expand-label" for="R-expand-b1c027573d55e6628977871ef7c38666">
+  <input type="checkbox" id="R-expand-c1c08a8d99384b2ac04ef542b5e1dc1f" aria-controls="R-expandcontent-c1c08a8d99384b2ac04ef542b5e1dc1f">
+  <label class="expand-label" for="R-expand-c1c08a8d99384b2ac04ef542b5e1dc1f">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-b1c027573d55e6628977871ef7c38666" class="expand-content">
+  <div id="R-expandcontent-c1c08a8d99384b2ac04ef542b5e1dc1f" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Vehicle</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
@@ -224,12 +224,12 @@ Afin de pouvoir y accéder depuis les sous-classes, changez sa visibilité à <c
 Les voitures volantes ont toutes les fonctionnalités des voitures normales, si ce n&rsquo;est que lorsque vous rouler en l&rsquo;air, vous allez 10x plus vite qu&rsquo;en roulant au sol.</p>
 <p>Introduisez la classe <code>FlyingCar</code>, dérivée de <code>Car</code>, et redéfinissez sa fonction <code>drive</code> pour parcourir 10 fois la distance que vous auriez parcouru avec une voiture normale.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-7c58761d788fe168647f1bed478a27db" aria-controls="R-expandcontent-7c58761d788fe168647f1bed478a27db">
-  <label class="expand-label" for="R-expand-7c58761d788fe168647f1bed478a27db">
+  <input type="checkbox" id="R-expand-3b62a1637e8149ed82f726ff72a72670" aria-controls="R-expandcontent-3b62a1637e8149ed82f726ff72a72670">
+  <label class="expand-label" for="R-expand-3b62a1637e8149ed82f726ff72a72670">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-7c58761d788fe168647f1bed478a27db" class="expand-content">
+  <div id="R-expandcontent-3b62a1637e8149ed82f726ff72a72670" class="expand-content">
 <p>On peut :</p>
 <ul>
 <li>soit créer un nouvel attribut <code>flying_speed</code>, et l&rsquo;utiliser dans <code>FlyingCar::drive</code>,</li>
@@ -258,12 +258,12 @@ Les voitures volantes ont toutes les fonctionnalités des voitures normales, si 
 Dans le cas de la voiture volante, le conducteur doit désormais être en possession d&rsquo;un permis de l&rsquo;air pour pouvoir s&rsquo;en servir.
 Commencez par ajouter ce qu&rsquo;il faut dans <code>Driver</code> pour passer le permis adéquat et savoir s&rsquo;il l&rsquo;a.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-f16249b68e9972e6f7d84758d69889e1" aria-controls="R-expandcontent-f16249b68e9972e6f7d84758d69889e1">
-  <label class="expand-label" for="R-expand-f16249b68e9972e6f7d84758d69889e1">
+  <input type="checkbox" id="R-expand-438d38e7361b681c17baed62f011d8ad" aria-controls="R-expandcontent-438d38e7361b681c17baed62f011d8ad">
+  <label class="expand-label" for="R-expand-438d38e7361b681c17baed62f011d8ad">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-f16249b68e9972e6f7d84758d69889e1" class="expand-content">
+  <div id="R-expandcontent-438d38e7361b681c17baed62f011d8ad" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Driver</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
@@ -306,12 +306,12 @@ Testez ensuite les trois situations suivantes :<br>
 - sinon, si le conducteur a son permis classique =&gt; mode roulant,<br>
 - sinon =&gt; la voiture n&rsquo;avance pas.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-11567484a44fadac65382518d044c70d" aria-controls="R-expandcontent-11567484a44fadac65382518d044c70d">
-  <label class="expand-label" for="R-expand-11567484a44fadac65382518d044c70d">
+  <input type="checkbox" id="R-expand-9a70d1f1a582afb3ee001c7c91b6b327" aria-controls="R-expandcontent-9a70d1f1a582afb3ee001c7c91b6b327">
+  <label class="expand-label" for="R-expand-9a70d1f1a582afb3ee001c7c91b6b327">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-11567484a44fadac65382518d044c70d" class="expand-content">
+  <div id="R-expandcontent-9a70d1f1a582afb3ee001c7c91b6b327" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">FlyingCar</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Car</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="p">...</span>
@@ -355,12 +355,12 @@ Vous pouvez néanmoins empêcher un utilisateur d&rsquo;instancier une classe qu
 </span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div>
 <p>Déclarez le constructeur de <code>Vehicle</code> dans la partie protégée de la classe, et essayez d&rsquo;instancier un <code>Vehicle</code> depuis le <code>main</code>. Quelle erreur de compilation obtenez-vous ?</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-2e37ae85150c2f254d74764091ba4607" aria-controls="R-expandcontent-2e37ae85150c2f254d74764091ba4607">
-  <label class="expand-label" for="R-expand-2e37ae85150c2f254d74764091ba4607">
+  <input type="checkbox" id="R-expand-b718598b5af14e9167c385181aa89c57" aria-controls="R-expandcontent-b718598b5af14e9167c385181aa89c57">
+  <label class="expand-label" for="R-expand-b718598b5af14e9167c385181aa89c57">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-2e37ae85150c2f254d74764091ba4607" class="expand-content">
+  <div id="R-expandcontent-b718598b5af14e9167c385181aa89c57" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Vehicle</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">protected</span><span class="o">:</span>
@@ -394,12 +394,12 @@ Vous pourrez ensuite instancier ces classes-filles, du moment que vous avez bien
 <p>Remettez le constructeur de <code>Vehicle</code> dans la partie publique, puis supprimez l&rsquo;implémentation de <code>Vehicle::drive</code> et transformez-la en fonction virtuelle pure.<br>
 Quelles erreurs de compilation obtenez-vous maintenant ?</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-6db6141160c1b77c083ad6d0bff0037a" aria-controls="R-expandcontent-6db6141160c1b77c083ad6d0bff0037a">
-  <label class="expand-label" for="R-expand-6db6141160c1b77c083ad6d0bff0037a">
+  <input type="checkbox" id="R-expand-3083aacfbae83080701fe9a143d9d490" aria-controls="R-expandcontent-3083aacfbae83080701fe9a143d9d490">
+  <label class="expand-label" for="R-expand-3083aacfbae83080701fe9a143d9d490">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-6db6141160c1b77c083ad6d0bff0037a" class="expand-content">
+  <div id="R-expandcontent-3083aacfbae83080701fe9a143d9d490" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Vehicle</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">protected</span><span class="o">:</span>
@@ -449,12 +449,12 @@ Quelles erreurs de compilation obtenez-vous maintenant ?</p>
             <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu">
-            <li class="" data-nav-id="/chapter6/1-hierarchy/index.html"><a class="padding" href="../../chapter6/1-hierarchy/index.html">💼 Hiérarchie professionnelle<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter6/2-farm/index.html"><a class="padding" href="../../chapter6/2-farm/index.html">🐮 Concerto animalier<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter6/3-virtual/index.html"><a class="padding" href="../../chapter6/3-virtual/index.html">Résolution d&#39;appel virtuel<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter6/4-polymorphism/index.html"><a class="padding" href="../../chapter6/4-polymorphism/index.html">Polymorphisme<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active " data-nav-id="/chapter6/5-vehicles/index.html"><a class="padding" href="../../chapter6/5-vehicles/index.html">🚗 Véhicule partagé<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter6/test/index.html"><a class="padding" href="../../chapter6/test/index.html">Questionnaire !<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter6/1-hierarchy/index.html"><a class="padding" href="../../chapter6/1-hierarchy/index.html"><span class="presection-icon">💼</span>Hiérarchie professionnelle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter6/2-farm/index.html"><a class="padding" href="../../chapter6/2-farm/index.html"><span class="presection-icon">🐮</span>Concerto animalier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter6/3-virtual/index.html"><a class="padding" href="../../chapter6/3-virtual/index.html"><span class="presection-icon">👪</span>Résolution d&#39;appel virtuel<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter6/4-polymorphism/index.html"><a class="padding" href="../../chapter6/4-polymorphism/index.html"><span class="presection-icon">👥</span>Polymorphisme<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/chapter6/5-vehicles/index.html"><a class="padding" href="../../chapter6/5-vehicles/index.html"><span class="presection-icon">🚗</span>Véhicule partagé<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter6/test/index.html"><a class="padding" href="../../chapter6/test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter6/summary/index.html"><a class="padding" href="../../chapter6/summary/index.html">Synthèse<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter8/index.html"><a class="padding" href="../../chapter8/index.html"><span class="chapnum">8.</span>&ensp;Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7cf6d9bdd794f38d7006506bdc38c58f" class="collapsible-menu"></ul></li>
@@ -524,9 +524,9 @@ Quelles erreurs de compilation obtenez-vous maintenant ?</p>
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737668212" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737668212" defer></script>
-    <script src="../../js/theme.js?1737668212" defer></script>
+    <script src="../../js/clipboard.min.js?1737670836" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737670836" defer></script>
+    <script src="../../js/theme.js?1737670836" defer></script>
 
 
 

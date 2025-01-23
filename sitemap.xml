@@ -4,9 +4,6 @@
     <loc>/chapter0/index.html</loc>
   </url>
   <url>
-    <loc>/chapter6/1-hierarchy/index.html</loc>
-  </url>
-  <url>
     <loc>/chapter3/1-allocation/index.html</loc>
   </url>
   <url>
@@ -20,6 +17,9 @@
   </url>
   <url>
     <loc>/old-2223-chapter3-memoire/1-lifespan/index.html</loc>
+  </url>
+  <url>
+    <loc>/chapter6/1-hierarchy/index.html</loc>
   </url>
   <url>
     <loc>/chapter8/1-introduction/index.html</loc>
@@ -52,10 +52,10 @@
     <loc>/chapter5/1-doc/index.html</loc>
   </url>
   <url>
-    <loc>/chapter6/2-farm/index.html</loc>
+    <loc>/chapter2/index.html</loc>
   </url>
   <url>
-    <loc>/chapter2/index.html</loc>
+    <loc>/chapter6/2-farm/index.html</loc>
   </url>
   <url>
     <loc>/chapter3/2-lifespan/index.html</loc>
@@ -163,9 +163,6 @@
     <loc>/chapter3/4-references/index.html</loc>
   </url>
   <url>
-    <loc>/chapter6/5-vehicles/index.html</loc>
-  </url>
-  <url>
     <loc>/chapter0/5-clang-format/index.html</loc>
   </url>
   <url>
@@ -185,6 +182,9 @@
   </url>
   <url>
     <loc>/chapter4/5-ruleof/index.html</loc>
+  </url>
+  <url>
+    <loc>/chapter6/5-vehicles/index.html</loc>
   </url>
   <url>
     <loc>/chapter0/6-tips/index.html</loc>
@@ -235,19 +235,19 @@
     <loc>/chapter6/test/index.html</loc>
   </url>
   <url>
+    <loc>/chapter7/test/index.html</loc>
+  </url>
+  <url>
+    <loc>/chapter9/test/index.html</loc>
+  </url>
+  <url>
     <loc>/old-2223-chapter3-memoire/test/index.html</loc>
   </url>
   <url>
     <loc>/old-2223-chapter8-exceptions-assert/test/index.html</loc>
   </url>
   <url>
-    <loc>/chapter7/test/index.html</loc>
-  </url>
-  <url>
     <loc>/chapter8/test/index.html</loc>
-  </url>
-  <url>
-    <loc>/chapter9/test/index.html</loc>
   </url>
   <url>
     <loc>/chapter0/test/index.html</loc>

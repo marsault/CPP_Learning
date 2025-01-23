@@ -8,14 +8,14 @@
     <language>fr</language>
     <atom:link href="/chapter6/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>💼 Hiérarchie professionnelle</title>
+      <title>Hiérarchie professionnelle</title>
       <link>/chapter6/1-hierarchy/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter6/1-hierarchy/index.html</guid>
       <description>Dans cette première partie, vous apprendrez comment définir des relations de parenté entre vos classes.&#xA;Nous ne parlerons sur cette page que d’héritage dit “statique”, c’est-à-dire que nous ne chercherons pas à modifier dans les classes-fille le comportement hérité de la classe-mère.&#xA;Pour cet exercice, vous modifierez les fichiers :&#xA;- chap-04/1-hierarchy/Boss.cpp&#xA;- chap-04/1-hierarchy/Boss.h&#xA;- chap-04/1-hierarchy/Staff.cpp&#xA;- chap-04/1-hierarchy/Staff.h&#xA;- chap-04/1-hierarchy/Intern.cpp&#xA;- chap-04/1-hierarchy/Intern.h&#xA;La cible à compiler est c4-1-hierarchy.&#xA;Définir une classe-mère Commencez par jeter un coup d’oeil à chacun des fichiers fournis.</description>
     </item>
     <item>
-      <title>🐮 Concerto animalier</title>
+      <title>Concerto animalier</title>
       <link>/chapter6/2-farm/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter6/2-farm/index.html</guid>
@@ -36,14 +36,14 @@
       <description>Vous avez probablement déjà entendu le terme polymorphisme, vous l’avez peut-être même déjà utilisé, mais quand vous y réfléchissez, si on vous demandait de le définir clairement, vous ne sauriez pas forcément quoi répondre. Cette page sera donc l’occasion de revenir sur sa définition.&#xA;Dans ce chapitre, nous nous sommes intéressés à deux manières de mettre-en-ouvre le polymorphisme en C++ : l’héritage statique et l’héritage dynamique. Nous détaillerons les différences entre les deux et dans quels cas utiliser l’un ou l’autre.</description>
     </item>
     <item>
-      <title>🚗 Véhicule partagé</title>
+      <title>Véhicule partagé</title>
       <link>/chapter6/5-vehicles/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter6/5-vehicles/index.html</guid>
       <description>Pour terminer ce chapitre, nous allons voir comment faire pour accéder directement aux attributs de votre classe de base, comment appeler la fonction parent depuis la rédéfinition de cette fonction dans la classe-fille et enfin, comment modéliser des classes abstraites.&#xA;Pour cet exercice, vous modifierez les fichiers :&#xA;- chap-04/3-vehicles/Program.cpp&#xA;- chap-04/3-vehicles/Vehicle.h&#xA;- chap-04/3-vehicles/Car.h&#xA;- chap-04/3-vehicles/Scooter.h&#xA;La cible à compiler est c4-3-vehicles.&#xA;Introduction du permis Dans le programme que l’on vous fournit, n’importe qui peut conduire n’importe quoi.</description>
     </item>
     <item>
-      <title>Questionnaire !</title>
+      <title>Questionnaire</title>
       <link>/chapter6/test/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter6/test/index.html</guid>

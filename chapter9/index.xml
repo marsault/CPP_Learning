@@ -36,7 +36,7 @@
       <description>Nous allons maintenant vous expliquer ce que signifie SFINAE, le besoin auquel ce mécanisme répond et comment le mettre en oeuvre dans votre code.&#xA;Le besoin Supposons que nous souhaitions pouvoir récupérer une clef pour différents type à l’aide d’une fonction get_key(const Type&amp;), en utilisant des overloads.&#xA;class Person { public: Person(const std::string&amp; name) : _name { name } {} const std::string&amp; get_name() const { return _name; } private: const std::string _name; }; // Overload pour notre classe Person.</description>
     </item>
     <item>
-      <title>Questionnaire ☑</title>
+      <title>Questionnaire</title>
       <link>/chapter9/test/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter9/test/index.html</guid>
