@@ -132,8 +132,8 @@ a = (6+a); // Cette affectation a un sens
 // (a+6) ne peut apparaître qu'à droite du signe = donc c'est une R-value
 ```
 
-Cette explication par *left/right* est un bon moyen mnémotechnique, mais n'est plus parfaitement alignée avec ce qu'il se passe réellement en C++.
-Référez-vous plutôt aux définitions ci-dessous.
+Cette explication par *left/right* est un bon moyen mnémotechnique, mais n'est plus parfaitement alignée avec ce qu'il se passe en C++.
+Référez-vous plutôt aux définitions plus haut.
 
 {{% notice tip %}}
 Pour comprendre cette histoire de stockage en mémoire d'une expression *E*, on peut se poser la question suivante : Est-ce que l'expression `&`*E* a un sens?
@@ -157,4 +157,4 @@ Attenion, les chaînes de caractères litérales, comme `"Hello World!"` sont de
  }
  ```
 
-Ceci est une conséquence du *string pooling*, une optimisation dont le but est de réduire la taille du binaire.
+Ceci est une conséquence du *string pooling*, une optimisation dont le but est de réduire la taille du fichier binaire produit par le compilateur.

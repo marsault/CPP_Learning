@@ -1,5 +1,6 @@
 ---
 title: "Template variadique"
+pre: '<span class="presection-icon">🤕</span>'
 weight: 2
 ---
 

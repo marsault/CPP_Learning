@@ -1,5 +1,6 @@
 ---
 title: "Parcours et recherches"
+pre: '<span class="presection-icon">🔍</span>'
 weight: 1
 ---
 

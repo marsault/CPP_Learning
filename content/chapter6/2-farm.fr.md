@@ -1,5 +1,6 @@
 ---
-title: "🐮 Concerto animalier"
+title: "Concerto animalier"
+pre: '<span class="presection-icon">🐮</span>'
 weight: 2
 ---
 

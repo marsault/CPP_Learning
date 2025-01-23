@@ -1,5 +1,6 @@
 ---
 title: "Itérateurs"
+pre: '<span class="presection-icon">🚊</span>'
 weight: 3
 ---
 

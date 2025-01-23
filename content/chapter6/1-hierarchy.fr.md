@@ -1,5 +1,6 @@
 ---
-title: "💼 Hiérarchie professionnelle"
+title: "Hiérarchie professionnelle"
+pre: '<span class="presection-icon">💼</span>'
 weight: 1
 ---
 

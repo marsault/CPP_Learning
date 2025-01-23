@@ -1,5 +1,6 @@
 ---
 title: "Résolution d'appel virtuel"
+pre: '<span class="presection-icon">👪</span>'
 weight: 3
 ---
 

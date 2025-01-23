@@ -1,5 +1,6 @@
 ---
-title: "🚗 Véhicule partagé"
+title: "Véhicule partagé"
+pre: '<span class="presection-icon">🚗</span>'
 weight: 5
 ---
 

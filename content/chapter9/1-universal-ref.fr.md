@@ -1,5 +1,6 @@
 ---
 title: "Référence universelle"
+pre: '<span class="presection-icon">🤨</span>'
 weight: 1
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: "Lambdas"
+pre: '<span class="presection-icon">𝝀</span>'
 weight: 4
 ---
 
