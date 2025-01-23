@@ -11,7 +11,7 @@ En un mot, il s'agit de permettre de vider un objet pour en construire un autre 
 ### Usage de la fonction `std::move` sur un exemple
 
 ```cpp
-///                       Passage par valeur
+///                      Passage par valeur
 //                              vvvvvvvvvvv
 void f(std::vector<std::string> my_own_data) 
 {
