@@ -1,7 +1,26 @@
 ---
-title: "Affectation 📝"
+title: "Affectation"
+pre: '<span class="presection-icon">📝</span>'
 weight: 4
 ---
+
+
+Les constructeurs de copie et de déplacement sont appelés quand il faut instancier un nouvel objet.
+Sur cette page, on va parler des opérateurs d'affectations, c'est-à-dire, quand on remplit un objet qui existe déjà.
+
+Par exemple, dans le cas d'un entier:
+```cpp
+int i = 0;  // Ici le compilateur alloue de la mémoire pour i et le remplit avec la valeur 0.
+            // Il *instancie* un nouvel entier à partir de la valeur 0.
+
+i = 42; // Ici, i existe déjà, le compilateur "remplit" la mémoire
+        // Il *affecte*
+```
+Pour un objet, c'est similaire:
+```cpp
+std::string x {"quelque chose"};  // Ici un nouvel objet est alloué et construit.
+x = "autre chose" ; // Ici un objet déjà existant est affecté.
+```
 
 
 ---

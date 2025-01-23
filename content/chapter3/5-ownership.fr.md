@@ -1,5 +1,6 @@
 ---
-title: "Ownership 🏘️"
+title: "Ownership"
+pre: '<span class="presection-icon">🏘️</span>'
 weight: 5
 ---
 

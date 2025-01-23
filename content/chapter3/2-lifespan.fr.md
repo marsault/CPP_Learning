@@ -1,5 +1,6 @@
 ---
-title: "Durée de vie ⏳"
+title: "Durée de vie "
+pre: '<span class="presection-icon">⏳</span>'
 weight: 2
 ---
 

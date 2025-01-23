@@ -1,5 +1,6 @@
 ---
-title: "Usage des références 🔀"
+title: "Usage des références"
+pre: '<span class="presection-icon">🔀</span>'
 weight: 4
 ---
 

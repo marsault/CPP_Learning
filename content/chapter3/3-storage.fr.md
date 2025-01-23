@@ -1,5 +1,6 @@
 ---
-title: "Espace de stockage 💾"
+title: "Espace de stockage"
+pre: '<span class="presection-icon">💾</span>'
 weight: 3
 ---
 

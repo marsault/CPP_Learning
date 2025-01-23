@@ -1,5 +1,6 @@
 ---
-title: "Règle des 0, 3 ou 5 📐"
+title: "Règle des 0, 3 ou 5"
+pre: '<span class="presection-icon">📐</span>'
 weight: 5
 ---
 

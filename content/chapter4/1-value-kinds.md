@@ -1,12 +1,18 @@
 ---
-title: "L-value vs R-value ⇄"
+title: "L-value vs R-value"
+pre: '<span class="presection-icon">⇄</span>'
 weight: 1
 ---
 
-Pour comprendre comment le compilateur traîte les différentes expressions, 
-il faut comprendre quelle est sa catégorie.
+Sur cette page, on va parler des catégories des expressions (L-value et R-values),
+ce qui permet de mieux comprendre comment le compilateur les traite.
 
+{{% notice note %}}
+La catégorisation des expressions est en fait encore plus complexe que celle décrite ici.
+Il existe en C++ des GL-value, PR-value et X-value, mais ces notions ne sont pas au programme du cours.
+{{% /notice %}}
 
+---
 
 
 
@@ -60,7 +66,7 @@ En effet, on sait explicitement où cette valeur est stockée.
 
 ## R-value
 
-Pour illustrer ce que sont les L-values, on utilisera le bout de code ci-dessous.
+Pour illustrer ce que sont les R-values, on utilisera le bout de code ci-dessous.
 
 ```cpp
 class MyClass 
@@ -87,29 +93,24 @@ int main()
 }
 ```
 
-Au contraire, les R-values sont les expressions qui n'ont pas d'adresse en mémoire.
-Par exemple, un literal, comme l'expression 1 `42` dans le code ci-dessus, n'est stockée nulle-part en mémoire.
+Par opposition aux L-values, les R-values sont les expressions qui n'ont pas d'adresse en mémoire.
+Par exemple, un literal, comme `42` (expression 1 dans le code ci-dessus), n'est stockée nulle-part en mémoire.
 En fait, le compilateur la stockera directement dans la case mémoire
 réservée pour l'argument `x` de la function `my_func`.
-C'est la même chose pour l'expression 2 `MyClass{}`, il s'agit d'une
+C'est la même chose pour `MyClass{}` (expression 2), il s'agit d'une
 nouvelle instance de `MyClass` qui sera construite directement dans la case `y` de `my_func`.
 
 Si un expression *E* est une R-value dont le type est une classe qui a un attribut `c`, alors *R*`.c` est aussi une R-value.
-C'est pour cela que l'expression 4 `(MyClass{}).my_att` est une R-value.
+C'est pour cela que `(MyClass{}).my_att` (l'expression 4) est une R-value.
 
 L'expression `f(..)` est une R-value si la fonction  `f` ne renvoie pas
-une référence, comme l'expression 3 `my_func(MyClass{}, 42)` dans le code ci-dessus.
+une référence, comme `my_func(MyClass{}, 42)` (expresion 3) dans le code ci-dessus.
 C'est la même chose pour les fonctions-membres ou les opérateurs (par exemple
 l'expression 5).
 
-Finalement, nous verrons que `std::move` permet de transformer
-une L-value en R-value dans la [section sur le déplacement](3-move) de ce chapitre. Donc `std::move(..)` est une R-value.
+## La fonction `std::move`
+La fonction `std::move` permet de transformer une L-value en R-value. Nous verrons à quoi cela sert dans la [section sur le déplacement](3-move) de ce chapitre.
 
-
-{{% notice note %}}
-La catégorisation des expressions est en fait encore plus complexe que celle décrite ici.
-Il existe en C++ des GL-value, PR-value et X-value, mais ces notions ne sont pas au programme du cours.
-{{% /notice %}}
 
 
 ## Pourquoi L et R ?
@@ -140,6 +141,20 @@ Pour comprendre cette histoire de stockage en mémoire d'une expression *E*, on 
 Par exemple, on voit bien que `&42` n'a pas de sens alors que `&a` oui.
 {{% /notice %}}
 
-## Exceptions
 
+## Chaînes de caractères litérales
 
+Attenion, les chaînes de caractères litérales, comme `"Hello World!"` sont des *L*-value comme le montre le code en dessous.
+
+ ```cpp
+ int main() {
+    std::cout << &("Hello World") << " and " << &("Hello World") << std::endl;
+//               ^^^^^^^^^^^^^^^^               ^^^^^^^^^^^^^^^^
+// On peut demander l'addresse mémoire de chaînes de caractères litérales.
+//
+// Deux chaînes identiques dans le même module sont stockées au même endroit:
+    std::cout << std::boolalpha << &("Hello World") ==  &("Hello World") << std::endl;
+ }
+ ```
+
+Ceci est une conséquence du *string pooling*, une optimisation dont le but est de réduire la taille du binaire.

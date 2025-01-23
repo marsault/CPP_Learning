@@ -1,5 +1,6 @@
 ---
-title: "Allocation dynamique 🎇"
+title: "Allocation dynamique"
+pre: '<span class="presection-icon">🎇</span>'
 weight: 1
 ---
 
