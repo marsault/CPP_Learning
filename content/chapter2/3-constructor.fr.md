@@ -1,5 +1,6 @@
 ---
-title: "Constructeur 🔨"
+title: "Constructeur"
+pre: '<span class="presection-icon">🔨</span>'
 weight: 3
 ---
 

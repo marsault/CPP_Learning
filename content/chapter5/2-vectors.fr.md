@@ -1,5 +1,6 @@
 ---
 title: "Tableaux dynamiques"
+pre: '<span class="presection-icon">🖼</span>'
 weight: 2
 ---
 

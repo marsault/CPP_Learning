@@ -1,5 +1,6 @@
 ---
-title: "Destructeur 💣"
+title: "Destructeur"
+pre: '<span class="presection-icon">❌</span>'
 weight: 4
 ---
 

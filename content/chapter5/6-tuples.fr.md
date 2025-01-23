@@ -1,5 +1,6 @@
 ---
 title: "Paires et tuples"
+pre: '<span class="presection-icon">🍒</span>'
 weight: 6
 ---
 

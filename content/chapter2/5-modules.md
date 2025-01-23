@@ -1,5 +1,6 @@
 ---
-title: "Modularité 🧱"
+title: "Modularité"
+pre: '<span class="presection-icon">🧱</span>'
 weight: 5
 ---
 

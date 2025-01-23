@@ -1,5 +1,6 @@
 ---
-title: "Opérateurs ➗"
+title: "Opérateurs"
+pre: '<span class="presection-icon">⨀</span>'
 weight: 6
 ---
 

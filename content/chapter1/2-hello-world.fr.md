@@ -1,5 +1,6 @@
 ---
-title: "Hello World 👋"
+title: "Hello World"
+pre: '<span class="presection-icon">👋</span>'
 weight: 2
 ---
 

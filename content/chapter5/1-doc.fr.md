@@ -1,5 +1,6 @@
 ---
 title: "Un peu de doc..."
+pre: '<span class="presection-icon">🔖</span>'
 weight: 1
 ---
 

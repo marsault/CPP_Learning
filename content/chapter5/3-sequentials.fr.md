@@ -1,5 +1,6 @@
 ---
 title: "Autres conteneurs séquentiels"
+pre: '<span class="presection-icon">➠</span>'
 weight: 3
 ---
 

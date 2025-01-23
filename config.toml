@@ -29,7 +29,7 @@ relativeURLs = true
 
 [Languages]
 [Languages.fr]
-title = "Cours de C++ - Niveau Master"
+title = "C++"
 weight = 1
 languageName = "Français"
 

@@ -1,5 +1,6 @@
 ---
 title: "Présentation du langage"
+pre: '<span class="presection-icon">🧸</span>'
 weight: 1
 ---
 

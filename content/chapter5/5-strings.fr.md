@@ -1,5 +1,6 @@
 ---
 title: "Manipulation de chaînes"
+pre: '<span class="presection-icon">🔗</span>'
 weight: 5
 ---
 

@@ -1,5 +1,6 @@
 ---
-title: "Première classe ✨"
+title: "Première classe"
+pre: '<span class="presection-icon">✨</span>'
 weight: 2
 ---
 

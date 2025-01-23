@@ -1,5 +1,6 @@
 ---
 title: "Conteneurs associatifs"
+pre: '<span class="presection-icon">🔑</span>'
 weight: 4
 ---
 

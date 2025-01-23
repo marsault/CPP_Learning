@@ -1,5 +1,6 @@
 ---
-title: "Eléments de syntaxe ✍"
+title: "Eléments de syntaxe"
+pre: '<span class="presection-icon">⁉</span>'
 weight: 3
 ---
 

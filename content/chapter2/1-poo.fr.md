@@ -1,5 +1,6 @@
 ---
 title: "C'est quoi un objet déjà ?"
+pre: '<span class="presection-icon">🤔</span>'
 weight: 1
 ---
 

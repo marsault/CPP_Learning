@@ -1,5 +1,6 @@
 ---
-title: "Compilation ⚙️"
+title: "Compilation"
+pre: '<span class="presection-icon">⚙️</span>'
 weight: 5
 ---
 

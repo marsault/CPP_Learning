@@ -1,5 +1,6 @@
 ---
-title: "Librairie standard 📚"
+title: "Librairie standard"
+pre: '<span class="presection-icon">📚</span>'
 weight: 4
 ---
 
