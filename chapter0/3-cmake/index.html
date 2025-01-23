@@ -29,16 +29,16 @@ Installation Windows Ouvrez un terminal MSYS2 UCRT64. Installez les paquets cmak
 Démarrez VSCode. Ouvrez le panneau des extensions et recherchez les extensions CMake et CMakeTools.">
     <meta itemprop="wordCount" content="339">
     <title>CMake :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1737575571" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737575571" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737575571" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737575571" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737575571" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737575571" rel="stylesheet">
-    <link href="../../css/fonts.css?1737575571" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737575571" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737575571" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737575571" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737575571" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737575571" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737575571"></script>
+    <link href="../../css/fontawesome-all.min.css?1737661054" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737661054" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737661054" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737661054" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737661054" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737661054" rel="stylesheet">
+    <link href="../../css/fonts.css?1737661054" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737661054" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737661054" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737661054" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737661054" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737661054" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737661054"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -138,8 +138,8 @@ Démarrez VSCode. Ouvrez le panneau des extensions et recherchez les extensions 
 <ol>
 <li>Démarrez VSCode.</li>
 <li>Ouvrez le panneau des extensions et recherchez les extensions <code>CMake</code> et <code>CMakeTools</code>.
-<a href="#R-image-d6aa72f4920d1ddd85f3b02be6742556" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/cmake-ext.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d6aa72f4920d1ddd85f3b02be6742556"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/cmake-ext.png"></a></li>
+<a href="#R-image-3d58d65bb3278daab294b234c5f39fce" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/cmake-ext.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3d58d65bb3278daab294b234c5f39fce"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/cmake-ext.png"></a></li>
 <li>Cliquez ensuite sur le bouton <code>Install</code> pour chacune d&rsquo;entre elles.</li>
 <li>Redémarrez VSCode.</li>
 <li>Vérifiez que vous avez accès aux commandes <code>CMake</code> depuis le panneau de commandes (<code>View &gt; Command Palette ...</code> ou <code>Ctrl + Shift + P</code>).</li>
@@ -148,16 +148,16 @@ Démarrez VSCode. Ouvrez le panneau des extensions et recherchez les extensions 
 <ol>
 <li>Téléchargez et extrayez <a href="../hello.zip">cette archive</a> dans un nouveau dossier.</li>
 <li>Ouvrez ce dossier depuis VSCode.
-<a href="#R-image-e07e6ea40d7fcd525b1dd716fda7c13b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/folder-vscode.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e07e6ea40d7fcd525b1dd716fda7c13b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/folder-vscode.png"></a></li>
+<a href="#R-image-5ee4243cf5233174198167815b7debed" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/folder-vscode.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5ee4243cf5233174198167815b7debed"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/folder-vscode.png"></a></li>
 <li>Exécutez la commande <code>CMake: Configure</code>.</li>
 <li>Sélectionnez le compilateur g++ ou clang++ le plus récent dans la liste proposée.</li>
 <li>La configuration et la génération des fichiers de build devraient avoir lieu.
-<a href="#R-image-32e781e6c432ed074da2cb43ab9c2804" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/cmake-result.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-32e781e6c432ed074da2cb43ab9c2804"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/cmake-result.png"></a></li>
+<a href="#R-image-7bf7bed9797944768bad7f5df8b32167" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/cmake-result.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7bf7bed9797944768bad7f5df8b32167"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/cmake-result.png"></a></li>
 <li>Cliquez maintenant sur le bouton <code>Build</code> dans la barre en bas (ou F7) pour compiler le projet.
-<a href="#R-image-899b7403e30d27a95d7dfd24a900b052" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/cmake-build.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-899b7403e30d27a95d7dfd24a900b052"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/cmake-build.png"></a></li>
+<a href="#R-image-b8e1a1a8f4efa617a98543a11996e5e7" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/cmake-build.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b8e1a1a8f4efa617a98543a11996e5e7"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/cmake-build.png"></a></li>
 </ol>
 <hr>
 <h3 id="lancement-du-programme">Lancement du programme</h3>
@@ -165,15 +165,15 @@ Démarrez VSCode. Ouvrez le panneau des extensions et recherchez les extensions 
 Celle-ci sera à refaire chaque fois que vous créérez un nouveau projet.</p>
 <ol>
 <li>Créez un dossier <code>.vscode</code> à la racine du répertoire (si celui-ci n&rsquo;existe pas déjà) et ajoutez dedans un fichier que vous nommerez <code>launch.json</code>.
-<a href="#R-image-ff954b5b8ade7201a3e7e12a9bbe0339" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/new-launch.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ff954b5b8ade7201a3e7e12a9bbe0339"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/new-launch.png"></a></li>
+<a href="#R-image-5171d30a32a422766cb8090702c29495" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/new-launch.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5171d30a32a422766cb8090702c29495"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/new-launch.png"></a></li>
 <li>Une fois ce fichier créé, ouvrez-le et cliquez sur le bouton <code>Add Configuration</code>.
-<a href="#R-image-e682dc389190c9aa3fe0d0a44b8bc582" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/add-conf.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e682dc389190c9aa3fe0d0a44b8bc582"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/add-conf.png"></a></li>
+<a href="#R-image-9fec46eb4f53a3ded5882b0b9ce0091f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/add-conf.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9fec46eb4f53a3ded5882b0b9ce0091f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/add-conf.png"></a></li>
 <li>Sélectionnez ensuite la configuration <code>C/C++: (XXX) Launch</code> adéquate.<br>
 Windows et Linux devraient vous proposez GDB et MacOS devrait vous fournir LLDB.
-<a href="#R-image-378d46ec37b7eb92da22f986b92e034c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/launch-conf.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-378d46ec37b7eb92da22f986b92e034c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/launch-conf.png"></a></li>
+<a href="#R-image-451c123e0d88193aecb678b0ffa7fe2b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/launch-conf.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-451c123e0d88193aecb678b0ffa7fe2b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/launch-conf.png"></a></li>
 <li>Remplacez les variables <code>program</code> et <code>cwd</code> par les valeurs ci-dessous :</li>
 </ol>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;program&#34;</span><span class="err">:</span> <span class="s2">&#34;${command:cmake.launchTargetPath}&#34;</span><span class="err">,</span>
@@ -183,8 +183,8 @@ Windows et Linux devraient vous proposez GDB et MacOS devrait vous fournir LLDB.
 </ol>
 <p>Ajoutez un breakpoint sur la ligne 5 en cliquant devant le numéro de ligne, puis essayez de lancer le programme avec la commande <code>Start Debugging</code> (F5).<br>
 Votre programme devrait se lancer puis mettre en pause son exécution sur la ligne 5.
-<a href="#R-image-324a6a36f5d982f6d473a010afc2708d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/cmake-breakpoint.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-324a6a36f5d982f6d473a010afc2708d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/cmake-breakpoint.png"></a></p>
+<a href="#R-image-c5ec9905ce1d09495f7e8922bdaac5b5" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/cmake-breakpoint.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c5ec9905ce1d09495f7e8922bdaac5b5"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/cmake-breakpoint.png"></a></p>
 
   <footer class="footline">
   </footer>
@@ -288,9 +288,9 @@ Votre programme devrait se lancer puis mettre en pause son exécution sur la lig
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737575571" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737575571" defer></script>
-    <script src="../../js/theme.js?1737575571" defer></script>
+    <script src="../../js/clipboard.min.js?1737661054" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737661054" defer></script>
+    <script src="../../js/theme.js?1737661054" defer></script>
 
 
 
