@@ -53,16 +53,16 @@ Pour cet exercice, vous modifierez les fichiers :
 - chap-04/2-farm/Cow.">
     <meta itemprop="wordCount" content="2461">
     <title>🐮 Concerto animalier :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1737661126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737661126" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737661126" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737661126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737661126" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737661126" rel="stylesheet">
-    <link href="../../css/fonts.css?1737661126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737661126" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737661126" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737661126" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737661126" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737661126" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737661126"></script>
+    <link href="../../css/fontawesome-all.min.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737662459" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737662459" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737662459" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737662459" rel="stylesheet">
+    <link href="../../css/fonts.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737662459" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737662459" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737662459" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737662459" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737662459" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737662459"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -160,12 +160,12 @@ Vous devriez avoir une erreur au niveau de l&rsquo;appel à <code>sing_a_lot</co
 Selon vous, que faut-il faire dans chacune de ces classes pour que l&rsquo;on puisse passer une variable de ce type à une fonction attendant une référence sur un <code>Animal</code> ?<br>
 Modifiez le programme en conséquence pour qu&rsquo;il compile.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-c79d05e34aab705522e8da1666078e11" aria-controls="R-expandcontent-c79d05e34aab705522e8da1666078e11">
-  <label class="expand-label" for="R-expand-c79d05e34aab705522e8da1666078e11">
+  <input type="checkbox" id="R-expand-20ca98092edc39cf0f2a1c3e78d563a7" aria-controls="R-expandcontent-20ca98092edc39cf0f2a1c3e78d563a7">
+  <label class="expand-label" for="R-expand-20ca98092edc39cf0f2a1c3e78d563a7">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-c79d05e34aab705522e8da1666078e11" class="expand-content">
+  <div id="R-expandcontent-20ca98092edc39cf0f2a1c3e78d563a7" class="expand-content">
 <p>Il faut que chacune de ces classes hérite de <code>Animal</code>. Et comme spécifié précédemment, on n&rsquo;oublie pas d&rsquo;indiquer le mot-clef <code>public</code> dans la relation de parenté.</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Cat</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Animal</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
 </span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Chicken</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Animal</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
@@ -192,12 +192,12 @@ Pour ce faire, il faut placer le mot-clef <code>virtual</code> devant le prototy
 </span></span><span class="line"><span class="cl">Cotcotcotcodet Cotcotcotcodet</span></span></code></pre></div>
 <p>Réalisez les modifications dans le programme pour obtenir la sortie ci-dessus. Néanmoins, comme vous n&rsquo;avez pas pris votre café ce matin, et vous allez (in)volontairement oublier de modifier le contenu de Cow.h.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-4f73c0d257a22c406d91fb778d591f78" aria-controls="R-expandcontent-4f73c0d257a22c406d91fb778d591f78">
-  <label class="expand-label" for="R-expand-4f73c0d257a22c406d91fb778d591f78">
+  <input type="checkbox" id="R-expand-638c45779ac982cda7c65ac3cde210e6" aria-controls="R-expandcontent-638c45779ac982cda7c65ac3cde210e6">
+  <label class="expand-label" for="R-expand-638c45779ac982cda7c65ac3cde210e6">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-4f73c0d257a22c406d91fb778d591f78" class="expand-content">
+  <div id="R-expandcontent-638c45779ac982cda7c65ac3cde210e6" class="expand-content">
 <p>Animal.h :</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">virtual</span> <span class="kt">void</span> <span class="nf">sing</span><span class="p">(</span><span class="kt">char</span> <span class="n">next_char</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;...&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">next_char</span><span class="p">;</span> <span class="p">}</span></span></span></code></pre></div>
 <p>Classes dérivées (sauf <code>Cow</code>) :</p>
@@ -241,12 +241,12 @@ Pour cela, à partir de maintenant et jusqu&rsquo;à la fin de vos jours, dès l
 </div>
 <p>Ajoutez le mot-clef <code>override</code> à la fin du prototype de <code>sing</code> (donc derrière le <code>const</code>) dans chacune des classes-fille, et vérifier que le compilateur refuse maintenant de compiler la fonction <code>Cow::sing</code>.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-440e314f60cb1dbf06c74a13f27a2b21" aria-controls="R-expandcontent-440e314f60cb1dbf06c74a13f27a2b21">
-  <label class="expand-label" for="R-expand-440e314f60cb1dbf06c74a13f27a2b21">
+  <input type="checkbox" id="R-expand-709201ce07f4ed49f26eef9db3d9bd2b" aria-controls="R-expandcontent-709201ce07f4ed49f26eef9db3d9bd2b">
+  <label class="expand-label" for="R-expand-709201ce07f4ed49f26eef9db3d9bd2b">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-440e314f60cb1dbf06c74a13f27a2b21" class="expand-content">
+  <div id="R-expandcontent-709201ce07f4ed49f26eef9db3d9bd2b" class="expand-content">
 <p>Cow :</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">sing</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Mewwwwwh&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="p">}</span></span></span></code></pre></div>
 <p>Autres classes dérivées :</p>
@@ -255,12 +255,12 @@ Pour cela, à partir de maintenant et jusqu&rsquo;à la fin de vos jours, dès l
 </div>
 <p>Modifiez maintenant la signature et l&rsquo;implémentation de <code>Cow::sing</code> de manière à ce que le programme compile et qu&rsquo;il affiche le résultat attendu.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-c1fb2052e7ab00affa8774d92fac2066" aria-controls="R-expandcontent-c1fb2052e7ab00affa8774d92fac2066">
-  <label class="expand-label" for="R-expand-c1fb2052e7ab00affa8774d92fac2066">
+  <input type="checkbox" id="R-expand-45343d7bf0677a4543786b716e819eb9" aria-controls="R-expandcontent-45343d7bf0677a4543786b716e819eb9">
+  <label class="expand-label" for="R-expand-45343d7bf0677a4543786b716e819eb9">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-c1fb2052e7ab00affa8774d92fac2066" class="expand-content">
+  <div id="R-expandcontent-45343d7bf0677a4543786b716e819eb9" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">sing</span><span class="p">(</span><span class="kt">char</span> <span class="n">next_char</span><span class="p">)</span> <span class="k">const</span> <span class="k">override</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Mewwwwwh&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">next_char</span><span class="p">;</span> <span class="p">}</span></span></span></code></pre></div>
   </div>
 </div>
@@ -280,12 +280,12 @@ Donc tout comme <code>static</code>, si vous définissez une fonction-membre <co
 Créez ensuite une fonction <code>sing_chorus</code> prenant ce tableau en paramètres et dans laquelle vous appelerez <code>sing</code> sur chacun de ces éléments.
 Que pouvez-vous constater en testant le programme ?</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-3039c2ce0f9d5d08192700c2221a5dff" aria-controls="R-expandcontent-3039c2ce0f9d5d08192700c2221a5dff">
-  <label class="expand-label" for="R-expand-3039c2ce0f9d5d08192700c2221a5dff">
+  <input type="checkbox" id="R-expand-e2a429ccb5eb5e83e39baa1ec41ba0ab" aria-controls="R-expandcontent-e2a429ccb5eb5e83e39baa1ec41ba0ab">
+  <label class="expand-label" for="R-expand-e2a429ccb5eb5e83e39baa1ec41ba0ab">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-3039c2ce0f9d5d08192700c2221a5dff" class="expand-content">
+  <div id="R-expandcontent-e2a429ccb5eb5e83e39baa1ec41ba0ab" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">sing_chorus</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Animal</span><span class="o">&gt;&amp;</span> <span class="n">animals</span><span class="p">)</span>
@@ -330,12 +330,12 @@ Or, les références ne sont pas réassignables&hellip;</p>
 <p>Du coup, à défaut de pouvoir utiliser des références, <strong>vous allez devoir passer par des pointeurs</strong>.<br>
 Modifiez votre code pour de manière à remplacer le <code>vector&lt;Animal&gt;</code> par un <code>vector&lt;Animal*&gt;</code> et vérifiez que le programme fonctionne maintenant comme il faut.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-8c778d1c32ef2dabfd154d18850f12fe" aria-controls="R-expandcontent-8c778d1c32ef2dabfd154d18850f12fe">
-  <label class="expand-label" for="R-expand-8c778d1c32ef2dabfd154d18850f12fe">
+  <input type="checkbox" id="R-expand-663fb3b7d3eebd0262eb0dcfae6d8a59" aria-controls="R-expandcontent-663fb3b7d3eebd0262eb0dcfae6d8a59">
+  <label class="expand-label" for="R-expand-663fb3b7d3eebd0262eb0dcfae6d8a59">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-8c778d1c32ef2dabfd154d18850f12fe" class="expand-content">
+  <div id="R-expandcontent-663fb3b7d3eebd0262eb0dcfae6d8a59" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">sing_chorus</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Animal</span><span class="o">*&gt;&amp;</span> <span class="n">animals</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">*</span> <span class="nl">animal</span><span class="p">:</span> <span class="n">animals</span><span class="p">)</span>
@@ -376,12 +376,12 @@ Contrairement à tout à l&rsquo;heure, ce tableau sera propriétaire de la mém
 - il est possible d&rsquo;appeler une fonction <code>sing</code> sur une instance, qui exécute alors la fonction <code>sing</code> de chacun des animaux qu&rsquo;elle contient.</p>
 <p>Instanciez et utiliser cette classe dans le <code>main</code> pour vérifier que tout fonctionne.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-415686f2571c56b0439ab1ee23d94434" aria-controls="R-expandcontent-415686f2571c56b0439ab1ee23d94434">
-  <label class="expand-label" for="R-expand-415686f2571c56b0439ab1ee23d94434">
+  <input type="checkbox" id="R-expand-b15353d5f81de29c9eb7dee6765d469a" aria-controls="R-expandcontent-b15353d5f81de29c9eb7dee6765d469a">
+  <label class="expand-label" for="R-expand-b15353d5f81de29c9eb7dee6765d469a">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-415686f2571c56b0439ab1ee23d94434" class="expand-content">
+  <div id="R-expandcontent-b15353d5f81de29c9eb7dee6765d469a" class="expand-content">
 <p>Opera.h</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
@@ -446,12 +446,12 @@ Comme ici, nous avons affaire à des artistes et non pas des athlètes, nous all
 <p>Ajoutez un destructeur à la classe <code>Chicken</code>, dans lequel vous afficherez le râle d&rsquo;agonie de votre poulet. Un truc du style <code>&quot;CotCooooooooot!&quot;</code> fera parfaitement l&rsquo;affaire.<br>
 Combien d&rsquo;objets de type <code>Chicken</code> avez-vous construits dans votre programme ? Obtenez-vous le nombre de <code>&quot;CotCooooooooot!&quot;</code> attendus ?</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-d45410a9cc44d6623b6cb557ed00ffb5" aria-controls="R-expandcontent-d45410a9cc44d6623b6cb557ed00ffb5">
-  <label class="expand-label" for="R-expand-d45410a9cc44d6623b6cb557ed00ffb5">
+  <input type="checkbox" id="R-expand-0c7bf6362e44fe9c2c2d42525df9e657" aria-controls="R-expandcontent-0c7bf6362e44fe9c2c2d42525df9e657">
+  <label class="expand-label" for="R-expand-0c7bf6362e44fe9c2c2d42525df9e657">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-d45410a9cc44d6623b6cb557ed00ffb5" class="expand-content">
+  <div id="R-expandcontent-0c7bf6362e44fe9c2c2d42525df9e657" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Chicken</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Animal</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
@@ -505,12 +505,12 @@ C&rsquo;est donc <code>~Animal</code> qui est appelé pour chacun des animaux.</
 N&rsquo;oubliez pas d&rsquo;ajouter le <code>override</code> sur <code>~Chicken</code>, pour indiquer au compilateur, mais surtout à vous-même, que vous êtes en train de redéfinir un destructeur virtuel.</p>
 <p>Testez le programme pour vérifier que désormais, <code>~Chicken</code> est bien appelé durant la destruction de la variable <code>opera</code>.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-f82b9c161c3a92949c6da00e49c34e5d" aria-controls="R-expandcontent-f82b9c161c3a92949c6da00e49c34e5d">
-  <label class="expand-label" for="R-expand-f82b9c161c3a92949c6da00e49c34e5d">
+  <input type="checkbox" id="R-expand-6e8dcf583d80ee15d7cfd0f1153dacc5" aria-controls="R-expandcontent-6e8dcf583d80ee15d7cfd0f1153dacc5">
+  <label class="expand-label" for="R-expand-6e8dcf583d80ee15d7cfd0f1153dacc5">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-f82b9c161c3a92949c6da00e49c34e5d" class="expand-content">
+  <div id="R-expandcontent-6e8dcf583d80ee15d7cfd0f1153dacc5" class="expand-content">
 <p>Animal.h:</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Animal</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -667,9 +667,9 @@ Si vous souhaitez appeler des fonctions redéfinie dans une classe-fille, il fau
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737661126" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737661126" defer></script>
-    <script src="../../js/theme.js?1737661126" defer></script>
+    <script src="../../js/clipboard.min.js?1737662459" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737662459" defer></script>
+    <script src="../../js/theme.js?1737662459" defer></script>
 
 
 

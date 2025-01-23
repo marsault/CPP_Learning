@@ -25,16 +25,16 @@ Usage de la fonction std::move sur un exemple /// Passage par valeur // vvvvvvvv
 Usage de la fonction std::move sur un exemple /// Passage par valeur // vvvvvvvvvvv void f(std::vector&lt;std::string&gt; my_own_data) { for (auto&amp; s : my_own_data) std::cout &lt;&lt; &amp;s &lt;&lt; &#34; &#34;; // ^^ // On affiche l&#39;adresse des chaines de caractères std::cout &lt;&lt; std::endl; } int main() { std::vector&lt;std::string&gt; data = {&#34;Hello&#34;, &#34;World&#34;, &#34;!">
     <meta itemprop="wordCount" content="758">
     <title>Déplacement :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1737661126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737661126" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737661126" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737661126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737661126" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737661126" rel="stylesheet">
-    <link href="../../css/fonts.css?1737661126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737661126" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737661126" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737661126" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737661126" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737661126" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737661126"></script>
+    <link href="../../css/fontawesome-all.min.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737662459" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737662459" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737662459" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737662459" rel="stylesheet">
+    <link href="../../css/fonts.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737662459" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737662459" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737662459" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737662459" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737662459" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737662459"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -116,7 +116,7 @@ Usage de la fonction std::move sur un exemple /// Passage par valeur // vvvvvvvv
 <p>Sur cette page vous allez apprendre ce qu&rsquo;est le déplacement en C++.
 En un mot, il s&rsquo;agit de permettre de vider un objet pour en construire un autre ailleurs, et on utilise pour cela la fonction <code>std::move</code>.</p>
 <h3 id="usage-de-la-fonction-stdmove-sur-un-exemple">Usage de la fonction <code>std::move</code> sur un exemple</h3>
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">///                       Passage par valeur
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">///                      Passage par valeur
 </span></span></span><span class="line"><span class="cl"><span class="c1">//                              vvvvvvvvvvv
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">my_own_data</span><span class="p">)</span> 
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -153,11 +153,11 @@ Le tableau dynamique <code>data</code> est maintenant vide.</p>
 <p>Rappelez-vous qu&rsquo;un <code>std::vector</code> est un tableau dynamique, donc ses éléments sont en fait sur le tas,
 et ce sont elles qui vont être copiées ou réattribuées à <code>my_own_data</code>, comme le montrent les deux diagrammes en dessous.</p>
 <h4 id="effet-sur-la-mémoire-du-premier-appel-à-f-copie">Effet sur la mémoire du premier appel à <code>f</code> (copie)</h4>
-<p><a href="#R-image-306eb9b6346fa032c499362509390f2e" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_copy.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-306eb9b6346fa032c499362509390f2e"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_copy.svg"></a></p>
+<p><a href="#R-image-38348d91fd34dc4cc452f195629707d0" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_copy.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-38348d91fd34dc4cc452f195629707d0"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_copy.svg"></a></p>
 <h4 id="effet-sur-la-mémoire-du-deuxième-appel-à-f-déplacement">Effet sur la mémoire du deuxième appel à <code>f</code> (déplacement)</h4>
-<p><a href="#R-image-527dda9c725a8764882eaa81438cfb2d" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_move.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-527dda9c725a8764882eaa81438cfb2d"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_move.svg"></a></p>
+<p><a href="#R-image-209fcc5857878b496476fbd413dee7f5" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_move.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-209fcc5857878b496476fbd413dee7f5"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_move.svg"></a></p>
 <h3 id="constructeur-de-déplacement">Constructeur de déplacement</h3>
 <p>Maintenant qu&rsquo;on a compris le principe du déplacement, encore faut-il pouvoir définir comment se déplace
 nos propres classes.  Etant donné une classe <code>MaClasse</code> le constructeur de déplacement a le prototype suivant.</p>
@@ -311,9 +311,9 @@ En fait, suivant le contenu de <code>f</code>, le compilateur peut décider de n
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737661126" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737661126" defer></script>
-    <script src="../../js/theme.js?1737661126" defer></script>
+    <script src="../../js/clipboard.min.js?1737662459" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737662459" defer></script>
+    <script src="../../js/theme.js?1737662459" defer></script>
 
 
 
