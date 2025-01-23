@@ -217,10 +217,19 @@
     <loc>/old-2223-chapter8-exceptions-assert/index.html</loc>
   </url>
   <url>
+    <loc>/chapter1/test/index.html</loc>
+  </url>
+  <url>
+    <loc>/chapter2/test/index.html</loc>
+  </url>
+  <url>
     <loc>/chapter3/test/index.html</loc>
   </url>
   <url>
     <loc>/chapter4/9-test/index.html</loc>
+  </url>
+  <url>
+    <loc>/chapter5/test/index.html</loc>
   </url>
   <url>
     <loc>/chapter6/test/index.html</loc>
@@ -230,15 +239,6 @@
   </url>
   <url>
     <loc>/old-2223-chapter8-exceptions-assert/test/index.html</loc>
-  </url>
-  <url>
-    <loc>/chapter1/test/index.html</loc>
-  </url>
-  <url>
-    <loc>/chapter2/test/index.html</loc>
-  </url>
-  <url>
-    <loc>/chapter5/test/index.html</loc>
   </url>
   <url>
     <loc>/chapter7/test/index.html</loc>
@@ -251,9 +251,6 @@
   </url>
   <url>
     <loc>/chapter0/test/index.html</loc>
-  </url>
-  <url>
-    <loc>/chapter5/summary/index.html</loc>
   </url>
   <url>
     <loc>/chapter6/summary/index.html</loc>

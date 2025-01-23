@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Accueil :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Accueil :: C&#43;&#43;</title>
     <link>/index.html</link>
     <description>Bienvenue Sur ce site, vous trouverez le cours de C++ destiné à l’enseignement des Master 1 de l’Universisté Gustave-Eiffel. Si vous ne faites pas partie des étudiants de cette section, vous êtes tout de même les bienvenus. Sachez juste que d’une part, ce cours étant un cours d’introduction, nous nous concentrerons sur les concepts de base du langage, ainsi que sur les mécanismes permettant d’écrire du code plus simplement ou de le rendre plus sûr.</description>
     <generator>Hugo</generator>

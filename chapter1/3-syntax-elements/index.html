@@ -11,14 +11,14 @@ Variables et types fondamentaux Comme dans tous les langages ou presque, on retr
 les entiers (signés ou non-signés) : int, short, unsigned int, … les flottants : float, double les types caractère : char, unsigned char le type booléen : bool (et non pas boolean comme en Java ⚠️) dont les deux valeurs sont true et false Pour définir des variables, c’est comme d’habitude : &lt;type&gt; &lt;nom&gt; = &lt;valeur&gt;;">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Eléments de syntaxe ✍ :: Cours de C&#43;&#43; - Niveau Master">
+    <meta name="twitter:title" content="Eléments de syntaxe :: C&#43;&#43;">
     <meta name="twitter:description" content="Nous allons vous présenter les éléments de syntaxe de base du langage.
 Comme vous pourrez le constater, mis à part quelques subtilités, la plupart des informations que vous allez lire ici devrait être similaire à ce que vous avez déjà appris en C ou en Java.
 Variables et types fondamentaux Comme dans tous les langages ou presque, on retrouve :
 les entiers (signés ou non-signés) : int, short, unsigned int, … les flottants : float, double les types caractère : char, unsigned char le type booléen : bool (et non pas boolean comme en Java ⚠️) dont les deux valeurs sont true et false Pour définir des variables, c’est comme d’habitude : &lt;type&gt; &lt;nom&gt; = &lt;valeur&gt;;">
     <meta property="og:url" content="/chapter1/3-syntax-elements/index.html">
-    <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
-    <meta property="og:title" content="Eléments de syntaxe ✍ :: Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:site_name" content="C&#43;&#43;">
+    <meta property="og:title" content="Eléments de syntaxe :: C&#43;&#43;">
     <meta property="og:description" content="Nous allons vous présenter les éléments de syntaxe de base du langage.
 Comme vous pourrez le constater, mis à part quelques subtilités, la plupart des informations que vous allez lire ici devrait être similaire à ce que vous avez déjà appris en C ou en Java.
 Variables et types fondamentaux Comme dans tous les langages ou presque, on retrouve :
@@ -26,23 +26,23 @@ les entiers (signés ou non-signés) : int, short, unsigned int, … les flottan
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Introduction au C&#43;&#43;">
-    <meta itemprop="name" content="Eléments de syntaxe ✍ :: Cours de C&#43;&#43; - Niveau Master">
+    <meta itemprop="name" content="Eléments de syntaxe :: C&#43;&#43;">
     <meta itemprop="description" content="Nous allons vous présenter les éléments de syntaxe de base du langage.
 Comme vous pourrez le constater, mis à part quelques subtilités, la plupart des informations que vous allez lire ici devrait être similaire à ce que vous avez déjà appris en C ou en Java.
 Variables et types fondamentaux Comme dans tous les langages ou presque, on retrouve :
 les entiers (signés ou non-signés) : int, short, unsigned int, … les flottants : float, double les types caractère : char, unsigned char le type booléen : bool (et non pas boolean comme en Java ⚠️) dont les deux valeurs sont true et false Pour définir des variables, c’est comme d’habitude : &lt;type&gt; &lt;nom&gt; = &lt;valeur&gt;;">
     <meta itemprop="wordCount" content="1872">
-    <title>Eléments de syntaxe ✍ :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737662459" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737662459" rel="stylesheet">
-    <link href="../../css/fonts.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737662459" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737662459" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737662459" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737662459" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737662459"></script>
+    <title>Eléments de syntaxe :: C&#43;&#43;</title>
+    <link href="../../css/fontawesome-all.min.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737667506" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737667506" rel="stylesheet">
+    <link href="../../css/fonts.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737667506" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737667506" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737667506" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737667506" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737667506"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -97,12 +97,12 @@ les entiers (signés ou non-signés) : int, short, unsigned int, … les flottan
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">Accueil</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../chapter1/index.html"><span itemprop="name">Introduction au C&#43;&#43;</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Eléments de syntaxe ✍</span><meta itemprop="position" content="3"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Eléments de syntaxe</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter1/2-hello-world/index.html" title="Hello World 👋 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter1/2-hello-world/index.html" title="Hello World (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter1/4-std-lib/index.html" title="Librairie standard 📚 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter1/4-std-lib/index.html" title="Librairie standard (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -122,7 +122,7 @@ les entiers (signés ou non-signés) : int, short, unsigned int, … les flottan
   <header class="headline">
   </header>
 
-<h1 id="eléments-de-syntaxe-">Eléments de syntaxe ✍</h1>
+<h1 id="eléments-de-syntaxe">Eléments de syntaxe</h1>
 
 <p>Nous allons vous présenter les éléments de syntaxe de base du langage.<br>
 Comme vous pourrez le constater, mis à part quelques subtilités, la plupart des informations que vous allez lire ici devrait être similaire à ce que vous avez déjà appris en C ou en Java.</p>
@@ -483,12 +483,12 @@ Néanmoins, ce n&rsquo;est pas une prérogative et vous êtes libres d&rsquo;uti
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/chapter0/index.html"><a class="padding" href="../../chapter0/index.html"><span class="chapnum">0.</span>&ensp;Mise en place<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb41caf94f12b8a1a4b5e560230e7851" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/chapter1/index.html"><a class="padding" href="../../chapter1/index.html"><span class="chapnum">1.</span>&ensp;Introduction au C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-6c398714eae4372920aec3a1e6c2e143" class="collapsible-menu">
-            <li class="" data-nav-id="/chapter1/1-language/index.html"><a class="padding" href="../../chapter1/1-language/index.html">Présentation du langage<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter1/2-hello-world/index.html"><a class="padding" href="../../chapter1/2-hello-world/index.html">Hello World 👋<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active " data-nav-id="/chapter1/3-syntax-elements/index.html"><a class="padding" href="../../chapter1/3-syntax-elements/index.html">Eléments de syntaxe ✍<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter1/4-std-lib/index.html"><a class="padding" href="../../chapter1/4-std-lib/index.html">Librairie standard 📚<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter1/5-compilation/index.html"><a class="padding" href="../../chapter1/5-compilation/index.html">Compilation ⚙️<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter1/test/index.html"><a class="padding" href="../../chapter1/test/index.html">Questionnaire ☑<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/chapter1/1-language/index.html"><a class="padding" href="../../chapter1/1-language/index.html"><span class="presection-icon">🧸</span>Présentation du langage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter1/2-hello-world/index.html"><a class="padding" href="../../chapter1/2-hello-world/index.html"><span class="presection-icon">👋</span>Hello World<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/chapter1/3-syntax-elements/index.html"><a class="padding" href="../../chapter1/3-syntax-elements/index.html"><span class="presection-icon">⁉</span>Eléments de syntaxe<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter1/4-std-lib/index.html"><a class="padding" href="../../chapter1/4-std-lib/index.html"><span class="presection-icon">📚</span>Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter1/5-compilation/index.html"><a class="padding" href="../../chapter1/5-compilation/index.html"><span class="presection-icon">⚙️</span>Compilation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter1/test/index.html"><a class="padding" href="../../chapter1/test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter2/index.html"><a class="padding" href="../../chapter2/index.html"><span class="chapnum">2.</span>&ensp;Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b1df0095a9fd74320697a6d478418ec3" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu"></ul></li>
@@ -562,9 +562,9 @@ Néanmoins, ce n&rsquo;est pas une prérogative et vous êtes libres d&rsquo;uti
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737662459" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737662459" defer></script>
-    <script src="../../js/theme.js?1737662459" defer></script>
+    <script src="../../js/clipboard.min.js?1737667506" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737667506" defer></script>
+    <script src="../../js/theme.js?1737667506" defer></script>
 
 
 

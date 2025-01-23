@@ -13,7 +13,7 @@ Tableaux de taille fixe Pour créer des tableaux de taille fixe, il est bien ent
 Du coup, pour pallier à ce problème, il est possible d’utiliser la classe std::array.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Autres conteneurs séquentiels :: Cours de C&#43;&#43; - Niveau Master">
+    <meta name="twitter:title" content="Autres conteneurs séquentiels :: C&#43;&#43;">
     <meta name="twitter:description" content="Vous allez maintenant manipuler les autres conteneurs séquentiels que la libraire propose.
 Pour cet exercice, vous modifierez le fichier :
 - chap-05/2-sequentials.cpp
@@ -21,8 +21,8 @@ La cible à compiler est c5-2-sequentials.
 Tableaux de taille fixe Pour créer des tableaux de taille fixe, il est bien entendu possible d’utiliser les tableaux primitifs. L’inconvénient, c’est qu’il faut penser à les initialiser, ce que tout le monde ne pense pas toujours à faire….
 Du coup, pour pallier à ce problème, il est possible d’utiliser la classe std::array.">
     <meta property="og:url" content="/chapter5/3-sequentials/index.html">
-    <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
-    <meta property="og:title" content="Autres conteneurs séquentiels :: Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:site_name" content="C&#43;&#43;">
+    <meta property="og:title" content="Autres conteneurs séquentiels :: C&#43;&#43;">
     <meta property="og:description" content="Vous allez maintenant manipuler les autres conteneurs séquentiels que la libraire propose.
 Pour cet exercice, vous modifierez le fichier :
 - chap-05/2-sequentials.cpp
@@ -32,7 +32,7 @@ Du coup, pour pallier à ce problème, il est possible d’utiliser la classe st
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Librairie standard">
-    <meta itemprop="name" content="Autres conteneurs séquentiels :: Cours de C&#43;&#43; - Niveau Master">
+    <meta itemprop="name" content="Autres conteneurs séquentiels :: C&#43;&#43;">
     <meta itemprop="description" content="Vous allez maintenant manipuler les autres conteneurs séquentiels que la libraire propose.
 Pour cet exercice, vous modifierez le fichier :
 - chap-05/2-sequentials.cpp
@@ -40,17 +40,17 @@ La cible à compiler est c5-2-sequentials.
 Tableaux de taille fixe Pour créer des tableaux de taille fixe, il est bien entendu possible d’utiliser les tableaux primitifs. L’inconvénient, c’est qu’il faut penser à les initialiser, ce que tout le monde ne pense pas toujours à faire….
 Du coup, pour pallier à ce problème, il est possible d’utiliser la classe std::array.">
     <meta itemprop="wordCount" content="1347">
-    <title>Autres conteneurs séquentiels :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737662459" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737662459" rel="stylesheet">
-    <link href="../../css/fonts.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737662459" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737662459" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737662459" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737662459" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737662459"></script>
+    <title>Autres conteneurs séquentiels :: C&#43;&#43;</title>
+    <link href="../../css/fontawesome-all.min.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737667506" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737667506" rel="stylesheet">
+    <link href="../../css/fonts.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737667506" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737667506" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737667506" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737667506" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737667506"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -161,12 +161,12 @@ Cela s&rsquo;y prête d&rsquo;autant plus lorsque l&rsquo;indice est en réalit�
 <p>Dans le code de base du fichier, vous pouvez trouver une énumération <code>Fruit</code>, contenant les valeurs <code>Apricot</code>, <code>Cherry</code>, <code>Mango</code> et <code>Raspberry</code>. Vous avez également une dernière valeur <code>Fruit_Count</code>, qui contient donc le nombre de valeurs de l&rsquo;enum.<br>
 Définissez un <code>array</code> servant à indiquer pour chaque fruit possible le nom de ce fruit. Assignez ensuite dans chaque case la valeur appropriée.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-cdd16c756b729da5cc42815f4b04aded" aria-controls="R-expandcontent-cdd16c756b729da5cc42815f4b04aded">
-  <label class="expand-label" for="R-expand-cdd16c756b729da5cc42815f4b04aded">
+  <input type="checkbox" id="R-expand-b396c7e31f03d71b884f072fc49d2d75" aria-controls="R-expandcontent-b396c7e31f03d71b884f072fc49d2d75">
+  <label class="expand-label" for="R-expand-b396c7e31f03d71b884f072fc49d2d75">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-cdd16c756b729da5cc42815f4b04aded" class="expand-content">
+  <div id="R-expandcontent-b396c7e31f03d71b884f072fc49d2d75" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">Fruit_Count</span><span class="o">&gt;</span> <span class="n">fruit_names</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="n">fruit_names</span><span class="p">[</span><span class="n">Apricot</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;apricot&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="n">fruit_names</span><span class="p">[</span><span class="n">Cherry</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;cherry&#34;</span><span class="p">;</span>
@@ -187,12 +187,12 @@ Lorsqu&rsquo;une classe permet de répondre exactement à un besoin, il vaut mie
 Faites ensuite en sorte de regrouper <code>l1</code> et <code>l2</code> dans une même liste ordonnée. Faites de même avec <code>l3</code> et <code>l4</code>.<br>
 Placez enfin le résultat du deuxième groupement en plein milieu du premier groupement.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-d215887ddf4ff6cacdc11fa240386b55" aria-controls="R-expandcontent-d215887ddf4ff6cacdc11fa240386b55">
-  <label class="expand-label" for="R-expand-d215887ddf4ff6cacdc11fa240386b55">
+  <input type="checkbox" id="R-expand-d4bca2b3b717c73d5d9f3bb7e0688486" aria-controls="R-expandcontent-d4bca2b3b717c73d5d9f3bb7e0688486">
+  <label class="expand-label" for="R-expand-d4bca2b3b717c73d5d9f3bb7e0688486">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-d215887ddf4ff6cacdc11fa240386b55" class="expand-content">
+  <div id="R-expandcontent-d4bca2b3b717c73d5d9f3bb7e0688486" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// There are many differentes ways to put values in a list.
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">l1</span> <span class="p">{</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span> <span class="p">};</span>
 </span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">l2</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">45</span><span class="p">);</span>
@@ -227,29 +227,29 @@ A part cela, les autres opérations sont disponibles avec la même complexité.<
 <h3 id="pile-ou-file">Pile ou File</h3>
 <p>Les derniers conteneurs que nous allons ici sont les piles <code>std::stack</code> et les files <code>std::queue</code>. Nous n&rsquo;allons pas rappeler en détail ce que sont les piles ou les files, mais si vous avez tout oublier de vos cours d&rsquo;algorithmique, sachez au moins que dans une pile, les insertions et suppressions sont effectuées en fin de conteneur, alors que dans une file, les suppressions s&rsquo;effectuent en tête et les insertions en fin de conteneur.</p>
 <p>Dans le cas de la STL, <code>stack</code> et <code>queue</code> ont la particularité d&rsquo;être des adapteurs. Cela signifie que vous pouvez choisir l&rsquo;implémentation que vous souhaitez utiliser en interne. La seule contrainte, c&rsquo;est que la classe sous-jacente doit fournir certaines fonctions. Par exemple, dans le cas de la pile, on pourrait utiliser <code>vector</code> ou <code>list</code>, mais pas <code>forward_list</code> car elle ne définit pas <code>push_back</code> :<br>
-<a href="#R-image-eb35f60c52bc9d955d4ec7cbfed19c5b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter5/doc-stack-constraints.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-eb35f60c52bc9d955d4ec7cbfed19c5b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter5/doc-stack-constraints.png"></a></p>
+<a href="#R-image-d11e9092eed393906eee1a13dab7fc9b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter5/doc-stack-constraints.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d11e9092eed393906eee1a13dab7fc9b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter5/doc-stack-constraints.png"></a></p>
 <p>Sur l&rsquo;image ci-dessus, on vous précise quel conteneur est utilisé par défaut si vous n&rsquo;en spécifier aucun (c&rsquo;est-à-dire si vous écrivez juste <code>std::stack&lt;int&gt;</code>, au lieu de <code>std::stack&lt;int, smtg&gt;</code>). De quelle classe s&rsquo;agit-il ?<br>
 En cherchant un petit peu dans sa documentation, essayez de trouver une raison pour laquelle la librairie a décidé d&rsquo;utiliser ce conteneur là par défaut.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-bd773610b66b9654a30410f7296893a3" aria-controls="R-expandcontent-bd773610b66b9654a30410f7296893a3">
-  <label class="expand-label" for="R-expand-bd773610b66b9654a30410f7296893a3">
+  <input type="checkbox" id="R-expand-c2e236fdf433c9457b18f91bf82ba243" aria-controls="R-expandcontent-c2e236fdf433c9457b18f91bf82ba243">
+  <label class="expand-label" for="R-expand-c2e236fdf433c9457b18f91bf82ba243">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-bd773610b66b9654a30410f7296893a3" class="expand-content">
+  <div id="R-expandcontent-c2e236fdf433c9457b18f91bf82ba243" class="expand-content">
 <p>Par défaut, <code>stack</code> est implémentée au moyen d&rsquo;une <code>std::deque</code>. L&rsquo;avantage de cette classe pour l&rsquo;implémentation d&rsquo;une pile, c&rsquo;est qu&rsquo;elle est très efficace pour ajouter et retirer des éléments en fin de conteneur (complexité en O(1)), et lors de ces opérations, les itérateurs sur les autres éléments ne sont jamais invalidés (= plus de sécurité). Elle est aussi plus performante que le <code>vector</code> lors des réallocations (pas de copie des éléments existants).</p>
   </div>
 </div>
 <p>Vous allez maintenant instancier une <code>stack</code> utilisant comme implémentation sous-jacente un <code>vector&lt;int&gt;</code>, plutôt qu&rsquo;une <code>deque</code>. Pour cela, il suffit de spécifier le type de conteneur dans un second paramètre de template.<br>
 Faites en sorte que la <code>stack</code> contienne à la fin <code>{ 0, 1, 2 }</code>.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-b48b8884ebd0a02c45c3f3300da6981b" aria-controls="R-expandcontent-b48b8884ebd0a02c45c3f3300da6981b">
-  <label class="expand-label" for="R-expand-b48b8884ebd0a02c45c3f3300da6981b">
+  <input type="checkbox" id="R-expand-0d864bb1e7a677cf6f27c887e971a923" aria-controls="R-expandcontent-0d864bb1e7a677cf6f27c887e971a923">
+  <label class="expand-label" for="R-expand-0d864bb1e7a677cf6f27c887e971a923">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-b48b8884ebd0a02c45c3f3300da6981b" class="expand-content">
+  <div id="R-expandcontent-0d864bb1e7a677cf6f27c887e971a923" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// The stack can be initialized from nothing, and then values are added with push or emplace.
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">s1</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="n">s1</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
@@ -264,24 +264,24 @@ Faites en sorte que la <code>stack</code> contienne à la fin <code>{ 0, 1, 2 }<
 </div>
 <p>Essayez maintenant de parcourir la <code>stack</code> via une boucle <code>for</code> pour l&rsquo;afficher (pas foreach). Qu&rsquo;est-ce qui pose problème ?</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-765939c155fef4184be8e2933d69a69c" aria-controls="R-expandcontent-765939c155fef4184be8e2933d69a69c">
-  <label class="expand-label" for="R-expand-765939c155fef4184be8e2933d69a69c">
+  <input type="checkbox" id="R-expand-26e4485dc7425422c725ef90458f546a" aria-controls="R-expandcontent-26e4485dc7425422c725ef90458f546a">
+  <label class="expand-label" for="R-expand-26e4485dc7425422c725ef90458f546a">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-765939c155fef4184be8e2933d69a69c" class="expand-content">
+  <div id="R-expandcontent-26e4485dc7425422c725ef90458f546a" class="expand-content">
 <p>Dans une pile, on ne peut accéder qu&rsquo;au premier élément. La classe <code>stack</code> ne fournit donc pas l&rsquo;ensemble des fonctions dont dispose le conteneur sous-jacent, et c&rsquo;est bien là son intérêt.<br>
 Si on décide de définir un attribut d&rsquo;une classe en tant que <code>stack</code> plutôt qu&rsquo;en tant que <code>vector</code>, on ajoute en fait des contraintes sur les opérations qu&rsquo;il est possible d&rsquo;effectuer sur ce membre. Cela permet donc d&rsquo;enforcer les invariants de la classe plus facilement.</p>
   </div>
 </div>
 <p>Retentez maintenant le parcours via une boucle <code>foreach</code>. Essayez de compiler, et déduisez-en le nom des fonctions attendues par le compilateur pour pouvoir parcourir un conteneur via une boucle <code>foreach</code>.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-e64e56cd1b9aebe5556baf0e12b6b31e" aria-controls="R-expandcontent-e64e56cd1b9aebe5556baf0e12b6b31e">
-  <label class="expand-label" for="R-expand-e64e56cd1b9aebe5556baf0e12b6b31e">
+  <input type="checkbox" id="R-expand-1e078eb275a39cfdcb34acdcaf7e0b45" aria-controls="R-expandcontent-1e078eb275a39cfdcb34acdcaf7e0b45">
+  <label class="expand-label" for="R-expand-1e078eb275a39cfdcb34acdcaf7e0b45">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-e64e56cd1b9aebe5556baf0e12b6b31e" class="expand-content">
+  <div id="R-expandcontent-1e078eb275a39cfdcb34acdcaf7e0b45" class="expand-content">
 <p>Le compilateur nous dit ceci :</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">error: <span class="s1">&#39;begin&#39;</span> was not declared in this scope
 </span></span><span class="line"><span class="cl">error: <span class="s1">&#39;end&#39;</span> was not declared in this scope</span></span></code></pre></div>
@@ -315,14 +315,13 @@ Si on décide de définir un attribut d&rsquo;une classe en tant que <code>stack
             <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu">
-            <li class="" data-nav-id="/chapter5/1-doc/index.html"><a class="padding" href="../../chapter5/1-doc/index.html">Un peu de doc...<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter5/2-vectors/index.html"><a class="padding" href="../../chapter5/2-vectors/index.html">Tableaux dynamiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active " data-nav-id="/chapter5/3-sequentials/index.html"><a class="padding" href="../../chapter5/3-sequentials/index.html">Autres conteneurs séquentiels<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter5/4-associatives/index.html"><a class="padding" href="../../chapter5/4-associatives/index.html">Conteneurs associatifs<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter5/5-strings/index.html"><a class="padding" href="../../chapter5/5-strings/index.html">Manipulation de chaînes<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter5/6-tuples/index.html"><a class="padding" href="../../chapter5/6-tuples/index.html">Paires et tuples<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter5/test/index.html"><a class="padding" href="../../chapter5/test/index.html">Questionnaire ☑<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter5/summary/index.html"><a class="padding" href="../../chapter5/summary/index.html">Synthèse<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/chapter5/1-doc/index.html"><a class="padding" href="../../chapter5/1-doc/index.html"><span class="presection-icon">🔖</span>Un peu de doc...<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/2-vectors/index.html"><a class="padding" href="../../chapter5/2-vectors/index.html"><span class="presection-icon">🖼</span>Tableaux dynamiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/chapter5/3-sequentials/index.html"><a class="padding" href="../../chapter5/3-sequentials/index.html"><span class="presection-icon">➠</span>Autres conteneurs séquentiels<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/4-associatives/index.html"><a class="padding" href="../../chapter5/4-associatives/index.html"><span class="presection-icon">🔑</span>Conteneurs associatifs<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/5-strings/index.html"><a class="padding" href="../../chapter5/5-strings/index.html"><span class="presection-icon">🔗</span>Manipulation de chaînes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/6-tuples/index.html"><a class="padding" href="../../chapter5/6-tuples/index.html"><span class="presection-icon">🍒</span>Paires et tuples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/test/index.html"><a class="padding" href="../../chapter5/test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter8/index.html"><a class="padding" href="../../chapter8/index.html"><span class="chapnum">8.</span>&ensp;Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7cf6d9bdd794f38d7006506bdc38c58f" class="collapsible-menu"></ul></li>
@@ -392,9 +391,9 @@ Si on décide de définir un attribut d&rsquo;une classe en tant que <code>stack
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737662459" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737662459" defer></script>
-    <script src="../../js/theme.js?1737662459" defer></script>
+    <script src="../../js/clipboard.min.js?1737667506" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737667506" defer></script>
+    <script src="../../js/theme.js?1737667506" defer></script>
 
 
 

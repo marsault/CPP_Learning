@@ -9,32 +9,32 @@
 Si on définit une variable dans une fonction, la portée de celle-ci démarre à sa définition et se termine à la fin du bloc dans lequel celle-ci a été définie.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Durée de vie :: Cours de C&#43;&#43; - Niveau Master">
+    <meta name="twitter:title" content="Durée de vie :: C&#43;&#43;">
     <meta name="twitter:description" content="Portée d’une variable locale Afin de parler de durée de vie, nous allons commencer par parler de la portée de nos variables. Comme vous le savez peut-être, la portée d’une variable définit la portion de code dans laquelle le compilateur nous permet de l’utiliser.
 Si on définit une variable dans une fonction, la portée de celle-ci démarre à sa définition et se termine à la fin du bloc dans lequel celle-ci a été définie.">
     <meta property="og:url" content="/old-2223-chapter3-memoire/1-lifespan/index.html">
-    <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
-    <meta property="og:title" content="Durée de vie :: Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:site_name" content="C&#43;&#43;">
+    <meta property="og:title" content="Durée de vie :: C&#43;&#43;">
     <meta property="og:description" content="Portée d’une variable locale Afin de parler de durée de vie, nous allons commencer par parler de la portée de nos variables. Comme vous le savez peut-être, la portée d’une variable définit la portion de code dans laquelle le compilateur nous permet de l’utiliser.
 Si on définit une variable dans une fonction, la portée de celle-ci démarre à sa définition et se termine à la fin du bloc dans lequel celle-ci a été définie.">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Gestion mémoire (2022-2023)">
-    <meta itemprop="name" content="Durée de vie :: Cours de C&#43;&#43; - Niveau Master">
+    <meta itemprop="name" content="Durée de vie :: C&#43;&#43;">
     <meta itemprop="description" content="Portée d’une variable locale Afin de parler de durée de vie, nous allons commencer par parler de la portée de nos variables. Comme vous le savez peut-être, la portée d’une variable définit la portion de code dans laquelle le compilateur nous permet de l’utiliser.
 Si on définit une variable dans une fonction, la portée de celle-ci démarre à sa définition et se termine à la fin du bloc dans lequel celle-ci a été définie.">
     <meta itemprop="wordCount" content="1465">
-    <title>Durée de vie :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737662459" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737662459" rel="stylesheet">
-    <link href="../../css/fonts.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737662459" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737662459" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737662459" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737662459" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737662459"></script>
+    <title>Durée de vie :: C&#43;&#43;</title>
+    <link href="../../css/fontawesome-all.min.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737667506" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737667506" rel="stylesheet">
+    <link href="../../css/fonts.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737667506" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737667506" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737667506" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737667506" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737667506"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -194,12 +194,12 @@ La durée de vie d&rsquo;un objet démarre de l&rsquo;appel de son constructeur 
 Faites de même pour <code>Content</code> et testez le programme.<br>
 Pouvez-vous en déduire à quel moment la durée de vie de <code>_content</code> démarre, et à quel moment celle-ci termine ?</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-f90fd872be1b7aaf849d2b1d6c1badae" aria-controls="R-expandcontent-f90fd872be1b7aaf849d2b1d6c1badae">
-  <label class="expand-label" for="R-expand-f90fd872be1b7aaf849d2b1d6c1badae">
+  <input type="checkbox" id="R-expand-92ce5fca197e274377f9f6d8659c715f" aria-controls="R-expandcontent-92ce5fca197e274377f9f6d8659c715f">
+  <label class="expand-label" for="R-expand-92ce5fca197e274377f9f6d8659c715f">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-f90fd872be1b7aaf849d2b1d6c1badae" class="expand-content">
+  <div id="R-expandcontent-92ce5fca197e274377f9f6d8659c715f" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Content</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Content</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
@@ -265,12 +265,12 @@ Testez le code suivant et déterminez les durées de vie des objets <code>box</c
 </span></span><span class="line"><span class="ln">11</span><span class="cl"> <span class="p">}</span></span></span></code></pre></div>
 </p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-cd92f1baff80dbb967b7dc4a32b97f60" aria-controls="R-expandcontent-cd92f1baff80dbb967b7dc4a32b97f60">
-  <label class="expand-label" for="R-expand-cd92f1baff80dbb967b7dc4a32b97f60">
+  <input type="checkbox" id="R-expand-1e93e4823849f33f839e64ec81a127c6" aria-controls="R-expandcontent-1e93e4823849f33f839e64ec81a127c6">
+  <label class="expand-label" for="R-expand-1e93e4823849f33f839e64ec81a127c6">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-cd92f1baff80dbb967b7dc4a32b97f60" class="expand-content">
+  <div id="R-expandcontent-1e93e4823849f33f839e64ec81a127c6" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">Main begin
 </span></span></span><span class="line"><span class="cl"><span class="c">Content created
 </span></span></span><span class="line"><span class="cl"><span class="c">Box created
@@ -305,12 +305,12 @@ Quelle est selon vous la durée de vie de la variable <code>content</code> ?
 <p>Pour mieux comprendre, vous allez redéfinir le constructeur de copie de <code>Content</code> afin qu&rsquo;il affiche <code>Content copied</code>.
 Combien d&rsquo;objets de type <code>Content</code> ont donc été créés par le programme précédent ? Quelles étaient leurs durées de vie respectives ?</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-b57cf159716cd9102f3c4c8575fc8cd1" aria-controls="R-expandcontent-b57cf159716cd9102f3c4c8575fc8cd1">
-  <label class="expand-label" for="R-expand-b57cf159716cd9102f3c4c8575fc8cd1">
+  <input type="checkbox" id="R-expand-f9947d007fdc84062d8a6fdaaff9ec4a" aria-controls="R-expandcontent-f9947d007fdc84062d8a6fdaaff9ec4a">
+  <label class="expand-label" for="R-expand-f9947d007fdc84062d8a6fdaaff9ec4a">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-b57cf159716cd9102f3c4c8575fc8cd1" class="expand-content">
+  <div id="R-expandcontent-f9947d007fdc84062d8a6fdaaff9ec4a" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">Main start
 </span></span></span><span class="line"><span class="cl"><span class="c">Content created
 </span></span></span><span class="line"><span class="cl"><span class="c">Box created
@@ -348,12 +348,12 @@ Commentez ensuite la ligne 12 et retestez une dernière fois le programme.
 </span></span><span class="line"><span class="ln">17</span><span class="cl"> <span class="p">}</span></span></span></code></pre></div>
 </p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-439211b78865c16ee3560bc23035ef98" aria-controls="R-expandcontent-439211b78865c16ee3560bc23035ef98">
-  <label class="expand-label" for="R-expand-439211b78865c16ee3560bc23035ef98">
+  <input type="checkbox" id="R-expand-015cd122831b3a64d34028cdfe151e35" aria-controls="R-expandcontent-015cd122831b3a64d34028cdfe151e35">
+  <label class="expand-label" for="R-expand-015cd122831b3a64d34028cdfe151e35">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-439211b78865c16ee3560bc23035ef98" class="expand-content">
+  <div id="R-expandcontent-015cd122831b3a64d34028cdfe151e35" class="expand-content">
 <p>Comme <code>content_ref</code> est une référence, la variable correspond au même objet que <code>box-&gt;_content</code>.
 Sa durée de vie s&rsquo;étend donc de la ligne 5 à la ligne 10 du programme.</p>
 <p>De mon côté, le programme déclenche forcément une segfault.<br>
@@ -475,9 +475,9 @@ Pour éviter de corrompre les données des autres programmes, le système devrai
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737662459" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737662459" defer></script>
-    <script src="../../js/theme.js?1737662459" defer></script>
+    <script src="../../js/clipboard.min.js?1737667506" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737667506" defer></script>
+    <script src="../../js/theme.js?1737667506" defer></script>
 
 
 

@@ -10,35 +10,35 @@ Windows Ouvrez un terminal et exécutez g&#43;&#43; -v. Si la commande réussit,
 MSYS2 contient en particulier MinGW, qui est l’équivalent du compilateur gcc/g&#43;&#43; pour Windows.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Compilateur :: Cours de C&#43;&#43; - Niveau Master">
+    <meta name="twitter:title" content="Compilateur :: C&#43;&#43;">
     <meta name="twitter:description" content="Pour le compilateur, vous devrez utiliser g&#43;&#43; (version &gt;= 9) si vous êtes sous Windows ou Linux, et clang si vous êtes sous MacOS.
 Windows Ouvrez un terminal et exécutez g&#43;&#43; -v. Si la commande réussit, assurez-vous que la dernière ligne indique bien une version de gcc &gt;= 9. Si ce n’est pas le cas, installez le gestionnaire de paquet MSYS2 en suivant les instructions sur cette page.
 MSYS2 contient en particulier MinGW, qui est l’équivalent du compilateur gcc/g&#43;&#43; pour Windows.">
     <meta property="og:url" content="/chapter0/1-compiler/index.html">
-    <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
-    <meta property="og:title" content="Compilateur :: Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:site_name" content="C&#43;&#43;">
+    <meta property="og:title" content="Compilateur :: C&#43;&#43;">
     <meta property="og:description" content="Pour le compilateur, vous devrez utiliser g&#43;&#43; (version &gt;= 9) si vous êtes sous Windows ou Linux, et clang si vous êtes sous MacOS.
 Windows Ouvrez un terminal et exécutez g&#43;&#43; -v. Si la commande réussit, assurez-vous que la dernière ligne indique bien une version de gcc &gt;= 9. Si ce n’est pas le cas, installez le gestionnaire de paquet MSYS2 en suivant les instructions sur cette page.
 MSYS2 contient en particulier MinGW, qui est l’équivalent du compilateur gcc/g&#43;&#43; pour Windows.">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Mise en place">
-    <meta itemprop="name" content="Compilateur :: Cours de C&#43;&#43; - Niveau Master">
+    <meta itemprop="name" content="Compilateur :: C&#43;&#43;">
     <meta itemprop="description" content="Pour le compilateur, vous devrez utiliser g&#43;&#43; (version &gt;= 9) si vous êtes sous Windows ou Linux, et clang si vous êtes sous MacOS.
 Windows Ouvrez un terminal et exécutez g&#43;&#43; -v. Si la commande réussit, assurez-vous que la dernière ligne indique bien une version de gcc &gt;= 9. Si ce n’est pas le cas, installez le gestionnaire de paquet MSYS2 en suivant les instructions sur cette page.
 MSYS2 contient en particulier MinGW, qui est l’équivalent du compilateur gcc/g&#43;&#43; pour Windows.">
     <meta itemprop="wordCount" content="459">
-    <title>Compilateur :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737662459" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737662459" rel="stylesheet">
-    <link href="../../css/fonts.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737662459" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737662459" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737662459" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737662459" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737662459"></script>
+    <title>Compilateur :: C&#43;&#43;</title>
+    <link href="../../css/fontawesome-all.min.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737667506" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737667506" rel="stylesheet">
+    <link href="../../css/fonts.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737667506" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737667506" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737667506" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737667506" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737667506"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -130,14 +130,14 @@ MSYS2 contient en particulier MinGW, qui est l&rsquo;équivalent du compilateur 
 </span></span><span class="line"><span class="cl">pacman -S mingw-w64-ucrt-x86_64-gdb</span></span></code></pre></div>
 </li>
 <li>Ouvrez l&rsquo;éditeur de variables d&rsquo;environnement Windows.
-<a href="#R-image-a10db76456e6a2c652906e2f8daa8330" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/env-var.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a10db76456e6a2c652906e2f8daa8330"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/env-var.png"></a></li>
+<a href="#R-image-5bf8e05933b94c4205d058ad2e2dd002" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/env-var.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5bf8e05933b94c4205d058ad2e2dd002"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/env-var.png"></a></li>
 <li>Dans la variable <code>Path</code> (utilisateur ou système, peu importe), ajoutez <code>&quot;C:\msys64\ucrt64\bin&quot;</code>.
-<a href="#R-image-600ddfa68086fd1ba6cae04841ea56db" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/add-path-v2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-600ddfa68086fd1ba6cae04841ea56db"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/add-path-v2.png"></a></li>
+<a href="#R-image-ef367cb6095e1c9ee1a9c2457d6e012d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/add-path-v2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ef367cb6095e1c9ee1a9c2457d6e012d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/add-path-v2.png"></a></li>
 <li>Si vous aviez une autre version de MinGW d&rsquo;installée (en général dans C:\mingw), c&rsquo;est <strong>très important</strong> que vous supprimiez son répertoire bin/ du <code>Path</code> utilisateur <strong>et</strong> du <code>Path</code> système.
-<a href="#R-image-4b906da1c677281d1029ad24837a614c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/rm-path-v2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-4b906da1c677281d1029ad24837a614c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/rm-path-v2.png"></a></li>
+<a href="#R-image-76dbaf343d538e6d6c49437338896261" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/rm-path-v2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-76dbaf343d538e6d6c49437338896261"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/rm-path-v2.png"></a></li>
 <li>Ouvrez un terminal Window et exécutez <code>g++ -v</code><br>
 La dernière ligne devrait maintenant indiquer une version de gcc &gt;= 9.</li>
 </ol>
@@ -145,8 +145,8 @@ La dernière ligne devrait maintenant indiquer une version de gcc &gt;= 9.</li>
 <ol>
 <li>Téléchargez <a href="../../chapter0/helloworld.cpp">ce fichier</a>.</li>
 <li>Ouvrez une fenêtre Powershell dans le répertoire contenant le fichier (vous pouvez utiliser <code>Shift + Clic Droit</code> depuis l&rsquo;explorateur de fichiers pour faire apparaître l&rsquo;option dans le menu contextuel).
-<a href="#R-image-6b36548e190d1395c10ba31a81f05694" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/powershell.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6b36548e190d1395c10ba31a81f05694"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/powershell.png"></a></li>
+<a href="#R-image-23577ed24a92a7c610974499648590cf" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/powershell.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-23577ed24a92a7c610974499648590cf"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/powershell.png"></a></li>
 <li>Exécutez la commande <code>g++ .\helloworld.cpp -o hello</code><br>
 Un fichier <code>hello.exe</code> devrait avoir été généré.</li>
 <li>Exécutez <code>.\hello.exe</code>.
@@ -290,9 +290,9 @@ Le programme devrait vous répondre <code>&quot;Hello!&quot;</code>.</li>
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737662459" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737662459" defer></script>
-    <script src="../../js/theme.js?1737662459" defer></script>
+    <script src="../../js/clipboard.min.js?1737667506" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737667506" defer></script>
+    <script src="../../js/theme.js?1737667506" defer></script>
 
 
 

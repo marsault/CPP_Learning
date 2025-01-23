@@ -9,32 +9,32 @@
 Usage de la fonction std::move sur un exemple /// Passage par valeur // vvvvvvvvvvv void f(std::vector&lt;std::string&gt; my_own_data) { for (auto&amp; s : my_own_data) std::cout &lt;&lt; &amp;s &lt;&lt; &#34; &#34;; // ^^ // On affiche l&#39;adresse des chaines de caractères std::cout &lt;&lt; std::endl; } int main() { std::vector&lt;std::string&gt; data = {&#34;Hello&#34;, &#34;World&#34;, &#34;!">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Déplacement :: Cours de C&#43;&#43; - Niveau Master">
+    <meta name="twitter:title" content="Déplacement :: C&#43;&#43;">
     <meta name="twitter:description" content="Sur cette page vous allez apprendre ce qu’est le déplacement en C&#43;&#43;. En un mot, il s’agit de permettre de vider un objet pour en construire un autre ailleurs, et on utilise pour cela la fonction std::move.
 Usage de la fonction std::move sur un exemple /// Passage par valeur // vvvvvvvvvvv void f(std::vector&lt;std::string&gt; my_own_data) { for (auto&amp; s : my_own_data) std::cout &lt;&lt; &amp;s &lt;&lt; &#34; &#34;; // ^^ // On affiche l&#39;adresse des chaines de caractères std::cout &lt;&lt; std::endl; } int main() { std::vector&lt;std::string&gt; data = {&#34;Hello&#34;, &#34;World&#34;, &#34;!">
     <meta property="og:url" content="/chapter4/3-move/index.html">
-    <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
-    <meta property="og:title" content="Déplacement :: Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:site_name" content="C&#43;&#43;">
+    <meta property="og:title" content="Déplacement :: C&#43;&#43;">
     <meta property="og:description" content="Sur cette page vous allez apprendre ce qu’est le déplacement en C&#43;&#43;. En un mot, il s’agit de permettre de vider un objet pour en construire un autre ailleurs, et on utilise pour cela la fonction std::move.
 Usage de la fonction std::move sur un exemple /// Passage par valeur // vvvvvvvvvvv void f(std::vector&lt;std::string&gt; my_own_data) { for (auto&amp; s : my_own_data) std::cout &lt;&lt; &amp;s &lt;&lt; &#34; &#34;; // ^^ // On affiche l&#39;adresse des chaines de caractères std::cout &lt;&lt; std::endl; } int main() { std::vector&lt;std::string&gt; data = {&#34;Hello&#34;, &#34;World&#34;, &#34;!">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Copie et déplacement">
-    <meta itemprop="name" content="Déplacement :: Cours de C&#43;&#43; - Niveau Master">
+    <meta itemprop="name" content="Déplacement :: C&#43;&#43;">
     <meta itemprop="description" content="Sur cette page vous allez apprendre ce qu’est le déplacement en C&#43;&#43;. En un mot, il s’agit de permettre de vider un objet pour en construire un autre ailleurs, et on utilise pour cela la fonction std::move.
 Usage de la fonction std::move sur un exemple /// Passage par valeur // vvvvvvvvvvv void f(std::vector&lt;std::string&gt; my_own_data) { for (auto&amp; s : my_own_data) std::cout &lt;&lt; &amp;s &lt;&lt; &#34; &#34;; // ^^ // On affiche l&#39;adresse des chaines de caractères std::cout &lt;&lt; std::endl; } int main() { std::vector&lt;std::string&gt; data = {&#34;Hello&#34;, &#34;World&#34;, &#34;!">
     <meta itemprop="wordCount" content="758">
-    <title>Déplacement :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737662459" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737662459" rel="stylesheet">
-    <link href="../../css/fonts.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737662459" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737662459" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737662459" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737662459" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737662459"></script>
+    <title>Déplacement :: C&#43;&#43;</title>
+    <link href="../../css/fontawesome-all.min.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737667506" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737667506" rel="stylesheet">
+    <link href="../../css/fonts.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737667506" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737667506" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737667506" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737667506" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737667506"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -153,11 +153,11 @@ Le tableau dynamique <code>data</code> est maintenant vide.</p>
 <p>Rappelez-vous qu&rsquo;un <code>std::vector</code> est un tableau dynamique, donc ses éléments sont en fait sur le tas,
 et ce sont elles qui vont être copiées ou réattribuées à <code>my_own_data</code>, comme le montrent les deux diagrammes en dessous.</p>
 <h4 id="effet-sur-la-mémoire-du-premier-appel-à-f-copie">Effet sur la mémoire du premier appel à <code>f</code> (copie)</h4>
-<p><a href="#R-image-38348d91fd34dc4cc452f195629707d0" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_copy.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-38348d91fd34dc4cc452f195629707d0"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_copy.svg"></a></p>
+<p><a href="#R-image-652aa9994aad1af2568f0d98ab28d56f" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_copy.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-652aa9994aad1af2568f0d98ab28d56f"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_copy.svg"></a></p>
 <h4 id="effet-sur-la-mémoire-du-deuxième-appel-à-f-déplacement">Effet sur la mémoire du deuxième appel à <code>f</code> (déplacement)</h4>
-<p><a href="#R-image-209fcc5857878b496476fbd413dee7f5" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_move.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-209fcc5857878b496476fbd413dee7f5"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_move.svg"></a></p>
+<p><a href="#R-image-9c54b53c09c26df0e1734f0cd1089ee8" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_move.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9c54b53c09c26df0e1734f0cd1089ee8"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_move.svg"></a></p>
 <h3 id="constructeur-de-déplacement">Constructeur de déplacement</h3>
 <p>Maintenant qu&rsquo;on a compris le principe du déplacement, encore faut-il pouvoir définir comment se déplace
 nos propres classes.  Etant donné une classe <code>MaClasse</code> le constructeur de déplacement a le prototype suivant.</p>
@@ -234,13 +234,13 @@ En fait, suivant le contenu de <code>f</code>, le compilateur peut décider de n
             <li class="" data-nav-id="/chapter2/index.html"><a class="padding" href="../../chapter2/index.html"><span class="chapnum">2.</span>&ensp;Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b1df0095a9fd74320697a6d478418ec3" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu">
-            <li class="" data-nav-id="/chapter4/1-value-kinds/index.html"><a class="padding" href="../../chapter4/1-value-kinds/index.html"><span class="presection-icon">⇄</span>L-value vs R-value<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter4/1-value-kinds/index.html"><a class="padding" href="../../chapter4/1-value-kinds/index.html"><span class="presection-icon">⮂</span>L-value vs R-value<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter4/2-copy/index.html"><a class="padding" href="../../chapter4/2-copy/index.html"><span class="presection-icon">🧬</span>Copie<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="active " data-nav-id="/chapter4/3-move/index.html"><a class="padding" href="../../chapter4/3-move/index.html"><span class="presection-icon">🚚</span>Déplacement<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter4/4-assign/index.html"><a class="padding" href="../../chapter4/4-assign/index.html"><span class="presection-icon">📝</span>Affectation<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter4/5-ruleof/index.html"><a class="padding" href="../../chapter4/5-ruleof/index.html"><span class="presection-icon">📐</span>Règle des 0, 3 ou 5<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter4/6-copy-minim/index.html"><a class="padding" href="../../chapter4/6-copy-minim/index.html"><span class="presection-icon">🔥</span>Minimiser les copies<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter4/9-test/index.html"><a class="padding" href="../../chapter4/9-test/index.html"><span class="presection-icon">☑</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/chapter4/9-test/index.html"><a class="padding" href="../../chapter4/9-test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
@@ -311,9 +311,9 @@ En fait, suivant le contenu de <code>f</code>, le compilateur peut décider de n
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737662459" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737662459" defer></script>
-    <script src="../../js/theme.js?1737662459" defer></script>
+    <script src="../../js/clipboard.min.js?1737667506" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737667506" defer></script>
+    <script src="../../js/theme.js?1737667506" defer></script>
 
 
 

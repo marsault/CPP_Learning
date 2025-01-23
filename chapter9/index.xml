@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Paramètres de templates :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Paramètres de templates :: C&#43;&#43;</title>
     <link>/chapter9/index.html</link>
     <description>Dans ce deuxième chapitre sur les templates, nous parlerons de tout un tas de fonctionnalités et subtilités liées aux paramètres de templates. Installez-vous bien confortablement, faites-vous un ptit café, et n’hésitez pas à prendre une pause de temps en temps, parce que vous allez découvrir beaucoup de choses pas forcément faciles à intégrer du premier coup.</description>
     <generator>Hugo</generator>

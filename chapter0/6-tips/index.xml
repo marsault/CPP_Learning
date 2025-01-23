@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Astuces :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Astuces :: C&#43;&#43;</title>
     <link>/chapter0/6-tips/index.html</link>
     <description>Vous trouverez dans cette section différentes manipulations, astuces et rappels pour vous aider à programmer rapidement en utilisant VSCode.&#xA;Compiler et exécuter des petits programmes Utiliser des projets VSCode Raccourcis &amp; Commandes VSCode Options de compilation</description>
     <generator>Hugo</generator>

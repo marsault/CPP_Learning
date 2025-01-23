@@ -10,35 +10,35 @@ Pour savoir quand un objet est déplacé ou copié, il faut d’abord comprendre
 Nouveau chapitre Ce chapitre a été écrit cette année. Il contient probablement de nombreuses erreurs.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Copie et déplacement :: Cours de C&#43;&#43; - Niveau Master">
+    <meta name="twitter:title" content="Copie et déplacement :: C&#43;&#43;">
     <meta name="twitter:description" content="Dans ce chapitre, nous allons revenir en détail sur la notion de copie et d’aborder celle de déplacement. Plus particulièrement, nous allons voir comment définir la façon dont une classe se copie et se déplace, et quand.
 Pour savoir quand un objet est déplacé ou copié, il faut d’abord comprendre les deux principales catégories de valeurs : L-value et R-value.
 Nouveau chapitre Ce chapitre a été écrit cette année. Il contient probablement de nombreuses erreurs.">
     <meta property="og:url" content="/chapter4/index.html">
-    <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
-    <meta property="og:title" content="Copie et déplacement :: Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:site_name" content="C&#43;&#43;">
+    <meta property="og:title" content="Copie et déplacement :: C&#43;&#43;">
     <meta property="og:description" content="Dans ce chapitre, nous allons revenir en détail sur la notion de copie et d’aborder celle de déplacement. Plus particulièrement, nous allons voir comment définir la façon dont une classe se copie et se déplace, et quand.
 Pour savoir quand un objet est déplacé ou copié, il faut d’abord comprendre les deux principales catégories de valeurs : L-value et R-value.
 Nouveau chapitre Ce chapitre a été écrit cette année. Il contient probablement de nombreuses erreurs.">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="website">
-    <meta itemprop="name" content="Copie et déplacement :: Cours de C&#43;&#43; - Niveau Master">
+    <meta itemprop="name" content="Copie et déplacement :: C&#43;&#43;">
     <meta itemprop="description" content="Dans ce chapitre, nous allons revenir en détail sur la notion de copie et d’aborder celle de déplacement. Plus particulièrement, nous allons voir comment définir la façon dont une classe se copie et se déplace, et quand.
 Pour savoir quand un objet est déplacé ou copié, il faut d’abord comprendre les deux principales catégories de valeurs : L-value et R-value.
 Nouveau chapitre Ce chapitre a été écrit cette année. Il contient probablement de nombreuses erreurs.">
     <meta itemprop="wordCount" content="95">
-    <title>Copie et déplacement :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../chapter4/index.xml" rel="alternate" type="application/rss+xml" title="Copie et déplacement :: Cours de C++ - Niveau Master">
-    <link href="../css/fontawesome-all.min.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../css/nucleus.css?1737662459" rel="stylesheet">
-    <link href="../css/auto-complete.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../css/perfect-scrollbar.min.css?1737662459" rel="stylesheet">
-    <link href="../css/fonts.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../css/theme.css?1737662459" rel="stylesheet">
-    <link href="../css/theme-mine.css?1737662459" rel="stylesheet" id="R-variant-style">
-    <link href="../css/chroma-relearn-light.css?1737662459" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../css/print.css?1737662459" rel="stylesheet" media="print">
-    <script src="../js/variant.js?1737662459"></script>
+    <title>Copie et déplacement :: C&#43;&#43;</title>
+    <link href="../chapter4/index.xml" rel="alternate" type="application/rss+xml" title="Copie et déplacement :: C++">
+    <link href="../css/fontawesome-all.min.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../css/nucleus.css?1737667506" rel="stylesheet">
+    <link href="../css/auto-complete.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../css/perfect-scrollbar.min.css?1737667506" rel="stylesheet">
+    <link href="../css/fonts.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../css/theme.css?1737667506" rel="stylesheet">
+    <link href="../css/theme-mine.css?1737667506" rel="stylesheet" id="R-variant-style">
+    <link href="../css/chroma-relearn-light.css?1737667506" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../css/print.css?1737667506" rel="stylesheet" media="print">
+    <script src="../js/variant.js?1737667506"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..';
@@ -143,13 +143,13 @@ Pour qu&rsquo;on puisse l&rsquo;améliorer, n&rsquo;hésitez pas à nous les sig
             <li class="" data-nav-id="/chapter2/index.html"><a class="padding" href="../chapter2/index.html"><span class="chapnum">2.</span>&ensp;Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b1df0095a9fd74320697a6d478418ec3" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
             <li class="active parent " data-nav-id="/chapter4/index.html"><a class="padding" href="../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu">
-            <li class="" data-nav-id="/chapter4/1-value-kinds/index.html"><a class="padding" href="../chapter4/1-value-kinds/index.html"><span class="presection-icon">⇄</span>L-value vs R-value<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter4/1-value-kinds/index.html"><a class="padding" href="../chapter4/1-value-kinds/index.html"><span class="presection-icon">⮂</span>L-value vs R-value<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter4/2-copy/index.html"><a class="padding" href="../chapter4/2-copy/index.html"><span class="presection-icon">🧬</span>Copie<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter4/3-move/index.html"><a class="padding" href="../chapter4/3-move/index.html"><span class="presection-icon">🚚</span>Déplacement<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter4/4-assign/index.html"><a class="padding" href="../chapter4/4-assign/index.html"><span class="presection-icon">📝</span>Affectation<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter4/5-ruleof/index.html"><a class="padding" href="../chapter4/5-ruleof/index.html"><span class="presection-icon">📐</span>Règle des 0, 3 ou 5<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter4/6-copy-minim/index.html"><a class="padding" href="../chapter4/6-copy-minim/index.html"><span class="presection-icon">🔥</span>Minimiser les copies<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter4/9-test/index.html"><a class="padding" href="../chapter4/9-test/index.html"><span class="presection-icon">☑</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/chapter4/9-test/index.html"><a class="padding" href="../chapter4/9-test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
@@ -220,9 +220,9 @@ Pour qu&rsquo;on puisse l&rsquo;améliorer, n&rsquo;hésitez pas à nous les sig
         </div>
       </div>
     </aside>
-    <script src="../js/clipboard.min.js?1737662459" defer></script>
-    <script src="../js/perfect-scrollbar.min.js?1737662459" defer></script>
-    <script src="../js/theme.js?1737662459" defer></script>
+    <script src="../js/clipboard.min.js?1737667506" defer></script>
+    <script src="../js/perfect-scrollbar.min.js?1737667506" defer></script>
+    <script src="../js/theme.js?1737667506" defer></script>
 
 
 

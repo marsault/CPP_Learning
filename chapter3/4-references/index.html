@@ -10,35 +10,35 @@ Modifier un argument Le premier cas d’utilisation des références avait déj�
 Pour rappel, lorsque vous passez un objet par valeur en paramètre d’une fonction, l’intégralité de l’instance est copiée !">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Usage des références :: Cours de C&#43;&#43; - Niveau Master">
+    <meta name="twitter:title" content="Usage des références :: C&#43;&#43;">
     <meta name="twitter:description" content="Comme cela doit paraître encore un peu abstrait, nous allons vous présenter concrètement les principaux cas d’utilisation des références. Notez qu’il en existe un autre, mais vous le découvrirez dans le chapitre sur l’héritage !
 Modifier un argument Le premier cas d’utilisation des références avait déjà été décrit dans le Chapitre 1 : il s’agit de pouvoir modifier la valeur ou le contenu d’un argument passé à une fonction.
 Pour rappel, lorsque vous passez un objet par valeur en paramètre d’une fonction, l’intégralité de l’instance est copiée !">
     <meta property="og:url" content="/chapter3/4-references/index.html">
-    <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
-    <meta property="og:title" content="Usage des références :: Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:site_name" content="C&#43;&#43;">
+    <meta property="og:title" content="Usage des références :: C&#43;&#43;">
     <meta property="og:description" content="Comme cela doit paraître encore un peu abstrait, nous allons vous présenter concrètement les principaux cas d’utilisation des références. Notez qu’il en existe un autre, mais vous le découvrirez dans le chapitre sur l’héritage !
 Modifier un argument Le premier cas d’utilisation des références avait déjà été décrit dans le Chapitre 1 : il s’agit de pouvoir modifier la valeur ou le contenu d’un argument passé à une fonction.
 Pour rappel, lorsque vous passez un objet par valeur en paramètre d’une fonction, l’intégralité de l’instance est copiée !">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Cycle de vie">
-    <meta itemprop="name" content="Usage des références :: Cours de C&#43;&#43; - Niveau Master">
+    <meta itemprop="name" content="Usage des références :: C&#43;&#43;">
     <meta itemprop="description" content="Comme cela doit paraître encore un peu abstrait, nous allons vous présenter concrètement les principaux cas d’utilisation des références. Notez qu’il en existe un autre, mais vous le découvrirez dans le chapitre sur l’héritage !
 Modifier un argument Le premier cas d’utilisation des références avait déjà été décrit dans le Chapitre 1 : il s’agit de pouvoir modifier la valeur ou le contenu d’un argument passé à une fonction.
 Pour rappel, lorsque vous passez un objet par valeur en paramètre d’une fonction, l’intégralité de l’instance est copiée !">
     <meta itemprop="wordCount" content="304">
-    <title>Usage des références :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737662459" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737662459" rel="stylesheet">
-    <link href="../../css/fonts.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737662459" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737662459" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737662459" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737662459" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737662459"></script>
+    <title>Usage des références :: C&#43;&#43;</title>
+    <link href="../../css/fontawesome-all.min.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737667506" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737667506" rel="stylesheet">
+    <link href="../../css/fonts.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737667506" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737667506" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737667506" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737667506" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737667506"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -572,7 +572,7 @@ flowchart TD;
             <li class="" data-nav-id="/chapter3/3-storage/index.html"><a class="padding" href="../../chapter3/3-storage/index.html"><span class="presection-icon">💾</span>Espace de stockage<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="active " data-nav-id="/chapter3/4-references/index.html"><a class="padding" href="../../chapter3/4-references/index.html"><span class="presection-icon">🔀</span>Usage des références<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter3/5-ownership/index.html"><a class="padding" href="../../chapter3/5-ownership/index.html"><span class="presection-icon">🏘️</span>Ownership<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter3/test/index.html"><a class="padding" href="../../chapter3/test/index.html"><span class="presection-icon">☑</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/chapter3/test/index.html"><a class="padding" href="../../chapter3/test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
@@ -644,23 +644,23 @@ flowchart TD;
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737662459" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737662459" defer></script>
-    <script src="../../js/d3/d3-color.min.js?1737662459" defer></script>
-    <script src="../../js/d3/d3-dispatch.min.js?1737662459" defer></script>
-    <script src="../../js/d3/d3-drag.min.js?1737662459" defer></script>
-    <script src="../../js/d3/d3-ease.min.js?1737662459" defer></script>
-    <script src="../../js/d3/d3-interpolate.min.js?1737662459" defer></script>
-    <script src="../../js/d3/d3-selection.min.js?1737662459" defer></script>
-    <script src="../../js/d3/d3-timer.min.js?1737662459" defer></script>
-    <script src="../../js/d3/d3-transition.min.js?1737662459" defer></script>
-    <script src="../../js/d3/d3-zoom.min.js?1737662459" defer></script>
-    <script src="../../js/js-yaml.min.js?1737662459" defer></script>
-    <script src="../../js/mermaid.min.js?1737662459" defer></script>
+    <script src="../../js/clipboard.min.js?1737667506" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737667506" defer></script>
+    <script src="../../js/d3/d3-color.min.js?1737667506" defer></script>
+    <script src="../../js/d3/d3-dispatch.min.js?1737667506" defer></script>
+    <script src="../../js/d3/d3-drag.min.js?1737667506" defer></script>
+    <script src="../../js/d3/d3-ease.min.js?1737667506" defer></script>
+    <script src="../../js/d3/d3-interpolate.min.js?1737667506" defer></script>
+    <script src="../../js/d3/d3-selection.min.js?1737667506" defer></script>
+    <script src="../../js/d3/d3-timer.min.js?1737667506" defer></script>
+    <script src="../../js/d3/d3-transition.min.js?1737667506" defer></script>
+    <script src="../../js/d3/d3-zoom.min.js?1737667506" defer></script>
+    <script src="../../js/js-yaml.min.js?1737667506" defer></script>
+    <script src="../../js/mermaid.min.js?1737667506" defer></script>
     <script>
       window.themeUseMermaid = JSON.parse("{}");
     </script>
-    <script src="../../js/theme.js?1737662459" defer></script>
+    <script src="../../js/theme.js?1737667506" defer></script>
 
 
 

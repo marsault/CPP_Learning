@@ -12,15 +12,15 @@ Prenons l’exemple de la concaténation de std::string :
 auto a = std::string { &#34;a&#34; }; auto b = std::string { &#34;b&#34; }; auto ab = a &#43; b; Dans le code ci-dessus, l’expression a &#43; b est en fait un appel à une fonction dont la signature est quelque chose comme: operator&#43;(std::string, std::string).">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Opérateurs ➗ :: Cours de C&#43;&#43; - Niveau Master">
+    <meta name="twitter:title" content="Opérateurs :: C&#43;&#43;">
     <meta name="twitter:description" content="Sur cette page, nous vous montrerons comment implémenter vos propres opérateurs.
 Nous en profiterons aussi pour vous expliquer comment définir un alias de type et comment définir des fonctions amies.
 Définition Un opérateur est une fonction, mais qui peut être appelée avec une syntaxe “simplifiée”.
 Prenons l’exemple de la concaténation de std::string :
 auto a = std::string { &#34;a&#34; }; auto b = std::string { &#34;b&#34; }; auto ab = a &#43; b; Dans le code ci-dessus, l’expression a &#43; b est en fait un appel à une fonction dont la signature est quelque chose comme: operator&#43;(std::string, std::string).">
     <meta property="og:url" content="/chapter2/6-operators/index.html">
-    <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
-    <meta property="og:title" content="Opérateurs ➗ :: Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:site_name" content="C&#43;&#43;">
+    <meta property="og:title" content="Opérateurs :: C&#43;&#43;">
     <meta property="og:description" content="Sur cette page, nous vous montrerons comment implémenter vos propres opérateurs.
 Nous en profiterons aussi pour vous expliquer comment définir un alias de type et comment définir des fonctions amies.
 Définition Un opérateur est une fonction, mais qui peut être appelée avec une syntaxe “simplifiée”.
@@ -29,24 +29,24 @@ auto a = std::string { &#34;a&#34; }; auto b = std::string { &#34;b&#34; }; auto
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Classes">
-    <meta itemprop="name" content="Opérateurs ➗ :: Cours de C&#43;&#43; - Niveau Master">
+    <meta itemprop="name" content="Opérateurs :: C&#43;&#43;">
     <meta itemprop="description" content="Sur cette page, nous vous montrerons comment implémenter vos propres opérateurs.
 Nous en profiterons aussi pour vous expliquer comment définir un alias de type et comment définir des fonctions amies.
 Définition Un opérateur est une fonction, mais qui peut être appelée avec une syntaxe “simplifiée”.
 Prenons l’exemple de la concaténation de std::string :
 auto a = std::string { &#34;a&#34; }; auto b = std::string { &#34;b&#34; }; auto ab = a &#43; b; Dans le code ci-dessus, l’expression a &#43; b est en fait un appel à une fonction dont la signature est quelque chose comme: operator&#43;(std::string, std::string).">
     <meta itemprop="wordCount" content="719">
-    <title>Opérateurs ➗ :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737662459" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737662459" rel="stylesheet">
-    <link href="../../css/fonts.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737662459" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737662459" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737662459" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737662459" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737662459"></script>
+    <title>Opérateurs :: C&#43;&#43;</title>
+    <link href="../../css/fontawesome-all.min.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737667506" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737667506" rel="stylesheet">
+    <link href="../../css/fonts.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737667506" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737667506" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737667506" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737667506" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737667506"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -102,12 +102,12 @@ auto a = std::string { &#34;a&#34; }; auto b = std::string { &#34;b&#34; }; auto
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">Accueil</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../chapter2/index.html"><span itemprop="name">Classes</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Opérateurs ➗</span><meta itemprop="position" content="3"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Opérateurs</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter2/5-modules/index.html" title="Modularité 🧱 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter2/5-modules/index.html" title="Modularité (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter2/test/index.html" title="Questionnaire ☑ (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter2/test/index.html" title="Questionnaire (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -127,7 +127,7 @@ auto a = std::string { &#34;a&#34; }; auto b = std::string { &#34;b&#34; }; auto
   <header class="headline">
   </header>
 
-<h1 id="opérateurs-">Opérateurs ➗</h1>
+<h1 id="opérateurs">Opérateurs</h1>
 
 <p>Sur cette page, nous vous montrerons comment implémenter vos propres opérateurs.<br>
 Nous en profiterons aussi pour vous expliquer comment définir un alias de type et comment définir des fonctions amies.</p>
@@ -356,18 +356,18 @@ Plutôt pratique, non ?</p>
 <p>Pour vérifier que le programme fonctionne correctement, vous allez utiliser le debuggeur.<br>
 Pensez bien à compiler votre programme avec <code>-g</code> et à modifier la valeur de <code>program</code> dans le fichier <code>.vscode/launch.json</code>.</p>
 <p>Placez ensuite un breakpoint sur la ligne <code>polygon.add_vertex(2, 3);</code> du <code>main</code>.<br>
-<a href="#R-image-c04aeb68e0a0fe3b877cbe2e1f388ecc" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter2/6-breakpoint-v2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c04aeb68e0a0fe3b877cbe2e1f388ecc"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter2/6-breakpoint-v2.png"></a></p>
+<a href="#R-image-d69d103d0b39db6f875d7ed5cae1b3b5" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter2/6-breakpoint-v2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d69d103d0b39db6f875d7ed5cae1b3b5"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter2/6-breakpoint-v2.png"></a></p>
 <p>Lancez ensuite le programme avec F5.<br>
 Votre vue devrait désormais ressembler à celle-ci si vous vous placez dans l&rsquo;onglet <code>Exécution</code> à gauche :
-<a href="#R-image-e9218b1fae077d4b2c3405f2d6e23f50" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter2/6-execution-v2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e9218b1fae077d4b2c3405f2d6e23f50"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter2/6-execution-v2.png"></a></p>
+<a href="#R-image-abfb94b4eea384e55c0fc5e4ede2646f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter2/6-execution-v2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-abfb94b4eea384e55c0fc5e4ede2646f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter2/6-execution-v2.png"></a></p>
 <p>Dans la fenêtre des variables, en haut à gauche, cliquez sur la variable <code>polygon</code>, puis sur son membre <code>_vertices</code>.<br>
 Celui-ci ne devrait rien contenir.</p>
 <p>Appuyez sur F10 pour exécuter l&rsquo;instruction sur la ligne 9.<br>
 Vous devriez constater que <code>_vertices</code> contient désormais le sommet (2, 3).
-<a href="#R-image-ed6fac8b635dffb08eae9ff5c919b839" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter2/6-vertices.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ed6fac8b635dffb08eae9ff5c919b839"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter2/6-vertices.png"></a></p>
+<a href="#R-image-83f27969fe3ad99eadc9073b68a31535" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter2/6-vertices.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-83f27969fe3ad99eadc9073b68a31535"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter2/6-vertices.png"></a></p>
 <hr>
 <h3 id="opérateur-dindice">Opérateur d&rsquo;indice</h3>
 <p>Décommentez les instructions :</p>
@@ -610,13 +610,13 @@ Dans le cas ci-dessus, c&rsquo;est acceptable car on ne peut pas définir l&rsqu
             <li class="" data-nav-id="/chapter0/index.html"><a class="padding" href="../../chapter0/index.html"><span class="chapnum">0.</span>&ensp;Mise en place<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb41caf94f12b8a1a4b5e560230e7851" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter1/index.html"><a class="padding" href="../../chapter1/index.html"><span class="chapnum">1.</span>&ensp;Introduction au C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-6c398714eae4372920aec3a1e6c2e143" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/chapter2/index.html"><a class="padding" href="../../chapter2/index.html"><span class="chapnum">2.</span>&ensp;Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b1df0095a9fd74320697a6d478418ec3" class="collapsible-menu">
-            <li class="" data-nav-id="/chapter2/1-poo/index.html"><a class="padding" href="../../chapter2/1-poo/index.html">C&#39;est quoi un objet déjà ?<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter2/2-first-class/index.html"><a class="padding" href="../../chapter2/2-first-class/index.html">Première classe ✨<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter2/3-constructor/index.html"><a class="padding" href="../../chapter2/3-constructor/index.html">Constructeur 🔨<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter2/4-destructor/index.html"><a class="padding" href="../../chapter2/4-destructor/index.html">Destructeur 💣<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter2/5-modules/index.html"><a class="padding" href="../../chapter2/5-modules/index.html">Modularité 🧱<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active " data-nav-id="/chapter2/6-operators/index.html"><a class="padding" href="../../chapter2/6-operators/index.html">Opérateurs ➗<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter2/test/index.html"><a class="padding" href="../../chapter2/test/index.html">Questionnaire ☑<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/chapter2/1-poo/index.html"><a class="padding" href="../../chapter2/1-poo/index.html"><span class="presection-icon">🤔</span>C&#39;est quoi un objet déjà ?<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter2/2-first-class/index.html"><a class="padding" href="../../chapter2/2-first-class/index.html"><span class="presection-icon">✨</span>Première classe<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter2/3-constructor/index.html"><a class="padding" href="../../chapter2/3-constructor/index.html"><span class="presection-icon">🔨</span>Constructeur<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter2/4-destructor/index.html"><a class="padding" href="../../chapter2/4-destructor/index.html"><span class="presection-icon">❌</span>Destructeur<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter2/5-modules/index.html"><a class="padding" href="../../chapter2/5-modules/index.html"><span class="presection-icon">🧱</span>Modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/chapter2/6-operators/index.html"><a class="padding" href="../../chapter2/6-operators/index.html"><span class="presection-icon">⨀</span>Opérateurs<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter2/test/index.html"><a class="padding" href="../../chapter2/test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
@@ -689,9 +689,9 @@ Dans le cas ci-dessus, c&rsquo;est acceptable car on ne peut pas définir l&rsqu
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737662459" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737662459" defer></script>
-    <script src="../../js/theme.js?1737662459" defer></script>
+    <script src="../../js/clipboard.min.js?1737667506" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737667506" defer></script>
+    <script src="../../js/theme.js?1737667506" defer></script>
 
 
 

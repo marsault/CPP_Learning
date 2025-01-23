@@ -10,35 +10,35 @@ Contrairement à des langages comme Java ou C#, qui disposent d’un garbage-col
 Il doit penser à libérer la mémoire lorsqu’il ne compte plus s’en servir, mais surtout, il doit faire attention à ne pas tenter d’accéder à des données si celles-ci n’existent déjà plus 😬">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Cycle de vie :: Cours de C&#43;&#43; - Niveau Master">
+    <meta name="twitter:title" content="Cycle de vie :: C&#43;&#43;">
     <meta name="twitter:description" content="En C&#43;&#43;, lorsque vous allouez une donnée, celle-ci ne reste pas miraculement accessible durant toute l’exécution de votre programme.
 Contrairement à des langages comme Java ou C#, qui disposent d’un garbage-collector pour libérer automatiquement la mémoire lorsque celle-ci n’est plus nécessaire, c’est ici au développeur de faire ce travail.
 Il doit penser à libérer la mémoire lorsqu’il ne compte plus s’en servir, mais surtout, il doit faire attention à ne pas tenter d’accéder à des données si celles-ci n’existent déjà plus 😬">
     <meta property="og:url" content="/chapter3/index.html">
-    <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
-    <meta property="og:title" content="Cycle de vie :: Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:site_name" content="C&#43;&#43;">
+    <meta property="og:title" content="Cycle de vie :: C&#43;&#43;">
     <meta property="og:description" content="En C&#43;&#43;, lorsque vous allouez une donnée, celle-ci ne reste pas miraculement accessible durant toute l’exécution de votre programme.
 Contrairement à des langages comme Java ou C#, qui disposent d’un garbage-collector pour libérer automatiquement la mémoire lorsque celle-ci n’est plus nécessaire, c’est ici au développeur de faire ce travail.
 Il doit penser à libérer la mémoire lorsqu’il ne compte plus s’en servir, mais surtout, il doit faire attention à ne pas tenter d’accéder à des données si celles-ci n’existent déjà plus 😬">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="website">
-    <meta itemprop="name" content="Cycle de vie :: Cours de C&#43;&#43; - Niveau Master">
+    <meta itemprop="name" content="Cycle de vie :: C&#43;&#43;">
     <meta itemprop="description" content="En C&#43;&#43;, lorsque vous allouez une donnée, celle-ci ne reste pas miraculement accessible durant toute l’exécution de votre programme.
 Contrairement à des langages comme Java ou C#, qui disposent d’un garbage-collector pour libérer automatiquement la mémoire lorsque celle-ci n’est plus nécessaire, c’est ici au développeur de faire ce travail.
 Il doit penser à libérer la mémoire lorsqu’il ne compte plus s’en servir, mais surtout, il doit faire attention à ne pas tenter d’accéder à des données si celles-ci n’existent déjà plus 😬">
     <meta itemprop="wordCount" content="153">
-    <title>Cycle de vie :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../chapter3/index.xml" rel="alternate" type="application/rss+xml" title="Cycle de vie :: Cours de C++ - Niveau Master">
-    <link href="../css/fontawesome-all.min.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../css/nucleus.css?1737662459" rel="stylesheet">
-    <link href="../css/auto-complete.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../css/perfect-scrollbar.min.css?1737662459" rel="stylesheet">
-    <link href="../css/fonts.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../css/theme.css?1737662459" rel="stylesheet">
-    <link href="../css/theme-mine.css?1737662459" rel="stylesheet" id="R-variant-style">
-    <link href="../css/chroma-relearn-light.css?1737662459" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../css/print.css?1737662459" rel="stylesheet" media="print">
-    <script src="../js/variant.js?1737662459"></script>
+    <title>Cycle de vie :: C&#43;&#43;</title>
+    <link href="../chapter3/index.xml" rel="alternate" type="application/rss+xml" title="Cycle de vie :: C++">
+    <link href="../css/fontawesome-all.min.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../css/nucleus.css?1737667506" rel="stylesheet">
+    <link href="../css/auto-complete.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../css/perfect-scrollbar.min.css?1737667506" rel="stylesheet">
+    <link href="../css/fonts.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../css/theme.css?1737667506" rel="stylesheet">
+    <link href="../css/theme-mine.css?1737667506" rel="stylesheet" id="R-variant-style">
+    <link href="../css/chroma-relearn-light.css?1737667506" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../css/print.css?1737667506" rel="stylesheet" media="print">
+    <script src="../js/variant.js?1737667506"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..';
@@ -80,7 +80,7 @@ Il doit penser à libérer la mémoire lorsqu’il ne compte plus s’en servir,
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Cycle de vie</span><meta itemprop="position" content="2"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../chapter2/test/index.html" title="Questionnaire ☑ (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../chapter2/test/index.html" title="Questionnaire (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../chapter3/1-allocation/index.html" title="Allocation dynamique (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
@@ -142,7 +142,7 @@ Enfin, nous reparlerons des références et verrons comment faire pour comprendr
             <li class="" data-nav-id="/chapter3/3-storage/index.html"><a class="padding" href="../chapter3/3-storage/index.html"><span class="presection-icon">💾</span>Espace de stockage<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter3/4-references/index.html"><a class="padding" href="../chapter3/4-references/index.html"><span class="presection-icon">🔀</span>Usage des références<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter3/5-ownership/index.html"><a class="padding" href="../chapter3/5-ownership/index.html"><span class="presection-icon">🏘️</span>Ownership<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter3/test/index.html"><a class="padding" href="../chapter3/test/index.html"><span class="presection-icon">☑</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/chapter3/test/index.html"><a class="padding" href="../chapter3/test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
@@ -214,9 +214,9 @@ Enfin, nous reparlerons des références et verrons comment faire pour comprendr
         </div>
       </div>
     </aside>
-    <script src="../js/clipboard.min.js?1737662459" defer></script>
-    <script src="../js/perfect-scrollbar.min.js?1737662459" defer></script>
-    <script src="../js/theme.js?1737662459" defer></script>
+    <script src="../js/clipboard.min.js?1737667506" defer></script>
+    <script src="../js/perfect-scrollbar.min.js?1737667506" defer></script>
+    <script src="../js/theme.js?1737667506" defer></script>
 
 
 

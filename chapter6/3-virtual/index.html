@@ -10,35 +10,35 @@ Virtual table Lorsqu’une classe Parent contenant des fonctions virtuelles est 
 Analysons la hiérarchie suivante :">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Résolution d&#39;appel virtuel :: Cours de C&#43;&#43; - Niveau Master">
+    <meta name="twitter:title" content="Résolution d&#39;appel virtuel :: C&#43;&#43;">
     <meta name="twitter:description" content="Nous allons maintenant rentrer dans les détails de ce qu’il se passe sous le manteau, lorsque le programme effectue un appel virtuel.
 Virtual table Lorsqu’une classe Parent contenant des fonctions virtuelles est compilée, le compilateur va générer pour l’ensemble des classes qui en dérivent une virtual table. Il s’agit d’une tableau qui contient, pour chaque fonction virtuelle de la classe, un pointeur sur la fonction qui sera vraiment appelée.
 Analysons la hiérarchie suivante :">
     <meta property="og:url" content="/chapter6/3-virtual/index.html">
-    <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
-    <meta property="og:title" content="Résolution d&#39;appel virtuel :: Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:site_name" content="C&#43;&#43;">
+    <meta property="og:title" content="Résolution d&#39;appel virtuel :: C&#43;&#43;">
     <meta property="og:description" content="Nous allons maintenant rentrer dans les détails de ce qu’il se passe sous le manteau, lorsque le programme effectue un appel virtuel.
 Virtual table Lorsqu’une classe Parent contenant des fonctions virtuelles est compilée, le compilateur va générer pour l’ensemble des classes qui en dérivent une virtual table. Il s’agit d’une tableau qui contient, pour chaque fonction virtuelle de la classe, un pointeur sur la fonction qui sera vraiment appelée.
 Analysons la hiérarchie suivante :">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Héritage">
-    <meta itemprop="name" content="Résolution d&#39;appel virtuel :: Cours de C&#43;&#43; - Niveau Master">
+    <meta itemprop="name" content="Résolution d&#39;appel virtuel :: C&#43;&#43;">
     <meta itemprop="description" content="Nous allons maintenant rentrer dans les détails de ce qu’il se passe sous le manteau, lorsque le programme effectue un appel virtuel.
 Virtual table Lorsqu’une classe Parent contenant des fonctions virtuelles est compilée, le compilateur va générer pour l’ensemble des classes qui en dérivent une virtual table. Il s’agit d’une tableau qui contient, pour chaque fonction virtuelle de la classe, un pointeur sur la fonction qui sera vraiment appelée.
 Analysons la hiérarchie suivante :">
     <meta itemprop="wordCount" content="1074">
-    <title>Résolution d&#39;appel virtuel :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737662459" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737662459" rel="stylesheet">
-    <link href="../../css/fonts.css?1737662459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737662459" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737662459" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737662459" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737662459" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737662459" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737662459"></script>
+    <title>Résolution d&#39;appel virtuel :: C&#43;&#43;</title>
+    <link href="../../css/fontawesome-all.min.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737667506" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737667506" rel="stylesheet">
+    <link href="../../css/fonts.css?1737667506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737667506" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737667506" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737667506" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737667506" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737667506" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737667506"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -275,12 +275,12 @@ Si non, alors la résolution de l&rsquo;appel s&rsquo;achève pendant la compila
 </span></span></span></code></pre></div>
 <p>Attention, il y a des vilains pièges, donc vérifiez bien la solution à la fin !</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-176817f5575c9e23328b74b1139075db" aria-controls="R-expandcontent-176817f5575c9e23328b74b1139075db">
-  <label class="expand-label" for="R-expand-176817f5575c9e23328b74b1139075db">
+  <input type="checkbox" id="R-expand-806445f143b5d1a1ee07ea167640d1a2" aria-controls="R-expandcontent-806445f143b5d1a1ee07ea167640d1a2">
+  <label class="expand-label" for="R-expand-806445f143b5d1a1ee07ea167640d1a2">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-176817f5575c9e23328b74b1139075db" class="expand-content">
+  <div id="R-expandcontent-806445f143b5d1a1ee07ea167640d1a2" class="expand-content">
 <p>1/ Ca ne compile pas.<br>
 La résolution statique n&rsquo;identifie aucun candidat pour <code>fcn_a(char, int)</code> ni dans <code>Father</code>, ni dans son parent <code>GrandFather</code>.</p>
 <p>2/ Ca ne compile pas non plus.<br>
@@ -399,9 +399,9 @@ Comme <code>grand_son_copy_as_father</code> n&rsquo;est pas une référence, il 
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737662459" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737662459" defer></script>
-    <script src="../../js/theme.js?1737662459" defer></script>
+    <script src="../../js/clipboard.min.js?1737667506" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737667506" defer></script>
+    <script src="../../js/theme.js?1737667506" defer></script>
 
 
 

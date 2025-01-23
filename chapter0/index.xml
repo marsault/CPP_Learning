@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mise en place :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Mise en place :: C&#43;&#43;</title>
     <link>/chapter0/index.html</link>
     <description>Cette première partie a pour objectif de vous permettre d’installer et de configurer tous les outils qui vous serons nécessaires pour suivre ce cours dans les meilleures conditions.&#xA;Vous aurez besoin d’un compilateur, d’un IDE (éditeur + debugger), d’un outil pour générer les projets de code et d’un gestionnaire de version. Nous vous fournirons des liens pour télécharger les logiciels à installer. Si vous préférez utiliser d’autres logiciels que ceux que nous proposons ici, le choix vous appartient, mais nous ne pourrons pas vous aidez à les configurer au cours des TPs.</description>
     <generator>Hugo</generator>
