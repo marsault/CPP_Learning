@@ -29,16 +29,16 @@ Windows Ouvrez un terminal et exécutez g&#43;&#43; -v. Si la commande réussit,
 MSYS2 contient en particulier MinGW, qui est l’équivalent du compilateur gcc/g&#43;&#43; pour Windows.">
     <meta itemprop="wordCount" content="459">
     <title>Compilateur :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1737670836" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737670836" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737670836" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737670836" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737670836" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737670836" rel="stylesheet">
-    <link href="../../css/fonts.css?1737670836" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737670836" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737670836" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737670836" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737670836" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737670836" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737670836"></script>
+    <link href="../../css/fontawesome-all.min.css?1737707285" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737707285" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737707285" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737707285" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737707285" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737707285" rel="stylesheet">
+    <link href="../../css/fonts.css?1737707285" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737707285" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737707285" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737707285" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737707285" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737707285" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737707285"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -130,14 +130,14 @@ MSYS2 contient en particulier MinGW, qui est l&rsquo;équivalent du compilateur 
 </span></span><span class="line"><span class="cl">pacman -S mingw-w64-ucrt-x86_64-gdb</span></span></code></pre></div>
 </li>
 <li>Ouvrez l&rsquo;éditeur de variables d&rsquo;environnement Windows.
-<a href="#R-image-a69883dcef38aee4dc89fa528d300c6d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/env-var.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a69883dcef38aee4dc89fa528d300c6d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/env-var.png"></a></li>
+<a href="#R-image-880c94f61b198069cb1b333d342230aa" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/env-var.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-880c94f61b198069cb1b333d342230aa"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/env-var.png"></a></li>
 <li>Dans la variable <code>Path</code> (utilisateur ou système, peu importe), ajoutez <code>&quot;C:\msys64\ucrt64\bin&quot;</code>.
-<a href="#R-image-c9c131e5a316362109313a30777f30c3" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/add-path-v2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c9c131e5a316362109313a30777f30c3"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/add-path-v2.png"></a></li>
+<a href="#R-image-fdcca60a40c39bab28c04c3d5854b7b5" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/add-path-v2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-fdcca60a40c39bab28c04c3d5854b7b5"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/add-path-v2.png"></a></li>
 <li>Si vous aviez une autre version de MinGW d&rsquo;installée (en général dans C:\mingw), c&rsquo;est <strong>très important</strong> que vous supprimiez son répertoire bin/ du <code>Path</code> utilisateur <strong>et</strong> du <code>Path</code> système.
-<a href="#R-image-018294a583731d203e71fbb6051705f4" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/rm-path-v2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-018294a583731d203e71fbb6051705f4"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/rm-path-v2.png"></a></li>
+<a href="#R-image-3075f2823a0f924d6b95b243d662a501" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/rm-path-v2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3075f2823a0f924d6b95b243d662a501"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/rm-path-v2.png"></a></li>
 <li>Ouvrez un terminal Window et exécutez <code>g++ -v</code><br>
 La dernière ligne devrait maintenant indiquer une version de gcc &gt;= 9.</li>
 </ol>
@@ -145,8 +145,8 @@ La dernière ligne devrait maintenant indiquer une version de gcc &gt;= 9.</li>
 <ol>
 <li>Téléchargez <a href="../../chapter0/helloworld.cpp">ce fichier</a>.</li>
 <li>Ouvrez une fenêtre Powershell dans le répertoire contenant le fichier (vous pouvez utiliser <code>Shift + Clic Droit</code> depuis l&rsquo;explorateur de fichiers pour faire apparaître l&rsquo;option dans le menu contextuel).
-<a href="#R-image-011357ae66b22aac33bb9680b3d116c4" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/powershell.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-011357ae66b22aac33bb9680b3d116c4"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/powershell.png"></a></li>
+<a href="#R-image-9ca364d1a0cdac36ed75f358102332d3" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/powershell.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9ca364d1a0cdac36ed75f358102332d3"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/powershell.png"></a></li>
 <li>Exécutez la commande <code>g++ .\helloworld.cpp -o hello</code><br>
 Un fichier <code>hello.exe</code> devrait avoir été généré.</li>
 <li>Exécutez <code>.\hello.exe</code>.
@@ -209,13 +209,13 @@ Le programme devrait vous répondre <code>&quot;Hello!&quot;</code>.</li>
         <div id="R-topics">
           <ul class="enlarge morespace collapsible-menu">
             <li class="parent " data-nav-id="/chapter0/index.html"><a class="padding" href="../../chapter0/index.html"><span class="chapnum">0.</span>&ensp;Mise en place<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb41caf94f12b8a1a4b5e560230e7851" class="collapsible-menu">
-            <li class="active " data-nav-id="/chapter0/1-compiler/index.html"><a class="padding" href="../../chapter0/1-compiler/index.html">Compilateur<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter0/2-vscode/index.html"><a class="padding" href="../../chapter0/2-vscode/index.html">Visual Studio Code<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter0/3-cmake/index.html"><a class="padding" href="../../chapter0/3-cmake/index.html">CMake<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter0/4-git/index.html"><a class="padding" href="../../chapter0/4-git/index.html">Git<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter0/5-clang-format/index.html"><a class="padding" href="../../chapter0/5-clang-format/index.html">Clang-Format<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="alwaysopen " data-nav-id="/chapter0/6-tips/index.html"><a class="padding" href="../../chapter0/6-tips/index.html">Astuces<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-fc3d52d173219407314c2b6a52f2126d" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/chapter0/test/index.html"><a class="padding" href="../../chapter0/test/index.html">Retours ?<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="active " data-nav-id="/chapter0/1-compiler/index.html"><a class="padding" href="../../chapter0/1-compiler/index.html"><span class="presection-icon">⚙️</span>Compilateur<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter0/2-vscode/index.html"><a class="padding" href="../../chapter0/2-vscode/index.html"><span class="presection-icon" ><img src="../../logo/vscode.svg"/></span>Visual Studio Code<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter0/3-cmake/index.html"><a class="padding" href="../../chapter0/3-cmake/index.html"><span class="presection-icon" ><img src="../../logo/cmake.svg"/></span>CMake<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter0/4-git/index.html"><a class="padding" href="../../chapter0/4-git/index.html"><span class="presection-icon" ><img src="../../logo/git.svg"/></span>Git<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter0/5-clang-format/index.html"><a class="padding" href="../../chapter0/5-clang-format/index.html"><span class="presection-icon" ><img src="../../logo/clang.svg"/></span>Clang-Format<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="alwaysopen " data-nav-id="/chapter0/6-tips/index.html"><a class="padding" href="../../chapter0/6-tips/index.html"><span class="presection-icon">💡</span>Astuces<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-fc3d52d173219407314c2b6a52f2126d" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/chapter0/test/index.html"><a class="padding" href="../../chapter0/test/index.html"><span class="presection-icon">📧</span>Retours ?<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter1/index.html"><a class="padding" href="../../chapter1/index.html"><span class="chapnum">1.</span>&ensp;Introduction au C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-6c398714eae4372920aec3a1e6c2e143" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter2/index.html"><a class="padding" href="../../chapter2/index.html"><span class="chapnum">2.</span>&ensp;Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b1df0095a9fd74320697a6d478418ec3" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
@@ -290,9 +290,9 @@ Le programme devrait vous répondre <code>&quot;Hello!&quot;</code>.</li>
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737670836" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737670836" defer></script>
-    <script src="../../js/theme.js?1737670836" defer></script>
+    <script src="../../js/clipboard.min.js?1737707285" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737707285" defer></script>
+    <script src="../../js/theme.js?1737707285" defer></script>
 
 
 

@@ -29,16 +29,16 @@ Configuration avec CMake Vous aurez besoin d’un fichier CMakeLists.txt à la r
 cmake_minimum_required(VERSION 3.1) project(my_project) add_executable(my_executable my_file1.cpp my_file2.cpp my_file3.h ) target_compile_features(my_executable PUBLIC cxx_std_17) Pour configurer le projet, utilisez la commande CMake: Configure.">
     <meta itemprop="wordCount" content="279">
     <title>Projets VSCode :: C&#43;&#43;</title>
-    <link href="../../../css/fontawesome-all.min.css?1737670836" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1737670836" rel="stylesheet"></noscript>
-    <link href="../../../css/nucleus.css?1737670836" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1737670836" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1737670836" rel="stylesheet"></noscript>
-    <link href="../../../css/perfect-scrollbar.min.css?1737670836" rel="stylesheet">
-    <link href="../../../css/fonts.css?1737670836" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1737670836" rel="stylesheet"></noscript>
-    <link href="../../../css/theme.css?1737670836" rel="stylesheet">
-    <link href="../../../css/theme-mine.css?1737670836" rel="stylesheet" id="R-variant-style">
-    <link href="../../../css/chroma-relearn-light.css?1737670836" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../../css/print.css?1737670836" rel="stylesheet" media="print">
-    <script src="../../../js/variant.js?1737670836"></script>
+    <link href="../../../css/fontawesome-all.min.css?1737707285" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1737707285" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css?1737707285" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1737707285" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1737707285" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css?1737707285" rel="stylesheet">
+    <link href="../../../css/fonts.css?1737707285" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1737707285" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css?1737707285" rel="stylesheet">
+    <link href="../../../css/theme-mine.css?1737707285" rel="stylesheet" id="R-variant-style">
+    <link href="../../../css/chroma-relearn-light.css?1737707285" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../../css/print.css?1737707285" rel="stylesheet" media="print">
+    <script src="../../../js/variant.js?1737707285"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..\/..';
@@ -138,15 +138,15 @@ target_compile_features(my_executable PUBLIC cxx_std_17)</code></pre></div>
 <p>Afin de pouvoir exécuter votre ou vos programme rapidemment, il vous faudra créer et configurer le fichier <code>launch.json</code>.</p>
 <ol>
 <li>Créez un dossier <code>.vscode</code> à la racine du répertoire (si celui-ci n&rsquo;existe pas déjà) et ajoutez dedans un fichier que vous nommerez <code>launch.json</code>.
-<a href="#R-image-61d979f325863c93d6f47b6a5a2f707b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../images/chapter0/new-launch.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-61d979f325863c93d6f47b6a5a2f707b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../images/chapter0/new-launch.png"></a></li>
+<a href="#R-image-bf5b0f83a17aeff4e928a52261f1f51b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../images/chapter0/new-launch.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-bf5b0f83a17aeff4e928a52261f1f51b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../images/chapter0/new-launch.png"></a></li>
 <li>Une fois ce fichier créé, ouvrez-le et cliquez sur le bouton <code>Add Configuration</code>.
-<a href="#R-image-29ccba8c67bfc170669e24e25f110ce4" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../images/chapter0/add-conf.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-29ccba8c67bfc170669e24e25f110ce4"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../images/chapter0/add-conf.png"></a></li>
+<a href="#R-image-322af3bd9b0e16eb8cadf3639ad97c80" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../images/chapter0/add-conf.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-322af3bd9b0e16eb8cadf3639ad97c80"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../images/chapter0/add-conf.png"></a></li>
 <li>Sélectionnez ensuite la configuration <code>C/C++: (XXX) Launch</code> adéquate.<br>
 Windows et Linux devraient vous proposez GDB et MacOS devrait vous fournir LLVM.
-<a href="#R-image-dbec3f66f51d658709b253c362a5fd4c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../images/chapter0/launch-conf.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-dbec3f66f51d658709b253c362a5fd4c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../images/chapter0/launch-conf.png"></a></li>
+<a href="#R-image-03a6bb034e2bf6afe99289dc6ee55a0d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../images/chapter0/launch-conf.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-03a6bb034e2bf6afe99289dc6ee55a0d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../images/chapter0/launch-conf.png"></a></li>
 <li>Remplacez la variable <code>cwd</code> par la valeur ci-dessous :</li>
 </ol>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;cwd&#34;</span><span class="err">:</span> <span class="s2">&#34;${workspaceFolder}&#34;</span><span class="err">,</span></span></span></code></pre></div>
@@ -163,11 +163,11 @@ Si vous avez utilisé CMake, vous pouvez indiquer <code>${command:cmake.launchTa
 <h3 id="lancer-un-programme">Lancer un programme</h3>
 <p>Une fois que votre <code>launch.json</code> existe, vous pouvez lancer votre programme avec la commande <code>Debug: Start Debugging</code> ou en appuyant sur F5.</p>
 <p>Si votre projet contient plusieurs exécutables, vous pouvez changer l&rsquo;exécutable à lancer avec la commande <code>CMake: Set Debug Target</code>.
-<a href="#R-image-e177f11a3f65a34766a1a5e448e3c49b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../images/chapter0/set-debug-target.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e177f11a3f65a34766a1a5e448e3c49b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../images/chapter0/set-debug-target.png"></a></p>
+<a href="#R-image-01544d62f6a53a3d7cc505cd27d1b699" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../images/chapter0/set-debug-target.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-01544d62f6a53a3d7cc505cd27d1b699"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../images/chapter0/set-debug-target.png"></a></p>
 <p>Si vous souhaitez lancer le programme en utilisant des arguments, vous pouvez renseigner ces derniers en modifiant la variable <code>args</code> dans le fichier <code>launch.json</code>.
-<a href="#R-image-8b33264d8b346a2bb30c64196649bd97" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../images/chapter0/args.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8b33264d8b346a2bb30c64196649bd97"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../images/chapter0/args.png"></a></p>
+<a href="#R-image-4add86d933709c36e382d9928688f159" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../images/chapter0/args.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4add86d933709c36e382d9928688f159"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../images/chapter0/args.png"></a></p>
 
   <footer class="footline">
   </footer>
@@ -190,17 +190,17 @@ Si vous avez utilisé CMake, vous pouvez indiquer <code>${command:cmake.launchTa
         <div id="R-topics">
           <ul class="enlarge morespace collapsible-menu">
             <li class="parent " data-nav-id="/chapter0/index.html"><a class="padding" href="../../../chapter0/index.html"><span class="chapnum">0.</span>&ensp;Mise en place<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb41caf94f12b8a1a4b5e560230e7851" class="collapsible-menu">
-            <li class="" data-nav-id="/chapter0/1-compiler/index.html"><a class="padding" href="../../../chapter0/1-compiler/index.html">Compilateur<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter0/2-vscode/index.html"><a class="padding" href="../../../chapter0/2-vscode/index.html">Visual Studio Code<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter0/3-cmake/index.html"><a class="padding" href="../../../chapter0/3-cmake/index.html">CMake<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter0/4-git/index.html"><a class="padding" href="../../../chapter0/4-git/index.html">Git<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter0/5-clang-format/index.html"><a class="padding" href="../../../chapter0/5-clang-format/index.html">Clang-Format<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="parent alwaysopen " data-nav-id="/chapter0/6-tips/index.html"><a class="padding" href="../../../chapter0/6-tips/index.html">Astuces<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-fc3d52d173219407314c2b6a52f2126d" class="collapsible-menu">
+            <li class="" data-nav-id="/chapter0/1-compiler/index.html"><a class="padding" href="../../../chapter0/1-compiler/index.html"><span class="presection-icon">⚙️</span>Compilateur<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter0/2-vscode/index.html"><a class="padding" href="../../../chapter0/2-vscode/index.html"><span class="presection-icon" ><img src="../../logo/vscode.svg"/></span>Visual Studio Code<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter0/3-cmake/index.html"><a class="padding" href="../../../chapter0/3-cmake/index.html"><span class="presection-icon" ><img src="../../logo/cmake.svg"/></span>CMake<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter0/4-git/index.html"><a class="padding" href="../../../chapter0/4-git/index.html"><span class="presection-icon" ><img src="../../logo/git.svg"/></span>Git<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter0/5-clang-format/index.html"><a class="padding" href="../../../chapter0/5-clang-format/index.html"><span class="presection-icon" ><img src="../../logo/clang.svg"/></span>Clang-Format<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="parent alwaysopen " data-nav-id="/chapter0/6-tips/index.html"><a class="padding" href="../../../chapter0/6-tips/index.html"><span class="presection-icon">💡</span>Astuces<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-fc3d52d173219407314c2b6a52f2126d" class="collapsible-menu">
             <li class="" data-nav-id="/chapter0/6-tips/1-snippets/index.html"><a class="padding" href="../../../chapter0/6-tips/1-snippets/index.html">Petits programmes<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="active " data-nav-id="/chapter0/6-tips/2-vscode/index.html"><a class="padding" href="../../../chapter0/6-tips/2-vscode/index.html">Projets VSCode<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter0/6-tips/3-keybinds-commands/index.html"><a class="padding" href="../../../chapter0/6-tips/3-keybinds-commands/index.html">Raccourcis VSCode<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter0/6-tips/4-terminal/index.html"><a class="padding" href="../../../chapter0/6-tips/4-terminal/index.html">Compilation en terminal<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
-            <li class="" data-nav-id="/chapter0/test/index.html"><a class="padding" href="../../../chapter0/test/index.html">Retours ?<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/chapter0/test/index.html"><a class="padding" href="../../../chapter0/test/index.html"><span class="presection-icon">📧</span>Retours ?<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter1/index.html"><a class="padding" href="../../../chapter1/index.html"><span class="chapnum">1.</span>&ensp;Introduction au C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-6c398714eae4372920aec3a1e6c2e143" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter2/index.html"><a class="padding" href="../../../chapter2/index.html"><span class="chapnum">2.</span>&ensp;Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b1df0095a9fd74320697a6d478418ec3" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
@@ -275,9 +275,9 @@ Si vous avez utilisé CMake, vous pouvez indiquer <code>${command:cmake.launchTa
         </div>
       </div>
     </aside>
-    <script src="../../../js/clipboard.min.js?1737670836" defer></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1737670836" defer></script>
-    <script src="../../../js/theme.js?1737670836" defer></script>
+    <script src="../../../js/clipboard.min.js?1737707285" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1737707285" defer></script>
+    <script src="../../../js/theme.js?1737707285" defer></script>
 
 
 
