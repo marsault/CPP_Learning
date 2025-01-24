@@ -27,18 +27,18 @@ Le programme alloue l’espace nécessaire pour stocker la donnée. Si spécifi�
     <meta itemprop="description" content="Nous allons maintenant revenir sur l’instanciation et la désinstanciation des données, car ce sont les deux événements qui délimitent leur période de validité.
 Donnée de type fondamental L’instanciation d’une donnée de type fondamental est constitué de deux phases.
 Le programme alloue l’espace nécessaire pour stocker la donnée. Si spécifié par le programmeur, le contenu de la donnée est initialisé. En ce qui concerne la désinstanciation, le programme désalloue l’espace réservé pour la donnée.">
-    <meta itemprop="wordCount" content="1827">
+    <meta itemprop="wordCount" content="1821">
     <title>Durée de vie  :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1737707285" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737707285" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737707285" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737707285" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737707285" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737707285" rel="stylesheet">
-    <link href="../../css/fonts.css?1737707285" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737707285" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737707285" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737707285" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737707285" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737707285" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737707285"></script>
+    <link href="../../css/fontawesome-all.min.css?1737724558" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737724558" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737724558" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737724558" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737724558" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737724558" rel="stylesheet">
+    <link href="../../css/fonts.css?1737724558" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737724558" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737724558" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737724558" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737724558" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737724558" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737724558"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -164,7 +164,7 @@ Le programme alloue l’espace nécessaire pour stocker la donnée. Si spécifi�
 <li><code>i</code> est instancié à la ligne 5 et désinstancié à la ligne 9 (après la dernière itération de la boucle)</li>
 <li><code>twice</code> est instancié à la ligne 7 et désinstancié à la ligne 9 (à la fin de chaque itération)</li>
 </ul>
-<p>Dans le cas d&rsquo;une <strong>allocation dynamique</strong>, l&rsquo;instanciation a lieu à l&rsquo;appel à <code>new</code> (ou <code>new[]</code>) et la désinstanciation à l&rsquo;appel à <code>delete</code> (ou <code>delete[]</code>).</p>
+<p>Dans le cas d&rsquo;une <strong>allocation dynamique</strong>, l&rsquo;instanciation a lieu à l&rsquo;appel à <code>new</code> et la désinstanciation à l&rsquo;appel à <code>delete</code>.</p>
 <div class="highlight wrap-code" linenos="table"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -519,7 +519,7 @@ Et comme on ne peut pas tester son code sur tous les compilateurs et toutes les 
 </li>
 <li>On parle d&rsquo;<strong>allocation automatique</strong> lorsque la donnée est instanciée via la définition d&rsquo;une variable locale.<br>
 La désinstanciation a lieu lorsque l&rsquo;on sort du bloc dans lequel elle est définie.</li>
-<li>On parle d&rsquo;<strong>allocation dynamique</strong> lorsque la donnée est instanciée via l&rsquo;utilisation de <code>new</code> (ou <code>new[]</code>).<br>
+<li>On parle d&rsquo;<strong>allocation dynamique</strong> lorsque la donnée est instanciée via l&rsquo;utilisation de <code>new</code>.<br>
 La désinstanciation se fait explicitement avec l&rsquo;appel <code>delete</code> (ou <code>delete[]</code>).</li>
 <li>Le constructeur d&rsquo;un objet déclenche l&rsquo;instanciation de chacun de ses attributs, dans l&rsquo;ordre dans lequel ils ont été définis.</li>
 <li>La <strong>durée de vie</strong> d&rsquo;une donnée est la période durant laquelle il est valide d&rsquo;y accéder : entre son instanciation et sa désinstanciation.</li>
@@ -630,9 +630,9 @@ L&rsquo;utilisation d&rsquo;une dangling-reference est un bon exemple.</li>
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737707285" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737707285" defer></script>
-    <script src="../../js/theme.js?1737707285" defer></script>
+    <script src="../../js/clipboard.min.js?1737724558" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737724558" defer></script>
+    <script src="../../js/theme.js?1737724558" defer></script>
 
 
 

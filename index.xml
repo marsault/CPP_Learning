@@ -33,7 +33,7 @@
       <link>/chapter3/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter3/index.html</guid>
-      <description>En C++, lorsque vous allouez une donnée, celle-ci ne reste pas miraculement accessible durant toute l’exécution de votre programme.&#xA;Contrairement à des langages comme Java ou C#, qui disposent d’un garbage-collector pour libérer automatiquement la mémoire lorsque celle-ci n’est plus nécessaire, c’est ici au développeur de faire ce travail.&#xA;Il doit penser à libérer la mémoire lorsqu’il ne compte plus s’en servir, mais surtout, il doit faire attention à ne pas tenter d’accéder à des données si celles-ci n’existent déjà plus 😬</description>
+      <description>En C++, lorsque vous allouez une donnée, celle-ci ne reste pas miraculeusement accessible durant toute l’exécution de votre programme.&#xA;Contrairement à des langages comme Java ou C#, qui disposent d’un garbage-collector pour libérer automatiquement la mémoire lorsque celle-ci n’est plus nécessaire, c’est ici au développeur de faire ce travail.&#xA;Il doit penser à libérer la mémoire lorsqu’il ne compte plus s’en servir, mais surtout, il doit faire attention à ne pas tenter d’accéder à des données si celles-ci n’existent déjà plus 😬</description>
     </item>
     <item>
       <title>Copie et déplacement</title>
