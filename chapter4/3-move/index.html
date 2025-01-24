@@ -23,18 +23,18 @@ Usage de la fonction std::move sur un exemple /// Passage par valeur // vvvvvvvv
     <meta itemprop="name" content="Déplacement :: C&#43;&#43;">
     <meta itemprop="description" content="Sur cette page vous allez apprendre ce qu’est le déplacement en C&#43;&#43;. En un mot, il s’agit de permettre de vider un objet pour en construire un autre ailleurs, et on utilise pour cela la fonction std::move.
 Usage de la fonction std::move sur un exemple /// Passage par valeur // vvvvvvvvvvv void f(std::vector&lt;std::string&gt; my_own_data) { for (auto&amp; s : my_own_data) std::cout &lt;&lt; &amp;s &lt;&lt; &#34; &#34;; // ^^ // On affiche l&#39;adresse des chaines de caractères std::cout &lt;&lt; std::endl; } int main() { std::vector&lt;std::string&gt; data = {&#34;Hello&#34;, &#34;World&#34;, &#34;!">
-    <meta itemprop="wordCount" content="758">
+    <meta itemprop="wordCount" content="1200">
     <title>Déplacement :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1737724558" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737724558" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737724558" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737724558" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737724558" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737724558" rel="stylesheet">
-    <link href="../../css/fonts.css?1737724558" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737724558" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737724558" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737724558" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737724558" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737724558" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737724558"></script>
+    <link href="../../css/fontawesome-all.min.css?1737726347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737726347" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737726347" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737726347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737726347" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737726347" rel="stylesheet">
+    <link href="../../css/fonts.css?1737726347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737726347" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737726347" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737726347" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737726347" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737726347" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737726347"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -153,11 +153,11 @@ Le tableau dynamique <code>data</code> est maintenant vide.</p>
 <p>Rappelez-vous qu&rsquo;un <code>std::vector</code> est un tableau dynamique, donc ses éléments sont en fait sur le tas,
 et ce sont elles qui vont être copiées ou réattribuées à <code>my_own_data</code>, comme le montrent les deux diagrammes en dessous.</p>
 <h4 id="effet-sur-la-mémoire-du-premier-appel-à-f-copie">Effet sur la mémoire du premier appel à <code>f</code> (copie)</h4>
-<p><a href="#R-image-d21fa609d1328c1ae81b41bf9834e067" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_copy.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d21fa609d1328c1ae81b41bf9834e067"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_copy.svg"></a></p>
+<p><a href="#R-image-1088795da915f3952c74573430804bd6" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_copy.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1088795da915f3952c74573430804bd6"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_copy.svg"></a></p>
 <h4 id="effet-sur-la-mémoire-du-deuxième-appel-à-f-déplacement">Effet sur la mémoire du deuxième appel à <code>f</code> (déplacement)</h4>
-<p><a href="#R-image-0d13116057cc38dded38dbc2dca50224" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_move.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-0d13116057cc38dded38dbc2dca50224"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_move.svg"></a></p>
+<p><a href="#R-image-3e0a343d0f6fd0cd5d3064090ab9a140" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_move.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3e0a343d0f6fd0cd5d3064090ab9a140"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_move.svg"></a></p>
 <h3 id="constructeur-de-déplacement">Constructeur de déplacement</h3>
 <p>Maintenant qu&rsquo;on a compris le principe du déplacement, encore faut-il pouvoir définir comment se déplace
 nos propres classes.  Etant donné une classe <code>MaClasse</code> le constructeur de déplacement a le prototype suivant.</p>
@@ -172,13 +172,235 @@ nos propres classes.  Etant donné une classe <code>MaClasse</code> le construct
     <i class="fa-fw fas fa-lightbulb"></i> Astuce
   </div>
   <div class="box-content">
-<pre><code>Le compilateur fournit une implémentation par défaut pour le constructeur de déplacement.
-</code></pre>
+<p>Le compilateur fournit une implémentation par défaut pour le constructeur de déplacement.  Dans beaucoup d&rsquo;autres cas, le compilateur ne va pas le générer mais son implémentation par défaut suffit. On peut la rétablir avec <code>MaClasse(MaClasse&amp;&amp; other) = default;</code>.</p>
   </div>
 </div>
 <h3 id="quand-le-constructeur-de-déplacement-est-il-appelé">Quand le constructeur de déplacement est-il appelé?</h3>
 <p>Pour faire court: quand le compilateur doit construire un nouvel objet à partir d&rsquo;une R-value du même type (et que le compilateur ne fait pas d&rsquo;élusion de déplacement, voir plus bas).</p>
 <p>En pratique, c&rsquo;est surtout quand on utilise <code>std::move</code> en effet, c&rsquo;est une fonction qui permet de une L-value en R-value et dit donc au compilateur d&rsquo;utiliser le constructeur de déplacement plutôt que le constructeur de copie.</p>
+<h4 id="exercice">Exercice:</h4>
+<p>On considère que <code>MyClass</code> est une classe avec un constructeur par défaut et des constructeurs de copies et de déplacements;
+Dans chacun des bouts de code ci-dessous: combien de fois le constructeur de <strong>copie</strong> de MyClass est-il appelé? (On ne demande pas le nombre de fois où le constructeur de déplacement est appelé à cause de l&rsquo;élusion de déplacement que l&rsquo;on verra plus bas.)</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cm">/*1*/</span>
+</span></span><span class="line"><span class="cl"><span class="n">MyClass</span> <span class="n">a</span> <span class="o">=</span> <span class="n">MaClass</span><span class="p">{};</span></span></span></code></pre></div>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Le constructeur de copie ne sera pas appelé.</p>
+
+        </div>
+    </div>
+
+</div>
+<hr>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cm">/*2*/</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">MyClass</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span><span class="cm">/* ... */</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MyClass</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Le constructeur de copie sera appelé une fois.</p>
+
+        </div>
+    </div>
+
+</div>
+<hr>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cm">/*3*/</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">MyClass</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span><span class="cm">/* ... */</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MyClass</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">f</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">a</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Le constructeur de copie ne sera pas appelé car <code>std::move(a)</code> est une R-value.</p>
+
+        </div>
+    </div>
+
+</div>
+<hr>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cm">/*4*/</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">MyClass</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span><span class="cm">/* ... */</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">f</span><span class="p">(</span><span class="n">MyClass</span><span class="p">{});</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Le constructeur de copie ne sera pas appelé car <code>MyClass{}</code> est une R-value.</p>
+
+        </div>
+    </div>
+
+</div>
+<hr>
+<p>Dans la suite, on considère le code suivant pour <code>MyOtherClass</code>.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">MyOtherClass</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MyClass</span> <span class="n">_att</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MyOtherClass</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MyOtherClass</span><span class="p">(</span><span class="n">MyClass</span> <span class="n">arg</span><span class="p">)</span> <span class="o">:</span> <span class="n">_att</span><span class="p">{</span><span class="n">my_arg</span><span class="p">}</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<p>Combien de fois le constructeur de copie de <code>MyClass</code> est-il appelé par chacun des bouts de code suivants.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cm">/*5*/</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">main</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MyClass</span> <span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MyOtherClass</span> <span class="n">y</span><span class="p">{</span><span class="n">x</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>   
+</span></span></code></pre></div>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Le constructeur de copie sera appelé deux fois: uen fois pour construire <code>arg</code> et une fois pour construire <code>_att</code> à partir de <code>arg</code>.</p>
+
+        </div>
+    </div>
+
+</div>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cm">/*6*/</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">main</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MyOtherClass</span> <span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MyOtherClass</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>   
+</span></span></code></pre></div>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Le constructeur de copie de <code>MyClass</code> sera appelé une fois.
+En effet, l&rsquo;implémentation par défaut du constructeur de copie appelle le cosntructeur de copie pour chaque attribut.</p>
+
+        </div>
+    </div>
+
+</div>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cm">/*7*/</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">main</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MyOtherClass</span> <span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MyOtherClass</span> <span class="n">y</span><span class="p">{</span><span class="n">x</span><span class="p">.</span><span class="n">_att</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>   
+</span></span></code></pre></div>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Le constructeur de copie sera appelé deux fois.
+<code>x._att</code> est une L-value donc il est appelé une première fois pour construire <code>arg</code> et une seconde fois pour construire <code>_att</code> à partir de <code>arg</code>.</p>
+
+        </div>
+    </div>
+
+</div>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cm">/*8*/</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">main</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MyOtherClass</span> <span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MyOtherClass</span> <span class="n">y</span> <span class="o">=</span> <span class="n">MyOtherClass</span><span class="p">{</span><span class="n">MyOtherClass</span><span class="p">{</span><span class="n">MyOtherClass</span><span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">x</span><span class="p">)}}};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>   
+</span></span></code></pre></div>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Aucun constructeur de copie n&rsquo;est appelé.
+En effet toutes les expressions suivantes sont des R-value:</p>
+<ul>
+<li><code>std::move(x)</code></li>
+<li><code>MyOtherClass{std::move(x)}</code></li>
+<li><code>MyOtherClass{MyOtherClass{std::move(x)}}</code></li>
+<li><code>MyOtherClass{MyOtherClass{MyOtherClass{std::move(x)}}}</code></li>
+</ul>
+
+        </div>
+    </div>
+
+</div>
 <h3 id="elusion-de-déplacement-copymove-elision">Elusion de déplacement (Copy/Move Elision)</h3>
 <p>L&rsquo;élusion de déplacement est une optimisation consistant à éluder (=éviter) un déplacement en utilisant directement la mémoire où l&rsquo;objet sera finalement stocké.
 Dans certaines circonstances, le compilateur <strong>doit</strong> éluder le déplacement d&rsquo;un objet;
@@ -311,9 +533,9 @@ En fait, suivant le contenu de <code>f</code>, le compilateur peut décider de n
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737724558" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737724558" defer></script>
-    <script src="../../js/theme.js?1737724558" defer></script>
+    <script src="../../js/clipboard.min.js?1737726347" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737726347" defer></script>
+    <script src="../../js/theme.js?1737726347" defer></script>
 
 
 
