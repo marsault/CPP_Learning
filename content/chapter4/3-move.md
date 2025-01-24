@@ -75,7 +75,7 @@ MaClasse(MaClasse&& other)
 ```
 
 {{% notice tip %}}
-    Le compilateur fournit une implémentation par défaut pour le constructeur de déplacement.
+Le compilateur fournit une implémentation par défaut pour le constructeur de déplacement.  Dans beaucoup d'autres cas, le compilateur ne va pas le générer mais son implémentation par défaut suffit. On peut la rétablir avec `MaClasse(MaClasse&& other) = default;`.
 {{% /notice %}}
 
 
@@ -84,6 +84,134 @@ MaClasse(MaClasse&& other)
 Pour faire court: quand le compilateur doit construire un nouvel objet à partir d'une R-value du même type (et que le compilateur ne fait pas d'élusion de déplacement, voir plus bas).
 
 En pratique, c'est surtout quand on utilise `std::move` en effet, c'est une fonction qui permet de une L-value en R-value et dit donc au compilateur d'utiliser le constructeur de déplacement plutôt que le constructeur de copie.
+
+#### Exercice: 
+
+On considère que `MyClass` est une classe avec un constructeur par défaut et des constructeurs de copies et de déplacements;
+Dans chacun des bouts de code ci-dessous: combien de fois le constructeur de **copie** de MyClass est-il appelé? (On ne demande pas le nombre de fois où le constructeur de déplacement est appelé à cause de l'élusion de déplacement que l'on verra plus bas.)
+
+```cpp
+/*1*/
+MyClass a = MaClass{};
+```
+{{% hidden-solution %}}
+Le constructeur de copie ne sera pas appelé.
+{{% /hidden-solution %}}
+
+---
+
+```cpp
+/*2*/
+void f(MyClass a) {/* ... */}
+int main() 
+{
+    MyClass a;
+    f(a);
+}
+```
+{{% hidden-solution %}}
+Le constructeur de copie sera appelé une fois.
+{{% /hidden-solution %}}
+
+---
+
+```cpp
+/*3*/
+void f(MyClass a) {/* ... */}
+int main() 
+{
+    MyClass a;
+    f(std::move(a));
+}
+```
+{{% hidden-solution %}}
+Le constructeur de copie ne sera pas appelé car `std::move(a)` est une R-value.
+{{% /hidden-solution %}}
+
+---
+
+```cpp
+/*4*/
+void f(MyClass a) {/* ... */}
+int main() 
+{
+    f(MyClass{});
+}
+```
+{{% hidden-solution %}}
+Le constructeur de copie ne sera pas appelé car `MyClass{}` est une R-value.
+{{% /hidden-solution %}}
+
+---
+
+
+Dans la suite, on considère le code suivant pour `MyOtherClass`.
+```cpp
+MyOtherClass
+{
+public:
+    MyClass _att;
+    MyOtherClass() = default;
+    MyOtherClass(MyClass arg) : _att{my_arg} {}
+}
+```
+
+
+Combien de fois le constructeur de copie de `MyClass` est-il appelé par chacun des bouts de code suivants.
+
+```cpp
+/*5*/
+int main {
+    MyClass x;
+    MyOtherClass y{x};
+}   
+```
+{{% hidden-solution %}}
+Le constructeur de copie sera appelé deux fois: uen fois pour construire `arg` et une fois pour construire `_att` à partir de `arg`.
+{{% /hidden-solution %}}
+
+```cpp
+/*6*/
+int main {
+    MyOtherClass x;
+    MyOtherClass y = x;
+}   
+```
+{{% hidden-solution %}}
+Le constructeur de copie de `MyClass` sera appelé une fois.
+En effet, l'implémentation par défaut du constructeur de copie appelle le cosntructeur de copie pour chaque attribut.
+{{% /hidden-solution %}}
+
+```cpp
+/*7*/
+int main {
+    MyOtherClass x;
+    MyOtherClass y{x._att}
+}   
+```
+
+{{% hidden-solution %}}
+Le constructeur de copie sera appelé deux fois.
+`x._att` est une L-value donc il est appelé une première fois pour construire `arg` et une seconde fois pour construire `_att` à partir de `arg`.
+{{% /hidden-solution %}}
+
+```cpp
+/*8*/
+int main {
+    MyOtherClass x;
+    MyOtherClass y = MyOtherClass{MyOtherClass{MyOtherClass{std::move(x)}}};
+}   
+```
+
+{{% hidden-solution %}}
+Aucun constructeur de copie n'est appelé.
+En effet toutes les expressions suivantes sont des R-value:
+- `std::move(x)`
+- `MyOtherClass{std::move(x)}`
+- `MyOtherClass{MyOtherClass{std::move(x)}}`
+- `MyOtherClass{MyOtherClass{MyOtherClass{std::move(x)}}}`
+{{% /hidden-solution %}}
+
 
 ### Elusion de déplacement (Copy/Move Elision)
 
