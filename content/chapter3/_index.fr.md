@@ -5,7 +5,7 @@ pre: "<span class=\"chapnum\">3.</span>&ensp;"
 weight: 3
 ---
 
-En C++, lorsque vous allouez une donnée, celle-ci ne reste pas miraculement accessible durant toute l'exécution de votre programme.  
+En C++, lorsque vous allouez une donnée, celle-ci ne reste pas miraculeusement accessible durant toute l'exécution de votre programme.  
 Contrairement à des langages comme Java ou C#, qui disposent d'un garbage-collector pour libérer automatiquement la mémoire lorsque celle-ci n'est plus nécessaire, c'est ici au développeur de faire ce travail.
 
 Il doit penser à libérer la mémoire lorsqu'il ne compte plus s'en servir, mais surtout, il doit faire attention à ne pas tenter d'accéder à des données si celles-ci n'existent déjà plus 😬

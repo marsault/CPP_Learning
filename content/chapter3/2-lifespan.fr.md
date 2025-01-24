@@ -37,7 +37,7 @@ Dans l'exemple ci-dessus :
 - `i` est instancié à la ligne 5 et désinstancié à la ligne 9 (après la dernière itération de la boucle)
 - `twice` est instancié à la ligne 7 et désinstancié à la ligne 9 (à la fin de chaque itération)
 
-Dans le cas d'une **allocation dynamique**, l'instanciation a lieu à l'appel à `new` (ou `new[]`) et la désinstanciation à l'appel à `delete` (ou `delete[]`).
+Dans le cas d'une **allocation dynamique**, l'instanciation a lieu à l'appel à `new` et la désinstanciation à l'appel à `delete`.
 
 ```cpp {linenos=table}
 int* make_int(int value)
@@ -293,7 +293,7 @@ Et comme on ne peut pas tester son code sur tous les compilateurs et toutes les 
     - la désallocation de la mémoire réservée.
 - On parle d'**allocation automatique** lorsque la donnée est instanciée via la définition d'une variable locale.  
 La désinstanciation a lieu lorsque l'on sort du bloc dans lequel elle est définie.
-- On parle d'**allocation dynamique** lorsque la donnée est instanciée via l'utilisation de `new` (ou `new[]`).  
+- On parle d'**allocation dynamique** lorsque la donnée est instanciée via l'utilisation de `new`.  
 La désinstanciation se fait explicitement avec l'appel `delete` (ou `delete[]`).
 - Le constructeur d'un objet déclenche l'instanciation de chacun de ses attributs, dans l'ordre dans lequel ils ont été définis.
 - La **durée de vie** d'une donnée est la période durant laquelle il est valide d'y accéder : entre son instanciation et sa désinstanciation.

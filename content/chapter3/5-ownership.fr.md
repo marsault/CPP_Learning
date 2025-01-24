@@ -16,7 +16,7 @@ Littéralement, **ownership** signifie **propriété** (au sens de la possession
 En pratique, dans le domaine de la programmation, le **owner** (ou le **propriétaire**) d'une donnée est l'élément qui a la responsabilité de la désinstancier une fois qu'elle n'est plus utile au programme.
 
 Nous allons vous montrer quelques exemples, afin que vous puissiez un peu mieux comprendre ce concept assez abstrait.  
-Au fur-et-à-mesure des exemples, nous établirons le **graphe d'ownership** correspondant, c'est-à-dire la représentation graphique illustrant les relations d'ownership présentes au sein du programme.
+Au fur et à mesure des exemples, nous établirons le **graphe d'ownership** correspondant, c'est-à-dire la représentation graphique illustrant les relations d'ownership présentes au sein du programme.
 
 #### Variable locale
 
@@ -210,10 +210,10 @@ Nous allons maintenant vous présenter quelques petits bouts de code.
 Vous devrez dessiner le graphe d'ownership correspondant à l'état du programme aux instructions indiquées, et en déduire les éventuels problèmes s'il y en a.  
 Si vous souhaitez dessiner vos graphes sur ordinateur, vous pouvez utiliser [draw.io](https://app.diagrams.net/).
 
-Pour cela, vous pourrez vous appuyer sur les règles d'architecture suivantes :
-- Chaque donnée a un seul et unique owner (=> une unique flèche pleine arrive sur chaque case)
+<!-- Pour cela, vous pourrez vous appuyer sur les règles d'architecture suivantes :
+- Chaque donnée doit avoir un seul et unique owner (=> une unique flèche pleine arrive sur chaque case)
 - Toutes les références mènent à une donnée valide (=> pas de flèche qui pointe sur une case rouge)
-- Si un pointeur est ownant, sa donnée sera correctement libérée **ou bien** il transfèrera l'ownership à un autre pointeur (pas les deux)
+- Si un pointeur est ownant, sa donnée sera correctement libérée **ou bien** il transfèrera l'ownership à un autre pointeur (pas les deux) -->
 
 #### Cas n°1
 
