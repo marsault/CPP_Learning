@@ -44,7 +44,8 @@ int* ptr = &var;
 #### Références
 
 Une référence est un alias de variable.
-Elle identifie le même emplacement que la variable d'origine.  
+Elle identifie le même emplacement que la variable d'origine. 
+Du point de vue stockage, une référence a la même taille qu'un pointeur.
 
 ```cpp
 int& ref = var;
