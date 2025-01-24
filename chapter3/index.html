@@ -5,40 +5,40 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.128.0">
     <meta name="generator" content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619">
-    <meta name="description" content="En C&#43;&#43;, lorsque vous allouez une donnée, celle-ci ne reste pas miraculement accessible durant toute l’exécution de votre programme.
+    <meta name="description" content="En C&#43;&#43;, lorsque vous allouez une donnée, celle-ci ne reste pas miraculeusement accessible durant toute l’exécution de votre programme.
 Contrairement à des langages comme Java ou C#, qui disposent d’un garbage-collector pour libérer automatiquement la mémoire lorsque celle-ci n’est plus nécessaire, c’est ici au développeur de faire ce travail.
 Il doit penser à libérer la mémoire lorsqu’il ne compte plus s’en servir, mais surtout, il doit faire attention à ne pas tenter d’accéder à des données si celles-ci n’existent déjà plus 😬">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Cycle de vie :: Cours de C&#43;&#43; - Niveau Master">
-    <meta name="twitter:description" content="En C&#43;&#43;, lorsque vous allouez une donnée, celle-ci ne reste pas miraculement accessible durant toute l’exécution de votre programme.
+    <meta name="twitter:description" content="En C&#43;&#43;, lorsque vous allouez une donnée, celle-ci ne reste pas miraculeusement accessible durant toute l’exécution de votre programme.
 Contrairement à des langages comme Java ou C#, qui disposent d’un garbage-collector pour libérer automatiquement la mémoire lorsque celle-ci n’est plus nécessaire, c’est ici au développeur de faire ce travail.
 Il doit penser à libérer la mémoire lorsqu’il ne compte plus s’en servir, mais surtout, il doit faire attention à ne pas tenter d’accéder à des données si celles-ci n’existent déjà plus 😬">
     <meta property="og:url" content="/chapter3/index.html">
     <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
     <meta property="og:title" content="Cycle de vie :: Cours de C&#43;&#43; - Niveau Master">
-    <meta property="og:description" content="En C&#43;&#43;, lorsque vous allouez une donnée, celle-ci ne reste pas miraculement accessible durant toute l’exécution de votre programme.
+    <meta property="og:description" content="En C&#43;&#43;, lorsque vous allouez une donnée, celle-ci ne reste pas miraculeusement accessible durant toute l’exécution de votre programme.
 Contrairement à des langages comme Java ou C#, qui disposent d’un garbage-collector pour libérer automatiquement la mémoire lorsque celle-ci n’est plus nécessaire, c’est ici au développeur de faire ce travail.
 Il doit penser à libérer la mémoire lorsqu’il ne compte plus s’en servir, mais surtout, il doit faire attention à ne pas tenter d’accéder à des données si celles-ci n’existent déjà plus 😬">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="website">
     <meta itemprop="name" content="Cycle de vie :: Cours de C&#43;&#43; - Niveau Master">
-    <meta itemprop="description" content="En C&#43;&#43;, lorsque vous allouez une donnée, celle-ci ne reste pas miraculement accessible durant toute l’exécution de votre programme.
+    <meta itemprop="description" content="En C&#43;&#43;, lorsque vous allouez une donnée, celle-ci ne reste pas miraculeusement accessible durant toute l’exécution de votre programme.
 Contrairement à des langages comme Java ou C#, qui disposent d’un garbage-collector pour libérer automatiquement la mémoire lorsque celle-ci n’est plus nécessaire, c’est ici au développeur de faire ce travail.
 Il doit penser à libérer la mémoire lorsqu’il ne compte plus s’en servir, mais surtout, il doit faire attention à ne pas tenter d’accéder à des données si celles-ci n’existent déjà plus 😬">
     <meta itemprop="wordCount" content="153">
     <title>Cycle de vie :: Cours de C&#43;&#43; - Niveau Master</title>
     <link href="../chapter3/index.xml" rel="alternate" type="application/rss+xml" title="Cycle de vie :: Cours de C++ - Niveau Master">
-    <link href="../css/fontawesome-all.min.css?1737661054" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1737661054" rel="stylesheet"></noscript>
-    <link href="../css/nucleus.css?1737661054" rel="stylesheet">
-    <link href="../css/auto-complete.css?1737661054" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1737661054" rel="stylesheet"></noscript>
-    <link href="../css/perfect-scrollbar.min.css?1737661054" rel="stylesheet">
-    <link href="../css/fonts.css?1737661054" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1737661054" rel="stylesheet"></noscript>
-    <link href="../css/theme.css?1737661054" rel="stylesheet">
-    <link href="../css/theme-mine.css?1737661054" rel="stylesheet" id="R-variant-style">
-    <link href="../css/chroma-relearn-light.css?1737661054" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../css/print.css?1737661054" rel="stylesheet" media="print">
-    <script src="../js/variant.js?1737661054"></script>
+    <link href="../css/fontawesome-all.min.css?1737724462" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1737724462" rel="stylesheet"></noscript>
+    <link href="../css/nucleus.css?1737724462" rel="stylesheet">
+    <link href="../css/auto-complete.css?1737724462" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1737724462" rel="stylesheet"></noscript>
+    <link href="../css/perfect-scrollbar.min.css?1737724462" rel="stylesheet">
+    <link href="../css/fonts.css?1737724462" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1737724462" rel="stylesheet"></noscript>
+    <link href="../css/theme.css?1737724462" rel="stylesheet">
+    <link href="../css/theme-mine.css?1737724462" rel="stylesheet" id="R-variant-style">
+    <link href="../css/chroma-relearn-light.css?1737724462" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../css/print.css?1737724462" rel="stylesheet" media="print">
+    <script src="../js/variant.js?1737724462"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..';
@@ -105,7 +105,7 @@ Il doit penser à libérer la mémoire lorsqu’il ne compte plus s’en servir,
 
 <h1 id="cycle-de-vie">Cycle de vie</h1>
 
-<p>En C++, lorsque vous allouez une donnée, celle-ci ne reste pas miraculement accessible durant toute l&rsquo;exécution de votre programme.<br>
+<p>En C++, lorsque vous allouez une donnée, celle-ci ne reste pas miraculeusement accessible durant toute l&rsquo;exécution de votre programme.<br>
 Contrairement à des langages comme Java ou C#, qui disposent d&rsquo;un garbage-collector pour libérer automatiquement la mémoire lorsque celle-ci n&rsquo;est plus nécessaire, c&rsquo;est ici au développeur de faire ce travail.</p>
 <p>Il doit penser à libérer la mémoire lorsqu&rsquo;il ne compte plus s&rsquo;en servir, mais surtout, il doit faire attention à ne pas tenter d&rsquo;accéder à des données si celles-ci n&rsquo;existent déjà plus 😬</p>
 <p>Dans ce chapitre, nous nous intéresserons au cycle de vie des données.<br>
@@ -214,9 +214,9 @@ Enfin, nous reparlerons des références et verrons comment faire pour comprendr
         </div>
       </div>
     </aside>
-    <script src="../js/clipboard.min.js?1737661054" defer></script>
-    <script src="../js/perfect-scrollbar.min.js?1737661054" defer></script>
-    <script src="../js/theme.js?1737661054" defer></script>
+    <script src="../js/clipboard.min.js?1737724462" defer></script>
+    <script src="../js/perfect-scrollbar.min.js?1737724462" defer></script>
+    <script src="../js/theme.js?1737724462" defer></script>
 
 
 
