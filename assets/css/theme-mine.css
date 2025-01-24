@@ -371,3 +371,10 @@ span.presection-icon {
     text-align: right;
     margin-right: .5em;
 }
+
+span.presection-icon>img {
+    height: 1.2em;
+    object-fit: scale-down;
+    vertical-align: middle;
+    padding-bottom: .2em;
+}

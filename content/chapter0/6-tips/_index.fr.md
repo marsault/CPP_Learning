@@ -1,5 +1,6 @@
 ---
 title: "Astuces"
+pre: '<span class="presection-icon">💡</span>'
 chapter: false
 weight: 6
 ---

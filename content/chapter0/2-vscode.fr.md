@@ -1,5 +1,6 @@
 ---
 title: "Visual Studio Code"
+pre: '<span class="presection-icon" ><img src="../../logo/vscode.svg"/></span>'
 weight: 2
 ---
 

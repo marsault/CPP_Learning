@@ -1,5 +1,6 @@
 ---
 title: "CMake"
+pre: '<span class="presection-icon" ><img src="../../logo/cmake.svg"/></span>'
 weight: 3
 ---
 
