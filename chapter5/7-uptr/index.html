@@ -5,34 +5,30 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.128.0">
     <meta name="generator" content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619">
-    <meta name="description" content="Nous allons maintenant voir comment il est possible d’allouer de la mémoire simplement, en particulier sans avoir à se soucier des fuites mémoire.
-Allocation d’une primitive Pour créer un objet sur le tas, nous allons nous servir d’un petit utilitaire appelé std::unique_ptr et de la fonction std::make_unique. Ces deux symboles se trouvent dans le header &lt;memory&gt;.
-Voici la syntaxe permettant d’allouer de la mémoire pour un entier :
-#include &lt;iostream&gt; #include &lt;memory&gt; void fcn() { std::unique_ptr&lt;int&gt; int_on_heap = std::make_unique&lt;int&gt;(3); std::cout &lt;&lt; *int_on_heap &lt;&lt; std::endl; // affiche 3 *int_on_heap = 5; std::cout &lt;&lt; *int_on_heap &lt;&lt; std::endl; // affiche 5 } La classe unique_ptr est donc un symbole que l’on template par le type qu’il doit contenir.">
+    <meta name="description" content="Les primitives new et delete ne devraient être réservées qu’à des cas exceptionels. C’est bien mieux d’utiliser des unique pointeurs (c’es-à-dire d’utiliser le type std::unique_ptr) qui sont la bonne façon en C&#43;&#43; de représenter des pointeurs ownants.
+Premier std::unique_ptr Pour créer un objet sur le tas, nous allons nous servir d’un petit utilitaire appelé std::unique_ptr et de la fonction std::make_unique. Ces deux symboles se trouvent dans le header &lt;memory&gt;.
+Voici la syntaxe permettant d’allouer de la mémoire pour un entier :">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Allocation dynamique :: C&#43;&#43;">
-    <meta name="twitter:description" content="Nous allons maintenant voir comment il est possible d’allouer de la mémoire simplement, en particulier sans avoir à se soucier des fuites mémoire.
-Allocation d’une primitive Pour créer un objet sur le tas, nous allons nous servir d’un petit utilitaire appelé std::unique_ptr et de la fonction std::make_unique. Ces deux symboles se trouvent dans le header &lt;memory&gt;.
-Voici la syntaxe permettant d’allouer de la mémoire pour un entier :
-#include &lt;iostream&gt; #include &lt;memory&gt; void fcn() { std::unique_ptr&lt;int&gt; int_on_heap = std::make_unique&lt;int&gt;(3); std::cout &lt;&lt; *int_on_heap &lt;&lt; std::endl; // affiche 3 *int_on_heap = 5; std::cout &lt;&lt; *int_on_heap &lt;&lt; std::endl; // affiche 5 } La classe unique_ptr est donc un symbole que l’on template par le type qu’il doit contenir.">
-    <meta property="og:url" content="/old-2223-chapter3-memoire/3-allocation/index.html">
+    <meta name="twitter:title" content="Unique-pointeur :: C&#43;&#43;">
+    <meta name="twitter:description" content="Les primitives new et delete ne devraient être réservées qu’à des cas exceptionels. C’est bien mieux d’utiliser des unique pointeurs (c’es-à-dire d’utiliser le type std::unique_ptr) qui sont la bonne façon en C&#43;&#43; de représenter des pointeurs ownants.
+Premier std::unique_ptr Pour créer un objet sur le tas, nous allons nous servir d’un petit utilitaire appelé std::unique_ptr et de la fonction std::make_unique. Ces deux symboles se trouvent dans le header &lt;memory&gt;.
+Voici la syntaxe permettant d’allouer de la mémoire pour un entier :">
+    <meta property="og:url" content="/chapter5/7-uptr/index.html">
     <meta property="og:site_name" content="C&#43;&#43;">
-    <meta property="og:title" content="Allocation dynamique :: C&#43;&#43;">
-    <meta property="og:description" content="Nous allons maintenant voir comment il est possible d’allouer de la mémoire simplement, en particulier sans avoir à se soucier des fuites mémoire.
-Allocation d’une primitive Pour créer un objet sur le tas, nous allons nous servir d’un petit utilitaire appelé std::unique_ptr et de la fonction std::make_unique. Ces deux symboles se trouvent dans le header &lt;memory&gt;.
-Voici la syntaxe permettant d’allouer de la mémoire pour un entier :
-#include &lt;iostream&gt; #include &lt;memory&gt; void fcn() { std::unique_ptr&lt;int&gt; int_on_heap = std::make_unique&lt;int&gt;(3); std::cout &lt;&lt; *int_on_heap &lt;&lt; std::endl; // affiche 3 *int_on_heap = 5; std::cout &lt;&lt; *int_on_heap &lt;&lt; std::endl; // affiche 5 } La classe unique_ptr est donc un symbole que l’on template par le type qu’il doit contenir.">
+    <meta property="og:title" content="Unique-pointeur :: C&#43;&#43;">
+    <meta property="og:description" content="Les primitives new et delete ne devraient être réservées qu’à des cas exceptionels. C’est bien mieux d’utiliser des unique pointeurs (c’es-à-dire d’utiliser le type std::unique_ptr) qui sont la bonne façon en C&#43;&#43; de représenter des pointeurs ownants.
+Premier std::unique_ptr Pour créer un objet sur le tas, nous allons nous servir d’un petit utilitaire appelé std::unique_ptr et de la fonction std::make_unique. Ces deux symboles se trouvent dans le header &lt;memory&gt;.
+Voici la syntaxe permettant d’allouer de la mémoire pour un entier :">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
-    <meta property="article:section" content="Gestion mémoire (2022-2023)">
-    <meta itemprop="name" content="Allocation dynamique :: C&#43;&#43;">
-    <meta itemprop="description" content="Nous allons maintenant voir comment il est possible d’allouer de la mémoire simplement, en particulier sans avoir à se soucier des fuites mémoire.
-Allocation d’une primitive Pour créer un objet sur le tas, nous allons nous servir d’un petit utilitaire appelé std::unique_ptr et de la fonction std::make_unique. Ces deux symboles se trouvent dans le header &lt;memory&gt;.
-Voici la syntaxe permettant d’allouer de la mémoire pour un entier :
-#include &lt;iostream&gt; #include &lt;memory&gt; void fcn() { std::unique_ptr&lt;int&gt; int_on_heap = std::make_unique&lt;int&gt;(3); std::cout &lt;&lt; *int_on_heap &lt;&lt; std::endl; // affiche 3 *int_on_heap = 5; std::cout &lt;&lt; *int_on_heap &lt;&lt; std::endl; // affiche 5 } La classe unique_ptr est donc un symbole que l’on template par le type qu’il doit contenir.">
-    <meta itemprop="wordCount" content="1512">
-    <title>Allocation dynamique :: C&#43;&#43;</title>
+    <meta property="article:section" content="Librairie standard">
+    <meta itemprop="name" content="Unique-pointeur :: C&#43;&#43;">
+    <meta itemprop="description" content="Les primitives new et delete ne devraient être réservées qu’à des cas exceptionels. C’est bien mieux d’utiliser des unique pointeurs (c’es-à-dire d’utiliser le type std::unique_ptr) qui sont la bonne façon en C&#43;&#43; de représenter des pointeurs ownants.
+Premier std::unique_ptr Pour créer un objet sur le tas, nous allons nous servir d’un petit utilitaire appelé std::unique_ptr et de la fonction std::make_unique. Ces deux symboles se trouvent dans le header &lt;memory&gt;.
+Voici la syntaxe permettant d’allouer de la mémoire pour un entier :">
+    <meta itemprop="wordCount" content="1526">
+    <title>Unique-pointeur :: C&#43;&#43;</title>
     <link href="../../css/fontawesome-all.min.css?1737993471" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737993471" rel="stylesheet"></noscript>
     <link href="../../css/nucleus.css?1737993471" rel="stylesheet">
     <link href="../../css/auto-complete.css?1737993471" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737993471" rel="stylesheet"></noscript>
@@ -63,7 +59,7 @@ Voici la syntaxe permettant d’allouer de la mémoire pour un entier :
       window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../old-2223-chapter3-memoire/3-allocation/index.html">
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../chapter5/7-uptr/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -79,7 +75,7 @@ Voici la syntaxe permettant d’allouer de la mémoire pour un entier :
   <ul>
     <li>
       <ul>
-        <li><a href="#allocation-dune-primitive">Allocation d&rsquo;une primitive</a></li>
+        <li><a href="#premier-stdunique_ptr">Premier <code>std::unique_ptr</code></a></li>
         <li><a href="#allocation-dun-objet">Allocation d&rsquo;un objet</a></li>
         <li><a href="#manipulation">Manipulation</a></li>
         <li><a href="#copie">Copie</a></li>
@@ -95,13 +91,13 @@ Voici la syntaxe permettant d’allouer de la mémoire pour un entier :
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">Accueil</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../old-2223-chapter3-memoire/index.html"><span itemprop="name">Gestion mémoire (2022-2023)</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Allocation dynamique</span><meta itemprop="position" content="3"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../chapter5/index.html"><span itemprop="name">Librairie standard</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Unique-pointeur</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../old-2223-chapter3-memoire/2-ownership/index.html" title="Ownership (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter5/6-tuples/index.html" title="Paires et tuples (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../old-2223-chapter3-memoire/4-move-sem/index.html" title="Déplacement (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter5/test/index.html" title="Questionnaire (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -115,34 +111,37 @@ Voici la syntaxe permettant d’allouer de la mémoire pour un entier :
         </div>
       </nav>
       <div id="R-main-overlay"></div>
-      <main id="R-body-inner" class="highlightable old-2223-chapter3-memoire" tabindex="-1">
+      <main id="R-body-inner" class="highlightable chapter5" tabindex="-1">
         <div class="flex-block-wrapper">
 <article class="default">
   <header class="headline">
   </header>
 
-<h1 id="allocation-dynamique">Allocation dynamique</h1>
+<h1 id="unique-pointeur">Unique-pointeur</h1>
 
-<p>Nous allons maintenant voir comment il est possible d&rsquo;allouer de la mémoire simplement, en particulier sans avoir à se soucier des fuites mémoire.</p>
+<p>Les primitives <code>new</code> et <code>delete</code> ne devraient être réservées qu&rsquo;à des cas exceptionels.
+C&rsquo;est bien mieux d&rsquo;utiliser des <em>unique pointeurs</em> (c&rsquo;es-à-dire d&rsquo;utiliser le type <code>std::unique_ptr</code>)
+qui sont la <strong>bonne</strong> façon en C++ de représenter des pointeurs ownants.</p>
 <hr>
-<h3 id="allocation-dune-primitive">Allocation d&rsquo;une primitive</h3>
+<h3 id="premier-stdunique_ptr">Premier <code>std::unique_ptr</code></h3>
 <p>Pour créer un objet sur le tas, nous allons nous servir d&rsquo;un petit utilitaire appelé <code>std::unique_ptr</code> et de la fonction <code>std::make_unique</code>.
 Ces deux symboles se trouvent dans le header <code>&lt;memory&gt;</code>.</p>
 <p>Voici la syntaxe permettant d&rsquo;allouer de la mémoire pour un entier :</p>
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">()</span>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">int_on_heap</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">int_on_heap</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>                         <span class="c1">// affiche 3
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="o">*</span><span class="n">int_on_heap</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">int_on_heap</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>                         <span class="c1">// affiche 5
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Remarque: aucune instruction de désallocation !
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span></span></span></code></pre></div>
-<p>La classe <code>unique_ptr</code> est donc un symbole que l&rsquo;on template par le type qu&rsquo;il doit contenir.<br>
-La fonction <code>make_unique</code> prend la valeur avec laquelle on souhaite initialiser l&rsquo;objet.<br>
-On accède ensuite au contenu avec l&rsquo;opérateur <code>*</code>, un peu comme pour un pointeur en C.</p>
+<ul>
+<li>La classe <code>unique_ptr</code> est un symbole que l&rsquo;on template par le type qu&rsquo;il doit contenir.\</li>
+<li>La fonction <code>make_unique</code> prend les valeur avec laquelle on souhaite construire l&rsquo;objet pointé.\</li>
+<li>On accède ensuite au contenu avec l&rsquo;opérateur <code>*</code>, un peu comme pour un pointeur classique.</li>
+</ul>
 <p>La magie ici, c&rsquo;est qu&rsquo;une fois que l&rsquo;on sort de la fonction, le destructeur de la classe <code>unique_ptr</code> s&rsquo;occupe tout seul de désallouer la mémoire.
 Vous n&rsquo;avez donc pas à vous soucier de faire des <code>free</code> ou des <code>delete</code>, tout est libéré automatiquement.</p>
 <hr>
@@ -155,7 +154,8 @@ Vous n&rsquo;avez donc pas à vous soucier de faire des <code>free</code> ou des
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">friend</span> <span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Dog</span><span class="o">&amp;</span> <span class="n">dog</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;I have a &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">dog</span><span class="p">.</span><span class="n">breed</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; named &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">dog</span><span class="p">.</span><span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;I have a &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">dog</span><span class="p">.</span><span class="n">breed</span> 
+</span></span><span class="line"><span class="cl">                      <span class="o">&lt;&lt;</span> <span class="s">&#34; named &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">dog</span><span class="p">.</span><span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
@@ -164,12 +164,10 @@ Vous n&rsquo;avez donc pas à vous soucier de faire des <code>free</code> ou des
 </span></span><span class="line"><span class="cl">        <span class="p">,</span> <span class="n">_breed</span> <span class="p">{</span> <span class="n">breed</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">rename</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">new_name</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_name</span> <span class="o">=</span> <span class="n">new_name</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">rename</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">new_name</span><span class="p">)</span> <span class="p">{</span> <span class="n">_name</span> <span class="o">=</span> <span class="n">new_name</span><span class="p">;}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span> <span class="n">Dog</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_name</span> <span class="o">==</span> <span class="n">other</span><span class="p">.</span><span class="n">_name</span> <span class="o">&amp;&amp;</span> <span class="n">_breed</span> <span class="o">==</span> <span class="n">other</span><span class="p">.</span><span class="n">_breed</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span> <span class="n">Dog</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">const</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span> <span class="k">return</span> <span class="n">_name</span> <span class="o">==</span> <span class="n">other</span><span class="p">.</span><span class="n">_name</span> <span class="o">&amp;&amp;</span> <span class="n">_breed</span> <span class="o">==</span> <span class="n">other</span><span class="p">.</span><span class="n">_breed</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
@@ -268,12 +266,12 @@ Si on appelle <code>rename</code> sur <code>dog_copy</code>, le nom de <code>dog
 <p>Pour vous habituez à manipuler les <code>unique_ptr</code>, vous allez modifier le code du programme <code>c3-3-cat</code>.</p>
 <p>Commencez par allouer dynamiquement un objet de type <code>Cat</code> et affichez son contenu à l&rsquo;aide de l&rsquo;opérateur <code>&lt;&lt;</code> déjà défini.
 <div class="expand">
-  <input type="checkbox" id="R-expand-2c8b4053a73b55487bb8540c6f90872b" aria-controls="R-expandcontent-2c8b4053a73b55487bb8540c6f90872b">
-  <label class="expand-label" for="R-expand-2c8b4053a73b55487bb8540c6f90872b">
+  <input type="checkbox" id="R-expand-4d2b25ca09fbdbcb4cdaa69b76f752e6" aria-controls="R-expandcontent-4d2b25ca09fbdbcb4cdaa69b76f752e6">
+  <label class="expand-label" for="R-expand-4d2b25ca09fbdbcb4cdaa69b76f752e6">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-2c8b4053a73b55487bb8540c6f90872b" class="expand-content">
+  <div id="R-expandcontent-4d2b25ca09fbdbcb4cdaa69b76f752e6" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Cat.h&#34;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
@@ -289,24 +287,24 @@ Si on appelle <code>rename</code> sur <code>dog_copy</code>, le nom de <code>dog
 </div></p>
 <p>Redéfinissez le destructeur de <code>Cat</code> pour afficher du texte et vérifier que l&rsquo;objet pointé est bien détruit à la sortie du scope, lorsque le <code>unique_ptr</code> est détruit.
 <div class="expand">
-  <input type="checkbox" id="R-expand-525fa168124eaa7b03eaae4f03bbe1a4" aria-controls="R-expandcontent-525fa168124eaa7b03eaae4f03bbe1a4">
-  <label class="expand-label" for="R-expand-525fa168124eaa7b03eaae4f03bbe1a4">
+  <input type="checkbox" id="R-expand-7438cc900a275ebc89671a66036862ff" aria-controls="R-expandcontent-7438cc900a275ebc89671a66036862ff">
+  <label class="expand-label" for="R-expand-7438cc900a275ebc89671a66036862ff">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-525fa168124eaa7b03eaae4f03bbe1a4" class="expand-content">
+  <div id="R-expandcontent-7438cc900a275ebc89671a66036862ff" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="o">~</span><span class="n">Cat</span><span class="p">()</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Cat &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">_name</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; has died...&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="p">}</span></span></span></code></pre></div>
   </div>
 </div></p>
 <p>Ajoutez un constructeur à 1 paramètre à la classe <code>Cat</code> pour initialiser son attribut <code>_name</code>.<br>
 Adaptez l&rsquo;initialisation du <code>unique_ptr</code> afin que le programme puisse compiler.
 <div class="expand">
-  <input type="checkbox" id="R-expand-4f84d33bbae4c3828b6c7d07f4be1b4c" aria-controls="R-expandcontent-4f84d33bbae4c3828b6c7d07f4be1b4c">
-  <label class="expand-label" for="R-expand-4f84d33bbae4c3828b6c7d07f4be1b4c">
+  <input type="checkbox" id="R-expand-0410b9ac1cce2c2d119c763e5e80e9d9" aria-controls="R-expandcontent-0410b9ac1cce2c2d119c763e5e80e9d9">
+  <label class="expand-label" for="R-expand-0410b9ac1cce2c2d119c763e5e80e9d9">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-4f84d33bbae4c3828b6c7d07f4be1b4c" class="expand-content">
+  <div id="R-expandcontent-0410b9ac1cce2c2d119c763e5e80e9d9" class="expand-content">
 <p><code>Cat.h</code> :</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Cat</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -333,12 +331,12 @@ Adaptez l&rsquo;initialisation du <code>unique_ptr</code> afin que le programme 
 </div></p>
 <p>Créez maintenant un <code>unique_ptr&lt;Cat&gt;</code> vide et vérifiez que celui-ci est bien égal à <code>nullptr</code>.
 <div class="expand">
-  <input type="checkbox" id="R-expand-191ca2a2b0c996ddef351967b348f43e" aria-controls="R-expandcontent-191ca2a2b0c996ddef351967b348f43e">
-  <label class="expand-label" for="R-expand-191ca2a2b0c996ddef351967b348f43e">
+  <input type="checkbox" id="R-expand-e88c6115dae28deec7fb411c345010d8" aria-controls="R-expandcontent-e88c6115dae28deec7fb411c345010d8">
+  <label class="expand-label" for="R-expand-e88c6115dae28deec7fb411c345010d8">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-191ca2a2b0c996ddef351967b348f43e" class="expand-content">
+  <div id="R-expandcontent-e88c6115dae28deec7fb411c345010d8" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span> <span class="n">cat1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&#34;Felix&#34;</span><span class="p">);</span>
@@ -356,12 +354,12 @@ Adaptez l&rsquo;initialisation du <code>unique_ptr</code> afin que le programme 
 </div></p>
 <p>Réassignez ce dernier à une nouvelle instance de <code>Cat</code> allouée dynamiquement.
 <div class="expand">
-  <input type="checkbox" id="R-expand-88ba25290d290627043abedfffad051e" aria-controls="R-expandcontent-88ba25290d290627043abedfffad051e">
-  <label class="expand-label" for="R-expand-88ba25290d290627043abedfffad051e">
+  <input type="checkbox" id="R-expand-d693c5752c37115921780484c9282a63" aria-controls="R-expandcontent-d693c5752c37115921780484c9282a63">
+  <label class="expand-label" for="R-expand-d693c5752c37115921780484c9282a63">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-88ba25290d290627043abedfffad051e" class="expand-content">
+  <div id="R-expandcontent-d693c5752c37115921780484c9282a63" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span> <span class="n">cat1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&#34;Felix&#34;</span><span class="p">);</span>
@@ -381,12 +379,12 @@ Adaptez l&rsquo;initialisation du <code>unique_ptr</code> afin que le programme 
 </div></p>
 <p>Affichez si les deux <code>unique_ptr</code> sont égaux, puis si les deux objets pointés sont égaux.
 <div class="expand">
-  <input type="checkbox" id="R-expand-f95b4bf97b2caef194771e51427e32c7" aria-controls="R-expandcontent-f95b4bf97b2caef194771e51427e32c7">
-  <label class="expand-label" for="R-expand-f95b4bf97b2caef194771e51427e32c7">
+  <input type="checkbox" id="R-expand-48c97e6f0e9775dbfa15a7760553aa1a" aria-controls="R-expandcontent-48c97e6f0e9775dbfa15a7760553aa1a">
+  <label class="expand-label" for="R-expand-48c97e6f0e9775dbfa15a7760553aa1a">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-f95b4bf97b2caef194771e51427e32c7" class="expand-content">
+  <div id="R-expandcontent-48c97e6f0e9775dbfa15a7760553aa1a" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span> <span class="n">cat1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&#34;Felix&#34;</span><span class="p">);</span>
@@ -410,12 +408,12 @@ Adaptez l&rsquo;initialisation du <code>unique_ptr</code> afin que le programme 
 <p>Réinitialisez le premier <code>unique_ptr</code> afin que celui-ci détruise l&rsquo;objet sur lequel il pointe.<br>
 Vérifiez que celui-ci est maintenant bien égal à <code>nullptr</code>.
 <div class="expand">
-  <input type="checkbox" id="R-expand-475742e4b63ecf3d93f651a8dbc0b4bb" aria-controls="R-expandcontent-475742e4b63ecf3d93f651a8dbc0b4bb">
-  <label class="expand-label" for="R-expand-475742e4b63ecf3d93f651a8dbc0b4bb">
+  <input type="checkbox" id="R-expand-8d66a09cc339875b8f84ee6811ab36c9" aria-controls="R-expandcontent-8d66a09cc339875b8f84ee6811ab36c9">
+  <label class="expand-label" for="R-expand-8d66a09cc339875b8f84ee6811ab36c9">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-475742e4b63ecf3d93f651a8dbc0b4bb" class="expand-content">
+  <div id="R-expandcontent-8d66a09cc339875b8f84ee6811ab36c9" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span> <span class="n">cat1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&#34;Felix&#34;</span><span class="p">);</span>
@@ -537,13 +535,13 @@ Testez le code suivant et vérifiez qu&rsquo;il fonctionne correctement :</p>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 <p>Le programme fonctionne comme attendu car nous avons introduit un niveau intermédiaire entre la mémoire du <code>vector</code> à la mémoire des objets de type <code>Content</code>.</p>
 <p>Avant, pendant la réallocation, chacun des objets <code>Content</code> était déplacé vers une nouvelle zone de la mémoire, d&rsquo;où l&rsquo;invalidation des références.
-<a href="#R-image-e24ac151a726270c5b3de5df2e56d275" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/bag-realloc-content.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e24ac151a726270c5b3de5df2e56d275"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/bag-realloc-content.svg"></a></p>
+<a href="#R-image-53a85a9be6dc5f3566907e0c21d1e949" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/bag-realloc-content.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-53a85a9be6dc5f3566907e0c21d1e949"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/bag-realloc-content.svg"></a></p>
 <p>Désormais, ce sont les <code>unique_ptr</code> qui sont déplacés ailleurs.
 Les éléments de type <code>Content</code> restent à leur place.<br>
 La référence <code>my_thing</code> qui pointe sur l&rsquo;un d&rsquo;entre eux reste donc valide aussi longtemps que <code>bag</code> l&rsquo;est aussi.
-<a href="#R-image-ec0ed62923239bc4da49424ea7854632" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/bag-realloc-ptr.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ec0ed62923239bc4da49424ea7854632"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/bag-realloc-ptr.svg"></a></p>
+<a href="#R-image-a4ae73d988471fd0148eeb7d288e3735" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/bag-realloc-ptr.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a4ae73d988471fd0148eeb7d288e3735"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/bag-realloc-ptr.svg"></a></p>
 
   <footer class="footline">
   </footer>
@@ -570,18 +568,19 @@ La référence <code>my_thing</code> qui pointe sur l&rsquo;un d&rsquo;entre eux
             <li class="" data-nav-id="/chapter2/index.html"><a class="padding" href="../../chapter2/index.html"><span class="chapnum">2.</span>&ensp;Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b1df0095a9fd74320697a6d478418ec3" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu">
+            <li class="" data-nav-id="/chapter5/1-doc/index.html"><a class="padding" href="../../chapter5/1-doc/index.html"><span class="presection-icon">🔖</span>Un peu de doc...<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/2-vectors/index.html"><a class="padding" href="../../chapter5/2-vectors/index.html"><span class="presection-icon">🖼</span>Tableaux dynamiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/3-sequentials/index.html"><a class="padding" href="../../chapter5/3-sequentials/index.html"><span class="presection-icon">➠</span>Autres conteneurs séquentiels<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/4-associatives/index.html"><a class="padding" href="../../chapter5/4-associatives/index.html"><span class="presection-icon">🔑</span>Conteneurs associatifs<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/5-strings/index.html"><a class="padding" href="../../chapter5/5-strings/index.html"><span class="presection-icon">🔗</span>Manipulation de chaînes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/6-tuples/index.html"><a class="padding" href="../../chapter5/6-tuples/index.html"><span class="presection-icon">🍒</span>Paires et tuples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active hidden " data-nav-id="/chapter5/7-uptr/index.html"><a class="padding" href="../../chapter5/7-uptr/index.html"><span class="presection-icon"><i class="fa-solid fa-snowflake"></i></span>Unique-pointeur<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/test/index.html"><a class="padding" href="../../chapter5/test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter8/index.html"><a class="padding" href="../../chapter8/index.html"><span class="chapnum">8.</span>&ensp;Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7cf6d9bdd794f38d7006506bdc38c58f" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter9/index.html"><a class="padding" href="../../chapter9/index.html"><span class="chapnum">9.</span>&ensp;Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu"></ul></li>
-            <li class="parent hidden " data-nav-id="/old-2223-chapter3-memoire/index.html"><a class="padding" href="../../old-2223-chapter3-memoire/index.html">Gestion mémoire (2022-2023)<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e2b2fe39bbf9794869eeec25a6a70c68" class="collapsible-menu">
-            <li class="" data-nav-id="/old-2223-chapter3-memoire/1-lifespan/index.html"><a class="padding" href="../../old-2223-chapter3-memoire/1-lifespan/index.html">Durée de vie<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/old-2223-chapter3-memoire/2-ownership/index.html"><a class="padding" href="../../old-2223-chapter3-memoire/2-ownership/index.html">Ownership<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active " data-nav-id="/old-2223-chapter3-memoire/3-allocation/index.html"><a class="padding" href="../../old-2223-chapter3-memoire/3-allocation/index.html">Allocation dynamique<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/old-2223-chapter3-memoire/4-move-sem/index.html"><a class="padding" href="../../old-2223-chapter3-memoire/4-move-sem/index.html">Déplacement<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/old-2223-chapter3-memoire/test/index.html"><a class="padding" href="../../old-2223-chapter3-memoire/test/index.html">Questionnaire !<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/old-2223-chapter3-memoire/summary/index.html"><a class="padding" href="../../old-2223-chapter3-memoire/summary/index.html">Synthèse<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
           </ul>
         </div>
         <div id="R-shortcuts">
@@ -609,7 +608,7 @@ La référence <code>my_thing</code> qui pointe sur l&rsquo;un d&rsquo;entre eux
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Langue</label>
                     <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
-                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../old-2223-chapter3-memoire/3-allocation/index.html" lang="fr" selected>Français</option>
+                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../chapter5/7-uptr/index.html" lang="fr" selected>Français</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -683,7 +682,7 @@ La référence <code>my_thing</code> qui pointe sur l&rsquo;un d&rsquo;entre eux
 
     function updateQuestionFormSubject() {
         let email = document.querySelector('#question>input[name="email"]').value;
-        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 98] " + email + ", retour sur ta question";
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 4] " + email + ", retour sur ta question";
     }
 
     function cleanQuestionFormContent() {

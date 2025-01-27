@@ -61,16 +61,16 @@ La cible à compiler est c4-1-hierarchy.
 Définir une classe-mère Commencez par jeter un coup d’oeil à chacun des fichiers fournis.">
     <meta itemprop="wordCount" content="1109">
     <title>Hiérarchie professionnelle :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1737975518" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737975518" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737975518" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737975518" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737975518" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737975518" rel="stylesheet">
-    <link href="../../css/fonts.css?1737975518" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737975518" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737975518" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737975518" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737975518" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737975518" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737975518"></script>
+    <link href="../../css/fontawesome-all.min.css?1737993471" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737993471" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737993471" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737993471" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737993471" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737993471" rel="stylesheet">
+    <link href="../../css/fonts.css?1737993471" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737993471" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737993471" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737993471" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737993471" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737993471" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737993471"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -166,12 +166,12 @@ Comme vous pouvez le constater, les différentes classes partagent beaucoup de c
 Placez-la dans un ou des fichiers séparés et modifiez le CMakeLists.txt (celui dans chap-04) pour qu&rsquo;il les ajoute bien à la compilation de l&rsquo;exécutable.
 Pour le nom de la classe, essayez de trouver quelque chose qui soit digne de son contenu.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-090cce7c34e1ec0e6b8abab59f617048" aria-controls="R-expandcontent-090cce7c34e1ec0e6b8abab59f617048">
-  <label class="expand-label" for="R-expand-090cce7c34e1ec0e6b8abab59f617048">
+  <input type="checkbox" id="R-expand-96caab548ebd422e7267e340ff3074a4" aria-controls="R-expandcontent-96caab548ebd422e7267e340ff3074a4">
+  <label class="expand-label" for="R-expand-96caab548ebd422e7267e340ff3074a4">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-090cce7c34e1ec0e6b8abab59f617048" class="expand-content">
+  <div id="R-expandcontent-96caab548ebd422e7267e340ff3074a4" class="expand-content">
 <p>Afin de pouvoir retourner le grade (<code>get_rank()</code>) de chaque employé, on ajoute un attribut <code>_rank</code> à la classe.<br>
 Et on n&rsquo;oublie pas de définir un constructeur pour initialiser chacun des membres de la nouvelle classe.</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Rank.h&#34;</span><span class="cp">
@@ -236,12 +236,12 @@ Il ne devrait vous rester que ceci :</p>
 que vous devez initialiser vos propres attributs à la suite de l&rsquo;appel au constructeur de la classe-mère.</p>
 <p>Refactorisez maintenant les deux autres classes <code>Staff</code> et <code>Intern</code> de manière à supprimer le code dupliqué en les faisant hériter de <code>Employee</code>.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-21631a2615dc7a473607894d98e4d977" aria-controls="R-expandcontent-21631a2615dc7a473607894d98e4d977">
-  <label class="expand-label" for="R-expand-21631a2615dc7a473607894d98e4d977">
+  <input type="checkbox" id="R-expand-38d497be0c2b12145b15ce37810e9907" aria-controls="R-expandcontent-38d497be0c2b12145b15ce37810e9907">
+  <label class="expand-label" for="R-expand-38d497be0c2b12145b15ce37810e9907">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-21631a2615dc7a473607894d98e4d977" class="expand-content">
+  <div id="R-expandcontent-38d497be0c2b12145b15ce37810e9907" class="expand-content">
 <p>Staff.h:</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Employee.h&#34;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
@@ -474,9 +474,9 @@ Autrement, la relation d&rsquo;héritage sera privée et le compilateur ne vous 
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737975518" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737975518" defer></script>
-    <script src="../../js/theme.js?1737975518" defer></script>
+    <script src="../../js/clipboard.min.js?1737993471" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737993471" defer></script>
+    <script src="../../js/theme.js?1737993471" defer></script>
 
 
 
