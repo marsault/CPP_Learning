@@ -14,5 +14,5 @@ Pour savoir quand un objet est déplacé ou copié, il faut d'abord comprendre l
 
 {{% notice style="tip" icon="hammer" title="Nouveau chapitre" %}}
 Ce chapitre a été écrit cette année.  Il contient probablement de nombreuses erreurs.
-Pour qu'on puisse l'améliorer, n'hésitez pas à nous les signaler tout ce qui vous semble étrange pour qu'on puisse l'améliorer.
+Pour qu'on puisse l'améliorer, n'hésitez pas à nous signaler tout ce qui vous semble étrange.
 {{% /notice %}}
