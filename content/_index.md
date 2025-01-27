@@ -22,7 +22,7 @@ Le planning est le suivant :
 |S3  | 27 - 31 janvier   | ▹ TP 3 (Références, Ownership) | [3]({{% ref chapter3 %}}) |
 |S4  | 3 - 7 février     | ▹ TP 4 (Révisions, Framework de TP noté) |
 |S5  | 10 - 14 février   | ▹ TP noté 1 (sur les chapitres 0 à 3, 2h) <br> ▹ Cours 2 |
-|S6  | 17 - 21 février   | ▹ TP 5 (Copie, Déplacement, l-value / r-value) | [4]({{% ref chapter4 %}}) |
+|S6  | 17 - 21 février   | ▹ TP 5 (Copie, Déplacement, L-value et R-value) | [4]({{% ref chapter4 %}}) |
 |S7  | 24 - 28 février   | ▹ TP 6 (stdlib, conteneurs, `std::unique_ptr`) | [5]({{% ref chapter5 %}}) |
 |S8  | 3 - 7 mars        | ▹ TP 7 (Polymorphisme, Héritage) | [6]({{% ref chapter6 %}}) | 
 |S9  | 10 - 14 mars      | ▹ TP 8 (Révisions, Framework de TP noté) |
