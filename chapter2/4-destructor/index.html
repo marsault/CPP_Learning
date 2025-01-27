@@ -27,18 +27,18 @@ Désinstanciation, kesako ?? La désinstanciation, c’est tout simplement le co
     <meta itemprop="description" content="Si le constructeur est la fonction qui permet de définir ce qu’il se passe lorsqu’un objet est instancié, vous vous doutez probablement que le destructeur est la fonction qui permet de définir ce qu’il se passe lorsqu’un objet est “désinstancié”.
 Sur cette page, nous vous expliquerons d’abord où se produit la désinstanciation d’un objet, et nous vous montrerons ensuite comment définir son destructeur.
 Désinstanciation, kesako ?? La désinstanciation, c’est tout simplement le contraire de l’instanciation.">
-    <meta itemprop="wordCount" content="922">
+    <meta itemprop="wordCount" content="910">
     <title>Destructeur :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1737726347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737726347" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737726347" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737726347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737726347" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737726347" rel="stylesheet">
-    <link href="../../css/fonts.css?1737726347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737726347" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737726347" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737726347" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737726347" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737726347" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737726347"></script>
+    <link href="../../css/fontawesome-all.min.css?1737975341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737975341" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737975341" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737975341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737975341" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737975341" rel="stylesheet">
+    <link href="../../css/fonts.css?1737975341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737975341" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737975341" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737975341" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737975341" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737975341" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737975341"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -186,12 +186,12 @@ En effet, comme ce n&rsquo;est pas vous qui appelez le destructeur, mais le comp
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -214,6 +214,7 @@ Ici, on utilise <code>get_full_name()</code> pour éviter de dupliquer le code d
     </div>
 
 </div>
+
 <ol start="2">
 <li>Compilez et testez le programme.<br>
 Vous pourrez constater que je ne vous ai pas raconté de salades concernant le moment où le destructeur est appelé.</li>
@@ -229,12 +230,12 @@ Petite question au passage, pourquoi ne pouvez-vous pas définir la classe <code
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -249,6 +250,7 @@ Petite question au passage, pourquoi ne pouvez-vous pas définir la classe <code
     </div>
 
 </div>
+
 <ol>
 <li>Ajoutez un destructeur à <code>Batmobile</code> qui affiche la phrase suivante : <code>&quot;The Batmobile has been destroyed!&quot;</code>.<br>
 Remplacez ensuite le contenu du <code>main</code> par :</li>
@@ -267,12 +269,12 @@ Remplacez ensuite le contenu du <code>main</code> par :</li>
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -296,6 +298,7 @@ Remplacez ensuite le contenu du <code>main</code> par :</li>
     </div>
 
 </div>
+
 <p>On constate que le destructeur de <code>Person</code> est appelé juste après l&rsquo;exécution du corps du destructeur de <code>Batmobile</code>.</p>
 <p>En réalité, le destructeur ne se limite pas aux instructions que vous avez écrites entre les <code>{}</code>.<br>
 Il procède également à la désinstanciation des attributs de la classe, et comme nous l&rsquo;avons vu à la partie précédente, cela entraîne l&rsquo;appel au destructeur de chacun d&rsquo;entre eux.</p>
@@ -347,12 +350,12 @@ Que va-t-il se passer à l&rsquo;exécution ?</p>
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -364,6 +367,7 @@ Que va-t-il se passer à l&rsquo;exécution ?</p>
     </div>
 
 </div>
+
 <p>Encore une fois, si on ne définit pas explicitement de destructeur, le compilateur en produit un pour nous : on parle d&rsquo;<strong>implémentation par défaut du destructeur</strong>.<br>
 A l&rsquo;exécution, celui-ci se contente de désinstancier les attributs de la classe.</p>
 <hr>
@@ -478,9 +482,9 @@ A l&rsquo;exécution, celui-ci se contente de désinstancier les attributs de la
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737726347" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737726347" defer></script>
-    <script src="../../js/theme.js?1737726347" defer></script>
+    <script src="../../js/clipboard.min.js?1737975341" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737975341" defer></script>
+    <script src="../../js/theme.js?1737975341" defer></script>
 
 
 

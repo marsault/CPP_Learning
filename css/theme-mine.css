@@ -380,3 +380,8 @@ span.presection-icon>img {
     vertical-align: middle;
     padding-bottom: .2em;
 }
+
+span.hidden-sol-space {
+  display: inline-block;
+  width: 1em;
+}

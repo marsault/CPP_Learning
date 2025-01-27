@@ -27,18 +27,18 @@ auto str = &#34;hello&#34;; // -&gt; str est de type const char* Cependant, ce n
     <meta itemprop="description" content="Sur cette page, vous allez apprendre à utiliser quelques classes fournies par la librarie standard pour manipuler chaînes de caractères et tableaux. Vous verrez également comment écrire ou lire dans des flux pour intéragir avec l’utilisateur.
 Chaînes de caractères Comme en C, const char* est le type fondamental associé à une chaîne de caractères littérale (c’est-à-dire écrite en dur, avec les guillemets autour) :
 auto str = &#34;hello&#34;; // -&gt; str est de type const char* Cependant, ce n’est pas du tout pratique pour faire des opérations comme des concaténations, des recherches, ou même simplement récupérer la taille de la chaîne.">
-    <meta itemprop="wordCount" content="1394">
+    <meta itemprop="wordCount" content="1374">
     <title>Librairie standard :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1737726347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737726347" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737726347" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737726347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737726347" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737726347" rel="stylesheet">
-    <link href="../../css/fonts.css?1737726347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737726347" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737726347" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737726347" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737726347" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737726347" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737726347"></script>
+    <link href="../../css/fontawesome-all.min.css?1737975341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737975341" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737975341" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737975341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737975341" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737975341" rel="stylesheet">
+    <link href="../../css/fonts.css?1737975341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737975341" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737975341" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737975341" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737975341" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737975341" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737975341"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -261,12 +261,12 @@ Vérifiez qu&rsquo;il compile et qu&rsquo;il affiche <code>&quot;Craow&quot;</co
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -276,6 +276,7 @@ Vérifiez qu&rsquo;il compile et qu&rsquo;il affiche <code>&quot;Craow&quot;</co
     </div>
 
 </div>
+
 <ol start="2">
 <li>Utilisez la fonction <code>std::getline</code> pour récupérer la ligne de texte entrée par l&rsquo;utilisateur et affichez-la dans la console.</li>
 </ol>
@@ -283,12 +284,12 @@ Vérifiez qu&rsquo;il compile et qu&rsquo;il affiche <code>&quot;Craow&quot;</co
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -310,6 +311,7 @@ Pour utiliser <code>std::string</code> et <code>std::getline</code>, on doit pen
     </div>
 
 </div>
+
 <ol start="3">
 <li>Ajoutez une boucle au programme de manière à ce que le programme répète les phrases de l&rsquo;utilisateur, précédées de <code>&quot;Craow&quot;</code>, jusqu&rsquo;à ce qu&rsquo;il entre une ligne vide.</li>
 </ol>
@@ -317,12 +319,12 @@ Pour utiliser <code>std::string</code> et <code>std::getline</code>, on doit pen
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -354,6 +356,7 @@ On peut vérifier cette condition pour s&rsquo;échapper d&rsquo;une boucle infi
     </div>
 
 </div>
+
 <ol start="4">
 <li>Vous allez maintenant stocker l&rsquo;intégralité des phrases de l&rsquo;utilisateur dans un tableau.<br>
 Ce n&rsquo;est qu&rsquo;après que l&rsquo;utilisateur ait entré une ligne vide que le perroquet répétera chacune des phrases.</li>
@@ -362,12 +365,12 @@ Ce n&rsquo;est qu&rsquo;après que l&rsquo;utilisateur ait entré une ligne vide
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -412,6 +415,7 @@ Ce n&rsquo;est qu&rsquo;après que l&rsquo;utilisateur ait entré une ligne vide
     </div>
 
 </div>
+
 <ol start="5">
 <li>Supprimez maintenant votre tableau de <code>string</code> et utilisez à la place un <code>stringstream</code> pour stocker le résultat à afficher à la fin.</li>
 </ol>
@@ -419,12 +423,12 @@ Ce n&rsquo;est qu&rsquo;après que l&rsquo;utilisateur ait entré une ligne vide
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -459,6 +463,7 @@ On construit chaque ligne du perroquet à l&rsquo;intérieur de la boucle, et on
     </div>
 
 </div>
+
 
   <footer class="footline">
   </footer>
@@ -561,9 +566,9 @@ On construit chaque ligne du perroquet à l&rsquo;intérieur de la boucle, et on
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737726347" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737726347" defer></script>
-    <script src="../../js/theme.js?1737726347" defer></script>
+    <script src="../../js/clipboard.min.js?1737975341" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737975341" defer></script>
+    <script src="../../js/theme.js?1737975341" defer></script>
 
 
 

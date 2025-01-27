@@ -5,44 +5,44 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.128.0">
     <meta name="generator" content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619">
-    <meta name="description" content="Le compilateur fournit des implémentations par défaut pour les éléments suivantes.
-Destructeur Constructeur de copie Opérateur d’affectation par copie Constructeur de déplacement Opérateur d’affectation par déplacement Ces cinq éléments sont inter-dépendants parce qu’ils définissent la façon dont votre classe va gérer ses ressources.
-Règle des 0, 3 ou 5 (Rule of 0/3/5) Pour n’importe quelle classe, il faut définir à la main :
-aucun des cinq éléments ci-dessus; les trois premiers (destructeur, constructeur de copie et opérateur d’affectation par copie); ou les cinq.">
+    <meta name="description" content="Le compilateur fournit des implémentations par défaut pour les éléments suivants.
+Destructeur Constructeur de copie Opérateur d’affectation par copie Constructeur de déplacement Opérateur d’affectation par déplacement Règle des 0, 3 ou 5 (Rule of 0/3/5) Pour une classe donnée, il faut généralement définir à la main :
+aucun des cinq éléments ci-dessus; les trois premiers (destructeur, constructeur de copie et opérateur d’affectation par copie); ou les cinq. Pourquoi ?
+Parce que ces cinq éléments sont interdépendants.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Règle des 0, 3 ou 5 :: C&#43;&#43;">
-    <meta name="twitter:description" content="Le compilateur fournit des implémentations par défaut pour les éléments suivantes.
-Destructeur Constructeur de copie Opérateur d’affectation par copie Constructeur de déplacement Opérateur d’affectation par déplacement Ces cinq éléments sont inter-dépendants parce qu’ils définissent la façon dont votre classe va gérer ses ressources.
-Règle des 0, 3 ou 5 (Rule of 0/3/5) Pour n’importe quelle classe, il faut définir à la main :
-aucun des cinq éléments ci-dessus; les trois premiers (destructeur, constructeur de copie et opérateur d’affectation par copie); ou les cinq.">
-    <meta property="og:url" content="/chapter4/5-ruleof/index.html">
+    <meta name="twitter:description" content="Le compilateur fournit des implémentations par défaut pour les éléments suivants.
+Destructeur Constructeur de copie Opérateur d’affectation par copie Constructeur de déplacement Opérateur d’affectation par déplacement Règle des 0, 3 ou 5 (Rule of 0/3/5) Pour une classe donnée, il faut généralement définir à la main :
+aucun des cinq éléments ci-dessus; les trois premiers (destructeur, constructeur de copie et opérateur d’affectation par copie); ou les cinq. Pourquoi ?
+Parce que ces cinq éléments sont interdépendants.">
+    <meta property="og:url" content="/chapter4/5-ruleof035/index.html">
     <meta property="og:site_name" content="C&#43;&#43;">
     <meta property="og:title" content="Règle des 0, 3 ou 5 :: C&#43;&#43;">
-    <meta property="og:description" content="Le compilateur fournit des implémentations par défaut pour les éléments suivantes.
-Destructeur Constructeur de copie Opérateur d’affectation par copie Constructeur de déplacement Opérateur d’affectation par déplacement Ces cinq éléments sont inter-dépendants parce qu’ils définissent la façon dont votre classe va gérer ses ressources.
-Règle des 0, 3 ou 5 (Rule of 0/3/5) Pour n’importe quelle classe, il faut définir à la main :
-aucun des cinq éléments ci-dessus; les trois premiers (destructeur, constructeur de copie et opérateur d’affectation par copie); ou les cinq.">
+    <meta property="og:description" content="Le compilateur fournit des implémentations par défaut pour les éléments suivants.
+Destructeur Constructeur de copie Opérateur d’affectation par copie Constructeur de déplacement Opérateur d’affectation par déplacement Règle des 0, 3 ou 5 (Rule of 0/3/5) Pour une classe donnée, il faut généralement définir à la main :
+aucun des cinq éléments ci-dessus; les trois premiers (destructeur, constructeur de copie et opérateur d’affectation par copie); ou les cinq. Pourquoi ?
+Parce que ces cinq éléments sont interdépendants.">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Copie et déplacement">
     <meta itemprop="name" content="Règle des 0, 3 ou 5 :: C&#43;&#43;">
-    <meta itemprop="description" content="Le compilateur fournit des implémentations par défaut pour les éléments suivantes.
-Destructeur Constructeur de copie Opérateur d’affectation par copie Constructeur de déplacement Opérateur d’affectation par déplacement Ces cinq éléments sont inter-dépendants parce qu’ils définissent la façon dont votre classe va gérer ses ressources.
-Règle des 0, 3 ou 5 (Rule of 0/3/5) Pour n’importe quelle classe, il faut définir à la main :
-aucun des cinq éléments ci-dessus; les trois premiers (destructeur, constructeur de copie et opérateur d’affectation par copie); ou les cinq.">
-    <meta itemprop="wordCount" content="806">
+    <meta itemprop="description" content="Le compilateur fournit des implémentations par défaut pour les éléments suivants.
+Destructeur Constructeur de copie Opérateur d’affectation par copie Constructeur de déplacement Opérateur d’affectation par déplacement Règle des 0, 3 ou 5 (Rule of 0/3/5) Pour une classe donnée, il faut généralement définir à la main :
+aucun des cinq éléments ci-dessus; les trois premiers (destructeur, constructeur de copie et opérateur d’affectation par copie); ou les cinq. Pourquoi ?
+Parce que ces cinq éléments sont interdépendants.">
+    <meta itemprop="wordCount" content="866">
     <title>Règle des 0, 3 ou 5 :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1737726347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737726347" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737726347" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737726347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737726347" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737726347" rel="stylesheet">
-    <link href="../../css/fonts.css?1737726347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737726347" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737726347" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737726347" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737726347" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737726347" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737726347"></script>
+    <link href="../../css/fontawesome-all.min.css?1737975341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737975341" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737975341" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737975341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737975341" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737975341" rel="stylesheet">
+    <link href="../../css/fonts.css?1737975341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737975341" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737975341" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737975341" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737975341" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737975341" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737975341"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -63,7 +63,7 @@ aucun des cinq éléments ci-dessus; les trois premiers (destructeur, constructe
       window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../chapter4/5-ruleof/index.html">
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../chapter4/5-ruleof035/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -77,15 +77,11 @@ aucun des cinq éléments ci-dessus; les trois premiers (destructeur, constructe
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#quand-sommes-nous-dans-le-cas-0-">Quand sommes-nous dans le cas 0 ?</a></li>
-    <li><a href="#quand-sommes-nous-dans-le-cas-3-">Quand sommes-nous dans le cas 3 ?</a>
+    <li>
       <ul>
-        <li></li>
-      </ul>
-    </li>
-    <li><a href="#quand-sommes-nous-dans-le-cas-5-">Quand sommes nous dans le cas 5 ?</a>
-      <ul>
-        <li></li>
+        <li><a href="#règle-des-0">Règle des 0</a></li>
+        <li><a href="#règle-des-3">Règle des 3</a></li>
+        <li><a href="#règle-des-5">Règle des 5</a></li>
       </ul>
     </li>
   </ul>
@@ -124,7 +120,7 @@ aucun des cinq éléments ci-dessus; les trois premiers (destructeur, constructe
 
 <h1 id="règle-des-0-3-ou-5">Règle des 0, 3 ou 5</h1>
 
-<p>Le compilateur fournit des implémentations par défaut pour les éléments suivantes.</p>
+<p>Le compilateur fournit des implémentations par défaut pour les éléments suivants.</p>
 <ol>
 <li>Destructeur</li>
 <li>Constructeur de copie</li>
@@ -132,14 +128,12 @@ aucun des cinq éléments ci-dessus; les trois premiers (destructeur, constructe
 <li>Constructeur de déplacement</li>
 <li>Opérateur d&rsquo;affectation par déplacement</li>
 </ol>
-<p>Ces cinq éléments sont inter-dépendants parce qu&rsquo;ils définissent la façon
-dont votre classe va gérer ses ressources.</p>
 <div class="box notices cstyle default">
   <div class="box-label">
     Règle des 0, 3 ou 5 (Rule of 0/3/5)
   </div>
   <div class="box-content">
-<p>Pour n&rsquo;importe quelle classe, il faut définir à la main :</p>
+<p>Pour une classe donnée, il faut généralement définir à la main :</p>
 <ul>
 <li><strong>aucun</strong> des cinq éléments ci-dessus;</li>
 <li>les <strong>trois</strong> premiers (destructeur, constructeur de copie et opérateur d&rsquo;affectation par copie);</li>
@@ -147,19 +141,23 @@ dont votre classe va gérer ses ressources.</p>
 </ul>
   </div>
 </div>
-<p>Pourquoi ?</p>
+<p>Pourquoi ?<br>
+Parce que ces cinq éléments sont interdépendants. Ils définissent la façon dont la classe interagit avec la mémoire.
+Pour éviter les problèmes ces interactions doivent êtres cohérentes entre elles.</p>
 <div class="box notices cstyle warning">
   <div class="box-label">
     <i class="fa-fw fas fa-exclamation-triangle"></i> Avertissement
   </div>
   <div class="box-content">
-<p>La règle des 0, 3 ou 5 n&rsquo;est pas absolue et seul votre jugement permet de savoir ce dont vous avez besoin.</p>
+<p>La règle des 0, 3 ou 5 n&rsquo;est pas absolue et seul votre jugement permet de savoir ce dont vous avez besoin.<br>
+En particulier, il suffit parfois de se poser la question: est-ce que ma modification impacte l&rsquo;un des quatre autres éléments?</p>
   </div>
 </div>
-<h2 id="quand-sommes-nous-dans-le-cas-0-">Quand sommes-nous dans le cas 0 ?</h2>
-<p>La plupart des classes ne nécessite pas de modifier.
-Cela signifie qu&rsquo;elles suivent le comportement par défaut</p>
-<h2 id="quand-sommes-nous-dans-le-cas-3-">Quand sommes-nous dans le cas 3 ?</h2>
+<h3 id="règle-des-0">Règle des 0</h3>
+<p>La plupart des classes suivent la règle des 0, c&rsquo;est-à-dire ne modifient aucun des cinq éléments en haut de page.
+En effet, le comportement généré par les implémentations par défaut correspond la gestion usuelle de la mémoire et satisfait la plupart des cas.</p>
+<h3 id="règle-des-3">Règle des 3</h3>
+<p>Au contraire, on veut que certaines classes ne suivent pas la gestion par défaut de la mémoire.  Hormis les exercices sadiques que nous vous imposons, il s&rsquo;agit usuellement des classes qui définissent des structures de données.</p>
 <h5 id="exercice">Exercice</h5>
 <p>Par exemple, le fichier <a href="../RuleOfThree.cpp">RuleOfThree.cpp</a> contient une classe
 qui stocke un entier à travers un pointeur ownant.
@@ -191,12 +189,12 @@ indiqué ci-dessous.</p>
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -212,17 +210,18 @@ et donc l&rsquo;affichage de <code>*(r.int_ptr)</code></p>
     </div>
 
 </div>
+
 <p>Ecrivez le code du constructeur par copie de <code>RuleOfThree</code> pour régler ce problème.</p>
 
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -240,6 +239,7 @@ et donc l&rsquo;affichage de <code>*(r.int_ptr)</code></p>
     </div>
 
 </div>
+
 <p>Des problèmes vont aussi se produire en cas d&rsquo;utilisation de l&rsquo;opérateur d&rsquo;affectation par copie. Quel problème va-t-on rencontrer avec le code suivant?</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="n">RuleOfThree</span> <span class="n">r</span><span class="p">{</span><span class="mi">42</span><span class="p">};</span>
@@ -257,12 +257,12 @@ problème mémoire.</p>
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -275,17 +275,18 @@ Notre code produit une fuite mémoire, comme nous l&rsquo;indique Valgrind dans 
     </div>
 
 </div>
+
 <p>Ecrivez le code de l&rsquo;opérateur d&rsquo;affectation par copie de <code>RuleOfThree</code> pour résoudre ces problèmes.</p>
 
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -305,7 +306,8 @@ Notre code produit une fuite mémoire, comme nous l&rsquo;indique Valgrind dans 
     </div>
 
 </div>
-<h2 id="quand-sommes-nous-dans-le-cas-5-">Quand sommes nous dans le cas 5 ?</h2>
+
+<h3 id="règle-des-5">Règle des 5</h3>
 <p>Les classes qui suivent la règle des 5 sont celles qui suivent déjà la règle
 des 3 et qui veulent tout de même pouvoir être déplacée efficacement.</p>
 <p>En effet, quand on définit un des trois éléments de la règle des 3, le
@@ -321,12 +323,12 @@ l&rsquo;objet pointé est petit.</p>
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher toto<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer toto<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -362,6 +364,7 @@ l&rsquo;objet pointé est petit.</p>
 
 </div>
 
+
   <footer class="footline">
   </footer>
 </article>
@@ -391,7 +394,7 @@ l&rsquo;objet pointé est petit.</p>
             <li class="" data-nav-id="/chapter4/2-copy/index.html"><a class="padding" href="../../chapter4/2-copy/index.html"><span class="presection-icon">🧬</span>Copie<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter4/3-move/index.html"><a class="padding" href="../../chapter4/3-move/index.html"><span class="presection-icon">🚚</span>Déplacement<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter4/4-assign/index.html"><a class="padding" href="../../chapter4/4-assign/index.html"><span class="presection-icon">📝</span>Affectation<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active " data-nav-id="/chapter4/5-ruleof/index.html"><a class="padding" href="../../chapter4/5-ruleof/index.html"><span class="presection-icon">📐</span>Règle des 0, 3 ou 5<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/chapter4/5-ruleof035/index.html"><a class="padding" href="../../chapter4/5-ruleof035/index.html"><span class="presection-icon">📐</span>Règle des 0, 3 ou 5<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter4/6-copy-minim/index.html"><a class="padding" href="../../chapter4/6-copy-minim/index.html"><span class="presection-icon">🔥</span>Minimiser les copies<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter4/9-test/index.html"><a class="padding" href="../../chapter4/9-test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
@@ -426,7 +429,7 @@ l&rsquo;objet pointé est petit.</p>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Langue</label>
                     <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
-                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../chapter4/5-ruleof/index.html" lang="fr" selected>Français</option>
+                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../chapter4/5-ruleof035/index.html" lang="fr" selected>Français</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -464,9 +467,9 @@ l&rsquo;objet pointé est petit.</p>
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737726347" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737726347" defer></script>
-    <script src="../../js/theme.js?1737726347" defer></script>
+    <script src="../../js/clipboard.min.js?1737975341" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737975341" defer></script>
+    <script src="../../js/theme.js?1737975341" defer></script>
 
 
 

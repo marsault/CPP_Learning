@@ -27,18 +27,18 @@ Affichez ensuite le contenu de cet objet grâce à l’opérateur &lt;&lt;.">
     <meta itemprop="description" content="Dans cette section vous verrez comment implémenter un constructeur de copie et un opérateur d’assignation. On compilera le fichier Person.cpp.
 Constructeur de copie Dans la fonction main, instanciez à la suite du code existant une nouvelle instance de Person et initialisée là à partir de la variable batman. Cela se fait exactement de la même manière que si vous souhaitiez créer une copie d’une variable de type int.
 Affichez ensuite le contenu de cet objet grâce à l’opérateur &lt;&lt;.">
-    <meta itemprop="wordCount" content="731">
+    <meta itemprop="wordCount" content="711">
     <title>Copie :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1737726347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737726347" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737726347" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737726347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737726347" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737726347" rel="stylesheet">
-    <link href="../../css/fonts.css?1737726347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737726347" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737726347" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737726347" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737726347" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737726347" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737726347"></script>
+    <link href="../../css/fontawesome-all.min.css?1737975341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737975341" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737975341" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737975341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737975341" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737975341" rel="stylesheet">
+    <link href="../../css/fonts.css?1737975341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737975341" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737975341" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737975341" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737975341" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737975341" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737975341"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -124,12 +124,12 @@ Affichez ensuite le contenu de cet objet grâce à l&rsquo;opérateur <code>&lt;
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -140,6 +140,7 @@ Affichez ensuite le contenu de cet objet grâce à l&rsquo;opérateur <code>&lt;
     </div>
 
 </div>
+
 <hr>
 <p>Vous devriez obtenir le même affichage en sortie pour Batman et sa copie.</p>
 <p>Nous aimerions maintenant avoir un clône plutôt qu&rsquo;une copie. C&rsquo;est-à-dire qu&rsquo;au moment de l&rsquo;instanciation du clône, ce serait bien qu&rsquo;il vienne de naître, plutôt qu&rsquo;il ait déjà 23 ans.</p>
@@ -177,12 +178,12 @@ Vérifiez que vous obtenez le même résultat que précédemment.</p>
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -196,6 +197,7 @@ Vérifiez que vous obtenez le même résultat que précédemment.</p>
     </div>
 
 </div>
+
 <hr>
 <p>Supprimez l&rsquo;initialisation de l&rsquo;attribut <code>_age</code> de la liste d&rsquo;initialisation. De cette manière, le compilateur réalisera l&rsquo;initialisation de <code>_age</code> à partir de son class-initializer (c&rsquo;est-à-dire le <code>= 0u</code>).<br>
 Testez le programme pour vous assurer que le clône a bien 0 an après son instanciation.</p>
@@ -203,12 +205,12 @@ Testez le programme pour vous assurer que le clône a bien 0 an après son insta
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -233,18 +235,19 @@ Testez le programme pour vous assurer que le clône a bien 0 an après son insta
     </div>
 
 </div>
+
 <hr>
 <p>Vous devriez avoir remarqué que l&rsquo;age de batman ne s&rsquo;affiche maintenant plus correctement.  Relisez bien votre code pour comprendre pourquoi.</p>
 
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -263,18 +266,19 @@ Notre constructeur de copie réinitialise l&rsquo;age à 0, donc <code>p</code> 
     </div>
 
 </div>
+
 <hr>
 <p>Corrigez le code pour que l&rsquo;age de Batman soit correctement affiché. Faire attention à ce que l&rsquo;age de sa copie soit toujours 0.</p>
 
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -288,6 +292,7 @@ Notre constructeur de copie réinitialise l&rsquo;age à 0, donc <code>p</code> 
     </div>
 
 </div>
+
 <h3 id="quand-le-constructeur-de-copie-est-appelé">Quand le constructeur de copie est appelé?</h3>
 <p>Pour faire court: quand le compilateur doit construire un nouvel objet
 à partir d&rsquo;une L-value.</p>
@@ -333,7 +338,7 @@ Notre constructeur de copie réinitialise l&rsquo;age à 0, donc <code>p</code> 
             <li class="active " data-nav-id="/chapter4/2-copy/index.html"><a class="padding" href="../../chapter4/2-copy/index.html"><span class="presection-icon">🧬</span>Copie<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter4/3-move/index.html"><a class="padding" href="../../chapter4/3-move/index.html"><span class="presection-icon">🚚</span>Déplacement<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter4/4-assign/index.html"><a class="padding" href="../../chapter4/4-assign/index.html"><span class="presection-icon">📝</span>Affectation<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter4/5-ruleof/index.html"><a class="padding" href="../../chapter4/5-ruleof/index.html"><span class="presection-icon">📐</span>Règle des 0, 3 ou 5<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter4/5-ruleof035/index.html"><a class="padding" href="../../chapter4/5-ruleof035/index.html"><span class="presection-icon">📐</span>Règle des 0, 3 ou 5<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter4/6-copy-minim/index.html"><a class="padding" href="../../chapter4/6-copy-minim/index.html"><span class="presection-icon">🔥</span>Minimiser les copies<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter4/9-test/index.html"><a class="padding" href="../../chapter4/9-test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
@@ -406,9 +411,9 @@ Notre constructeur de copie réinitialise l&rsquo;age à 0, donc <code>p</code> 
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737726347" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737726347" defer></script>
-    <script src="../../js/theme.js?1737726347" defer></script>
+    <script src="../../js/clipboard.min.js?1737975341" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737975341" defer></script>
+    <script src="../../js/theme.js?1737975341" defer></script>
 
 
 

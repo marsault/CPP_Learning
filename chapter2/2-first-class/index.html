@@ -31,18 +31,18 @@ int main() { // Person p; // p.set_name(&#34;Batman&#34;); // p.set_age(23); // 
 Commencez par ouvrir le dépôt d’exercices dans VSCode.
 Méthodologie Ouvrez le fichier chap-02/1-first_class.cpp, dans lequel on vous fournit le code de la fonction main.
 int main() { // Person p; // p.set_name(&#34;Batman&#34;); // p.set_age(23); // std::cout &lt;&lt; &#34;Person named &#39;&#34; &lt;&lt; p.get_name() &lt;&lt; &#34;&#39; is &#34; &lt;&lt; p.get_age() &lt;&lt; &#34; years old.">
-    <meta itemprop="wordCount" content="1699">
+    <meta itemprop="wordCount" content="1679">
     <title>Première classe :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1737726347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737726347" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737726347" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737726347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737726347" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737726347" rel="stylesheet">
-    <link href="../../css/fonts.css?1737726347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737726347" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737726347" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737726347" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737726347" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737726347" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737726347"></script>
+    <link href="../../css/fontawesome-all.min.css?1737975341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737975341" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737975341" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737975341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737975341" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737975341" rel="stylesheet">
+    <link href="../../css/fonts.css?1737975341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737975341" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737975341" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737975341" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737975341" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737975341" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737975341"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -172,12 +172,12 @@ Compilez et testez que le programme se lance correctement.</p>
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -199,6 +199,7 @@ Compilez et testez que le programme se lance correctement.</p>
     </div>
 
 </div>
+
 <hr>
 <h3 id="définition-des-membres-attributs-et-fonctions-membres">Définition des membres (attributs et fonctions-membres)</h3>
 <p>Pour définir des membres dans une classe, il faut dans un premier temps choisir leur visibilité. En C++, cela se fait à l&rsquo;aide des mots-clefs <code>public</code>, <code>private</code> et <code>protected</code>. Dans ce chapitre, nous n&rsquo;utiliserons que les deux premiers.</p>
@@ -238,12 +239,12 @@ Quelle visibilité avez-vous choisi pour <code>_name</code> et <code>set_name</c
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -263,6 +264,7 @@ En revanche, <code>set_name</code> doit être publique, car on l&rsquo;utilise d
     </div>
 
 </div>
+
 <hr>
 <p><strong>Comment s&rsquo;assurer que le code est juste, sachant que la ligne qui affiche le résultat est toujours commentée ?</strong></p>
 <p>C&rsquo;est la raison pour laquelle je vous ai demandé d&rsquo;installer un vrai IDE. Nous allons voir comment inspecter les valeurs du programme au cours de l&rsquo;exécution à l&rsquo;aide du débuggeur.</p>
@@ -284,15 +286,15 @@ Par exemple, si vous avez suivi la correction, vous pouvez indiquer :</p>
 </ul>
 <p>Ici, vous allez placer un breakpoint sur l&rsquo;instruction <code>return 0;</code> du <code>main</code>.
 Pour cela, placez votre curseur sur la ligne en question et appuyez sur F9. Vous pouvez aussi cliquer directement à gauche du numéro de ligne.
-<a href="#R-image-48010fdd1baf5dd2fafb7e175bbe64d7" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-breakpoint.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-48010fdd1baf5dd2fafb7e175bbe64d7"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-breakpoint.png"></a></p>
+<a href="#R-image-1babb2ce94dbc24719ac0436764ca055" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-breakpoint.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1babb2ce94dbc24719ac0436764ca055"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-breakpoint.png"></a></p>
 <p>Utilisez ensuite F5 pour lancer le programme.
 L&rsquo;éditeur devrait prendre cette apparence, indiquant que le programme est en pause juste avant l&rsquo;exécution de l&rsquo;instruction surlignée :
-<a href="#R-image-a6d0c2b753f820cb3d99191b6691fe08" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-breaking.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a6d0c2b753f820cb3d99191b6691fe08"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-breaking.png"></a></p>
+<a href="#R-image-9a0d0f16bde73bba607cd0c107697cef" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-breaking.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9a0d0f16bde73bba607cd0c107697cef"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-breaking.png"></a></p>
 <p>Ouvrez maintenant le panneau d&rsquo;exécution en allant dans <code>View &gt; Run</code>.
-<a href="#R-image-563adf1febc62e9ea5f4cc3fbe1c057f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-locals.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-563adf1febc62e9ea5f4cc3fbe1c057f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-locals.png"></a></p>
+<a href="#R-image-f29247889e906d51788ba4313826ed12" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-locals.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f29247889e906d51788ba4313826ed12"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-locals.png"></a></p>
 <p>Ce panneau contient 3 sections :</p>
 <ul>
 <li>La section <strong>Variables</strong>, dans laquelle vous pouvez voir le contenu de chacune des variables locales à votre fonction.</li>
@@ -309,12 +311,12 @@ Quel type avez-vous utilisé pour l&rsquo;âge de Batman ?</p>
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -344,39 +346,41 @@ Quel type avez-vous utilisé pour l&rsquo;âge de Batman ?</p>
     </div>
 
 </div>
+
 <p>Testez à nouveau votre code avec le débuggeur. En plus du breakpoint final, ajoutez un breakpoint supplémentaire de manière à vous arrêter juste après l&rsquo;exécution du <code>set_name</code> et juste avant l&rsquo;exécution du <code>set_age</code>.</p>
 
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
             <p>Pour s&rsquo;arrêter au bon endroit, il faut placer le breakpoint sur la ligne de l&rsquo;instruction <code>p.set_age(23);</code>.
-<a href="#R-image-de3d0107508177ed1362e12548c4e96c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chap2-ex1-break.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-de3d0107508177ed1362e12548c4e96c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chap2-ex1-break.png"></a></p>
+<a href="#R-image-f9bc6c1718781456a5dae978a47680da" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chap2-ex1-break.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f9bc6c1718781456a5dae978a47680da"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chap2-ex1-break.png"></a></p>
 
         </div>
     </div>
 
 </div>
+
 <p>Si vous inspectez la valeur de <code>p._age</code> avant l&rsquo;exécution de <code>set_age</code>, il est possible que celle-ci soit complètement aléatoire. Eh oui, de la même manière que les variables locales de types fondamentaux, il faut également initialiser les attributs de types fondamentaux de vos classes. Faites les changements nécessaires pour que l&rsquo;âge de Batman vaille 0 tant que celui-ci n&rsquo;a pas été modifié. Testez à nouveau.</p>
 
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -396,6 +400,7 @@ Quel type avez-vous utilisé pour l&rsquo;âge de Batman ?</p>
     </div>
 
 </div>
+
 <hr>
 <h3 id="fonction-membre-constante">Fonction-membre constante</h3>
 <p>Il ne reste plus qu&rsquo;une seule ligne à décommenter. Vous devrez ici implémenter deux <strong>accesseurs</strong> (ou <strong>getters</strong>), un pour le nom et un pour l&rsquo;âge.</p>
@@ -431,12 +436,12 @@ Par conséquent, il est fortement recommandé de se <strong>relire systématique
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -450,6 +455,7 @@ Par conséquent, il est fortement recommandé de se <strong>relire systématique
     </div>
 
 </div>
+
 <hr>
 <h3 id="synthèse">Synthèse</h3>
 <ul>
@@ -561,9 +567,9 @@ Par conséquent, il est fortement recommandé de se <strong>relire systématique
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737726347" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737726347" defer></script>
-    <script src="../../js/theme.js?1737726347" defer></script>
+    <script src="../../js/clipboard.min.js?1737975341" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737975341" defer></script>
+    <script src="../../js/theme.js?1737975341" defer></script>
 
 
 

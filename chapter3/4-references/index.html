@@ -29,16 +29,16 @@ Modifier un argument Le premier cas d’utilisation des références avait déj�
 Pour rappel, lorsque vous passez un objet par valeur en paramètre d’une fonction, l’intégralité de l’instance est copiée !">
     <meta itemprop="wordCount" content="304">
     <title>Usage des références :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1737726347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737726347" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737726347" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737726347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737726347" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737726347" rel="stylesheet">
-    <link href="../../css/fonts.css?1737726347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737726347" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737726347" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737726347" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737726347" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737726347" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737726347"></script>
+    <link href="../../css/fontawesome-all.min.css?1737975341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737975341" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737975341" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737975341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737975341" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737975341" rel="stylesheet">
+    <link href="../../css/fonts.css?1737975341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737975341" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737975341" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737975341" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737975341" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737975341" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737975341"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -197,12 +197,12 @@ En revanche, dans le cas d&rsquo;objets qui réalisent des <strong>allocations d
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -237,7 +237,8 @@ Si on utilisait une référence non-constante, cette garantie ne serait plus val
         </div>
     </div>
 
-</div></p>
+</div>
+</p>
 <h4 id="deuxième-exemple--valeur-de-retour">Deuxième exemple : valeur de retour</h4>
 <div class="highlight wrap-code" hl_lines=[['\a' '\a'] ['\x11' '\x11']]><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Person</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -267,12 +268,12 @@ Comment devez-vous modifier les deux lignes en rouge afin qu&rsquo;aucune copie 
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -314,7 +315,8 @@ Dans notre cas, cela fonctionne car <code>_name</code> est un attribut de la cla
         </div>
     </div>
 
-</div></p>
+</div>
+</p>
 <hr>
 <h3 id="nommer-des-expressions">Nommer des expressions</h3>
 <p>Pour clarifier le code, certains programmeurs ont tendance à vouloir mettre des commentaires partout.<br>
@@ -499,12 +501,12 @@ Si vous ne trouvez pas, essayez de déterminer où sont instanciées et désinst
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -517,6 +519,7 @@ Conclusion, on a généré un undefined behavior !</p>
     </div>
 
 </div>
+
 <hr>
 <h3 id="synthèse">Synthèse</h3>
 <p>Les références permettent :</p>
@@ -534,7 +537,7 @@ Conclusion, on a généré un undefined behavior !</p>
 flowchart TD;
     Q1(Est-ce que la fonction est censée avoir un effet de bord sur le paramètre ?)
     Ref[Passage par référence non-constante]
-    Q2(&#34;Est-ce que la copie du parametre est couteux?&lt;br/&gt;(allocation dynamique, appels-système, calculs complexes, ...)&#34;)
+    Q2(&#34;Est-ce que la copie du parametre est couteuse?&lt;br/&gt;(allocation dynamique, appels-système, calculs complexes, ...)&#34;)
     CRef[Passage par reference constante]
     Value[Passage par valeur]
     Q1 --&gt;|Oui| Ref
@@ -644,23 +647,23 @@ flowchart TD;
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737726347" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737726347" defer></script>
-    <script src="../../js/d3/d3-color.min.js?1737726347" defer></script>
-    <script src="../../js/d3/d3-dispatch.min.js?1737726347" defer></script>
-    <script src="../../js/d3/d3-drag.min.js?1737726347" defer></script>
-    <script src="../../js/d3/d3-ease.min.js?1737726347" defer></script>
-    <script src="../../js/d3/d3-interpolate.min.js?1737726347" defer></script>
-    <script src="../../js/d3/d3-selection.min.js?1737726347" defer></script>
-    <script src="../../js/d3/d3-timer.min.js?1737726347" defer></script>
-    <script src="../../js/d3/d3-transition.min.js?1737726347" defer></script>
-    <script src="../../js/d3/d3-zoom.min.js?1737726347" defer></script>
-    <script src="../../js/js-yaml.min.js?1737726347" defer></script>
-    <script src="../../js/mermaid.min.js?1737726347" defer></script>
+    <script src="../../js/clipboard.min.js?1737975341" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737975341" defer></script>
+    <script src="../../js/d3/d3-color.min.js?1737975341" defer></script>
+    <script src="../../js/d3/d3-dispatch.min.js?1737975341" defer></script>
+    <script src="../../js/d3/d3-drag.min.js?1737975341" defer></script>
+    <script src="../../js/d3/d3-ease.min.js?1737975341" defer></script>
+    <script src="../../js/d3/d3-interpolate.min.js?1737975341" defer></script>
+    <script src="../../js/d3/d3-selection.min.js?1737975341" defer></script>
+    <script src="../../js/d3/d3-timer.min.js?1737975341" defer></script>
+    <script src="../../js/d3/d3-transition.min.js?1737975341" defer></script>
+    <script src="../../js/d3/d3-zoom.min.js?1737975341" defer></script>
+    <script src="../../js/js-yaml.min.js?1737975341" defer></script>
+    <script src="../../js/mermaid.min.js?1737975341" defer></script>
     <script>
       window.themeUseMermaid = JSON.parse("{}");
     </script>
-    <script src="../../js/theme.js?1737726347" defer></script>
+    <script src="../../js/theme.js?1737975341" defer></script>
 
 
 

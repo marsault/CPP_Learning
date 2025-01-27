@@ -27,18 +27,18 @@ main.cpp, qui contient une fonction main déjà écrite Rectangle.h, qui contien
     <meta itemprop="description" content="Cet exercice vous permettra de découvrir :
 comment écrire des headers en C&#43;&#43;, comment extraire l’implémentation des fonctions d’une classe en dehors de cette classe, à quoi correspondent les membres statiques d’une classe et comment les définir, comment déléguer un appel à un autre constructeur. Séparer l’implémentation des fonctions-membres Ouvrez le dossier chap-02/4-modules. Celui-ci est composé de 3 fichiers :
 main.cpp, qui contient une fonction main déjà écrite Rectangle.h, qui contient une classe Rectangle, Rectangle.">
-    <meta itemprop="wordCount" content="835">
+    <meta itemprop="wordCount" content="823">
     <title>Modularité :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1737726347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737726347" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737726347" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737726347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737726347" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737726347" rel="stylesheet">
-    <link href="../../css/fonts.css?1737726347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737726347" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737726347" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737726347" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737726347" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737726347" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737726347"></script>
+    <link href="../../css/fontawesome-all.min.css?1737975341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737975341" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1737975341" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1737975341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737975341" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1737975341" rel="stylesheet">
+    <link href="../../css/fonts.css?1737975341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737975341" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1737975341" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1737975341" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1737975341" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1737975341" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1737975341"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -158,12 +158,12 @@ Vérifiez ensuite que le fichier <code>main.cpp</code> compile, mais que le prog
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -195,6 +195,7 @@ En revanche, en exécutant ensuite <code>g++ -o rectangle main.o</code>, on obti
     </div>
 
 </div>
+
 <p>Pour définir une fonction-membre en dehors de sa classe, il suffit de préfixer l&rsquo;identifiant de la fonction par le nom de la classe, suivi de <code>::</code>.<br>
 Par exemple :</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">ClassName</span>
@@ -216,12 +217,12 @@ Compilez et testez le programme.</li>
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -243,6 +244,7 @@ Compilez et testez le programme.</li>
     </div>
 
 </div>
+
 <hr>
 <h3 id="petit-apparté-relatif-à-lédition-des-liens">Petit apparté relatif à l&rsquo;édition des liens</h3>
 <p>Comme vous avez pu le constater, votre programme compile.
@@ -271,12 +273,12 @@ Vous placerez l&rsquo;implémentation de ce constructeur dans <code>Rectangle.cp
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -307,6 +309,7 @@ Vous placerez l&rsquo;implémentation de ce constructeur dans <code>Rectangle.cp
     </div>
 
 </div>
+
 <p>Le constructeur que vous venez de créer pourrait en fait appeler le second constructeur, en lui passant <code>size</code> deux fois.</p>
 <p>Pour appeler un constructeur depuis un autre constructeur, il faut appeler le premier constructeur depuis la liste d&rsquo;initialisation du second. Cela donne donc quelque chose comme ça :</p>
 <div class="highlight wrap-code" hl_lines=[['\b' '\b']]><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">SomeClass</span>
@@ -329,12 +332,12 @@ Vous placerez l&rsquo;implémentation de ce constructeur dans <code>Rectangle.cp
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -346,6 +349,7 @@ Vous placerez l&rsquo;implémentation de ce constructeur dans <code>Rectangle.cp
     </div>
 
 </div>
+
 <div class="box notices cstyle info">
   <div class="box-label">
     <i class="fa-fw fas fa-info-circle"></i> Information
@@ -384,12 +388,12 @@ Vous pouvez utiliser la syntaxe suivante pour déclarer un attribut statique : <
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -405,6 +409,7 @@ Vous pouvez utiliser la syntaxe suivante pour déclarer un attribut statique : <
     </div>
 
 </div>
+
 <ol start="2">
 <li>Ajoutez maintenant un constructeur par défaut à votre classe, qui déléguera la construction au constructeur à 1 paramètre en lui passant <code>_default_size</code>.<br>
 À ce stade, votre programme ne devrait plus pouvoir compiler à cause d&rsquo;une erreur de linker.<br>
@@ -414,12 +419,12 @@ Vérifiez néanmoins que chacun de vos <code>.cpp</code> compilent correctement.
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -444,6 +449,7 @@ Vérifiez néanmoins que chacun de vos <code>.cpp</code> compilent correctement.
     </div>
 
 </div>
+
 <p>L&rsquo;erreur indique que la variable <code>Rectangle::_default_size</code> n&rsquo;est pas définie.
 Et en effet, vous n&rsquo;avez fait que la moitié du travail&hellip;<br>
 La ligne <code>static float _default_size;</code> dans <code>Rectangle</code> est une déclaration d&rsquo;attribut statique, et non pas une définition.</p>
@@ -459,12 +465,12 @@ Compilez et testez votre programme avec un débuggeur de manière à vous assure
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -476,6 +482,7 @@ Mais c&rsquo;est quand même plus clair de spécifier une valeur d&rsquo;initial
     </div>
 
 </div>
+
 <ol start="4">
 <li>Si vous ne l&rsquo;avez pas déjà fait, ajoutez dans le <code>main</code> les instructions pour instancier une série de <code>Rectangle</code> à partir du constructeur par défaut.<br>
 Compilez et vérifiez à l&rsquo;aide d&rsquo;un débuggeur que les rectangles créés ont bien tous pour taille la valeur contenue dans <code>_default_size</code>.</li>
@@ -490,12 +497,12 @@ La déclaration se transforme alors magiquement en définition.</p>
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -512,6 +519,7 @@ La déclaration se transforme alors magiquement en définition.</p>
     </div>
 
 </div>
+
 <ol start="6">
 <li>Vous allez maintenant modifier la valeur de <code>_default_size</code> entre les différentes instanciations de vos rectangles.<br>
 Pour accéder à la valeur de <code>_default_size</code> ou la modifier en dehors de la classe <code>Rectangle</code>, il faut préfixer par <code>Rectangle::</code>.<br>
@@ -521,12 +529,12 @@ Testez que les tailles de vos rectangles sont bien initialisées avec la derniè
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -544,6 +552,7 @@ Testez que les tailles de vos rectangles sont bien initialisées avec la derniè
     </div>
 
 </div>
+
 <hr>
 <h4 id="fonction-membre-statique">Fonction-membre statique</h4>
 <p>Une fonction-membre est dite statique si elle peut être appelée sur la classe plutôt que sur une instance. Ces fonctions peuvent donc accéder à l&rsquo;ensemble des attributs statiques de la classe, mais elles ne peuvent pas accéder aux attributs d&rsquo;instance, puisqu&rsquo;on ne leur founit aucune instance au moment de l&rsquo;appel.</p>
@@ -556,12 +565,12 @@ Pour indiquer qu&rsquo;une fonction-membre est statique, il faut placer le mot-c
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -590,6 +599,7 @@ Pour indiquer qu&rsquo;une fonction-membre est statique, il faut placer le mot-c
     </div>
 
 </div>
+
 <ol start="2">
 <li>Pour appeler cette fonction depuis l&rsquo;extérieur de la classe, il faut préfixer son nom par <code>Rectangle::</code>.<br>
 Dans le <code>main</code>, remplacez les assignations de <code>_default_size</code> par des appels à <code>set_default_size</code>. Testez votre programme.</li>
@@ -598,12 +608,12 @@ Dans le <code>main</code>, remplacez les assignations de <code>_default_size</co
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -621,6 +631,7 @@ Dans le <code>main</code>, remplacez les assignations de <code>_default_size</co
     </div>
 
 </div>
+
 <hr>
 <h3 id="synthèse">Synthèse</h3>
 <ul>
@@ -735,9 +746,9 @@ Dans le <code>main</code>, remplacez les assignations de <code>_default_size</co
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737726347" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737726347" defer></script>
-    <script src="../../js/theme.js?1737726347" defer></script>
+    <script src="../../js/clipboard.min.js?1737975341" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1737975341" defer></script>
+    <script src="../../js/theme.js?1737975341" defer></script>
 
 
 
