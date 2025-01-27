@@ -8,6 +8,9 @@ weight: 4
 Les constructeurs de copie et de déplacement sont appelés quand il faut instancier un nouvel objet.
 Sur cette page, on va parler des opérateurs d'affectations, c'est-à-dire, quand on remplit un objet qui existe déjà.
 
+---
+
+
 Par exemple, dans le cas d'un entier:
 ```cpp
 int i = 0;  // Ici le compilateur alloue de la mémoire pour i et le remplit avec la valeur 0.

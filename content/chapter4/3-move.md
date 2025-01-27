@@ -74,9 +74,16 @@ MaClasse(MaClasse&& other)
 }
 ```
 
+La notation `MaClasse&&` (avec **deux** `&`) signifie **R-value-reference**. Le type `MaClasse&` (avec **une** `&`) que l'on appelle couramment une **réference**
+est en fait une **L-value-reference**.
+
 {{% notice tip %}}
 Le compilateur fournit une implémentation par défaut pour le constructeur de déplacement.  Dans beaucoup d'autres cas, le compilateur ne va pas le générer mais son implémentation par défaut suffit. On peut la rétablir avec `MaClasse(MaClasse&& other) = default;`.
 {{% /notice %}}
+
+Quand on déplace un objet (et donc quand on implémente un constructeur de déplacemnt à la main), il faut faire attention à laisser l'objet d'origine dans un état valide.\
+Pourquoi?  Parce que l'objet d'origine va sans doute être supprimé juste après, donc il faut faire attention qu'il ne supprime pas les ressources qu'on lui a pris. Il est aussi possible qu'il soit réutilisé juste après
+
 
 
 ### Quand le constructeur de déplacement est-il appelé?
@@ -85,7 +92,7 @@ Pour faire court: quand le compilateur doit construire un nouvel objet à partir
 
 En pratique, c'est surtout quand on utilise `std::move` en effet, c'est une fonction qui permet de une L-value en R-value et dit donc au compilateur d'utiliser le constructeur de déplacement plutôt que le constructeur de copie.
 
-#### Exercice: 
+#### Exercice
 
 On considère que `MyClass` est une classe avec un constructeur par défaut et des constructeurs de copies et de déplacements;
 Dans chacun des bouts de code ci-dessous: combien de fois le constructeur de **copie** de MyClass est-il appelé? (On ne demande pas le nombre de fois où le constructeur de déplacement est appelé à cause de l'élusion de déplacement que l'on verra plus bas.)
@@ -237,7 +244,7 @@ En réalité, le constructeur de déplacement ne sera pas appelé: le constructe
 
 ---
 
-Dans le code en dessous, le compilateur peut effectuer une élusion de déplacement.
+Dans le code en dessous, le compilateur peut effectuer une élusion de déplacement (mais n'est pas obligé).
 
 ```cpp 
 MyClass f() {

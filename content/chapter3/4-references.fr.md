@@ -405,7 +405,7 @@ Aide-mémoire pour le passage des paramètres (fonctionne dans la plupart des ca
 flowchart TD;
     Q1(Est-ce que la fonction est censée avoir un effet de bord sur le paramètre ?)
     Ref[Passage par référence non-constante]
-    Q2("Est-ce que la copie du parametre est couteux?<br/>(allocation dynamique, appels-système, calculs complexes, ...)")
+    Q2("Est-ce que la copie du parametre est couteuse?<br/>(allocation dynamique, appels-système, calculs complexes, ...)")
     CRef[Passage par reference constante]
     Value[Passage par valeur]
     Q1 -->|Oui| Ref

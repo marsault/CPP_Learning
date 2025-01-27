@@ -5,7 +5,7 @@ weight: 5
 ---
 
 
-Le compilateur fournit des implémentations par défaut pour les éléments suivantes.
+Le compilateur fournit des implémentations par défaut pour les éléments suivants.
 
 1. Destructeur
 2. Constructeur de copie
@@ -13,29 +13,31 @@ Le compilateur fournit des implémentations par défaut pour les éléments suiv
 4. Constructeur de déplacement
 5. Opérateur d'affectation par déplacement
 
-Ces cinq éléments sont inter-dépendants parce qu'ils définissent la façon
-dont votre classe va gérer ses ressources.
-
 {{% notice kind="warning" title="Règle des 0, 3 ou 5 (Rule of 0/3/5)" %}}
-Pour n'importe quelle classe, il faut définir à la main :
+Pour une classe donnée, il faut généralement définir à la main :
 
 - **aucun** des cinq éléments ci-dessus;
 - les **trois** premiers (destructeur, constructeur de copie et opérateur d'affectation par copie);
 - ou les **cinq**.
 {{% /notice %}}
 
-Pourquoi ?
+Pourquoi ?\
+Parce que ces cinq éléments sont interdépendants. Ils définissent la façon dont la classe interagit avec la mémoire.
+Pour éviter les problèmes ces interactions doivent êtres cohérentes entre elles.
 
 {{% notice warning %}}
-La règle des 0, 3 ou 5 n'est pas absolue et seul votre jugement permet de savoir ce dont vous avez besoin.
+La règle des 0, 3 ou 5 n'est pas absolue et seul votre jugement permet de savoir ce dont vous avez besoin.\
+En particulier, il suffit parfois de se poser la question: est-ce que ma modification impacte l'un des quatre autres éléments?
 {{% /notice %}}
 
-## Quand sommes-nous dans le cas 0 ?
+### Règle des 0
 
-La plupart des classes ne nécessite pas de modifier.
-Cela signifie qu'elles suivent le comportement par défaut
+La plupart des classes suivent la règle des 0, c'est-à-dire ne modifient aucun des cinq éléments en haut de page.
+En effet, le comportement généré par les implémentations par défaut correspond la gestion usuelle de la mémoire et satisfait la plupart des cas.
 
-## Quand sommes-nous dans le cas 3 ?
+### Règle des 3
+
+Au contraire, on veut que certaines classes ne suivent pas la gestion par défaut de la mémoire.  Hormis les exercices sadiques que nous vous imposons, il s'agit usuellement des classes qui définissent des structures de données.
 
 
 
@@ -144,7 +146,7 @@ class RuleofThree {
 };
 {{% /hidden-solution %}}
 
-## Quand sommes nous dans le cas 5 ?
+### Règle des 5
 
 Les classes qui suivent la règle des 5 sont celles qui suivent déjà la règle 
 des 3 et qui veulent tout de même pouvoir être déplacée efficacement.

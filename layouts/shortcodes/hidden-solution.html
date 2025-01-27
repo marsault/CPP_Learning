@@ -2,12 +2,12 @@
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher {{ if .Get "title" }}{{ .Get "title" }}{{ else }}la solution{{ end }}<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer {{ if .Get "title" }}{{ .Get "title" }}{{ else }}la solution{{ end }}<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">

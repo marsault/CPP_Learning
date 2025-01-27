@@ -13,6 +13,14 @@ J'espère donc que ce chapitre a rempli ses objectifs et que vous vous sentez ma
 
 {{% test chapter=5 %}}
 
+
+```cpp
+int main() 
+{
+
+}
+```
+
 {{% test_item %}}
 Citez 3 informations que vous pouvez retrouver dans l'en-tête de la documentation d'une classe.
 {{% /test_item %}}
