@@ -60,7 +60,7 @@ int main()
 Dans ce nouvel exemple :
 - la variable `value` est instanciée ligne 1 et désinstanciée ligne 6,
 - la variable `ptr` (le pointeur !) est instanciée ligne 3 et désinstanciée ligne 6,
-- l'entier alloué dynamiquement (et référencé par `*ptr` puis `*five`) est instancié ligne 4 et désinstancié ligne 54,
+- l'entier alloué dynamiquement (et référencé par `*ptr` puis `*five`) est instancié ligne 4 et désinstancié ligne 12,
 - la variable `five` (encore le pointeur) est instanciée à la ligne 10 et désinstanciée ligne 15.
 
 ---

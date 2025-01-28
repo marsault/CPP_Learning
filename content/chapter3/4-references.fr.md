@@ -44,12 +44,12 @@ public static void main(String... args)
 Par conséquent, si vous voulez qu'une fonction ait un effet de bord sur un argument du programme, peu importe son type (fondamental ou structuré), il faut le passer par **référence**.
 
 ```cpp
-void set_value(MyClass obj)
+void set_by_value(MyClass obj)
 {
     obj.set_value(3);
 }
 
-void set_ref(MyClass& obj)
+void set_by_ref(MyClass& obj)
 {
     obj.set_value(3);
 }
@@ -58,9 +58,9 @@ int main()
 {
     auto obj = MyClass { 1 };
     // => obj.value = 1
-    set_value(obj);
+    set_by_value(obj);
     // => obj.value = 1 car c'est la copie qui est modifiée
-    set_ref(obj);
+    set_by_ref(obj);
     // => obj.value = 3 car l'argument est bien modifié
 
     return 0;
