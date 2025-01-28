@@ -27,18 +27,18 @@ int i = 0; // Ici le compilateur alloue de la mémoire pour i et le remplit avec
     <meta itemprop="description" content="Les constructeurs de copie et de déplacement sont appelés quand il faut instancier un nouvel objet. Sur cette page, on va parler des opérateurs d’affectations, c’est-à-dire, quand on remplit un objet qui existe déjà.
 Par exemple, dans le cas d’un entier:
 int i = 0; // Ici le compilateur alloue de la mémoire pour i et le remplit avec la valeur 0. // Il *instancie* un nouvel entier à partir de la valeur 0.">
-    <meta itemprop="wordCount" content="602">
+    <meta itemprop="wordCount" content="703">
     <title>Affectation :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1737993471" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737993471" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737993471" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737993471" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737993471" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737993471" rel="stylesheet">
-    <link href="../../css/fonts.css?1737993471" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737993471" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737993471" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737993471" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737993471" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737993471" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737993471"></script>
+    <link href="../../css/fontawesome-all.min.css?1738067889" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1738067889" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1738067889" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1738067889" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1738067889" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1738067889" rel="stylesheet">
+    <link href="../../css/fonts.css?1738067889" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1738067889" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1738067889" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1738067889" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1738067889" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1738067889" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1738067889"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -75,7 +75,8 @@ int i = 0; // Ici le compilateur alloue de la mémoire pour i et le remplit avec
   <ul>
     <li>
       <ul>
-        <li><a href="#opérateur-daffectation-par-copie">Opérateur d&rsquo;affectation par copie</a></li>
+        <li><a href="#affectation-par-copie">Affectation par copie</a></li>
+        <li><a href="#affectation-par-déplacement">Affectation par déplacement</a></li>
       </ul>
     </li>
   </ul>
@@ -129,59 +130,52 @@ Sur cette page, on va parler des opérateurs d&rsquo;affectations, c&rsquo;est-�
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">x</span> <span class="o">=</span> <span class="s">&#34;autre chose&#34;</span> <span class="p">;</span> <span class="c1">// Ici un objet déjà existant est affecté.
 </span></span></span></code></pre></div>
 <hr>
-<h3 id="opérateur-daffectation-par-copie">Opérateur d&rsquo;affectation par copie</h3>
-<p>Lorsqu&rsquo;on rédéfinit le constructeur de copie, il est souvent nécessaire de redéfinir également l&rsquo;opérateur d&rsquo;assignation.<br>
-&ldquo;Redéfinir&rdquo;, car ici encore, le compilateur fournit une implémentation par défaut de cette fonction.</p>
-<p>Ajoutez le code suivant à votre <code>main</code>:</p>
+<h3 id="affectation-par-copie">Affectation par copie</h3>
+<p>L&rsquo;opérateur d&rsquo;affectation par copie (<em>copy-assignment operator</em>) est l&rsquo;équivalent du constructeur de copie
+mais qui est appelé au moment de l&rsquo;affectation.
+Pour lui aussi, le compilateur fournit une implémentation par défaut dans la plupart des cas, et on va donc le redéfinir ici.</p>
+<p>On reprend le fichier <a href="../Person.cpp">Person.cpp</a>.
+Mettez le code suivant à votre <code>main</code>:</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Person</span> <span class="n">assigned_clone</span> <span class="p">{</span> <span class="s">&#34;Batman&#34;</span><span class="p">,</span> <span class="s">&#34;2&#34;</span> <span class="p">};</span>
 </span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">assigned_clone</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">assigned_clone</span> <span class="o">=</span> <span class="n">batman</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">assigned_clone</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span></span></span></code></pre></div>
-<p>Si vous essayez de compiler, vous devriez constater que ça ne fonctionne pas&hellip;<br>
-Rappelez-vous, nous avions modifié les variables membres <code>_name</code> et <code>_surname</code> afin d&rsquo;indiquer qu&rsquo;elles étaient constantes.<br>
-Puisque l&rsquo;on veut maintenant avoir la possibilité de réassigner le contenu d&rsquo;une personne, il faut commencer par retirer les const sur ses variables membre.</p>
-<div class="box notices cstyle tip">
-  <div class="box-label">
-    <i class="fa-fw fas fa-lightbulb"></i> Astuce
-  </div>
-  <div class="box-content">
-<p>Vous vous dites peut-être que ce n&rsquo;est pas très gentil de vous faire ajouter des const pour les retirer ensuite.<br>
-En réalité, il est préférable de toujours réadapté le code au besoin que nous avons à un instant T, c&rsquo;est-à-dire ne pas trop anticipé.<br>
-C&rsquo;est seulement au moment où le besoin évolue (ici, on décide que l&rsquo;on veut maintenant pouvoir réassigner une personne) que l&rsquo;on doit mettre à jour le code et si besoin modifier les invariants (désormais, le nom et le prénom d&rsquo;une personne peuvent changer au cours de l&rsquo;exécution du programme).</p>
-  </div>
-</div>
-<p>Recompilez et lancez le programme. Vous devriez constater que l&rsquo;âge de <code>assigned_clone</code> est de 23 ans.</p>
-<p>Pour être cohérent avec ce que nous avons fait précédemment, nous allons dire que l&rsquo;âge d&rsquo;une instance de <code>Person</code> n&rsquo;est pas modifiée au moment de sa réassignation.<br>
-Seul son nom change.
-Puisque l&rsquo;<strong>implémentation par défaut de l&rsquo;opérateur d&rsquo;assignation</strong> modifie l&rsquo;âge de notre instance, nous allons le redéfinir.</p>
-<p>Voici le code permettant de redéfinir l&rsquo;opérateur d&rsquo;assignation d&rsquo;une classe :</p>
+<p>Compilez et lancez le programme. Vous devriez constater que l&rsquo;âge de <code>assigned_clone</code> est de 23 ans.</p>
+<p>Pour être cohérent avec ce que nous avons précédemment fait dans le constructeur de copie, nous allons dire que l&rsquo;âge d&rsquo;une instance de <code>Person</code> n&rsquo;est pas modifiée au moment de sa réaffectation.  Seul son nom doit changer.</p>
+<p>Voici le code permettant de redéfinir l&rsquo;opérateur d&rsquo;affectation d&rsquo;une classe :</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">ClassName</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">ClassName</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="k">this</span> <span class="o">!=</span> <span class="o">&amp;</span><span class="n">other</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_attribute_1</span> <span class="o">=</span> <span class="cm">/* probably other._attribute_1; */</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_attribute_2</span> <span class="o">=</span> <span class="cm">/* probably other._attribute_2; */</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_attribute_1</span> <span class="o">=</span> <span class="cm">/* probably other._attribute_1 */</span> <span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_attribute_2</span> <span class="o">=</span> <span class="cm">/* probably other._attribute_2 */</span> <span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="p">...</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
-<p><strong>Qui est <code>this</code> ?</strong><br>
-Comme en Java, <code>this</code> fait référence à l&rsquo;instance courante de la classe. Attention cependant, en C++, <code>this</code> est un pointeur. C&rsquo;est d&rsquo;ailleurs pour cela qu&rsquo;on renvoie <code>*this</code> et non <code>this</code>.</p>
-<p><strong>Pourquoi la comparaison entre <code>this</code> et <code>&amp;other</code> ?</strong><br>
-Il est très important de réaliser cette comparaison, en particulier dans le cas ou l&rsquo;un des attributs de la classe est un objet alloué dynamiquement.<br>
+<h5 id="qui-est-this-">Qui est <code>this</code> ?</h5>
+<p>Comme en Java, <code>this</code> fait référence à l&rsquo;instance courante de la classe. Attention cependant, en C++, <code>this</code> est un pointeur. C&rsquo;est d&rsquo;ailleurs pour cela qu&rsquo;on renvoie <code>*this</code> et non <code>this</code>.</p>
+<h5 id="pourquoi-la-comparaison-entre-this-et-other-">Pourquoi la comparaison entre <code>this</code> et <code>&amp;other</code> ?</h5>
+<p>Il est très important de réaliser cette comparaison, en particulier dans le cas ou l&rsquo;un des attributs de la classe est un objet alloué dynamiquement.<br>
 En effet, pour réaliser la copie de <code>other._attr</code>, vous allez devoir allouer de la mémoire supplémentaire et stocker son pointeur dans <code>this-&gt;_attr</code>. Sauf que si <code>this</code> et <code>other</code> font référence au même objet, en modifiant <code>this-&gt;_attr</code>, vous allez également écraser <code>other._attr</code> et donc perdre l&rsquo;adresse du bloc alloué dans <code>other._attr</code>.<br>
 C&rsquo;est comme ça qu&rsquo;on se retrouve avec des fuites de mémoire et un PC qui rame.</p>
-<p>Implémentez l&rsquo;opérateur d&rsquo;assignation de manière à ne copier que les attributs <code>_name</code> et <code>_surname</code>. Testez que le programme fonctionne comme prévu.</p>
-<div class="expand">
-  <input type="checkbox" id="R-expand-df73a2adb5736a5f4ffaeb0276f9d371" aria-controls="R-expandcontent-df73a2adb5736a5f4ffaeb0276f9d371">
-  <label class="expand-label" for="R-expand-df73a2adb5736a5f4ffaeb0276f9d371">
-    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
-  </label>
-  <div id="R-expandcontent-df73a2adb5736a5f4ffaeb0276f9d371" class="expand-content">
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Person</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
+<p>Implémentez l&rsquo;opérateur d&rsquo;affectation par copie de manière à ne copier que les attributs <code>_name</code> et <code>_surname</code>. Testez que le programme fonctionne comme prévu.</p>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Person</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="k">this</span> <span class="o">!=</span> <span class="o">&amp;</span><span class="n">other</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
@@ -191,6 +185,47 @@ C&rsquo;est comme ça qu&rsquo;on se retrouve avec des fuites de mémoire et un 
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+
+        </div>
+    </div>
+
+</div>
+
+<hr>
+<h3 id="affectation-par-déplacement">Affectation par déplacement</h3>
+<p>On ne va pas s&rsquo;attarder trop longtemps sur le deuxième opérateur d&rsquo;affectation: l&rsquo;opérateur d&rsquo;affectation <strong>par déplacement</strong> (<em>move-assignment operator</em>).
+En effet, c&rsquo;est comme la différence entre les constructeurs de copie et de déplacement:</p>
+<ul>
+<li>l&rsquo;opérateur d&rsquo;affectation <strong>par copie</strong> est appelé quand ce qui est à droite du <code>=</code> est une <strong>L-value</strong>;</li>
+<li>l&rsquo;opérateur d&rsquo;affectation <strong>par déplacement</strong> est appelé quand ce qui est à droite du <code>=</code> est une <strong>R-value</strong>.</li>
+</ul>
+<p>Voici son prototype:</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">ClassName</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">ClassName</span><span class="o">&amp;&amp;</span> <span class="n">other</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="k">this</span> <span class="o">!=</span> <span class="o">&amp;</span><span class="n">other</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_attribute_1</span> <span class="o">=</span> <span class="cm">/* probably std::move(other._attribute_1) */</span> <span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_attribute_2</span> <span class="o">=</span> <span class="cm">/* probably std::move(other._attribute_2) */</span> <span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<p>Par exemple, l&rsquo;opérateur d&rsquo;affectation par déplacement de <code>Person</code> serait appelé avec le code suivant rajouté dans le <code>main</code>.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Person</span> <span class="n">assigned_clone</span> <span class="p">{</span> <span class="s">&#34;Batman&#34;</span><span class="p">,</span> <span class="s">&#34;2&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">assigned_clone</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">assigned_clone</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">batman</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">batman</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span></span></span></code></pre></div>
+<p>A la fin du code ci-dessus, on remarque que <code>batman._name</code> et <code>batman._surname</code> contiennent tous les deux une chaîne vide.
+En effet, l&rsquo;implémentation par défaut de l&rsquo;opérateur d&rsquo;affectation par déplacement de <code>Person</code> les a déplacés vers <code>assigned_clone._name</code> et <code>assigned_clone._surname</code>, respectivement.</p>
+<div class="box notices cstyle warning">
+  <div class="box-label">
+    <i class="fa-fw fas fa-exclamation-triangle"></i> Avertissement
+  </div>
+  <div class="box-content">
+<p>Comme pour le constructeur de déplacement, quand on redéfinit l&rsquo;opérateur d&rsquo;affectation par déplacement, il faut laisser l&rsquo;argument (appelé <code>other</code> plus haut) dans un état valide.<br>
+Par exemple, on voit ci-dessus que celui de <code>std::string</code> laisse <code>other</code> à la chaîne vide; et non pas avec un pointeur nul ou qui pointe vers une ressource déplacée.</p>
   </div>
 </div>
 
@@ -296,9 +331,9 @@ C&rsquo;est comme ça qu&rsquo;on se retrouve avec des fuites de mémoire et un 
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737993471" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737993471" defer></script>
-    <script src="../../js/theme.js?1737993471" defer></script>
+    <script src="../../js/clipboard.min.js?1738067889" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1738067889" defer></script>
+    <script src="../../js/theme.js?1738067889" defer></script>
 
 
 
