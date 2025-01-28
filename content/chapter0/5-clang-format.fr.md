@@ -1,6 +1,6 @@
 ---
 title: "Clang-Format"
-pre: '<span class="presection-icon" ><img src="../../logo/clang.svg"/></span>'
+pre: '<span class="presection-icon" ><img src="/logo/clang.svg"/></span>'
 weight: 5
 ---
 

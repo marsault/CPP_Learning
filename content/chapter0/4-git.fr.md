@@ -1,6 +1,6 @@
 ---
 title: "Git"
-pre: '<span class="presection-icon" ><img src="../../logo/git.svg"/></span>'
+pre: '<span class="presection-icon" ><img src="/logo/git.svg"/></span>'
 weight: 4
 ---
 
