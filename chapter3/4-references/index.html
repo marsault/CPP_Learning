@@ -29,16 +29,16 @@ Modifier un argument Le premier cas d’utilisation des références avait déj�
 Pour rappel, lorsque vous passez un objet par valeur en paramètre d’une fonction, l’intégralité de l’instance est copiée !">
     <meta itemprop="wordCount" content="304">
     <title>Usage des références 🔀 :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1737724462" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1737724462" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1737724462" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1737724462" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1737724462" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1737724462" rel="stylesheet">
-    <link href="../../css/fonts.css?1737724462" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1737724462" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1737724462" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1737724462" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1737724462" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1737724462" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1737724462"></script>
+    <link href="../../css/fontawesome-all.min.css?1738050838" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1738050838" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1738050838" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1738050838" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1738050838" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1738050838" rel="stylesheet">
+    <link href="../../css/fonts.css?1738050838" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1738050838" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1738050838" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1738050838" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1738050838" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1738050838" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1738050838"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -148,12 +148,12 @@ Pour les personnes habituées au Java, le transcription de langage consisterait 
 </span></span></span><span class="line hl"><span class="cl"><span class="w">    </span><span class="n">fcn</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="na">clone</span><span class="p">());</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div>
 <p>Par conséquent, si vous voulez qu&rsquo;une fonction ait un effet de bord sur un argument du programme, peu importe son type (fondamental ou structuré), il faut le passer par <strong>référence</strong>.</p>
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">set_value</span><span class="p">(</span><span class="n">MyClass</span> <span class="n">obj</span><span class="p">)</span>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">set_by_value</span><span class="p">(</span><span class="n">MyClass</span> <span class="n">obj</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">obj</span><span class="p">.</span><span class="n">set_value</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">set_ref</span><span class="p">(</span><span class="n">MyClass</span><span class="o">&amp;</span> <span class="n">obj</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">set_by_ref</span><span class="p">(</span><span class="n">MyClass</span><span class="o">&amp;</span> <span class="n">obj</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">obj</span><span class="p">.</span><span class="n">set_value</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -162,9 +162,9 @@ Pour les personnes habituées au Java, le transcription de langage consisterait 
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">MyClass</span> <span class="p">{</span> <span class="mi">1</span> <span class="p">};</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// =&gt; obj.value = 1
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">set_value</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">set_by_value</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// =&gt; obj.value = 1 car c&#39;est la copie qui est modifiée
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">set_ref</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">set_by_ref</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// =&gt; obj.value = 3 car l&#39;argument est bien modifié
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
@@ -644,23 +644,23 @@ flowchart TD;
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1737724462" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1737724462" defer></script>
-    <script src="../../js/d3/d3-color.min.js?1737724462" defer></script>
-    <script src="../../js/d3/d3-dispatch.min.js?1737724462" defer></script>
-    <script src="../../js/d3/d3-drag.min.js?1737724462" defer></script>
-    <script src="../../js/d3/d3-ease.min.js?1737724462" defer></script>
-    <script src="../../js/d3/d3-interpolate.min.js?1737724462" defer></script>
-    <script src="../../js/d3/d3-selection.min.js?1737724462" defer></script>
-    <script src="../../js/d3/d3-timer.min.js?1737724462" defer></script>
-    <script src="../../js/d3/d3-transition.min.js?1737724462" defer></script>
-    <script src="../../js/d3/d3-zoom.min.js?1737724462" defer></script>
-    <script src="../../js/js-yaml.min.js?1737724462" defer></script>
-    <script src="../../js/mermaid.min.js?1737724462" defer></script>
+    <script src="../../js/clipboard.min.js?1738050838" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1738050838" defer></script>
+    <script src="../../js/d3/d3-color.min.js?1738050838" defer></script>
+    <script src="../../js/d3/d3-dispatch.min.js?1738050838" defer></script>
+    <script src="../../js/d3/d3-drag.min.js?1738050838" defer></script>
+    <script src="../../js/d3/d3-ease.min.js?1738050838" defer></script>
+    <script src="../../js/d3/d3-interpolate.min.js?1738050838" defer></script>
+    <script src="../../js/d3/d3-selection.min.js?1738050838" defer></script>
+    <script src="../../js/d3/d3-timer.min.js?1738050838" defer></script>
+    <script src="../../js/d3/d3-transition.min.js?1738050838" defer></script>
+    <script src="../../js/d3/d3-zoom.min.js?1738050838" defer></script>
+    <script src="../../js/js-yaml.min.js?1738050838" defer></script>
+    <script src="../../js/mermaid.min.js?1738050838" defer></script>
     <script>
       window.themeUseMermaid = JSON.parse("{}");
     </script>
-    <script src="../../js/theme.js?1737724462" defer></script>
+    <script src="../../js/theme.js?1738050838" defer></script>
 
 
 
