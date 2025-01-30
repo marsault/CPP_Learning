@@ -2,9 +2,9 @@
 
 {{ $chapter := 0 }}
 {{ if eq .Page.BundleType "branch" }}
-{{ $chapter = sub .Page.Weight 1 }}
+{{ $chapter = .Page.Weight }}
 {{ else }}
-{{ $chapter = sub .Page.Parent.Weight 1 }}
+{{ $chapter = .Page.Parent.Weight 1 }}
 {{ end }}
 
 <button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()"
