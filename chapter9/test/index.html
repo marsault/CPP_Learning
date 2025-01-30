@@ -29,16 +29,16 @@ N’hésitez néanmoins pas à utiliser le formulaire pour envoyer vos questions
 Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Henri Derycke) Initiaux GR2 (avec Anthony Labarre) Alternants GR3 (avec Victor Marsault) Combien de temps avez-vous mis à compléter ce chapitre ? Avez-vous des questions suite à sa lecture ? Avez-vous des commentaires concernant le chapitre et/ou le site ?">
     <meta itemprop="wordCount" content="77">
     <title>Questionnaire ☑ :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1738229429" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1738229429" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1738229429" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1738229429" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1738229429" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1738229429" rel="stylesheet">
-    <link href="../../css/fonts.css?1738229429" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1738229429" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1738229429" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1738229429" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1738229429" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1738229429" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1738229429"></script>
+    <link href="../../css/fontawesome-all.min.css?1738229940" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1738229940" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1738229940" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1738229940" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1738229940" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1738229940" rel="stylesheet">
+    <link href="../../css/fonts.css?1738229940" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1738229940" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1738229940" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1738229940" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1738229940" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1738229940" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1738229940"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -268,24 +268,27 @@ N&rsquo;hésitez néanmoins pas à utiliser le formulaire pour envoyer vos quest
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1738229429" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1738229429" defer></script>
-    <script src="../../js/theme.js?1738229429" defer></script>
+    <script src="../../js/clipboard.min.js?1738229940" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1738229940" defer></script>
+    <script src="../../js/theme.js?1738229940" defer></script>
 
 
 
-    
 
 
-<button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
+
+<button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()"
+    disabled><i class="fas fa-question-circle"></i></button>
 
 <div id="footer-question-window" disabled>
     <form id="question" method=POST action="https://formsubmit.co/08af4b8e13fc3ec785faa99820631150"
         target="question-submitted" onsubmit="cleanQuestionFormContent()">
 
-        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required
+            onchange="updateQuestionFormSubject()" />
         <textarea name="question" rows="7" cols="30" placeholder="Mon message..."></textarea>
         <input type="hidden" name="selection" />
+        <input type="hidden" name="page" value="/chapter9/test/" />
 
         <input type="hidden" name="_replyto" />
         <input type="hidden" name="_subject" />
@@ -304,7 +307,7 @@ N&rsquo;hésitez néanmoins pas à utiliser le formulaire pour envoyer vos quest
 
     function updateQuestionFormSubject() {
         let email = document.querySelector('#question>input[name="email"]').value;
-        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 8] " + email + ", retour sur ta question";
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chap 8] " + email + ", retour sur ta question";
     }
 
     function cleanQuestionFormContent() {
@@ -349,7 +352,6 @@ N&rsquo;hésitez néanmoins pas à utiliser le formulaire pour envoyer vos quest
     updateQuestionWidgetState();
 
 </script>
-
 
 
   </body>
