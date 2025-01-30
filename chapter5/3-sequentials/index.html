@@ -41,16 +41,16 @@ Tableaux de taille fixe Pour créer des tableaux de taille fixe, il est bien ent
 Du coup, pour pallier à ce problème, il est possible d’utiliser la classe std::array.">
     <meta itemprop="wordCount" content="1347">
     <title>Autres conteneurs séquentiels :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1738229940" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1738229940" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1738229940" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1738229940" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1738229940" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1738229940" rel="stylesheet">
-    <link href="../../css/fonts.css?1738229940" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1738229940" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1738229940" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1738229940" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1738229940" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1738229940" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1738229940"></script>
+    <link href="../../css/fontawesome-all.min.css?1738230269" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1738230269" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1738230269" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1738230269" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1738230269" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1738230269" rel="stylesheet">
+    <link href="../../css/fonts.css?1738230269" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1738230269" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1738230269" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1738230269" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1738230269" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1738230269" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1738230269"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -161,12 +161,12 @@ Cela s&rsquo;y prête d&rsquo;autant plus lorsque l&rsquo;indice est en réalit�
 <p>Dans le code de base du fichier, vous pouvez trouver une énumération <code>Fruit</code>, contenant les valeurs <code>Apricot</code>, <code>Cherry</code>, <code>Mango</code> et <code>Raspberry</code>. Vous avez également une dernière valeur <code>Fruit_Count</code>, qui contient donc le nombre de valeurs de l&rsquo;enum.<br>
 Définissez un <code>array</code> servant à indiquer pour chaque fruit possible le nom de ce fruit. Assignez ensuite dans chaque case la valeur appropriée.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-b8c0d0685d4b938fa42a39d93cd975a4" aria-controls="R-expandcontent-b8c0d0685d4b938fa42a39d93cd975a4">
-  <label class="expand-label" for="R-expand-b8c0d0685d4b938fa42a39d93cd975a4">
+  <input type="checkbox" id="R-expand-33a7bfc108df7054a29d0c467a2d04a6" aria-controls="R-expandcontent-33a7bfc108df7054a29d0c467a2d04a6">
+  <label class="expand-label" for="R-expand-33a7bfc108df7054a29d0c467a2d04a6">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-b8c0d0685d4b938fa42a39d93cd975a4" class="expand-content">
+  <div id="R-expandcontent-33a7bfc108df7054a29d0c467a2d04a6" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">Fruit_Count</span><span class="o">&gt;</span> <span class="n">fruit_names</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="n">fruit_names</span><span class="p">[</span><span class="n">Apricot</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;apricot&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="n">fruit_names</span><span class="p">[</span><span class="n">Cherry</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;cherry&#34;</span><span class="p">;</span>
@@ -187,12 +187,12 @@ Lorsqu&rsquo;une classe permet de répondre exactement à un besoin, il vaut mie
 Faites ensuite en sorte de regrouper <code>l1</code> et <code>l2</code> dans une même liste ordonnée. Faites de même avec <code>l3</code> et <code>l4</code>.<br>
 Placez enfin le résultat du deuxième groupement en plein milieu du premier groupement.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-f65937cd5477d5a1eb57e2b573744f20" aria-controls="R-expandcontent-f65937cd5477d5a1eb57e2b573744f20">
-  <label class="expand-label" for="R-expand-f65937cd5477d5a1eb57e2b573744f20">
+  <input type="checkbox" id="R-expand-7e4804cc1d94bb8653dd9d63b240058f" aria-controls="R-expandcontent-7e4804cc1d94bb8653dd9d63b240058f">
+  <label class="expand-label" for="R-expand-7e4804cc1d94bb8653dd9d63b240058f">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-f65937cd5477d5a1eb57e2b573744f20" class="expand-content">
+  <div id="R-expandcontent-7e4804cc1d94bb8653dd9d63b240058f" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// There are many differentes ways to put values in a list.
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">l1</span> <span class="p">{</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span> <span class="p">};</span>
 </span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">l2</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">45</span><span class="p">);</span>
@@ -227,29 +227,29 @@ A part cela, les autres opérations sont disponibles avec la même complexité.<
 <h3 id="pile-ou-file">Pile ou File</h3>
 <p>Les derniers conteneurs que nous allons ici sont les piles <code>std::stack</code> et les files <code>std::queue</code>. Nous n&rsquo;allons pas rappeler en détail ce que sont les piles ou les files, mais si vous avez tout oublier de vos cours d&rsquo;algorithmique, sachez au moins que dans une pile, les insertions et suppressions sont effectuées en fin de conteneur, alors que dans une file, les suppressions s&rsquo;effectuent en tête et les insertions en fin de conteneur.</p>
 <p>Dans le cas de la STL, <code>stack</code> et <code>queue</code> ont la particularité d&rsquo;être des adapteurs. Cela signifie que vous pouvez choisir l&rsquo;implémentation que vous souhaitez utiliser en interne. La seule contrainte, c&rsquo;est que la classe sous-jacente doit fournir certaines fonctions. Par exemple, dans le cas de la pile, on pourrait utiliser <code>vector</code> ou <code>list</code>, mais pas <code>forward_list</code> car elle ne définit pas <code>push_back</code> :<br>
-<a href="#R-image-8e2b51df2d7f90272953ef778848c11f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter5/doc-stack-constraints.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8e2b51df2d7f90272953ef778848c11f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter5/doc-stack-constraints.png"></a></p>
+<a href="#R-image-3a04bd40e7edb38708926fd3b3df14b8" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter5/doc-stack-constraints.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3a04bd40e7edb38708926fd3b3df14b8"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter5/doc-stack-constraints.png"></a></p>
 <p>Sur l&rsquo;image ci-dessus, on vous précise quel conteneur est utilisé par défaut si vous n&rsquo;en spécifier aucun (c&rsquo;est-à-dire si vous écrivez juste <code>std::stack&lt;int&gt;</code>, au lieu de <code>std::stack&lt;int, smtg&gt;</code>). De quelle classe s&rsquo;agit-il ?<br>
 En cherchant un petit peu dans sa documentation, essayez de trouver une raison pour laquelle la librairie a décidé d&rsquo;utiliser ce conteneur là par défaut.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-d48f739137744756e605e2129732d69c" aria-controls="R-expandcontent-d48f739137744756e605e2129732d69c">
-  <label class="expand-label" for="R-expand-d48f739137744756e605e2129732d69c">
+  <input type="checkbox" id="R-expand-44feefaebb7462076b655553ba8c3830" aria-controls="R-expandcontent-44feefaebb7462076b655553ba8c3830">
+  <label class="expand-label" for="R-expand-44feefaebb7462076b655553ba8c3830">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-d48f739137744756e605e2129732d69c" class="expand-content">
+  <div id="R-expandcontent-44feefaebb7462076b655553ba8c3830" class="expand-content">
 <p>Par défaut, <code>stack</code> est implémentée au moyen d&rsquo;une <code>std::deque</code>. L&rsquo;avantage de cette classe pour l&rsquo;implémentation d&rsquo;une pile, c&rsquo;est qu&rsquo;elle est très efficace pour ajouter et retirer des éléments en fin de conteneur (complexité en O(1)), et lors de ces opérations, les itérateurs sur les autres éléments ne sont jamais invalidés (= plus de sécurité). Elle est aussi plus performante que le <code>vector</code> lors des réallocations (pas de copie des éléments existants).</p>
   </div>
 </div>
 <p>Vous allez maintenant instancier une <code>stack</code> utilisant comme implémentation sous-jacente un <code>vector&lt;int&gt;</code>, plutôt qu&rsquo;une <code>deque</code>. Pour cela, il suffit de spécifier le type de conteneur dans un second paramètre de template.<br>
 Faites en sorte que la <code>stack</code> contienne à la fin <code>{ 0, 1, 2 }</code>.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-e94dc9af88c6b32371744ca1453ac97b" aria-controls="R-expandcontent-e94dc9af88c6b32371744ca1453ac97b">
-  <label class="expand-label" for="R-expand-e94dc9af88c6b32371744ca1453ac97b">
+  <input type="checkbox" id="R-expand-0d02605444c786ee03fe94c60c1ea59a" aria-controls="R-expandcontent-0d02605444c786ee03fe94c60c1ea59a">
+  <label class="expand-label" for="R-expand-0d02605444c786ee03fe94c60c1ea59a">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-e94dc9af88c6b32371744ca1453ac97b" class="expand-content">
+  <div id="R-expandcontent-0d02605444c786ee03fe94c60c1ea59a" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// The stack can be initialized from nothing, and then values are added with push or emplace.
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">s1</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="n">s1</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
@@ -264,24 +264,24 @@ Faites en sorte que la <code>stack</code> contienne à la fin <code>{ 0, 1, 2 }<
 </div>
 <p>Essayez maintenant de parcourir la <code>stack</code> via une boucle <code>for</code> pour l&rsquo;afficher (pas foreach). Qu&rsquo;est-ce qui pose problème ?</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-8a132bb17431dcb7f5f62d5a8081120d" aria-controls="R-expandcontent-8a132bb17431dcb7f5f62d5a8081120d">
-  <label class="expand-label" for="R-expand-8a132bb17431dcb7f5f62d5a8081120d">
+  <input type="checkbox" id="R-expand-8b825e418675cebba9919206addd93b8" aria-controls="R-expandcontent-8b825e418675cebba9919206addd93b8">
+  <label class="expand-label" for="R-expand-8b825e418675cebba9919206addd93b8">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-8a132bb17431dcb7f5f62d5a8081120d" class="expand-content">
+  <div id="R-expandcontent-8b825e418675cebba9919206addd93b8" class="expand-content">
 <p>Dans une pile, on ne peut accéder qu&rsquo;au premier élément. La classe <code>stack</code> ne fournit donc pas l&rsquo;ensemble des fonctions dont dispose le conteneur sous-jacent, et c&rsquo;est bien là son intérêt.<br>
 Si on décide de définir un attribut d&rsquo;une classe en tant que <code>stack</code> plutôt qu&rsquo;en tant que <code>vector</code>, on ajoute en fait des contraintes sur les opérations qu&rsquo;il est possible d&rsquo;effectuer sur ce membre. Cela permet donc d&rsquo;enforcer les invariants de la classe plus facilement.</p>
   </div>
 </div>
 <p>Retentez maintenant le parcours via une boucle <code>foreach</code>. Essayez de compiler, et déduisez-en le nom des fonctions attendues par le compilateur pour pouvoir parcourir un conteneur via une boucle <code>foreach</code>.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-0726aadcf9bf606e17f0a92c17ab3f31" aria-controls="R-expandcontent-0726aadcf9bf606e17f0a92c17ab3f31">
-  <label class="expand-label" for="R-expand-0726aadcf9bf606e17f0a92c17ab3f31">
+  <input type="checkbox" id="R-expand-eba0951702b9004225e2d721f6db2ed3" aria-controls="R-expandcontent-eba0951702b9004225e2d721f6db2ed3">
+  <label class="expand-label" for="R-expand-eba0951702b9004225e2d721f6db2ed3">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-0726aadcf9bf606e17f0a92c17ab3f31" class="expand-content">
+  <div id="R-expandcontent-eba0951702b9004225e2d721f6db2ed3" class="expand-content">
 <p>Le compilateur nous dit ceci :</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">error: <span class="s1">&#39;begin&#39;</span> was not declared in this scope
 </span></span><span class="line"><span class="cl">error: <span class="s1">&#39;end&#39;</span> was not declared in this scope</span></span></code></pre></div>
@@ -392,9 +392,9 @@ Si on décide de définir un attribut d&rsquo;une classe en tant que <code>stack
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1738229940" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1738229940" defer></script>
-    <script src="../../js/theme.js?1738229940" defer></script>
+    <script src="../../js/clipboard.min.js?1738230269" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1738230269" defer></script>
+    <script src="../../js/theme.js?1738230269" defer></script>
 
 
 
@@ -431,7 +431,7 @@ Si on décide de définir un attribut d&rsquo;une classe en tant que <code>stack
 
     function updateQuestionFormSubject() {
         let email = document.querySelector('#question>input[name="email"]').value;
-        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chap 4] " + email + ", retour sur ta question";
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chap 5] " + email + ", retour sur ta question";
     }
 
     function cleanQuestionFormContent() {
