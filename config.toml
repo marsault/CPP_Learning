@@ -18,7 +18,8 @@ relativeURLs = true
   tpURL = "https://github.com/marsault/CPP_Exercises/"
   exoducoursURL = "https://github.com/marsault/CPP_Learning_Code/"
   formsubmitco_token = "08af4b8e13fc3ec785faa99820631150"
-
+  titleSeparator = ' '
+  reverse = true
 
   
 [markup]
@@ -29,7 +30,7 @@ relativeURLs = true
 
 [Languages]
 [Languages.fr]
-title = "C++"
+title = "C++::"
 weight = 1
 languageName = "Français"
 
