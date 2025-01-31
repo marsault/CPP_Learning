@@ -358,7 +358,7 @@ Les `Fighter` ne sont donc pas associés à un seul et unique `Match`.
 Attention néanmoins avec les attributs-références, c'est souvent synonyme de potentielles dangling-references...  
 Par exemple, supposons que vous ayiez la bonne-mauvaise idée de définir la fonction suivante pour créer la classe `Match` :
 ```cpp {linenos=table}
-void create_match(const std::string& name_1, const std::string& name_2)
+Match create_match(const std::string& name_1, const std::string& name_2)
 {
     Fighter f1 { name_1 };
     Fighter f2 { name_2 };
