@@ -10,8 +10,11 @@ En un mot, il s'agit de permettre de vider un objet pour en construire un autre 
 
 ### Usage de la fonction `std::move` sur un exemple
 
+Considérons le [bout de code](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIABwA7KSuADJ4DJgAcj4ARpjEIGYAbKQADqgKhE4MHt6%2BAcEZWY4C4ZExLPGJKbaY9qUMQgRMxAR5Pn5BdQ05za0E5dFxCUmpCi1tHQXdEwNDldVjAJS2qF7EyOwc5gDMEcjeWADUJrtuThPEmKxn2CYaAIJ7B0eYp%2BcAbpgOJHcPjwA9IDjqCweCIZDQcomAoFExgO80q1jp8xJgNgDgVCcbjIZ8CYSiZ8AZ9UHh0McqBAJugQCBvr9iGc3LT6VcIsA7scWABPAD6qAA7gx%2BegmC1lqcniZAlYnuD%2BMRjhAmF4iOZkscFMcQDyBcLReLJQCcWyUOsCB83CzTikdSzbeYzHazGd5UCQXicSYAKz3f1Yr3eyEAeQYxyYVBoyAQ71oYA4THQ1zh7ywOtjTAimB1J1ExCYDhMbl2Jke/lTprB5rQ6uttvNrlo7oBsoAIm2nhErSxswwIFK23Lq6DzYyiMzzuaOUZucamB926cR2YzAAJeq0VDO0iugDqJFo6F3rrAYGdHdbCprBDpFvrjvOrse0bwWcRxw0eq2xwAjl4iZ0McvKRsc4oMHmEpMM6DbPk2DDoC2uweoqJAqmqGopNqurgdByyjhCtaWnBbh2skDrnE6a6utejzgsRj5UfBd70s2dGEYxVpPmRCFIaRL5vh%2B7xcHqfKCiKYrQdqhg6uaLCoN8sE8dqrEgOxKGEdSC4EShxzAvQmYIP2ubarIpyluWGjgaZyapkoOosCWZaPAAnApeDXOBeDRs55audcgi5l29G3vedbccxvFqc2AnOq%2BMbGZ%2BZhiQakkLpGjKqfeClKTRKl8chqFgtS8mKZgEA6bpFj6SChnHFmOZyeZaqqDyfmPI8bA6nZuYOe1lluR5XkAYmHXWQmSZCUl7waCFDFqRFAmFXFa4Je%2BM3HLsP7vKNHDAamBDprJeEtMpUXZWxiFFVp6GquqO7YTqeo6bVp2Lrmvb9kdzCCKiFKYHuxB4IwxyRNqiZRolmCEQt4UkSpmqUTaz7KWuHE3qCwKhKZaLA0wsT1duoj1Qo5knoNrkEMQXiEKZlUCMgxyg8ibTvl4tAg8qOnDu2HCrLQnC%2BrwfgcFopCoJwNqWNYZkbL%2Bew8KQBCaPzqwANYgL6Gj6Jwki8CwEgaDrovi5LHC8AoIA6yrYv86QcCwEgmCqD8D1kBQqrEMACgwpEtBCAghqcEraAsGkdASjkfv1IHwd26QYcR/QiTAFIZiJ6g4d0AkUSsNsvBJznxChuqcciqrISu8gjze1bFtVz8zT4KLvD8IIIjohI0jt/IShqJXuhcPohjGNY1j6HgsRW5AqyoGkjT15b6ybOww%2B0hEMcB0HFfcLwQqFmkIf24LHDC6Qpu8Ob2DV%2B7xyqP4yQALTJJIxzAMgTNSAAdC6EDS1YSwe5cCEHQorZYvBbZaGWKsOMyZRiDlIJrbWusOD6wvpXc2ltrbK1VjA1BZgRaYM4JAvBqxvjECyM4SQQA) ci-dessous.
 ```cpp
-///                      Passage par valeur
+#include <iostream>
+#include <vector>
+//                       Passage par valeur
 //                              vvvvvvvvvvv
 void f(std::vector<std::string> my_own_data) 
 {
@@ -25,16 +28,20 @@ void f(std::vector<std::string> my_own_data)
 int main() 
 {
     std::vector<std::string> data = {"Hello", "World", "!"};
-    // Affichage 0
+    std::cout << "Affichage 0: ce qu'il y a dans data" << std::endl;
     for (auto& s : data)
         std::cout << &s << " ";
     std::cout << std::endl;
 
-    // Affichage 1: les chaines sont à des adresses mémoire différentes
-    f(data); 
+    std::cout << std::endl << "Affichage 1: my_own_data sans std::move" << std::endl;
+    f(data); //les chaines sont à des adresses mémoire différentes
 
-    // Affichage 2: les chaines sont aux mêmes adresses mémoire qu'à l'affichage 0
-    f(std::move(data)); 
+    std::cout << std::endl << "Affichage 2: my_own_data avec std::move" << std::endl;
+    f(std::move(data)); // les chaines sont aux mêmes adresses mémoire qu'à l'affichage 0
+
+    std::cout << std::endl << "Affichage 3: ce qu'il reste dans data" << std::endl;
+    for (auto& s : data) // data est maintenant vide, rien ne s'affiche
+        std::cout << &s << " ";
 
     //Les variables locales sont détruites (donc en particulier data)
 }
@@ -48,7 +55,8 @@ Lors du deuxième appel à `f`, on sait qu'on n'aura plus besoin de `data` dans 
 Vu que `f` a apparemment besoin de sa propre copie de `data`, on décide de **déplacer** `data` dans `my_own_data`.
 Cela signifie que cette fois, le compilateur va prendre les ressources de `data` pour construire `my_own_data`. 
 Les chaînes de caractères dans `my_own_data` sont en fait exactement les mêmes que celles qui étaient dans `data` à l'affichage 0: elles ont juste été réattribuées à `my_own_data`.
-Le tableau dynamique `data` est maintenant vide.
+
+Le tableau dynamique `data` est vide à l'affichage 3, car ses données ont été prise par `my_own_data`.  En revanche, après le `std::move`, `data` est toujours un objet valide: on peut itérer dessus ou rajouter de nouveaux éléments.
 
 Rappelez-vous qu'un `std::vector` est un tableau dynamique, donc ses éléments sont en fait sur le tas,
 et ce sont elles qui vont être copiées ou réattribuées à `my_own_data`, comme le montrent les deux diagrammes en dessous.
@@ -62,7 +70,7 @@ et ce sont elles qui vont être copiées ou réattribuées à `my_own_data`, com
 
 ### Constructeur de déplacement
 
-Maintenant qu'on a compris le principe du déplacement, encore faut-il pouvoir définir comment se déplace
+Maintenant qu'on a compris le principe du déplacement, encore faut-il pouvoir définir comment se déplacent
 nos propres classes.  Etant donné une classe `MaClasse` le constructeur de déplacement a le prototype suivant.
 
 ```cpp
@@ -78,10 +86,11 @@ La notation `MaClasse&&` (avec **deux** `&`) signifie **R-value-reference**. Le 
 est en fait une **L-value-reference**.
 
 {{% notice tip %}}
-Le compilateur fournit une implémentation par défaut pour le constructeur de déplacement.  Dans beaucoup d'autres cas, le compilateur ne va pas le générer mais son implémentation par défaut suffit. On peut la rétablir avec `MaClasse(MaClasse&& other) = default;`.
+Le compilateur génère une implémentation par défaut pour le constructeur de déplacement et elle fait ce qu'il faut dans la plupart des cas.
+Dans d'autres cas, le compilateur ne va pas la générer mais elle est quand même très bien. On peut demander explicitement au compilateur de le générer avec `MaClasse(MaClasse&& other) = default;`.
 {{% /notice %}}
 
-Quand on déplace un objet (et donc quand on implémente un constructeur de déplacemnt à la main), il faut faire attention à laisser l'objet d'origine dans un état valide.\
+Quand on déplace un objet (et donc quand on implémente un constructeur de déplacement à la main), il faut faire attention à laisser l'objet d'origine dans un état valide.\
 Pourquoi?  Parce que l'objet d'origine va sans doute être supprimé juste après, donc il faut faire attention qu'il ne supprime pas les ressources qu'on lui a pris. Il est aussi possible qu'il soit réutilisé juste après
 
 
@@ -90,7 +99,7 @@ Pourquoi?  Parce que l'objet d'origine va sans doute être supprimé juste aprè
 
 Pour faire court: quand le compilateur doit construire un nouvel objet à partir d'une R-value du même type (et que le compilateur ne fait pas d'élusion de déplacement, voir plus bas).
 
-En pratique, c'est surtout quand on utilise `std::move` en effet, c'est une fonction qui permet de une L-value en R-value et dit donc au compilateur d'utiliser le constructeur de déplacement plutôt que le constructeur de copie.
+En pratique, c'est surtout quand on utilise `std::move` en effet, c'est une fonction qui permet de transformer une L-value en R-value et dit donc au compilateur d'utiliser le constructeur de déplacement plutôt que le constructeur de copie.
 
 #### Exercice
 
@@ -159,7 +168,7 @@ MyOtherClass
 public:
     MyClass _att;
     MyOtherClass() = default;
-    MyOtherClass(MyClass arg) : _att{my_arg} {}
+    MyOtherClass(MyClass arg) : _att{arg} {}
 }
 ```
 
@@ -174,7 +183,7 @@ int main {
 }   
 ```
 {{% hidden-solution %}}
-Le constructeur de copie sera appelé deux fois: uen fois pour construire `arg` et une fois pour construire `_att` à partir de `arg`.
+Le constructeur de copie sera appelé deux fois: une fois pour construire `arg` et une fois pour construire `_att` à partir de `arg`.
 {{% /hidden-solution %}}
 
 ```cpp
@@ -186,7 +195,7 @@ int main {
 ```
 {{% hidden-solution %}}
 Le constructeur de copie de `MyClass` sera appelé une fois.
-En effet, l'implémentation par défaut du constructeur de copie appelle le cosntructeur de copie pour chaque attribut.
+En effet, l'implémentation par défaut du constructeur de copie appelle le constructeur de copie pour chaque attribut.
 {{% /hidden-solution %}}
 
 ```cpp
@@ -258,6 +267,5 @@ int main() {
 }
 ```
 Dans le code ci-dessus, la fonction `f` crée un `MyClass` sur la pile, fait des opérations dessus, puis retourne le `MyClass`.
-Ensuite, dans le `main`, l'expression `f()` est une R-value donc le constructeur de déplacement devrai
-t être appelé pour construire `n`.
+Ensuite, dans le `main`, l'expression `f()` est une R-value donc le constructeur de déplacement devrait être appelé pour construire `n`.
 En fait, suivant le contenu de `f`, le compilateur peut décider de ne pas allouer de mémoire pour `x` et de construire directement le `MyClass` dans la mémoire allouée pour `m`.
