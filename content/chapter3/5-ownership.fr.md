@@ -179,7 +179,7 @@ En effet, on l'a défini dans l'objectif de stocker l'adresse d'un bloc mémoire
 Il est par conséquent *manifestement* responsable du cycle de vie de cet entier.
 Puisque `get_int` renvoie ce pointeur, c'est ensuite `calling_function` qui en devient *manifestement* responsable, puisque personne d'autre n'y a accès.
 
-On voit bien que c'est une mauvaise pratique.  Imaginons que c'est à vous d'écrire `calling_function`. Pour savoir si vous devez détruire `five` ou on, il faut analyser le code de `get_int`.
+On voit bien que c'est une mauvaise pratique.  Imaginons que c'est à vous d'écrire `calling_function`. Pour savoir si vous devez détruire `five` ou non, il faut analyser le code de `get_int`.
 Par exemple, si on implémente `get_int` comme en dessous, il ne faudrait pas.
 
 ```cpp
