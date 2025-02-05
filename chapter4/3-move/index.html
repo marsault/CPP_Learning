@@ -6,35 +6,39 @@
     <meta name="generator" content="Hugo 0.128.0">
     <meta name="generator" content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619">
     <meta name="description" content="Sur cette page vous allez apprendre ce qu’est le déplacement en C&#43;&#43;. En un mot, il s’agit de permettre de vider un objet pour en construire un autre ailleurs, et on utilise pour cela la fonction std::move.
-Usage de la fonction std::move sur un exemple /// Passage par valeur // vvvvvvvvvvv void f(std::vector&lt;std::string&gt; my_own_data) { for (auto&amp; s : my_own_data) std::cout &lt;&lt; &amp;s &lt;&lt; &#34; &#34;; // ^^ // On affiche l&#39;adresse des chaines de caractères std::cout &lt;&lt; std::endl; } int main() { std::vector&lt;std::string&gt; data = {&#34;Hello&#34;, &#34;World&#34;, &#34;!">
+Usage de la fonction std::move sur un exemple Considérons le bout de code ci-dessous.
+#include &lt;iostream&gt; #include &lt;vector&gt; // Passage par valeur // vvvvvvvvvvv void f(std::vector&lt;std::string&gt; my_own_data) { for (auto&amp; s : my_own_data) std::cout &lt;&lt; &amp;s &lt;&lt; &#34; &#34;; // ^^ // On affiche l&#39;adresse des chaines de caractères std::cout &lt;&lt; std::endl; } int main() { std::vector&lt;std::string&gt; data = {&#34;Hello&#34;, &#34;World&#34;, &#34;!">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Déplacement :: C&#43;&#43;">
     <meta name="twitter:description" content="Sur cette page vous allez apprendre ce qu’est le déplacement en C&#43;&#43;. En un mot, il s’agit de permettre de vider un objet pour en construire un autre ailleurs, et on utilise pour cela la fonction std::move.
-Usage de la fonction std::move sur un exemple /// Passage par valeur // vvvvvvvvvvv void f(std::vector&lt;std::string&gt; my_own_data) { for (auto&amp; s : my_own_data) std::cout &lt;&lt; &amp;s &lt;&lt; &#34; &#34;; // ^^ // On affiche l&#39;adresse des chaines de caractères std::cout &lt;&lt; std::endl; } int main() { std::vector&lt;std::string&gt; data = {&#34;Hello&#34;, &#34;World&#34;, &#34;!">
+Usage de la fonction std::move sur un exemple Considérons le bout de code ci-dessous.
+#include &lt;iostream&gt; #include &lt;vector&gt; // Passage par valeur // vvvvvvvvvvv void f(std::vector&lt;std::string&gt; my_own_data) { for (auto&amp; s : my_own_data) std::cout &lt;&lt; &amp;s &lt;&lt; &#34; &#34;; // ^^ // On affiche l&#39;adresse des chaines de caractères std::cout &lt;&lt; std::endl; } int main() { std::vector&lt;std::string&gt; data = {&#34;Hello&#34;, &#34;World&#34;, &#34;!">
     <meta property="og:url" content="/chapter4/3-move/index.html">
     <meta property="og:site_name" content="C&#43;&#43;">
     <meta property="og:title" content="Déplacement :: C&#43;&#43;">
     <meta property="og:description" content="Sur cette page vous allez apprendre ce qu’est le déplacement en C&#43;&#43;. En un mot, il s’agit de permettre de vider un objet pour en construire un autre ailleurs, et on utilise pour cela la fonction std::move.
-Usage de la fonction std::move sur un exemple /// Passage par valeur // vvvvvvvvvvv void f(std::vector&lt;std::string&gt; my_own_data) { for (auto&amp; s : my_own_data) std::cout &lt;&lt; &amp;s &lt;&lt; &#34; &#34;; // ^^ // On affiche l&#39;adresse des chaines de caractères std::cout &lt;&lt; std::endl; } int main() { std::vector&lt;std::string&gt; data = {&#34;Hello&#34;, &#34;World&#34;, &#34;!">
+Usage de la fonction std::move sur un exemple Considérons le bout de code ci-dessous.
+#include &lt;iostream&gt; #include &lt;vector&gt; // Passage par valeur // vvvvvvvvvvv void f(std::vector&lt;std::string&gt; my_own_data) { for (auto&amp; s : my_own_data) std::cout &lt;&lt; &amp;s &lt;&lt; &#34; &#34;; // ^^ // On affiche l&#39;adresse des chaines de caractères std::cout &lt;&lt; std::endl; } int main() { std::vector&lt;std::string&gt; data = {&#34;Hello&#34;, &#34;World&#34;, &#34;!">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Copie et déplacement">
     <meta itemprop="name" content="Déplacement :: C&#43;&#43;">
     <meta itemprop="description" content="Sur cette page vous allez apprendre ce qu’est le déplacement en C&#43;&#43;. En un mot, il s’agit de permettre de vider un objet pour en construire un autre ailleurs, et on utilise pour cela la fonction std::move.
-Usage de la fonction std::move sur un exemple /// Passage par valeur // vvvvvvvvvvv void f(std::vector&lt;std::string&gt; my_own_data) { for (auto&amp; s : my_own_data) std::cout &lt;&lt; &amp;s &lt;&lt; &#34; &#34;; // ^^ // On affiche l&#39;adresse des chaines de caractères std::cout &lt;&lt; std::endl; } int main() { std::vector&lt;std::string&gt; data = {&#34;Hello&#34;, &#34;World&#34;, &#34;!">
-    <meta itemprop="wordCount" content="1262">
+Usage de la fonction std::move sur un exemple Considérons le bout de code ci-dessous.
+#include &lt;iostream&gt; #include &lt;vector&gt; // Passage par valeur // vvvvvvvvvvv void f(std::vector&lt;std::string&gt; my_own_data) { for (auto&amp; s : my_own_data) std::cout &lt;&lt; &amp;s &lt;&lt; &#34; &#34;; // ^^ // On affiche l&#39;adresse des chaines de caractères std::cout &lt;&lt; std::endl; } int main() { std::vector&lt;std::string&gt; data = {&#34;Hello&#34;, &#34;World&#34;, &#34;!">
+    <meta itemprop="wordCount" content="1376">
     <title>Déplacement :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1738068931" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1738068931" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1738068931" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1738068931" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1738068931" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1738068931" rel="stylesheet">
-    <link href="../../css/fonts.css?1738068931" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1738068931" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1738068931" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1738068931" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1738068931" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1738068931" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1738068931"></script>
+    <link href="../../css/fontawesome-all.min.css?1738745695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1738745695" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1738745695" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1738745695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1738745695" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1738745695" rel="stylesheet">
+    <link href="../../css/fonts.css?1738745695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1738745695" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1738745695" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1738745695" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1738745695" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1738745695" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1738745695"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -116,7 +120,10 @@ Usage de la fonction std::move sur un exemple /// Passage par valeur // vvvvvvvv
 <p>Sur cette page vous allez apprendre ce qu&rsquo;est le déplacement en C++.
 En un mot, il s&rsquo;agit de permettre de vider un objet pour en construire un autre ailleurs, et on utilise pour cela la fonction <code>std::move</code>.</p>
 <h3 id="usage-de-la-fonction-stdmove-sur-un-exemple">Usage de la fonction <code>std::move</code> sur un exemple</h3>
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">///                      Passage par valeur
+<p>Considérons le <a href="https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIABwA7KSuADJ4DJgAcj4ARpjEIGYAbKQADqgKhE4MHt6%2BAcEZWY4C4ZExLPGJKbaY9qUMQgRMxAR5Pn5BdQ05za0E5dFxCUmpCi1tHQXdEwNDldVjAJS2qF7EyOwc5gDMEcjeWADUJrtuThPEmKxn2CYaAIJ7B0eYp%2BcAbpgOJHcPjwA9IDjqCweCIZDQcomAoFExgO80q1jp8xJgNgDgVCcbjIZ8CYSiZ8AZ9UHh0McqBAJugQCBvr9iGc3LT6VcIsA7scWABPAD6qAA7gx%2BegmC1lqcniZAlYnuD%2BMRjhAmF4iOZkscFMcQDyBcLReLJQCcWyUOsCB83CzTikdSzbeYzHazGd5UCQXicSYAKz3f1Yr3eyEAeQYxyYVBoyAQ71oYA4THQ1zh7ywOtjTAimB1J1ExCYDhMbl2Jke/lTprB5rQ6uttvNrlo7oBsoAIm2nhErSxswwIFK23Lq6DzYyiMzzuaOUZucamB926cR2YzAAJeq0VDO0iugDqJFo6F3rrAYGdHdbCprBDpFvrjvOrse0bwWcRxw0eq2xwAjl4iZ0McvKRsc4oMHmEpMM6DbPk2DDoC2uweoqJAqmqGopNqurgdByyjhCtaWnBbh2skDrnE6a6utejzgsRj5UfBd70s2dGEYxVpPmRCFIaRL5vh%2B7xcHqfKCiKYrQdqhg6uaLCoN8sE8dqrEgOxKGEdSC4EShxzAvQmYIP2ubarIpyluWGjgaZyapkoOosCWZaPAAnApeDXOBeDRs55audcgi5l29G3vedbccxvFqc2AnOq%2BMbGZ%2BZhiQakkLpGjKqfeClKTRKl8chqFgtS8mKZgEA6bpFj6SChnHFmOZyeZaqqDyfmPI8bA6nZuYOe1lluR5XkAYmHXWQmSZCUl7waCFDFqRFAmFXFa4Je%2BM3HLsP7vKNHDAamBDprJeEtMpUXZWxiFFVp6GquqO7YTqeo6bVp2Lrmvb9kdzCCKiFKYHuxB4IwxyRNqiZRolmCEQt4UkSpmqUTaz7KWuHE3qCwKhKZaLA0wsT1duoj1Qo5knoNrkEMQXiEKZlUCMgxyg8ibTvl4tAg8qOnDu2HCrLQnC%2BrwfgcFopCoJwNqWNYZkbL%2Bew8KQBCaPzqwANYgL6Gj6Jwki8CwEgaDrovi5LHC8AoIA6yrYv86QcCwEgmCqD8D1kBQqrEMACgwpEtBCAghqcEraAsGkdASjkfv1IHwd26QYcR/QiTAFIZiJ6g4d0AkUSsNsvBJznxChuqcciqrISu8gjze1bFtVz8zT4KLvD8IIIjohI0jt/IShqJXuhcPohjGNY1j6HgsRW5AqyoGkjT15b6ybOww%2B0hEMcB0HFfcLwQqFmkIf24LHDC6Qpu8Ob2DV%2B7xyqP4yQALTJJIxzAMgTNSAAdC6EDS1YSwe5cCEHQorZYvBbZaGWKsOMyZRiDlIJrbWusOD6wvpXc2ltrbK1VjA1BZgRaYM4JAvBqxvjECyM4SQQA" rel="external" target="_blank">bout de code</a> ci-dessous.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1">//                       Passage par valeur
 </span></span></span><span class="line"><span class="cl"><span class="c1">//                              vvvvvvvvvvv
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">my_own_data</span><span class="p">)</span> 
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -130,16 +137,20 @@ En un mot, il s&rsquo;agit de permettre de vider un objet pour en construire un 
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> 
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#34;Hello&#34;</span><span class="p">,</span> <span class="s">&#34;World&#34;</span><span class="p">,</span> <span class="s">&#34;!&#34;</span><span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// Affichage 0
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">s</span> <span class="p">:</span> <span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Affichage 0: ce qu&#39;il y a dans data&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">s</span> <span class="p">:</span> <span class="n">data</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">&amp;</span><span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// Affichage 1: les chaines sont à des adresses mémoire différentes
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">f</span><span class="p">(</span><span class="n">data</span><span class="p">);</span> 
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// Affichage 2: les chaines sont aux mêmes adresses mémoire qu&#39;à l&#39;affichage 0
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">f</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">data</span><span class="p">));</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Affichage 1: my_own_data sans std::move&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">f</span><span class="p">(</span><span class="n">data</span><span class="p">);</span> <span class="c1">//les chaines sont à des adresses mémoire différentes
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Affichage 2: my_own_data avec std::move&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">f</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">data</span><span class="p">));</span> <span class="c1">// les chaines sont aux mêmes adresses mémoire qu&#39;à l&#39;affichage 0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Affichage 3: ce qu&#39;il reste dans data&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">s</span> <span class="p">:</span> <span class="n">data</span><span class="p">)</span> <span class="c1">// data est maintenant vide, rien ne s&#39;affiche
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">&amp;</span><span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//Les variables locales sont détruites (donc en particulier data)
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span></span></span></code></pre></div>
@@ -148,18 +159,18 @@ En un mot, il s&rsquo;agit de permettre de vider un objet pour en construire un 
 <p>Lors du deuxième appel à <code>f</code>, on sait qu&rsquo;on n&rsquo;aura plus besoin de <code>data</code> dans <code>main</code> (elle va être détruite juste après).
 Vu que <code>f</code> a apparemment besoin de sa propre copie de <code>data</code>, on décide de <strong>déplacer</strong> <code>data</code> dans <code>my_own_data</code>.
 Cela signifie que cette fois, le compilateur va prendre les ressources de <code>data</code> pour construire <code>my_own_data</code>.
-Les chaînes de caractères dans <code>my_own_data</code> sont en fait exactement les mêmes que celles qui étaient dans <code>data</code> à l&rsquo;affichage 0: elles ont juste été réattribuées à <code>my_own_data</code>.
-Le tableau dynamique <code>data</code> est maintenant vide.</p>
+Les chaînes de caractères dans <code>my_own_data</code> sont en fait exactement les mêmes que celles qui étaient dans <code>data</code> à l&rsquo;affichage 0: elles ont juste été réattribuées à <code>my_own_data</code>.</p>
+<p>Le tableau dynamique <code>data</code> est vide à l&rsquo;affichage 3, car ses données ont été prise par <code>my_own_data</code>.  En revanche, après le <code>std::move</code>, <code>data</code> est toujours un objet valide: on peut itérer dessus ou rajouter de nouveaux éléments.</p>
 <p>Rappelez-vous qu&rsquo;un <code>std::vector</code> est un tableau dynamique, donc ses éléments sont en fait sur le tas,
 et ce sont elles qui vont être copiées ou réattribuées à <code>my_own_data</code>, comme le montrent les deux diagrammes en dessous.</p>
 <h4 id="effet-sur-la-mémoire-du-premier-appel-à-f-copie">Effet sur la mémoire du premier appel à <code>f</code> (copie)</h4>
-<p><a href="#R-image-e079304a8ff50db6b30ae3be18cbca2a" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_copy.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e079304a8ff50db6b30ae3be18cbca2a"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_copy.svg"></a></p>
+<p><a href="#R-image-174b21c79ddfe549489f28b44d918e70" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_copy.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-174b21c79ddfe549489f28b44d918e70"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_copy.svg"></a></p>
 <h4 id="effet-sur-la-mémoire-du-deuxième-appel-à-f-déplacement">Effet sur la mémoire du deuxième appel à <code>f</code> (déplacement)</h4>
-<p><a href="#R-image-6316380cc854c5a463ed004ff060fccd" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_move.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6316380cc854c5a463ed004ff060fccd"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_move.svg"></a></p>
+<p><a href="#R-image-373926bf33ab34798773befe64cf5fd0" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_move.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-373926bf33ab34798773befe64cf5fd0"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_move.svg"></a></p>
 <h3 id="constructeur-de-déplacement">Constructeur de déplacement</h3>
-<p>Maintenant qu&rsquo;on a compris le principe du déplacement, encore faut-il pouvoir définir comment se déplace
+<p>Maintenant qu&rsquo;on a compris le principe du déplacement, encore faut-il pouvoir définir comment se déplacent
 nos propres classes.  Etant donné une classe <code>MaClasse</code> le constructeur de déplacement a le prototype suivant.</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">//               Attention à la double &amp; 
 </span></span></span><span class="line"><span class="cl"><span class="c1">//               vv
@@ -174,14 +185,15 @@ est en fait une <strong>L-value-reference</strong>.</p>
     <i class="fa-fw fas fa-lightbulb"></i> Astuce
   </div>
   <div class="box-content">
-<p>Le compilateur fournit une implémentation par défaut pour le constructeur de déplacement.  Dans beaucoup d&rsquo;autres cas, le compilateur ne va pas le générer mais son implémentation par défaut suffit. On peut la rétablir avec <code>MaClasse(MaClasse&amp;&amp; other) = default;</code>.</p>
+<p>Le compilateur génère une implémentation par défaut pour le constructeur de déplacement et elle fait ce qu&rsquo;il faut dans la plupart des cas.
+Dans d&rsquo;autres cas, le compilateur ne va pas la générer mais elle est quand même très bien. On peut demander explicitement au compilateur de le générer avec <code>MaClasse(MaClasse&amp;&amp; other) = default;</code>.</p>
   </div>
 </div>
-<p>Quand on déplace un objet (et donc quand on implémente un constructeur de déplacemnt à la main), il faut faire attention à laisser l&rsquo;objet d&rsquo;origine dans un état valide.<br>
+<p>Quand on déplace un objet (et donc quand on implémente un constructeur de déplacement à la main), il faut faire attention à laisser l&rsquo;objet d&rsquo;origine dans un état valide.<br>
 Pourquoi?  Parce que l&rsquo;objet d&rsquo;origine va sans doute être supprimé juste après, donc il faut faire attention qu&rsquo;il ne supprime pas les ressources qu&rsquo;on lui a pris. Il est aussi possible qu&rsquo;il soit réutilisé juste après</p>
 <h3 id="quand-le-constructeur-de-déplacement-est-il-appelé">Quand le constructeur de déplacement est-il appelé?</h3>
 <p>Pour faire court: quand le compilateur doit construire un nouvel objet à partir d&rsquo;une R-value du même type (et que le compilateur ne fait pas d&rsquo;élusion de déplacement, voir plus bas).</p>
-<p>En pratique, c&rsquo;est surtout quand on utilise <code>std::move</code> en effet, c&rsquo;est une fonction qui permet de une L-value en R-value et dit donc au compilateur d&rsquo;utiliser le constructeur de déplacement plutôt que le constructeur de copie.</p>
+<p>En pratique, c&rsquo;est surtout quand on utilise <code>std::move</code> en effet, c&rsquo;est une fonction qui permet de transformer une L-value en R-value et dit donc au compilateur d&rsquo;utiliser le constructeur de déplacement plutôt que le constructeur de copie.</p>
 <h4 id="exercice">Exercice</h4>
 <p>On considère que <code>MyClass</code> est une classe avec un constructeur par défaut et des constructeurs de copies et de déplacements;
 Dans chacun des bouts de code ci-dessous: combien de fois le constructeur de <strong>copie</strong> de MyClass est-il appelé? (On ne demande pas le nombre de fois où le constructeur de déplacement est appelé à cause de l&rsquo;élusion de déplacement que l&rsquo;on verra plus bas.)</p>
@@ -297,7 +309,7 @@ Dans chacun des bouts de code ci-dessous: combien de fois le constructeur de <st
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">MyClass</span> <span class="n">_att</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">MyOtherClass</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">MyOtherClass</span><span class="p">(</span><span class="n">MyClass</span> <span class="n">arg</span><span class="p">)</span> <span class="o">:</span> <span class="n">_att</span><span class="p">{</span><span class="n">my_arg</span><span class="p">}</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MyOtherClass</span><span class="p">(</span><span class="n">MyClass</span> <span class="n">arg</span><span class="p">)</span> <span class="o">:</span> <span class="n">_att</span><span class="p">{</span><span class="n">arg</span><span class="p">}</span> <span class="p">{}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 <p>Combien de fois le constructeur de copie de <code>MyClass</code> est-il appelé par chacun des bouts de code suivants.</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cm">/*5*/</span>
@@ -319,7 +331,7 @@ Dans chacun des bouts de code ci-dessous: combien de fois le constructeur de <st
         </button>
 
         <div class="hidden-solution-content">
-            <p>Le constructeur de copie sera appelé deux fois: uen fois pour construire <code>arg</code> et une fois pour construire <code>_att</code> à partir de <code>arg</code>.</p>
+            <p>Le constructeur de copie sera appelé deux fois: une fois pour construire <code>arg</code> et une fois pour construire <code>_att</code> à partir de <code>arg</code>.</p>
 
         </div>
     </div>
@@ -346,7 +358,7 @@ Dans chacun des bouts de code ci-dessous: combien de fois le constructeur de <st
 
         <div class="hidden-solution-content">
             <p>Le constructeur de copie de <code>MyClass</code> sera appelé une fois.
-En effet, l&rsquo;implémentation par défaut du constructeur de copie appelle le cosntructeur de copie pour chaque attribut.</p>
+En effet, l&rsquo;implémentation par défaut du constructeur de copie appelle le constructeur de copie pour chaque attribut.</p>
 
         </div>
     </div>
@@ -439,8 +451,7 @@ En réalité, le constructeur de déplacement ne sera pas appelé: le constructe
 </span></span><span class="line"><span class="cl">    <span class="n">MyClass</span> <span class="n">n</span> <span class="o">=</span> <span class="n">f</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 <p>Dans le code ci-dessus, la fonction <code>f</code> crée un <code>MyClass</code> sur la pile, fait des opérations dessus, puis retourne le <code>MyClass</code>.
-Ensuite, dans le <code>main</code>, l&rsquo;expression <code>f()</code> est une R-value donc le constructeur de déplacement devrai
-t être appelé pour construire <code>n</code>.
+Ensuite, dans le <code>main</code>, l&rsquo;expression <code>f()</code> est une R-value donc le constructeur de déplacement devrait être appelé pour construire <code>n</code>.
 En fait, suivant le contenu de <code>f</code>, le compilateur peut décider de ne pas allouer de mémoire pour <code>x</code> et de construire directement le <code>MyClass</code> dans la mémoire allouée pour <code>m</code>.</p>
 
   <footer class="footline">
@@ -545,24 +556,27 @@ En fait, suivant le contenu de <code>f</code>, le compilateur peut décider de n
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1738068931" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1738068931" defer></script>
-    <script src="../../js/theme.js?1738068931" defer></script>
+    <script src="../../js/clipboard.min.js?1738745695" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1738745695" defer></script>
+    <script src="../../js/theme.js?1738745695" defer></script>
 
 
 
-    
 
 
-<button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
+
+<button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()"
+    disabled><i class="fas fa-question-circle"></i></button>
 
 <div id="footer-question-window" disabled>
     <form id="question" method=POST action="https://formsubmit.co/08af4b8e13fc3ec785faa99820631150"
         target="question-submitted" onsubmit="cleanQuestionFormContent()">
 
-        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required
+            onchange="updateQuestionFormSubject()" />
         <textarea name="question" rows="7" cols="30" placeholder="Mon message..."></textarea>
         <input type="hidden" name="selection" />
+        <input type="hidden" name="page" value="/chapter4/3-move/" />
 
         <input type="hidden" name="_replyto" />
         <input type="hidden" name="_subject" />
@@ -581,7 +595,7 @@ En fait, suivant le contenu de <code>f</code>, le compilateur peut décider de n
 
     function updateQuestionFormSubject() {
         let email = document.querySelector('#question>input[name="email"]').value;
-        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 3] " + email + ", retour sur ta question";
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chap 4] " + email + ", retour sur ta question";
     }
 
     function cleanQuestionFormContent() {
@@ -626,7 +640,6 @@ En fait, suivant le contenu de <code>f</code>, le compilateur peut décider de n
     updateQuestionWidgetState();
 
 </script>
-
 
 
   </body>

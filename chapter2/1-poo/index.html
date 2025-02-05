@@ -33,16 +33,16 @@ Classe Un objet est généralement créé à partir d’un modèle, que l’on a
 Etat L’état d’un objet est composé de valeurs, pouvant ou non varier au cours de l’exécution du programme.">
     <meta itemprop="wordCount" content="486">
     <title>C&#39;est quoi un objet déjà ? :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1738068931" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1738068931" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1738068931" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1738068931" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1738068931" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1738068931" rel="stylesheet">
-    <link href="../../css/fonts.css?1738068931" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1738068931" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1738068931" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1738068931" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1738068931" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1738068931" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1738068931"></script>
+    <link href="../../css/fontawesome-all.min.css?1738745695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1738745695" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1738745695" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1738745695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1738745695" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1738745695" rel="stylesheet">
+    <link href="../../css/fonts.css?1738745695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1738745695" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1738745695" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1738745695" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1738745695" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1738745695" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1738745695"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -246,24 +246,27 @@ S&rsquo;il veut ajouter un élément, on le forcera à passer par notre fonction
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1738068931" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1738068931" defer></script>
-    <script src="../../js/theme.js?1738068931" defer></script>
+    <script src="../../js/clipboard.min.js?1738745695" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1738745695" defer></script>
+    <script src="../../js/theme.js?1738745695" defer></script>
 
 
 
-    
 
 
-<button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
+
+<button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()"
+    disabled><i class="fas fa-question-circle"></i></button>
 
 <div id="footer-question-window" disabled>
     <form id="question" method=POST action="https://formsubmit.co/08af4b8e13fc3ec785faa99820631150"
         target="question-submitted" onsubmit="cleanQuestionFormContent()">
 
-        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required
+            onchange="updateQuestionFormSubject()" />
         <textarea name="question" rows="7" cols="30" placeholder="Mon message..."></textarea>
         <input type="hidden" name="selection" />
+        <input type="hidden" name="page" value="/chapter2/1-poo/" />
 
         <input type="hidden" name="_replyto" />
         <input type="hidden" name="_subject" />
@@ -282,7 +285,7 @@ S&rsquo;il veut ajouter un élément, on le forcera à passer par notre fonction
 
     function updateQuestionFormSubject() {
         let email = document.querySelector('#question>input[name="email"]').value;
-        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 1] " + email + ", retour sur ta question";
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chap 2] " + email + ", retour sur ta question";
     }
 
     function cleanQuestionFormContent() {
@@ -327,7 +330,6 @@ S&rsquo;il veut ajouter un élément, on le forcera à passer par notre fonction
     updateQuestionWidgetState();
 
 </script>
-
 
 
   </body>

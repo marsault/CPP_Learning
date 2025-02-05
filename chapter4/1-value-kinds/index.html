@@ -5,40 +5,40 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.128.0">
     <meta name="generator" content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619">
-    <meta name="description" content="Sur cette page, on va parler des catégories des expressions (L-value et R-values), ce qui permet de mieux comprendre comment le compilateur les traite.
-Remarque La catégorisation des expressions est en fait encore plus complexe que celle décrite ici. Il existe en C&#43;&#43; des GL-value, PR-value et X-value, mais ces notions ne sont pas au programme du cours.
-L-value Pour illustrer ce que sont les L-value, on utilisera le bout de code ci-dessous.">
+    <meta name="description" content="Sur cette page, on va parler des catégories des expressions (L-values et R-values), ce qui permet de mieux comprendre comment le compilateur les traite.
+Remarque La catégorisation des expressions est en fait encore plus complexe que celle décrite ici. Il existe en C&#43;&#43; des GL-values, PR-values et X-values, mais ces notions ne sont pas au programme du cours.
+L-value Pour illustrer ce que sont les L-values, on utilisera le bout de code ci-dessous.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="L-value vs R-value :: C&#43;&#43;">
-    <meta name="twitter:description" content="Sur cette page, on va parler des catégories des expressions (L-value et R-values), ce qui permet de mieux comprendre comment le compilateur les traite.
-Remarque La catégorisation des expressions est en fait encore plus complexe que celle décrite ici. Il existe en C&#43;&#43; des GL-value, PR-value et X-value, mais ces notions ne sont pas au programme du cours.
-L-value Pour illustrer ce que sont les L-value, on utilisera le bout de code ci-dessous.">
+    <meta name="twitter:description" content="Sur cette page, on va parler des catégories des expressions (L-values et R-values), ce qui permet de mieux comprendre comment le compilateur les traite.
+Remarque La catégorisation des expressions est en fait encore plus complexe que celle décrite ici. Il existe en C&#43;&#43; des GL-values, PR-values et X-values, mais ces notions ne sont pas au programme du cours.
+L-value Pour illustrer ce que sont les L-values, on utilisera le bout de code ci-dessous.">
     <meta property="og:url" content="/chapter4/1-value-kinds/index.html">
     <meta property="og:site_name" content="C&#43;&#43;">
     <meta property="og:title" content="L-value vs R-value :: C&#43;&#43;">
-    <meta property="og:description" content="Sur cette page, on va parler des catégories des expressions (L-value et R-values), ce qui permet de mieux comprendre comment le compilateur les traite.
-Remarque La catégorisation des expressions est en fait encore plus complexe que celle décrite ici. Il existe en C&#43;&#43; des GL-value, PR-value et X-value, mais ces notions ne sont pas au programme du cours.
-L-value Pour illustrer ce que sont les L-value, on utilisera le bout de code ci-dessous.">
+    <meta property="og:description" content="Sur cette page, on va parler des catégories des expressions (L-values et R-values), ce qui permet de mieux comprendre comment le compilateur les traite.
+Remarque La catégorisation des expressions est en fait encore plus complexe que celle décrite ici. Il existe en C&#43;&#43; des GL-values, PR-values et X-values, mais ces notions ne sont pas au programme du cours.
+L-value Pour illustrer ce que sont les L-values, on utilisera le bout de code ci-dessous.">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Copie et déplacement">
     <meta itemprop="name" content="L-value vs R-value :: C&#43;&#43;">
-    <meta itemprop="description" content="Sur cette page, on va parler des catégories des expressions (L-value et R-values), ce qui permet de mieux comprendre comment le compilateur les traite.
-Remarque La catégorisation des expressions est en fait encore plus complexe que celle décrite ici. Il existe en C&#43;&#43; des GL-value, PR-value et X-value, mais ces notions ne sont pas au programme du cours.
-L-value Pour illustrer ce que sont les L-value, on utilisera le bout de code ci-dessous.">
-    <meta itemprop="wordCount" content="925">
+    <meta itemprop="description" content="Sur cette page, on va parler des catégories des expressions (L-values et R-values), ce qui permet de mieux comprendre comment le compilateur les traite.
+Remarque La catégorisation des expressions est en fait encore plus complexe que celle décrite ici. Il existe en C&#43;&#43; des GL-values, PR-values et X-values, mais ces notions ne sont pas au programme du cours.
+L-value Pour illustrer ce que sont les L-values, on utilisera le bout de code ci-dessous.">
+    <meta itemprop="wordCount" content="934">
     <title>L-value vs R-value :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1738068931" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1738068931" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1738068931" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1738068931" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1738068931" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1738068931" rel="stylesheet">
-    <link href="../../css/fonts.css?1738068931" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1738068931" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1738068931" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1738068931" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1738068931" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1738068931" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1738068931"></script>
+    <link href="../../css/fontawesome-all.min.css?1738745695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1738745695" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1738745695" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1738745695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1738745695" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1738745695" rel="stylesheet">
+    <link href="../../css/fonts.css?1738745695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1738745695" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1738745695" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1738745695" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1738745695" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1738745695" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1738745695"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -114,7 +114,7 @@ L-value Pour illustrer ce que sont les L-value, on utilisera le bout de code ci-
 
 <h1 id="l-value-vs-r-value">L-value vs R-value</h1>
 
-<p>Sur cette page, on va parler des catégories des expressions (L-value et R-values),
+<p>Sur cette page, on va parler des catégories des expressions (L-values et R-values),
 ce qui permet de mieux comprendre comment le compilateur les traite.</p>
 <div class="box notices cstyle note">
   <div class="box-label">
@@ -122,12 +122,12 @@ ce qui permet de mieux comprendre comment le compilateur les traite.</p>
   </div>
   <div class="box-content">
 <p>La catégorisation des expressions est en fait encore plus complexe que celle décrite ici.
-Il existe en C++ des GL-value, PR-value et X-value, mais ces notions ne sont pas au programme du cours.</p>
+Il existe en C++ des GL-values, PR-values et X-values, mais ces notions ne sont pas au programme du cours.</p>
   </div>
 </div>
 <hr>
 <h2 id="l-value">L-value</h2>
-<p>Pour illustrer ce que sont les L-value, on utilisera le bout de code ci-dessous.</p>
+<p>Pour illustrer ce que sont les L-values, on utilisera le bout de code ci-dessous.</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">MyClass</span> 
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
@@ -149,14 +149,21 @@ Il existe en C++ des GL-value, PR-value et X-value, mais ces notions ne sont pas
 </span></span></span><span class="line"><span class="cl"><span class="c1">//          vvvvvvvvvvvvvvvvvvv
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="p">(</span><span class="n">mon_instance</span><span class="p">.</span><span class="n">my_att</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
-<p>Les L-values sont des expressions dont la valeur est stockée quelque part en mémoire.
+<p><div class="box notices cstyle important">
+  <div class="box-label">
+    <i class="fa-fw fas fa-bolt"></i> Important
+  </div>
+  <div class="box-content">
+<p>Une L-value est une expression dont on calcule la valeur est stockée dans une adresse en mémoire déterminée (pile ou tas).</p>
+  </div>
+</div>
 Etant donné une variable <code>a</code>, l&rsquo;expression <code>a</code> est une L-value.
-Ceci est vrai que <code>a</code> soit une variable locale ou globale, et quel que soit le type déclarée de <code>a</code>.
+Ceci est vrai que <code>a</code> soit une variable locale ou globale, et quel que soit le type déclaré de <code>a</code>.
 Par exemple, l&rsquo;expression 1 <code>mon_instance</code> est une L-value dans le code ci-dessus.
 En effet dans ce cas, <code>a</code> n&rsquo;est rien d&rsquo;autre que le nom donné à une case mémoire.  La plupart du temps, l&rsquo;expression <code>a</code> ne va utiliser que la valeur stockée dans cette case
-mais parfois, c&rsquo;est l&rsquo;adresse de cette case qui est utilisée, comme dans l&rsquo;expression <code>&amp;a</code>, ou si <code>a</code> est passé
+mais parfois, c&rsquo;est l&rsquo;adresse de cette case qui est utilisée, comme dans l&rsquo;expression <code>&amp;a</code>, ou si <code>a</code> est passée
 par référence à une fonction (comme dans l&rsquo;expression 2 <code>my_func(mon_instance)</code>).</p>
-<p>Si un expression <em>E</em> est une L-value dont le type est une classe qui a un attribut <code>c</code>, alors <em>E</em><code>.c</code> est aussi une L-value.
+<p>Si une expression <em>E</em> est une L-value dont le type est une classe qui a un attribut <code>c</code>, alors <em>E</em><code>.c</code> est aussi une L-value.
 Par exemple, l&rsquo;expression 3 <code>mon_instance.my_att</code> est une L-value dans le code
 au dessus.
 En effet, comme expliqué dans le <a href="../../chapter3/index.html">chapitre 3</a> les attributs d&rsquo;un objet sont stockées dans l&rsquo;espace allouée pour l&rsquo;objet lui-même donc on sait où est chaque attribut est stockée dès qu&rsquo;on sait où l&rsquo;objet est stockée.</p>
@@ -188,9 +195,16 @@ En effet, on sait explicitement où cette valeur est stockée.</p>
 </span></span><span class="line"><span class="cl"><span class="c1">//         ^^^^^^^^^^^^^^^^^^^^^^
 </span></span></span><span class="line"><span class="cl"><span class="c1">//         Expression 5
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span></span></span></code></pre></div>
-<p>Par opposition aux L-values, les R-values sont les expressions qui n&rsquo;ont pas d&rsquo;adresse en mémoire.
-Par exemple, un literal, comme <code>42</code> (expression 1 dans le code ci-dessus), n&rsquo;est stockée nulle-part en mémoire.
-En fait, le compilateur la stockera directement dans la case mémoire
+<p><div class="box notices cstyle important">
+  <div class="box-label">
+    <i class="fa-fw fas fa-bolt"></i> Important
+  </div>
+  <div class="box-content">
+<p>une R-value est une expression dont la valeur n&rsquo;est pas explicitement stockée en mémoire.</p>
+  </div>
+</div>
+Par exemple, un littéral, comme <code>42</code> (expression 1 dans le code ci-dessus), n&rsquo;est stocké nulle part en mémoire.
+En fait, le compilateur le stockera directement dans la case mémoire
 réservée pour l&rsquo;argument <code>x</code> de la function <code>my_func</code>.
 C&rsquo;est la même chose pour <code>MyClass{}</code> (expression 2), il s&rsquo;agit d&rsquo;une
 nouvelle instance de <code>MyClass</code> qui sera construite directement dans la case <code>y</code> de <code>my_func</code>.</p>
@@ -342,24 +356,27 @@ Référez-vous plutôt aux définitions plus haut.</p>
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1738068931" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1738068931" defer></script>
-    <script src="../../js/theme.js?1738068931" defer></script>
+    <script src="../../js/clipboard.min.js?1738745695" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1738745695" defer></script>
+    <script src="../../js/theme.js?1738745695" defer></script>
 
 
 
-    
 
 
-<button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
+
+<button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()"
+    disabled><i class="fas fa-question-circle"></i></button>
 
 <div id="footer-question-window" disabled>
     <form id="question" method=POST action="https://formsubmit.co/08af4b8e13fc3ec785faa99820631150"
         target="question-submitted" onsubmit="cleanQuestionFormContent()">
 
-        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required
+            onchange="updateQuestionFormSubject()" />
         <textarea name="question" rows="7" cols="30" placeholder="Mon message..."></textarea>
         <input type="hidden" name="selection" />
+        <input type="hidden" name="page" value="/chapter4/1-value-kinds/" />
 
         <input type="hidden" name="_replyto" />
         <input type="hidden" name="_subject" />
@@ -378,7 +395,7 @@ Référez-vous plutôt aux définitions plus haut.</p>
 
     function updateQuestionFormSubject() {
         let email = document.querySelector('#question>input[name="email"]').value;
-        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 3] " + email + ", retour sur ta question";
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chap 4] " + email + ", retour sur ta question";
     }
 
     function cleanQuestionFormContent() {
@@ -423,7 +440,6 @@ Référez-vous plutôt aux définitions plus haut.</p>
     updateQuestionWidgetState();
 
 </script>
-
 
 
   </body>

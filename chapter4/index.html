@@ -5,40 +5,40 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.128.0">
     <meta name="generator" content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619">
-    <meta name="description" content="Dans ce chapitre, nous allons revenir en détail sur la notion de copie et d’aborder celle de déplacement. Plus particulièrement, nous allons voir comment définir la façon dont une classe se copie et se déplace, et quand.
+    <meta name="description" content="Dans ce chapitre, nous allons revenir en détail sur la notion de copie et aborder celle de déplacement. Plus particulièrement, nous allons voir comment définir la façon dont une classe se copie et se déplace, et quand.
 Pour savoir quand un objet est déplacé ou copié, il faut d’abord comprendre les deux principales catégories de valeurs : L-value et R-value.
 Nouveau chapitre Ce chapitre a été écrit cette année. Il contient probablement de nombreuses erreurs.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Copie et déplacement :: C&#43;&#43;">
-    <meta name="twitter:description" content="Dans ce chapitre, nous allons revenir en détail sur la notion de copie et d’aborder celle de déplacement. Plus particulièrement, nous allons voir comment définir la façon dont une classe se copie et se déplace, et quand.
+    <meta name="twitter:description" content="Dans ce chapitre, nous allons revenir en détail sur la notion de copie et aborder celle de déplacement. Plus particulièrement, nous allons voir comment définir la façon dont une classe se copie et se déplace, et quand.
 Pour savoir quand un objet est déplacé ou copié, il faut d’abord comprendre les deux principales catégories de valeurs : L-value et R-value.
 Nouveau chapitre Ce chapitre a été écrit cette année. Il contient probablement de nombreuses erreurs.">
     <meta property="og:url" content="/chapter4/index.html">
     <meta property="og:site_name" content="C&#43;&#43;">
     <meta property="og:title" content="Copie et déplacement :: C&#43;&#43;">
-    <meta property="og:description" content="Dans ce chapitre, nous allons revenir en détail sur la notion de copie et d’aborder celle de déplacement. Plus particulièrement, nous allons voir comment définir la façon dont une classe se copie et se déplace, et quand.
+    <meta property="og:description" content="Dans ce chapitre, nous allons revenir en détail sur la notion de copie et aborder celle de déplacement. Plus particulièrement, nous allons voir comment définir la façon dont une classe se copie et se déplace, et quand.
 Pour savoir quand un objet est déplacé ou copié, il faut d’abord comprendre les deux principales catégories de valeurs : L-value et R-value.
 Nouveau chapitre Ce chapitre a été écrit cette année. Il contient probablement de nombreuses erreurs.">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="website">
     <meta itemprop="name" content="Copie et déplacement :: C&#43;&#43;">
-    <meta itemprop="description" content="Dans ce chapitre, nous allons revenir en détail sur la notion de copie et d’aborder celle de déplacement. Plus particulièrement, nous allons voir comment définir la façon dont une classe se copie et se déplace, et quand.
+    <meta itemprop="description" content="Dans ce chapitre, nous allons revenir en détail sur la notion de copie et aborder celle de déplacement. Plus particulièrement, nous allons voir comment définir la façon dont une classe se copie et se déplace, et quand.
 Pour savoir quand un objet est déplacé ou copié, il faut d’abord comprendre les deux principales catégories de valeurs : L-value et R-value.
 Nouveau chapitre Ce chapitre a été écrit cette année. Il contient probablement de nombreuses erreurs.">
     <meta itemprop="wordCount" content="90">
     <title>Copie et déplacement :: C&#43;&#43;</title>
     <link href="../chapter4/index.xml" rel="alternate" type="application/rss+xml" title="Copie et déplacement :: C++">
-    <link href="../css/fontawesome-all.min.css?1738068931" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1738068931" rel="stylesheet"></noscript>
-    <link href="../css/nucleus.css?1738068931" rel="stylesheet">
-    <link href="../css/auto-complete.css?1738068931" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1738068931" rel="stylesheet"></noscript>
-    <link href="../css/perfect-scrollbar.min.css?1738068931" rel="stylesheet">
-    <link href="../css/fonts.css?1738068931" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1738068931" rel="stylesheet"></noscript>
-    <link href="../css/theme.css?1738068931" rel="stylesheet">
-    <link href="../css/theme-mine.css?1738068931" rel="stylesheet" id="R-variant-style">
-    <link href="../css/chroma-relearn-light.css?1738068931" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../css/print.css?1738068931" rel="stylesheet" media="print">
-    <script src="../js/variant.js?1738068931"></script>
+    <link href="../css/fontawesome-all.min.css?1738745695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1738745695" rel="stylesheet"></noscript>
+    <link href="../css/nucleus.css?1738745695" rel="stylesheet">
+    <link href="../css/auto-complete.css?1738745695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1738745695" rel="stylesheet"></noscript>
+    <link href="../css/perfect-scrollbar.min.css?1738745695" rel="stylesheet">
+    <link href="../css/fonts.css?1738745695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1738745695" rel="stylesheet"></noscript>
+    <link href="../css/theme.css?1738745695" rel="stylesheet">
+    <link href="../css/theme-mine.css?1738745695" rel="stylesheet" id="R-variant-style">
+    <link href="../css/chroma-relearn-light.css?1738745695" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../css/print.css?1738745695" rel="stylesheet" media="print">
+    <script src="../js/variant.js?1738745695"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..';
@@ -105,7 +105,7 @@ Nouveau chapitre Ce chapitre a été écrit cette année. Il contient probableme
 
 <h1 id="copie-et-déplacement">Copie et déplacement</h1>
 
-<p>Dans ce chapitre, nous allons revenir en détail sur la notion de <strong>copie</strong> et d&rsquo;aborder celle de <strong>déplacement</strong>.
+<p>Dans ce chapitre, nous allons revenir en détail sur la notion de <strong>copie</strong> et aborder celle de <strong>déplacement</strong>.
 Plus particulièrement, nous allons voir comment définir la façon dont une classe se copie et se déplace, et quand.</p>
 <p>Pour savoir quand un objet est déplacé ou copié, il faut d&rsquo;abord comprendre les deux principales catégories de valeurs : <strong>L-value</strong> et <strong>R-value</strong>.</p>
 <div class="box notices cstyle tip">
@@ -220,24 +220,27 @@ Pour qu&rsquo;on puisse l&rsquo;améliorer, n&rsquo;hésitez pas à nous signale
         </div>
       </div>
     </aside>
-    <script src="../js/clipboard.min.js?1738068931" defer></script>
-    <script src="../js/perfect-scrollbar.min.js?1738068931" defer></script>
-    <script src="../js/theme.js?1738068931" defer></script>
+    <script src="../js/clipboard.min.js?1738745695" defer></script>
+    <script src="../js/perfect-scrollbar.min.js?1738745695" defer></script>
+    <script src="../js/theme.js?1738745695" defer></script>
 
 
 
-    
 
 
-<button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
+
+<button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()"
+    disabled><i class="fas fa-question-circle"></i></button>
 
 <div id="footer-question-window" disabled>
     <form id="question" method=POST action="https://formsubmit.co/08af4b8e13fc3ec785faa99820631150"
         target="question-submitted" onsubmit="cleanQuestionFormContent()">
 
-        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required
+            onchange="updateQuestionFormSubject()" />
         <textarea name="question" rows="7" cols="30" placeholder="Mon message..."></textarea>
         <input type="hidden" name="selection" />
+        <input type="hidden" name="page" value="/chapter4/" />
 
         <input type="hidden" name="_replyto" />
         <input type="hidden" name="_subject" />
@@ -256,7 +259,7 @@ Pour qu&rsquo;on puisse l&rsquo;améliorer, n&rsquo;hésitez pas à nous signale
 
     function updateQuestionFormSubject() {
         let email = document.querySelector('#question>input[name="email"]').value;
-        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 3] " + email + ", retour sur ta question";
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chap 4] " + email + ", retour sur ta question";
     }
 
     function cleanQuestionFormContent() {
@@ -301,7 +304,6 @@ Pour qu&rsquo;on puisse l&rsquo;améliorer, n&rsquo;hésitez pas à nous signale
     updateQuestionWidgetState();
 
 </script>
-
 
 
   </body>
