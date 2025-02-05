@@ -45,12 +45,12 @@ public static void main(String... args)
 Par conséquent, si vous voulez qu'une fonction ait un effet de bord sur un argument du programme, peu importe son type (fondamental ou structuré), il faut le passer par **référence**.
 
 ```cpp
-void set_value(MyClass obj)
+void set_by_value(MyClass obj)
 {
     obj.set_value(3);
 }
 
-void set_ref(MyClass& obj)
+void set_by_ref(MyClass& obj)
 {
     obj.set_value(3);
 }
@@ -59,9 +59,9 @@ int main()
 {
     auto obj = MyClass { 1 };
     // => obj.value = 1
-    set_value(obj);
+    set_by_value(obj);
     // => obj.value = 1 car c'est la copie qui est modifiée
-    set_ref(obj);
+    set_by_ref(obj);
     // => obj.value = 3 car l'argument est bien modifié
 
     return 0;
@@ -359,7 +359,7 @@ Les `Fighter` ne sont donc pas associés à un seul et unique `Match`.
 Attention néanmoins avec les attributs-références, c'est souvent synonyme de potentielles dangling-references...  
 Par exemple, supposons que vous ayiez la bonne-mauvaise idée de définir la fonction suivante pour créer la classe `Match` :
 ```cpp {linenos=table}
-void create_match(const std::string& name_1, const std::string& name_2)
+Match create_match(const std::string& name_1, const std::string& name_2)
 {
     Fighter f1 { name_1 };
     Fighter f2 { name_2 };
