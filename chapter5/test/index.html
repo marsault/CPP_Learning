@@ -23,18 +23,18 @@ Il avait également un deuxième objectif, qui était en quelque sorte de vous a
     <meta itemprop="name" content="Questionnaire :: C&#43;&#43;">
     <meta itemprop="description" content="Le premier objectif de ce chapitre était de vous présenter quelques classes de la STL, leurs rôles, leurs différences, dans quelles situations les utiliser et comment.
 Il avait également un deuxième objectif, qui était en quelque sorte de vous apprendre à vous débrouiller tout seul : vous devriez désormais être capable de rechercher par vous-même des informations dans la documentation, et vous devriez aussi appréhender un peu mieux qu’avant les messages du compilateur.">
-    <meta itemprop="wordCount" content="520">
+    <meta itemprop="wordCount" content="548">
     <title>Questionnaire :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1738745695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1738745695" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1738745695" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1738745695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1738745695" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1738745695" rel="stylesheet">
-    <link href="../../css/fonts.css?1738745695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1738745695" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1738745695" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1738745695" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1738745695" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1738745695" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1738745695"></script>
+    <link href="../../css/fontawesome-all.min.css?1738832766" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1738832766" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1738832766" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1738832766" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1738832766" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1738832766" rel="stylesheet">
+    <link href="../../css/fonts.css?1738832766" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1738832766" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1738832766" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1738832766" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1738832766" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1738832766" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1738832766"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -77,7 +77,7 @@ Il avait également un deuxième objectif, qui était en quelque sorte de vous a
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Questionnaire</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter5/6-tuples/index.html" title="Paires et tuples (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter5/6-uptr/index.html" title="Unique-pointeur (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter6/index.html" title="Héritage (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
@@ -141,11 +141,7 @@ Il avait également un deuxième objectif, qui était en quelque sorte de vous a
 
   <hr/>
 
-  <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> 
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
-<p><label for="q1">1. Citez 3 informations que vous pouvez retrouver dans l’en-tête de la documentation d’une classe.</label></p>
+  <p><label for="q1">1. Citez 3 informations que vous pouvez retrouver dans l’en-tête de la documentation d’une classe.</label></p>
 <textarea id="q1" name="1- Citez 3 informations que vous pouvez retrouver dans l’en-tête de la documentation d’une classe." rows="1" cols="50"></textarea>
 <p><label for="q2">2. Comment savoir s’il est nécessaire ou non de fournir un paramètre de template à une classe ?</label></p>
 <textarea id="q2" name="2- Comment savoir s’il est nécessaire ou non de fournir un paramètre de template à une classe ?" rows="1" cols="50"></textarea>
@@ -184,19 +180,23 @@ Il avait également un deuxième objectif, qui était en quelque sorte de vous a
 <textarea id="q17" name="17- Quelle classe permet de définir un tableau de taille fixe ?" rows="1" cols="50"></textarea>
 <p><label for="q18">18. Définissez une variable de ce type, contenant les valeurs <code>&lsquo;a&rsquo;</code>, <code>&lsquo;b&rsquo;</code> et <code>&lsquo;c&rsquo;</code>.</label></p>
 <textarea id="q18" name="18- Définissez une variable de ce type, contenant les valeurs &#39;a&#39;, &#39;b&#39; et &#39;c&#39;." rows="1" cols="50"></textarea>
-<p><label for="q19">19. Quelle classe permet de passer une chaîne littérale à une fonction sans faire d’allocation dynamique et sans passer de pointeur ?</label></p>
-<textarea id="q19" name="19- Quelle classe permet de passer une chaîne littérale à une fonction sans faire d’allocation dynamique et sans passer de pointeur ?" rows="1" cols="50"></textarea>
-<p><label for="q20">20. Quelles classes faut-il utiliser pour représenter un ensemble de valeurs uniques ? Indiquez la complexité en temps des opérations d’insertions pour chacune d’entre elles.</label></p>
-<textarea id="q20" name="20- Quelles classes faut-il utiliser pour représenter un ensemble de valeurs uniques ? Indiquez la complexité en temps des opérations d’insertions pour chacune d’entre elles." rows="1" cols="50"></textarea>
-<p><label for="q21">21. Quelle classe permet de retourner plusieurs valeurs d’une fonction facilement ?</label></p>
-<textarea id="q21" name="21- Quelle classe permet de retourner plusieurs valeurs d’une fonction facilement ?" rows="1" cols="50"></textarea>
+<p><label for="q19">19. Quelles classes faut-il utiliser pour représenter une collections dans laquelle chaque valeur ne peut pas apparaître plus d’une fois ? Indiquez la complexité en temps des opérations d’insertions pour chacune d’entre elles.</label></p>
+<textarea id="q19" name="19- Quelles classes faut-il utiliser pour représenter une collections dans laquelle chaque valeur ne peut pas apparaître plus d’une fois ? Indiquez la complexité en temps des opérations d’insertions pour chacune d’entre elles." rows="1" cols="50"></textarea>
+<p><label for="q20">20. Quelle classe permet de retourner plusieurs valeurs d’une fonction facilement ?</label></p>
+<textarea id="q20" name="20- Quelle classe permet de retourner plusieurs valeurs d’une fonction facilement ?" rows="1" cols="50"></textarea>
 <hr>
-<p><label for="q22">22. Comment récupérer l’itérateur de début d’un conteneur dans une variable <code>it</code> ?</label></p>
-<textarea id="q22" name="22- Comment récupérer l’itérateur de début d’un conteneur dans une variable it ?" rows="1" cols="50"></textarea>
-<p><label for="q23">23. Comment incrémenter de 5 positions cet itérateur ?</label></p>
-<textarea id="q23" name="23- Comment incrémenter de 5 positions cet itérateur ?" rows="1" cols="50"></textarea>
-<p><label for="q24">24. Comment récupérer la valeur pointé par cette itérateur dans une variable <code>value</code> ?</label></p>
-<textarea id="q24" name="24- Comment récupérer la valeur pointé par cette itérateur dans une variable value ?" rows="1" cols="50"></textarea>
+<p><label for="q21">21. Quel type doit-on utiliser pour un pointeur ownant? un pointeur observant? (le type pointé est <code>A</code>).</label></p>
+<textarea id="q21" name="21- Quel type doit-on utiliser pour un pointeur ownant? un pointeur observant? (le type pointé est A)." rows="1" cols="50"></textarea>
+<p><label for="q22">22. Une fonction <code>my_func</code> a pour prototype <code>void my_func(std::shared_ptr&lt;std::string&gt;&amp; arg)</code>; notez la <code>&amp;</code>.
+Est-ce que la chaine de caractère <code>*arg</code> sera désinstanciée à la fin de la fonction <code>my_func</code>?</label></p>
+<textarea id="q22" name="22- Une fonction my_func a pour prototype void my_func(std::shared_ptr&lt;std::string&gt;&amp; arg); notez la &amp;. Est-ce que la chaine de caractère *arg sera désinstanciée à la fin de la fonction my_func?" rows="1" cols="50"></textarea>
+<hr>
+<p><label for="q23">23. Comment récupérer l’itérateur de début d’un conteneur dans une variable <code>it</code> ?</label></p>
+<textarea id="q23" name="23- Comment récupérer l’itérateur de début d’un conteneur dans une variable it ?" rows="1" cols="50"></textarea>
+<p><label for="q24">24. Comment incrémenter de 5 positions cet itérateur ?</label></p>
+<textarea id="q24" name="24- Comment incrémenter de 5 positions cet itérateur ?" rows="1" cols="50"></textarea>
+<p><label for="q25">25. Comment récupérer la valeur pointé par cette itérateur dans une variable <code>value</code> ?</label></p>
+<textarea id="q25" name="25- Comment récupérer la valeur pointé par cette itérateur dans une variable value ?" rows="1" cols="50"></textarea>
 
 
   <hr/>
@@ -251,8 +251,8 @@ Il avait également un deuxième objectif, qui était en quelque sorte de vous a
             <li class="" data-nav-id="/chapter5/2-vectors/index.html"><a class="padding" href="../../chapter5/2-vectors/index.html"><span class="presection-icon">🖼</span>Tableaux dynamiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter5/3-sequentials/index.html"><a class="padding" href="../../chapter5/3-sequentials/index.html"><span class="presection-icon">➠</span>Autres conteneurs séquentiels<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter5/4-associatives/index.html"><a class="padding" href="../../chapter5/4-associatives/index.html"><span class="presection-icon">🔑</span>Conteneurs associatifs<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter5/5-strings/index.html"><a class="padding" href="../../chapter5/5-strings/index.html"><span class="presection-icon">🔗</span>Manipulation de chaînes<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter5/6-tuples/index.html"><a class="padding" href="../../chapter5/6-tuples/index.html"><span class="presection-icon">🍒</span>Paires et tuples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/5-tuples/index.html"><a class="padding" href="../../chapter5/5-tuples/index.html"><span class="presection-icon">🍒</span>Paires et tuples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/6-uptr/index.html"><a class="padding" href="../../chapter5/6-uptr/index.html"><span class="presection-icon"><i class="fa-solid fa-snowflake"></i></span>Unique-pointeur<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="active " data-nav-id="/chapter5/test/index.html"><a class="padding" href="../../chapter5/test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
@@ -323,9 +323,9 @@ Il avait également un deuxième objectif, qui était en quelque sorte de vous a
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1738745695" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1738745695" defer></script>
-    <script src="../../js/theme.js?1738745695" defer></script>
+    <script src="../../js/clipboard.min.js?1738832766" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1738832766" defer></script>
+    <script src="../../js/theme.js?1738832766" defer></script>
 
 
 

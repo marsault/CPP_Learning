@@ -29,16 +29,16 @@ Configuration avec CMake Vous aurez besoin d’un fichier CMakeLists.txt à la r
 cmake_minimum_required(VERSION 3.1) project(my_project) add_executable(my_executable my_file1.cpp my_file2.cpp my_file3.h ) target_compile_features(my_executable PUBLIC cxx_std_17) Pour configurer le projet, utilisez la commande CMake: Configure.">
     <meta itemprop="wordCount" content="279">
     <title>Projets VSCode :: C&#43;&#43;</title>
-    <link href="../../../css/fontawesome-all.min.css?1738745695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1738745695" rel="stylesheet"></noscript>
-    <link href="../../../css/nucleus.css?1738745695" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1738745695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1738745695" rel="stylesheet"></noscript>
-    <link href="../../../css/perfect-scrollbar.min.css?1738745695" rel="stylesheet">
-    <link href="../../../css/fonts.css?1738745695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1738745695" rel="stylesheet"></noscript>
-    <link href="../../../css/theme.css?1738745695" rel="stylesheet">
-    <link href="../../../css/theme-mine.css?1738745695" rel="stylesheet" id="R-variant-style">
-    <link href="../../../css/chroma-relearn-light.css?1738745695" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../../css/print.css?1738745695" rel="stylesheet" media="print">
-    <script src="../../../js/variant.js?1738745695"></script>
+    <link href="../../../css/fontawesome-all.min.css?1738832766" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1738832766" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css?1738832766" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1738832766" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1738832766" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css?1738832766" rel="stylesheet">
+    <link href="../../../css/fonts.css?1738832766" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1738832766" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css?1738832766" rel="stylesheet">
+    <link href="../../../css/theme-mine.css?1738832766" rel="stylesheet" id="R-variant-style">
+    <link href="../../../css/chroma-relearn-light.css?1738832766" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../../css/print.css?1738832766" rel="stylesheet" media="print">
+    <script src="../../../js/variant.js?1738832766"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..\/..';
@@ -138,15 +138,15 @@ target_compile_features(my_executable PUBLIC cxx_std_17)</code></pre></div>
 <p>Afin de pouvoir exécuter votre ou vos programme rapidemment, il vous faudra créer et configurer le fichier <code>launch.json</code>.</p>
 <ol>
 <li>Créez un dossier <code>.vscode</code> à la racine du répertoire (si celui-ci n&rsquo;existe pas déjà) et ajoutez dedans un fichier que vous nommerez <code>launch.json</code>.
-<a href="#R-image-a21ff0c6255f2f84885b76497cb2ebb0" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../images/chapter0/new-launch.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a21ff0c6255f2f84885b76497cb2ebb0"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../images/chapter0/new-launch.png"></a></li>
+<a href="#R-image-3f04d1ed8fd3caf61d49b2ffeca701a9" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../images/chapter0/new-launch.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3f04d1ed8fd3caf61d49b2ffeca701a9"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../images/chapter0/new-launch.png"></a></li>
 <li>Une fois ce fichier créé, ouvrez-le et cliquez sur le bouton <code>Add Configuration</code>.
-<a href="#R-image-334622f408bd09a25ef6fbf5cd6b63c8" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../images/chapter0/add-conf.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-334622f408bd09a25ef6fbf5cd6b63c8"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../images/chapter0/add-conf.png"></a></li>
+<a href="#R-image-5067b73b76882ffa97d6d5dc8e053363" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../images/chapter0/add-conf.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5067b73b76882ffa97d6d5dc8e053363"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../images/chapter0/add-conf.png"></a></li>
 <li>Sélectionnez ensuite la configuration <code>C/C++: (XXX) Launch</code> adéquate.<br>
 Windows et Linux devraient vous proposez GDB et MacOS devrait vous fournir LLVM.
-<a href="#R-image-6e5b4655cba5325ae578edbe9a817843" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../images/chapter0/launch-conf.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6e5b4655cba5325ae578edbe9a817843"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../images/chapter0/launch-conf.png"></a></li>
+<a href="#R-image-cb2966595f3325e8ae69c2752231191b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../images/chapter0/launch-conf.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-cb2966595f3325e8ae69c2752231191b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../images/chapter0/launch-conf.png"></a></li>
 <li>Remplacez la variable <code>cwd</code> par la valeur ci-dessous :</li>
 </ol>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;cwd&#34;</span><span class="err">:</span> <span class="s2">&#34;${workspaceFolder}&#34;</span><span class="err">,</span></span></span></code></pre></div>
@@ -163,11 +163,11 @@ Si vous avez utilisé CMake, vous pouvez indiquer <code>${command:cmake.launchTa
 <h3 id="lancer-un-programme">Lancer un programme</h3>
 <p>Une fois que votre <code>launch.json</code> existe, vous pouvez lancer votre programme avec la commande <code>Debug: Start Debugging</code> ou en appuyant sur F5.</p>
 <p>Si votre projet contient plusieurs exécutables, vous pouvez changer l&rsquo;exécutable à lancer avec la commande <code>CMake: Set Debug Target</code>.
-<a href="#R-image-99150a438633b31b7a34d5eb6d23a9d0" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../images/chapter0/set-debug-target.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-99150a438633b31b7a34d5eb6d23a9d0"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../images/chapter0/set-debug-target.png"></a></p>
+<a href="#R-image-3a393007923cf2f3b52faa8e17a5a4cb" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../images/chapter0/set-debug-target.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3a393007923cf2f3b52faa8e17a5a4cb"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../images/chapter0/set-debug-target.png"></a></p>
 <p>Si vous souhaitez lancer le programme en utilisant des arguments, vous pouvez renseigner ces derniers en modifiant la variable <code>args</code> dans le fichier <code>launch.json</code>.
-<a href="#R-image-6c9fef1b9ba36ec41a364ff4684471c9" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../images/chapter0/args.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6c9fef1b9ba36ec41a364ff4684471c9"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../images/chapter0/args.png"></a></p>
+<a href="#R-image-ec3bc24fd045e7c2221dd3841f589b21" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../images/chapter0/args.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ec3bc24fd045e7c2221dd3841f589b21"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../images/chapter0/args.png"></a></p>
 
   <footer class="footline">
   </footer>
@@ -275,9 +275,9 @@ Si vous avez utilisé CMake, vous pouvez indiquer <code>${command:cmake.launchTa
         </div>
       </div>
     </aside>
-    <script src="../../../js/clipboard.min.js?1738745695" defer></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1738745695" defer></script>
-    <script src="../../../js/theme.js?1738745695" defer></script>
+    <script src="../../../js/clipboard.min.js?1738832766" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1738832766" defer></script>
+    <script src="../../../js/theme.js?1738832766" defer></script>
 
 
 

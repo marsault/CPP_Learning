@@ -33,16 +33,16 @@ Considérons un autre exemple :
 std::vector&lt;Box&gt; boxes; boxes.emplace_back(&#34;gift1&#34;); Box&amp; gift2 = boxes.emplace_back(&#34;gift2&#34;); Box gift3 = boxes.emplace_back(&#34;gift3&#34;); Ici, le tableau boxes est le propriétaire des objets boxes[0], boxes[1] et boxes[2]. Il est également propriétaire de l’objet gift2, puisqu’il s’agit d’une référence sur boxes[1].">
     <meta itemprop="wordCount" content="575">
     <title>Ownership :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1738745695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1738745695" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1738745695" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1738745695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1738745695" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1738745695" rel="stylesheet">
-    <link href="../../css/fonts.css?1738745695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1738745695" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1738745695" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1738745695" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1738745695" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1738745695" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1738745695"></script>
+    <link href="../../css/fontawesome-all.min.css?1738832766" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1738832766" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1738832766" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1738832766" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1738832766" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1738832766" rel="stylesheet">
+    <link href="../../css/fonts.css?1738832766" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1738832766" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1738832766" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1738832766" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1738832766" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1738832766" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1738832766"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -167,12 +167,12 @@ Si un objet A est propriétaire d&rsquo;un objet B, qui lui-même est propriéta
 <p>Analysez maintenant le code du programme <code>Reminders</code> du TP2 (vous pouvez trouver la correction <a href="https://github.com/Laefy/CPP_Learning_Code/tree/tp2_solution/tp-02" rel="external" target="_blank">ici</a>) et essayez d&rsquo;identifier toutes les relations d&rsquo;ownership qu&rsquo;il contient.<br>
 Déduisez-en les durées de vie des différents objets du programme.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-224fb843230944a138763aa048343bed" aria-controls="R-expandcontent-224fb843230944a138763aa048343bed">
-  <label class="expand-label" for="R-expand-224fb843230944a138763aa048343bed">
+  <input type="checkbox" id="R-expand-d9170f7fee9b7f3434e2a6b288ad54f5" aria-controls="R-expandcontent-d9170f7fee9b7f3434e2a6b288ad54f5">
+  <label class="expand-label" for="R-expand-d9170f7fee9b7f3434e2a6b288ad54f5">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-224fb843230944a138763aa048343bed" class="expand-content">
+  <div id="R-expandcontent-d9170f7fee9b7f3434e2a6b288ad54f5" class="expand-content">
 <p><code>clock</code>:</p>
 <ul>
 <li>la durée de vie de <code>clock</code> va de la ligne 15 à la ligne 33 du <code>main</code></li>
@@ -322,9 +322,9 @@ En effet, les objets référencés pourraient être détruits à tout moment, et
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1738745695" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1738745695" defer></script>
-    <script src="../../js/theme.js?1738745695" defer></script>
+    <script src="../../js/clipboard.min.js?1738832766" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1738832766" defer></script>
+    <script src="../../js/theme.js?1738832766" defer></script>
 
 
 

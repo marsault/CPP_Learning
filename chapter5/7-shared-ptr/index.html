@@ -5,34 +5,22 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.128.0">
     <meta name="generator" content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619">
-    <meta name="description" content="C’est l’heure du test ! N’oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.
-Bon courage à vous 🙂
-Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Henri Derycke) Initiaux GR2 (avec Anthony Labarre) Alternants GR3 (avec Victor Marsault) 1. Quel type de boucle faut-il utiliser pour modifier la structure d’un conteneur lors d’un parcours ?
-2. Dans quel cas peut-il être intéressant d’utiliser la fonction std::for_each ?">
+    <meta name="description" content="TODO">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Questionnaire :: C&#43;&#43;">
-    <meta name="twitter:description" content="C’est l’heure du test ! N’oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.
-Bon courage à vous 🙂
-Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Henri Derycke) Initiaux GR2 (avec Anthony Labarre) Alternants GR3 (avec Victor Marsault) 1. Quel type de boucle faut-il utiliser pour modifier la structure d’un conteneur lors d’un parcours ?
-2. Dans quel cas peut-il être intéressant d’utiliser la fonction std::for_each ?">
-    <meta property="og:url" content="/chapter7/test/index.html">
+    <meta name="twitter:title" content="Shared pointeur :: C&#43;&#43;">
+    <meta name="twitter:description" content="TODO">
+    <meta property="og:url" content="/chapter5/7-shared-ptr/index.html">
     <meta property="og:site_name" content="C&#43;&#43;">
-    <meta property="og:title" content="Questionnaire :: C&#43;&#43;">
-    <meta property="og:description" content="C’est l’heure du test ! N’oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.
-Bon courage à vous 🙂
-Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Henri Derycke) Initiaux GR2 (avec Anthony Labarre) Alternants GR3 (avec Victor Marsault) 1. Quel type de boucle faut-il utiliser pour modifier la structure d’un conteneur lors d’un parcours ?
-2. Dans quel cas peut-il être intéressant d’utiliser la fonction std::for_each ?">
+    <meta property="og:title" content="Shared pointeur :: C&#43;&#43;">
+    <meta property="og:description" content="TODO">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
-    <meta property="article:section" content="Algorithmes">
-    <meta itemprop="name" content="Questionnaire :: C&#43;&#43;">
-    <meta itemprop="description" content="C’est l’heure du test ! N’oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.
-Bon courage à vous 🙂
-Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Henri Derycke) Initiaux GR2 (avec Anthony Labarre) Alternants GR3 (avec Victor Marsault) 1. Quel type de boucle faut-il utiliser pour modifier la structure d’un conteneur lors d’un parcours ?
-2. Dans quel cas peut-il être intéressant d’utiliser la fonction std::for_each ?">
-    <meta itemprop="wordCount" content="415">
-    <title>Questionnaire :: C&#43;&#43;</title>
+    <meta property="article:section" content="Librairie standard">
+    <meta itemprop="name" content="Shared pointeur :: C&#43;&#43;">
+    <meta itemprop="description" content="TODO">
+    <meta itemprop="wordCount" content="1">
+    <title>Shared pointeur :: C&#43;&#43;</title>
     <link href="../../css/fontawesome-all.min.css?1738832766" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1738832766" rel="stylesheet"></noscript>
     <link href="../../css/nucleus.css?1738832766" rel="stylesheet">
     <link href="../../css/auto-complete.css?1738832766" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1738832766" rel="stylesheet"></noscript>
@@ -63,7 +51,7 @@ Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Henri D
       window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../chapter7/test/index.html">
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../chapter5/7-shared-ptr/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -81,13 +69,13 @@ Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Henri D
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">Accueil</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../chapter7/index.html"><span itemprop="name">Algorithmes</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Questionnaire</span><meta itemprop="position" content="3"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../chapter5/index.html"><span itemprop="name">Librairie standard</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Shared pointeur</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter7/4-lambdas/index.html" title="Lambdas (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter5/6-uptr/index.html" title="Unique-pointeur (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter8/index.html" title="Templates (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter5/test/index.html" title="Questionnaire (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -101,125 +89,15 @@ Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Henri D
         </div>
       </nav>
       <div id="R-main-overlay"></div>
-      <main id="R-body-inner" class="highlightable chapter7" tabindex="-1">
+      <main id="R-body-inner" class="highlightable chapter5" tabindex="-1">
         <div class="flex-block-wrapper">
 <article class="default">
   <header class="headline">
   </header>
 
-<h1 id="questionnaire">Questionnaire</h1>
+<h1 id="shared-pointeur">Shared pointeur</h1>
 
-<p>C&rsquo;est l&rsquo;heure du test ! N&rsquo;oubliez pas que vous pouvez utiliser <a href="https://www.godbolt.org/z/ofohb4" rel="external" target="_blank">Godbolt</a> pour compiler et tester des petits bouts de code.<br>
-Bon courage à vous 🙂</p>
-<hr>
-
-
-
-<script>
-
-  function updateTestSubject() {
-    let name = document.querySelector('#test>input[name="name"]').value;
-    let group = document.querySelector('#test>select[name="group"]').value;
-    document.querySelector('#test>input[name="_subject"]').value = "[C++]["+group+"][Chap 6] " + name + ", retour sur ton questionnaire";
-  }
-
- 
-
-</script>
-
-<iframe class="hidden" name="test-submitted" src=""></iframe>
-<form id="test" data-chapter="6" target="test-submitted" data-year="2024" method=POST action="https://formsubmit.co/08af4b8e13fc3ec785faa99820631150">
-  <label>Vous êtes :</label>
-  <input type="text" name="name" placeholder="Prénom Nom" required onchange="updateTestSubject()" />
-
-  <label>Votre adresse mail :</label>
-  <input type="email" name="email" placeholder="mail@smthg.com" required />
-
-  <label>Votre groupe de TP:</label>
-  <select name="group" onchange="updateTestSubject()">
-  
-    <option value="GR1">Initiaux GR1 (avec Henri Derycke)</option>
-    <option value="GR2">Initiaux GR2 (avec Anthony Labarre)</option>
-    <option value="GR3">Alternants GR3 (avec Victor Marsault)</option>
-  </select>
-
-  <input type="hidden" name="_subject" />
-  <input type="hidden" name="_replyto" />
-
-  <hr/>
-
-  <p><label for="q1">1. Quel type de boucle faut-il utiliser pour modifier la structure d’un conteneur lors d’un parcours ?</label></p>
-<textarea id="q1" name="1- Quel type de boucle faut-il utiliser pour modifier la structure d’un conteneur lors d’un parcours ?" rows="1" cols="50"></textarea>
-<p><label for="q2">2. Dans quel cas peut-il être intéressant d’utiliser la fonction <code>std::for_each</code> ?</label></p>
-<textarea id="q2" name="2- Dans quel cas peut-il être intéressant d’utiliser la fonction std::for_each ?" rows="1" cols="50"></textarea>
-<hr>
-<p><label for="q3">3. Quels headers contiennent les algorithmes de la STL ?</label></p>
-<textarea id="q3" name="3- Quels headers contiennent les algorithmes de la STL ?" rows="1" cols="50"></textarea>
-<p><label for="q4">4. Donnez un exemple d’utilisation de <code>std::find_if</code>. Vous pouvez considérer que les variables dont vous auriez besoin ont déjà été définies plus haut (ça s’applique aux prochaines questions aussi).</label></p>
-<textarea id="q4" name="4- Donnez un exemple d’utilisation de std::find_if. Vous pouvez considérer que les variables dont vous auriez besoin ont déjà été définies plus haut (ça s’applique aux prochaines questions aussi)." rows="1" cols="50"></textarea>
-<p><label for="q5">5. Qu’est-ce qu’un prédicat ?</label></p>
-<textarea id="q5" name="5- Qu’est-ce qu’un prédicat ?" rows="1" cols="50"></textarea>
-<p><label for="q6">6. Quelle fonction permet de savoir si l’ensemble des éléments d’un conteneur vérifie un prédicat ?</label></p>
-<textarea id="q6" name="6- Quelle fonction permet de savoir si l’ensemble des éléments d’un conteneur vérifie un prédicat ?" rows="1" cols="50"></textarea>
-<p><label for="q7">7. Donnez un exemple d’utilisation de cette fonction sur un <code>std::vector</code>.</label></p>
-<textarea id="q7" name="7- Donnez un exemple d’utilisation de cette fonction sur un std::vector." rows="1" cols="50"></textarea>
-<p><label for="q8">8. Quelle fonction permet de récupérer le minimum et le maximum d’une plage d’éléments en une seule passe ?</label></p>
-<textarea id="q8" name="8- Quelle fonction permet de récupérer le minimum et le maximum d’une plage d’éléments en une seule passe ?" rows="1" cols="50"></textarea>
-<hr>
-<p><label for="q9">9. Ecrivez les instructions permettant de retirer tous les noms commençant par un ‘A’ d’un <code>vector&lt;string&gt;</code>.</label></p>
-<textarea id="q9" name="9- Ecrivez les instructions permettant de retirer tous les noms commençant par un ‘A’ d’un vector&lt;string&gt;." rows="3" cols="50"></textarea>
-<p><label for="q10">10. A quoi sert <code>std::back_inserter</code> ?</label></p>
-<textarea id="q10" name="10- A quoi sert std::back_inserter ?" rows="1" cols="50"></textarea>
-<p><label for="q11">11. Soit une <code>list&lt;string&gt;</code>. Ecrivez les instructions permettant de créer un tableau contenant le nombre de caractères de chaque élément de cette liste.</label></p>
-<textarea id="q11" name="11- Soit une list&lt;string&gt;. Ecrivez les instructions permettant de créer un tableau contenant le nombre de caractères de chaque élément de cette liste." rows="2" cols="50"></textarea>
-<p><label for="q12">12. Qu’est-ce qu’une réduction ? Quelles fonctions permettent d’effectuer ce genre d’opération ?</label></p>
-<textarea id="q12" name="12- Qu’est-ce qu’une réduction ? Quelles fonctions permettent d’effectuer ce genre d’opération ?" rows="2" cols="50"></textarea>
-<hr>
-<p><label for="q13">13. Quelle catégorie d’itérateur permet d’accéder à n’importe quel élément d’une plage en temps constant ?</label></p>
-<textarea id="q13" name="13- Quelle catégorie d’itérateur permet d’accéder à n’importe quel élément d’une plage en temps constant ?" rows="1" cols="50"></textarea>
-<p><label for="q14">14. En supposant que vous avez un itérateur permettant d’itérer sur une plage de <code>Donkey</code>, quelles peuvent-être les signatures de ses opérateurs de déréférencement ?</label></p>
-<textarea id="q14" name="14- En supposant que vous avez un itérateur permettant d’itérer sur une plage de Donkey, quelles peuvent-être les signatures de ses opérateurs de déréférencement ?" rows="2" cols="50"></textarea>
-<p><label for="q15">15. Comment appelle-t-on l’opérateur ayant la signature suivante : <code>It operator++(int)</code> ?</label></p>
-<textarea id="q15" name="15- Comment appelle-t-on l’opérateur ayant la signature suivante : It operator&#43;&#43;(int) ?" rows="1" cols="50"></textarea>
-<hr>
-<p><label for="q16">16. A quoi sert la capture dans une lambda ?</label></p>
-<textarea id="q16" name="16- A quoi sert la capture dans une lambda ?" rows="1" cols="50"></textarea>
-<p><label for="q17">17. Quelle classe de la librairie standard permet de stocker des lambdas ?</label></p>
-<textarea id="q17" name="17- Quelle classe de la librairie standard permet de stocker des lambdas ?" rows="1" cols="50"></textarea>
-<p><label for="q18">18. Comment savoir si une variable est capturée par référence ou par valeur ?</label></p>
-<textarea id="q18" name="18- Comment savoir si une variable est capturée par référence ou par valeur ?" rows="1" cols="50"></textarea>
-<p><label for="q19">19. Comment faut-il faire pour capturer les attributs d’une classe ?</label></p>
-<textarea id="q19" name="19- Comment faut-il faire pour capturer les attributs d’une classe ?" rows="1" cols="50"></textarea>
-<p><label for="q20">20. Que faut-il faire pour pouvoir modifier un objet capturé par valeur ?</label></p>
-<textarea id="q20" name="20- Que faut-il faire pour pouvoir modifier un objet capturé par valeur ?" rows="1" cols="50"></textarea>
-<p><label for="q21">21. Pourquoi doit-on souvent utiliser <code>auto</code> pour définir des variables contenant des lambdas ?</label></p>
-<textarea id="q21" name="21- Pourquoi doit-on souvent utiliser auto pour définir des variables contenant des lambdas ?" rows="1" cols="50"></textarea>
-<p><label for="q22">22. Soit une lambda nommée <code>is_finished</code>, capturant un entier par référence, prenant en paramètre une <code>string_view</code> et un
-<code>float</code>, et retournant un <code>bool</code>. Donnez une instruction permettant d’exécuter cette lambda.</label></p>
-<textarea id="q22" name="22- Soit une lambda nommée is_finished, capturant un entier par référence, prenant en paramètre une string_view et un float, et retournant un bool. Donnez une instruction permettant d’exécuter cette lambda." rows="1" cols="50"></textarea>
-
-
-  <hr/>
-
-  <label for="time">Combien de temps avez-vous mis à compléter ce chapitre ?</label>
-  <input type="text" name="time" placeholder="environ 4h30" />
-
-  <label for="questions">Avez-vous des questions suite à sa lecture ?</label>
-  <textarea name="questions" rows="5" cols="50"></textarea>
-
-  <label for="comments">Avez-vous des commentaires concernant le chapitre et/ou le site ?</label>
-  <textarea name="comments" rows="5" cols="50"></textarea>
-
-  <input type="hidden" name="_template" value="box" />
-  <input type="hidden" name="_captcha" value="false" />
-  <input type="hidden" name="_next" value="https://igm.univ-mlv.fr/~marsault/cpp/cours/common/test-submitted" />
-
-  <input type="submit" disabled style="display: none" aria-hidden="true" />
-  <input type="submit" value="Valider" />
-</form>
-
-<script src="../../js/save-test-answers-v2.js"></script>
-
+<p>TODO</p>
 
   <footer class="footline">
   </footer>
@@ -246,14 +124,17 @@ Bon courage à vous 🙂</p>
             <li class="" data-nav-id="/chapter2/index.html"><a class="padding" href="../../chapter2/index.html"><span class="chapnum">2.</span>&ensp;Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b1df0095a9fd74320697a6d478418ec3" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu">
+            <li class="" data-nav-id="/chapter5/1-doc/index.html"><a class="padding" href="../../chapter5/1-doc/index.html"><span class="presection-icon">🔖</span>Un peu de doc...<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/2-vectors/index.html"><a class="padding" href="../../chapter5/2-vectors/index.html"><span class="presection-icon">🖼</span>Tableaux dynamiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/3-sequentials/index.html"><a class="padding" href="../../chapter5/3-sequentials/index.html"><span class="presection-icon">➠</span>Autres conteneurs séquentiels<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/4-associatives/index.html"><a class="padding" href="../../chapter5/4-associatives/index.html"><span class="presection-icon">🔑</span>Conteneurs associatifs<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/5-tuples/index.html"><a class="padding" href="../../chapter5/5-tuples/index.html"><span class="presection-icon">🍒</span>Paires et tuples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/6-uptr/index.html"><a class="padding" href="../../chapter5/6-uptr/index.html"><span class="presection-icon"><i class="fa-solid fa-snowflake"></i></span>Unique-pointeur<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active hidden " data-nav-id="/chapter5/7-shared-ptr/index.html"><a class="padding" href="../../chapter5/7-shared-ptr/index.html"><span class="presection-icon"><i class="fa-solid fa-snowflake"></i></span>Shared pointeur<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/test/index.html"><a class="padding" href="../../chapter5/test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
-            <li class="parent " data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu">
-            <li class="" data-nav-id="/chapter7/1-searches/index.html"><a class="padding" href="../../chapter7/1-searches/index.html"><span class="presection-icon">🔍</span>Parcours et recherches<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter7/2-transformations/index.html"><a class="padding" href="../../chapter7/2-transformations/index.html"><span class="presection-icon">🪄</span>Transformations<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter7/3-iterators/index.html"><a class="padding" href="../../chapter7/3-iterators/index.html"><span class="presection-icon">🚊</span>Itérateurs<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter7/4-lambdas/index.html"><a class="padding" href="../../chapter7/4-lambdas/index.html"><span class="presection-icon">𝝀</span>Lambdas<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active " data-nav-id="/chapter7/test/index.html"><a class="padding" href="../../chapter7/test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter8/index.html"><a class="padding" href="../../chapter8/index.html"><span class="chapnum">8.</span>&ensp;Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7cf6d9bdd794f38d7006506bdc38c58f" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter9/index.html"><a class="padding" href="../../chapter9/index.html"><span class="chapnum">9.</span>&ensp;Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu"></ul></li>
           </ul>
@@ -283,7 +164,7 @@ Bon courage à vous 🙂</p>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Langue</label>
                     <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
-                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../chapter7/test/index.html" lang="fr" selected>Français</option>
+                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../chapter5/7-shared-ptr/index.html" lang="fr" selected>Français</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -341,7 +222,7 @@ Bon courage à vous 🙂</p>
             onchange="updateQuestionFormSubject()" />
         <textarea name="question" rows="7" cols="30" placeholder="Mon message..."></textarea>
         <input type="hidden" name="selection" />
-        <input type="hidden" name="page" value="/chapter7/test/" />
+        <input type="hidden" name="page" value="/chapter5/7-shared-ptr/" />
 
         <input type="hidden" name="_replyto" />
         <input type="hidden" name="_subject" />
@@ -360,7 +241,7 @@ Bon courage à vous 🙂</p>
 
     function updateQuestionFormSubject() {
         let email = document.querySelector('#question>input[name="email"]').value;
-        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chap 7] " + email + ", retour sur ta question";
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chap 5] " + email + ", retour sur ta question";
     }
 
     function cleanQuestionFormContent() {

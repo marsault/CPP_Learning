@@ -172,7 +172,7 @@
     <loc>/chapter5/index.html</loc>
   </url>
   <url>
-    <loc>/chapter5/5-strings/index.html</loc>
+    <loc>/chapter5/old-strings/index.html</loc>
   </url>
   <url>
     <loc>/chapter2/5-modules/index.html</loc>
@@ -199,13 +199,16 @@
     <loc>/chapter2/6-operators/index.html</loc>
   </url>
   <url>
-    <loc>/chapter5/6-tuples/index.html</loc>
+    <loc>/chapter5/5-tuples/index.html</loc>
+  </url>
+  <url>
+    <loc>/chapter5/6-uptr/index.html</loc>
   </url>
   <url>
     <loc>/chapter7/index.html</loc>
   </url>
   <url>
-    <loc>/chapter5/7-uptr/index.html</loc>
+    <loc>/chapter5/7-shared-ptr/index.html</loc>
   </url>
   <url>
     <loc>/chapter8/index.html</loc>
