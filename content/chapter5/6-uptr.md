@@ -1,13 +1,13 @@
 ---
 title: "Unique-pointeur"
 pre: '<span class="presection-icon"><i class="fa-solid fa-snowflake"></i></span>'
-weight: 7
-hidden: true
+weight: 6
+hidden: false
 ---
 
 Les primitives `new` et `delete` ne devraient être réservées qu'à des cas exceptionels.
 C'est bien mieux d'utiliser des *unique pointeurs* (c'es-à-dire d'utiliser le type `std::unique_ptr`)
-qui sont la **bonne** façon en C++ de représenter des pointeurs ownants.
+qui sont la **bonne** façon en C++ de représenter des **pointeurs ownants**.
 
 ---
 
@@ -166,7 +166,7 @@ std::unique_ptr<Dog> dog_copy = dog; // Ouch!
 ```
 
 
-**Quel est l'intérêt d'empêcher la copie d'un unique_ptr ?**
+##### Quel est l'intérêt d'empêcher la copie d'un unique_ptr ?
 
 Cela permet de clarifier l'ownership de l'objet alloué en interne.
 
@@ -174,9 +174,9 @@ En effet, si le code précédent était valide, qui selon vous de `dog` ou de `d
 A la destruction de `dog`, est-ce qu'il faudrait détruire Lassie et libérer la mémoire ? Que se passe-t-il du coup si `dog_copy` n'est pas encore détruit et que l'on appelle `rename` dessus ?\
 Toutes ses questions font qu'on risquerait de se retrouver avec des références sur des objets non valides.
 
-Pour simplifier, le `unique_ptr` ne gère que de l'ownership unique et à sa destruction, il supprime bien l'objet alloué de la mémoire afin de garantir l'absence de **memory leaks**.
+Pour simplifier, le `unique_ptr` ne gère que de l'ownership unique et à sa destruction, il supprime bien l'objet alloué de la mémoire afin de garantir l'absence de **fuite mémoires**.
 
-**Ok, mais si en fait, ce que je voulais, c'était une copie du premier objet, qui aurait sa propre durée de vie ?**
+##### Ok, mais si en fait, ce que je voulais, c'était une copie du premier objet, qui aurait sa propre durée de vie ?
 
 Dans ce cas, vous pouvez réutiliser `make_unique`, en faisant appel au constructeur de copie de l'objet :
 ```cpp
@@ -195,8 +195,29 @@ std::cout << *dog << std::endl;      // -> Lassie
 std::cout << *dog_copy << std::endl; // -> Chouchou 
 ```
 
----
+{{% notice warning %}}
+Le fait qu'on ne puisse pas copier un `unique_ptr` a des conséquences qu'on ne voit pas forcément au début.
+Par exemple, ça fait qu'on ne peut pas non plus copier un conteneur de `unique_ptr` (par exemple un `std::vector<std::unique_ptr<..>>`).
+C'est pareil pour une classe qui a un `unique_ptr` comme attribut:
+```cpp
+class MyClass {
+public:
+    // MyClass(const MyClass&) = default; // Ne fonctionnera pas
 
+    // On doit redéfinir le constructeur de copie à la main
+    MyClass(const MyClass& other) 
+    : _dog{std::make_unique<Dog>(other._dog)}
+    {}
+
+private:
+    std::unique_ptr<Dog> _dog;
+}
+```
+
+{{% /notice %}}
+
+
+---
 ### Un peu de pratique
 
 Pour vous habituez à manipuler les `unique_ptr`, vous allez modifier le code du programme `c3-3-cat`.
@@ -457,11 +478,61 @@ int main()
 Le programme fonctionne comme attendu car nous avons introduit un niveau intermédiaire entre la mémoire du `vector` à la mémoire des objets de type `Content`.
 
 Avant, pendant la réallocation, chacun des objets `Content` était déplacé vers une nouvelle zone de la mémoire, d'où l'invalidation des références.
-![](/images/chapter3/bag-realloc-content.svg)
+![](/chapter5/bag-realloc-content.svg)
 
 Désormais, ce sont les `unique_ptr` qui sont déplacés ailleurs.
 Les éléments de type `Content` restent à leur place.\
 La référence `my_thing` qui pointe sur l'un d'entre eux reste donc valide aussi longtemps que `bag` l'est aussi.
-![](/images/chapter3/bag-realloc-ptr.svg)
+![](/chapter5/bag-realloc-ptr.svg)
 
 
+
+
+---
+
+### Passer un `shared_ptr`
+
+Ce n'est pas visible dans les exemples ci-dessus, mais il reste un problème dont on a pas encore parlé: comme faire pour passer un `shared_ptr` à une fonction, constructeur ou autre?
+
+Par exemple, considérons le bout de code en dessous.
+
+```cpp
+int my_func(std::shared_ptr<Dog>> p) { /* ... */ }
+int main() {
+    std::shared_ptr<Dog> my_ptr = std::make_shared<Dog>("Lassie", "Colley");
+
+    // On veut appeler my_func !
+
+    // my_func(my_ptr); // Ne va pas compiler car cela provoque 
+                        // une copie de my_ptr -> interdit
+}
+```
+
+Pour construire `p`, on ne pourra pas utiliser le constructeur de copie de `std::shared_ptr<Dog>>` car il n'existe pas, il faut donc passer à `my_func` une R-value !!
+
+1. Soit on utilise `std::move` si jamais on n'a plus besoin de `my_ptr`.
+```cpp
+int main() {
+    std::shared_ptr<Dog> my_ptr = std::make_shared<Dog>("Lassie", "Colley");
+    my_func( std::move(my_ptr) );
+//           ^^^^^^^^^^^^^^^^^
+//           R-value
+
+//  Après l'appel à f, my_ptr est nul
+}
+```
+
+2. Soit on a encore besoin de notre `my_ptr`, et on fait une R-value du bon-type à `f` en copiant `my_ptr`.
+
+```cpp
+int main() {
+    std::shared_ptr<Dog> my_ptr = std::make_shared<Dog>("Lassie", "Colley");
+    my_func( std::make_shared<Dog>(*my_ptr) );
+//           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+//           R-value
+}
+```
+
+Notez que dans les deux cas, on est parfaitement aligné avec l'ownership visible dans le programme.
+Puisque `f` déclare un argument de type `std::shared_ptr<Dog>>`, ça signifie  qu'il veut `own` le `Dog` pointé par `p`.
+De l'autre côté, c'est `main` qui own le `Dog` pointé par `my_ptr`.  Donc  soit `main` cède l'ownership à `f` (premier cas) soit il en fait une copie pour `f` (deuxième cas).
