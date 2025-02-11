@@ -4,7 +4,7 @@ pre: '<span class="presection-icon">🔥</span>'
 weight: 6
 ---
 
-Dans le [chapitre 3](chapter3), nous avons vu comment choisir le type des paramètres une fonction.  Maintenant qu'on sait comment déplacer les objets, on peut faire mieux !
+Dans le [chapitre 3](chapter3), nous avons vu comment choisir le type des paramètres d'une fonction.  Maintenant qu'on sait comment déplacer les objets, on peut faire mieux !
 
 ---
 
@@ -21,7 +21,7 @@ class BoxedString
 ```
 
 Pour commencer, évaluons notre objectif: combien de copies peut-on espérer faire au minimum dans les cas typiques.
-Les variables `b1`, `b2`, `b3` et `b4` (en dessous) montrent les trois façons dont on va usuellement construire une `BoxedString` à partir d'une `std::string`.
+Les variables `b1`, `b2`, `b3` et `b4` (en dessous) montrent les quatre façons dont on va usuellement construire une `BoxedString` à partir d'une `std::string`.
 
 ```cpp
 int main() {
@@ -34,7 +34,7 @@ int main() {
 ```
 
 
-Pour chacun de ces trois cas, combien de copie de la `std::string` passée en argument peut-on espérer au minimum?
+Pour chacun de ces quatre cas, combien de copies de la `std::string` passée en argument peut-on espérer au minimum?
 
 {{% hidden-solution %}}
 - Pour `b1`, on ne peut pas espérer faire moins qu'une copie.
@@ -57,7 +57,7 @@ public:
 };
 ```
 
-Pour chacun des cas `b1` et `b2` (voir le `main` en haut de la page), combien de copies vont avoir lieux?
+Pour chacun des cas `b1` et `b2` (voir le `main` en haut de la page), combien de copies vont avoir lieu?
 {{% hidden-solution %}}
 - La construction de `b1` provoque 2 copies consécutives. 😭
 - La construction de `b2` provoque 1 copie (de `_str` vers `str`). 😭
@@ -79,7 +79,7 @@ public:
 
 Notez que le `main` donné plus haut compile, car les `R-value` peuvent être transtypées en références constantes (on ne fait que perdre des droits sur elles).
 
-Pour chacun des cas `b1` et `b2` (voir le `main` en haut de la page), combien de copies vont avoir lieux?
+Pour chacun des cas `b1` et `b2` (voir le `main` en haut de la page), combien de copies vont avoir lieu?
 {{% hidden-solution %}}
 - La construction de `b1` provoque 1 copie. 😀
 - La construction de `b2` provoque 1 copie (de `str` vers `_str`). 😭
@@ -99,7 +99,7 @@ public:
     BoxedString(std::string&& str) : _str{std::move(str)} {}
 };
 ```
-Pour chacun des cas `b1` et `b2` (voir le `main` en haut de la page), combien de copies vont avoir lieux?
+Pour chacun des cas `b1` et `b2` (voir le `main` en haut de la page), combien de copies vont avoir lieu?
 {{% hidden-solution %}}
 - La construction de `b1` provoque 1 copie car on utilise le premier constructeur. 😀
 - La construction de `b2` provoque 0 copie: on utilise le second constructeur et donc `_some_str` est déplacé vers `str`, puis celle-ci est déplacée vers `_str`. 😀
@@ -156,7 +156,7 @@ public:
 };
 ```
 
-Pour chacun des cas `b1` et `b2` (voir le `main` en haut de la page), combien de copies vont avoir lieux?
+Pour chacun des cas `b1` et `b2` (voir le `main` en haut de la page), combien de copies vont avoir lieu?
 {{% hidden-solution %}}
 - La construction de `b1` provoque 1 copie. 😀
 - La construction de `b2` provoque 0 copie: `_some_str` est déplacé vers `str`, puis celle-ci est déplacée vers `_str`. 😀
