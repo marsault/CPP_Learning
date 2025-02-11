@@ -31,18 +31,18 @@ Parce que ces cinq éléments sont interdépendants.">
 Destructeur Constructeur de copie Opérateur d’affectation par copie Constructeur de déplacement Opérateur d’affectation par déplacement Règle des 0, 3 ou 5 (Rule of 0/3/5) Pour une classe donnée, il faut généralement définir à la main :
 aucun des cinq éléments ci-dessus; les trois premiers (destructeur, constructeur de copie et opérateur d’affectation par copie); ou les cinq. Pourquoi ?
 Parce que ces cinq éléments sont interdépendants.">
-    <meta itemprop="wordCount" content="866">
+    <meta itemprop="wordCount" content="957">
     <title>Règle des 0, 3 ou 5 :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1738832766" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1738832766" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1738832766" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1738832766" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1738832766" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1738832766" rel="stylesheet">
-    <link href="../../css/fonts.css?1738832766" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1738832766" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1738832766" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1738832766" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1738832766" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1738832766" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1738832766"></script>
+    <link href="../../css/fontawesome-all.min.css?1739286052" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1739286052" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1739286052" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1739286052" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1739286052" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1739286052" rel="stylesheet">
+    <link href="../../css/fonts.css?1739286052" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1739286052" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1739286052" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1739286052" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1739286052" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1739286052" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1739286052"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -155,7 +155,7 @@ En particulier, il suffit parfois de se poser la question: est-ce que ma modific
 </div>
 <h3 id="règle-des-0">Règle des 0</h3>
 <p>La plupart des classes suivent la règle des 0, c&rsquo;est-à-dire ne modifient aucun des cinq éléments en haut de page.
-En effet, le comportement généré par les implémentations par défaut correspond la gestion usuelle de la mémoire et satisfait la plupart des cas.</p>
+En effet, le comportement généré par les implémentations par défaut correspond à la gestion usuelle de la mémoire et satisfait la plupart des cas.</p>
 <h3 id="règle-des-3">Règle des 3</h3>
 <p>Au contraire, on veut que certaines classes ne suivent pas la gestion par défaut de la mémoire.  Hormis les exercices sadiques que nous vous imposons, il s&rsquo;agit usuellement des classes qui définissent des structures de données.</p>
 <h5 id="exercice">Exercice</h5>
@@ -198,13 +198,20 @@ indiqué ci-dessous.</p>
         </button>
 
         <div class="hidden-solution-content">
-            <p>Si on copie un <code>RuleOfThree</code>, le champs <code>int_ptr</code> de l&rsquo;original et la copie pointerons tous les deux vers la même case mémoire.
-Quand <code>s</code> est détruit à la fin de la fonction <code>f</code>, la case mémoire <code>s.int_ptr</code> est désallouée
-et donc l&rsquo;affichage de <code>*(r.int_ptr)</code></p>
-<p>On peut s&rsquo;en rendre compte en compilant le fichier et en utilisant valgrind:</p>
-<div class="highlight wrap-code"><pre tabindex="0"><code>    g++ RuleOfThree.cpp -o RuleOfThree
-    valgrind ./RuleOfThree</code></pre></div>
-<p>Valgrind indique quelque chose comme &ldquo;Address &hellip; is 0 bytes inside a block of size 4 free&rsquo;d&rdquo;, ce qui veut dire qu&rsquo;on accède à de la mémoire libérée.</p>
+            <p>Puisqu&rsquo;on n&rsquo;a pas défini de constructeur de copie pour <code>RuleOfThree</code>, le compilateur en génère un et, pour rappel, l&rsquo;implémentation par défaut consiste à copier chacun des champs d&rsquo;un <code>RuleOfThree</code> dans le champs correspondant de la copie.
+C&rsquo;est pourquoi le champ <code>int_ptr</code> de l&rsquo;original et la copie pointeront tous les deux vers la même case mémoire.
+Quand <code>s</code> est détruit à la fin de la fonction <code>f</code>, la case mémoire <code>s.int_ptr</code> est désallouée et donc l&rsquo;affichage de <code>*(r.int_ptr)</code></p>
+<p>On peut s&rsquo;en rendre compte en compilant et en éxécutant le fichier (le message d&rsquo;erreur peut varier).</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>$ g++ RuleOfThree.cpp -o RuleOfThree
+$ ./RuleOfThree
+42
+free(): double free detected in tcache 2
+Aborted (core dumped)`</code></pre></div>
+<p>On voit ici que le programme indique qu&rsquo;un segment de mémoire a été libéré plusieurs fois.</p>
+<p>Si on utilise valgrind, on aura un message plus &ldquo;clair&rdquo;.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">    g++ RuleOfThree.cpp -o RuleOfThree
+</span></span><span class="line"><span class="cl">    valgrind ./RuleOfThree</span></span></code></pre></div>
+<p>Valgrind indique quelque chose comme &ldquo;Address &hellip; is 0 bytes inside a block of size 4 free&rsquo;d&rdquo;, ce qui veut dire qu&rsquo;on accède à de la mémoire libérée.  Et on pourra ensuite traquer où cela se produit.</p>
 
         </div>
     </div>
@@ -251,7 +258,7 @@ et donc l&rsquo;affichage de <code>*(r.int_ptr)</code></p>
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">int_ptr</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// devrait afficher 0
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span></span></span></code></pre></div>
 <p>Décommentez la fin de la fonction <code>main</code> dans le fichier <code>RuleOfThree.cpp</code>,
-et écrivez l&rsquo;opérateur d&rsquo;affectation par copie pour qu&rsquo;il n&rsquo;y ai pas de
+et écrivez l&rsquo;opérateur d&rsquo;affectation par copie pour qu&rsquo;il n&rsquo;y ait pas de
 problème mémoire.</p>
 
 <div class="hidden-solution">
@@ -467,9 +474,9 @@ l&rsquo;objet pointé est petit.</p>
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1738832766" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1738832766" defer></script>
-    <script src="../../js/theme.js?1738832766" defer></script>
+    <script src="../../js/clipboard.min.js?1739286052" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1739286052" defer></script>
+    <script src="../../js/theme.js?1739286052" defer></script>
 
 
 

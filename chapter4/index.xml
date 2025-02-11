@@ -47,7 +47,7 @@
       <link>/chapter4/6-copy-minim/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter4/6-copy-minim/index.html</guid>
-      <description>Dans le chapitre 3, nous avons vu comment choisir le type des paramètres une fonction. Maintenant qu’on sait comment déplacer les objets, on peut faire mieux !&#xA;Un puzzle à résoudre Nous allons considérer la classe BoxedString en dessous. Notre but est d’implémenter un constructeur qui prend un argument une chaîne de caractères pour initialiser l’attribut _str, et ce en minimisant le nombre de copies.&#xA;class BoxedString { std::string _str; }; Pour commencer, évaluons notre objectif: combien de copies peut-on espérer faire au minimum dans les cas typiques.</description>
+      <description>Dans le chapitre 3, nous avons vu comment choisir le type des paramètres d’une fonction. Maintenant qu’on sait comment déplacer les objets, on peut faire mieux !&#xA;Un puzzle à résoudre Nous allons considérer la classe BoxedString en dessous. Notre but est d’implémenter un constructeur qui prend un argument une chaîne de caractères pour initialiser l’attribut _str, et ce en minimisant le nombre de copies.&#xA;class BoxedString { std::string _str; }; Pour commencer, évaluons notre objectif: combien de copies peut-on espérer faire au minimum dans les cas typiques.</description>
     </item>
     <item>
       <title>Questionnaire</title>
