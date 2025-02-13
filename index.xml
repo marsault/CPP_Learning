@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Accueil :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Accueil :: C&#43;&#43;</title>
     <link>/index.html</link>
     <description>Bienvenue Sur ce site, vous trouverez le cours de C++ destiné à l’enseignement des Master 1 de l’Universisté Gustave-Eiffel. Si vous ne faites pas partie des étudiants de cette section, vous êtes tout de même les bienvenus. Sachez juste que d’une part, ce cours étant un cours d’introduction, nous nous concentrerons sur les concepts de base du langage, ainsi que sur les mécanismes permettant d’écrire du code plus simplement ou de le rendre plus sûr.</description>
     <generator>Hugo</generator>
@@ -40,14 +40,14 @@
       <link>/chapter4/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter4/index.html</guid>
-      <description>En construction</description>
+      <description>Dans ce chapitre, nous allons revenir en détail sur la notion de copie et aborder celle de déplacement. Plus particulièrement, nous allons voir comment définir la façon dont une classe se copie et se déplace, et quand.&#xA;Pour savoir quand un objet est déplacé ou copié, il faut d’abord comprendre les deux principales catégories de valeurs : L-value et R-value.&#xA;Nouveau chapitre Ce chapitre a été écrit cette année. Il contient probablement de nombreuses erreurs.</description>
     </item>
     <item>
       <title>Librairie standard</title>
       <link>/chapter5/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter5/index.html</guid>
-      <description>Dans ce chapitre, nous vous présenterons les différents types de conteneurs que vous pourrez trouver dans la librairie standard. Les exercices vous permettrons de vous familiariser avec certains d’entre-eux : vector et string bien sûr, mais aussi array, string_view, list, map ou encore pair. Nous en profiterons également pour vous expliquer comment la documentation est organisée sur le site cppreference, afin que vous sachiez toujours à quel endroit d’une page regarder pour trouver les informations dont vous avez besoin.</description>
+      <description>Dans ce chapitre, nous vous présenterons les différents types de conteneurs que vous pourrez trouver dans la librairie standard. Les exercices vous permettrons de vous familiariser avec certains d’entre-eux : vector bien sûr, mais aussi array, list, map ou encore pair. Nous en profiterons également pour vous expliquer comment la documentation est organisée sur le site cppref, afin que vous sachiez toujours à quel endroit d’une page regarder pour trouver les informations dont vous avez besoin.</description>
     </item>
     <item>
       <title>Héritage</title>
@@ -103,7 +103,7 @@
       <link>/slides/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/slides/index.html</guid>
-      <description>Voici les planches utilisés en cours magistral.&#xA;CM du Segment 1 CM du Segment 2 (Pas en core disponible) CM du Segment 3 (Pas encore disponible)</description>
+      <description>Voici les planches utilisés en cours magistral.&#xA;CM du Segment 1 CM du Segment 2 CM du Segment 3 (Pas encore disponible)</description>
     </item>
     <item>
       <title>Workflow</title>

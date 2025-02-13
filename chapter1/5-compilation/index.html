@@ -10,35 +10,35 @@ Cependant, je sais qu’à la réminiscence des moments passés à réviser ces 
 Nous allons donc reprendre le sujet en douceur pour faire en sorte que vous compreniez un peu mieux ce qu’il se passe pendant la compilation et à quoi elle sert.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Compilation ⚙️ :: Cours de C&#43;&#43; - Niveau Master">
+    <meta name="twitter:title" content="Compilation :: C&#43;&#43;">
     <meta name="twitter:description" content="En théorie, le contenu de cette page ne devrait être qu’une redite de vos cours de C et de compilation de l’an dernier.
 Cependant, je sais qu’à la réminiscence des moments passés à réviser ces matières, la plupart d’entre vous sentez la chaleur de vos larmes couler le long de vos joues.
 Nous allons donc reprendre le sujet en douceur pour faire en sorte que vous compreniez un peu mieux ce qu’il se passe pendant la compilation et à quoi elle sert.">
     <meta property="og:url" content="/chapter1/5-compilation/index.html">
-    <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
-    <meta property="og:title" content="Compilation ⚙️ :: Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:site_name" content="C&#43;&#43;">
+    <meta property="og:title" content="Compilation :: C&#43;&#43;">
     <meta property="og:description" content="En théorie, le contenu de cette page ne devrait être qu’une redite de vos cours de C et de compilation de l’an dernier.
 Cependant, je sais qu’à la réminiscence des moments passés à réviser ces matières, la plupart d’entre vous sentez la chaleur de vos larmes couler le long de vos joues.
 Nous allons donc reprendre le sujet en douceur pour faire en sorte que vous compreniez un peu mieux ce qu’il se passe pendant la compilation et à quoi elle sert.">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Introduction au C&#43;&#43;">
-    <meta itemprop="name" content="Compilation ⚙️ :: Cours de C&#43;&#43; - Niveau Master">
+    <meta itemprop="name" content="Compilation :: C&#43;&#43;">
     <meta itemprop="description" content="En théorie, le contenu de cette page ne devrait être qu’une redite de vos cours de C et de compilation de l’an dernier.
 Cependant, je sais qu’à la réminiscence des moments passés à réviser ces matières, la plupart d’entre vous sentez la chaleur de vos larmes couler le long de vos joues.
 Nous allons donc reprendre le sujet en douceur pour faire en sorte que vous compreniez un peu mieux ce qu’il se passe pendant la compilation et à quoi elle sert.">
-    <meta itemprop="wordCount" content="1483">
-    <title>Compilation ⚙️ :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1738742369" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1738742369" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1738742369" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1738742369" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1738742369" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1738742369" rel="stylesheet">
-    <link href="../../css/fonts.css?1738742369" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1738742369" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1738742369" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1738742369" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1738742369" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1738742369" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1738742369"></script>
+    <meta itemprop="wordCount" content="1475">
+    <title>Compilation :: C&#43;&#43;</title>
+    <link href="../../css/fontawesome-all.min.css?1739458440" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1739458440" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1739458440" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1739458440" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1739458440" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1739458440" rel="stylesheet">
+    <link href="../../css/fonts.css?1739458440" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1739458440" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1739458440" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1739458440" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1739458440" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1739458440" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1739458440"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -92,12 +92,12 @@ Nous allons donc reprendre le sujet en douceur pour faire en sorte que vous comp
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">Accueil</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../chapter1/index.html"><span itemprop="name">Introduction au C&#43;&#43;</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Compilation ⚙️</span><meta itemprop="position" content="3"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Compilation</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter1/4-std-lib/index.html" title="Librairie standard 📚 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter1/4-std-lib/index.html" title="Librairie standard (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter1/test/index.html" title="Questionnaire ☑ (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter1/test/index.html" title="Questionnaire (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -117,7 +117,7 @@ Nous allons donc reprendre le sujet en douceur pour faire en sorte que vous comp
   <header class="headline">
   </header>
 
-<h1 id="compilation-">Compilation ⚙️</h1>
+<h1 id="compilation">Compilation</h1>
 
 <p>En théorie, le contenu de cette page ne devrait être qu&rsquo;une redite de vos cours de C et de compilation de l&rsquo;an dernier.<br>
 Cependant, je sais qu&rsquo;à la réminiscence des moments passés à réviser ces matières, la plupart d&rsquo;entre vous sentez la chaleur de vos larmes couler le long de vos joues.</p>
@@ -445,12 +445,12 @@ Celui-ci ne devrait pas compiler.</li>
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -461,6 +461,7 @@ Celui-ci ne devrait pas compiler.</li>
     </div>
 
 </div>
+
 <ol start="2">
 <li>Le compilateur devrait afficher l&rsquo;erreur suivante deux fois : <code>expected ';' after struct definition</code>.<br>
 Qu&rsquo;est-ce que cela signifie ? Que devez-vous faire pour que le fichier compile ?<br>
@@ -470,12 +471,12 @@ Effectuez ces modifications et vérifiez que le fichier compile désormais.</li>
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -499,6 +500,7 @@ Effectuez ces modifications et vérifiez que le fichier compile désormais.</li>
     </div>
 
 </div>
+
 <h4 id="2-bla-is-private-within-this-context">2. &lsquo;bla&rsquo; is private within this context</h4>
 <ol>
 <li>Essayez maintenant de compiler le fichier <code>2-class.cpp</code>.<br>
@@ -508,12 +510,12 @@ Que signifie l&rsquo;erreur de compilation ? Pourquoi ne l&rsquo;avez vous pas r
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -525,6 +527,7 @@ C&rsquo;est pour ça que nous n&rsquo;avons pas eu l&rsquo;erreur dans le fichie
     </div>
 
 </div>
+
 <ol start="2">
 <li>Modifiez le fichier pour corriger l&rsquo;erreur et recompilez.</li>
 </ol>
@@ -532,12 +535,12 @@ C&rsquo;est pour ça que nous n&rsquo;avons pas eu l&rsquo;erreur dans le fichie
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -556,6 +559,7 @@ C&rsquo;est pour ça que nous n&rsquo;avons pas eu l&rsquo;erreur dans le fichie
     </div>
 
 </div>
+
 <h4 id="3-bla-is-not-a-member-of-std">3. &lsquo;bla&rsquo; is not a member of &lsquo;std&rsquo;</h4>
 <ol>
 <li>Essayez de compiler le fichier <code>3-hello.cpp</code>.<br>
@@ -565,12 +569,12 @@ Quelles sont les différentes erreurs obtenues ? Expliquez la cause de chacune d
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -585,6 +589,7 @@ Le compilateur ne la trouve donc pas au moment où il analyse l&rsquo;instructio
     </div>
 
 </div>
+
 <ol start="2">
 <li>Ajoutez ce qu&rsquo;il faut au fichier pour corriger les erreurs et recompilez.</li>
 </ol>
@@ -592,12 +597,12 @@ Le compilateur ne la trouve donc pas au moment où il analyse l&rsquo;instructio
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -618,6 +623,7 @@ Le compilateur ne la trouve donc pas au moment où il analyse l&rsquo;instructio
     </div>
 
 </div>
+
 <div class="box notices cstyle tip">
   <div class="box-label">
     <i class="fa-fw fas fa-lightbulb"></i> Astuce
@@ -636,12 +642,12 @@ Quelle est l&rsquo;erreur ? Essayez de l&rsquo;expliquer en imaginant le contenu
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -706,6 +712,7 @@ Il est donc logique qu&rsquo;il émette l&rsquo;erreur <code>redefinition of 'Ca
     </div>
 
 </div>
+
 <ol start="2">
 <li>En C++, pour empêcher les inclusions multiples d&rsquo;un même header, il suffit d&rsquo;écrire <code>#pragma once</code> en haut du fichier.<br>
 Corrigez le code et assurez-vous que le fichier <code>4-main.cpp</code> compile désormais.</li>
@@ -714,12 +721,12 @@ Corrigez le code et assurez-vous que le fichier <code>4-main.cpp</code> compile 
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -752,6 +759,7 @@ Pour éviter que le problème ne se reproduise si on décidait d&rsquo;inclure <
     </div>
 
 </div>
+
 <div class="box notices cstyle tip">
   <div class="box-label">
     <i class="fa-fw fas fa-lightbulb"></i> Astuce
@@ -771,12 +779,12 @@ Cependant, elle peut également se produire dans la situation présentée ci-des
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -786,6 +794,7 @@ Cependant, elle peut également se produire dans la situation présentée ci-des
     </div>
 
 </div>
+
 <ol start="2">
 <li>Vous devriez obtenir l&rsquo;erreur : <code>5-tac.hpp:8:15: error: 'Tic' has not been declared</code>.<br>
 Pourtant, le header <code>5-tic.hpp</code> est bien inclus dans <code>5-tac.hpp</code>.<br>
@@ -795,12 +804,12 @@ Pourquoi le compilateur n&rsquo;arrive pas à reconnaître le symbole <code>Tic<
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -858,6 +867,7 @@ Le symbole n&rsquo;existant pas encore dans la table des symboles, on obtient l&
     </div>
 
 </div>
+
 <ol start="2">
 <li>Quel est le nom donné à ce type de situation ?</li>
 </ol>
@@ -865,12 +875,12 @@ Le symbole n&rsquo;existant pas encore dans la table des symboles, on obtient l&
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -881,6 +891,7 @@ Effectivement <code>5-tic.hpp</code> inclut <code>5-tac.hpp</code> qui inclut à
     </div>
 
 </div>
+
 <p>Pour indiquer au compilateur qu&rsquo;un type existe, on a deux possibilités : le définir ou le <strong>pré-déclarer</strong> (on employera plus communément le terme anglais <strong>forward-declare</strong>).<br>
 Il suffit pour cela d&rsquo;écrire :</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">A</span><span class="p">;</span>    <span class="c1">// forward-declare d&#39;une class A
@@ -895,12 +906,12 @@ Vérifiez que cela fixe bien le problème.</li>
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -934,6 +945,7 @@ On remplace donc le code de <code>5-tic.hpp</code> par :</p>
     </div>
 
 </div>
+
 <div class="box notices cstyle info">
   <div class="box-label">
     <i class="fa-fw fas fa-info-circle"></i> Information
@@ -1182,12 +1194,12 @@ Quel est le message d&rsquo;erreur ? Pouvez-vous identifier dans la sortie compl
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -1203,6 +1215,7 @@ Le programme chargé de l&rsquo;édition des liens est donc <code>ld</code>.</p>
     </div>
 
 </div>
+
 <ol start="2">
 <li>Corrigez le programme afin que le linker puisse trouver son point d&rsquo;entrée.</li>
 </ol>
@@ -1210,12 +1223,12 @@ Le programme chargé de l&rsquo;édition des liens est donc <code>ld</code>.</p>
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -1232,6 +1245,7 @@ Le programme chargé de l&rsquo;édition des liens est donc <code>ld</code>.</p>
     </div>
 
 </div>
+
 <div class="box notices cstyle tip">
   <div class="box-label">
     <i class="fa-fw fas fa-lightbulb"></i> Astuce
@@ -1248,12 +1262,12 @@ Le programme chargé de l&rsquo;édition des liens est donc <code>ld</code>.</p>
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -1263,6 +1277,7 @@ Le programme chargé de l&rsquo;édition des liens est donc <code>ld</code>.</p>
     </div>
 
 </div>
+
 <ol start="2">
 <li>Exécutez-la.<br>
 Quelle est la sortie du programme ? La compilation du fichier <code>2-main.cpp</code> en fichier-objet s&rsquo;est-elle bien passée ?</li>
@@ -1271,12 +1286,12 @@ Quelle est la sortie du programme ? La compilation du fichier <code>2-main.cpp</
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -1289,6 +1304,7 @@ Quelle est la sortie du programme ? La compilation du fichier <code>2-main.cpp</
     </div>
 
 </div>
+
 <ol start="3">
 <li>Quels sont les symboles présents dans le ou les fichiers-objet passés à l&rsquo;édition des liens ?</li>
 </ol>
@@ -1296,12 +1312,12 @@ Quelle est la sortie du programme ? La compilation du fichier <code>2-main.cpp</
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -1336,6 +1352,7 @@ Le compilateur ne connaissant pas la définition de <code>add(int, int)</code>, 
     </div>
 
 </div>
+
 <ol start="4">
 <li>Que manque-t-il dans la ligne de commande pour que le programme compile ?</li>
 </ol>
@@ -1343,12 +1360,12 @@ Le compilateur ne connaissant pas la définition de <code>add(int, int)</code>, 
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -1360,6 +1377,7 @@ Il suffit donc d&rsquo;ajouter ce fichier à la ligne de commande :</p>
     </div>
 
 </div>
+
 <h4 id="3-undefined-reference-to-bla-2">3. undefined reference to `bla(&hellip;)&rsquo; #2</h4>
 <ol>
 <li>Exécutez maintenant <code>g++ -std=c++17 -o program 3-main.cpp 3-sub.cpp</code>.<br>
@@ -1369,12 +1387,12 @@ Quelle est l&rsquo;erreur ? Que contient le fichier-objet <code>3-sub.o</code> ?
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -1395,6 +1413,7 @@ Quelle est l&rsquo;erreur ? Que contient le fichier-objet <code>3-sub.o</code> ?
     </div>
 
 </div>
+
 <ol start="2">
 <li>Pourquoi la phase de compilation des fichiers <code>3-main.cpp</code> et <code>3-sub.cpp</code> ne produit pas d&rsquo;erreur ?</li>
 </ol>
@@ -1402,12 +1421,12 @@ Quelle est l&rsquo;erreur ? Que contient le fichier-objet <code>3-sub.o</code> ?
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -1439,6 +1458,7 @@ En fonction du type des arguments passés à l&rsquo;appel, le compilateur chois
     </div>
 
 </div>
+
 <ol start="3">
 <li>Comment pourriez-vous modifier le programme pour que celui-ci compile ?</li>
 </ol>
@@ -1446,12 +1466,12 @@ En fonction du type des arguments passés à l&rsquo;appel, le compilateur chois
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -1469,6 +1489,7 @@ De cette manière, à la compilation de <code>3-main.cpp</code>, le symbole asso
     </div>
 
 </div>
+
 <div class="box notices cstyle tip">
   <div class="box-label">
     <i class="fa-fw fas fa-lightbulb"></i> Astuce
@@ -1487,12 +1508,12 @@ Quelle est l&rsquo;erreur ?</li>
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -1504,6 +1525,7 @@ Quelle est l&rsquo;erreur ?</li>
     </div>
 
 </div>
+
 <ol start="2">
 <li>Quels sont les symboles présents dans les fichiers-objet <code>4-add.o</code> et <code>4-sub.o</code> ?</li>
 </ol>
@@ -1511,12 +1533,12 @@ Quelle est l&rsquo;erreur ?</li>
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -1582,6 +1604,7 @@ Quelle est l&rsquo;erreur ?</li>
     </div>
 
 </div>
+
 <ol start="3">
 <li>Proposez une solution qui pourrait régler le problème, mais ne l&rsquo;appliquez pas tout de suite.</li>
 </ol>
@@ -1589,12 +1612,12 @@ Quelle est l&rsquo;erreur ?</li>
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -1606,6 +1629,7 @@ Ainsi le symbole ne serait plus présent dans <code>4-add.o</code> ni <code>4-su
     </div>
 
 </div>
+
 <p>Pour contraindre le linker à accepter qu&rsquo;un symbole soit présent dans plusieurs fichiers-objet, vous pouvez placer le mot-clef <code>inline</code> devant sa définition dans le code-source.<br>
 Dans ce cas, au moment d&rsquo;écrire le symbole dans l&rsquo;exécutable final, le linker utilisera la version trouvée dans n&rsquo;importe lequel des fichiers-objet.</p>
 <p>Cela vous permet donc de définir vos fonctions directement dans les headers.
@@ -1617,12 +1641,12 @@ S&rsquo;ils sont inclus depuis plusieurs fichiers-source, le linker fera comme s
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -1640,6 +1664,7 @@ S&rsquo;ils sont inclus depuis plusieurs fichiers-source, le linker fera comme s
     </div>
 
 </div>
+
 <div class="box notices cstyle note">
   <div class="box-label">
     <i class="fa-fw fas fa-exclamation-circle"></i> Remarque
@@ -1692,15 +1717,15 @@ En revanche, pour de plus gros programmes, sachez que plus vous mettrez de chose
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/chapter0/index.html"><a class="padding" href="../../chapter0/index.html"><span class="chapnum">0.</span>&ensp;Mise en place<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb41caf94f12b8a1a4b5e560230e7851" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/chapter1/index.html"><a class="padding" href="../../chapter1/index.html"><span class="chapnum">1.</span>&ensp;Introduction au C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-6c398714eae4372920aec3a1e6c2e143" class="collapsible-menu">
-            <li class="" data-nav-id="/chapter1/1-language/index.html"><a class="padding" href="../../chapter1/1-language/index.html">Présentation du langage<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter1/2-hello-world/index.html"><a class="padding" href="../../chapter1/2-hello-world/index.html">Hello World 👋<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter1/3-syntax-elements/index.html"><a class="padding" href="../../chapter1/3-syntax-elements/index.html">Eléments de syntaxe ✍<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter1/4-std-lib/index.html"><a class="padding" href="../../chapter1/4-std-lib/index.html">Librairie standard 📚<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active " data-nav-id="/chapter1/5-compilation/index.html"><a class="padding" href="../../chapter1/5-compilation/index.html">Compilation ⚙️<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter1/test/index.html"><a class="padding" href="../../chapter1/test/index.html">Questionnaire ☑<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/chapter1/1-language/index.html"><a class="padding" href="../../chapter1/1-language/index.html"><span class="presection-icon">🧸</span>Présentation du langage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter1/2-hello-world/index.html"><a class="padding" href="../../chapter1/2-hello-world/index.html"><span class="presection-icon">👋</span>Hello World<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter1/3-syntax-elements/index.html"><a class="padding" href="../../chapter1/3-syntax-elements/index.html"><span class="presection-icon">⁉</span>Eléments de syntaxe<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter1/4-std-lib/index.html"><a class="padding" href="../../chapter1/4-std-lib/index.html"><span class="presection-icon">📚</span>Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/chapter1/5-compilation/index.html"><a class="padding" href="../../chapter1/5-compilation/index.html"><span class="presection-icon">⚙️</span>Compilation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter1/test/index.html"><a class="padding" href="../../chapter1/test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter2/index.html"><a class="padding" href="../../chapter2/index.html"><span class="chapnum">2.</span>&ensp;Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b1df0095a9fd74320697a6d478418ec3" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
@@ -1771,23 +1796,23 @@ En revanche, pour de plus gros programmes, sachez que plus vous mettrez de chose
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1738742369" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1738742369" defer></script>
-    <script src="../../js/d3/d3-color.min.js?1738742369" defer></script>
-    <script src="../../js/d3/d3-dispatch.min.js?1738742369" defer></script>
-    <script src="../../js/d3/d3-drag.min.js?1738742369" defer></script>
-    <script src="../../js/d3/d3-ease.min.js?1738742369" defer></script>
-    <script src="../../js/d3/d3-interpolate.min.js?1738742369" defer></script>
-    <script src="../../js/d3/d3-selection.min.js?1738742369" defer></script>
-    <script src="../../js/d3/d3-timer.min.js?1738742369" defer></script>
-    <script src="../../js/d3/d3-transition.min.js?1738742369" defer></script>
-    <script src="../../js/d3/d3-zoom.min.js?1738742369" defer></script>
-    <script src="../../js/js-yaml.min.js?1738742369" defer></script>
-    <script src="../../js/mermaid.min.js?1738742369" defer></script>
+    <script src="../../js/clipboard.min.js?1739458440" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1739458440" defer></script>
+    <script src="../../js/d3/d3-color.min.js?1739458440" defer></script>
+    <script src="../../js/d3/d3-dispatch.min.js?1739458440" defer></script>
+    <script src="../../js/d3/d3-drag.min.js?1739458440" defer></script>
+    <script src="../../js/d3/d3-ease.min.js?1739458440" defer></script>
+    <script src="../../js/d3/d3-interpolate.min.js?1739458440" defer></script>
+    <script src="../../js/d3/d3-selection.min.js?1739458440" defer></script>
+    <script src="../../js/d3/d3-timer.min.js?1739458440" defer></script>
+    <script src="../../js/d3/d3-transition.min.js?1739458440" defer></script>
+    <script src="../../js/d3/d3-zoom.min.js?1739458440" defer></script>
+    <script src="../../js/js-yaml.min.js?1739458440" defer></script>
+    <script src="../../js/mermaid.min.js?1739458440" defer></script>
     <script>
       window.themeUseMermaid = JSON.parse("{}");
     </script>
-    <script src="../../js/theme.js?1738742369" defer></script>
+    <script src="../../js/theme.js?1739458440" defer></script>
 
 
 

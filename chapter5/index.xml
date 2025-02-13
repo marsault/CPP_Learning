@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Librairie standard :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Librairie standard :: C&#43;&#43;</title>
     <link>/chapter5/index.html</link>
-    <description>Dans ce chapitre, nous vous présenterons les différents types de conteneurs que vous pourrez trouver dans la librairie standard. Les exercices vous permettrons de vous familiariser avec certains d’entre-eux : vector et string bien sûr, mais aussi array, string_view, list, map ou encore pair. Nous en profiterons également pour vous expliquer comment la documentation est organisée sur le site cppreference, afin que vous sachiez toujours à quel endroit d’une page regarder pour trouver les informations dont vous avez besoin.</description>
+    <description>Dans ce chapitre, nous vous présenterons les différents types de conteneurs que vous pourrez trouver dans la librairie standard. Les exercices vous permettrons de vous familiariser avec certains d’entre-eux : vector bien sûr, mais aussi array, list, map ou encore pair. Nous en profiterons également pour vous expliquer comment la documentation est organisée sur le site cppref, afin que vous sachiez toujours à quel endroit d’une page regarder pour trouver les informations dont vous avez besoin.</description>
     <generator>Hugo</generator>
     <language>fr</language>
     <atom:link href="/chapter5/index.xml" rel="self" type="application/rss+xml" />
@@ -12,7 +12,7 @@
       <link>/chapter5/1-doc/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter5/1-doc/index.html</guid>
-      <description>Pour démarrez ce chapitre, nous allons vous expliquer comment parcourir la documentation que vous trouverez sur le site cppreference.&#xA;Commencez par ouvrir cette page. Vous y trouverez la documentation de la classe vector.&#xA;A première vue, son contenu peut paraître indigeste. Nous allons donc vous expliquer comment il est structuré afin que vous puissiez vous y repérer plus facilement.&#xA;Documentation d’une classe 1. En-tête Dans l’en-tête de la documentation, vous trouverez le nom de la classe, suivi du header à inclure afin de pouvoir l’utiliser.</description>
+      <description>Pour démarrez ce chapitre, nous allons vous expliquer comment parcourir la documentation que vous trouverez sur le site cppref.&#xA;Commencez par ouvrir cette page. Vous y trouverez la documentation de la classe vector.&#xA;A première vue, son contenu peut paraître indigeste. Nous allons donc vous expliquer comment il est structuré afin que vous puissiez vous y repérer plus facilement.&#xA;Documentation d’une classe 1. En-tête Dans l’en-tête de la documentation, vous trouverez le nom de la classe, suivi du header à inclure afin de pouvoir l’utiliser.</description>
     </item>
     <item>
       <title>Tableaux dynamiques</title>
@@ -37,31 +37,38 @@
     </item>
     <item>
       <title>Manipulation de chaînes</title>
-      <link>/chapter5/5-strings/index.html</link>
+      <link>/chapter5/old-strings/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/chapter5/5-strings/index.html</guid>
+      <guid>/chapter5/old-strings/index.html</guid>
       <description>Dans cette partie, nous reviendrons sur les fonctions fournies par la librairie permettant de manipuler des string. Vous apprendrez aussi ce que sont les string_view et à quoi elles servent.&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-05/4-strings.cpp&#xA;La cible à compiler est c5-4-strings.&#xA;Opérations standards Parmis les opérations standards que l’on peut effectuer sur des chaînes de caractère, on retrouve :&#xA;la concaténation, l’extration de sous-chaîne, la recherche de caractère ou de sous-chaîne, la comparaison, le remplacement d’une partie de la chaîne.</description>
     </item>
     <item>
       <title>Paires et tuples</title>
-      <link>/chapter5/6-tuples/index.html</link>
+      <link>/chapter5/5-tuples/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/chapter5/6-tuples/index.html</guid>
+      <guid>/chapter5/5-tuples/index.html</guid>
       <description>Vous avez déjà utilisé le type pair au cours d’exercices précédents. Nous allons maintenant vous présenter son cousin, la classe tuple.&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-05/5-tuples.cpp&#xA;La cible à compiler est c5-5-tuples.&#xA;Micro rappel sur les pair La classe pair est un type templaté avec deux paramètres :&#xA;std::pair&lt;int, float&gt; such_a_nice_pair { 1, 3.f }; On accède aux éléments de la pair directement via ses attributs first et second (pas de getters) :</description>
     </item>
     <item>
-      <title>Questionnaire ☑</title>
+      <title>Unique-pointeur</title>
+      <link>/chapter5/6-uptr/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter5/6-uptr/index.html</guid>
+      <description>Les primitives new et delete ne devraient être réservées qu’à des cas exceptionels. C’est bien mieux d’utiliser des unique pointeurs (c’es-à-dire d’utiliser le type std::unique_ptr) qui sont la bonne façon en C++ de représenter des pointeurs ownants.&#xA;Premier std::unique_ptr Pour créer un objet sur le tas, nous allons nous servir d’un petit utilitaire appelé std::unique_ptr et de la fonction std::make_unique. Ces deux symboles se trouvent dans le header &lt;memory&gt;.&#xA;Voici la syntaxe permettant d’allouer de la mémoire pour un entier :</description>
+    </item>
+    <item>
+      <title>Shared pointeur</title>
+      <link>/chapter5/7-shared-ptr/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter5/7-shared-ptr/index.html</guid>
+      <description>TODO</description>
+    </item>
+    <item>
+      <title>Questionnaire</title>
       <link>/chapter5/test/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter5/test/index.html</guid>
       <description>Le premier objectif de ce chapitre était de vous présenter quelques classes de la STL, leurs rôles, leurs différences, dans quelles situations les utiliser et comment.&#xA;Il avait également un deuxième objectif, qui était en quelque sorte de vous apprendre à vous débrouiller tout seul : vous devriez désormais être capable de rechercher par vous-même des informations dans la documentation, et vous devriez aussi appréhender un peu mieux qu’avant les messages du compilateur.</description>
-    </item>
-    <item>
-      <title>Synthèse</title>
-      <link>/chapter5/summary/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/chapter5/summary/index.html</guid>
-      <description>Ce qu’il faut retenir Théorie Un conteneur séquentiel est un conteneur dans lequel les élements se suivent (tableaux, listes, …). Un conteneur associatif est un conteneur dans lequel chaque élément est indexé par une clef (l’élément pouvant être la clef elle-même). Les types passés en paramètre de template doivent parfois respecter des contraintes pour compiler (ces contraintes sont spécifiées dans la documentation). Librairie standard Tableau de taille dynamique : vector Tableau de taille fixe : array Listes chaînées : list ou forward_list Ensembles : set ou unordered_set Dictionnaires : map ou unordered_map Pratique On peut passer les chaînes de caractères constantes par std::string_view plutôt que const std::string&amp; ou const char*.</description>
     </item>
   </channel>
 </rss>

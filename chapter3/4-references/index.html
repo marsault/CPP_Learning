@@ -10,35 +10,35 @@ Modifier un argument Le premier cas d’utilisation des références avait déj�
 Pour rappel, lorsque vous passez un objet par valeur en paramètre d’une fonction, l’intégralité de l’instance est copiée !">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Usage des références 🔀 :: Cours de C&#43;&#43; - Niveau Master">
+    <meta name="twitter:title" content="Usage des références :: C&#43;&#43;">
     <meta name="twitter:description" content="Comme cela doit paraître encore un peu abstrait, nous allons vous présenter concrètement les principaux cas d’utilisation des références. Notez qu’il en existe un autre, mais vous le découvrirez dans le chapitre sur l’héritage !
 Modifier un argument Le premier cas d’utilisation des références avait déjà été décrit dans le Chapitre 1 : il s’agit de pouvoir modifier la valeur ou le contenu d’un argument passé à une fonction.
 Pour rappel, lorsque vous passez un objet par valeur en paramètre d’une fonction, l’intégralité de l’instance est copiée !">
     <meta property="og:url" content="/chapter3/4-references/index.html">
-    <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
-    <meta property="og:title" content="Usage des références 🔀 :: Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:site_name" content="C&#43;&#43;">
+    <meta property="og:title" content="Usage des références :: C&#43;&#43;">
     <meta property="og:description" content="Comme cela doit paraître encore un peu abstrait, nous allons vous présenter concrètement les principaux cas d’utilisation des références. Notez qu’il en existe un autre, mais vous le découvrirez dans le chapitre sur l’héritage !
 Modifier un argument Le premier cas d’utilisation des références avait déjà été décrit dans le Chapitre 1 : il s’agit de pouvoir modifier la valeur ou le contenu d’un argument passé à une fonction.
 Pour rappel, lorsque vous passez un objet par valeur en paramètre d’une fonction, l’intégralité de l’instance est copiée !">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Cycle de vie">
-    <meta itemprop="name" content="Usage des références 🔀 :: Cours de C&#43;&#43; - Niveau Master">
+    <meta itemprop="name" content="Usage des références :: C&#43;&#43;">
     <meta itemprop="description" content="Comme cela doit paraître encore un peu abstrait, nous allons vous présenter concrètement les principaux cas d’utilisation des références. Notez qu’il en existe un autre, mais vous le découvrirez dans le chapitre sur l’héritage !
 Modifier un argument Le premier cas d’utilisation des références avait déjà été décrit dans le Chapitre 1 : il s’agit de pouvoir modifier la valeur ou le contenu d’un argument passé à une fonction.
 Pour rappel, lorsque vous passez un objet par valeur en paramètre d’une fonction, l’intégralité de l’instance est copiée !">
     <meta itemprop="wordCount" content="304">
-    <title>Usage des références 🔀 :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1738742369" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1738742369" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1738742369" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1738742369" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1738742369" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1738742369" rel="stylesheet">
-    <link href="../../css/fonts.css?1738742369" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1738742369" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1738742369" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1738742369" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1738742369" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1738742369" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1738742369"></script>
+    <title>Usage des références :: C&#43;&#43;</title>
+    <link href="../../css/fontawesome-all.min.css?1739458440" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1739458440" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1739458440" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1739458440" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1739458440" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1739458440" rel="stylesheet">
+    <link href="../../css/fonts.css?1739458440" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1739458440" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1739458440" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1739458440" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1739458440" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1739458440" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1739458440"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -91,12 +91,12 @@ Pour rappel, lorsque vous passez un objet par valeur en paramètre d’une fonct
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">Accueil</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../chapter3/index.html"><span itemprop="name">Cycle de vie</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Usage des références 🔀</span><meta itemprop="position" content="3"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Usage des références</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter3/3-storage/index.html" title="Espace de stockage 💾 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter3/3-storage/index.html" title="Espace de stockage (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter3/5-ownership/index.html" title="Ownership 🏘️ (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter3/5-ownership/index.html" title="Ownership (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -116,7 +116,7 @@ Pour rappel, lorsque vous passez un objet par valeur en paramètre d’une fonct
   <header class="headline">
   </header>
 
-<h1 id="usage-des-références-">Usage des références 🔀</h1>
+<h1 id="usage-des-références">Usage des références</h1>
 
 <p>Comme cela doit paraître encore un peu abstrait, nous allons vous présenter concrètement les principaux cas d&rsquo;utilisation des références. Notez qu&rsquo;il en existe un autre, mais vous le découvrirez dans le chapitre sur l&rsquo;héritage !</p>
 <hr>
@@ -197,12 +197,12 @@ En revanche, dans le cas d&rsquo;objets qui réalisent des <strong>allocations d
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -237,7 +237,8 @@ Si on utilisait une référence non-constante, cette garantie ne serait plus val
         </div>
     </div>
 
-</div></p>
+</div>
+</p>
 <h4 id="deuxième-exemple--valeur-de-retour">Deuxième exemple : valeur de retour</h4>
 <div class="highlight wrap-code" hl_lines=[['\a' '\a'] ['\x11' '\x11']]><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Person</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -267,12 +268,12 @@ Comment devez-vous modifier les deux lignes en rouge afin qu&rsquo;aucune copie 
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -314,7 +315,8 @@ Dans notre cas, cela fonctionne car <code>_name</code> est un attribut de la cla
         </div>
     </div>
 
-</div></p>
+</div>
+</p>
 <hr>
 <h3 id="nommer-des-expressions">Nommer des expressions</h3>
 <p>Pour clarifier le code, certains programmeurs ont tendance à vouloir mettre des commentaires partout.<br>
@@ -499,12 +501,12 @@ Si vous ne trouvez pas, essayez de déterminer où sont instanciées et désinst
 <div class="hidden-solution">
 
     <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
-        ⮟ Afficher la solution ⮟
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
     </button>
 
     <div class="off">
         <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
-            ⮝ Masquer la solution ⮝
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
         </button>
 
         <div class="hidden-solution-content">
@@ -517,6 +519,7 @@ Conclusion, on a généré un undefined behavior !</p>
     </div>
 
 </div>
+
 <hr>
 <h3 id="synthèse">Synthèse</h3>
 <p>Les références permettent :</p>
@@ -534,7 +537,7 @@ Conclusion, on a généré un undefined behavior !</p>
 flowchart TD;
     Q1(Est-ce que la fonction est censée avoir un effet de bord sur le paramètre ?)
     Ref[Passage par référence non-constante]
-    Q2(&#34;Est-ce que la copie du parametre est couteux?&lt;br/&gt;(allocation dynamique, appels-système, calculs complexes, ...)&#34;)
+    Q2(&#34;Est-ce que la copie du parametre est couteuse?&lt;br/&gt;(allocation dynamique, appels-système, calculs complexes, ...)&#34;)
     CRef[Passage par reference constante]
     Value[Passage par valeur]
     Q1 --&gt;|Oui| Ref
@@ -567,13 +570,13 @@ flowchart TD;
             <li class="" data-nav-id="/chapter1/index.html"><a class="padding" href="../../chapter1/index.html"><span class="chapnum">1.</span>&ensp;Introduction au C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-6c398714eae4372920aec3a1e6c2e143" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter2/index.html"><a class="padding" href="../../chapter2/index.html"><span class="chapnum">2.</span>&ensp;Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b1df0095a9fd74320697a6d478418ec3" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu">
-            <li class="" data-nav-id="/chapter3/1-allocation/index.html"><a class="padding" href="../../chapter3/1-allocation/index.html">Allocation dynamique 🎇<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter3/2-lifespan/index.html"><a class="padding" href="../../chapter3/2-lifespan/index.html">Durée de vie ⏳<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter3/3-storage/index.html"><a class="padding" href="../../chapter3/3-storage/index.html">Espace de stockage 💾<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active " data-nav-id="/chapter3/4-references/index.html"><a class="padding" href="../../chapter3/4-references/index.html">Usage des références 🔀<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter3/5-ownership/index.html"><a class="padding" href="../../chapter3/5-ownership/index.html">Ownership 🏘️<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter3/test/index.html"><a class="padding" href="../../chapter3/test/index.html">Questionnaire ☑<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
-            <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter3/1-allocation/index.html"><a class="padding" href="../../chapter3/1-allocation/index.html"><span class="presection-icon">⚡</span>Allocation dynamique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter3/2-lifespan/index.html"><a class="padding" href="../../chapter3/2-lifespan/index.html"><span class="presection-icon">⏳</span>Durée de vie <i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter3/3-storage/index.html"><a class="padding" href="../../chapter3/3-storage/index.html"><span class="presection-icon">💾</span>Espace de stockage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/chapter3/4-references/index.html"><a class="padding" href="../../chapter3/4-references/index.html"><span class="presection-icon">🔀</span>Usage des références<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter3/5-ownership/index.html"><a class="padding" href="../../chapter3/5-ownership/index.html"><span class="presection-icon">🏘️</span>Ownership<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter3/test/index.html"><a class="padding" href="../../chapter3/test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
@@ -644,23 +647,23 @@ flowchart TD;
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1738742369" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1738742369" defer></script>
-    <script src="../../js/d3/d3-color.min.js?1738742369" defer></script>
-    <script src="../../js/d3/d3-dispatch.min.js?1738742369" defer></script>
-    <script src="../../js/d3/d3-drag.min.js?1738742369" defer></script>
-    <script src="../../js/d3/d3-ease.min.js?1738742369" defer></script>
-    <script src="../../js/d3/d3-interpolate.min.js?1738742369" defer></script>
-    <script src="../../js/d3/d3-selection.min.js?1738742369" defer></script>
-    <script src="../../js/d3/d3-timer.min.js?1738742369" defer></script>
-    <script src="../../js/d3/d3-transition.min.js?1738742369" defer></script>
-    <script src="../../js/d3/d3-zoom.min.js?1738742369" defer></script>
-    <script src="../../js/js-yaml.min.js?1738742369" defer></script>
-    <script src="../../js/mermaid.min.js?1738742369" defer></script>
+    <script src="../../js/clipboard.min.js?1739458440" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1739458440" defer></script>
+    <script src="../../js/d3/d3-color.min.js?1739458440" defer></script>
+    <script src="../../js/d3/d3-dispatch.min.js?1739458440" defer></script>
+    <script src="../../js/d3/d3-drag.min.js?1739458440" defer></script>
+    <script src="../../js/d3/d3-ease.min.js?1739458440" defer></script>
+    <script src="../../js/d3/d3-interpolate.min.js?1739458440" defer></script>
+    <script src="../../js/d3/d3-selection.min.js?1739458440" defer></script>
+    <script src="../../js/d3/d3-timer.min.js?1739458440" defer></script>
+    <script src="../../js/d3/d3-transition.min.js?1739458440" defer></script>
+    <script src="../../js/d3/d3-zoom.min.js?1739458440" defer></script>
+    <script src="../../js/js-yaml.min.js?1739458440" defer></script>
+    <script src="../../js/mermaid.min.js?1739458440" defer></script>
     <script>
       window.themeUseMermaid = JSON.parse("{}");
     </script>
-    <script src="../../js/theme.js?1738742369" defer></script>
+    <script src="../../js/theme.js?1739458440" defer></script>
 
 
 

@@ -1,11 +1,60 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Copie et déplacement :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Copie et déplacement :: C&#43;&#43;</title>
     <link>/chapter4/index.html</link>
-    <description>En construction</description>
+    <description>Dans ce chapitre, nous allons revenir en détail sur la notion de copie et aborder celle de déplacement. Plus particulièrement, nous allons voir comment définir la façon dont une classe se copie et se déplace, et quand.&#xA;Pour savoir quand un objet est déplacé ou copié, il faut d’abord comprendre les deux principales catégories de valeurs : L-value et R-value.&#xA;Nouveau chapitre Ce chapitre a été écrit cette année. Il contient probablement de nombreuses erreurs.</description>
     <generator>Hugo</generator>
     <language>fr</language>
     <atom:link href="/chapter4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>L-value vs R-value</title>
+      <link>/chapter4/1-value-kinds/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter4/1-value-kinds/index.html</guid>
+      <description>Sur cette page, on va parler des catégories des expressions (L-values et R-values), ce qui permet de mieux comprendre comment le compilateur les traite.&#xA;Remarque La catégorisation des expressions est en fait encore plus complexe que celle décrite ici. Il existe en C++ des GL-values, PR-values et X-values, mais ces notions ne sont pas au programme du cours.&#xA;L-value Pour illustrer ce que sont les L-values, on utilisera le bout de code ci-dessous.</description>
+    </item>
+    <item>
+      <title>Copie</title>
+      <link>/chapter4/2-copy/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter4/2-copy/index.html</guid>
+      <description>Dans cette section vous verrez comment implémenter un constructeur de copie et un opérateur d’assignation. On compilera le fichier Person.cpp.&#xA;Constructeur de copie Dans la fonction main, instanciez à la suite du code existant une nouvelle instance de Person et initialisez là à partir de la variable batman. Cela se fait exactement de la même manière que si vous souhaitiez créer une copie d’une variable de type int.&#xA;Affichez ensuite le contenu de cet objet grâce à l’opérateur &lt;&lt;.</description>
+    </item>
+    <item>
+      <title>Déplacement</title>
+      <link>/chapter4/3-move/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter4/3-move/index.html</guid>
+      <description>Sur cette page vous allez apprendre ce qu’est le déplacement en C++. En un mot, il s’agit de permettre de vider un objet pour en construire un autre ailleurs, et on utilise pour cela la fonction std::move.&#xA;Usage de la fonction std::move sur un exemple Considérons le bout de code ci-dessous.&#xA;#include &lt;iostream&gt; #include &lt;vector&gt; // Passage par valeur // vvvvvvvvvvv void f(std::vector&lt;std::string&gt; my_own_data) { for (auto&amp; s : my_own_data) std::cout &lt;&lt; &amp;s &lt;&lt; &#34; &#34;; // ^^ // On affiche l&#39;adresse des chaines de caractères std::cout &lt;&lt; std::endl; } int main() { std::vector&lt;std::string&gt; data = {&#34;Hello&#34;, &#34;World&#34;, &#34;!</description>
+    </item>
+    <item>
+      <title>Affectation</title>
+      <link>/chapter4/4-assign/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter4/4-assign/index.html</guid>
+      <description>Les constructeurs de copie et de déplacement sont appelés quand il faut instancier un nouvel objet. Sur cette page, on va parler des opérateurs d’affectations, c’est-à-dire, quand on remplit un objet qui existe déjà.&#xA;Par exemple, dans le cas d’un entier:&#xA;int i = 0; // Ici le compilateur alloue de la mémoire pour i et le remplit avec la valeur 0. // Il *instancie* un nouvel entier à partir de la valeur 0.</description>
+    </item>
+    <item>
+      <title>Règle des 0, 3 ou 5</title>
+      <link>/chapter4/5-ruleof035/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter4/5-ruleof035/index.html</guid>
+      <description>Le compilateur fournit des implémentations par défaut pour les éléments suivants.&#xA;Destructeur Constructeur de copie Opérateur d’affectation par copie Constructeur de déplacement Opérateur d’affectation par déplacement Règle des 0, 3 ou 5 (Rule of 0/3/5) Pour une classe donnée, il faut généralement définir à la main :&#xA;aucun des cinq éléments ci-dessus; les trois premiers (destructeur, constructeur de copie et opérateur d’affectation par copie); ou les cinq. Pourquoi ?&#xA;Parce que ces cinq éléments sont interdépendants.</description>
+    </item>
+    <item>
+      <title>Minimiser les copies</title>
+      <link>/chapter4/6-copy-minim/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter4/6-copy-minim/index.html</guid>
+      <description>Dans le chapitre 3, nous avons vu comment choisir le type des paramètres d’une fonction. Maintenant qu’on sait comment déplacer les objets, on peut faire mieux !&#xA;Un puzzle à résoudre Nous allons considérer la classe BoxedString en dessous. Notre but est d’implémenter un constructeur qui prend un argument une chaîne de caractères pour initialiser l’attribut _str, et ce en minimisant le nombre de copies.&#xA;class BoxedString { std::string _str; }; Pour commencer, évaluons notre objectif: combien de copies peut-on espérer faire au minimum dans les cas typiques.</description>
+    </item>
+    <item>
+      <title>Questionnaire</title>
+      <link>/chapter4/9-test/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter4/9-test/index.html</guid>
+      <description>Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Henri Derycke) Initiaux GR2 (avec Anthony Labarre) Alternants GR3 (avec Victor Marsault) Considérons la fonction pour les questions ci-dessous.&#xA;int f(int a, int&amp; b, const int&amp; c, int&amp;&amp; d, int* e) { return *(new int{a+b+c+d+*e}); } 1. Pour chacune des expressions suivantes, indiquez s’il s’agit d’une L-value ou d’une R-value:&#xA;a, b, c, d, e, *e, a+b+c+d+*e, new int{a+b+c+d+*e}; *(new int{a+b+c+d+*e}); Les questions ci-dessous s’appliquent à la classe SomeClass ci-dessous.</description>
+    </item>
   </channel>
 </rss>

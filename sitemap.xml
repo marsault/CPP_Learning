@@ -4,9 +4,6 @@
     <loc>/chapter0/index.html</loc>
   </url>
   <url>
-    <loc>/chapter6/1-hierarchy/index.html</loc>
-  </url>
-  <url>
     <loc>/chapter3/1-allocation/index.html</loc>
   </url>
   <url>
@@ -22,10 +19,16 @@
     <loc>/old-2223-chapter3-memoire/1-lifespan/index.html</loc>
   </url>
   <url>
+    <loc>/chapter6/1-hierarchy/index.html</loc>
+  </url>
+  <url>
     <loc>/chapter8/1-introduction/index.html</loc>
   </url>
   <url>
     <loc>/chapter1/index.html</loc>
+  </url>
+  <url>
+    <loc>/chapter4/1-value-kinds/index.html</loc>
   </url>
   <url>
     <loc>/chapter7/1-searches/index.html</loc>
@@ -49,10 +52,10 @@
     <loc>/chapter5/1-doc/index.html</loc>
   </url>
   <url>
-    <loc>/chapter6/2-farm/index.html</loc>
+    <loc>/chapter2/index.html</loc>
   </url>
   <url>
-    <loc>/chapter2/index.html</loc>
+    <loc>/chapter6/2-farm/index.html</loc>
   </url>
   <url>
     <loc>/chapter3/2-lifespan/index.html</loc>
@@ -97,10 +100,16 @@
     <loc>/chapter2/3-constructor/index.html</loc>
   </url>
   <url>
+    <loc>/chapter4/2-copy/index.html</loc>
+  </url>
+  <url>
     <loc>/chapter3/index.html</loc>
   </url>
   <url>
     <loc>/chapter8/3-syntaxe/index.html</loc>
+  </url>
+  <url>
+    <loc>/chapter4/3-move/index.html</loc>
   </url>
   <url>
     <loc>/chapter1/3-syntax-elements/index.html</loc>
@@ -116,6 +125,9 @@
   </url>
   <url>
     <loc>/chapter9/3-specializations/index.html</loc>
+  </url>
+  <url>
+    <loc>/chapter4/4-assign/index.html</loc>
   </url>
   <url>
     <loc>/chapter0/6-tips/4-terminal/index.html</loc>
@@ -151,9 +163,6 @@
     <loc>/chapter3/4-references/index.html</loc>
   </url>
   <url>
-    <loc>/chapter6/5-vehicles/index.html</loc>
-  </url>
-  <url>
     <loc>/chapter0/5-clang-format/index.html</loc>
   </url>
   <url>
@@ -163,7 +172,7 @@
     <loc>/chapter5/index.html</loc>
   </url>
   <url>
-    <loc>/chapter5/5-strings/index.html</loc>
+    <loc>/chapter5/old-strings/index.html</loc>
   </url>
   <url>
     <loc>/chapter2/5-modules/index.html</loc>
@@ -172,19 +181,34 @@
     <loc>/chapter3/5-ownership/index.html</loc>
   </url>
   <url>
+    <loc>/chapter4/5-ruleof035/index.html</loc>
+  </url>
+  <url>
+    <loc>/chapter6/5-vehicles/index.html</loc>
+  </url>
+  <url>
     <loc>/chapter0/6-tips/index.html</loc>
   </url>
   <url>
     <loc>/chapter6/index.html</loc>
   </url>
   <url>
+    <loc>/chapter4/6-copy-minim/index.html</loc>
+  </url>
+  <url>
     <loc>/chapter2/6-operators/index.html</loc>
   </url>
   <url>
-    <loc>/chapter5/6-tuples/index.html</loc>
+    <loc>/chapter5/5-tuples/index.html</loc>
+  </url>
+  <url>
+    <loc>/chapter5/6-uptr/index.html</loc>
   </url>
   <url>
     <loc>/chapter7/index.html</loc>
+  </url>
+  <url>
+    <loc>/chapter5/7-shared-ptr/index.html</loc>
   </url>
   <url>
     <loc>/chapter8/index.html</loc>
@@ -199,15 +223,6 @@
     <loc>/old-2223-chapter8-exceptions-assert/index.html</loc>
   </url>
   <url>
-    <loc>/chapter6/test/index.html</loc>
-  </url>
-  <url>
-    <loc>/old-2223-chapter3-memoire/test/index.html</loc>
-  </url>
-  <url>
-    <loc>/old-2223-chapter8-exceptions-assert/test/index.html</loc>
-  </url>
-  <url>
     <loc>/chapter1/test/index.html</loc>
   </url>
   <url>
@@ -217,22 +232,31 @@
     <loc>/chapter3/test/index.html</loc>
   </url>
   <url>
+    <loc>/chapter4/9-test/index.html</loc>
+  </url>
+  <url>
     <loc>/chapter5/test/index.html</loc>
+  </url>
+  <url>
+    <loc>/chapter6/test/index.html</loc>
   </url>
   <url>
     <loc>/chapter7/test/index.html</loc>
   </url>
   <url>
-    <loc>/chapter8/test/index.html</loc>
-  </url>
-  <url>
     <loc>/chapter9/test/index.html</loc>
   </url>
   <url>
-    <loc>/chapter0/test/index.html</loc>
+    <loc>/old-2223-chapter3-memoire/test/index.html</loc>
   </url>
   <url>
-    <loc>/chapter5/summary/index.html</loc>
+    <loc>/old-2223-chapter8-exceptions-assert/test/index.html</loc>
+  </url>
+  <url>
+    <loc>/chapter8/test/index.html</loc>
+  </url>
+  <url>
+    <loc>/chapter0/test/index.html</loc>
   </url>
   <url>
     <loc>/chapter6/summary/index.html</loc>

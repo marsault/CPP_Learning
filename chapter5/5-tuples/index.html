@@ -13,16 +13,16 @@ Micro rappel sur les pair La classe pair est un type templaté avec deux paramè
 std::pair&lt;int, float&gt; such_a_nice_pair { 1, 3.f }; On accède aux éléments de la pair directement via ses attributs first et second (pas de getters) :">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Paires et tuples :: Cours de C&#43;&#43; - Niveau Master">
+    <meta name="twitter:title" content="Paires et tuples :: C&#43;&#43;">
     <meta name="twitter:description" content="Vous avez déjà utilisé le type pair au cours d’exercices précédents. Nous allons maintenant vous présenter son cousin, la classe tuple.
 Pour cet exercice, vous modifierez le fichier :
 - chap-05/5-tuples.cpp
 La cible à compiler est c5-5-tuples.
 Micro rappel sur les pair La classe pair est un type templaté avec deux paramètres :
 std::pair&lt;int, float&gt; such_a_nice_pair { 1, 3.f }; On accède aux éléments de la pair directement via ses attributs first et second (pas de getters) :">
-    <meta property="og:url" content="/chapter5/6-tuples/index.html">
-    <meta property="og:site_name" content="Cours de C&#43;&#43; - Niveau Master">
-    <meta property="og:title" content="Paires et tuples :: Cours de C&#43;&#43; - Niveau Master">
+    <meta property="og:url" content="/chapter5/5-tuples/index.html">
+    <meta property="og:site_name" content="C&#43;&#43;">
+    <meta property="og:title" content="Paires et tuples :: C&#43;&#43;">
     <meta property="og:description" content="Vous avez déjà utilisé le type pair au cours d’exercices précédents. Nous allons maintenant vous présenter son cousin, la classe tuple.
 Pour cet exercice, vous modifierez le fichier :
 - chap-05/5-tuples.cpp
@@ -32,7 +32,7 @@ std::pair&lt;int, float&gt; such_a_nice_pair { 1, 3.f }; On accède aux élémen
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Librairie standard">
-    <meta itemprop="name" content="Paires et tuples :: Cours de C&#43;&#43; - Niveau Master">
+    <meta itemprop="name" content="Paires et tuples :: C&#43;&#43;">
     <meta itemprop="description" content="Vous avez déjà utilisé le type pair au cours d’exercices précédents. Nous allons maintenant vous présenter son cousin, la classe tuple.
 Pour cet exercice, vous modifierez le fichier :
 - chap-05/5-tuples.cpp
@@ -40,17 +40,17 @@ La cible à compiler est c5-5-tuples.
 Micro rappel sur les pair La classe pair est un type templaté avec deux paramètres :
 std::pair&lt;int, float&gt; such_a_nice_pair { 1, 3.f }; On accède aux éléments de la pair directement via ses attributs first et second (pas de getters) :">
     <meta itemprop="wordCount" content="481">
-    <title>Paires et tuples :: Cours de C&#43;&#43; - Niveau Master</title>
-    <link href="../../css/fontawesome-all.min.css?1738742369" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1738742369" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1738742369" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1738742369" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1738742369" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1738742369" rel="stylesheet">
-    <link href="../../css/fonts.css?1738742369" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1738742369" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1738742369" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1738742369" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1738742369" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1738742369" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1738742369"></script>
+    <title>Paires et tuples :: C&#43;&#43;</title>
+    <link href="../../css/fontawesome-all.min.css?1739458440" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1739458440" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1739458440" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1739458440" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1739458440" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1739458440" rel="stylesheet">
+    <link href="../../css/fonts.css?1739458440" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1739458440" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1739458440" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1739458440" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1739458440" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1739458440" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1739458440"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -71,7 +71,7 @@ std::pair&lt;int, float&gt; such_a_nice_pair { 1, 3.f }; On accède aux élémen
       window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../chapter5/6-tuples/index.html">
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../chapter5/5-tuples/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -103,9 +103,9 @@ std::pair&lt;int, float&gt; such_a_nice_pair { 1, 3.f }; On accède aux élémen
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Paires et tuples</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter5/5-strings/index.html" title="Manipulation de chaînes (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter5/4-associatives/index.html" title="Conteneurs associatifs (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter5/test/index.html" title="Questionnaire ☑ (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter5/6-uptr/index.html" title="Unique-pointeur (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -170,12 +170,12 @@ Lorsqu&rsquo;une fonction devait vous retourner plusieurs valeurs, vous étiez s
 Maintenant, vous saurez que vous pouvez utiliser des tuples.</p>
 <p>Modifiez le code du fichier <code>5-tuples.cpp</code> afin d&rsquo;appliquer ce principe.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-58befcbaf1d7350ac5e8289509bacb8c" aria-controls="R-expandcontent-58befcbaf1d7350ac5e8289509bacb8c">
-  <label class="expand-label" for="R-expand-58befcbaf1d7350ac5e8289509bacb8c">
+  <input type="checkbox" id="R-expand-716e0449cd462c77cde6ab4454feccd7" aria-controls="R-expandcontent-716e0449cd462c77cde6ab4454feccd7">
+  <label class="expand-label" for="R-expand-716e0449cd462c77cde6ab4454feccd7">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-58befcbaf1d7350ac5e8289509bacb8c" class="expand-content">
+  <div id="R-expandcontent-716e0449cd462c77cde6ab4454feccd7" class="expand-content">
 <div class="highlight wrap-code" hl_lines="3 5 7 12 18 19 29 35 38 41 43 48 49 54 55 56 58"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
 </span></span></span><span class="line hl"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;tuple&gt;</span><span class="cp">
@@ -264,16 +264,15 @@ Maintenant, vous saurez que vous pouvez utiliser des tuples.</p>
             <li class="" data-nav-id="/chapter1/index.html"><a class="padding" href="../../chapter1/index.html"><span class="chapnum">1.</span>&ensp;Introduction au C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-6c398714eae4372920aec3a1e6c2e143" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter2/index.html"><a class="padding" href="../../chapter2/index.html"><span class="chapnum">2.</span>&ensp;Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b1df0095a9fd74320697a6d478418ec3" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu">
-            <li class="" data-nav-id="/chapter5/1-doc/index.html"><a class="padding" href="../../chapter5/1-doc/index.html">Un peu de doc...<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter5/2-vectors/index.html"><a class="padding" href="../../chapter5/2-vectors/index.html">Tableaux dynamiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter5/3-sequentials/index.html"><a class="padding" href="../../chapter5/3-sequentials/index.html">Autres conteneurs séquentiels<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter5/4-associatives/index.html"><a class="padding" href="../../chapter5/4-associatives/index.html">Conteneurs associatifs<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter5/5-strings/index.html"><a class="padding" href="../../chapter5/5-strings/index.html">Manipulation de chaînes<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active " data-nav-id="/chapter5/6-tuples/index.html"><a class="padding" href="../../chapter5/6-tuples/index.html">Paires et tuples<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter5/test/index.html"><a class="padding" href="../../chapter5/test/index.html">Questionnaire ☑<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter5/summary/index.html"><a class="padding" href="../../chapter5/summary/index.html">Synthèse<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/chapter5/1-doc/index.html"><a class="padding" href="../../chapter5/1-doc/index.html"><span class="presection-icon">🔖</span>Un peu de doc...<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/2-vectors/index.html"><a class="padding" href="../../chapter5/2-vectors/index.html"><span class="presection-icon">🖼</span>Tableaux dynamiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/3-sequentials/index.html"><a class="padding" href="../../chapter5/3-sequentials/index.html"><span class="presection-icon">➠</span>Autres conteneurs séquentiels<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/4-associatives/index.html"><a class="padding" href="../../chapter5/4-associatives/index.html"><span class="presection-icon">🔑</span>Conteneurs associatifs<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/chapter5/5-tuples/index.html"><a class="padding" href="../../chapter5/5-tuples/index.html"><span class="presection-icon">🍒</span>Paires et tuples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/6-uptr/index.html"><a class="padding" href="../../chapter5/6-uptr/index.html"><span class="presection-icon"><i class="fa-solid fa-snowflake"></i></span>Unique-pointeur<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/test/index.html"><a class="padding" href="../../chapter5/test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter8/index.html"><a class="padding" href="../../chapter8/index.html"><span class="chapnum">8.</span>&ensp;Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7cf6d9bdd794f38d7006506bdc38c58f" class="collapsible-menu"></ul></li>
@@ -305,7 +304,7 @@ Maintenant, vous saurez que vous pouvez utiliser des tuples.</p>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Langue</label>
                     <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
-                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../chapter5/6-tuples/index.html" lang="fr" selected>Français</option>
+                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../chapter5/5-tuples/index.html" lang="fr" selected>Français</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -343,9 +342,9 @@ Maintenant, vous saurez que vous pouvez utiliser des tuples.</p>
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1738742369" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1738742369" defer></script>
-    <script src="../../js/theme.js?1738742369" defer></script>
+    <script src="../../js/clipboard.min.js?1739458440" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1739458440" defer></script>
+    <script src="../../js/theme.js?1739458440" defer></script>
 
 
 
@@ -363,7 +362,7 @@ Maintenant, vous saurez que vous pouvez utiliser des tuples.</p>
             onchange="updateQuestionFormSubject()" />
         <textarea name="question" rows="7" cols="30" placeholder="Mon message..."></textarea>
         <input type="hidden" name="selection" />
-        <input type="hidden" name="page" value="/chapter5/6-tuples/" />
+        <input type="hidden" name="page" value="/chapter5/5-tuples/" />
 
         <input type="hidden" name="_replyto" />
         <input type="hidden" name="_subject" />

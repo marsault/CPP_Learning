@@ -89,9 +89,9 @@ a:hover {
     color: var(--MAIN-LINK-HOVER-color);
 }
 
-span.chapnum{
-  opacity: .75;
-  font-weight: 600;
+span.chapnum {
+    opacity: .75;
+    font-weight: 600;
 }
 
 #sidebar ul li.visited>a .read-icon {
@@ -365,4 +365,23 @@ td.lntd:first-child .copy-to-clipboard {
 
 pre.mermaid {
     background-color: transparent;
+}
+
+span.presection-icon {
+    display: inline-block;
+    width: 1em;
+    text-align: right;
+    margin-right: .5em;
+}
+
+span.presection-icon>img {
+    height: 1.2em;
+    object-fit: scale-down;
+    vertical-align: middle;
+    padding-bottom: .2em;
+}
+
+span.hidden-sol-space {
+  display: inline-block;
+  width: 1em;
 }
