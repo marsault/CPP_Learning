@@ -48,15 +48,15 @@ name = "<i class='far fa-file-powerpoint'></i> Slides"
 url = "/slides"
 weight = 3
 
-[[menu.shortcuts]]
-name = "<i class='far fa-list-alt'></i> Workflow"
-url = "/workflow"
-weight = 4
+#[[menu.shortcuts]]
+#name = "<i class='far fa-list-alt'></i> Workflow"
+#url = "/workflow"
+#weight = 4
 
-[[menu.shortcuts]]
-name = "<i class='fas fa-question-circle'></i> FAQ"
-url = "/faq"
-weight = 5
+#[[menu.shortcuts]]
+#name = "<i class='fas fa-question-circle'></i> FAQ"
+#url = "/faq"
+#weight = 5
 
 [[menu.shortcuts]]
 name = "<i class='fa fa-rocket'></i> Astuces"
