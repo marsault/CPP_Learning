@@ -1,7 +1,8 @@
 ---
 title: "Aide"
 type: "chapter"
-weight: 10
+pre: "<span class=\"chapnum\">?</span>&ensp;"
+weight: 11
 ---
 
-Cette partie du site 
+Cette partie du site contient les pages.
