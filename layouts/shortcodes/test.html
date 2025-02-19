@@ -6,15 +6,16 @@
   function updateTestSubject() {
     let name = document.querySelector('#test>input[name="name"]').value;
     let group = document.querySelector('#test>select[name="group"]').value;
-    document.querySelector('#test>input[name="_subject"]').value = "[C++]["+group+"][Chap {{ .Params.chapter }}] " + name + ", retour sur ton questionnaire";
+    document.querySelector('#test>input[name="_subject"]').value = "[C++][" + group + "][Chap {{ .Params.chapter }}] " + name + ", retour sur ton questionnaire";
   }
 
- //updateQuestionFormSubject();
+  //updateQuestionFormSubject();
 
 </script>
 
 <iframe class="hidden" name="test-submitted" src=""></iframe>
-<form id="test" data-chapter="{{ .Params.chapter }}" target="test-submitted" data-year="2024" method=POST action="https://formsubmit.co/{{ .Site.Params.formsubmitco_token }}">
+<form id="test" data-chapter="{{ .Params.chapter }}" target="test-submitted" data-year="2024" method=POST
+  action="https://formsubmit.co/{{ .Site.Params.formsubmitco_token }}">
   <label>Vous êtes :</label>
   <input type="text" name="name" placeholder="Prénom Nom" required onchange="updateTestSubject()" />
 
@@ -23,9 +24,9 @@
 
   <label>Votre groupe de TP:</label>
   <select name="group" onchange="updateTestSubject()">
-  {{ if or .Page.Draft .Page.Parent.Draft }}
+    {{ if or .Page.Draft .Page.Parent.Draft }}
     <option value="Draft">Draft</option>
-  {{ end }}
+    {{ end }}
     <option value="GR1">Initiaux GR1 (avec Henri Derycke)</option>
     <option value="GR2">Initiaux GR2 (avec Anthony Labarre)</option>
     <option value="GR3">Alternants GR3 (avec Victor Marsault)</option>
@@ -33,12 +34,15 @@
 
   <input type="hidden" name="_subject" />
   <input type="hidden" name="_replyto" />
+  <input type="hidden" name="_template" value="box" />
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_next" value="{{ .Site.Params.finalURL }}common/test-submitted" />
 
-  <hr/>
+  <hr />
 
   {{ .Inner }}
 
-  <hr/>
+  <hr />
 
   <label for="time">Combien de temps avez-vous mis à compléter ce chapitre ?</label>
   <input type="text" name="time" placeholder="environ 4h30" />
@@ -49,12 +53,10 @@
   <label for="comments">Avez-vous des commentaires concernant le chapitre et/ou le site ?</label>
   <textarea name="comments" rows="5" cols="50"></textarea>
 
-  <input type="hidden" name="_template" value="box" />
-  <input type="hidden" name="_captcha" value="false" />
-  <input type="hidden" name="_next" value="{{ .Site.Params.finalURL }}common/test-submitted" />
+
 
   <input type="submit" disabled style="display: none" aria-hidden="true" />
   <input type="submit" value="Valider" />
 </form>
 
-<script src="{{"js/save-test-answers-v2.js"| relURL}}"></script>
+<script src="{{" js/save-test-answers-v2.js"| relURL}}"></script>
