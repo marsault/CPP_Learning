@@ -29,16 +29,16 @@ N’hésitez néanmoins pas à utiliser le formulaire pour envoyer vos questions
 Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Henri Derycke) Initiaux GR2 (avec Anthony Labarre) Alternants GR3 (avec Victor Marsault) Combien de temps avez-vous mis à compléter ce chapitre ? Avez-vous des questions suite à sa lecture ? Avez-vous des commentaires concernant le chapitre et/ou le site ?">
     <meta itemprop="wordCount" content="77">
     <title>Questionnaire :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1739530586" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1739530586" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1739530586" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1739530586" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1739530586" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1739530586" rel="stylesheet">
-    <link href="../../css/fonts.css?1739530586" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1739530586" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1739530586" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1739530586" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1739530586" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1739530586" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1739530586"></script>
+    <link href="../../css/fontawesome-all.min.css?1739957323" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1739957323" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1739957323" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1739957323" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1739957323" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1739957323" rel="stylesheet">
+    <link href="../../css/fonts.css?1739957323" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1739957323" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1739957323" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1739957323" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1739957323" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1739957323" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1739957323"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -116,15 +116,16 @@ N&rsquo;hésitez néanmoins pas à utiliser le formulaire pour envoyer vos quest
   function updateTestSubject() {
     let name = document.querySelector('#test>input[name="name"]').value;
     let group = document.querySelector('#test>select[name="group"]').value;
-    document.querySelector('#test>input[name="_subject"]').value = "[C++]["+group+"][Chap 10] " + name + ", retour sur ton questionnaire";
+    document.querySelector('#test>input[name="_subject"]').value = "[C++][" + group + "][Chap 10] " + name + ", retour sur ton questionnaire";
   }
 
- 
+  
 
 </script>
 
 <iframe class="hidden" name="test-submitted" src=""></iframe>
-<form id="test" data-chapter="10" target="test-submitted" data-year="2024" method=POST action="https://formsubmit.co/08af4b8e13fc3ec785faa99820631150">
+<form id="test" data-chapter="10" target="test-submitted" data-year="2024" method=POST
+  action="https://formsubmit.co/08af4b8e13fc3ec785faa99820631150">
   <label>Vous êtes :</label>
   <input type="text" name="name" placeholder="Prénom Nom" required onchange="updateTestSubject()" />
 
@@ -133,7 +134,7 @@ N&rsquo;hésitez néanmoins pas à utiliser le formulaire pour envoyer vos quest
 
   <label>Votre groupe de TP:</label>
   <select name="group" onchange="updateTestSubject()">
-  
+    
     <option value="GR1">Initiaux GR1 (avec Henri Derycke)</option>
     <option value="GR2">Initiaux GR2 (avec Anthony Labarre)</option>
     <option value="GR3">Alternants GR3 (avec Victor Marsault)</option>
@@ -141,12 +142,15 @@ N&rsquo;hésitez néanmoins pas à utiliser le formulaire pour envoyer vos quest
 
   <input type="hidden" name="_subject" />
   <input type="hidden" name="_replyto" />
+  <input type="hidden" name="_template" value="box" />
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_next" value="https://igm.univ-mlv.fr/~marsault/cpp/cours/common/test-submitted" />
 
-  <hr/>
+  <hr />
 
   
 
-  <hr/>
+  <hr />
 
   <label for="time">Combien de temps avez-vous mis à compléter ce chapitre ?</label>
   <input type="text" name="time" placeholder="environ 4h30" />
@@ -157,16 +161,13 @@ N&rsquo;hésitez néanmoins pas à utiliser le formulaire pour envoyer vos quest
   <label for="comments">Avez-vous des commentaires concernant le chapitre et/ou le site ?</label>
   <textarea name="comments" rows="5" cols="50"></textarea>
 
-  <input type="hidden" name="_template" value="box" />
-  <input type="hidden" name="_captcha" value="false" />
-  <input type="hidden" name="_next" value="https://igm.univ-mlv.fr/~marsault/cpp/cours/common/test-submitted" />
+
 
   <input type="submit" disabled style="display: none" aria-hidden="true" />
   <input type="submit" value="Valider" />
 </form>
 
-<script src="../../js/save-test-answers-v2.js"></script>
-
+<script src="../../%20js/save-test-answers-v2.js"></script>
 
   <footer class="footline">
   </footer>
@@ -268,9 +269,9 @@ N&rsquo;hésitez néanmoins pas à utiliser le formulaire pour envoyer vos quest
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1739530586" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1739530586" defer></script>
-    <script src="../../js/theme.js?1739530586" defer></script>
+    <script src="../../js/clipboard.min.js?1739957323" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1739957323" defer></script>
+    <script src="../../js/theme.js?1739957323" defer></script>
 
 
 
