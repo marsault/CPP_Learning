@@ -56,10 +56,6 @@ Donner le prototype du constructeur de déplacement de `SomeClass`.
 {{% /test_item %}}
 
 {{% test_item lines=6 %}}
-Ecrire un constructeur de déplacement correct pour `SomeClass`.
-{{% /test_item %}}
-
-{{% test_item lines=6 %}}
 Ecrire le code du constructeur de déplacement de `SomeClass`, tel que généré par l'implémentation par défaut du compilateur.
 {{% /test_item %}}
 
