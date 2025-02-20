@@ -29,16 +29,16 @@ int f(int a, int&amp; b, const int&amp; c, int&amp;&amp; d, int* e) { return *(n
 a, b, c, d, e, *e, a&#43;b&#43;c&#43;d&#43;*e, new int{a&#43;b&#43;c&#43;d&#43;*e}; *(new int{a&#43;b&#43;c&#43;d&#43;*e}); Les questions ci-dessous s’appliquent à la classe SomeClass ci-dessous.">
     <meta itemprop="wordCount" content="329">
     <title>Questionnaire :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1739957323" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1739957323" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1739957323" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1739957323" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1739957323" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1739957323" rel="stylesheet">
-    <link href="../../css/fonts.css?1739957323" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1739957323" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1739957323" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1739957323" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1739957323" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1739957323" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1739957323"></script>
+    <link href="../../css/fontawesome-all.min.css?1740040101" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1740040101" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1740040101" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1740040101" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1740040101" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1740040101" rel="stylesheet">
+    <link href="../../css/fonts.css?1740040101" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1740040101" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1740040101" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1740040101" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1740040101" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1740040101" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1740040101"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -162,8 +162,9 @@ a, b, c, d, e, *e, a&#43;b&#43;c&#43;d&#43;*e, new int{a&#43;b&#43;c&#43;d&#43;*
 <li><code>new int{a+b+c+d+*e}</code>;</li>
 <li><code>*(new int{a+b+c+d+*e})</code>;</li>
 </ul></label>
-<textarea id="q1" name="1- Pour chacune des expressions suivantes, indiquez s’il s’agit d’une L-value ou d’une R-value:
-a, b, c, d, e, *e, a&#43;b&#43;c&#43;d&#43;*e, new int{a&#43;b&#43;c&#43;d&#43;*e}; *(new int{a&#43;b&#43;c&#43;d&#43;*e}); " rows="10" cols="50"></textarea>
+<textarea id="q1" name="1. Pour chacune des expressions suivantes, indiquez s’il s’agit d’une L-value ou d’une R-value:
+a, b, c, d, e, *e, a&#43;b&#43;c&#43;d&#43;*e, new int{a&#43;b&#43;c&#43;d&#43;*e}; *(new int{a&#43;b&#43;c&#43;d&#43;*e}); " rows="10"
+  cols="50"></textarea>
 <hr>
 <p>Les questions ci-dessous s&rsquo;appliquent à la classe <code>SomeClass</code> ci-dessous.</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">SomeClass</span> <span class="p">{</span>
@@ -175,27 +176,38 @@ a, b, c, d, e, *e, a&#43;b&#43;c&#43;d&#43;*e, new int{a&#43;b&#43;c&#43;d&#43;*
 </span></span><span class="line"><span class="cl">    <span class="o">~</span><span class="n">SomeClass</span><span class="p">()</span> <span class="p">{</span><span class="k">delete</span> <span class="n">_ptr</span><span class="p">;}</span>
 </span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div>
 <p><label for="q2">2. Donner le prototype du constructeur de copie de <code>SomeClass</code>.</label></p>
-<textarea id="q2" name="2- Donner le prototype du constructeur de copie de SomeClass." rows="1" cols="50"></textarea>
+<textarea id="q2" name="2. Donner le prototype du constructeur de copie de SomeClass." rows="1"
+  cols="50"></textarea>
 <p><label for="q3">3. Ecrire le code du constructeur de copie de <code>SomeClass</code>, tel que généré par l’implémentation par défaut du compilateur.</label></p>
-<textarea id="q3" name="3- Ecrire le code du constructeur de copie de SomeClass, tel que généré par l’implémentation par défaut du compilateur." rows="6" cols="50"></textarea>
+<textarea id="q3" name="3. Ecrire le code du constructeur de copie de SomeClass, tel que généré par l’implémentation par défaut du compilateur." rows="6"
+  cols="50"></textarea>
 <p><label for="q4">4. Expliquer pourquoi cette implémentation va poser des problèmes.</label></p>
-<textarea id="q4" name="4- Expliquer pourquoi cette implémentation va poser des problèmes." rows="3" cols="50"></textarea>
+<textarea id="q4" name="4. Expliquer pourquoi cette implémentation va poser des problèmes." rows="3"
+  cols="50"></textarea>
 <p><label for="q5">5. Donner le prototype du constructeur de déplacement de <code>SomeClass</code>.</label></p>
-<textarea id="q5" name="5- Donner le prototype du constructeur de déplacement de SomeClass." rows="1" cols="50"></textarea>
+<textarea id="q5" name="5. Donner le prototype du constructeur de déplacement de SomeClass." rows="1"
+  cols="50"></textarea>
 <p><label for="q6">6. Ecrire un constructeur de déplacement correct pour <code>SomeClass</code>.</label></p>
-<textarea id="q6" name="6- Ecrire un constructeur de déplacement correct pour SomeClass." rows="6" cols="50"></textarea>
+<textarea id="q6" name="6. Ecrire un constructeur de déplacement correct pour SomeClass." rows="6"
+  cols="50"></textarea>
 <p><label for="q7">7. Ecrire le code du constructeur de déplacement de <code>SomeClass</code>, tel que généré par l’implémentation par défaut du compilateur.</label></p>
-<textarea id="q7" name="7- Ecrire le code du constructeur de déplacement de SomeClass, tel que généré par l’implémentation par défaut du compilateur." rows="6" cols="50"></textarea>
+<textarea id="q7" name="7. Ecrire le code du constructeur de déplacement de SomeClass, tel que généré par l’implémentation par défaut du compilateur." rows="6"
+  cols="50"></textarea>
 <p><label for="q8">8. Expliquer pourquoi cette implémentation va poser des problèmes.</label></p>
-<textarea id="q8" name="8- Expliquer pourquoi cette implémentation va poser des problèmes." rows="3" cols="50"></textarea>
+<textarea id="q8" name="8. Expliquer pourquoi cette implémentation va poser des problèmes." rows="3"
+  cols="50"></textarea>
 <p><label for="q9">9. Ecrire un constructeur de déplacement correct pour <code>SomeClass</code>.</label></p>
-<textarea id="q9" name="9- Ecrire un constructeur de déplacement correct pour SomeClass." rows="6" cols="50"></textarea>
+<textarea id="q9" name="9. Ecrire un constructeur de déplacement correct pour SomeClass." rows="6"
+  cols="50"></textarea>
 <p><label for="q10">10. Donner les prototypes de l’opérateur d’affectation par copie et de l’opérateur d’affectation par déplacement de <code>SomeClass</code>.</label></p>
-<textarea id="q10" name="10- Donner les prototypes de l’opérateur d’affectation par copie et de l’opérateur d’affectation par déplacement de SomeClass." rows="2" cols="50"></textarea>
+<textarea id="q10" name="10. Donner les prototypes de l’opérateur d’affectation par copie et de l’opérateur d’affectation par déplacement de SomeClass." rows="2"
+  cols="50"></textarea>
 <p><label for="q11">11. Doit-on les implémenter pour la classe <code>SomeClass</code> ? Pourquoi ?</label></p>
-<textarea id="q11" name="11- Doit-on les implémenter pour la classe SomeClass ? Pourquoi ?" rows="2" cols="50"></textarea>
+<textarea id="q11" name="11. Doit-on les implémenter pour la classe SomeClass ? Pourquoi ?" rows="2"
+  cols="50"></textarea>
 <p><label for="q12">12. Ecrire le constructeur de <code>SomeClass</code> qui prend trois arguments (un entier, un tableau dynamique d’entier et une chaine de caractère) pour initialiser les trois attributs de <code>SomeClass</code>.</label></p>
-<textarea id="q12" name="12- Ecrire le constructeur de SomeClass qui prend trois arguments (un entier, un tableau dynamique d’entier et une chaine de caractère) pour initialiser les trois attributs de SomeClass." rows="6" cols="50"></textarea>
+<textarea id="q12" name="12. Ecrire le constructeur de SomeClass qui prend trois arguments (un entier, un tableau dynamique d’entier et une chaine de caractère) pour initialiser les trois attributs de SomeClass." rows="6"
+  cols="50"></textarea>
 <hr>
 <p>Voici deux implémentations de la fonction <code>main</code>.  On suppose que la classe <code>SomeOtherClass</code> est implémentée pour qu&rsquo;il compile.</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
@@ -209,7 +221,8 @@ a, b, c, d, e, *e, a&#43;b&#43;c&#43;d&#43;*e, new int{a&#43;b&#43;c&#43;d&#43;*
 </span></span><span class="line"><span class="cl">    <span class="n">SomeOtherClass</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 <p><label for="q13">13. Est-ce qu’il sont équivalents? Expliquer en précisant quelles fonctions vont être appelées.</label></p>
-<textarea id="q13" name="13- Est-ce qu’il sont équivalents? Expliquer en précisant quelles fonctions vont être appelées." rows="3" cols="50"></textarea>
+<textarea id="q13" name="13. Est-ce qu’il sont équivalents? Expliquer en précisant quelles fonctions vont être appelées." rows="3"
+  cols="50"></textarea>
 
 
   <hr />
@@ -333,9 +346,9 @@ a, b, c, d, e, *e, a&#43;b&#43;c&#43;d&#43;*e, new int{a&#43;b&#43;c&#43;d&#43;*
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1739957323" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1739957323" defer></script>
-    <script src="../../js/theme.js?1739957323" defer></script>
+    <script src="../../js/clipboard.min.js?1740040101" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1740040101" defer></script>
+    <script src="../../js/theme.js?1740040101" defer></script>
 
 
 
