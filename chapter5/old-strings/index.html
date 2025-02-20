@@ -41,16 +41,16 @@ Opérations standards Parmis les opérations standards que l’on peut effectuer
 la concaténation, l’extration de sous-chaîne, la recherche de caractère ou de sous-chaîne, la comparaison, le remplacement d’une partie de la chaîne.">
     <meta itemprop="wordCount" content="700">
     <title>Manipulation de chaînes :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1740040101" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1740040101" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1740040101" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1740040101" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1740040101" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1740040101" rel="stylesheet">
-    <link href="../../css/fonts.css?1740040101" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1740040101" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1740040101" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1740040101" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1740040101" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1740040101" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1740040101"></script>
+    <link href="../../css/fontawesome-all.min.css?1740044562" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1740044562" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1740044562" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1740044562" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1740044562" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1740044562" rel="stylesheet">
+    <link href="../../css/fonts.css?1740044562" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1740044562" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1740044562" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1740044562" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1740044562" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1740044562" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1740044562"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -145,12 +145,12 @@ la concaténation, l’extration de sous-chaîne, la recherche de caractère ou 
 </ul>
 <p>Recherchez dans la documentation les fonctions qui permettent d&rsquo;effectuer les opérations ci-dessus.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-a2601259f8b1ee2bb49c346ff05c74df" aria-controls="R-expandcontent-a2601259f8b1ee2bb49c346ff05c74df">
-  <label class="expand-label" for="R-expand-a2601259f8b1ee2bb49c346ff05c74df">
+  <input type="checkbox" id="R-expand-5ad4130bda614b1128559350a752ef5d" aria-controls="R-expandcontent-5ad4130bda614b1128559350a752ef5d">
+  <label class="expand-label" for="R-expand-5ad4130bda614b1128559350a752ef5d">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-a2601259f8b1ee2bb49c346ff05c74df" class="expand-content">
+  <div id="R-expandcontent-5ad4130bda614b1128559350a752ef5d" class="expand-content">
 <ul>
 <li>concaténation -&gt; <code>operator+</code> : <code>auto str_3 = str1 + str2;</code></li>
 <li>extration de sous-chaîne -&gt; <code>substr</code> : <code>auto str_me = std::string { &quot;find me&quot; }.substr(5, 2);</code></li>
@@ -164,23 +164,23 @@ la concaténation, l’extration de sous-chaîne, la recherche de caractère ou 
 <h3 id="conversions">Conversions</h3>
 <p>Quelle fonction permet de convertir des valeurs numériques en chaînes de caractères ?
 <div class="expand">
-  <input type="checkbox" id="R-expand-3e91d92bc2f16fed68c3abd40a212c1d" aria-controls="R-expandcontent-3e91d92bc2f16fed68c3abd40a212c1d">
-  <label class="expand-label" for="R-expand-3e91d92bc2f16fed68c3abd40a212c1d">
+  <input type="checkbox" id="R-expand-d7dccbfa2f0ddcec5464b077185470b7" aria-controls="R-expandcontent-d7dccbfa2f0ddcec5464b077185470b7">
+  <label class="expand-label" for="R-expand-d7dccbfa2f0ddcec5464b077185470b7">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-3e91d92bc2f16fed68c3abd40a212c1d" class="expand-content">
+  <div id="R-expandcontent-d7dccbfa2f0ddcec5464b077185470b7" class="expand-content">
 <p>Il s&rsquo;agit de <code>std::to_string</code>.</p>
   </div>
 </div></p>
 <p>Quelles fonctions permettent maintenant de faire l&rsquo;inverse ? Que se passe-t-il si la chaîne de caractères ne contient pas vraiment une valeur du type attendu ?
 <div class="expand">
-  <input type="checkbox" id="R-expand-22d886a71672fa1472e8b2cca0cfec2f" aria-controls="R-expandcontent-22d886a71672fa1472e8b2cca0cfec2f">
-  <label class="expand-label" for="R-expand-22d886a71672fa1472e8b2cca0cfec2f">
+  <input type="checkbox" id="R-expand-146967f6641373b5caff63ad85313d16" aria-controls="R-expandcontent-146967f6641373b5caff63ad85313d16">
+  <label class="expand-label" for="R-expand-146967f6641373b5caff63ad85313d16">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-22d886a71672fa1472e8b2cca0cfec2f" class="expand-content">
+  <div id="R-expandcontent-146967f6641373b5caff63ad85313d16" class="expand-content">
 <p>Il s&rsquo;agit des fonctions <code>std::stoi</code> (string to int), <code>std::stol</code> (string to long), <code>std::stof</code> (string to float), etc.<br>
 Si la chaîne ne contient pas réellement un nombre, alors, la fonction lance une exception de type <code>std::invalid_argument</code>.</p>
   </div>
@@ -222,12 +222,12 @@ Si une <code>string</code> référencée par une <code>string_view</code> est d�
 </div>
 <p>Modifiez la signature de la fonction <code>print_in_console</code> de manière à utiliser une <code>string_view</code>. Comme <code>string_view</code> est une classe peu coûteuse à copier, il est préférable de la passer par valeur plutôt que référence.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-a09661c6c798a0bdc3aa8328edfe4b4b" aria-controls="R-expandcontent-a09661c6c798a0bdc3aa8328edfe4b4b">
-  <label class="expand-label" for="R-expand-a09661c6c798a0bdc3aa8328edfe4b4b">
+  <input type="checkbox" id="R-expand-c7ff0fb90074077838e0bb25e0ccb355" aria-controls="R-expandcontent-c7ff0fb90074077838e0bb25e0ccb355">
+  <label class="expand-label" for="R-expand-c7ff0fb90074077838e0bb25e0ccb355">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-a09661c6c798a0bdc3aa8328edfe4b4b" class="expand-content">
+  <div id="R-expandcontent-c7ff0fb90074077838e0bb25e0ccb355" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">print_in_console</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">str</span><span class="p">)</span>
@@ -346,9 +346,9 @@ Si une <code>string</code> référencée par une <code>string_view</code> est d�
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1740040101" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1740040101" defer></script>
-    <script src="../../js/theme.js?1740040101" defer></script>
+    <script src="../../js/clipboard.min.js?1740044562" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1740044562" defer></script>
+    <script src="../../js/theme.js?1740044562" defer></script>
 
 
 
