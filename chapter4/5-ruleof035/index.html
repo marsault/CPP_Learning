@@ -31,18 +31,18 @@ Parce que ces cinq éléments sont interdépendants.">
 Destructeur Constructeur de copie Opérateur d’affectation par copie Constructeur de déplacement Opérateur d’affectation par déplacement Règle des 0, 3 ou 5 (Rule of 0/3/5) Pour une classe donnée, il faut généralement définir à la main :
 aucun des cinq éléments ci-dessus; les trois premiers (destructeur, constructeur de copie et opérateur d’affectation par copie); ou les cinq. Pourquoi ?
 Parce que ces cinq éléments sont interdépendants.">
-    <meta itemprop="wordCount" content="957">
+    <meta itemprop="wordCount" content="976">
     <title>Règle des 0, 3 ou 5 :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1740044562" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1740044562" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1740044562" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1740044562" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1740044562" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1740044562" rel="stylesheet">
-    <link href="../../css/fonts.css?1740044562" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1740044562" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1740044562" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1740044562" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1740044562" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1740044562" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1740044562"></script>
+    <link href="../../css/fontawesome-all.min.css?1740132505" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1740132505" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1740132505" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1740132505" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1740132505" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1740132505" rel="stylesheet">
+    <link href="../../css/fonts.css?1740132505" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1740132505" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1740132505" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1740132505" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1740132505" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1740132505" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1740132505"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -160,7 +160,7 @@ En effet, le comportement généré par les implémentations par défaut corresp
 <p>Au contraire, on veut que certaines classes ne suivent pas la gestion par défaut de la mémoire.  Hormis les exercices sadiques que nous vous imposons, il s&rsquo;agit usuellement des classes qui définissent des structures de données.</p>
 <h5 id="exercice">Exercice</h5>
 <p>Par exemple, le fichier <a href="../RuleOfThree.cpp">RuleOfThree.cpp</a> contient une classe
-qui stocke un entier à travers un pointeur ownant.
+qui stocke un entier à travers un pointeur ownant (et l&rsquo;on maintiendra l&rsquo;invariant que ce n&rsquo;est jamais un <code>nullptr</code>)
 Pour éviter les fuite mémoire, elle redéfinit son destructeur comme
 indiqué ci-dessous.</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">RuleOfThree</span> <span class="p">{</span>
@@ -234,11 +234,11 @@ Aborted (core dumped)`</code></pre></div>
         <div class="hidden-solution-content">
             <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">RuleofThree</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="cm">/* .. */</span>
-</span></span><span class="line"><span class="cl">    <span class="n">RuleOfThree</span><span class="p">(</span><span class="k">const</span> <span class="n">RuleOfThree</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> 
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="c1">// We allocate a new int and copy the value pointed by other.int_ptr
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="n">int_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">{</span><span class="o">*</span><span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">int_ptr</span><span class="p">)};</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">RuleOfThree</span><span class="p">(</span><span class="k">const</span> <span class="n">RuleOfThree</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">:</span> <span class="n">int_ptr</span><span class="p">{</span><span class="k">new</span> <span class="kt">int</span><span class="p">{</span><span class="o">*</span><span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">int_ptr</span><span class="p">)}};</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//        ^^^^^^^^^^^^^^^^^^^^^^^^^ 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// We allocate a new int on the heap and copy the value pointed by other.int_ptr
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{}</span>
 </span></span><span class="line"><span class="cl">    <span class="cm">/* .. */</span>
 </span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div>
 
@@ -301,9 +301,11 @@ Notre code produit une fuite mémoire, comme nous l&rsquo;indique Valgrind dans 
 </span></span><span class="line"><span class="cl">    <span class="cm">/* .. */</span>
 </span></span><span class="line"><span class="cl">    <span class="n">RuleOfThree</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">RuleOfThree</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> 
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="c1">// this object existed before so int_ptr is already allocated
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="c1">// we simply copy the value pointed by other.int_ptr
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="o">*</span><span class="n">int_ptr</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">int_ptr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="k">this</span> <span class="o">!=</span> <span class="o">&amp;</span><span class="n">other</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// this object existed before so int_ptr is already allocated
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// we simply copy the value pointed by other.int_ptr
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="o">*</span><span class="n">int_ptr</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">int_ptr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
 </span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="cm">/* .. */</span>
@@ -316,7 +318,7 @@ Notre code produit une fuite mémoire, comme nous l&rsquo;indique Valgrind dans 
 
 <h3 id="règle-des-5">Règle des 5</h3>
 <p>Les classes qui suivent la règle des 5 sont celles qui suivent déjà la règle
-des 3 et qui veulent tout de même pouvoir être déplacée efficacement.</p>
+des 3 et qui veulent tout de même pouvoir être déplacés efficacement.</p>
 <p>En effet, quand on définit un des trois éléments de la règle des 3, le
 compilateur ne génère pas d&rsquo;implémentation par défaut ni pour le constructeur
 de déplacement ni pour l&rsquo;opérateur d&rsquo;affectation par déplacement.
@@ -474,9 +476,9 @@ l&rsquo;objet pointé est petit.</p>
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1740044562" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1740044562" defer></script>
-    <script src="../../js/theme.js?1740044562" defer></script>
+    <script src="../../js/clipboard.min.js?1740132505" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1740132505" defer></script>
+    <script src="../../js/theme.js?1740132505" defer></script>
 
 
 
