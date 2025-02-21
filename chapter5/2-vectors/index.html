@@ -37,16 +37,16 @@ La cible à compiler est c5-1-vectors.
 Construction Au chapitre précédent, nous vous avions présenté différentes syntaxes permettant d’instancier une classe. Nous vous avions en particulier indiquer qu’il était possible d’utiliser la syntaxe Class c { p1, p2 }; ou bien la syntaxe Class c(p1, p2);.">
     <meta itemprop="wordCount" content="1842">
     <title>Tableaux dynamiques :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1740132505" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1740132505" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1740132505" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1740132505" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1740132505" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1740132505" rel="stylesheet">
-    <link href="../../css/fonts.css?1740132505" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1740132505" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1740132505" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1740132505" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1740132505" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1740132505" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1740132505"></script>
+    <link href="../../css/fontawesome-all.min.css?1740132660" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1740132660" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1740132660" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1740132660" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1740132660" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1740132660" rel="stylesheet">
+    <link href="../../css/fonts.css?1740132660" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1740132660" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1740132660" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1740132660" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1740132660" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1740132660" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1740132660"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -138,12 +138,12 @@ Construction Au chapitre précédent, nous vous avions présenté différentes s
 <p>Instanciez un <code>vector&lt;int&gt;</code> en lui passant les paramètres <code>4</code> et <code>0</code> avec <code>{}</code>. Parcourez ensuite ce tableau à l&rsquo;aide d&rsquo;une boucle foreach et affichez son contenu.
 Remplacez ensuite les <code>{}</code> dans l&rsquo;instanciation par <code>()</code>. Que constatez-vous ?</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-5b284dbfed92dd830e800fe7a92519f8" aria-controls="R-expandcontent-5b284dbfed92dd830e800fe7a92519f8">
-  <label class="expand-label" for="R-expand-5b284dbfed92dd830e800fe7a92519f8">
+  <input type="checkbox" id="R-expand-9e03117387ef90737226bcff40980067" aria-controls="R-expandcontent-9e03117387ef90737226bcff40980067">
+  <label class="expand-label" for="R-expand-9e03117387ef90737226bcff40980067">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-5b284dbfed92dd830e800fe7a92519f8" class="expand-content">
+  <div id="R-expandcontent-9e03117387ef90737226bcff40980067" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">//std::vector&lt;int&gt; values { 4, 0 };
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
@@ -158,12 +158,12 @@ La syntaxe <code>{}</code> permet donc d&rsquo;initialiser le contenu du contene
 <p>Allez sur la page de documentation des constructeurs de la classe <code>vector</code>.<br>
 En lisant les descriptions de chaque surcharge, essayez d&rsquo;identifier celles que vous avez appelées en utilisant <code>(4, 0)</code> et <code>{ 4, 0 }</code>.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-1b925dd081bcde73f51d252c9efb79d1" aria-controls="R-expandcontent-1b925dd081bcde73f51d252c9efb79d1">
-  <label class="expand-label" for="R-expand-1b925dd081bcde73f51d252c9efb79d1">
+  <input type="checkbox" id="R-expand-9f6f608c9182fa04abf908c7d8b60eab" aria-controls="R-expandcontent-9f6f608c9182fa04abf908c7d8b60eab">
+  <label class="expand-label" for="R-expand-9f6f608c9182fa04abf908c7d8b60eab">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-1b925dd081bcde73f51d252c9efb79d1" class="expand-content">
+  <div id="R-expandcontent-9f6f608c9182fa04abf908c7d8b60eab" class="expand-content">
 <p>En utilisant <code>(4, 0)</code>, vous avez appelé la surcharge du constructeur n°3. Celle-ci attend un un paramètre <code>count</code> et un paramètre <code>value</code>, qu&rsquo;elle utilise pour initialiser le tableau avec <code>count</code> éléments <code>value</code>.</p>
 <p>En utilisant <code>{ 4, 0 }</code>, vous avez appelé la surcharge n°10, qui attend un paramètre de type <strong>initializer_list</strong> (à ne pas confondre avec le terme &ldquo;liste d&rsquo;initialisation&rdquo;).</p>
 <div class="box notices cstyle info">
@@ -186,12 +186,12 @@ Les itérateurs d&rsquo;un tableau primitif sont en fait les pointeurs sur chacu
 <p>Construisez maintenant un <code>vector</code> en lui fournissant des itérateurs de votre tableau primitif.<br>
 Essayez dans un premier temps d&rsquo;avoir dans votre <code>vector</code> les valeurs <code>{ 2, 3, 4 }</code>, puis essayez ensuite d&rsquo;obtenir le tableau complet.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-9aedb23d01100d664be520eca2d303cf" aria-controls="R-expandcontent-9aedb23d01100d664be520eca2d303cf">
-  <label class="expand-label" for="R-expand-9aedb23d01100d664be520eca2d303cf">
+  <input type="checkbox" id="R-expand-610b34c65ea2262bfb9dfaa63f1e90d6" aria-controls="R-expandcontent-610b34c65ea2262bfb9dfaa63f1e90d6">
+  <label class="expand-label" for="R-expand-610b34c65ea2262bfb9dfaa63f1e90d6">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-9aedb23d01100d664be520eca2d303cf" class="expand-content">
+  <div id="R-expandcontent-610b34c65ea2262bfb9dfaa63f1e90d6" class="expand-content">
 <p>Déja, vu que <code>vector</code> a un constructeur par <code>initializer_list</code>, on est obligé d&rsquo;utiliser la syntaxe <code>()</code> pour utiliser le constructeur qui nous intéresse.<br>
 Ensuite, pour aller jusqu&rsquo;à 4, on se rend compte qu&rsquo;il faut en fait donner l&rsquo;itérateur sur la case suivant la dernière que l&rsquo;on veut inclure.</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">array</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span> <span class="p">};</span>
@@ -229,12 +229,12 @@ Ensuite, pour aller jusqu&rsquo;à 4, on se rend compte qu&rsquo;il faut en fait
 Afin d&rsquo;itérer sur le <code>vector</code>, vous devrez récupérer sa taille. Quelle fonction faut-il utiliser pour ça ?<br>
 Sachez également que vous aurez probablement besoin d&rsquo;utiliser la fonction <code>std::swap</code>.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-454748620dd4ac557389379ebc06108d" aria-controls="R-expandcontent-454748620dd4ac557389379ebc06108d">
-  <label class="expand-label" for="R-expand-454748620dd4ac557389379ebc06108d">
+  <input type="checkbox" id="R-expand-ee4aacf5d24a80417134e616284c8660" aria-controls="R-expandcontent-ee4aacf5d24a80417134e616284c8660">
+  <label class="expand-label" for="R-expand-ee4aacf5d24a80417134e616284c8660">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-454748620dd4ac557389379ebc06108d" class="expand-content">
+  <div id="R-expandcontent-ee4aacf5d24a80417134e616284c8660" class="expand-content">
 <p>Dans l&rsquo;exercice de la page précédente, vous avez appris que <code>size()</code> permet d&rsquo;obtenir le nombre de d&rsquo;éléments dans un <code>vector</code>.<br>
 Et pour utiliser <code>swap</code>, on n&rsquo;oublie pas d&rsquo;inclure le header <code>&lt;utility&gt;</code>.</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">full</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">array</span> <span class="o">+</span> <span class="mi">6</span><span class="p">);</span>
@@ -268,12 +268,12 @@ Par exemple, si on voulait ajouter un opérateur <code>[]</code> dans une classe
 <p>Qu&rsquo;en est-il si vous souhaitez insérer des éléments en plein milieu de ce tableau ?<br>
 Essayez de trouver dans la documentation les deux fonctions permettant d&rsquo;ajouter des éléments n&rsquo;importe où dans un <code>vector</code>. Quelle est la différence entre ces deux fonctions ?</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-53d27699a7220c84c1e6c8450f5659e6" aria-controls="R-expandcontent-53d27699a7220c84c1e6c8450f5659e6">
-  <label class="expand-label" for="R-expand-53d27699a7220c84c1e6c8450f5659e6">
+  <input type="checkbox" id="R-expand-d33f8e8c00f631ce00c91b40b3e3f907" aria-controls="R-expandcontent-d33f8e8c00f631ce00c91b40b3e3f907">
+  <label class="expand-label" for="R-expand-d33f8e8c00f631ce00c91b40b3e3f907">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-53d27699a7220c84c1e6c8450f5659e6" class="expand-content">
+  <div id="R-expandcontent-d33f8e8c00f631ce00c91b40b3e3f907" class="expand-content">
 <p>Pour insérer des éléments à une position arbitraire, il est possible d&rsquo;utiliser <code>insert</code> ou <code>emplace</code>. En utilisant <code>emplace</code>, il est possible de fournir les paramètres de construction de l&rsquo;élément à insérer (comme <code>emplace_back</code>), alors que pour <code>insert</code>, il faut fournir l&rsquo;élément à insérer directement (comme <code>push_back</code>).</p>
   </div>
 </div>
@@ -295,12 +295,12 @@ Pour obtenir un itérateur sur le début d&rsquo;un <code>vector</code>, il faut
 <p>En utilisant une fonction d&rsquo;insertion, faites en sorte de dupliquer chacun des éléments de votre tableau. Par exemple, <code>{ 1, 2, 3 }</code> devrait devenir <code>{ 1, 1, 2, 2, 3, 3 }</code>.<br>
 <strong>Prenez garde à l&rsquo;invalidation des itérateurs !</strong></p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-a5cefdfa216805ee482ecb7b9dbeb449" aria-controls="R-expandcontent-a5cefdfa216805ee482ecb7b9dbeb449">
-  <label class="expand-label" for="R-expand-a5cefdfa216805ee482ecb7b9dbeb449">
+  <input type="checkbox" id="R-expand-eecd88f3e540c70fe5620042380929e5" aria-controls="R-expandcontent-eecd88f3e540c70fe5620042380929e5">
+  <label class="expand-label" for="R-expand-eecd88f3e540c70fe5620042380929e5">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-a5cefdfa216805ee482ecb7b9dbeb449" class="expand-content">
+  <div id="R-expandcontent-eecd88f3e540c70fe5620042380929e5" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">full</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">full</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">it</span> <span class="o">=</span> <span class="n">full</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="o">*</span><span class="n">it</span><span class="p">);</span>
@@ -323,12 +323,12 @@ C&rsquo;est pour cela que l&rsquo;on doit assigner le résultat de <code>insert<
 Cherchez de quelle fonction il s&rsquo;agit, et utilisez-la sur votre tableau à l&rsquo;intérieur d&rsquo;une boucle <code>while</code> jusqu&rsquo;à ce que celui-ci soit vide.<br>
 Quelle fonction allez-vous utiliser dans la condition du <code>while</code> pour savoir si le tableau est vide ?</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-4a7b6cfc78105b1604c7c236d33eb121" aria-controls="R-expandcontent-4a7b6cfc78105b1604c7c236d33eb121">
-  <label class="expand-label" for="R-expand-4a7b6cfc78105b1604c7c236d33eb121">
+  <input type="checkbox" id="R-expand-b313b6e122e4656627e8730d00a84c2a" aria-controls="R-expandcontent-b313b6e122e4656627e8730d00a84c2a">
+  <label class="expand-label" for="R-expand-b313b6e122e4656627e8730d00a84c2a">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-4a7b6cfc78105b1604c7c236d33eb121" class="expand-content">
+  <div id="R-expandcontent-b313b6e122e4656627e8730d00a84c2a" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">full</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">full</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
@@ -339,12 +339,12 @@ Quelle fonction allez-vous utiliser dans la condition du <code>while</code> pour
 Pour cela, il faut utiliser la fonction <code>erase</code>. A priori, on pourrait penser que l&rsquo;on peut écrire <code>v.erase(3)</code> pour supprimer le 3e élément du tableau, sauf que cela ne va pas marcher.<br>
 Consultez la documentation pour comprendre ce qui ne va pas et trouvez-y ce qu&rsquo;il faut écrire à la place.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-7757e898fa56f34f42940988b5bab652" aria-controls="R-expandcontent-7757e898fa56f34f42940988b5bab652">
-  <label class="expand-label" for="R-expand-7757e898fa56f34f42940988b5bab652">
+  <input type="checkbox" id="R-expand-f3568028aea87d4c70de5ebc2b00300d" aria-controls="R-expandcontent-f3568028aea87d4c70de5ebc2b00300d">
+  <label class="expand-label" for="R-expand-f3568028aea87d4c70de5ebc2b00300d">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-7757e898fa56f34f42940988b5bab652" class="expand-content">
+  <div id="R-expandcontent-f3568028aea87d4c70de5ebc2b00300d" class="expand-content">
 <p>La fonction <code>erase</code> fonctionne avec des itérateurs et non des indices, comme pour <code>insert</code> ou <code>emplace</code>.<br>
 En regardant l&rsquo;exemple, on voit qu&rsquo;il est possible de récupérer un itérateur sur la n-ieme case d&rsquo;un tableau en écrivant <code>v.begin() + n</code>.
 Pour supprimer le 3e élément du tableau, on peut donc écrire :</p>
@@ -354,12 +354,12 @@ Pour supprimer le 3e élément du tableau, on peut donc écrire :</p>
 <p>Utilisez maintenant <code>erase</code> pour supprimer les éléments allant de l&rsquo;indice 2 à l&rsquo;indice 6 inclus d&rsquo;un tableau contenant initialement <code>{ 0, 1, ..., 10 }</code>.<br>
 Faites le nécessaire pour que <code>erase</code> ne soit appelé qu&rsquo;une seule fois par votre programme (=&gt; pas le droit de faire de boucles).</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-9f9617e04806d589d49f81bee199e102" aria-controls="R-expandcontent-9f9617e04806d589d49f81bee199e102">
-  <label class="expand-label" for="R-expand-9f9617e04806d589d49f81bee199e102">
+  <input type="checkbox" id="R-expand-bbac37ddd61017e93f4f5f9c6ac8cad4" aria-controls="R-expandcontent-bbac37ddd61017e93f4f5f9c6ac8cad4">
+  <label class="expand-label" for="R-expand-bbac37ddd61017e93f4f5f9c6ac8cad4">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-9f9617e04806d589d49f81bee199e102" class="expand-content">
+  <div id="R-expandcontent-bbac37ddd61017e93f4f5f9c6ac8cad4" class="expand-content">
 <p><code>erase</code> dispose d&rsquo;une surcharge acceptant deux itérateurs, qui permet de supprimer tous les éléments présents entre ces deux itérateurs.<br>
 Comme d&rsquo;habitude, l&rsquo;élément pointé par l&rsquo;itérateur de fin est exclu. On doit donc écrire :</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">v</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="mi">7</span><span class="p">);</span></span></span></code></pre></div>
@@ -385,12 +385,12 @@ Voici du code permettant de retirer le premier 9 rencontré dans un tableau <cod
 Afin de pouvoir supprimer la boucle qui se charge de la recherche, il est possible d&rsquo;utiliser la fonction <code>std::find</code>. Attention, il s&rsquo;agit d&rsquo;une fonction libre, et non pas d&rsquo;une fonction-membre de <code>vector</code>.<br>
 Modifiez le code ci-dessus afin d&rsquo;utiliser <code>std::find</code>.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-423e3d2b84ae15cd9211e8b32bdb0221" aria-controls="R-expandcontent-423e3d2b84ae15cd9211e8b32bdb0221">
-  <label class="expand-label" for="R-expand-423e3d2b84ae15cd9211e8b32bdb0221">
+  <input type="checkbox" id="R-expand-e961bbc14ff1c573eb526cd384092162" aria-controls="R-expandcontent-e961bbc14ff1c573eb526cd384092162">
+  <label class="expand-label" for="R-expand-e961bbc14ff1c573eb526cd384092162">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-423e3d2b84ae15cd9211e8b32bdb0221" class="expand-content">
+  <div id="R-expandcontent-e961bbc14ff1c573eb526cd384092162" class="expand-content">
 <p>Déjà, il faut penser à inclure <code>&lt;algorithm&gt;</code>.</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">5</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="o">!=</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
@@ -416,12 +416,12 @@ Et si vous voulez réinitialiser son contenu pour qu&rsquo;il contienne de nouve
 Faites de même, mais en lui attribuant cette fois-ci les valeurs <code>{ 0, 2, 32, -4, 3 }</code>.<br>
 Enfin, arrangez-vous pour supprimer tout le contenu du tableau.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-7d2278079cbfbf2be92272bd54334c22" aria-controls="R-expandcontent-7d2278079cbfbf2be92272bd54334c22">
-  <label class="expand-label" for="R-expand-7d2278079cbfbf2be92272bd54334c22">
+  <input type="checkbox" id="R-expand-436208a0b1ba0b7d9aca496c9ebf3b82" aria-controls="R-expandcontent-436208a0b1ba0b7d9aca496c9ebf3b82">
+  <label class="expand-label" for="R-expand-436208a0b1ba0b7d9aca496c9ebf3b82">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-7d2278079cbfbf2be92272bd54334c22" class="expand-content">
+  <div id="R-expandcontent-436208a0b1ba0b7d9aca496c9ebf3b82" class="expand-content">
 <p>En regardant les exemples d&rsquo;utilisation d&rsquo;<code>assign</code>, on voit que pour appeler la surcharge prenant un <code>initializer_list</code>, il faut écrire <code>v.assign({ ... })</code>.</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="n">v</span><span class="p">.</span><span class="n">assign</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
@@ -532,9 +532,9 @@ Enfin, arrangez-vous pour supprimer tout le contenu du tableau.</p>
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1740132505" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1740132505" defer></script>
-    <script src="../../js/theme.js?1740132505" defer></script>
+    <script src="../../js/clipboard.min.js?1740132660" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1740132660" defer></script>
+    <script src="../../js/theme.js?1740132660" defer></script>
 
 
 
