@@ -490,16 +490,16 @@ La référence `my_thing` qui pointe sur l'un d'entre eux reste donc valide auss
 
 ---
 
-### Passer un `shared_ptr`
+### Passer un `unique_ptr`
 
-Ce n'est pas visible dans les exemples ci-dessus, mais il reste un problème dont on a pas encore parlé: comme faire pour passer un `shared_ptr` à une fonction, constructeur ou autre?
+Ce n'est pas visible dans les exemples ci-dessus, mais il reste un problème dont on a pas encore parlé: comme faire pour passer un `unique_ptr` à une fonction, constructeur ou autre?
 
 Par exemple, considérons le bout de code en dessous.
 
 ```cpp
-int my_func(std::shared_ptr<Dog>> p) { /* ... */ }
+int my_func(std::unique_ptr<Dog>> p) { /* ... */ }
 int main() {
-    std::shared_ptr<Dog> my_ptr = std::make_shared<Dog>("Lassie", "Colley");
+    std::unique_ptr<Dog> my_ptr = std::make_unique<Dog>("Lassie", "Colley");
 
     // On veut appeler my_func !
 
@@ -508,12 +508,12 @@ int main() {
 }
 ```
 
-Pour construire `p`, on ne pourra pas utiliser le constructeur de copie de `std::shared_ptr<Dog>>` car il n'existe pas, il faut donc passer à `my_func` une R-value !!
+Pour construire `p`, on ne pourra pas utiliser le constructeur de copie de `std::unique_ptr<Dog>` car il n'existe pas, il faut donc passer à `my_func` une R-value !!
 
 1. Soit on utilise `std::move` si jamais on n'a plus besoin de `my_ptr`.
 ```cpp
 int main() {
-    std::shared_ptr<Dog> my_ptr = std::make_shared<Dog>("Lassie", "Colley");
+    std::unique_ptr<Dog> my_ptr = std::make_unique<Dog>("Lassie", "Colley");
     my_func( std::move(my_ptr) );
 //           ^^^^^^^^^^^^^^^^^
 //           R-value
@@ -526,13 +526,13 @@ int main() {
 
 ```cpp
 int main() {
-    std::shared_ptr<Dog> my_ptr = std::make_shared<Dog>("Lassie", "Colley");
-    my_func( std::make_shared<Dog>(*my_ptr) );
+    std::unique_ptr<Dog> my_ptr = std::make_unique<Dog>("Lassie", "Colley");
+    my_func( std::make_unique<Dog>(*my_ptr) );
 //           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 //           R-value
 }
 ```
 
 Notez que dans les deux cas, on est parfaitement aligné avec l'ownership visible dans le programme.
-Puisque `f` déclare un argument de type `std::shared_ptr<Dog>>`, ça signifie  qu'il veut `own` le `Dog` pointé par `p`.
+Puisque `f` déclare un argument de type `std::unique_ptr<Dog>>`, ça signifie  qu'il veut `own` le `Dog` pointé par `p`.
 De l'autre côté, c'est `main` qui own le `Dog` pointé par `my_ptr`.  Donc  soit `main` cède l'ownership à `f` (premier cas) soit il en fait une copie pour `f` (deuxième cas).
