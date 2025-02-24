@@ -268,4 +268,4 @@ int main() {
 ```
 Dans le code ci-dessus, la fonction `f` crée un `MyClass` sur la pile, fait des opérations dessus, puis retourne le `MyClass`.
 Ensuite, dans le `main`, l'expression `f()` est une R-value donc le constructeur de déplacement devrait être appelé pour construire `n`.
-En fait, suivant le contenu de `f`, le compilateur peut décider de ne pas allouer de mémoire pour `x` et de construire directement le `MyClass` dans la mémoire allouée pour `m`.
+En fait, suivant le contenu de `f`, le compilateur peut décider de ne pas allouer de mémoire pour `x` et de construire directement le `MyClass` dans la mémoire allouée pour `n`.
