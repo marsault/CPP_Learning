@@ -9,15 +9,17 @@ Nous ne parlerons sur cette page que d'héritage dit "statique", c'est-à-dire q
 
 ---
 
-Pour cet exercice, vous modifierez les fichiers :\
-\- `chap-04/1-hierarchy/Boss.cpp`\
-\- `chap-04/1-hierarchy/Boss.h`\
-\- `chap-04/1-hierarchy/Staff.cpp`\
-\- `chap-04/1-hierarchy/Staff.h`\
-\- `chap-04/1-hierarchy/Intern.cpp`\
-\- `chap-04/1-hierarchy/Intern.h`
+Pour cet exercice, on utilisera  vous modifierez les fichiers :
+- `1-hierarchy/Boss.cpp`
+- `1-hierarchy/Boss.h`
+- `1-hierarchy/Staff.cpp`
+- `1-hierarchy/Staff.h`
+- `1-hierarchy/Intern.cpp`
+- `1-hierarchy/Intern.h`
 
-La cible à compiler est `c4-1-hierarchy`.
+se trouvant dans [code.zip](../code.zip).
+
+La cible à compiler est `hierarchy`.
 
 ---
 
@@ -38,14 +40,13 @@ Et on n'oublie pas de définir un constructeur pour initialiser chacun des membr
 #include "Rank.h"
 
 #include <string>
-#include <string_view>
 
 class Employee
 {
 public:
-    Employee(std::string_view name, std::string_view surname, unsigned int salary, Rank rank)
-        : _name { name }
-        , _surname { surname }
+    Employee(std::string name, std::string surname, unsigned int salary, Rank rank)
+        : _name { std::move(name) }
+        , _surname { std::move(surname) }
         , _salary { salary }
         , _rank { rank }
     {}
@@ -85,7 +86,7 @@ Il ne devrait vous rester que ceci :
 class Boss : public Employee
 {
 public:
-    Boss(std::string_view name, std::string_view surname, unsigned int salary, bool is_nice);
+    Boss(std::string name, std::string surname, unsigned int salary, bool is_nice);
 
     void assign_task(Staff& staff) const;
     void ask_coffee(Intern& intern) const;
@@ -97,8 +98,8 @@ private:
 
 Pour terminer, vous devez modifier l'implémentation du constructeur afin d'appeler le constructeur parent :
 ```cpp
-Boss::Boss(std::string_view name, std::string_view surname, unsigned int salary, bool is_nice)
-    : Employee { name, surname, salary, Rank::TopManagement }
+Boss::Boss(std::string name, std::string surname, unsigned int salary, bool is_nice)
+    : Employee { std::move(name), std::move(surname), salary, Rank::TopManagement }
     , _is_nice { is_nice }
 {}
 ```
@@ -114,12 +115,11 @@ Staff.h:
 #include "Employee.h"
 
 #include <string>
-#include <string_view>
 
 class Staff : public Employee
 {
 public:
-    Staff(std::string_view name, std::string_view surname, unsigned int salary);
+    Staff(std::string name, std::string surname, unsigned int salary);
 
     void receive_task();
     void complete_task();
@@ -138,8 +138,8 @@ Staff.cpp:
 #include "Staff.h"
 #include "Rank.h"
 
-Staff::Staff(std::string_view name, std::string_view surname, unsigned int salary)
-    : Employee { name, surname, salary, Rank::Default }
+Staff::Staff(std::string name, std::string surname, unsigned int salary)
+    : Employee { std::move(name), std::move(surname), salary, Rank::Default }
 {}
 
 ...
@@ -150,12 +150,11 @@ Intern.h:
 #include "Employee.h"
 
 #include <string>
-#include <string_view>
 
 class Intern : public Employee
 {
 public:
-    Intern(std::string_view name, std::string_view surname, unsigned int salary, bool is_clumsy);
+    Intern(std::string name, std::string surname, unsigned int salary, bool is_clumsy);
 
     void fetch_coffee();
 
@@ -172,8 +171,8 @@ Intern.cpp:
 #include "Intern.h"
 #include "Rank.h"
 
-Intern::Intern(std::string_view name, std::string_view surname, unsigned int salary, bool is_clumsy)
-    : Employee { name, surname, salary, Rank::Slave }
+Intern::Intern(std::string name, std::string surname, unsigned int salary, bool is_clumsy)
+    : Employee { std::move(name), std::move(surname), salary, Rank::Slave }
     , _is_clumsy { is_clumsy }
 {}
 
