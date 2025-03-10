@@ -43,7 +43,7 @@
       <description>Dans cette partie, nous reviendrons sur les fonctions fournies par la librairie permettant de manipuler des string. Vous apprendrez aussi ce que sont les string_view et à quoi elles servent.&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-05/4-strings.cpp&#xA;La cible à compiler est c5-4-strings.&#xA;Opérations standards Parmis les opérations standards que l’on peut effectuer sur des chaînes de caractère, on retrouve :&#xA;la concaténation, l’extration de sous-chaîne, la recherche de caractère ou de sous-chaîne, la comparaison, le remplacement d’une partie de la chaîne.</description>
     </item>
     <item>
-      <title>Paires et tuples</title>
+      <title>Paires, tuples et options</title>
       <link>/chapter5/5-tuples/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter5/5-tuples/index.html</guid>

@@ -41,16 +41,16 @@ Opérations standards Parmis les opérations standards que l’on peut effectuer
 la concaténation, l’extration de sous-chaîne, la recherche de caractère ou de sous-chaîne, la comparaison, le remplacement d’une partie de la chaîne.">
     <meta itemprop="wordCount" content="700">
     <title>Manipulation de chaînes :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1739286052" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1739286052" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1739286052" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1739286052" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1739286052" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1739286052" rel="stylesheet">
-    <link href="../../css/fonts.css?1739286052" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1739286052" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1739286052" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1739286052" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1739286052" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1739286052" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1739286052"></script>
+    <link href="../../css/fontawesome-all.min.css?1741613501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1741613501" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1741613501" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1741613501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1741613501" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1741613501" rel="stylesheet">
+    <link href="../../css/fonts.css?1741613501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1741613501" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1741613501" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1741613501" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1741613501" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1741613501" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1741613501"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -106,7 +106,7 @@ la concaténation, l’extration de sous-chaîne, la recherche de caractère ou 
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter5/4-associatives/index.html" title="Conteneurs associatifs (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter5/5-tuples/index.html" title="Paires et tuples (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter5/5-tuples/index.html" title="Paires, tuples et options (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -145,12 +145,12 @@ la concaténation, l’extration de sous-chaîne, la recherche de caractère ou 
 </ul>
 <p>Recherchez dans la documentation les fonctions qui permettent d&rsquo;effectuer les opérations ci-dessus.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-74a4dacb546caaf8c5a454ac7ddef349" aria-controls="R-expandcontent-74a4dacb546caaf8c5a454ac7ddef349">
-  <label class="expand-label" for="R-expand-74a4dacb546caaf8c5a454ac7ddef349">
+  <input type="checkbox" id="R-expand-29e6b60505bb4f70d2f4a35427a32438" aria-controls="R-expandcontent-29e6b60505bb4f70d2f4a35427a32438">
+  <label class="expand-label" for="R-expand-29e6b60505bb4f70d2f4a35427a32438">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-74a4dacb546caaf8c5a454ac7ddef349" class="expand-content">
+  <div id="R-expandcontent-29e6b60505bb4f70d2f4a35427a32438" class="expand-content">
 <ul>
 <li>concaténation -&gt; <code>operator+</code> : <code>auto str_3 = str1 + str2;</code></li>
 <li>extration de sous-chaîne -&gt; <code>substr</code> : <code>auto str_me = std::string { &quot;find me&quot; }.substr(5, 2);</code></li>
@@ -164,23 +164,23 @@ la concaténation, l’extration de sous-chaîne, la recherche de caractère ou 
 <h3 id="conversions">Conversions</h3>
 <p>Quelle fonction permet de convertir des valeurs numériques en chaînes de caractères ?
 <div class="expand">
-  <input type="checkbox" id="R-expand-e0e8ee85780710b8f71a7e0c189f3869" aria-controls="R-expandcontent-e0e8ee85780710b8f71a7e0c189f3869">
-  <label class="expand-label" for="R-expand-e0e8ee85780710b8f71a7e0c189f3869">
+  <input type="checkbox" id="R-expand-18a9768f5b4004ad16e6877c6f4b556f" aria-controls="R-expandcontent-18a9768f5b4004ad16e6877c6f4b556f">
+  <label class="expand-label" for="R-expand-18a9768f5b4004ad16e6877c6f4b556f">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-e0e8ee85780710b8f71a7e0c189f3869" class="expand-content">
+  <div id="R-expandcontent-18a9768f5b4004ad16e6877c6f4b556f" class="expand-content">
 <p>Il s&rsquo;agit de <code>std::to_string</code>.</p>
   </div>
 </div></p>
 <p>Quelles fonctions permettent maintenant de faire l&rsquo;inverse ? Que se passe-t-il si la chaîne de caractères ne contient pas vraiment une valeur du type attendu ?
 <div class="expand">
-  <input type="checkbox" id="R-expand-6755c88463ffe1a9039221e3d1777b99" aria-controls="R-expandcontent-6755c88463ffe1a9039221e3d1777b99">
-  <label class="expand-label" for="R-expand-6755c88463ffe1a9039221e3d1777b99">
+  <input type="checkbox" id="R-expand-fa6b2b04584c6754e97cd974e537ecd7" aria-controls="R-expandcontent-fa6b2b04584c6754e97cd974e537ecd7">
+  <label class="expand-label" for="R-expand-fa6b2b04584c6754e97cd974e537ecd7">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-6755c88463ffe1a9039221e3d1777b99" class="expand-content">
+  <div id="R-expandcontent-fa6b2b04584c6754e97cd974e537ecd7" class="expand-content">
 <p>Il s&rsquo;agit des fonctions <code>std::stoi</code> (string to int), <code>std::stol</code> (string to long), <code>std::stof</code> (string to float), etc.<br>
 Si la chaîne ne contient pas réellement un nombre, alors, la fonction lance une exception de type <code>std::invalid_argument</code>.</p>
   </div>
@@ -222,12 +222,12 @@ Si une <code>string</code> référencée par une <code>string_view</code> est d�
 </div>
 <p>Modifiez la signature de la fonction <code>print_in_console</code> de manière à utiliser une <code>string_view</code>. Comme <code>string_view</code> est une classe peu coûteuse à copier, il est préférable de la passer par valeur plutôt que référence.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-48a57a7a96300b8b5acb04fd2b820682" aria-controls="R-expandcontent-48a57a7a96300b8b5acb04fd2b820682">
-  <label class="expand-label" for="R-expand-48a57a7a96300b8b5acb04fd2b820682">
+  <input type="checkbox" id="R-expand-24f1f0bb7d0769fd492008d46d6a4a1e" aria-controls="R-expandcontent-24f1f0bb7d0769fd492008d46d6a4a1e">
+  <label class="expand-label" for="R-expand-24f1f0bb7d0769fd492008d46d6a4a1e">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-48a57a7a96300b8b5acb04fd2b820682" class="expand-content">
+  <div id="R-expandcontent-24f1f0bb7d0769fd492008d46d6a4a1e" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">print_in_console</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">str</span><span class="p">)</span>
@@ -274,7 +274,7 @@ Si une <code>string</code> référencée par une <code>string_view</code> est d�
             <li class="" data-nav-id="/chapter5/3-sequentials/index.html"><a class="padding" href="../../chapter5/3-sequentials/index.html"><span class="presection-icon">➠</span>Autres conteneurs séquentiels<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter5/4-associatives/index.html"><a class="padding" href="../../chapter5/4-associatives/index.html"><span class="presection-icon">🔑</span>Conteneurs associatifs<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="active hidden " data-nav-id="/chapter5/old-strings/index.html"><a class="padding" href="../../chapter5/old-strings/index.html"><span class="presection-icon">🔗</span>Manipulation de chaînes<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter5/5-tuples/index.html"><a class="padding" href="../../chapter5/5-tuples/index.html"><span class="presection-icon">🍒</span>Paires et tuples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/5-tuples/index.html"><a class="padding" href="../../chapter5/5-tuples/index.html"><span class="presection-icon">🍒</span>Paires, tuples et options<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter5/6-uptr/index.html"><a class="padding" href="../../chapter5/6-uptr/index.html"><span class="presection-icon"><i class="fa-solid fa-snowflake"></i></span>Unique-pointeur<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter5/test/index.html"><a class="padding" href="../../chapter5/test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
@@ -346,9 +346,9 @@ Si une <code>string</code> référencée par une <code>string_view</code> est d�
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1739286052" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1739286052" defer></script>
-    <script src="../../js/theme.js?1739286052" defer></script>
+    <script src="../../js/clipboard.min.js?1741613501" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1741613501" defer></script>
+    <script src="../../js/theme.js?1741613501" defer></script>
 
 
 
