@@ -282,12 +282,11 @@ Quelles erreurs de compilation obtenez-vous maintenant ?
 ```cpp
 class Vehicle
 {
-protected:
+public:
     Vehicle(const Driver& driver)
         : _driver { driver }
     {}
-
-public:
+    
     virtual ~Vehicle() {}
 
     virtual unsigned int drive() const = 0;
