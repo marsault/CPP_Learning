@@ -51,8 +51,8 @@ class Dog
 {
     friend std::ostream& operator<<(std::ostream& stream, const Dog& dog)
     {
-        return stream << "I have a " << dog.breed 
-                      << " named " << dog.name << "." << std::endl;
+        return stream << "I have a " << dog._breed 
+                      << " named " << dog._name << "." << std::endl;
     }
 
 public:
