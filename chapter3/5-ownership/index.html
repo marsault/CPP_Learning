@@ -29,16 +29,16 @@ C’est donc à vous de garantir que vos données ne seront pas désinstanciées
 Sur cette page, nous allons introduire le concept d’ownership, qui vous aidera à mieux architecturer votre code pour éviter de vous retrouver avec des dangling-references.">
     <meta itemprop="wordCount" content="1927">
     <title>Ownership :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1741613567" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1741613567" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1741613567" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1741613567" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1741613567" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1741613567" rel="stylesheet">
-    <link href="../../css/fonts.css?1741613567" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1741613567" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1741613567" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1741613567" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1741613567" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1741613567" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1741613567"></script>
+    <link href="../../css/fontawesome-all.min.css?1741681094" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1741681094" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1741681094" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1741681094" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1741681094" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1741681094" rel="stylesheet">
+    <link href="../../css/fonts.css?1741681094" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1741681094" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1741681094" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1741681094" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1741681094" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1741681094" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1741681094"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -133,8 +133,8 @@ Au fur et à mesure des exemples, nous établirons le <strong>graphe d&rsquo;own
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 <p>Dans l&rsquo;exemple ci-dessus, <code>a</code> est désinstanciée à la sortie de <code>fcn</code>.<br>
 On pourra donc dire que la donnée portée par <code>a</code> est ownée par la fonction <code>fcn</code>, ou encore que <code>fcn</code> own <code>a</code>.</p>
-<p><a href="#R-image-5bdb090d683784754940b3d447eb48e4" class="lightbox-link"><img alt="Variable locale" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/01-local-var.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-5bdb090d683784754940b3d447eb48e4"><img alt="Variable locale" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/01-local-var.svg"></a></p>
+<p><a href="#R-image-98f10070e227d43b24c539f32caea398" class="lightbox-link"><img alt="Variable locale" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/01-local-var.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-98f10070e227d43b24c539f32caea398"><img alt="Variable locale" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/01-local-var.svg"></a></p>
 <h4 id="attribut-valeur">Attribut-valeur</h4>
 <p>La donnée portée par un attribut-valeur est désinstanciée lorsque l&rsquo;instance de la classe est détruite.</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">MyStruct</span>
@@ -149,8 +149,8 @@ On pourra donc dire que la donnée portée par <code>a</code> est ownée par la 
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 <p>Ici, la donnée portée par l&rsquo;attribut <code>value</code> de l&rsquo;instance <code>s</code> est ownée par <code>s</code>.<br>
 On peut dire plus simplement que <code>s</code> own <code>s.value</code>.</p>
-<p><a href="#R-image-6b33742d80f009b220f431a189aea3c4" class="lightbox-link"><img alt="Attribut-valeur" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/02-value-attribute.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6b33742d80f009b220f431a189aea3c4"><img alt="Attribut-valeur" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/02-value-attribute.svg"></a></p>
+<p><a href="#R-image-d987d7e16b1b7e49a086c0bd2cf910c2" class="lightbox-link"><img alt="Attribut-valeur" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/02-value-attribute.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d987d7e16b1b7e49a086c0bd2cf910c2"><img alt="Attribut-valeur" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/02-value-attribute.svg"></a></p>
 <h4 id="attribut-référence">Attribut-référence</h4>
 <p>Ici, ça devient un peu plus compliqué !</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Driver</span>
@@ -172,8 +172,8 @@ On peut dire plus simplement que <code>s</code> own <code>s.value</code>.</p>
 <p>La donnée portée par <code>clio.driver</code> correspond à la variable <code>gontrand</code> définie dans le <code>main</code>.<br>
 Le owner de <code>clio.driver</code> n&rsquo;est donc pas <code>clio</code>, puisque la destruction de <code>clio</code> n&rsquo;entrainera pas la destruction de <code>gontrand</code>.<br>
 Dans ce cas précis, c&rsquo;est la fonction <code>main</code> qui own le contenu de <code>clio.driver</code>.</p>
-<p><a href="#R-image-35d6fb58ffa14a41449452200b9faa8e" class="lightbox-link"><img alt="Attribut-référence" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/03-ref-attribute.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-35d6fb58ffa14a41449452200b9faa8e"><img alt="Attribut-référence" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/03-ref-attribute.svg"></a></p>
+<p><a href="#R-image-4ea96395e304739836b4241fb906791b" class="lightbox-link"><img alt="Attribut-référence" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/03-ref-attribute.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4ea96395e304739836b4241fb906791b"><img alt="Attribut-référence" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/03-ref-attribute.svg"></a></p>
 <h4 id="ressources-gérées-par-une-classe">Ressources gérées par une classe</h4>
 <p>Lorsque le cycle de vie d&rsquo;une ressource (mémoire, fichier, connexion réseau, etc) stockée à l&rsquo;intérieur d&rsquo;un objet est orchestré par les fonctions-membres de cet objet, alors ces ressources sont ownées par l&rsquo;objet.</p>
 <p>Prenons ici l&rsquo;exemple d&rsquo;un <code>std::vector</code>.</p>
@@ -184,8 +184,8 @@ Dans ce cas précis, c&rsquo;est la fonction <code>main</code> qui own le conten
 <p>Chacun des <code>Driver</code> faisant partie du tableau est stocké sur un segment-mémoire alloué dynamiquement par l&rsquo;objet <code>drivers</code>.<br>
 Ce segment sera libéré à la destruction de <code>drivers</code> (ou plus tôt, en fonction des fonctions qu&rsquo;on appelera sur l&rsquo;objet), entraînant la désinstanciation des <code>Drivers</code>.<br>
 On peut donc dire que <code>drivers</code> own chacun des éléments de type <code>Driver</code> ajoutés via l&rsquo;appel à <code>emplace_back</code>.</p>
-<p><a href="#R-image-c321f8e3924af3d34ca870632c7aadcd" class="lightbox-link"><img alt="std::vector" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/04-vector.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c321f8e3924af3d34ca870632c7aadcd"><img alt="std::vector" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/04-vector.svg"></a></p>
+<p><a href="#R-image-0e863e6332618d97f72ad2b3ee232722" class="lightbox-link"><img alt="std::vector" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/04-vector.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0e863e6332618d97f72ad2b3ee232722"><img alt="std::vector" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/04-vector.svg"></a></p>
 <h4 id="pointeur-observant">Pointeur(-observant)</h4>
 <p>Un <strong>pointeur</strong> n&rsquo;est pas ownant.  Comme les références, ils servent simplement à référencer des données pré-existantes.<br>
 Si un pointeur est désinstanciée, la donnée pointée ne l&rsquo;est généralement pas !</p>
@@ -250,8 +250,8 @@ Par exemple, vous ne pouvez pas créer de référence qui ne référence rien, a
         <div class="hidden-solution-content">
             <p>Les éléments de <code>all_drivers</code> étant des pointeurs, on utilise un contour plein pour les cases du tableau.<br>
 En revanche, comme ces pointeurs ne contrôlent pas le cycle de vie de chacun des <code>Drivers</code>, on les relie vers eux avec des flèches en pointillé.
-<a href="#R-image-e489774f6529f27d4931acf3a94e3799" class="lightbox-link"><img alt="Pointeur-observant" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/06-observing-ptr.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e489774f6529f27d4931acf3a94e3799"><img alt="Pointeur-observant" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/06-observing-ptr.svg"></a></p>
+<a href="#R-image-2cde3a4025c933a85defb7e6e24fd09b" class="lightbox-link"><img alt="Pointeur-observant" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/06-observing-ptr.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2cde3a4025c933a85defb7e6e24fd09b"><img alt="Pointeur-observant" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/06-observing-ptr.svg"></a></p>
 
         </div>
     </div>
@@ -362,8 +362,8 @@ Si vous souhaitez dessiner vos graphes sur ordinateur, vous pouvez utiliser <a h
         </button>
 
         <div class="hidden-solution-content">
-            <p><a href="#R-image-9a8b000c576cb0914c2b3b260a120452" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/07-case-1a.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-9a8b000c576cb0914c2b3b260a120452"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/07-case-1a.svg"></a></p>
+            <p><a href="#R-image-de8d3192f9e27f76e9ccd96c39285e00" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/07-case-1a.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-de8d3192f9e27f76e9ccd96c39285e00"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/07-case-1a.svg"></a></p>
 
         </div>
     </div>
@@ -388,8 +388,8 @@ Si vous souhaitez dessiner vos graphes sur ordinateur, vous pouvez utiliser <a h
         <div class="hidden-solution-content">
             <p>Il faut faire pointer la variable-référence <code>max</code> sur <code>v2</code>, et non sur <code>b</code>.<br>
 En effet, <code>b</code> n&rsquo;est pas une donnée, juste un alias, on ne peut donc pas faire pointer une référence dessus.
-<a href="#R-image-e5d7eadaab9a7c52f1c4bf157b39d423" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/07-case-1b.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e5d7eadaab9a7c52f1c4bf157b39d423"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/07-case-1b.svg"></a></p>
+<a href="#R-image-78a5c3aaca9634fd0696caed5ffd9bc3" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/07-case-1b.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-78a5c3aaca9634fd0696caed5ffd9bc3"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/07-case-1b.svg"></a></p>
 
         </div>
     </div>
@@ -415,8 +415,8 @@ Le résultat est par contre toujours retourné par référence.
         <div class="hidden-solution-content">
             <p>Les paramètres <code>a</code> et <code>b</code> sont maintenant des données.<br>
 La variable-référence <code>max</code> pointera donc sur <code>b</code> et plus sur <code>v2</code>.
-<a href="#R-image-7ad72487251847e05059a876ed8e798f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/07-case-1c.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-7ad72487251847e05059a876ed8e798f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/07-case-1c.svg"></a></p>
+<a href="#R-image-3e5bd829971193fc4fd41ced9c69c847" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/07-case-1c.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3e5bd829971193fc4fd41ced9c69c847"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/07-case-1c.svg"></a></p>
 
         </div>
     </div>
@@ -550,8 +550,8 @@ Selon-vous, les pointeurs contenus dans <code>ManyAnimals::animals</code> sont-i
             <p>Le destructeur de <code>ManyAnimals</code> se charge de libérer la mémoire associée à chacun des pointeurs contenus dans l&rsquo;attribut <code>animals</code>.<br>
 Ces pointeurs étant utilisés pour gérer le cycle de vie des données pointées, il s&rsquo;agit de pointeurs-ownants.<br>
 On représente donc les relations associées avec des flèches pleines.
-<a href="#R-image-f66abca285048d8d2575cfc027bd73c8" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/07-case-2a.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f66abca285048d8d2575cfc027bd73c8"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/07-case-2a.svg"></a></p>
+<a href="#R-image-3f2e0772b8d3f5a1d718ec552dc3ac37" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/07-case-2a.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3f2e0772b8d3f5a1d718ec552dc3ac37"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/07-case-2a.svg"></a></p>
 
         </div>
     </div>
@@ -575,8 +575,8 @@ On représente donc les relations associées avec des flèches pleines.
 
         <div class="hidden-solution-content">
             <p>À la ligne 14, les instances de <code>Animal</code> ont toutes été libérées.<br>
-<a href="#R-image-66490b21ef0443f3b452d42cf45092d1" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/07-case-2b.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-66490b21ef0443f3b452d42cf45092d1"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/07-case-2b.svg"></a></p>
+<a href="#R-image-484d101c0a7bc37f7e0408d0cbda8a2f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/07-case-2b.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-484d101c0a7bc37f7e0408d0cbda8a2f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/07-case-2b.svg"></a></p>
 
         </div>
     </div>
@@ -603,8 +603,8 @@ Quel est le problème dans ce graphe ?
         <div class="hidden-solution-content">
             <p>L&rsquo;argument est passé par valeur, on a donc une copie de la variable <code>many_animals</code>.<br>
 En revanche, lorsqu&rsquo;un pointeur est copié, l&rsquo;élément pointé ne l&rsquo;est pas.
-<a href="#R-image-a774f08a2d18049a7cffd6980680709c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/07-case-2c.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a774f08a2d18049a7cffd6980680709c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/07-case-2c.svg"></a>
+<a href="#R-image-726314535b4bac607f053a404aa27e92" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/07-case-2c.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-726314535b4bac607f053a404aa27e92"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/07-case-2c.svg"></a>
 Le problème ici, c&rsquo;est qu&rsquo;on a maintenant deux owners pour les données <code>dog</code>, <code>cat</code> et <code>mouse</code>.</p>
 
         </div>
@@ -630,8 +630,8 @@ Expliquez ce qui pose problème et qui empêche le programme de se terminer corr
 
         <div class="hidden-solution-content">
             <p>À la fin de <code>display_animals</code>, on désinstancie le paramètre <code>many_animals</code>, ainsi que les données qu&rsquo;il own récursivement.
-<a href="#R-image-a31374762669b72d2c68f54164833653" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/07-case-2d.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a31374762669b72d2c68f54164833653"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/07-case-2d.svg"></a>
+<a href="#R-image-464e8489a5d78d801acd3d25340de9e7" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/07-case-2d.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-464e8489a5d78d801acd3d25340de9e7"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/07-case-2d.svg"></a>
 Les pointeurs contenus dans <code>many_animals.animals</code> (la variable du <code>main</code>) pointent donc sur des données invalidées.<br>
 À la destruction de <code>many_animals</code>, les instructions <code>delete a</code> vont par conséquent échouer.</p>
 
@@ -658,8 +658,8 @@ Les pointeurs contenus dans <code>many_animals.animals</code> (la variable du <c
         <div class="hidden-solution-content">
             <p>Il suffit de changer la signature de <code>display_animals</code> pour passer le paramètre par référence (qui peut d&rsquo;ailleurs être constante).
 Les références n&rsquo;ayant pas d&rsquo;impact sur le cycle de vie des données, lorsque l&rsquo;on sort de la fonction, aucun élément ne sera désinstancié.
-<a href="#R-image-022d008235194abe5d51c11e6e1d875f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/07-case-2e.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-022d008235194abe5d51c11e6e1d875f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/07-case-2e.svg"></a></p>
+<a href="#R-image-be3ffe27ae7c9c22dd9b4b838e464b32" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/ownership/07-case-2e.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-be3ffe27ae7c9c22dd9b4b838e464b32"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/ownership/07-case-2e.svg"></a></p>
 
         </div>
     </div>
@@ -786,9 +786,9 @@ Les références n&rsquo;ayant pas d&rsquo;impact sur le cycle de vie des donné
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1741613567" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1741613567" defer></script>
-    <script src="../../js/theme.js?1741613567" defer></script>
+    <script src="../../js/clipboard.min.js?1741681094" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1741681094" defer></script>
+    <script src="../../js/theme.js?1741681094" defer></script>
 
 
 
