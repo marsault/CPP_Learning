@@ -1,5 +1,6 @@
 ---
 title: "Exemples"
+pre: '<span class="presection-icon">🐥</span>'
 weight: 2
 ---
 

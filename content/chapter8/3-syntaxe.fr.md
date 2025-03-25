@@ -1,5 +1,7 @@
 ---
-title: "Débrief"
+title: "Syntaxe"
+pre: '<span class="presection-icon">🐓</span>'
+
 weight: 3
 ---
 
