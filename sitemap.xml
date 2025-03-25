@@ -106,9 +106,6 @@
     <loc>/chapter3/index.html</loc>
   </url>
   <url>
-    <loc>/chapter8/3-syntaxe/index.html</loc>
-  </url>
-  <url>
     <loc>/chapter4/3-move/index.html</loc>
   </url>
   <url>
@@ -125,6 +122,9 @@
   </url>
   <url>
     <loc>/chapter9/3-specializations/index.html</loc>
+  </url>
+  <url>
+    <loc>/chapter8/3-syntaxe/index.html</loc>
   </url>
   <url>
     <loc>/chapter4/4-assign/index.html</loc>
@@ -244,6 +244,9 @@
     <loc>/chapter7/test/index.html</loc>
   </url>
   <url>
+    <loc>/chapter8/test/index.html</loc>
+  </url>
+  <url>
     <loc>/chapter9/test/index.html</loc>
   </url>
   <url>
@@ -251,9 +254,6 @@
   </url>
   <url>
     <loc>/old-2223-chapter8-exceptions-assert/test/index.html</loc>
-  </url>
-  <url>
-    <loc>/chapter8/test/index.html</loc>
   </url>
   <url>
     <loc>/chapter0/test/index.html</loc>

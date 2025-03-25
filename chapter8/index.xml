@@ -22,14 +22,14 @@
       <description>Nous allons maintenant rentrer dans le vif du sujet en vous présentant le code de différents templates.&#xA;Nous détaillerons ensuite chacun des éléments de la syntaxe, afin que vous puissiez les comprendre pour les réutiliser dans votre propre code.&#xA;Premier exemple de classe-template Cet exemple consiste en l’implémentation d’un tableau de taille statique (un peu comme la classe std::array).&#xA;#include &lt;algorithm&gt; #include &lt;cassert&gt; #include &lt;iostream&gt; template &lt;typename ElementType, size_t Size&gt; class StaticArray { public: // Rappel: l&#39;implémentation par défaut du constructeur par défaut disparaît lorsqu&#39;on // définit explicitement un autre constructeur (ce qui est le cas ici).</description>
     </item>
     <item>
-      <title>Débrief</title>
+      <title>Syntaxe</title>
       <link>/chapter8/3-syntaxe/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter8/3-syntaxe/index.html</guid>
       <description>Définition d’un template Pour définir un template, il faut écrire template &lt;...&gt; devant la définition de la classe ou fonction templatée.&#xA;Les chevrons contiennent la liste des paramètres du template. Chaque paramètre est typé par :&#xA;- typename : il faut donc passer un nom de type en paramètre,&#xA;- un type intégral, comme size_t, char, int, … : il faut passer une expression du bon type évaluable à la compilation,</description>
     </item>
     <item>
-      <title>Questionnaire ☑</title>
+      <title>Questionnaire</title>
       <link>/chapter8/test/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter8/test/index.html</guid>
