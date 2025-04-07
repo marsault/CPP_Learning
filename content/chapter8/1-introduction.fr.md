@@ -11,7 +11,7 @@ weight: 1
 Les **templates** sont un mécanisme du C++ permettant de faire de la programmation générique.
 
 Le terme "template" se traduit littéralement par "patron" en français (au sens patron de vêtement, pas patron d'entreprise).
-Les templates vont donc permettre de construire un modèle de classe (ou de fonction) à partir duquel le compilateur pourra de générer de véritables classes (ou fonctions).
+Les templates vont donc permettre de construire un modèle de classe (ou de fonction) à partir duquel le compilateur pourra générer de véritables classes (ou fonctions).
 
 Notez donc bien que malgré le terme, une classe-template n'est pas une classe.
 C'est un modèle de classe.
