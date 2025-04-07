@@ -12,14 +12,14 @@
       <link>/chapter9/1-universal-ref/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter9/1-universal-ref/index.html</guid>
-      <description>Dans cette première section, nous commencerons par introduire les concepts de l-value et r-value.&#xA;Cela nous conduira à vous présenter la notion de référence universelle. Nous vous expliquerons ensuite quand et comment vous en servir dans votre code.&#xA;l-value / r-value Avant de parler concrètement des références universelles, il faut aborder un point essentiel à leur compréhension.&#xA;En C++, une expression est une suite d’opérateurs et d’opérandes pouvant être évaluée. L’évaluation d’une expression peut parfois produire une valeur.</description>
+      <description>Dans cette première section, nous commencerons par introduire les concepts de L-value et R-value.&#xA;Cela nous conduira à vous présenter la notion de référence universelle. Nous vous expliquerons ensuite quand et comment vous en servir dans votre code.&#xA;Surcharge par L-value ou R-value Rappel: on peut surcharger une fonction et ce sera l’une ou l’autre qui sera utilisée suiant si on lui passe R-value ou une L-value.&#xA;Voici la syntaxe :</description>
     </item>
     <item>
       <title>Template variadique</title>
       <link>/chapter9/2-variadiac/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter9/2-variadiac/index.html</guid>
-      <description>Un template variadique, c’est un template qui attend un nombre variable de paramètres. Vous en avez déjà utilisé plusieurs, comme :&#xA;- la fonction-template emplace_back de std::vector, qui attend n’importe quels nombres et types d’arguments, et les utilisent pour construire le nouvel élément,&#xA;- la fonction-template std::make_unique, qui fonctionne sur le même principe,&#xA;- la classe-template std::tuple, qui permet de représenter un N-uplet contenant n’importe quels types.&#xA;L’objectif de cette section sera de vous apprendre à définir vos propres templates variadiques.</description>
+      <description>Un template variadique, c’est un template qui attend un nombre variable de paramètres. Vous en avez déjà utilisé plusieurs, comme :&#xA;la fonction-template emplace_back de std::vector, qui attend n’importe quels nombres et types d’arguments, et les utilisent pour construire le nouvel élément, la fonction-template std::make_unique, qui fonctionne sur le même principe, la classe-template std::tuple, qui permet de représenter un N-uplet contenant n’importe quels types. L’objectif de cette section sera de vous apprendre à définir vos propres templates variadiques.</description>
     </item>
     <item>
       <title>Spécialisations</title>

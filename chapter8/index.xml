@@ -12,7 +12,7 @@
       <link>/chapter8/1-introduction/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter8/1-introduction/index.html</guid>
-      <description>Qu’est-ce qu’un template ? Les templates sont un mécanisme du C++ permettant de faire de la programmation générique.&#xA;Le terme “template” se traduit littéralement par “patron” en français (au sens patron de vêtement, pas patron d’entreprise). Les templates vont donc permettre de construire un modèle de classe (ou de fonction) à partir duquel le compilateur pourra de générer de véritables classes (ou fonctions).&#xA;Notez donc bien que malgré le terme, une classe-template n’est pas une classe.</description>
+      <description>Qu’est-ce qu’un template ? Les templates sont un mécanisme du C++ permettant de faire de la programmation générique.&#xA;Le terme “template” se traduit littéralement par “patron” en français (au sens patron de vêtement, pas patron d’entreprise). Les templates vont donc permettre de construire un modèle de classe (ou de fonction) à partir duquel le compilateur pourra générer de véritables classes (ou fonctions).&#xA;Notez donc bien que malgré le terme, une classe-template n’est pas une classe.</description>
     </item>
     <item>
       <title>Exemples</title>
