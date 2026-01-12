@@ -10,7 +10,7 @@ Voici le workflow général que nous suivrons pour faire les exercices.
 Les sources se récupèrent soit:
 - par un lien direct depuis ce site (exercices du cours);
 - sur [ce dépot git](https://github.com/marsault/CPP_Exercises/) pour les TPs;
-- directement sur votre machine (dans `$HOME/SUJET`) oour les TPs notés.
+- directement sur votre machine (dans `$HOME/SUJET`) pour les TPs notés.
 
 
 ### Configurer avec CMakeLists.
