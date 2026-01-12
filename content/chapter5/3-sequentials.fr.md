@@ -66,7 +66,7 @@ La librairie standard implémente les classes `std::list` et `std::forward_list`
 
 L'intérêt des listes vis-à-vis des tableaux, c'est qu'il est possible d'insérer ou de supprimer des éléments en O(1). De nouvelles fonctions de modifications sont donc disponibles dans l'interface de la liste, comme `merge` (fusionner deux listes), `splice` (insérer une liste au milieu d'une autre), `remove` (retirer des éléments selon leur valeur) ou encore `sort` (trier la liste).
 
-L'inconvénient, c'est qu'il n'est plus possible d'accéder à un élément depuis sa position en O(1). D'ailleurs, l'opérateur `[]` n'est pas disponible sur les listes de la STL.
+L'inconvénient, c'est qu'il n'est plus possible d'accéder à un élément depuis sa position en O(1). D'ailleurs, l'opérateur `[]` n'est pas disponible sur les listes de la STL (Standard Template Library).
 
 Dans la fonction `try_lists`, quatres listes vides sont définies. Commencez par leur ajouter des valeurs (de la manière de votre choix).\
 Faites ensuite en sorte de regrouper `l1` et `l2` dans une même liste ordonnée. Faites de même avec `l3` et `l4`.\
@@ -111,7 +111,7 @@ A part cela, les autres opérations sont disponibles avec la même complexité.
 
 ### Pile ou File
 
-Les derniers conteneurs que nous allons ici sont les piles `std::stack` et les files `std::queue`. Nous n'allons pas rappeler en détail ce que sont les piles ou les files, mais si vous avez tout oublier de vos cours d'algorithmique, sachez au moins que dans une pile, les insertions et suppressions sont effectuées en fin de conteneur, alors que dans une file, les suppressions s'effectuent en tête et les insertions en fin de conteneur.
+Les derniers conteneurs que nous allons voir ici sont les piles `std::stack` et les files `std::queue`. Nous n'allons pas rappeler en détail ce que sont les piles ou les files, mais si vous avez tout oublier de vos cours d'algorithmique, sachez au moins que dans une pile, les insertions et suppressions sont effectuées en fin de conteneur, alors que dans une file, les suppressions s'effectuent en tête et les insertions en fin de conteneur.
 
 Dans le cas de la STL, `stack` et `queue` ont la particularité d'être des adapteurs. Cela signifie que vous pouvez choisir l'implémentation que vous souhaitez utiliser en interne. La seule contrainte, c'est que la classe sous-jacente doit fournir certaines fonctions. Par exemple, dans le cas de la pile, on pourrait utiliser `vector` ou `list`, mais pas `forward_list` car elle ne définit pas `push_back` :\
 ![](/images/chapter5/doc-stack-constraints.png)

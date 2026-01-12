@@ -107,7 +107,7 @@ Sur chaque ligne est indiquée le nom de la fonction, une brève description de 
 
 #### 6. Exemple
 
-Tout en bas de la page, vous trouvez généralement un exemple permettant de comprendre très rapidement comme la classe peut s'utiliser.
+Tout en bas de la page, vous trouvez généralement un exemple permettant de comprendre très rapidement comment la classe peut s'utiliser.
 ![](/images/chapter5/doc-vector-ex.png)
 
 ---

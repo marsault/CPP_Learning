@@ -60,7 +60,7 @@ public:
 Pour chacun des cas `b1` et `b2` (voir le `main` en haut de la page), combien de copies vont avoir lieu?
 {{% hidden-solution %}}
 - La construction de `b1` provoque 2 copies consécutives. 😭
-- La construction de `b2` provoque 1 copie (de `_str` vers `str`). 😭
+- La construction de `b2` provoque 1 copie (de `str` vers `_str`). 😭
 {{% /hidden-solution %}}
 
 

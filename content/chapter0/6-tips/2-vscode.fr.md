@@ -1,28 +1,14 @@
 ---
 title: "Projets VSCode"
 weight: 1
+hidden: true
 ---
 
 Lorsque vous avez un projet un peu plus conséquent, il est plus pratique de passer par VSCode pour configurer, compiler et tester vos programmes.
 
 ---
 
-### Configuration avec CMake
 
-Vous aurez besoin d'un fichier `CMakeLists.txt` à la racine de votre répertoire pour configurer le projet.
-Si celui-ci ne contient qu'un seul programme, vous pouvez copier et adapter dans votre `CMakeLists.txt` les instructions suivantes.
-```
-cmake_minimum_required(VERSION 3.1)
-project(my_project)
-
-add_executable(my_executable
-    my_file1.cpp
-    my_file2.cpp
-    my_file3.h
-)
-
-target_compile_features(my_executable PUBLIC cxx_std_17)
-```
 
 Pour configurer le projet, utilisez la commande `CMake: Configure`.
 

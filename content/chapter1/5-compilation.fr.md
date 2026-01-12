@@ -237,7 +237,7 @@ Il nous apparaît utile de faire un petit tour des situations d'erreurs les plus
 
 Et vous les rencontrerez forcément, eheheh... 😈
 
-Commencez par vous placer dans le répertoire `chap-01/3-build-errors`, car c'est là que vous devrez compiler les différents fichiers.
+[Télécharger](../5-build-errors.zip), décompresser puis placez vous dans le répertoire `5-build-errors`, car c'est là que vous devrez compiler les différents fichiers.
 
 #### 1. expected ';' after class definition
 
@@ -774,7 +774,7 @@ La fonction `invert(Fraction)` présente dans `math.o` et qui n'est jamais appel
 
 De la même façon que nous l'avons fait avec les erreurs de compilation, nous allons vous présenter quelques situations d'erreurs émises au cours de l'édition des liens.
 
-Commencez par vous placer dans le répertoire `chap-01/4-link-errors`.
+[Télécharger](../5-link-errors.zip), décompresser puis placez vous dans le répertoire `5-link-errors`, car c'est là que vous devrez compiler les différents fichiers.
 
 #### 1. undefined reference to `main'
 

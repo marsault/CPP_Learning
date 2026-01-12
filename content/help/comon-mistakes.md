@@ -21,10 +21,10 @@ Voici une liste non-exhaustive d'erreurs dans le code qui peuvent provoquer des 
 
 ##### Le compilateur refuse de construire un objet de type `MyClass`
 
-- L'ajout d'un constructeur (quel qu'il soit) a pu empêcher au compilateur de générer le constructeur par défaut
-- `MyClass` est devenu abstraite parce qu'une fonction virtuelle pure n'est pas ou plus implémentée (voir la section au dessus)
-- `MyClass` n'est plus copiable parce qu'il contient des `std::unique_ptr` ou quelquechose de paramétré par un `std::unique_ptr`
+- L'ajout d'un constructeur (quel qu'il soit) a pu empêcher au compilateur de générer le constructeur par défaut.
+- `MyClass` est devenu abstraite parce qu'une fonction virtuelle pure n'est pas ou plus implémentée (voir la section au dessus).
+- `MyClass` n'est plus copiable parce qu'il contient des `std::unique_ptr` ou quelquechose qui contient un `std::unique_ptr`.
 
 ##### Des choses étranges se produisent quand `MaClass` est détruite (ou à la toute fin du programme)
 
-- Oubli de déclarer le destructeur `virtual` pour une classe polymorphe
+- Oubli de déclarer le destructeur `virtual` pour une classe polymorphe.

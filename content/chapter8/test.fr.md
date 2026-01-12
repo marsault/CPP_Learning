@@ -1,5 +1,6 @@
 ---
-title: "Questionnaire ☑"
+title: "Questionnaire"
+pre: '<span class="presection-icon">✅</span>'
 weight: 100
 ---
 
@@ -8,7 +9,7 @@ Bon courage à vous 🙂
 
 ---
 
-{{% test chapter=9 %}}
+{{% test chapter=8 %}}
 
 {{% test_item %}}
 Que faut-il écrire juste avant la définition d'une classe (ou fonction) pour en faire une classe (ou fonction) templatée ?{{% /test_item %}}

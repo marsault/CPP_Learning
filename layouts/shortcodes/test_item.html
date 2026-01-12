@@ -1,19 +1,20 @@
 {{ $_hugo_config := `{ "version": 1 }` }}
 
 {{ with .Page.Scratch.Get "questioncounter" }}
-  {{ $.Page.Scratch.Set "questioncounter" (add . 1) }}
+{{ $.Page.Scratch.Set "questioncounter" (add . 1) }}
 {{ else }}
-  {{ .Page.Scratch.Set "questioncounter" 1 }}
+{{ .Page.Scratch.Set "questioncounter" 1 }}
 {{ end }}
 
 {{ $questioncounter := .Page.Scratch.Get "questioncounter"}}
 
 {{ $rows := 1 }}
 {{ with .Get "lines" }}
-  {{ $rows = . }}
+{{ $rows = . }}
 {{ end }}
 
 {{ $name := replaceRE `\[([^\]]*)\]` "［$1］" (.Inner | markdownify | plainify | htmlUnescape) }}
 
 <label for="q{{ $questioncounter }}">{{ $questioncounter }}. {{ .Inner | markdownify }}</label>
-<textarea id="q{{ $questioncounter }}" name="{{ $questioncounter }}- {{ $name }}" rows="{{ $rows }}" cols="50"></textarea>
+<textarea id="q{{ $questioncounter }}" name="{{ $questioncounter }}. {{ $name }}" rows="{{ $rows }}"
+  cols="50"></textarea>

@@ -106,7 +106,7 @@ Quel type doit-on utiliser pour un pointeur ownant? un pointeur observant? (le t
 {{% /test_item %}}
 
 {{% test_item %}}
-Une fonction `my_func` a pour prototype `void my_func(std::shared_ptr<std::string>& arg)`; notez la `&`.
+Une fonction `my_func` a pour prototype `void my_func(std::unique_ptr<std::string>& arg)`; notez la `&`.
 Est-ce que la chaine de caractère `*arg` sera désinstanciée à la fin de la fonction `my_func`?
 {{% /test_item %}}
 

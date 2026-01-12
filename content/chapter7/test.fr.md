@@ -9,7 +9,7 @@ Bon courage à vous 🙂
 
 ---
 
-{{% test chapter=6 %}}
+{{% test chapter=7 %}}
 
 {{% test_item %}}
 Quel type de boucle faut-il utiliser pour modifier la structure d'un conteneur lors d'un parcours ?

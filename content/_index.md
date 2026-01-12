@@ -4,7 +4,7 @@ title: "Accueil"
 
 ## Bienvenue
 
-Sur ce site, vous trouverez le cours de C++ destiné à l'enseignement des Master 1 de l'Universisté Gustave-Eiffel. Si vous ne faites pas partie des étudiants de cette section, vous êtes tout de même les bienvenus. Sachez juste que d'une part, ce cours étant un cours d'introduction, nous nous concentrerons sur les concepts de base du langage, ainsi que sur les mécanismes permettant d'écrire du code plus simplement ou de le rendre plus sûr. Et d'autre part, il est fortement recommandé pour pouvoir suivre ce cours d'avoir de bonnes bases en C et en Java.
+Sur ce site, vous trouverez le cours de C++ destiné à l'enseignement des Master 1 de l'Université Gustave-Eiffel. Si vous ne faites pas partie des étudiants de cette section, vous êtes tout de même les bienvenus. Sachez juste que d'une part, ce cours étant un cours d'introduction, nous nous concentrerons sur les concepts de base du langage, ainsi que sur les mécanismes permettant d'écrire du code plus simplement ou de le rendre plus sûr. Et d'autre part, il est fortement recommandé pour pouvoir suivre ce cours d'avoir de bonnes bases en C et en Java.
 
 À nos très chers étudiants et étudiantes de Master 1, merci de lire la suite de cette page attentivement.
 
@@ -17,20 +17,20 @@ Le module sera constitué de 3 séances de cours magistraux, 12 séances de trav
 Le planning est le suivant :
 |    | Dates             | Séances | Chapitre à lire <br>(avant le TP)|
 | -- | ----------------- | - | - |
-|S1  | 13 - 17 janvier   | ▹ Cours 1 <br> ▹ TP 1 (Compilation, Entrée / sortie, `std::string`, `std::vector`) | [0]({{% ref chapter0 %}}) et [1]({{% ref chapter1 %}})  |
-|S2  | 20 - 24 janvier   | ▹ TP 2 (Classes, Constructeurs, Membres statiques, Opérateurs) |  [2]({{% ref chapter2 %}})  |
-|S3  | 27 - 31 janvier   | ▹ TP 3 (Références, Ownership) | [3]({{% ref chapter3 %}}) |
-|S4  | 3 - 7 février     | ▹ TP 4 (Révisions, Framework de TP noté) |
-|S5  | 10 - 14 février   | ▹ TP noté 1 (sur les chapitres 0 à 3, 2h) <br> ▹ Cours 2 |
-|S6  | 17 - 21 février   | ▹ TP 5 (Copie, Déplacement, L-value et R-value) | [4]({{% ref chapter4 %}}) |
-|S7  | 24 - 28 février   | ▹ TP 6 (stdlib, conteneurs, `std::unique_ptr`) | [5]({{% ref chapter5 %}}) |
-|S8  | 3 - 7 mars        | ▹ TP 7 (Polymorphisme, Héritage) | [6]({{% ref chapter6 %}}) | 
-|S9  | 10 - 14 mars      | ▹ TP 8 (Révisions, Framework de TP noté) |
-|S10 | 17 - 21 mars      | ▹ TP noté 2 (sur les chapitres 0 à 6, 2h) <br> ▹ Cours 3 |
-|S11 | 24 - 28 mars      | ▹ TP 9 (Lambdas, Algorithmes) | [7]({{% ref chapter7 %}}) |
-|S12 | 31 mars - 3 avril | ▹ TP 10 (Templates) | [8]({{% ref chapter8 %}}) |
-|S13 | 7 - 12 avril      | ▹ TP 11 (Templates, Perfect forwarding, SFINAE) | [9]({{% ref chapter9 %}}) |
-|S14 | 14 - 18 avril     | ▹ TP 12 (Révisions) en autonomie |
+|S1  | 12 - 16 janvier   | ▹ Cours 1 <br> ▹ TP 1 (Compilation, Entrée / sortie, `std::string`, `std::vector`) | [0]({{% ref chapter0 %}}) et [1]({{% ref chapter1 %}})  |
+|S2  | 19 - 23 janvier   | ▹ TP 2 (Classes, Constructeurs, Membres statiques, Opérateurs) |  [2]({{% ref chapter2 %}})  |
+|S3  | 26 - 30 janvier   | ▹ TP 3 (Références, Ownership) | [3]({{% ref chapter3 %}}) |
+|S4  | 2 - 6 février     | ▹ TP 4 (Révisions, Framework de TP noté)  <br> ▹ TP noté 1 (sur les chapitres 0 à 3, 2h)|
+|S5  | 9 - 13 février   | ▹ Cours 2 |
+|S6  | 16 - 20 février   | ▹ TP 5 (Copie, Déplacement, L-value et R-value) | [4]({{% ref chapter4 %}}) |
+|S7  | 23 - 27 février   | ▹ TP 6 (stdlib, conteneurs, `std::unique_ptr`) | [5]({{% ref chapter5 %}}) |
+|S8  | 2 - 6 mars        | ▹ TP 7 (Polymorphisme, Héritage) | [6]({{% ref chapter6 %}}) | 
+|S9  | 9 - 13 mars      | ▹ TP 8 (Révisions, Framework de TP noté) <br> ▹ TP noté 2 (sur les chapitres 0 à 6, 2h)|
+|S10 | 16 - 20 mars      | ▹ Cours 3 |
+|S11 | 23 - 27 mars      | ▹ TP 9 (Lambdas, Algorithmes) | [7]({{% ref chapter7 %}}) |
+|S12 | 30 mars - 3 avril | ▹ TP 10 (Templates) | [8]({{% ref chapter8 %}}) |
+|S13 | 6 - 10 avril      | ▹ TP 11 (Templates, Perfect forwarding, SFINAE) | [9]({{% ref chapter9 %}}) |
+|S14 | 14 - 18 avril     | ▹ Vacance/Révisions (TP 12 en autonomie) |
 |S15 | 21 - 24 avril     | ▹ TP noté 3 (sur tous les chapitres, 3h) |
 
 #### Cours magistraux

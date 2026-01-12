@@ -22,10 +22,8 @@ En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de cho
 
 ### Mise en place
 
-Le code initial de tous les exercices proposés dans ce cours en ligne sont présents sur [ce dépôt git]({{% param exoducoursURL %}}).
 
-Clonez-le sur votre machine et ouvrez le répertoire `chap-01` dans VSCode.  
-Ouvrez ensuite le fichier `1-hello_world.cpp`.
+Ouvrir un fichier `1-hello_world.cpp`.
 
 Pour votre premier programme, on ne va pas trop faire dans l'originalité, il s'agira d'un Hello World.
 Vous l'avez d'ailleurs déjà probablement vu dans le chapitre précédent, pour tester vos outils.
@@ -133,7 +131,7 @@ int main()
 Vous devriez maintenant pouvoir compiler le programme sans souci. Exécutez-le et vérifiez que vous obtenez bien un résultat similaire à celui-ci :
 ```b
 Hello World!
-The program '[2288] c1-1-hello_world.exe' has exited with code 0 (0x0).
+The program '[2288] 1-hello_world.exe' has exited with code 0 (0x0).
 ```
 
 Par ailleurs, sachez qu'il est possible de chaîner l'opérateur `<<` et de lui fournir d'autres éléments que des chaînes de caractères. \

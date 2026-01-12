@@ -43,7 +43,7 @@ int main()
 }
 ```
 {{% notice important %}}
-Une L-value est une expression dont on calcule la valeur est stockée dans une adresse en mémoire déterminée (pile ou tas).
+Une L-value est une expression dont la valeur est stockée dans une adresse en mémoire déterminée (pile ou tas).
 {{% /notice %}}
 Etant donné une variable `a`, l'expression `a` est une L-value.
 Ceci est vrai que `a` soit une variable locale ou globale, et quel que soit le type déclaré de `a`.
@@ -103,7 +103,7 @@ réservée pour l'argument `x` de la function `my_func`.
 C'est la même chose pour `MyClass{}` (expression 2), il s'agit d'une
 nouvelle instance de `MyClass` qui sera construite directement dans la case `y` de `my_func`.
 
-Si un expression *E* est une R-value dont le type est une classe qui a un attribut `c`, alors *R*`.c` est aussi une R-value.
+Si une expression *E* est une R-value dont le type est une classe qui a un attribut `c`, alors *R*`.c` est aussi une R-value.
 C'est pour cela que `(MyClass{}).my_att` (l'expression 4) est une R-value.
 
 L'expression `f(..)` est une R-value si la fonction  `f` ne renvoie pas
@@ -135,19 +135,18 @@ a = (6+a); // Cette affectation a un sens
 // (a+6) ne peut apparaître qu'à droite du signe = donc c'est une R-value
 ```
 
-Cette explication par *left/right* est un bon moyen mnémotechnique, mais n'est plus parfaitement alignée avec ce qu'il se passe en C++.
+{{% notice warning %}}
+Cette explication par *left/right* est un bon moyen mnémotechnique.
+Néanmoins ce n'est plus parfaitement alignée avec ce qu'il se passe en C++, car on peut entre autre, redéfinir le comportement des opérateurs d'affectations.
 Référez-vous plutôt aux définitions plus haut.
-
-{{% notice tip %}}
-Pour comprendre cette histoire de stockage en mémoire d'une expression *E*, on peut se poser la question suivante : Est-ce que l'expression `&`*E* a un sens?
-
-Par exemple, on voit bien que `&42` n'a pas de sens alors que `&a` oui.
 {{% /notice %}}
 
 
-## Chaînes de caractères litérales
 
-Attenion, les chaînes de caractères litérales, comme `"Hello World!"` sont des *L*-value comme le montre le code en dessous.
+
+## Chaînes de caractères littérales
+
+Attention, les chaînes de caractères littérales, comme `"Hello World!"` sont des *L*-values comme le montre le code en dessous.
 
  ```cpp
  int main() {

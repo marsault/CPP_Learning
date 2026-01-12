@@ -9,5 +9,5 @@ N'hésitez néanmoins pas à utiliser le formulaire pour envoyer vos questions.
 
 ---
 
-{{% test chapter=10 %}}
+{{% test chapter=9 %}}
 {{% /test %}}
