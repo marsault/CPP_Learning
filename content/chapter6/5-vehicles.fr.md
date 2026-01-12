@@ -10,12 +10,14 @@ comment appeler la fonction parent depuis la rédéfinition de cette fonction da
 ---
 
 Pour cet exercice, vous modifierez les fichiers :\
-\- `chap-04/3-vehicles/Program.cpp`\
-\- `chap-04/3-vehicles/Vehicle.h`\
-\- `chap-04/3-vehicles/Car.h`\
-\- `chap-04/3-vehicles/Scooter.h`
+- `3-vehicles/Program.cpp`\
+- `3-vehicles/Vehicle.h`\
+- `3-vehicles/Car.h`\
+- `3-vehicles/Scooter.h`
 
-La cible à compiler est `c4-3-vehicles`.
+se trouvant dans [code.zip](../code.zip).
+
+La cible à compiler est `vehicles`.
 
 ---
 
@@ -280,12 +282,11 @@ Quelles erreurs de compilation obtenez-vous maintenant ?
 ```cpp
 class Vehicle
 {
-protected:
+public:
     Vehicle(const Driver& driver)
         : _driver { driver }
     {}
-
-public:
+    
     virtual ~Vehicle() {}
 
     virtual unsigned int drive() const = 0;

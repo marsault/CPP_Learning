@@ -10,14 +10,16 @@ Nous ferons un petit récapitulatif en fin de page, pour rappelez les points ess
 ---
 
 Pour cet exercice, vous modifierez les fichiers :\
-\- `chap-04/2-farm/FarmHouse.cpp`\
-\- `chap-04/2-farm/Animal.h`\
-\- `chap-04/2-farm/Dog.h`\
-\- `chap-04/2-farm/Cat.h`\
-\- `chap-04/2-farm/Chicken.h`\
-\- `chap-04/2-farm/Cow.h`
+- `2-farm/FarmHouse.cpp`
+- `2-farm/Animal.h`
+- `2-farm/Cat.h`
+- `2-farm/Chicken.h`
+- `2-farm/Cow.h`
+- `2-farm/Dog.h`
 
-La cible à compiler est `c4-2-farm`.
+se trouvant dans [code.zip](../code.zip).
+
+La cible à compiler est `farm`.
 
 ---
 

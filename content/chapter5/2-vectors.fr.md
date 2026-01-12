@@ -85,7 +85,7 @@ for (const auto v: part)
 ```
 
 {{% notice tip %}}
-Pour `full`, on aurait pu écrire `(&array[0], &array[6])`, mais c'est plus élégant d'écrire `(array, array + 6)` car cela évite de penser qu'on essaye d'accéder au 6e élément de `array`, alors que celui-ci n'existe pas.
+Pour `full`, on aurait pu écrire `(&array[0], &array[6])`, mais c'est plus élégant d'écrire `(array, array + 6)`. Cela évite de penser qu'on essaye d'accéder a l'élément `array[6]`, qui est en dehors de l'array.
 {{% /notice %}}
 
 {{% /expand %}}

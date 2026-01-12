@@ -1,0 +1,2 @@
+zip -r code 'code/' --exclude 'code/build/*' --exclude code/.gitignore --exclude 'code/.vscode/*'
+

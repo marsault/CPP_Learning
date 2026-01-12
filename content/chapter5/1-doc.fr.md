@@ -4,9 +4,9 @@ pre: '<span class="presection-icon">🔖</span>'
 weight: 1
 ---
 
-Pour démarrez ce chapitre, nous allons vous expliquer comment parcourir la documentation que vous trouverez sur le site {{% open_in_new_tab "https://en.cppreference.com/w/" "cppreference" /%}}.
+Pour démarrez ce chapitre, nous allons vous expliquer comment parcourir la documentation que vous trouverez sur le site {{% cppreflink %}}.
 
-Commencez par ouvrir {{% open_in_new_tab "https://en.cppreference.com/w/cpp/container/vector" "cette page" /%}}. Vous y trouverez la documentation de la classe `vector`.\
+Commencez par ouvrir {{% cppreflink "cpp/container/vector" "cette page" %}}. Vous y trouverez la documentation de la classe `vector`.\
 A première vue, son contenu peut paraître indigeste. Nous allons donc vous expliquer comment il est structuré afin que vous puissiez vous y repérer plus facilement.
 
 ---
@@ -107,7 +107,7 @@ Sur chaque ligne est indiquée le nom de la fonction, une brève description de 
 
 #### 6. Exemple
 
-Tout en bas de la page, vous trouvez généralement un exemple permettant de comprendre très rapidement comme la classe peut s'utiliser.
+Tout en bas de la page, vous trouvez généralement un exemple permettant de comprendre très rapidement comment la classe peut s'utiliser.
 ![](/images/chapter5/doc-vector-ex.png)
 
 ---

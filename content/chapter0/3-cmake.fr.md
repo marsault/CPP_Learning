@@ -25,7 +25,41 @@ Afin de générer les artéfacts pour la compilation, nous utiliserons {{< open_
 
 ---
 
+### Fichier de configuration
+
+Vous aurez besoin d'un fichier `CMakeLists.txt` à la racine de votre répertoire pour configurer le projet.
+Si celui-ci ne contient qu'un seul programme, vous pouvez copier et adapter dans votre `CMakeLists.txt` les instructions suivantes.
+```
+cmake_minimum_required(VERSION 3.1)
+project(my_project)
+
+add_executable(my_executable
+    my_file1.cpp
+    my_file2.cpp
+    my_file3.h
+)
+
+target_compile_features(my_executable PUBLIC cxx_std_17)
+```
+
+### Configurer un projet
+
+#### Linux / MacOS
+
+```bash
+   # se placer avec `cd` dans le répertoire racine avec le CMakelists.txt
+   mkdir build
+   cd build
+   cmake ..
+```
+
+
 ### Intégration à VSCode
+
+{{% notice style="warning" icon="hammer" title="Deprecation" %}}
+Cette année nous essayons de passer à VSCodium (fork libre de VSCode) donc les sections sur VSCode concernent principalement les étudiants voulant coder depuis windows.
+{{% /notice %}}
+
 
 Afin de pouvoir utiliser CMake facilement depuis VSCode, il faut installer les extensions `CMake` et `CMakeTools`.
 
@@ -45,11 +79,12 @@ Vérifiez maintenant votre installation.
 5.  La configuration et la génération des fichiers de build devraient avoir lieu.
 ![](/images/chapter0/cmake-result.png)
 6.  Cliquez maintenant sur le bouton `Build` dans la barre en bas (ou F7) pour compiler le projet.
-![](/images/chapter0/cmake-build.png)
+![](/images/chapter0/cmake-build.png) -->
 
+<!--
 ---
 
-### Lancement du programme
+ ### Lancement du programme
 
 Afin de pouvoir lancer votre programme rapidement en utilisant la commande `Start Debugging` (F5), vous devrez préalablement réaliser la manipulation suivante.\
 Celle-ci sera à refaire chaque fois que vous créérez un nouveau projet.
@@ -70,4 +105,4 @@ Windows et Linux devraient vous proposez GDB et MacOS devrait vous fournir LLDB.
 
 Ajoutez un breakpoint sur la ligne 5 en cliquant devant le numéro de ligne, puis essayez de lancer le programme avec la commande `Start Debugging` (F5).\
 Votre programme devrait se lancer puis mettre en pause son exécution sur la ligne 5.
-![](/images/chapter0/cmake-breakpoint.png)
+![](/images/chapter0/cmake-breakpoint.png) -->

@@ -10,7 +10,7 @@ On compilera le fichier [Person.cpp](../Person.cpp).
 
 ### Constructeur de copie
 
-Dans la fonction `main`, instanciez à la suite du code existant une nouvelle instance de `Person` et initialisée là à partir de la variable `batman`. Cela se fait exactement de la même manière que si vous souhaitiez créer une copie d'une variable de type `int`.\
+Dans la fonction `main`, instanciez à la suite du code existant une nouvelle instance de `Person` et initialisez là à partir de la variable `batman`. Cela se fait exactement de la même manière que si vous souhaitiez créer une copie d'une variable de type `int`.\
 Affichez ensuite le contenu de cet objet grâce à l'opérateur `<<`.
 
 {{% hidden-solution %}}

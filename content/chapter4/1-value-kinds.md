@@ -4,12 +4,12 @@ pre: '<span class="presection-icon">⮂</span>'
 weight: 1
 ---
 
-Sur cette page, on va parler des catégories des expressions (L-value et R-values),
+Sur cette page, on va parler des catégories des expressions (L-values et R-values),
 ce qui permet de mieux comprendre comment le compilateur les traite.
 
 {{% notice note %}}
 La catégorisation des expressions est en fait encore plus complexe que celle décrite ici.
-Il existe en C++ des GL-value, PR-value et X-value, mais ces notions ne sont pas au programme du cours.
+Il existe en C++ des GL-values, PR-values et X-values, mais ces notions ne sont pas au programme du cours.
 {{% /notice %}}
 
 ---
@@ -18,7 +18,7 @@ Il existe en C++ des GL-value, PR-value et X-value, mais ces notions ne sont pas
 
 ## L-value
 
-Pour illustrer ce que sont les L-value, on utilisera le bout de code ci-dessous.
+Pour illustrer ce que sont les L-values, on utilisera le bout de code ci-dessous.
 ```cpp
 class MyClass 
 {
@@ -42,16 +42,17 @@ int main()
     return (mon_instance.my_att);
 }
 ```
-
-Les L-values sont des expressions dont la valeur est stockée quelque part en mémoire.
+{{% notice important %}}
+Une L-value est une expression dont la valeur est stockée dans une adresse en mémoire déterminée (pile ou tas).
+{{% /notice %}}
 Etant donné une variable `a`, l'expression `a` est une L-value.
-Ceci est vrai que `a` soit une variable locale ou globale, et quel que soit le type déclarée de `a`.
+Ceci est vrai que `a` soit une variable locale ou globale, et quel que soit le type déclaré de `a`.
 Par exemple, l'expression 1 `mon_instance` est une L-value dans le code ci-dessus.
 En effet dans ce cas, `a` n'est rien d'autre que le nom donné à une case mémoire.  La plupart du temps, l'expression `a` ne va utiliser que la valeur stockée dans cette case
-mais parfois, c'est l'adresse de cette case qui est utilisée, comme dans l'expression `&a`, ou si `a` est passé
+mais parfois, c'est l'adresse de cette case qui est utilisée, comme dans l'expression `&a`, ou si `a` est passée
 par référence à une fonction (comme dans l'expression 2 `my_func(mon_instance)`).
 
-Si un expression *E* est une L-value dont le type est une classe qui a un attribut `c`, alors *E*`.c` est aussi une L-value.
+Si une expression *E* est une L-value dont le type est une classe qui a un attribut `c`, alors *E*`.c` est aussi une L-value.
 Par exemple, l'expression 3 `mon_instance.my_att` est une L-value dans le code
 au dessus.
 En effet, comme expliqué dans le [chapitre 3](chapter3) les attributs d'un objet sont stockées dans l'espace allouée pour l'objet lui-même donc on sait où est chaque attribut est stockée dès qu'on sait où l'objet est stockée.
@@ -93,14 +94,16 @@ int main()
 }
 ```
 
-Par opposition aux L-values, les R-values sont les expressions qui n'ont pas d'adresse en mémoire.
-Par exemple, un literal, comme `42` (expression 1 dans le code ci-dessus), n'est stockée nulle-part en mémoire.
-En fait, le compilateur la stockera directement dans la case mémoire
+{{% notice important %}}
+une R-value est une expression dont la valeur n'est pas explicitement stockée en mémoire.
+{{% /notice %}}
+Par exemple, un littéral, comme `42` (expression 1 dans le code ci-dessus), n'est stocké nulle part en mémoire.
+En fait, le compilateur le stockera directement dans la case mémoire
 réservée pour l'argument `x` de la function `my_func`.
 C'est la même chose pour `MyClass{}` (expression 2), il s'agit d'une
 nouvelle instance de `MyClass` qui sera construite directement dans la case `y` de `my_func`.
 
-Si un expression *E* est une R-value dont le type est une classe qui a un attribut `c`, alors *R*`.c` est aussi une R-value.
+Si une expression *E* est une R-value dont le type est une classe qui a un attribut `c`, alors *R*`.c` est aussi une R-value.
 C'est pour cela que `(MyClass{}).my_att` (l'expression 4) est une R-value.
 
 L'expression `f(..)` est une R-value si la fonction  `f` ne renvoie pas
@@ -132,19 +135,18 @@ a = (6+a); // Cette affectation a un sens
 // (a+6) ne peut apparaître qu'à droite du signe = donc c'est une R-value
 ```
 
-Cette explication par *left/right* est un bon moyen mnémotechnique, mais n'est plus parfaitement alignée avec ce qu'il se passe en C++.
+{{% notice warning %}}
+Cette explication par *left/right* est un bon moyen mnémotechnique.
+Néanmoins ce n'est plus parfaitement alignée avec ce qu'il se passe en C++, car on peut entre autre, redéfinir le comportement des opérateurs d'affectations.
 Référez-vous plutôt aux définitions plus haut.
-
-{{% notice tip %}}
-Pour comprendre cette histoire de stockage en mémoire d'une expression *E*, on peut se poser la question suivante : Est-ce que l'expression `&`*E* a un sens?
-
-Par exemple, on voit bien que `&42` n'a pas de sens alors que `&a` oui.
 {{% /notice %}}
 
 
-## Chaînes de caractères litérales
 
-Attenion, les chaînes de caractères litérales, comme `"Hello World!"` sont des *L*-value comme le montre le code en dessous.
+
+## Chaînes de caractères littérales
+
+Attention, les chaînes de caractères littérales, comme `"Hello World!"` sont des *L*-values comme le montre le code en dessous.
 
  ```cpp
  int main() {

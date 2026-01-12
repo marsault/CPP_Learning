@@ -347,7 +347,7 @@ Pour indiquer qu'une fonction-membre est statique, il faut placer le mot-clef `s
 class Rectangle
 {
 public:
-    static void set_default_size();
+    static void set_default_size(float size);
     ...
 
 private:

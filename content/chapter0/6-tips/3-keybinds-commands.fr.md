@@ -1,6 +1,7 @@
 ---
 title: "Raccourcis VSCode"
 weight: 1
+hidden: true
 ---
 
 ### Général

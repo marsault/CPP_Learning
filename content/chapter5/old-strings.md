@@ -2,6 +2,7 @@
 title: "Manipulation de chaînes"
 pre: '<span class="presection-icon">🔗</span>'
 weight: 5
+hidden: true
 ---
 
 Dans cette partie, nous reviendrons sur les fonctions fournies par la librairie permettant de manipuler des `string`. Vous apprendrez aussi ce que sont les `string_view` et à quoi elles servent.

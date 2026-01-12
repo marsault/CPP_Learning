@@ -33,7 +33,7 @@ En particulier, il suffit parfois de se poser la question: est-ce que ma modific
 ### Règle des 0
 
 La plupart des classes suivent la règle des 0, c'est-à-dire ne modifient aucun des cinq éléments en haut de page.
-En effet, le comportement généré par les implémentations par défaut correspond la gestion usuelle de la mémoire et satisfait la plupart des cas.
+En effet, le comportement généré par les implémentations par défaut correspond à la gestion usuelle de la mémoire et satisfait la plupart des cas.
 
 ### Règle des 3
 
@@ -44,7 +44,7 @@ Au contraire, on veut que certaines classes ne suivent pas la gestion par défau
 ##### Exercice
 
 Par exemple, le fichier [RuleOfThree.cpp](../RuleOfThree.cpp) contient une classe
-qui stocke un entier à travers un pointeur ownant.
+qui stocke un entier à travers un pointeur ownant (et l'on maintiendra l'invariant que ce n'est jamais un `nullptr`)
 Pour éviter les fuite mémoire, elle redéfinit son destructeur comme 
 indiqué ci-dessous.
 ```cpp
@@ -77,16 +77,27 @@ int main() {
 ```
 
 {{% hidden-solution %}}
-Si on copie un `RuleOfThree`, le champs `int_ptr` de l'original et la copie pointerons tous les deux vers la même case mémoire.
-Quand `s` est détruit à la fin de la fonction `f`, la case mémoire `s.int_ptr` est désallouée
-et donc l'affichage de `*(r.int_ptr)` 
+Puisqu'on n'a pas défini de constructeur de copie pour `RuleOfThree`, le compilateur en génère un et, pour rappel, l'implémentation par défaut consiste à copier chacun des champs d'un `RuleOfThree` dans le champs correspondant de la copie.
+C'est pourquoi le champ `int_ptr` de l'original et la copie pointeront tous les deux vers la même case mémoire.
+Quand `s` est détruit à la fin de la fonction `f`, la case mémoire `s.int_ptr` est désallouée et donc l'affichage de `*(r.int_ptr)` 
 
-On peut s'en rendre compte en compilant le fichier et en utilisant valgrind:
-``` 
+On peut s'en rendre compte en compilant et en éxécutant le fichier (le message d'erreur peut varier).
+```
+$ g++ RuleOfThree.cpp -o RuleOfThree
+$ ./RuleOfThree
+42
+free(): double free detected in tcache 2
+Aborted (core dumped)`
+```
+On voit ici que le programme indique qu'un segment de mémoire a été libéré plusieurs fois.
+
+
+Si on utilise valgrind, on aura un message plus "clair".
+``` sh
     g++ RuleOfThree.cpp -o RuleOfThree
     valgrind ./RuleOfThree
 ```
-Valgrind indique quelque chose comme "Address ... is 0 bytes inside a block of size 4 free'd", ce qui veut dire qu'on accède à de la mémoire libérée.
+Valgrind indique quelque chose comme "Address ... is 0 bytes inside a block of size 4 free'd", ce qui veut dire qu'on accède à de la mémoire libérée.  Et on pourra ensuite traquer où cela se produit.
 {{% /hidden-solution %}}
 
 
@@ -96,11 +107,11 @@ Ecrivez le code du constructeur par copie de `RuleOfThree` pour régler ce probl
 ```cpp
 class RuleofThree {
     /* .. */
-    RuleOfThree(const RuleOfThree& other) 
-    {
-      // We allocate a new int and copy the value pointed by other.int_ptr
-      int_ptr = new int{*(other.int_ptr)};
-    }
+    RuleOfThree(const RuleOfThree& other)
+    : int_ptr{new int{*(other.int_ptr)}};
+    //        ^^^^^^^^^^^^^^^^^^^^^^^^^ 
+    // We allocate a new int on the heap and copy the value pointed by other.int_ptr
+    {}
     /* .. */
 };
 {{% /hidden-solution %}}
@@ -118,7 +129,7 @@ int main() {
 }
 ```
 Décommentez la fin de la fonction `main` dans le fichier `RuleOfThree.cpp`,
-et écrivez l'opérateur d'affectation par copie pour qu'il n'y ai pas de
+et écrivez l'opérateur d'affectation par copie pour qu'il n'y ait pas de
 problème mémoire.
 
 {{% hidden-solution %}}
@@ -137,9 +148,11 @@ class RuleofThree {
     /* .. */
     RuleOfThree& operator=(const RuleOfThree& other) 
     {
-      // this object existed before so int_ptr is already allocated
-      // we simply copy the value pointed by other.int_ptr
-      *int_ptr = *(other.int_ptr);
+      if (this != &other) {
+        // this object existed before so int_ptr is already allocated
+        // we simply copy the value pointed by other.int_ptr
+        *int_ptr = *(other.int_ptr);
+      }
       return *this;
     }
     /* .. */
@@ -149,7 +162,7 @@ class RuleofThree {
 ### Règle des 5
 
 Les classes qui suivent la règle des 5 sont celles qui suivent déjà la règle 
-des 3 et qui veulent tout de même pouvoir être déplacée efficacement.
+des 3 et qui veulent tout de même pouvoir être déplacés efficacement.
 
 En effet, quand on définit un des trois éléments de la règle des 3, le
 compilateur ne génère pas d'implémentation par défaut ni pour le constructeur

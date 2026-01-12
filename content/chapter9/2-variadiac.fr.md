@@ -5,10 +5,10 @@ weight: 2
 ---
 
 Un template variadique, c'est un template qui attend un nombre variable de paramètres. 
-Vous en avez déjà utilisé plusieurs, comme :\
-\- la fonction-template `emplace_back` de `std::vector`, qui attend n'importe quels nombres et types d'arguments, et les utilisent pour construire le nouvel élément,\
-\- la fonction-template `std::make_unique`, qui fonctionne sur le même principe,\
-\- la classe-template `std::tuple`, qui permet de représenter un N-uplet contenant n'importe quels types.
+Vous en avez déjà utilisé plusieurs, comme :
+- la fonction-template `emplace_back` de `std::vector`, qui attend n'importe quels nombres et types d'arguments, et les utilisent pour construire le nouvel élément,
+- la fonction-template `std::make_unique`, qui fonctionne sur le même principe,
+- la classe-template `std::tuple`, qui permet de représenter un N-uplet contenant n'importe quels types.
 
 L'objectif de cette section sera de vous apprendre à définir vos propres templates variadiques.
 
@@ -18,8 +18,12 @@ L'objectif de cette section sera de vous apprendre à définir vos propres templ
 
 Commençons par la syntaxe permettant d'indiquer qu'un template peut recevoir un nombre variable de paramètres.
 ```cpp
-template <typename... Ts>   // -> on écrit `...` entre le type (ici typename) et le nom du paramètre (ici T)
-void fcn(Ts... params)      // -> on écrit encore `...` entre le type (ici Ts) et le nom du paramètre (ici params) 
+// On écrit `...` entre le type et le nom du paramètre template
+//                vvv
+template <typename... Ts>    -> 
+void fcn(Ts... params)      
+//         ^^^
+// On écrit de nouveau `...` entre le type et le nom du paramètre
 ```
 
 On parlera de **parameter pack de template** pour désigner `Ts` et de **parameter pack de fonction** pour désigner `params`.

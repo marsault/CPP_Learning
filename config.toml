@@ -34,13 +34,9 @@ title = "C++::"
 weight = 1
 languageName = "Français"
 
-[[menu.shortcuts]]
-name = "<i class='fab fa-github'></i> Dépôt exercice du cours"
-url = "https://github.com/marsault/CPP_Learning_Code/"
-weight = 1
 
 [[menu.shortcuts]]
-name = "<i class='fab fa-github'></i> Dépôt TPs"
+name = "<i class='fab fa-github'></i> Dépôt git des sujets de TPs"
 url = "https://github.com/marsault/CPP_Exercises/"
 weight = 2
 
@@ -49,15 +45,15 @@ name = "<i class='far fa-file-powerpoint'></i> Slides"
 url = "/slides"
 weight = 3
 
-[[menu.shortcuts]]
-name = "<i class='far fa-list-alt'></i> Workflow"
-url = "/workflow"
-weight = 4
+#[[menu.shortcuts]]
+#name = "<i class='far fa-list-alt'></i> Workflow"
+#url = "/workflow"
+#weight = 4
 
-[[menu.shortcuts]]
-name = "<i class='fas fa-question-circle'></i> FAQ"
-url = "/faq"
-weight = 5
+#[[menu.shortcuts]]
+#name = "<i class='fas fa-question-circle'></i> FAQ"
+#url = "/faq"
+#weight = 5
 
 [[menu.shortcuts]]
 name = "<i class='fa fa-rocket'></i> Astuces"
@@ -70,6 +66,6 @@ url = "https://godbolt.org/"
 weight = 7
 
 [[menu.shortcuts]]
-name = "<i class='fas fa-passport'></i> CPP-Ref"
+name = "<i class='fas fa-passport'></i> (Copie locale de) CPP-Ref"
 url = "https://www-igm.univ-mlv.fr/~marsault/cpp/ref/en/"
 weight = 8

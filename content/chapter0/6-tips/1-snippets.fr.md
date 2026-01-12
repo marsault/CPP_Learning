@@ -1,6 +1,7 @@
 ---
 title: "Petits programmes"
 weight: 1
+hidden: true
 ---
 
 Voici 2 solutions permettant de compiler et de tester rapidement des petits programme.

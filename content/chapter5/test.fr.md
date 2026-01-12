@@ -13,14 +13,6 @@ J'espère donc que ce chapitre a rempli ses objectifs et que vous vous sentez ma
 
 {{% test chapter=5 %}}
 
-
-```cpp
-int main() 
-{
-
-}
-```
-
 {{% test_item %}}
 Citez 3 informations que vous pouvez retrouver dans l'en-tête de la documentation d'une classe.
 {{% /test_item %}}
@@ -100,15 +92,22 @@ Définissez une variable de ce type, contenant les valeurs `'a'`, `'b'` et `'c'`
 {{% /test_item %}}
 
 {{% test_item %}}
-Quelle classe permet de passer une chaîne littérale à une fonction sans faire d'allocation dynamique et sans passer de pointeur ?
-{{% /test_item %}}
-
-{{% test_item %}}
-Quelles classes faut-il utiliser pour représenter un ensemble de valeurs uniques ? Indiquez la complexité en temps des opérations d'insertions pour chacune d'entre elles.
+Quelles classes faut-il utiliser pour représenter une collections dans laquelle chaque valeur ne peut pas apparaître plus d'une fois ? Indiquez la complexité en temps des opérations d'insertions pour chacune d'entre elles.
 {{% /test_item %}}
 
 {{% test_item %}}
 Quelle classe permet de retourner plusieurs valeurs d'une fonction facilement ?
+{{% /test_item %}}
+
+---
+
+{{% test_item %}}
+Quel type doit-on utiliser pour un pointeur ownant? un pointeur observant? (le type pointé est `A`).
+{{% /test_item %}}
+
+{{% test_item %}}
+Une fonction `my_func` a pour prototype `void my_func(std::unique_ptr<std::string>& arg)`; notez la `&`.
+Est-ce que la chaine de caractère `*arg` sera désinstanciée à la fin de la fonction `my_func`?
 {{% /test_item %}}
 
 ---
