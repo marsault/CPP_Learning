@@ -10,35 +10,35 @@ Constructeur à paramètres Ouvrez le fichier chap-02/2-constructor.cpp. Il cont
 Vous aviez implémenté une fonction-membre set_name dans la classe Person pour initialiser l’attribut _name. Or, ce serait bien d’une part de réellement pouvoir initialiser cet attribut plutôt que de le modifier après l’instanciation, et d’autre part, de supprimer ce setter, afin qu’une fois initialisé, il ne soit plus possible de modifier _name.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Constructeur :: C&#43;&#43;">
+    <meta name="twitter:title" content="C&#43;&#43;::   Constructeur">
     <meta name="twitter:description" content="Dans cet exercice, vous apprendrez à paramétrer la construction de vos objets.
 Constructeur à paramètres Ouvrez le fichier chap-02/2-constructor.cpp. Il contient une correction de l’exercice précédent.
 Vous aviez implémenté une fonction-membre set_name dans la classe Person pour initialiser l’attribut _name. Or, ce serait bien d’une part de réellement pouvoir initialiser cet attribut plutôt que de le modifier après l’instanciation, et d’autre part, de supprimer ce setter, afin qu’une fois initialisé, il ne soit plus possible de modifier _name.">
     <meta property="og:url" content="/chapter2/3-constructor/index.html">
-    <meta property="og:site_name" content="C&#43;&#43;">
-    <meta property="og:title" content="Constructeur :: C&#43;&#43;">
+    <meta property="og:site_name" content="C&#43;&#43;::">
+    <meta property="og:title" content="C&#43;&#43;::   Constructeur">
     <meta property="og:description" content="Dans cet exercice, vous apprendrez à paramétrer la construction de vos objets.
 Constructeur à paramètres Ouvrez le fichier chap-02/2-constructor.cpp. Il contient une correction de l’exercice précédent.
 Vous aviez implémenté une fonction-membre set_name dans la classe Person pour initialiser l’attribut _name. Or, ce serait bien d’une part de réellement pouvoir initialiser cet attribut plutôt que de le modifier après l’instanciation, et d’autre part, de supprimer ce setter, afin qu’une fois initialisé, il ne soit plus possible de modifier _name.">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Classes">
-    <meta itemprop="name" content="Constructeur :: C&#43;&#43;">
+    <meta itemprop="name" content="C&#43;&#43;::   Constructeur">
     <meta itemprop="description" content="Dans cet exercice, vous apprendrez à paramétrer la construction de vos objets.
 Constructeur à paramètres Ouvrez le fichier chap-02/2-constructor.cpp. Il contient une correction de l’exercice précédent.
 Vous aviez implémenté une fonction-membre set_name dans la classe Person pour initialiser l’attribut _name. Or, ce serait bien d’une part de réellement pouvoir initialiser cet attribut plutôt que de le modifier après l’instanciation, et d’autre part, de supprimer ce setter, afin qu’une fois initialisé, il ne soit plus possible de modifier _name.">
     <meta itemprop="wordCount" content="1661">
-    <title>Constructeur :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1768212791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768212791" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768212791" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768212791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768212791" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768212791" rel="stylesheet">
-    <link href="../../css/fonts.css?1768212791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768212791" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768212791" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768212791" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768212791" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768212791" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768212791"></script>
+    <title>C&#43;&#43;::   Constructeur</title>
+    <link href="../../css/fontawesome-all.min.css?1768212975" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768212975" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768212975" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768212975" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768212975" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768212975" rel="stylesheet">
+    <link href="../../css/fonts.css?1768212975" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768212975" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768212975" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768212975" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768212975" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768212975" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768212975"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -511,9 +511,9 @@ Vous pouvez très bien implémenter vous-même un constructeur par défaut, et l
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768212791" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768212791" defer></script>
-    <script src="../../js/theme.js?1768212791" defer></script>
+    <script src="../../js/clipboard.min.js?1768212975" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768212975" defer></script>
+    <script src="../../js/theme.js?1768212975" defer></script>
 
 
 

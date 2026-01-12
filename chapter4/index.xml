@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Copie et déplacement :: C&#43;&#43;</title>
+    <title>C&#43;&#43;::   Copie et déplacement</title>
     <link>/chapter4/index.html</link>
     <description>Dans ce chapitre, nous allons revenir en détail sur la notion de copie et aborder celle de déplacement. Plus particulièrement, nous allons voir comment définir la façon dont une classe se copie et se déplace, et quand.&#xA;Pour savoir quand un objet est déplacé ou copié, il faut d’abord comprendre les deux principales catégories de valeurs : L-value et R-value.</description>
     <generator>Hugo</generator>

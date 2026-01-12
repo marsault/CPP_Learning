@@ -9,32 +9,32 @@
 Pour savoir quand un objet est déplacé ou copié, il faut d’abord comprendre les deux principales catégories de valeurs : L-value et R-value.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Copie et déplacement :: C&#43;&#43;">
+    <meta name="twitter:title" content="C&#43;&#43;::   Copie et déplacement">
     <meta name="twitter:description" content="Dans ce chapitre, nous allons revenir en détail sur la notion de copie et aborder celle de déplacement. Plus particulièrement, nous allons voir comment définir la façon dont une classe se copie et se déplace, et quand.
 Pour savoir quand un objet est déplacé ou copié, il faut d’abord comprendre les deux principales catégories de valeurs : L-value et R-value.">
     <meta property="og:url" content="/chapter4/index.html">
-    <meta property="og:site_name" content="C&#43;&#43;">
-    <meta property="og:title" content="Copie et déplacement :: C&#43;&#43;">
+    <meta property="og:site_name" content="C&#43;&#43;::">
+    <meta property="og:title" content="C&#43;&#43;::   Copie et déplacement">
     <meta property="og:description" content="Dans ce chapitre, nous allons revenir en détail sur la notion de copie et aborder celle de déplacement. Plus particulièrement, nous allons voir comment définir la façon dont une classe se copie et se déplace, et quand.
 Pour savoir quand un objet est déplacé ou copié, il faut d’abord comprendre les deux principales catégories de valeurs : L-value et R-value.">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="website">
-    <meta itemprop="name" content="Copie et déplacement :: C&#43;&#43;">
+    <meta itemprop="name" content="C&#43;&#43;::   Copie et déplacement">
     <meta itemprop="description" content="Dans ce chapitre, nous allons revenir en détail sur la notion de copie et aborder celle de déplacement. Plus particulièrement, nous allons voir comment définir la façon dont une classe se copie et se déplace, et quand.
 Pour savoir quand un objet est déplacé ou copié, il faut d’abord comprendre les deux principales catégories de valeurs : L-value et R-value.">
     <meta itemprop="wordCount" content="60">
-    <title>Copie et déplacement :: C&#43;&#43;</title>
-    <link href="../chapter4/index.xml" rel="alternate" type="application/rss+xml" title="Copie et déplacement :: C++">
-    <link href="../css/fontawesome-all.min.css?1768212791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1768212791" rel="stylesheet"></noscript>
-    <link href="../css/nucleus.css?1768212791" rel="stylesheet">
-    <link href="../css/auto-complete.css?1768212791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1768212791" rel="stylesheet"></noscript>
-    <link href="../css/perfect-scrollbar.min.css?1768212791" rel="stylesheet">
-    <link href="../css/fonts.css?1768212791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1768212791" rel="stylesheet"></noscript>
-    <link href="../css/theme.css?1768212791" rel="stylesheet">
-    <link href="../css/theme-mine.css?1768212791" rel="stylesheet" id="R-variant-style">
-    <link href="../css/chroma-relearn-light.css?1768212791" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../css/print.css?1768212791" rel="stylesheet" media="print">
-    <script src="../js/variant.js?1768212791"></script>
+    <title>C&#43;&#43;::   Copie et déplacement</title>
+    <link href="../chapter4/index.xml" rel="alternate" type="application/rss+xml" title="C++::   Copie et déplacement">
+    <link href="../css/fontawesome-all.min.css?1768212975" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1768212975" rel="stylesheet"></noscript>
+    <link href="../css/nucleus.css?1768212975" rel="stylesheet">
+    <link href="../css/auto-complete.css?1768212975" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1768212975" rel="stylesheet"></noscript>
+    <link href="../css/perfect-scrollbar.min.css?1768212975" rel="stylesheet">
+    <link href="../css/fonts.css?1768212975" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1768212975" rel="stylesheet"></noscript>
+    <link href="../css/theme.css?1768212975" rel="stylesheet">
+    <link href="../css/theme-mine.css?1768212975" rel="stylesheet" id="R-variant-style">
+    <link href="../css/chroma-relearn-light.css?1768212975" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../css/print.css?1768212975" rel="stylesheet" media="print">
+    <script src="../js/variant.js?1768212975"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..';
@@ -205,9 +205,9 @@ Plus particulièrement, nous allons voir comment définir la façon dont une cla
         </div>
       </div>
     </aside>
-    <script src="../js/clipboard.min.js?1768212791" defer></script>
-    <script src="../js/perfect-scrollbar.min.js?1768212791" defer></script>
-    <script src="../js/theme.js?1768212791" defer></script>
+    <script src="../js/clipboard.min.js?1768212975" defer></script>
+    <script src="../js/perfect-scrollbar.min.js?1768212975" defer></script>
+    <script src="../js/theme.js?1768212975" defer></script>
 
 
 

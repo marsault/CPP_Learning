@@ -10,35 +10,35 @@ Premier std::unique_ptr Pour créer un objet sur le tas, nous allons nous servir
 Voici la syntaxe permettant d’allouer de la mémoire pour un entier :">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Unique-pointeur :: C&#43;&#43;">
+    <meta name="twitter:title" content="C&#43;&#43;::   Unique-pointeur">
     <meta name="twitter:description" content="Les primitives new et delete ne devraient être réservées qu’à des cas exceptionels. C’est bien mieux d’utiliser des unique pointeurs (c’es-à-dire d’utiliser le type std::unique_ptr) qui sont la bonne façon en C&#43;&#43; de représenter des pointeurs ownants.
 Premier std::unique_ptr Pour créer un objet sur le tas, nous allons nous servir d’un petit utilitaire appelé std::unique_ptr et de la fonction std::make_unique. Ces deux symboles se trouvent dans le header &lt;memory&gt;.
 Voici la syntaxe permettant d’allouer de la mémoire pour un entier :">
     <meta property="og:url" content="/chapter5/6-uptr/index.html">
-    <meta property="og:site_name" content="C&#43;&#43;">
-    <meta property="og:title" content="Unique-pointeur :: C&#43;&#43;">
+    <meta property="og:site_name" content="C&#43;&#43;::">
+    <meta property="og:title" content="C&#43;&#43;::   Unique-pointeur">
     <meta property="og:description" content="Les primitives new et delete ne devraient être réservées qu’à des cas exceptionels. C’est bien mieux d’utiliser des unique pointeurs (c’es-à-dire d’utiliser le type std::unique_ptr) qui sont la bonne façon en C&#43;&#43; de représenter des pointeurs ownants.
 Premier std::unique_ptr Pour créer un objet sur le tas, nous allons nous servir d’un petit utilitaire appelé std::unique_ptr et de la fonction std::make_unique. Ces deux symboles se trouvent dans le header &lt;memory&gt;.
 Voici la syntaxe permettant d’allouer de la mémoire pour un entier :">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Librairie standard">
-    <meta itemprop="name" content="Unique-pointeur :: C&#43;&#43;">
+    <meta itemprop="name" content="C&#43;&#43;::   Unique-pointeur">
     <meta itemprop="description" content="Les primitives new et delete ne devraient être réservées qu’à des cas exceptionels. C’est bien mieux d’utiliser des unique pointeurs (c’es-à-dire d’utiliser le type std::unique_ptr) qui sont la bonne façon en C&#43;&#43; de représenter des pointeurs ownants.
 Premier std::unique_ptr Pour créer un objet sur le tas, nous allons nous servir d’un petit utilitaire appelé std::unique_ptr et de la fonction std::make_unique. Ces deux symboles se trouvent dans le header &lt;memory&gt;.
 Voici la syntaxe permettant d’allouer de la mémoire pour un entier :">
     <meta itemprop="wordCount" content="1857">
-    <title>Unique-pointeur :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1768212791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768212791" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768212791" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768212791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768212791" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768212791" rel="stylesheet">
-    <link href="../../css/fonts.css?1768212791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768212791" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768212791" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768212791" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768212791" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768212791" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768212791"></script>
+    <title>C&#43;&#43;::   Unique-pointeur</title>
+    <link href="../../css/fontawesome-all.min.css?1768212975" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768212975" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768212975" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768212975" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768212975" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768212975" rel="stylesheet">
+    <link href="../../css/fonts.css?1768212975" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768212975" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768212975" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768212975" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768212975" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768212975" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768212975"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -289,12 +289,12 @@ C&rsquo;est pareil pour une classe qui a un <code>unique_ptr</code> comme attrib
 <p>Pour vous habituez à manipuler les <code>unique_ptr</code>, vous allez modifier le code du programme <code>c3-3-cat</code>.</p>
 <p>Commencez par allouer dynamiquement un objet de type <code>Cat</code> et affichez son contenu à l&rsquo;aide de l&rsquo;opérateur <code>&lt;&lt;</code> déjà défini.
 <div class="expand">
-  <input type="checkbox" id="R-expand-a68c4b6c46ba771edad8c9aec4d03e09" aria-controls="R-expandcontent-a68c4b6c46ba771edad8c9aec4d03e09">
-  <label class="expand-label" for="R-expand-a68c4b6c46ba771edad8c9aec4d03e09">
+  <input type="checkbox" id="R-expand-4ca019e30a96af041d36a16259bcd31f" aria-controls="R-expandcontent-4ca019e30a96af041d36a16259bcd31f">
+  <label class="expand-label" for="R-expand-4ca019e30a96af041d36a16259bcd31f">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-a68c4b6c46ba771edad8c9aec4d03e09" class="expand-content">
+  <div id="R-expandcontent-4ca019e30a96af041d36a16259bcd31f" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Cat.h&#34;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
@@ -310,24 +310,24 @@ C&rsquo;est pareil pour une classe qui a un <code>unique_ptr</code> comme attrib
 </div></p>
 <p>Redéfinissez le destructeur de <code>Cat</code> pour afficher du texte et vérifier que l&rsquo;objet pointé est bien détruit à la sortie du scope, lorsque le <code>unique_ptr</code> est détruit.
 <div class="expand">
-  <input type="checkbox" id="R-expand-4fb10aacb4dbb93f0401c3d4b81bdee9" aria-controls="R-expandcontent-4fb10aacb4dbb93f0401c3d4b81bdee9">
-  <label class="expand-label" for="R-expand-4fb10aacb4dbb93f0401c3d4b81bdee9">
+  <input type="checkbox" id="R-expand-a669cc12eed7693d2d3fa67ffdba074a" aria-controls="R-expandcontent-a669cc12eed7693d2d3fa67ffdba074a">
+  <label class="expand-label" for="R-expand-a669cc12eed7693d2d3fa67ffdba074a">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-4fb10aacb4dbb93f0401c3d4b81bdee9" class="expand-content">
+  <div id="R-expandcontent-a669cc12eed7693d2d3fa67ffdba074a" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="o">~</span><span class="n">Cat</span><span class="p">()</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Cat &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">_name</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; has died...&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="p">}</span></span></span></code></pre></div>
   </div>
 </div></p>
 <p>Ajoutez un constructeur à 1 paramètre à la classe <code>Cat</code> pour initialiser son attribut <code>_name</code>.<br>
 Adaptez l&rsquo;initialisation du <code>unique_ptr</code> afin que le programme puisse compiler.
 <div class="expand">
-  <input type="checkbox" id="R-expand-6e3356edae517bb4379f91287561a635" aria-controls="R-expandcontent-6e3356edae517bb4379f91287561a635">
-  <label class="expand-label" for="R-expand-6e3356edae517bb4379f91287561a635">
+  <input type="checkbox" id="R-expand-4c474f3c0062d904a920a4527f836456" aria-controls="R-expandcontent-4c474f3c0062d904a920a4527f836456">
+  <label class="expand-label" for="R-expand-4c474f3c0062d904a920a4527f836456">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-6e3356edae517bb4379f91287561a635" class="expand-content">
+  <div id="R-expandcontent-4c474f3c0062d904a920a4527f836456" class="expand-content">
 <p><code>Cat.h</code> :</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Cat</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -354,12 +354,12 @@ Adaptez l&rsquo;initialisation du <code>unique_ptr</code> afin que le programme 
 </div></p>
 <p>Créez maintenant un <code>unique_ptr&lt;Cat&gt;</code> vide et vérifiez que celui-ci est bien égal à <code>nullptr</code>.
 <div class="expand">
-  <input type="checkbox" id="R-expand-0f3fe36aa80d64ce2b5690bd413e35cf" aria-controls="R-expandcontent-0f3fe36aa80d64ce2b5690bd413e35cf">
-  <label class="expand-label" for="R-expand-0f3fe36aa80d64ce2b5690bd413e35cf">
+  <input type="checkbox" id="R-expand-90e2722bc3584519136d666811a574e1" aria-controls="R-expandcontent-90e2722bc3584519136d666811a574e1">
+  <label class="expand-label" for="R-expand-90e2722bc3584519136d666811a574e1">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-0f3fe36aa80d64ce2b5690bd413e35cf" class="expand-content">
+  <div id="R-expandcontent-90e2722bc3584519136d666811a574e1" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span> <span class="n">cat1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&#34;Felix&#34;</span><span class="p">);</span>
@@ -377,12 +377,12 @@ Adaptez l&rsquo;initialisation du <code>unique_ptr</code> afin que le programme 
 </div></p>
 <p>Réassignez ce dernier à une nouvelle instance de <code>Cat</code> allouée dynamiquement.
 <div class="expand">
-  <input type="checkbox" id="R-expand-fc2b28d208ccfba545145e28c9a3092e" aria-controls="R-expandcontent-fc2b28d208ccfba545145e28c9a3092e">
-  <label class="expand-label" for="R-expand-fc2b28d208ccfba545145e28c9a3092e">
+  <input type="checkbox" id="R-expand-8bda96d49f318f224796551b87a4f8d3" aria-controls="R-expandcontent-8bda96d49f318f224796551b87a4f8d3">
+  <label class="expand-label" for="R-expand-8bda96d49f318f224796551b87a4f8d3">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-fc2b28d208ccfba545145e28c9a3092e" class="expand-content">
+  <div id="R-expandcontent-8bda96d49f318f224796551b87a4f8d3" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span> <span class="n">cat1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&#34;Felix&#34;</span><span class="p">);</span>
@@ -402,12 +402,12 @@ Adaptez l&rsquo;initialisation du <code>unique_ptr</code> afin que le programme 
 </div></p>
 <p>Affichez si les deux <code>unique_ptr</code> sont égaux, puis si les deux objets pointés sont égaux.
 <div class="expand">
-  <input type="checkbox" id="R-expand-bcde5cb22aa2e0b9d7520ddd18255cd1" aria-controls="R-expandcontent-bcde5cb22aa2e0b9d7520ddd18255cd1">
-  <label class="expand-label" for="R-expand-bcde5cb22aa2e0b9d7520ddd18255cd1">
+  <input type="checkbox" id="R-expand-e6f680a6a372b72098ab20bd73624664" aria-controls="R-expandcontent-e6f680a6a372b72098ab20bd73624664">
+  <label class="expand-label" for="R-expand-e6f680a6a372b72098ab20bd73624664">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-bcde5cb22aa2e0b9d7520ddd18255cd1" class="expand-content">
+  <div id="R-expandcontent-e6f680a6a372b72098ab20bd73624664" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span> <span class="n">cat1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&#34;Felix&#34;</span><span class="p">);</span>
@@ -431,12 +431,12 @@ Adaptez l&rsquo;initialisation du <code>unique_ptr</code> afin que le programme 
 <p>Réinitialisez le premier <code>unique_ptr</code> afin que celui-ci détruise l&rsquo;objet sur lequel il pointe.<br>
 Vérifiez que celui-ci est maintenant bien égal à <code>nullptr</code>.
 <div class="expand">
-  <input type="checkbox" id="R-expand-a2bae7b8027bc79dedea99adc1968348" aria-controls="R-expandcontent-a2bae7b8027bc79dedea99adc1968348">
-  <label class="expand-label" for="R-expand-a2bae7b8027bc79dedea99adc1968348">
+  <input type="checkbox" id="R-expand-952d3bb026e6a7696b63b88eb9b5bc7c" aria-controls="R-expandcontent-952d3bb026e6a7696b63b88eb9b5bc7c">
+  <label class="expand-label" for="R-expand-952d3bb026e6a7696b63b88eb9b5bc7c">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-a2bae7b8027bc79dedea99adc1968348" class="expand-content">
+  <div id="R-expandcontent-952d3bb026e6a7696b63b88eb9b5bc7c" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span> <span class="n">cat1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&#34;Felix&#34;</span><span class="p">);</span>
@@ -558,13 +558,13 @@ Testez le code suivant et vérifiez qu&rsquo;il fonctionne correctement :</p>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 <p>Le programme fonctionne comme attendu car nous avons introduit un niveau intermédiaire entre la mémoire du <code>vector</code> à la mémoire des objets de type <code>Content</code>.</p>
 <p>Avant, pendant la réallocation, chacun des objets <code>Content</code> était déplacé vers une nouvelle zone de la mémoire, d&rsquo;où l&rsquo;invalidation des références.
-<a href="#R-image-c6a8ebf4e4b82a552fc9c0e396a5f9c5" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../chapter5/bag-realloc-content.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c6a8ebf4e4b82a552fc9c0e396a5f9c5"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../chapter5/bag-realloc-content.svg"></a></p>
+<a href="#R-image-7b902f022c1a101c70cb26466cb639e2" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../chapter5/bag-realloc-content.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7b902f022c1a101c70cb26466cb639e2"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../chapter5/bag-realloc-content.svg"></a></p>
 <p>Désormais, ce sont les <code>unique_ptr</code> qui sont déplacés ailleurs.
 Les éléments de type <code>Content</code> restent à leur place.<br>
 La référence <code>my_thing</code> qui pointe sur l&rsquo;un d&rsquo;entre eux reste donc valide aussi longtemps que <code>bag</code> l&rsquo;est aussi.
-<a href="#R-image-c17f944f189174cee9090b3fd72e69d8" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../chapter5/bag-realloc-ptr.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c17f944f189174cee9090b3fd72e69d8"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../chapter5/bag-realloc-ptr.svg"></a></p>
+<a href="#R-image-08e2782a0f5faad547e0c263eed83e9f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../chapter5/bag-realloc-ptr.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-08e2782a0f5faad547e0c263eed83e9f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../chapter5/bag-realloc-ptr.svg"></a></p>
 <hr>
 <h3 id="passer-un-unique_ptr">Passer un <code>unique_ptr</code></h3>
 <p>Ce n&rsquo;est pas visible dans les exemples ci-dessus, mais il reste un problème dont on a pas encore parlé: comme faire pour passer un <code>unique_ptr</code> à une fonction, constructeur ou autre?</p>
@@ -703,9 +703,9 @@ De l&rsquo;autre côté, c&rsquo;est <code>main</code> qui own le <code>Dog</cod
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768212791" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768212791" defer></script>
-    <script src="../../js/theme.js?1768212791" defer></script>
+    <script src="../../js/clipboard.min.js?1768212975" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768212975" defer></script>
+    <script src="../../js/theme.js?1768212975" defer></script>
 
 
 

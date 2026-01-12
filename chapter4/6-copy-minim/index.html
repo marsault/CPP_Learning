@@ -10,35 +10,35 @@ Un puzzle à résoudre Nous allons considérer la classe BoxedString en dessous.
 class BoxedString { std::string _str; }; Pour commencer, évaluons notre objectif: combien de copies peut-on espérer faire au minimum dans les cas typiques.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Minimiser les copies :: C&#43;&#43;">
+    <meta name="twitter:title" content="C&#43;&#43;::   Minimiser les copies">
     <meta name="twitter:description" content="Dans le chapitre 3, nous avons vu comment choisir le type des paramètres d’une fonction. Maintenant qu’on sait comment déplacer les objets, on peut faire mieux !
 Un puzzle à résoudre Nous allons considérer la classe BoxedString en dessous. Notre but est d’implémenter un constructeur qui prend un argument une chaîne de caractères pour initialiser l’attribut _str, et ce en minimisant le nombre de copies.
 class BoxedString { std::string _str; }; Pour commencer, évaluons notre objectif: combien de copies peut-on espérer faire au minimum dans les cas typiques.">
     <meta property="og:url" content="/chapter4/6-copy-minim/index.html">
-    <meta property="og:site_name" content="C&#43;&#43;">
-    <meta property="og:title" content="Minimiser les copies :: C&#43;&#43;">
+    <meta property="og:site_name" content="C&#43;&#43;::">
+    <meta property="og:title" content="C&#43;&#43;::   Minimiser les copies">
     <meta property="og:description" content="Dans le chapitre 3, nous avons vu comment choisir le type des paramètres d’une fonction. Maintenant qu’on sait comment déplacer les objets, on peut faire mieux !
 Un puzzle à résoudre Nous allons considérer la classe BoxedString en dessous. Notre but est d’implémenter un constructeur qui prend un argument une chaîne de caractères pour initialiser l’attribut _str, et ce en minimisant le nombre de copies.
 class BoxedString { std::string _str; }; Pour commencer, évaluons notre objectif: combien de copies peut-on espérer faire au minimum dans les cas typiques.">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Copie et déplacement">
-    <meta itemprop="name" content="Minimiser les copies :: C&#43;&#43;">
+    <meta itemprop="name" content="C&#43;&#43;::   Minimiser les copies">
     <meta itemprop="description" content="Dans le chapitre 3, nous avons vu comment choisir le type des paramètres d’une fonction. Maintenant qu’on sait comment déplacer les objets, on peut faire mieux !
 Un puzzle à résoudre Nous allons considérer la classe BoxedString en dessous. Notre but est d’implémenter un constructeur qui prend un argument une chaîne de caractères pour initialiser l’attribut _str, et ce en minimisant le nombre de copies.
 class BoxedString { std::string _str; }; Pour commencer, évaluons notre objectif: combien de copies peut-on espérer faire au minimum dans les cas typiques.">
     <meta itemprop="wordCount" content="857">
-    <title>Minimiser les copies :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1768212791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768212791" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768212791" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768212791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768212791" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768212791" rel="stylesheet">
-    <link href="../../css/fonts.css?1768212791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768212791" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768212791" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768212791" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768212791" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768212791" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768212791"></script>
+    <title>C&#43;&#43;::   Minimiser les copies</title>
+    <link href="../../css/fontawesome-all.min.css?1768212975" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768212975" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768212975" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768212975" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768212975" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768212975" rel="stylesheet">
+    <link href="../../css/fonts.css?1768212975" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768212975" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768212975" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768212975" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768212975" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768212975" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768212975"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -475,23 +475,23 @@ flowchart TD;
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768212791" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768212791" defer></script>
-    <script src="../../js/d3/d3-color.min.js?1768212791" defer></script>
-    <script src="../../js/d3/d3-dispatch.min.js?1768212791" defer></script>
-    <script src="../../js/d3/d3-drag.min.js?1768212791" defer></script>
-    <script src="../../js/d3/d3-ease.min.js?1768212791" defer></script>
-    <script src="../../js/d3/d3-interpolate.min.js?1768212791" defer></script>
-    <script src="../../js/d3/d3-selection.min.js?1768212791" defer></script>
-    <script src="../../js/d3/d3-timer.min.js?1768212791" defer></script>
-    <script src="../../js/d3/d3-transition.min.js?1768212791" defer></script>
-    <script src="../../js/d3/d3-zoom.min.js?1768212791" defer></script>
-    <script src="../../js/js-yaml.min.js?1768212791" defer></script>
-    <script src="../../js/mermaid.min.js?1768212791" defer></script>
+    <script src="../../js/clipboard.min.js?1768212975" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768212975" defer></script>
+    <script src="../../js/d3/d3-color.min.js?1768212975" defer></script>
+    <script src="../../js/d3/d3-dispatch.min.js?1768212975" defer></script>
+    <script src="../../js/d3/d3-drag.min.js?1768212975" defer></script>
+    <script src="../../js/d3/d3-ease.min.js?1768212975" defer></script>
+    <script src="../../js/d3/d3-interpolate.min.js?1768212975" defer></script>
+    <script src="../../js/d3/d3-selection.min.js?1768212975" defer></script>
+    <script src="../../js/d3/d3-timer.min.js?1768212975" defer></script>
+    <script src="../../js/d3/d3-transition.min.js?1768212975" defer></script>
+    <script src="../../js/d3/d3-zoom.min.js?1768212975" defer></script>
+    <script src="../../js/js-yaml.min.js?1768212975" defer></script>
+    <script src="../../js/mermaid.min.js?1768212975" defer></script>
     <script>
       window.themeUseMermaid = JSON.parse("{}");
     </script>
-    <script src="../../js/theme.js?1768212791" defer></script>
+    <script src="../../js/theme.js?1768212975" defer></script>
 
 
 

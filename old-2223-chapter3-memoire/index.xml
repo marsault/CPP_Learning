@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Gestion mémoire (2022-2023) :: C&#43;&#43;</title>
+    <title>C&#43;&#43;::   Gestion mémoire (2022-2023)</title>
     <link>/old-2223-chapter3-memoire/index.html</link>
     <description>Il existe beaucoup de langages dans lequel le concept de propriété n’existe pas. Par exemple, en Java, tout le monde et personne n’est propriétaire d’un objet. Lorsque vous créez un objet, vous obtenez une référence que vous pouvez ensuite copier et passer à n’importe quelle autre entité du programme. Tant qu’il existe encore au moins référence sur l’objet, celui-ci continue d’exister. Ce mécanisme est assuré par le garbage-collector, qui s’occupe de traquer le nombre de références de chacun des objets construits.</description>
     <generator>Hugo</generator>

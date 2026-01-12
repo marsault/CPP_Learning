@@ -9,32 +9,32 @@
 C’est donc un mécanisme extrêmement utilisé pour le traitement des erreurs (autant de programmation que d’utilisation), puisque l’erreur est remontée automatiquement jusqu’à l’endroit qui peut la traiter, sans avoir besoin de toucher au code des fonctions intermédiaires.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Exceptions :: C&#43;&#43;">
+    <meta name="twitter:title" content="C&#43;&#43;::   Exceptions">
     <meta name="twitter:description" content="Qu’est-ce qu’une exception ? En C&#43;&#43;, une exception sert à interrompre le flot classique d’exécution du programme lorsqu’un événement particulier se produit. Lorsqu’une exception est lancée, on sort du bloc courant, et on remonte la callstack autant que nécessaire, jusqu’à atteindre un bloc capable de traiter l’exception.
 C’est donc un mécanisme extrêmement utilisé pour le traitement des erreurs (autant de programmation que d’utilisation), puisque l’erreur est remontée automatiquement jusqu’à l’endroit qui peut la traiter, sans avoir besoin de toucher au code des fonctions intermédiaires.">
     <meta property="og:url" content="/old-2223-chapter8-exceptions-assert/2-exceptions/index.html">
-    <meta property="og:site_name" content="C&#43;&#43;">
-    <meta property="og:title" content="Exceptions :: C&#43;&#43;">
+    <meta property="og:site_name" content="C&#43;&#43;::">
+    <meta property="og:title" content="C&#43;&#43;::   Exceptions">
     <meta property="og:description" content="Qu’est-ce qu’une exception ? En C&#43;&#43;, une exception sert à interrompre le flot classique d’exécution du programme lorsqu’un événement particulier se produit. Lorsqu’une exception est lancée, on sort du bloc courant, et on remonte la callstack autant que nécessaire, jusqu’à atteindre un bloc capable de traiter l’exception.
 C’est donc un mécanisme extrêmement utilisé pour le traitement des erreurs (autant de programmation que d’utilisation), puisque l’erreur est remontée automatiquement jusqu’à l’endroit qui peut la traiter, sans avoir besoin de toucher au code des fonctions intermédiaires.">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Traitement d&#39;erreurs (2022-22023)">
-    <meta itemprop="name" content="Exceptions :: C&#43;&#43;">
+    <meta itemprop="name" content="C&#43;&#43;::   Exceptions">
     <meta itemprop="description" content="Qu’est-ce qu’une exception ? En C&#43;&#43;, une exception sert à interrompre le flot classique d’exécution du programme lorsqu’un événement particulier se produit. Lorsqu’une exception est lancée, on sort du bloc courant, et on remonte la callstack autant que nécessaire, jusqu’à atteindre un bloc capable de traiter l’exception.
 C’est donc un mécanisme extrêmement utilisé pour le traitement des erreurs (autant de programmation que d’utilisation), puisque l’erreur est remontée automatiquement jusqu’à l’endroit qui peut la traiter, sans avoir besoin de toucher au code des fonctions intermédiaires.">
     <meta itemprop="wordCount" content="1280">
-    <title>Exceptions :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1768212791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768212791" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768212791" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768212791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768212791" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768212791" rel="stylesheet">
-    <link href="../../css/fonts.css?1768212791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768212791" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768212791" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768212791" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768212791" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768212791" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768212791"></script>
+    <title>C&#43;&#43;::   Exceptions</title>
+    <link href="../../css/fontawesome-all.min.css?1768212975" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768212975" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768212975" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768212975" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768212975" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768212975" rel="stylesheet">
+    <link href="../../css/fonts.css?1768212975" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768212975" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768212975" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768212975" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768212975" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768212975" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768212975"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -506,9 +506,9 @@ Chacune d&rsquo;entre elle attend un message à sa construction, qui sera retour
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768212791" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768212791" defer></script>
-    <script src="../../js/theme.js?1768212791" defer></script>
+    <script src="../../js/clipboard.min.js?1768212975" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768212975" defer></script>
+    <script src="../../js/theme.js?1768212975" defer></script>
 
 
 

@@ -10,35 +10,35 @@
 En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Hello World :: C&#43;&#43;">
+    <meta name="twitter:title" content="C&#43;&#43;::   Hello World">
     <meta name="twitter:description" content="Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous verrez comment :
 écrire un programme, déclarer des variables, écrire sur la sortie standard, lire sur l’entrée standard, définir des fonctions, utiliser les structures de contrôle (conditions, boucles, switch, etc.), créer des tableaux et des chaînes de caractères, utiliser des références. Ça fait beaucoup hein ? 😈
 En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà.">
     <meta property="og:url" content="/chapter1/2-hello-world/index.html">
-    <meta property="og:site_name" content="C&#43;&#43;">
-    <meta property="og:title" content="Hello World :: C&#43;&#43;">
+    <meta property="og:site_name" content="C&#43;&#43;::">
+    <meta property="og:title" content="C&#43;&#43;::   Hello World">
     <meta property="og:description" content="Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous verrez comment :
 écrire un programme, déclarer des variables, écrire sur la sortie standard, lire sur l’entrée standard, définir des fonctions, utiliser les structures de contrôle (conditions, boucles, switch, etc.), créer des tableaux et des chaînes de caractères, utiliser des références. Ça fait beaucoup hein ? 😈
 En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà.">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Introduction au C&#43;&#43;">
-    <meta itemprop="name" content="Hello World :: C&#43;&#43;">
+    <meta itemprop="name" content="C&#43;&#43;::   Hello World">
     <meta itemprop="description" content="Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous verrez comment :
 écrire un programme, déclarer des variables, écrire sur la sortie standard, lire sur l’entrée standard, définir des fonctions, utiliser les structures de contrôle (conditions, boucles, switch, etc.), créer des tableaux et des chaînes de caractères, utiliser des références. Ça fait beaucoup hein ? 😈
 En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà.">
     <meta itemprop="wordCount" content="977">
-    <title>Hello World :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1768212791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768212791" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768212791" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768212791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768212791" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768212791" rel="stylesheet">
-    <link href="../../css/fonts.css?1768212791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768212791" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768212791" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768212791" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768212791" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768212791" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768212791"></script>
+    <title>C&#43;&#43;::   Hello World</title>
+    <link href="../../css/fontawesome-all.min.css?1768212975" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768212975" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768212975" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768212975" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768212975" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768212975" rel="stylesheet">
+    <link href="../../css/fonts.css?1768212975" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768212975" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768212975" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768212975" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768212975" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768212975" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768212975"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -221,8 +221,8 @@ Vous devriez obtenir des erreurs de ce style :</p>
         <div class="hidden-solution-content">
             <p>Vous devriez arriver sur
 <a href="https://en.cppreference.com/w/cpp/io/cout" target="_blank" rel="noopener noreferrer">cette page</a>, vous indiquant que le header à référencer est <code>&lt;iostream&gt;</code> :
-<a href="#R-image-eb6e0897b97d748afac36776d1d6c424" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/doc-cout.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-eb6e0897b97d748afac36776d1d6c424"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/doc-cout.png"></a></p>
+<a href="#R-image-fe21dce39cf9fbda68ab80cf9a52e180" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/doc-cout.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-fe21dce39cf9fbda68ab80cf9a52e180"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/doc-cout.png"></a></p>
 <p>Placez le code suivant dans votre fichier :</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
@@ -343,9 +343,9 @@ Vous pouvez donc écrire des choses comme :</p>
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768212791" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768212791" defer></script>
-    <script src="../../js/theme.js?1768212791" defer></script>
+    <script src="../../js/clipboard.min.js?1768212975" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768212975" defer></script>
+    <script src="../../js/theme.js?1768212975" defer></script>
 
 
 

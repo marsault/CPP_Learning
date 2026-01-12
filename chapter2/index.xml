@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Classes :: C&#43;&#43;</title>
+    <title>C&#43;&#43;::   Classes</title>
     <link>/chapter2/index.html</link>
     <description>L’objectif de ce chapitre est de vous apprendre à créer et utiliser des classes en C++.</description>
     <generator>Hugo</generator>
