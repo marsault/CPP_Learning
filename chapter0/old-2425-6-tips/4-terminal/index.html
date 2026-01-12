@@ -5,96 +5,36 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.128.0">
     <meta name="generator" content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619">
-    <meta name="description" content="Général Ouvrir le panneau de commandes VSCode :
-Ctrl&#43;Shift&#43;P
-Configuration, Compilation, Exécution Configurer le projet :
-CMake: Configure
-Compiler un programme :
-Shift&#43;F7 ou CMake: Build Target
-Changer le programme à exécuter :
-CMake: Set Debug Target
-Lancer le programme :
-F5 ou Debug: Start Debugging
-Debugging Placer un breakpoint à la ligne du curseur :
-F9
-Reprendre l’exécution :
-F5
-Exécuter l’instruction suivante :
-F10
-Entrer dans la fonction :">
+    <meta name="description" content="Options g&#43;&#43; et clang&#43;&#43; Si vous compilez via le terminal ou avec Compiler Explorer, nous vous conseillons d’utiliser les options ci-dessous, car nous les activerons pour vos rendus de projet :
+-std=c&#43;&#43;17 : spécifie que le projet sera compilé en C&#43;&#43;17 (sans cette option, certains fichiers peuvent ne pas compiler) -Wall -W : permet d’activer un certain nombre de warnings -Werror : transforme les warnings en erreurs, donc tant qu’il y a des warnings, le programme ne compile pas Sachez par ailleurs que vous pouvez également utiliser :">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="C&#43;&#43;::   Raccourcis VSCode">
-    <meta name="twitter:description" content="Général Ouvrir le panneau de commandes VSCode :
-Ctrl&#43;Shift&#43;P
-Configuration, Compilation, Exécution Configurer le projet :
-CMake: Configure
-Compiler un programme :
-Shift&#43;F7 ou CMake: Build Target
-Changer le programme à exécuter :
-CMake: Set Debug Target
-Lancer le programme :
-F5 ou Debug: Start Debugging
-Debugging Placer un breakpoint à la ligne du curseur :
-F9
-Reprendre l’exécution :
-F5
-Exécuter l’instruction suivante :
-F10
-Entrer dans la fonction :">
-    <meta property="og:url" content="/chapter0/6-tips/3-keybinds-commands/index.html">
+    <meta name="twitter:title" content="C&#43;&#43;::   Compilation en terminal">
+    <meta name="twitter:description" content="Options g&#43;&#43; et clang&#43;&#43; Si vous compilez via le terminal ou avec Compiler Explorer, nous vous conseillons d’utiliser les options ci-dessous, car nous les activerons pour vos rendus de projet :
+-std=c&#43;&#43;17 : spécifie que le projet sera compilé en C&#43;&#43;17 (sans cette option, certains fichiers peuvent ne pas compiler) -Wall -W : permet d’activer un certain nombre de warnings -Werror : transforme les warnings en erreurs, donc tant qu’il y a des warnings, le programme ne compile pas Sachez par ailleurs que vous pouvez également utiliser :">
+    <meta property="og:url" content="/chapter0/old-2425-6-tips/4-terminal/index.html">
     <meta property="og:site_name" content="C&#43;&#43;::">
-    <meta property="og:title" content="C&#43;&#43;::   Raccourcis VSCode">
-    <meta property="og:description" content="Général Ouvrir le panneau de commandes VSCode :
-Ctrl&#43;Shift&#43;P
-Configuration, Compilation, Exécution Configurer le projet :
-CMake: Configure
-Compiler un programme :
-Shift&#43;F7 ou CMake: Build Target
-Changer le programme à exécuter :
-CMake: Set Debug Target
-Lancer le programme :
-F5 ou Debug: Start Debugging
-Debugging Placer un breakpoint à la ligne du curseur :
-F9
-Reprendre l’exécution :
-F5
-Exécuter l’instruction suivante :
-F10
-Entrer dans la fonction :">
+    <meta property="og:title" content="C&#43;&#43;::   Compilation en terminal">
+    <meta property="og:description" content="Options g&#43;&#43; et clang&#43;&#43; Si vous compilez via le terminal ou avec Compiler Explorer, nous vous conseillons d’utiliser les options ci-dessous, car nous les activerons pour vos rendus de projet :
+-std=c&#43;&#43;17 : spécifie que le projet sera compilé en C&#43;&#43;17 (sans cette option, certains fichiers peuvent ne pas compiler) -Wall -W : permet d’activer un certain nombre de warnings -Werror : transforme les warnings en erreurs, donc tant qu’il y a des warnings, le programme ne compile pas Sachez par ailleurs que vous pouvez également utiliser :">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Mise en place">
-    <meta itemprop="name" content="C&#43;&#43;::   Raccourcis VSCode">
-    <meta itemprop="description" content="Général Ouvrir le panneau de commandes VSCode :
-Ctrl&#43;Shift&#43;P
-Configuration, Compilation, Exécution Configurer le projet :
-CMake: Configure
-Compiler un programme :
-Shift&#43;F7 ou CMake: Build Target
-Changer le programme à exécuter :
-CMake: Set Debug Target
-Lancer le programme :
-F5 ou Debug: Start Debugging
-Debugging Placer un breakpoint à la ligne du curseur :
-F9
-Reprendre l’exécution :
-F5
-Exécuter l’instruction suivante :
-F10
-Entrer dans la fonction :">
-    <meta itemprop="wordCount" content="78">
-    <title>C&#43;&#43;::   Raccourcis VSCode</title>
-    <link href="../../../css/fontawesome-all.min.css?1768212975" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1768212975" rel="stylesheet"></noscript>
-    <link href="../../../css/nucleus.css?1768212975" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1768212975" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1768212975" rel="stylesheet"></noscript>
-    <link href="../../../css/perfect-scrollbar.min.css?1768212975" rel="stylesheet">
-    <link href="../../../css/fonts.css?1768212975" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1768212975" rel="stylesheet"></noscript>
-    <link href="../../../css/theme.css?1768212975" rel="stylesheet">
-    <link href="../../../css/theme-mine.css?1768212975" rel="stylesheet" id="R-variant-style">
-    <link href="../../../css/chroma-relearn-light.css?1768212975" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../../css/print.css?1768212975" rel="stylesheet" media="print">
-    <script src="../../../js/variant.js?1768212975"></script>
+    <meta itemprop="name" content="C&#43;&#43;::   Compilation en terminal">
+    <meta itemprop="description" content="Options g&#43;&#43; et clang&#43;&#43; Si vous compilez via le terminal ou avec Compiler Explorer, nous vous conseillons d’utiliser les options ci-dessous, car nous les activerons pour vos rendus de projet :
+-std=c&#43;&#43;17 : spécifie que le projet sera compilé en C&#43;&#43;17 (sans cette option, certains fichiers peuvent ne pas compiler) -Wall -W : permet d’activer un certain nombre de warnings -Werror : transforme les warnings en erreurs, donc tant qu’il y a des warnings, le programme ne compile pas Sachez par ailleurs que vous pouvez également utiliser :">
+    <meta itemprop="wordCount" content="175">
+    <title>C&#43;&#43;::   Compilation en terminal</title>
+    <link href="../../../css/fontawesome-all.min.css?1768213972" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1768213972" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css?1768213972" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1768213972" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1768213972" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css?1768213972" rel="stylesheet">
+    <link href="../../../css/fonts.css?1768213972" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1768213972" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css?1768213972" rel="stylesheet">
+    <link href="../../../css/theme-mine.css?1768213972" rel="stylesheet" id="R-variant-style">
+    <link href="../../../css/chroma-relearn-light.css?1768213972" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../../css/print.css?1768213972" rel="stylesheet" media="print">
+    <script src="../../../js/variant.js?1768213972"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..\/..';
@@ -115,7 +55,7 @@ Entrer dans la fonction :">
       window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../../chapter0/6-tips/3-keybinds-commands/index.html">
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../../chapter0/old-2425-6-tips/4-terminal/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -129,13 +69,8 @@ Entrer dans la fonction :">
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#général">Général</a></li>
-        <li><a href="#configuration-compilation-exécution">Configuration, Compilation, Exécution</a></li>
-        <li><a href="#debugging">Debugging</a></li>
-      </ul>
-    </li>
+    <li><a href="#options-g-et-clang">Options g++ et clang++</a></li>
+    <li><a href="#compilation-avec-cmake">Compilation avec CMake</a></li>
   </ul>
 </nav>
                 </div>
@@ -145,13 +80,13 @@ Entrer dans la fonction :">
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../index.html"><span itemprop="name">Accueil</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../chapter0/index.html"><span itemprop="name">Mise en place</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../chapter0/6-tips/index.html"><span itemprop="name">Astuces</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Raccourcis VSCode</span><meta itemprop="position" content="4"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../chapter0/old-2425-6-tips/index.html"><span itemprop="name">Astuces</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Compilation en terminal</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../../chapter0/6-tips/index.html" title="Astuces (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../../chapter0/old-2425-6-tips/index.html" title="Astuces (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../../chapter0/6-tips/4-terminal/index.html" title="Compilation en terminal (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../../chapter0/test/index.html" title="Retours ? (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -171,33 +106,32 @@ Entrer dans la fonction :">
   <header class="headline">
   </header>
 
-<h1 id="raccourcis-vscode">Raccourcis VSCode</h1>
+<h1 id="compilation-en-terminal">Compilation en terminal</h1>
 
-<h3 id="général">Général</h3>
-<p>Ouvrir le panneau de commandes VSCode :<br>
-<strong>Ctrl+Shift+P</strong></p>
+<h2 id="options-g-et-clang">Options g++ et clang++</h2>
+<p>Si vous compilez via le terminal ou avec <a href="https://godbolt.org/" rel="external" target="_blank">Compiler Explorer</a>, nous vous conseillons d&rsquo;utiliser les options ci-dessous, car nous les activerons pour vos rendus de projet :</p>
+<ul>
+<li><code>-std=c++17</code> : spécifie que le projet sera compilé en C++17 (sans cette option, certains fichiers peuvent ne pas compiler)</li>
+<li><code>-Wall -W</code> : permet d&rsquo;activer un certain nombre de warnings</li>
+<li><code>-Werror</code> : transforme les warnings en erreurs, donc tant qu&rsquo;il y a des warnings, le programme ne compile pas</li>
+</ul>
+<p>Sachez par ailleurs que vous pouvez également utiliser :</p>
+<ul>
+<li><code>-g</code> : ajoute des informations supplémentaires à l&rsquo;exécutable, afin de pouvoir le débugger plus facilement</li>
+</ul>
 <hr>
-<h3 id="configuration-compilation-exécution">Configuration, Compilation, Exécution</h3>
-<p>Configurer le projet :<br>
-<code>CMake: Configure</code></p>
-<p>Compiler un programme :<br>
-<strong>Shift+F7</strong> ou <code>CMake: Build Target</code></p>
-<p>Changer le programme à exécuter :<br>
-<code>CMake: Set Debug Target</code></p>
-<p>Lancer le programme :<br>
-<strong>F5</strong> ou <code>Debug: Start Debugging</code></p>
-<hr>
-<h3 id="debugging">Debugging</h3>
-<p>Placer un breakpoint à la ligne du curseur :<br>
-<strong>F9</strong></p>
-<p>Reprendre l&rsquo;exécution :<br>
-<strong>F5</strong></p>
-<p>Exécuter l&rsquo;instruction suivante :<br>
-<strong>F10</strong></p>
-<p>Entrer dans la fonction :<br>
-<strong>F11</strong></p>
-<p>Sortir de la fonction :<br>
-<strong>Shift+F11</strong></p>
+<h2 id="compilation-avec-cmake">Compilation avec CMake</h2>
+<ol>
+<li>Se placer à la racine du projet (le répertoire le plus haut contenant un fichier CMakeLists.txt) :<br>
+<code>cd /path/to/project/folder</code></li>
+<li>Créer un répertoire build/ si celui-ci n&rsquo;existe pas déjà et se placer dedans :<br>
+<code>mkdir build</code><br>
+<code>cd build</code></li>
+<li>Configurer le projet (&rsquo;..&rsquo; permet ici de cibler la racine du projet en étant placé dans le dossier build/) :<br>
+<code>cmake ..</code></li>
+<li>Compiler tous les éléments du projet :<br>
+<code>cmake --build .</code></li>
+</ol>
 
   <footer class="footline">
   </footer>
@@ -224,9 +158,8 @@ Entrer dans la fonction :">
             <li class="" data-nav-id="/chapter0/2-vscode/index.html"><a class="padding" href="../../../chapter0/2-vscode/index.html"><span class="presection-icon" ><img src="../../../logo/vscode.svg"/></span>Visual Studio Code/Codium<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter0/3-cmake/index.html"><a class="padding" href="../../../chapter0/3-cmake/index.html"><span class="presection-icon" ><img src="../../../logo/cmake.svg"/></span>CMake<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter0/4-git/index.html"><a class="padding" href="../../../chapter0/4-git/index.html"><span class="presection-icon" ><img src="../../../logo/git.svg"/></span>Git<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="parent alwaysopen " data-nav-id="/chapter0/6-tips/index.html"><a class="padding" href="../../../chapter0/6-tips/index.html"><span class="presection-icon">💡</span>Astuces<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-fc3d52d173219407314c2b6a52f2126d" class="collapsible-menu">
-            <li class="active hidden " data-nav-id="/chapter0/6-tips/3-keybinds-commands/index.html"><a class="padding" href="../../../chapter0/6-tips/3-keybinds-commands/index.html">Raccourcis VSCode<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter0/6-tips/4-terminal/index.html"><a class="padding" href="../../../chapter0/6-tips/4-terminal/index.html">Compilation en terminal<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent hidden alwaysopen " data-nav-id="/chapter0/old-2425-6-tips/index.html"><a class="padding" href="../../../chapter0/old-2425-6-tips/index.html"><span class="presection-icon">💡</span>Astuces<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c4e57c4adc5de431a990a0b3fd465891" class="collapsible-menu">
+            <li class="active " data-nav-id="/chapter0/old-2425-6-tips/4-terminal/index.html"><a class="padding" href="../../../chapter0/old-2425-6-tips/4-terminal/index.html">Compilation en terminal<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter0/test/index.html"><a class="padding" href="../../../chapter0/test/index.html"><span class="presection-icon">📧</span>Retours ?<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter1/index.html"><a class="padding" href="../../../chapter1/index.html"><span class="chapnum">1.</span>&ensp;Introduction au C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-6c398714eae4372920aec3a1e6c2e143" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter2/index.html"><a class="padding" href="../../../chapter2/index.html"><span class="chapnum">2.</span>&ensp;Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b1df0095a9fd74320697a6d478418ec3" class="collapsible-menu"></ul></li>
@@ -245,7 +178,7 @@ Entrer dans la fonction :">
           <ul class="space">
             <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt git des sujets de TPs</a></li>
             <li><a class="padding" href="../../../slides/index.html"><i class='far fa-file-powerpoint'></i> Slides</a></li>
-            <li><a class="padding" href="../../../chapter0/6-tips/index.html"><i class='fa fa-rocket'></i> Astuces</a></li>
+            <li><a class="padding" href="../../../chapter0/6-tips/"><i class='fa fa-rocket'></i> Astuces</a></li>
             <li><a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a></li>
             <li><a class="padding" href="https://www-igm.univ-mlv.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> (Copie locale de) CPP-Ref</a></li>
           </ul>
@@ -262,7 +195,7 @@ Entrer dans la fonction :">
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Langue</label>
                     <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
-                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../../chapter0/6-tips/3-keybinds-commands/index.html" lang="fr" selected>Français</option>
+                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../../chapter0/old-2425-6-tips/4-terminal/index.html" lang="fr" selected>Français</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -300,9 +233,9 @@ Entrer dans la fonction :">
         </div>
       </div>
     </aside>
-    <script src="../../../js/clipboard.min.js?1768212975" defer></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1768212975" defer></script>
-    <script src="../../../js/theme.js?1768212975" defer></script>
+    <script src="../../../js/clipboard.min.js?1768213972" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1768213972" defer></script>
+    <script src="../../../js/theme.js?1768213972" defer></script>
 
 
 
@@ -320,7 +253,7 @@ Entrer dans la fonction :">
             onchange="updateQuestionFormSubject()" />
         <textarea name="question" rows="7" cols="30" placeholder="Mon message..."></textarea>
         <input type="hidden" name="selection" />
-        <input type="hidden" name="page" value="/chapter0/6-tips/3-keybinds-commands/" />
+        <input type="hidden" name="page" value="/chapter0/old-2425-6-tips/4-terminal/" />
 
         <input type="hidden" name="_replyto" />
         <input type="hidden" name="_subject" />
