@@ -45,16 +45,16 @@ La cible à compiler est c5-3-associatives.
 Les sets (ensembles) Un set est un conteneur dans lequel les éléments sont “indexés par eux-mêmes”.">
     <meta itemprop="wordCount" content="1983">
     <title>C&#43;&#43;::   Conteneurs associatifs</title>
-    <link href="../../css/fontawesome-all.min.css?1768213972" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768213972" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768213972" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768213972" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768213972" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768213972" rel="stylesheet">
-    <link href="../../css/fonts.css?1768213972" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768213972" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768213972" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768213972" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768213972" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768213972" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768213972"></script>
+    <link href="../../css/fontawesome-all.min.css?1768248022" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768248022" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768248022" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768248022" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768248022" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768248022" rel="stylesheet">
+    <link href="../../css/fonts.css?1768248022" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768248022" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768248022" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768248022" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768248022" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768248022" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768248022"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -147,12 +147,12 @@ Vous allez donc ici voir les différents types de conteneurs associatifs propos�
 </ul>
 <p>Dans la librairie standard, vous pouvez trouver <code>std::set</code> et <code>std::unordered_set</code> qui permettent de manipuler des sets. En analysant leur documentation, pouvez-vous identifier les différences principales entre ces deux classes ?</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-991a6792a8616ba2b2b4227abcbfb233" aria-controls="R-expandcontent-991a6792a8616ba2b2b4227abcbfb233">
-  <label class="expand-label" for="R-expand-991a6792a8616ba2b2b4227abcbfb233">
+  <input type="checkbox" id="R-expand-51bdcd27a30035f3f794e185dcaf6940" aria-controls="R-expandcontent-51bdcd27a30035f3f794e185dcaf6940">
+  <label class="expand-label" for="R-expand-51bdcd27a30035f3f794e185dcaf6940">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-991a6792a8616ba2b2b4227abcbfb233" class="expand-content">
+  <div id="R-expandcontent-51bdcd27a30035f3f794e185dcaf6940" class="expand-content">
 <p>Complexité :</p>
 <ul>
 <li><code>std::set</code> est implémenté (généralement) comme un arbre binaire de recherche. Les opérations d&rsquo;insertions, de recherches et de comparaison s&rsquo;effectuent donc en temps logarithmique. En ce qui concerne l&rsquo;espace mémoire utilisé, les arbres binaires de recherche ont généralement besoin d&rsquo;autant de mémoire qu&rsquo;il y a d&rsquo;éléments à stocker, c&rsquo;est-à-dire O(n).</li>
@@ -205,12 +205,12 @@ Votre objectif sera d&rsquo;ajouter les fonctions nécessaires pour utiliser ces
 <p>Commencez par définir un <code>set</code> contenant des <code>ComparableDog</code> dans la fonction <code>main</code>. Essayez de compiler. Jusque là, tout devrait bien se passer.<br>
 Instanciez maintenant une variable de type <code>ComparableDog</code>, et ajoutez-là à votre <code>set</code>.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-ac9ac53b3c3571421ca25140022661be" aria-controls="R-expandcontent-ac9ac53b3c3571421ca25140022661be">
-  <label class="expand-label" for="R-expand-ac9ac53b3c3571421ca25140022661be">
+  <input type="checkbox" id="R-expand-00c4dd88dec326567cb05316f3a4a8a2" aria-controls="R-expandcontent-00c4dd88dec326567cb05316f3a4a8a2">
+  <label class="expand-label" for="R-expand-00c4dd88dec326567cb05316f3a4a8a2">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-ac9ac53b3c3571421ca25140022661be" class="expand-content">
+  <div id="R-expandcontent-00c4dd88dec326567cb05316f3a4a8a2" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">set</span><span class="o">&lt;</span><span class="n">ComparableDog</span><span class="o">&gt;</span> <span class="n">dogs</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">ComparableDog</span> <span class="n">medor</span> <span class="p">{</span> <span class="s">&#34;medor&#34;</span><span class="p">,</span> <span class="s">&#34;labrador&#34;</span> <span class="p">};</span>
@@ -220,24 +220,24 @@ Instanciez maintenant une variable de type <code>ComparableDog</code>, et ajoute
 <p>Essayez à nouveau de compiler. Vos yeux devraient désormais commencer à saigner, ce qui est normal. Je vous rassure, avec un peu d&rsquo;entraînement, cela n&rsquo;arrivera plus.<br>
 Du coup, essuyez vos larmes et enfilez vos lunettes si vous en avez, et tentez d&rsquo;identifier ce que le compilateur essaye de vous communiquer.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-ea486555126a6e10ea840760b5b33719" aria-controls="R-expandcontent-ea486555126a6e10ea840760b5b33719">
-  <label class="expand-label" for="R-expand-ea486555126a6e10ea840760b5b33719">
+  <input type="checkbox" id="R-expand-e1da062a275892e477b2372e8ce4a6c7" aria-controls="R-expandcontent-e1da062a275892e477b2372e8ce4a6c7">
+  <label class="expand-label" for="R-expand-e1da062a275892e477b2372e8ce4a6c7">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-ea486555126a6e10ea840760b5b33719" class="expand-content">
+  <div id="R-expandcontent-e1da062a275892e477b2372e8ce4a6c7" class="expand-content">
 <p>Le compilateur essaye simplement de vous dire qu&rsquo;il n&rsquo;arrive pas à trouver de fonction permettant d&rsquo;évaluer l&rsquo;expression <code>x &lt; y</code>.<br>
 Vous allez donc devoir définir un opérateur de comparaison pour la classe <code>ComparableDog</code>.</p>
   </div>
 </div>
 <p>Implémentez ce qu&rsquo;il manque pour que votre programme compile.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-2039abaaf6911bdb6a9053011c61f061" aria-controls="R-expandcontent-2039abaaf6911bdb6a9053011c61f061">
-  <label class="expand-label" for="R-expand-2039abaaf6911bdb6a9053011c61f061">
+  <input type="checkbox" id="R-expand-249207f3ac836c8b7944f9b6c05e5e09" aria-controls="R-expandcontent-249207f3ac836c8b7944f9b6c05e5e09">
+  <label class="expand-label" for="R-expand-249207f3ac836c8b7944f9b6c05e5e09">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-2039abaaf6911bdb6a9053011c61f061" class="expand-content">
+  <div id="R-expandcontent-249207f3ac836c8b7944f9b6c05e5e09" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ComparableDog</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
@@ -270,12 +270,12 @@ Vous allez donc devoir définir un opérateur de comparaison pour la classe <cod
 <p>Créez maintenant une nouvelle instance de <code>ComparableDog</code>, différente de la première, et ajoutez-là au set.<br>
 Affichez le nombre d&rsquo;éléments du set pour vérifier qu&rsquo;il en contient maintenant 2.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-a446c788dfc833b7ff6c1196fc1cfbb7" aria-controls="R-expandcontent-a446c788dfc833b7ff6c1196fc1cfbb7">
-  <label class="expand-label" for="R-expand-a446c788dfc833b7ff6c1196fc1cfbb7">
+  <input type="checkbox" id="R-expand-007230410aef1974817f4b3f4809abe7" aria-controls="R-expandcontent-007230410aef1974817f4b3f4809abe7">
+  <label class="expand-label" for="R-expand-007230410aef1974817f4b3f4809abe7">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-a446c788dfc833b7ff6c1196fc1cfbb7" class="expand-content">
+  <div id="R-expandcontent-007230410aef1974817f4b3f4809abe7" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">ComparableDog</span> <span class="n">gus</span> <span class="p">{</span> <span class="s">&#34;gus&#34;</span><span class="p">,</span> <span class="s">&#34;bordercollie&#34;</span> <span class="p">};</span>
 </span></span><span class="line"><span class="cl"><span class="n">dogs</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">gus</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
@@ -285,12 +285,12 @@ Affichez le nombre d&rsquo;éléments du set pour vérifier qu&rsquo;il en conti
 <p>Instanciez maintenant une copie de votre premier chien, et ajoutez-là à votre set.<br>
 Combien y a-t-il d&rsquo;éléments dans le <code>set</code> après cette opération ? Pourquoi ?</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-5ef27bd4de3b6a6afa1ca6c8a3deb1d5" aria-controls="R-expandcontent-5ef27bd4de3b6a6afa1ca6c8a3deb1d5">
-  <label class="expand-label" for="R-expand-5ef27bd4de3b6a6afa1ca6c8a3deb1d5">
+  <input type="checkbox" id="R-expand-9932021b4b2a2ccdfa14d28f5a5c6f1d" aria-controls="R-expandcontent-9932021b4b2a2ccdfa14d28f5a5c6f1d">
+  <label class="expand-label" for="R-expand-9932021b4b2a2ccdfa14d28f5a5c6f1d">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-5ef27bd4de3b6a6afa1ca6c8a3deb1d5" class="expand-content">
+  <div id="R-expandcontent-9932021b4b2a2ccdfa14d28f5a5c6f1d" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">ComparableDog</span> <span class="n">medor_clone</span> <span class="o">=</span> <span class="n">medor</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="n">dogs</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">medor_clone</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
@@ -304,12 +304,12 @@ Combien y a-t-il d&rsquo;éléments dans le <code>set</code> après cette opéra
 <p>Commencez par définir un <code>unordered_set</code> contenant des <code>HashableDog</code> dans la fonction <code>main</code> et essayez de compiler. Vous devriez vous retrouver avec un paquet d&rsquo;erreurs.<br>
 Comme tout à l&rsquo;heure, essayez d&rsquo;identifier la cause de leur déclenchement.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-3d7af0a1280de096434c1c4b03a94240" aria-controls="R-expandcontent-3d7af0a1280de096434c1c4b03a94240">
-  <label class="expand-label" for="R-expand-3d7af0a1280de096434c1c4b03a94240">
+  <input type="checkbox" id="R-expand-70d00470debfaeddb5f1fd48302033e6" aria-controls="R-expandcontent-70d00470debfaeddb5f1fd48302033e6">
+  <label class="expand-label" for="R-expand-70d00470debfaeddb5f1fd48302033e6">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-3d7af0a1280de096434c1c4b03a94240" class="expand-content">
+  <div id="R-expandcontent-70d00470debfaeddb5f1fd48302033e6" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">HashableDog</span><span class="o">&gt;</span> <span class="n">dogs</span><span class="p">;</span></span></span></code></pre></div>
 <p>Ici, la première erreur n&rsquo;aide pas du tout : &ldquo;use of deleted function &lsquo;std::unordered_set&lt;$£^p%*ù$&gt;&rsquo;&rdquo;.<br>
 Il faut donc scroller plus bas, jusqu&rsquo;à tomber sur celle-ci : &ldquo;use of deleted function &lsquo;std::hash<HashableDog>::hash()&rsquo;.</p>
@@ -348,12 +348,12 @@ En ce qui concerne le contenu de la fonction, vous allez devoir générer un has
 <p>Implémentez le contenu de <code>hash&lt;HashableDog&gt;::operator()</code>.<br>
 Afin de pouvoir accéder aux attributs de <code>HashableDog</code> depuis cette fonction, vous pouvez les déplacer dans la partie publique.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-4d708dc0b7caea707e951a54ab836623" aria-controls="R-expandcontent-4d708dc0b7caea707e951a54ab836623">
-  <label class="expand-label" for="R-expand-4d708dc0b7caea707e951a54ab836623">
+  <input type="checkbox" id="R-expand-de1e3f96ceb4f09c8ca19b41813ccdc3" aria-controls="R-expandcontent-de1e3f96ceb4f09c8ca19b41813ccdc3">
+  <label class="expand-label" for="R-expand-de1e3f96ceb4f09c8ca19b41813ccdc3">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-4d708dc0b7caea707e951a54ab836623" class="expand-content">
+  <div id="R-expandcontent-de1e3f96ceb4f09c8ca19b41813ccdc3" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">size_t</span> <span class="nf">operator</span><span class="p">()(</span><span class="k">const</span> <span class="n">HashableDog</span><span class="o">&amp;</span> <span class="n">dog</span><span class="p">)</span> <span class="k">const</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">hash</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">hash_fcn</span><span class="p">;</span>
@@ -365,12 +365,12 @@ Afin de pouvoir accéder aux attributs de <code>HashableDog</code> depuis cette 
 <p>Une fois que cela compile, refactorisez votre code pour remettre les attributs dans la partie privée.<br>
 Pour cela, définissez une fonction-membre publique <code>get_hash</code> dans la classe <code>HashableDog</code>, que vous appelerez depuis <code>hash&lt;HashableDog&gt;::operator()</code>.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-821499c3770e0e8926402f9fd2032935" aria-controls="R-expandcontent-821499c3770e0e8926402f9fd2032935">
-  <label class="expand-label" for="R-expand-821499c3770e0e8926402f9fd2032935">
+  <input type="checkbox" id="R-expand-70123faa1c90c45c211e4c64ffbe2df8" aria-controls="R-expandcontent-70123faa1c90c45c211e4c64ffbe2df8">
+  <label class="expand-label" for="R-expand-70123faa1c90c45c211e4c64ffbe2df8">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-821499c3770e0e8926402f9fd2032935" class="expand-content">
+  <div id="R-expandcontent-70123faa1c90c45c211e4c64ffbe2df8" class="expand-content">
 <p>N&rsquo;oubliez pas le <code>const</code> dans la signature de <code>get_hash</code>. En effet, vous ne pourrez pas appeler <code>get_hash</code> sur un <code>const HashableDog&amp;</code> si vous oubliez de le mettre.</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">HashableDog</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -404,12 +404,12 @@ Pour cela, définissez une fonction-membre publique <code>get_hash</code> dans l
 <p>Instanciez maintenant une variable de type <code>HashableDog</code>, ajoutez-là à votre set et essayez de compiler.<br>
 Comme vous pouvez le voir, aujourd&rsquo;hui, le compilateur de vous apprécie pas. Déterminez à partir des erreurs de compilation ce qu&rsquo;il manque dans la classe <code>HashableDog</code> pour que le programme compile.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-6e62bf0f8198042441221bc53dfbae81" aria-controls="R-expandcontent-6e62bf0f8198042441221bc53dfbae81">
-  <label class="expand-label" for="R-expand-6e62bf0f8198042441221bc53dfbae81">
+  <input type="checkbox" id="R-expand-16808bb8fde6820576d006e2c662391d" aria-controls="R-expandcontent-16808bb8fde6820576d006e2c662391d">
+  <label class="expand-label" for="R-expand-16808bb8fde6820576d006e2c662391d">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-6e62bf0f8198042441221bc53dfbae81" class="expand-content">
+  <div id="R-expandcontent-16808bb8fde6820576d006e2c662391d" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">HashableDog</span><span class="o">&gt;</span> <span class="n">dogs</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">HashableDog</span> <span class="n">medor</span> <span class="p">{</span> <span class="s">&#34;medor&#34;</span><span class="p">,</span> <span class="s">&#34;labrador&#34;</span> <span class="p">};</span>
@@ -419,12 +419,12 @@ Comme vous pouvez le voir, aujourd&rsquo;hui, le compilateur de vous apprécie p
 </div>
 <p>Ajoutez la fonction manquante (même signature que <code>operator&lt;</code>) et vérifiez ensuite que tout fonctionne.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-2159670da95dfbba24d05497185f64d4" aria-controls="R-expandcontent-2159670da95dfbba24d05497185f64d4">
-  <label class="expand-label" for="R-expand-2159670da95dfbba24d05497185f64d4">
+  <input type="checkbox" id="R-expand-adca6ab88ac7df830c2a4f5dd63d1b14" aria-controls="R-expandcontent-adca6ab88ac7df830c2a4f5dd63d1b14">
+  <label class="expand-label" for="R-expand-adca6ab88ac7df830c2a4f5dd63d1b14">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-2159670da95dfbba24d05497185f64d4" class="expand-content">
+  <div id="R-expandcontent-adca6ab88ac7df830c2a4f5dd63d1b14" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">HashableDog</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
@@ -452,12 +452,12 @@ En particulier, vous retrouvez les mêmes contraintes sur le type des clefs :</p
 <p>Vous allez maintenant définir une variable de type <code>std::map&lt;key, value&gt;</code> qui stocke pour chaque chien (= clef) le nom et prénom de son propriétaire (= valeur).<br>
 Quel type pouvez-vous utiliser pour la clef ? Pour la valeur, vous pouvez utiliser une <code>std::pair&lt;std::string, std::string&gt;</code> (n&rsquo;hésitez pas à créer un alias).</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-89f0b35ceb46f84d04da94ab0866d999" aria-controls="R-expandcontent-89f0b35ceb46f84d04da94ab0866d999">
-  <label class="expand-label" for="R-expand-89f0b35ceb46f84d04da94ab0866d999">
+  <input type="checkbox" id="R-expand-c39020eef48512f87aedcfa6e4aafcfe" aria-controls="R-expandcontent-c39020eef48512f87aedcfa6e4aafcfe">
+  <label class="expand-label" for="R-expand-c39020eef48512f87aedcfa6e4aafcfe">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-89f0b35ceb46f84d04da94ab0866d999" class="expand-content">
+  <div id="R-expandcontent-c39020eef48512f87aedcfa6e4aafcfe" class="expand-content">
 <p>Pour la clef, on peut réutiliser la classe <code>ComparableDog</code>, qui dispose déjà d&rsquo;un opérateur de comparaison.</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">using</span> <span class="n">Owner</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">ComparableDog</span><span class="p">,</span> <span class="n">Owner</span><span class="o">&gt;</span> <span class="n">owners_by_dog</span><span class="p">;</span></span></span></code></pre></div>
@@ -465,12 +465,12 @@ Quel type pouvez-vous utiliser pour la clef ? Pour la valeur, vous pouvez utilis
 </div>
 <p>Pour insérer des éléments dans une <code>map</code>, vous pouvez utiliser plein de fonctions différentes. Consultez la documentation pour trouver le nom de ces fonctions et identifiez leurs différences (comportement / syntaxe).</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-66c5fedabca9b9e699d08fc732212f3d" aria-controls="R-expandcontent-66c5fedabca9b9e699d08fc732212f3d">
-  <label class="expand-label" for="R-expand-66c5fedabca9b9e699d08fc732212f3d">
+  <input type="checkbox" id="R-expand-2173d9420f62445ac87eb6e44a8f79cb" aria-controls="R-expandcontent-2173d9420f62445ac87eb6e44a8f79cb">
+  <label class="expand-label" for="R-expand-2173d9420f62445ac87eb6e44a8f79cb">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-66c5fedabca9b9e699d08fc732212f3d" class="expand-content">
+  <div id="R-expandcontent-2173d9420f62445ac87eb6e44a8f79cb" class="expand-content">
 <p>Comportement :</p>
 <ul>
 <li><code>insert</code> / <code>emplace</code> / <code>try_emplace</code> : insère l&rsquo;élément dans la map seulement si la clef n&rsquo;est pas déjà présente,</li>
@@ -487,12 +487,12 @@ Quel type pouvez-vous utiliser pour la clef ? Pour la valeur, vous pouvez utilis
 </div>
 <p>Essayez d&rsquo;ajouter plusieurs éléments à votre map, en utilisant chacune de ces fonctions.<br>
 <div class="expand">
-  <input type="checkbox" id="R-expand-8b18499452fc51aecea778691038ed71" aria-controls="R-expandcontent-8b18499452fc51aecea778691038ed71">
-  <label class="expand-label" for="R-expand-8b18499452fc51aecea778691038ed71">
+  <input type="checkbox" id="R-expand-ca6d00e60be5d834959af70b26016c0a" aria-controls="R-expandcontent-ca6d00e60be5d834959af70b26016c0a">
+  <label class="expand-label" for="R-expand-ca6d00e60be5d834959af70b26016c0a">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-8b18499452fc51aecea778691038ed71" class="expand-content">
+  <div id="R-expandcontent-ca6d00e60be5d834959af70b26016c0a" class="expand-content">
 <p>Pour la clef, on peut réutiliser la classe <code>ComparableDog</code>, qui dispose déjà d&rsquo;un opérateur de comparaison.</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">ComparableDog</span><span class="p">,</span> <span class="n">Owner</span><span class="o">&gt;</span> <span class="n">owners_by_dog</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
@@ -516,12 +516,12 @@ Quel type pouvez-vous utiliser pour la clef ? Pour la valeur, vous pouvez utilis
 </div></p>
 <p>Que faut-il maintenant faire si vous souhaitez utiliser une <code>unordered_map</code> plutôt qu&rsquo;une <code>map</code> ?</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-91fddf48f2cfba9cdfc4a85f9ad76756" aria-controls="R-expandcontent-91fddf48f2cfba9cdfc4a85f9ad76756">
-  <label class="expand-label" for="R-expand-91fddf48f2cfba9cdfc4a85f9ad76756">
+  <input type="checkbox" id="R-expand-755c046d5a845292602a75259eb0b21f" aria-controls="R-expandcontent-755c046d5a845292602a75259eb0b21f">
+  <label class="expand-label" for="R-expand-755c046d5a845292602a75259eb0b21f">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-91fddf48f2cfba9cdfc4a85f9ad76756" class="expand-content">
+  <div id="R-expandcontent-755c046d5a845292602a75259eb0b21f" class="expand-content">
 <p>Il suffit d&rsquo;utiliser des clefs de type <code>HashableDog</code> plutôt que <code>ComparableDog</code>.</p>
   </div>
 </div>
@@ -626,9 +626,9 @@ Quel type pouvez-vous utiliser pour la clef ? Pour la valeur, vous pouvez utilis
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768213972" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768213972" defer></script>
-    <script src="../../js/theme.js?1768213972" defer></script>
+    <script src="../../js/clipboard.min.js?1768248022" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768248022" defer></script>
+    <script src="../../js/theme.js?1768248022" defer></script>
 
 
 
