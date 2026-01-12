@@ -156,7 +156,7 @@ Le programme devra écrire :
 > Craow Coucou  
 > Craow Ca va ?
 
-1. Ouvrez le fichier `chap-01/2-parrot.cpp` dans VSCode.  
+1. Télchargez et ouvrez le fichier [`2-parrot.cpp`](../2-parrot.cpp).  
 Vérifiez qu'il compile et qu'il affiche `"Craow"` lorsque vous le lancez.
 
 {{% hidden-solution %}}

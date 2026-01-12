@@ -31,6 +31,13 @@ Si vous êtes sous Windows, vous pouvez télécharger l'outil depuis {{< open_in
 
 ---
 
+### Différents dépôts du cours sur github
+
+- Exercices en lien avec le site du cours: https://github.com/marsault/CPP_Learning_Code/
+- Sujets de TPs: https://github.com/marsault/CPP_Exercises/
+
+<!-- ---
+
 ### Manipulation d'un dépôt depuis VSCode
 
 Si vous savez déjà utiliser Git en ligne de commande, cela est largement suffisant.\
@@ -88,4 +95,4 @@ int main()
 9. Si vous avez utilisé votre propre compte pour cloner le dépôt, vous pouvez maintenant y pusher votre commit en utilisant la commande `Git: Push`.\
 Une popup vous demandera de vous connecter à votre compte GitHub si vous ne l'avez pas encore fait.
 ![](/images/vscode-git-push.png)
-10.  Ouvrez un navigateur web et rendez-vous sur la page de votre dépôt GitHub pour vérifier que vos modifications ont bien été poussées.
+10.  Ouvrez un navigateur web et rendez-vous sur la page de votre dépôt GitHub pour vérifier que vos modifications ont bien été poussées. -->

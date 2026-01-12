@@ -1,5 +1,5 @@
 ---
-title: "Visual Studio Code"
+title: "Visual Studio Code/Codium"
 pre: '<span class="presection-icon" ><img src="/logo/vscode.svg"/></span>'
 weight: 2
 ---
