@@ -47,7 +47,7 @@
       <link>/chapter3/test/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter3/test/index.html</guid>
-      <description>Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Henri Derycke) Initiaux GR2 (avec Anthony Labarre) Alternants GR3 (avec Victor Marsault) 1. Quels sont les avantages et les inconvénients de la pile par rapport du tas ?&#xA;2. A quoi sert le mot-clef delete[] ?&#xA;3. Quels sont les deux événements qui délimitent la durée de vie d’une donnée ?&#xA;4. Qu’est-ce qu’une dangling-reference ?</description>
+      <description>Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Anthony Labarre) Initiaux GR2 (avec Victor Marsault) Apprentis GR3 (avec Henri Derycke) 1. Quels sont les avantages et les inconvénients de la pile par rapport du tas ?&#xA;2. A quoi sert le mot-clef delete[] ?&#xA;3. Quels sont les deux événements qui délimitent la durée de vie d’une donnée ?&#xA;4. Qu’est-ce qu’une dangling-reference ?</description>
     </item>
   </channel>
 </rss>

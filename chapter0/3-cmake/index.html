@@ -6,39 +6,35 @@
     <meta name="generator" content="Hugo 0.128.0">
     <meta name="generator" content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619">
     <meta name="description" content="Afin de générer les artéfacts pour la compilation, nous utiliserons CMake.
-Installation Windows Ouvrez un terminal MSYS2 UCRT64. Installez les paquets cmake et make avec l’instruction suivante : pacman -S mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-make Linux / MacOS Ouvrez un terminal. Utilisez votre gestionnaire de package afin d’installer cmake. Intégration à VSCode Afin de pouvoir utiliser CMake facilement depuis VSCode, il faut installer les extensions CMake et CMakeTools.
-Démarrez VSCode. Ouvrez le panneau des extensions et recherchez les extensions CMake et CMakeTools.">
+Installation Windows Ouvrez un terminal MSYS2 UCRT64. Installez les paquets cmake et make avec l’instruction suivante : pacman -S mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-make Linux / MacOS Ouvrez un terminal. Utilisez votre gestionnaire de package afin d’installer cmake. Fichier de configuration Vous aurez besoin d’un fichier CMakeLists.txt à la racine de votre répertoire pour configurer le projet. Si celui-ci ne contient qu’un seul programme, vous pouvez copier et adapter dans votre CMakeLists.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="CMake :: C&#43;&#43;">
     <meta name="twitter:description" content="Afin de générer les artéfacts pour la compilation, nous utiliserons CMake.
-Installation Windows Ouvrez un terminal MSYS2 UCRT64. Installez les paquets cmake et make avec l’instruction suivante : pacman -S mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-make Linux / MacOS Ouvrez un terminal. Utilisez votre gestionnaire de package afin d’installer cmake. Intégration à VSCode Afin de pouvoir utiliser CMake facilement depuis VSCode, il faut installer les extensions CMake et CMakeTools.
-Démarrez VSCode. Ouvrez le panneau des extensions et recherchez les extensions CMake et CMakeTools.">
+Installation Windows Ouvrez un terminal MSYS2 UCRT64. Installez les paquets cmake et make avec l’instruction suivante : pacman -S mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-make Linux / MacOS Ouvrez un terminal. Utilisez votre gestionnaire de package afin d’installer cmake. Fichier de configuration Vous aurez besoin d’un fichier CMakeLists.txt à la racine de votre répertoire pour configurer le projet. Si celui-ci ne contient qu’un seul programme, vous pouvez copier et adapter dans votre CMakeLists.">
     <meta property="og:url" content="/chapter0/3-cmake/index.html">
     <meta property="og:site_name" content="C&#43;&#43;">
     <meta property="og:title" content="CMake :: C&#43;&#43;">
     <meta property="og:description" content="Afin de générer les artéfacts pour la compilation, nous utiliserons CMake.
-Installation Windows Ouvrez un terminal MSYS2 UCRT64. Installez les paquets cmake et make avec l’instruction suivante : pacman -S mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-make Linux / MacOS Ouvrez un terminal. Utilisez votre gestionnaire de package afin d’installer cmake. Intégration à VSCode Afin de pouvoir utiliser CMake facilement depuis VSCode, il faut installer les extensions CMake et CMakeTools.
-Démarrez VSCode. Ouvrez le panneau des extensions et recherchez les extensions CMake et CMakeTools.">
+Installation Windows Ouvrez un terminal MSYS2 UCRT64. Installez les paquets cmake et make avec l’instruction suivante : pacman -S mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-make Linux / MacOS Ouvrez un terminal. Utilisez votre gestionnaire de package afin d’installer cmake. Fichier de configuration Vous aurez besoin d’un fichier CMakeLists.txt à la racine de votre répertoire pour configurer le projet. Si celui-ci ne contient qu’un seul programme, vous pouvez copier et adapter dans votre CMakeLists.">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Mise en place">
     <meta itemprop="name" content="CMake :: C&#43;&#43;">
     <meta itemprop="description" content="Afin de générer les artéfacts pour la compilation, nous utiliserons CMake.
-Installation Windows Ouvrez un terminal MSYS2 UCRT64. Installez les paquets cmake et make avec l’instruction suivante : pacman -S mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-make Linux / MacOS Ouvrez un terminal. Utilisez votre gestionnaire de package afin d’installer cmake. Intégration à VSCode Afin de pouvoir utiliser CMake facilement depuis VSCode, il faut installer les extensions CMake et CMakeTools.
-Démarrez VSCode. Ouvrez le panneau des extensions et recherchez les extensions CMake et CMakeTools.">
-    <meta itemprop="wordCount" content="339">
+Installation Windows Ouvrez un terminal MSYS2 UCRT64. Installez les paquets cmake et make avec l’instruction suivante : pacman -S mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-make Linux / MacOS Ouvrez un terminal. Utilisez votre gestionnaire de package afin d’installer cmake. Fichier de configuration Vous aurez besoin d’un fichier CMakeLists.txt à la racine de votre répertoire pour configurer le projet. Si celui-ci ne contient qu’un seul programme, vous pouvez copier et adapter dans votre CMakeLists.">
+    <meta itemprop="wordCount" content="279">
     <title>CMake :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1744013846" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1744013846" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1744013846" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1744013846" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1744013846" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1744013846" rel="stylesheet">
-    <link href="../../css/fonts.css?1744013846" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1744013846" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1744013846" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1744013846" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1744013846" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1744013846" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1744013846"></script>
+    <link href="../../css/fontawesome-all.min.css?1768209223" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768209223" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768209223" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768209223" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768209223" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768209223" rel="stylesheet">
+    <link href="../../css/fonts.css?1768209223" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768209223" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768209223" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768209223" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768209223" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768209223" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768209223"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -76,8 +72,9 @@ Démarrez VSCode. Ouvrez le panneau des extensions et recherchez les extensions 
     <li>
       <ul>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#fichier-de-configuration">Fichier de configuration</a></li>
+        <li><a href="#configurer-un-projet">Configurer un projet</a></li>
         <li><a href="#intégration-à-vscode">Intégration à VSCode</a></li>
-        <li><a href="#lancement-du-programme">Lancement du programme</a></li>
       </ul>
     </li>
   </ul>
@@ -92,7 +89,7 @@ Démarrez VSCode. Ouvrez le panneau des extensions et recherchez les extensions 
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">CMake</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter0/2-vscode/index.html" title="Visual Studio Code (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter0/2-vscode/index.html" title="Visual Studio Code/Codium (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter0/4-git/index.html" title="Git (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
@@ -133,13 +130,40 @@ Démarrez VSCode. Ouvrez le panneau des extensions et recherchez les extensions 
 <li>Utilisez votre gestionnaire de package afin d&rsquo;installer <code>cmake</code>.</li>
 </ol>
 <hr>
+<h3 id="fichier-de-configuration">Fichier de configuration</h3>
+<p>Vous aurez besoin d&rsquo;un fichier <code>CMakeLists.txt</code> à la racine de votre répertoire pour configurer le projet.
+Si celui-ci ne contient qu&rsquo;un seul programme, vous pouvez copier et adapter dans votre <code>CMakeLists.txt</code> les instructions suivantes.</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>cmake_minimum_required(VERSION 3.1)
+project(my_project)
+
+add_executable(my_executable
+    my_file1.cpp
+    my_file2.cpp
+    my_file3.h
+)
+
+target_compile_features(my_executable PUBLIC cxx_std_17)</code></pre></div>
+<h3 id="configurer-un-projet">Configurer un projet</h3>
+<h4 id="linux--macos-1">Linux / MacOS</h4>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">   <span class="c1"># se placer avec `cd` dans le répertoire racine avec le CMakelists.txt</span>
+</span></span><span class="line"><span class="cl">   mkdir build
+</span></span><span class="line"><span class="cl">   <span class="nb">cd</span> build
+</span></span><span class="line"><span class="cl">   cmake ..</span></span></code></pre></div>
 <h3 id="intégration-à-vscode">Intégration à VSCode</h3>
+<div class="box notices cstyle warning">
+  <div class="box-label">
+    <i class="fa-fw fas fa-hammer"></i> Deprecation
+  </div>
+  <div class="box-content">
+<p>Cette année nous essayons de passer à VSCodium (fork libre de VSCode) donc les sections sur VSCode concernent principalement les étudiants voulant coder depuis windows.</p>
+  </div>
+</div>
 <p>Afin de pouvoir utiliser CMake facilement depuis VSCode, il faut installer les extensions <code>CMake</code> et <code>CMakeTools</code>.</p>
 <ol>
 <li>Démarrez VSCode.</li>
 <li>Ouvrez le panneau des extensions et recherchez les extensions <code>CMake</code> et <code>CMakeTools</code>.
-<a href="#R-image-f90f341aa74d1397249eb6bcf2148b5d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/cmake-ext.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f90f341aa74d1397249eb6bcf2148b5d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/cmake-ext.png"></a></li>
+<a href="#R-image-6ae1d8e9deb025114a992010d9c213ea" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/cmake-ext.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6ae1d8e9deb025114a992010d9c213ea"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/cmake-ext.png"></a></li>
 <li>Cliquez ensuite sur le bouton <code>Install</code> pour chacune d&rsquo;entre elles.</li>
 <li>Redémarrez VSCode.</li>
 <li>Vérifiez que vous avez accès aux commandes <code>CMake</code> depuis le panneau de commandes (<code>View &gt; Command Palette ...</code> ou <code>Ctrl + Shift + P</code>).</li>
@@ -148,43 +172,42 @@ Démarrez VSCode. Ouvrez le panneau des extensions et recherchez les extensions 
 <ol>
 <li>Téléchargez et extrayez <a href="../hello.zip">cette archive</a> dans un nouveau dossier.</li>
 <li>Ouvrez ce dossier depuis VSCode.
-<a href="#R-image-49e1655eff910c8fb248603245371d28" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/folder-vscode.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-49e1655eff910c8fb248603245371d28"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/folder-vscode.png"></a></li>
+<a href="#R-image-82763796d48783aa726819b2e6a9d039" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/folder-vscode.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-82763796d48783aa726819b2e6a9d039"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/folder-vscode.png"></a></li>
 <li>Exécutez la commande <code>CMake: Configure</code>.</li>
 <li>Sélectionnez le compilateur g++ ou clang++ le plus récent dans la liste proposée.</li>
 <li>La configuration et la génération des fichiers de build devraient avoir lieu.
-<a href="#R-image-5daa8cdde2fedc92da67649b05b2d06f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/cmake-result.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-5daa8cdde2fedc92da67649b05b2d06f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/cmake-result.png"></a></li>
+<a href="#R-image-703ed131dc37300196c9da3816f0c44d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/cmake-result.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-703ed131dc37300196c9da3816f0c44d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/cmake-result.png"></a></li>
 <li>Cliquez maintenant sur le bouton <code>Build</code> dans la barre en bas (ou F7) pour compiler le projet.
-<a href="#R-image-8cd666d5d7bf052f267b5b6eb7545ab8" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/cmake-build.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8cd666d5d7bf052f267b5b6eb7545ab8"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/cmake-build.png"></a></li>
+<a href="#R-image-733bb7c9c026e293eddf27e50cc4805d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/cmake-build.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-733bb7c9c026e293eddf27e50cc4805d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/cmake-build.png"></a> &ndash;&gt;</li>
 </ol>
-<hr>
-<h3 id="lancement-du-programme">Lancement du programme</h3>
-<p>Afin de pouvoir lancer votre programme rapidement en utilisant la commande <code>Start Debugging</code> (F5), vous devrez préalablement réaliser la manipulation suivante.<br>
-Celle-ci sera à refaire chaque fois que vous créérez un nouveau projet.</p>
-<ol>
-<li>Créez un dossier <code>.vscode</code> à la racine du répertoire (si celui-ci n&rsquo;existe pas déjà) et ajoutez dedans un fichier que vous nommerez <code>launch.json</code>.
-<a href="#R-image-b6e16852b8403a259263daa0f7d473e4" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/new-launch.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-b6e16852b8403a259263daa0f7d473e4"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/new-launch.png"></a></li>
-<li>Une fois ce fichier créé, ouvrez-le et cliquez sur le bouton <code>Add Configuration</code>.
-<a href="#R-image-1d68445978e6b625310a2ae1afd86b3f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/add-conf.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-1d68445978e6b625310a2ae1afd86b3f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/add-conf.png"></a></li>
-<li>Sélectionnez ensuite la configuration <code>C/C++: (XXX) Launch</code> adéquate.<br>
+<!--
+---
+
+ ### Lancement du programme
+
+Afin de pouvoir lancer votre programme rapidement en utilisant la commande `Start Debugging` (F5), vous devrez préalablement réaliser la manipulation suivante.\
+Celle-ci sera à refaire chaque fois que vous créérez un nouveau projet.
+
+1. Créez un dossier `.vscode` à la racine du répertoire (si celui-ci n'existe pas déjà) et ajoutez dedans un fichier que vous nommerez `launch.json`.
+![](/images/chapter0/new-launch.png)
+2. Une fois ce fichier créé, ouvrez-le et cliquez sur le bouton `Add Configuration`.
+![](/images/chapter0/add-conf.png)
+3. Sélectionnez ensuite la configuration `C/C++: (XXX) Launch` adéquate.\
 Windows et Linux devraient vous proposez GDB et MacOS devrait vous fournir LLDB.
-<a href="#R-image-88dc05337231a309b3e8afba571818d9" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/launch-conf.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-88dc05337231a309b3e8afba571818d9"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/launch-conf.png"></a></li>
-<li>Remplacez les variables <code>program</code> et <code>cwd</code> par les valeurs ci-dessous :</li>
-</ol>
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;program&#34;</span><span class="err">:</span> <span class="s2">&#34;${command:cmake.launchTargetPath}&#34;</span><span class="err">,</span>
-</span></span><span class="line"><span class="cl"><span class="s2">&#34;cwd&#34;</span><span class="err">:</span> <span class="s2">&#34;${workspaceFolder}&#34;</span><span class="err">,</span></span></span></code></pre></div>
-<ol start="5">
-<li>Si vous êtes sous Windows, supprimez la ligne contenant <code>&quot;miDebuggerPath&quot;</code>.</li>
-</ol>
-<p>Ajoutez un breakpoint sur la ligne 5 en cliquant devant le numéro de ligne, puis essayez de lancer le programme avec la commande <code>Start Debugging</code> (F5).<br>
+![](/images/chapter0/launch-conf.png)
+4. Remplacez les variables `program` et `cwd` par les valeurs ci-dessous :
+```json
+"program": "${command:cmake.launchTargetPath}",
+"cwd": "${workspaceFolder}",
+```
+5. Si vous êtes sous Windows, supprimez la ligne contenant `"miDebuggerPath"`.
+
+Ajoutez un breakpoint sur la ligne 5 en cliquant devant le numéro de ligne, puis essayez de lancer le programme avec la commande `Start Debugging` (F5).\
 Votre programme devrait se lancer puis mettre en pause son exécution sur la ligne 5.
-<a href="#R-image-8c542a8adefdd4020ca12c73b00b6c4b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/cmake-breakpoint.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8c542a8adefdd4020ca12c73b00b6c4b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/cmake-breakpoint.png"></a></p>
+![](/images/chapter0/cmake-breakpoint.png) -->
 
   <footer class="footline">
   </footer>
@@ -208,10 +231,9 @@ Votre programme devrait se lancer puis mettre en pause son exécution sur la lig
           <ul class="enlarge morespace collapsible-menu">
             <li class="parent " data-nav-id="/chapter0/index.html"><a class="padding" href="../../chapter0/index.html"><span class="chapnum">0.</span>&ensp;Mise en place<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb41caf94f12b8a1a4b5e560230e7851" class="collapsible-menu">
             <li class="" data-nav-id="/chapter0/1-compiler/index.html"><a class="padding" href="../../chapter0/1-compiler/index.html"><span class="presection-icon">⚙️</span>Compilateur<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter0/2-vscode/index.html"><a class="padding" href="../../chapter0/2-vscode/index.html"><span class="presection-icon" ><img src="../../logo/vscode.svg"/></span>Visual Studio Code<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter0/2-vscode/index.html"><a class="padding" href="../../chapter0/2-vscode/index.html"><span class="presection-icon" ><img src="../../logo/vscode.svg"/></span>Visual Studio Code/Codium<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="active " data-nav-id="/chapter0/3-cmake/index.html"><a class="padding" href="../../chapter0/3-cmake/index.html"><span class="presection-icon" ><img src="../../logo/cmake.svg"/></span>CMake<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter0/4-git/index.html"><a class="padding" href="../../chapter0/4-git/index.html"><span class="presection-icon" ><img src="../../logo/git.svg"/></span>Git<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter0/5-clang-format/index.html"><a class="padding" href="../../chapter0/5-clang-format/index.html"><span class="presection-icon" ><img src="../../logo/clang.svg"/></span>Clang-Format<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="alwaysopen " data-nav-id="/chapter0/6-tips/index.html"><a class="padding" href="../../chapter0/6-tips/index.html"><span class="presection-icon">💡</span>Astuces<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-fc3d52d173219407314c2b6a52f2126d" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter0/test/index.html"><a class="padding" href="../../chapter0/test/index.html"><span class="presection-icon">📧</span>Retours ?<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter1/index.html"><a class="padding" href="../../chapter1/index.html"><span class="chapnum">1.</span>&ensp;Introduction au C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-6c398714eae4372920aec3a1e6c2e143" class="collapsible-menu"></ul></li>
@@ -228,14 +250,12 @@ Votre programme devrait se lancer puis mettre en pause son exécution sur la lig
         <div id="R-shortcuts">
           <div class="nav-title padding">Accès rapide</div>
           <ul class="space">
-            <li><a class="padding" href="https://github.com/marsault/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt exercice du cours</a></li>
-            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt TPs</a></li>
+            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt git des sujets de TPs</a></li>
             <li><a class="padding" href="../../slides/index.html"><i class='far fa-file-powerpoint'></i> Slides</a></li>
-            <li><a class="padding" href="../../workflow/index.html"><i class='far fa-list-alt'></i> Workflow</a></li>
             <li><a class="padding" href="../../faq/index.html"><i class='fas fa-question-circle'></i> FAQ</a></li>
             <li><a class="padding" href="../../chapter0/6-tips/index.html"><i class='fa fa-rocket'></i> Astuces</a></li>
             <li><a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a></li>
-            <li><a class="padding" href="https://www-igm.univ-mlv.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> CPP-Ref</a></li>
+            <li><a class="padding" href="https://www-igm.univ-mlv.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> (Copie locale de) CPP-Ref</a></li>
           </ul>
         </div>
         <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
@@ -288,9 +308,9 @@ Votre programme devrait se lancer puis mettre en pause son exécution sur la lig
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1744013846" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1744013846" defer></script>
-    <script src="../../js/theme.js?1744013846" defer></script>
+    <script src="../../js/clipboard.min.js?1768209223" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768209223" defer></script>
+    <script src="../../js/theme.js?1768209223" defer></script>
 
 
 

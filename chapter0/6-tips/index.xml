@@ -19,7 +19,7 @@
       <link>/chapter0/6-tips/2-vscode/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter0/6-tips/2-vscode/index.html</guid>
-      <description>Lorsque vous avez un projet un peu plus conséquent, il est plus pratique de passer par VSCode pour configurer, compiler et tester vos programmes.&#xA;Configuration avec CMake Vous aurez besoin d’un fichier CMakeLists.txt à la racine de votre répertoire pour configurer le projet. Si celui-ci ne contient qu’un seul programme, vous pouvez copier et adapter dans votre CMakeLists.txt les instructions suivantes.&#xA;cmake_minimum_required(VERSION 3.1) project(my_project) add_executable(my_executable my_file1.cpp my_file2.cpp my_file3.h ) target_compile_features(my_executable PUBLIC cxx_std_17) Pour configurer le projet, utilisez la commande CMake: Configure.</description>
+      <description>Lorsque vous avez un projet un peu plus conséquent, il est plus pratique de passer par VSCode pour configurer, compiler et tester vos programmes.&#xA;Pour configurer le projet, utilisez la commande CMake: Configure.&#xA;Configuration du fichier launch.json Afin de pouvoir exécuter votre ou vos programme rapidemment, il vous faudra créer et configurer le fichier launch.json.&#xA;Créez un dossier .vscode à la racine du répertoire (si celui-ci n’existe pas déjà) et ajoutez dedans un fichier que vous nommerez launch.</description>
     </item>
     <item>
       <title>Raccourcis VSCode</title>

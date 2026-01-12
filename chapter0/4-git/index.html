@@ -31,18 +31,18 @@ Pour associer une nouvelle clef SSH à votre machine, suivez les instructions du
 GitHub Création de compte Commencez par créer un compte si vous n’en avez pas déjà un.
 Génération de clef SSHs Depuis quelques années, pour pouvoir push sur un dépôt, il est nécessaire de passer par la méthode SSH (HTML ne permet plus d’éditer, juste de consulter).
 Pour associer une nouvelle clef SSH à votre machine, suivez les instructions du paragraphe “Generating a new SSH key” et enregistrez la clef à l’emplacement par défaut (c’est-à-dire sans spécifier de chemin de sauvegarde).">
-    <meta itemprop="wordCount" content="554">
+    <meta itemprop="wordCount" content="164">
     <title>Git :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1744013846" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1744013846" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1744013846" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1744013846" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1744013846" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1744013846" rel="stylesheet">
-    <link href="../../css/fonts.css?1744013846" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1744013846" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1744013846" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1744013846" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1744013846" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1744013846" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1744013846"></script>
+    <link href="../../css/fontawesome-all.min.css?1768209223" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768209223" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768209223" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768209223" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768209223" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768209223" rel="stylesheet">
+    <link href="../../css/fonts.css?1768209223" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768209223" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768209223" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768209223" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768209223" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768209223" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768209223"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -81,7 +81,7 @@ Pour associer une nouvelle clef SSH à votre machine, suivez les instructions du
       <ul>
         <li><a href="#github">GitHub</a></li>
         <li><a href="#installation">Installation</a></li>
-        <li><a href="#manipulation-dun-dépôt-depuis-vscode">Manipulation d&rsquo;un dépôt depuis VSCode</a></li>
+        <li><a href="#différents-dépôts-du-cours-sur-github">Différents dépôts du cours sur github</a></li>
       </ul>
     </li>
   </ul>
@@ -98,7 +98,7 @@ Pour associer une nouvelle clef SSH à votre machine, suivez les instructions du
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter0/3-cmake/index.html" title="CMake (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter0/5-clang-format/index.html" title="Clang-Format (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter0/6-tips/index.html" title="Astuces (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -136,72 +136,71 @@ Pour associer une nouvelle clef SSH à votre machine, suivez les instructions du
 Si vous êtes sous Windows, vous pouvez télécharger l&rsquo;outil depuis 
 <a href="https://git-scm.com/download/win/" target="_blank" rel="noopener noreferrer">cette page</a>.</p>
 <hr>
-<h3 id="manipulation-dun-dépôt-depuis-vscode">Manipulation d&rsquo;un dépôt depuis VSCode</h3>
-<p>Si vous savez déjà utiliser Git en ligne de commande, cela est largement suffisant.<br>
-Mais si vous êtes intéressés quand même, les sections ci-dessous détaillent comment utiliser Git directement depuis VSCode.</p>
-<h4 id="créer-un-nouveau-dépôt">Créer un nouveau dépôt</h4>
-<ol>
-<li>Réouvrez le dossier <code>hello/</code> téléchargé précédemment depuis VSCode.</li>
-<li>Si vous ne l&rsquo;aviez pas fait précédement, configurez le projet avec <code>CMake: Configure</code>, puis compilez-le.</li>
-<li>Placez-vous ensuite dans l&rsquo;onglet <code>Source Control</code> de VSCode (<code>Ctrl + Shift + G</code> ou <code>View &gt; SCM</code>).</li>
-<li>Cliquez sur <code>Initialize Repository</code>.
-<a href="#R-image-1de352382cfcf48e6bde5ebb67ccdabc" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-git-init.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-1de352382cfcf48e6bde5ebb67ccdabc"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-git-init.png"></a></li>
-<li>Les fichiers générés par la compilation devraient apparaître dans la liste des changements détectés par git.
-Comme nous ne souhaitons pas sauvegarder les fichiers temporaires, nous allons les ignorer en ajoutant un nouveau fichier <code>.gitignore</code>.<br>
-Créez ce fichier à la racine de votre dossier et copiez-collez dedans les lignes ci-dessous :</li>
-</ol>
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">build/
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nt">.</span><span class="c">vscode/
-</span></span></span><span class="line"><span class="cl"><span class="c">
-</span></span></span><span class="line"><span class="cl"><span class="c">*</span><span class="nt">.</span><span class="c">exe
-</span></span></span><span class="line"><span class="cl"><span class="c">*</span><span class="nt">.</span><span class="c">obj
-</span></span></span><span class="line"><span class="cl"><span class="c">*</span><span class="nt">.</span><span class="c">pdb
-</span></span></span><span class="line"><span class="cl"><span class="c">*</span><span class="nt">.</span><span class="c">ilk
-</span></span></span><span class="line"><span class="cl"><span class="c">*</span><span class="nt">.</span><span class="c">o</span></span></span></code></pre></div>
-<ol start="7">
-<li>Vérifiez que seuls les fichiers <code>helloworld.cpp</code>, <code>CMakeLists.txt</code>, <code>.clang-format</code> et <code>.gitignore</code> apparaissent désormais dans la liste des changements.</li>
-<li>Retournez dans l&rsquo;onglet <code>Source Control</code>, et appuyez sur le bouton <code>+</code> pour stager vos modifications.
-<a href="#R-image-ad20dc51d13d87189c24fd96b9134c22" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/git-add.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ad20dc51d13d87189c24fd96b9134c22"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/git-add.png"></a></li>
-<li>Entrez un message décrivant vos changements et cliquez sur la coche pour les committer.
-<a href="#R-image-7d83c50ae8f19b1bcedc3d35f61c34a2" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/git-commit.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-7d83c50ae8f19b1bcedc3d35f61c34a2"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/git-commit.png"></a></li>
-</ol>
-<h4 id="cloner-un-dépôt-existant">Cloner un dépôt existant</h4>
-<ol>
-<li>Si vous possédez un compte Github, commencez par forker le dépôt suivant : <a href="https://github.com/Laefy/CPP-M1-test-git-clone" rel="external" target="_blank">https://github.com/Laefy/CPP-M1-test-git-clone</a>.
-<a href="#R-image-bebaf86d805bc161703bc148687c65a2" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/github-fork.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-bebaf86d805bc161703bc148687c65a2"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/github-fork.png"></a></li>
-<li>Ouvrez VSCode.</li>
-<li>Lancer la commande <code>Git: Clone</code> depuis le panneau de commandes (<code>Ctrl + Shift + P</code> ou <code>View &gt; Command Palette...</code>).
-<a href="#R-image-4d8e73d293a5bfd0cb077d9a5c1b96d4" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-git-clone.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-4d8e73d293a5bfd0cb077d9a5c1b96d4"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-git-clone.png"></a></li>
-<li>Fournissez-lui l&rsquo;URL du dépôt créé sur votre compte à la suite du fork, ou utilisez l&rsquo;URL du dépôt d&rsquo;origine : <a href="https://github.com/Laefy/CPP-M1-test-git-clone.git/" rel="external" target="_blank">https://github.com/Laefy/CPP-M1-test-git-clone.git/</a> (vous ne pourrez alors pas réalisez de push sur ce dépôt).
-<a href="#R-image-1a3ea982a9a7710d51797354445df4d1" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-git-clone-url.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-1a3ea982a9a7710d51797354445df4d1"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-git-clone-url.png"></a></li>
-<li>Sélectionnez le dossier où vous rangez habituellement vos projets de code, pour que git y copie le dépôt distant.</li>
-<li>Dans le fichier <code>main.cpp</code>, remplacez le contenu de la fonction <code>main</code> par les instructions ci-dessous :</li>
-</ol>
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;ByeBye now&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span> 
-</span></span></code></pre></div>
-<ol start="7">
-<li>Allez dans l&rsquo;onglet <code>Source Control</code> de VSCode (<code>Ctrl + Shift + G</code> ou <code>View &gt; SCM</code>) et appuyez sur le bouton <code>+</code> pour stager vos changements.
-<a href="#R-image-ab28d3ae8042de9a1f2db2d04321d375" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-git-clone-stage.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ab28d3ae8042de9a1f2db2d04321d375"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-git-clone-stage.png"></a></li>
-<li>Entrez un message et cliquez sur la coche pour committer vos changements.
-<a href="#R-image-11a88d9ae3b14e8d5c86c1dd66d90a68" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-git-clone-commit.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-11a88d9ae3b14e8d5c86c1dd66d90a68"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-git-clone-commit.png"></a></li>
-<li>Si vous avez utilisé votre propre compte pour cloner le dépôt, vous pouvez maintenant y pusher votre commit en utilisant la commande <code>Git: Push</code>.<br>
-Une popup vous demandera de vous connecter à votre compte GitHub si vous ne l&rsquo;avez pas encore fait.
-<a href="#R-image-4f11c78fde60e7b9c6c8e7e1b03b22e9" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-git-push.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-4f11c78fde60e7b9c6c8e7e1b03b22e9"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-git-push.png"></a></li>
-<li>Ouvrez un navigateur web et rendez-vous sur la page de votre dépôt GitHub pour vérifier que vos modifications ont bien été poussées.</li>
-</ol>
+<h3 id="différents-dépôts-du-cours-sur-github">Différents dépôts du cours sur github</h3>
+<ul>
+<li>Exercices en lien avec le site du cours: <a href="https://github.com/marsault/CPP_Learning_Code/" rel="external" target="_blank">https://github.com/marsault/CPP_Learning_Code/</a></li>
+<li>Sujets de TPs: <a href="https://github.com/marsault/CPP_Exercises/" rel="external" target="_blank">https://github.com/marsault/CPP_Exercises/</a></li>
+</ul>
+<!-- ---
+
+### Manipulation d'un dépôt depuis VSCode
+
+Si vous savez déjà utiliser Git en ligne de commande, cela est largement suffisant.\
+Mais si vous êtes intéressés quand même, les sections ci-dessous détaillent comment utiliser Git directement depuis VSCode.
+
+#### Créer un nouveau dépôt
+
+1. Réouvrez le dossier `hello/` téléchargé précédemment depuis VSCode.
+2. Si vous ne l'aviez pas fait précédement, configurez le projet avec `CMake: Configure`, puis compilez-le.
+3. Placez-vous ensuite dans l'onglet `Source Control` de VSCode (`Ctrl + Shift + G` ou `View > SCM`).
+4. Cliquez sur `Initialize Repository`.
+![](/images/vscode-git-init.png)
+6. Les fichiers générés par la compilation devraient apparaître dans la liste des changements détectés par git.
+Comme nous ne souhaitons pas sauvegarder les fichiers temporaires, nous allons les ignorer en ajoutant un nouveau fichier `.gitignore`.\
+Créez ce fichier à la racine de votre dossier et copiez-collez dedans les lignes ci-dessous :
+```b
+build/
+.vscode/
+
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.o
+```
+
+7. Vérifiez que seuls les fichiers `helloworld.cpp`, `CMakeLists.txt`, `.clang-format` et `.gitignore` apparaissent désormais dans la liste des changements.
+8. Retournez dans l'onglet `Source Control`, et appuyez sur le bouton `+` pour stager vos modifications.
+![](/images/chapter0/git-add.png)
+9. Entrez un message décrivant vos changements et cliquez sur la coche pour les committer.
+![](/images/chapter0/git-commit.png)
+
+#### Cloner un dépôt existant
+
+1. Si vous possédez un compte Github, commencez par forker le dépôt suivant : https://github.com/Laefy/CPP-M1-test-git-clone.
+![](/images/github-fork.png)
+2. Ouvrez VSCode.
+3. Lancer la commande `Git: Clone` depuis le panneau de commandes (`Ctrl + Shift + P` ou `View > Command Palette...`).
+![](/images/vscode-git-clone.png)
+4. Fournissez-lui l'URL du dépôt créé sur votre compte à la suite du fork, ou utilisez l'URL du dépôt d'origine : https://github.com/Laefy/CPP-M1-test-git-clone.git/ (vous ne pourrez alors pas réalisez de push sur ce dépôt).
+![](/images/vscode-git-clone-url.png)
+5. Sélectionnez le dossier où vous rangez habituellement vos projets de code, pour que git y copie le dépôt distant.
+6. Dans le fichier `main.cpp`, remplacez le contenu de la fonction `main` par les instructions ci-dessous :
+```cpp
+int main()
+{
+    std::cout << "ByeBye now" << std::endl;
+    return 0;
+} 
+```
+7. Allez dans l'onglet `Source Control` de VSCode (`Ctrl + Shift + G` ou `View > SCM`) et appuyez sur le bouton `+` pour stager vos changements.
+![](/images/vscode-git-clone-stage.png)
+8. Entrez un message et cliquez sur la coche pour committer vos changements.
+![](/images/vscode-git-clone-commit.png)
+9. Si vous avez utilisé votre propre compte pour cloner le dépôt, vous pouvez maintenant y pusher votre commit en utilisant la commande `Git: Push`.\
+Une popup vous demandera de vous connecter à votre compte GitHub si vous ne l'avez pas encore fait.
+![](/images/vscode-git-push.png)
+10.  Ouvrez un navigateur web et rendez-vous sur la page de votre dépôt GitHub pour vérifier que vos modifications ont bien été poussées. -->
 
   <footer class="footline">
   </footer>
@@ -225,10 +224,9 @@ Une popup vous demandera de vous connecter à votre compte GitHub si vous ne l&r
           <ul class="enlarge morespace collapsible-menu">
             <li class="parent " data-nav-id="/chapter0/index.html"><a class="padding" href="../../chapter0/index.html"><span class="chapnum">0.</span>&ensp;Mise en place<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb41caf94f12b8a1a4b5e560230e7851" class="collapsible-menu">
             <li class="" data-nav-id="/chapter0/1-compiler/index.html"><a class="padding" href="../../chapter0/1-compiler/index.html"><span class="presection-icon">⚙️</span>Compilateur<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter0/2-vscode/index.html"><a class="padding" href="../../chapter0/2-vscode/index.html"><span class="presection-icon" ><img src="../../logo/vscode.svg"/></span>Visual Studio Code<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter0/2-vscode/index.html"><a class="padding" href="../../chapter0/2-vscode/index.html"><span class="presection-icon" ><img src="../../logo/vscode.svg"/></span>Visual Studio Code/Codium<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter0/3-cmake/index.html"><a class="padding" href="../../chapter0/3-cmake/index.html"><span class="presection-icon" ><img src="../../logo/cmake.svg"/></span>CMake<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="active " data-nav-id="/chapter0/4-git/index.html"><a class="padding" href="../../chapter0/4-git/index.html"><span class="presection-icon" ><img src="../../logo/git.svg"/></span>Git<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter0/5-clang-format/index.html"><a class="padding" href="../../chapter0/5-clang-format/index.html"><span class="presection-icon" ><img src="../../logo/clang.svg"/></span>Clang-Format<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="alwaysopen " data-nav-id="/chapter0/6-tips/index.html"><a class="padding" href="../../chapter0/6-tips/index.html"><span class="presection-icon">💡</span>Astuces<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-fc3d52d173219407314c2b6a52f2126d" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter0/test/index.html"><a class="padding" href="../../chapter0/test/index.html"><span class="presection-icon">📧</span>Retours ?<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter1/index.html"><a class="padding" href="../../chapter1/index.html"><span class="chapnum">1.</span>&ensp;Introduction au C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-6c398714eae4372920aec3a1e6c2e143" class="collapsible-menu"></ul></li>
@@ -245,14 +243,12 @@ Une popup vous demandera de vous connecter à votre compte GitHub si vous ne l&r
         <div id="R-shortcuts">
           <div class="nav-title padding">Accès rapide</div>
           <ul class="space">
-            <li><a class="padding" href="https://github.com/marsault/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt exercice du cours</a></li>
-            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt TPs</a></li>
+            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt git des sujets de TPs</a></li>
             <li><a class="padding" href="../../slides/index.html"><i class='far fa-file-powerpoint'></i> Slides</a></li>
-            <li><a class="padding" href="../../workflow/index.html"><i class='far fa-list-alt'></i> Workflow</a></li>
             <li><a class="padding" href="../../faq/index.html"><i class='fas fa-question-circle'></i> FAQ</a></li>
             <li><a class="padding" href="../../chapter0/6-tips/index.html"><i class='fa fa-rocket'></i> Astuces</a></li>
             <li><a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a></li>
-            <li><a class="padding" href="https://www-igm.univ-mlv.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> CPP-Ref</a></li>
+            <li><a class="padding" href="https://www-igm.univ-mlv.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> (Copie locale de) CPP-Ref</a></li>
           </ul>
         </div>
         <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
@@ -305,9 +301,9 @@ Une popup vous demandera de vous connecter à votre compte GitHub si vous ne l&r
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1744013846" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1744013846" defer></script>
-    <script src="../../js/theme.js?1744013846" defer></script>
+    <script src="../../js/clipboard.min.js?1768209223" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768209223" defer></script>
+    <script src="../../js/theme.js?1768209223" defer></script>
 
 
 

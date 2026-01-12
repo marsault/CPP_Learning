@@ -40,7 +40,7 @@
       <link>/old-2223-chapter3-memoire/test/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/old-2223-chapter3-memoire/test/index.html</guid>
-      <description>C’est l’heure du test ! Bon courage 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Henri Derycke) Initiaux GR2 (avec Anthony Labarre) Alternants GR3 (avec Victor Marsault) 1. Comment définir la période de validité d’un objet ?&#xA;2. Citez une bonne raison d’allouer de la mémoire via un unique_ptr plutôt que via un pointeur simple (avec new).&#xA;3. Quelle fonction de la librarie standard permet de transférer le contenu d’un objet dans un autre ?</description>
+      <description>C’est l’heure du test ! Bon courage 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Anthony Labarre) Initiaux GR2 (avec Victor Marsault) Apprentis GR3 (avec Henri Derycke) 1. Comment définir la période de validité d’un objet ?&#xA;2. Citez une bonne raison d’allouer de la mémoire via un unique_ptr plutôt que via un pointeur simple (avec new).&#xA;3. Quelle fonction de la librarie standard permet de transférer le contenu d’un objet dans un autre ?</description>
     </item>
     <item>
       <title>Synthèse</title>

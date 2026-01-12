@@ -54,7 +54,7 @@
       <link>/chapter2/test/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter2/test/index.html</guid>
-      <description>Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Henri Derycke) Initiaux GR2 (avec Anthony Labarre) Alternants GR3 (avec Victor Marsault) 1. Quel est le terme C++ permettant de désigner les “méthodes” d’une classe ?&#xA;2. Supposons deux classes: Points qui implémente un point dans le plan et Cercle disposant d’un attribut _points de type std::vector&lt;point&gt;. Quel invariant cette classe pourrait-on décider d’implémenter dans Cercle ?</description>
+      <description>Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Anthony Labarre) Initiaux GR2 (avec Victor Marsault) Apprentis GR3 (avec Henri Derycke) 1. Quel est le terme C++ permettant de désigner les “méthodes” d’une classe ?&#xA;2. Supposons deux classes: Points qui implémente un point dans le plan et Cercle disposant d’un attribut _points de type std::vector&lt;point&gt;. Quel invariant cette classe pourrait-on décider d’implémenter dans Cercle ?</description>
     </item>
   </channel>
 </rss>

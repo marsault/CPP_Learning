@@ -40,7 +40,7 @@
       <link>/chapter4/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter4/index.html</guid>
-      <description>Dans ce chapitre, nous allons revenir en détail sur la notion de copie et aborder celle de déplacement. Plus particulièrement, nous allons voir comment définir la façon dont une classe se copie et se déplace, et quand.&#xA;Pour savoir quand un objet est déplacé ou copié, il faut d’abord comprendre les deux principales catégories de valeurs : L-value et R-value.&#xA;Nouveau chapitre Ce chapitre a été écrit cette année. Il contient probablement de nombreuses erreurs.</description>
+      <description>Dans ce chapitre, nous allons revenir en détail sur la notion de copie et aborder celle de déplacement. Plus particulièrement, nous allons voir comment définir la façon dont une classe se copie et se déplace, et quand.&#xA;Pour savoir quand un objet est déplacé ou copié, il faut d’abord comprendre les deux principales catégories de valeurs : L-value et R-value.</description>
     </item>
     <item>
       <title>Librairie standard</title>
@@ -103,14 +103,7 @@
       <link>/slides/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/slides/index.html</guid>
-      <description>Voici les planches utilisés en cours magistral.&#xA;CM du Segment 1 CM du Segment 2 CM du Segment 3</description>
-    </item>
-    <item>
-      <title>Workflow</title>
-      <link>/workflow/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/workflow/index.html</guid>
-      <description>Afin de pouvoir mettre en place votre environnement de travail rapidement, vous pouvez suivre les étapes ci-dessous.&#xA;Récupérer le dépôt Git du cours et des TPs Forkez le dépôt https://github.com/Laefy/CPP_Learning_Code/. Ouvrez une nouvelle fenêtre dans VSCode et cliquez sur “clone repository…” Copiez le lien de votre dépôt créé par le fork. Collez ce lien dans la fenêtre de VSCode et sélectionnez “Clone from URL”. Choisissez le répertoire dans lequel le dépôt sera cloné.</description>
+      <description>Voici les planches utilisés en cours magistral.&#xA;CM du Segment 1 CM du Segment 2 (bientôt) CM du Segment 3 (bientôt)</description>
     </item>
   </channel>
 </rss>
