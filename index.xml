@@ -3,7 +3,7 @@
   <channel>
     <title>Accueil :: C&#43;&#43;</title>
     <link>/index.html</link>
-    <description>Bienvenue Sur ce site, vous trouverez le cours de C++ destiné à l’enseignement des Master 1 de l’Universisté Gustave-Eiffel. Si vous ne faites pas partie des étudiants de cette section, vous êtes tout de même les bienvenus. Sachez juste que d’une part, ce cours étant un cours d’introduction, nous nous concentrerons sur les concepts de base du langage, ainsi que sur les mécanismes permettant d’écrire du code plus simplement ou de le rendre plus sûr.</description>
+    <description>Bienvenue Sur ce site, vous trouverez le cours de C++ destiné à l’enseignement des Master 1 de l’Université Gustave-Eiffel. Si vous ne faites pas partie des étudiants de cette section, vous êtes tout de même les bienvenus. Sachez juste que d’une part, ce cours étant un cours d’introduction, nous nous concentrerons sur les concepts de base du langage, ainsi que sur les mécanismes permettant d’écrire du code plus simplement ou de le rendre plus sûr.</description>
     <generator>Hugo</generator>
     <language>fr</language>
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
@@ -76,6 +76,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter9/index.html</guid>
       <description>Dans ce deuxième chapitre sur les templates, nous parlerons de tout un tas de fonctionnalités et subtilités liées aux paramètres de templates. Installez-vous bien confortablement, faites-vous un ptit café, et n’hésitez pas à prendre une pause de temps en temps, parce que vous allez découvrir beaucoup de choses pas forcément faciles à intégrer du premier coup.</description>
+    </item>
+    <item>
+      <title>Aide</title>
+      <link>/help/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/help/index.html</guid>
+      <description>En construction Cette partie du site est en construction. N’hésitez pas à nous contacter si vous voyez des typos ou même des choses qui vous semble étranges.&#xA;Ce chapitre contient des pages pour vous aider si vous rencontrez des problèmes.</description>
     </item>
     <item>
       <title>Gestion mémoire (2022-2023)</title>

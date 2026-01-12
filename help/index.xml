@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aide :: C&#43;&#43;</title>
+    <link>/help/index.html</link>
+    <description>En construction Cette partie du site est en construction. N’hésitez pas à nous contacter si vous voyez des typos ou même des choses qui vous semble étranges.&#xA;Ce chapitre contient des pages pour vous aider si vous rencontrez des problèmes.</description>
+    <generator>Hugo</generator>
+    <language>fr</language>
+    <atom:link href="/help/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Erreur incompréhensible</title>
+      <link>/help/comon-mistakes/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/help/comon-mistakes/index.html</guid>
+      <description>Voici une liste non-exhaustive d’erreurs dans le code qui peuvent provoquer des messages d’erreurs incompréhensibles.&#xA;Erreurs générales Oubli d’un ; à la fin de la déclaration d’une classe Oubli du #pragma once au début d’un .hpp Oubli du MyClass:: devant la définition d’une fonction dans le .cpp Ce n’est pas la bonne fonction-membre qui est appelée dans un contexte d’héritage Oubli d’un virtual Typo dans le nom de la fonction membre dans la classe dérivée (majuscule qui devient une minuscule, etc) Changement d’un type; par exemple passage par référence dans la fonction-membre de la classe de base devient un passage par copie dans la fonction-membre de la classe dérivée Un const en trop ou qui manque dans la déclaration de la fonction-membre de la classe fille indiquant que la fonction-membre ne modifie pas l’objet courant Le compilateur refuse de construire un objet de type MyClass L’ajout d’un constructeur (quel qu’il soit) a pu empêcher au compilateur de générer le constructeur par défaut.</description>
+    </item>
+    <item>
+      <title>Lexique</title>
+      <link>/help/lexicon/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/help/lexicon/index.html</guid>
+      <description>Classe Classe abstraite: classe qui contient au moins une fonction-membre virtuelle pure; elle n’est donc pas instanciable. Classe concrète: classe qui n’est pas abstraite. Classe instanciable: classe dont on peut construire des instances, c’est-à-dire qui n’est donc pas abstraite et qui possède au moins un constructeur public. Classe copiable: classe qui possède un constructeur de copie (public). Classe déplaçable: classe qui possède un constructeur de déplacement (public). Classe stable en mémoire: classe dont les données ne risquent pas de changement d’adresse mémoire.</description>
+    </item>
+    <item>
+      <title>Workflow</title>
+      <link>/help/worflow/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/help/worflow/index.html</guid>
+      <description>Voici le workflow général que nous suivrons pour faire les exercices.&#xA;Récupérer les sources Les sources se récupèrent soit:&#xA;par un lien direct depuis ce site (exercices du cours); sur ce dépot git pour les TPs; directement sur votre machine (dans $HOME/SUJET) oour les TPs notés. Configurer avec CMakeLists. S’il n’est pas fourni, écrire un CMakeLists.txt cmake_minimum_required(VERSION 3.1) project(my_project) add_executable(my_executable # &lt;- Nom de l&#39;executable my_file1.cpp # \ my_file2.cpp # | # .</description>
+    </item>
+  </channel>
+</rss>

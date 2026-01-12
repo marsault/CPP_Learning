@@ -19,7 +19,7 @@
       <link>/chapter0/2-vscode/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter0/2-vscode/index.html</guid>
-      <description>Pour l’IDE, nous vous conseillons d’utiliser Visual Studio Code, car celui-ci est disponible sur toutes les plateformes (contrairement à Visual Studio tout court), qu’il est très bien documenté et que vous pourrez trouvez de nombreux tutoriels en ligne pour apprendre à l’utiliser.&#xA;Vous trouverez ci-dessous les instructions permettant d’installer VSCode.&#xA;Windows Installez VSCode en suivant les instructions du paragraphe Installation. Si l’installeur vous propose d’installer git, vous pouvez acceptez, cela vous fera gagner du temps pour la suite.</description>
+      <description>Migration A cause de l’intégration obligatoire de LLM dans VSCode, nous migrons vers VScodium cette année. Il s’agit d’un fork libre de VSCodium. Le site Pourra. Merci de nous les signaler.&#xA;Pour l’IDE, nous vous conseillons d’utiliser Visual Studio Codium, ou Visual Studio Code si vous comptez utiliser une machine sous windows. Notez que les TP notés n’auront pas VSCode. Vous trouverez ci-dessous les instructions permettant d’installer VSCode.&#xA;Windows Installez VSCode en suivant les instructions du paragraphe Installation.</description>
     </item>
     <item>
       <title>CMake</title>

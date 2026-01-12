@@ -217,6 +217,9 @@
     <loc>/chapter9/index.html</loc>
   </url>
   <url>
+    <loc>/help/index.html</loc>
+  </url>
+  <url>
     <loc>/old-2223-chapter3-memoire/index.html</loc>
   </url>
   <url>
@@ -271,7 +274,13 @@
     <loc>/categories/index.html</loc>
   </url>
   <url>
+    <loc>/help/comon-mistakes/index.html</loc>
+  </url>
+  <url>
     <loc>/faq/index.html</loc>
+  </url>
+  <url>
+    <loc>/help/lexicon/index.html</loc>
   </url>
   <url>
     <loc>/slides/index.html</loc>
@@ -284,5 +293,8 @@
   </url>
   <url>
     <loc>/tags/index.html</loc>
+  </url>
+  <url>
+    <loc>/help/worflow/index.html</loc>
   </url>
 </urlset>
