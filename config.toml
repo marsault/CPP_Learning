@@ -13,8 +13,8 @@ relativeURLs = true
   disableLanguageSwitchingButton = true
   disableSearch = true
   custom_css = ["css/syntax.css"]
-  finalURL = "https://igm.univ-mlv.fr/~marsault/cpp/cours/"
-  cpprefURL = "https://igm.univ-mlv.fr/~marsault/cpp/ref/en/"
+  finalURL = "https://monge.univ-eiffel.fr/~marsault/cpp/cours/"
+  cpprefURL = "https://monge.univ-eiffel.fr/~marsault/cpp/ref/en/"
   tpURL = "https://github.com/marsault/CPP_Exercises/"
   exoducoursURL = "https://github.com/marsault/CPP_Learning_Code/"
   formsubmitco_token = "08af4b8e13fc3ec785faa99820631150"
@@ -62,5 +62,5 @@ weight = 7
 
 [[menu.shortcuts]]
 name = "<i class='fas fa-passport'></i> (Copie locale de) CPP-Ref"
-url = "https://www-igm.univ-mlv.fr/~marsault/cpp/ref/en/"
+url = "https://www-monge.univ-eiffel.fr/~marsault/cpp/ref/en/"
 weight = 8
