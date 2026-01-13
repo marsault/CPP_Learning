@@ -27,18 +27,18 @@ par un lien direct depuis ce site (exercices du cours); sur ce dépot git pour l
     <meta itemprop="description" content="Voici le workflow général que nous suivrons pour faire les exercices.
 Récupérer les sources Les sources se récupèrent soit:
 par un lien direct depuis ce site (exercices du cours); sur ce dépot git pour les TPs; directement sur votre machine (dans $HOME/SUJET) pour les TPs notés. Configurer avec CMakeLists. S’il n’est pas fourni, écrire un CMakeLists.txt cmake_minimum_required(VERSION 3.1) project(my_project) add_executable(my_executable # &lt;- Nom de l&#39;executable my_file1.cpp # \ my_file2.cpp # | # .">
-    <meta itemprop="wordCount" content="334">
+    <meta itemprop="wordCount" content="358">
     <title>C&#43;&#43;::   Workflow</title>
-    <link href="../../css/fontawesome-all.min.css?1768248022" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768248022" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768248022" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768248022" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768248022" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768248022" rel="stylesheet">
-    <link href="../../css/fonts.css?1768248022" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768248022" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768248022" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768248022" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768248022" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768248022" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768248022"></script>
+    <link href="../../css/fontawesome-all.min.css?1768296177" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768296177" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768296177" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768296177" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768296177" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768296177" rel="stylesheet">
+    <link href="../../css/fonts.css?1768296177" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768296177" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768296177" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768296177" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768296177" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768296177" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768296177"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -144,7 +144,13 @@ par un lien direct depuis ce site (exercices du cours); sur ce dépot git pour l
 </span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="p">)</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">target_compile_features</span><span class="p">(</span><span class="s">my_executable</span> <span class="s">PUBLIC</span> <span class="s">cxx_std_17</span><span class="p">)</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span>    <span class="err">#</span> <span class="err">Pour</span> <span class="err">compiler</span> <span class="err">avec</span> <span class="err">le</span> <span class="err">standard</span> <span class="err">C++17</span>   <span class="err">^^^^^^^^^^</span></span></span></code></pre></div>
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    <span class="c"># Pour compiler avec le standard C++17   ^^^^^^^^^^
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">target_compile_options</span><span class="p">(</span><span class="s">hello-world</span> <span class="s">PRIVATE</span> <span class="c"># Ajoute des
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="s">-Wall</span>  <span class="c"># Ajoute des warnings
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="s">-Wextra</span>  <span class="c"># Ajoute plus de warnings
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="s">-Werror</span>  <span class="c"># Transforme les warnings en erreurs
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="p">)</span></span></span></code></pre></div>
 <h4 id="lancer-cmake">Lancer CMake</h4>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">    <span class="c1"># Se placer avec `cd` à la racine du répertoire (où se trouve le `CMakeLists.txt`)</span>
 </span></span><span class="line"><span class="cl">    mkdir build <span class="c1"># crée un répertoire `build` dans le répertoire courant</span>
@@ -281,9 +287,9 @@ par un lien direct depuis ce site (exercices du cours); sur ce dépot git pour l
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768248022" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768248022" defer></script>
-    <script src="../../js/theme.js?1768248022" defer></script>
+    <script src="../../js/clipboard.min.js?1768296177" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768296177" defer></script>
+    <script src="../../js/theme.js?1768296177" defer></script>
 
 
 
