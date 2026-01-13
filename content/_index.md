@@ -67,7 +67,7 @@ Le questionnaire de fin de chapitre sera composé comme suit :
 
 N'hésitez vraiment surtout pas à poser vos questions dans le formulaire, mais aussi à nous les envoyer directement par mail ou Discord, en particulier si cela vous bloque pour avancer.
 
-### Séances de TP
+#### Séances de TP
 
 L'énoncé pour chaque séance de TP sera disponible au format Markdown sur [dépôt git]({{% param tpURL %}}).
 
@@ -75,7 +75,7 @@ Certaines parties de la séance seront à réaliser en autonomie, tandis que d'a
 
 #### Questions
 
-Si vous avez des questions sur le TP ou le cours, le meilleur moment pour les poser est pendant les séances de TP.
+Si vous avez des questions sur le TP ou le cours, le meilleur moment pour les poser est pendant les séances de TP, mais n'hésitez pas à nous contacter sur Discord.
 
 Si vous n'avez pas terminé le TP avant la fin de la séance, et que vous avez des questions pendant que vous êtes en train de le terminer chez vous, vous pouvez contacter votre chargé de TP par mail ou sur Discord. Vous pouvez également demander de l'aide à vos camarades de classe, car c'est toujours intéressant de travailler en groupe.
 
@@ -97,16 +97,6 @@ Au final, ce cours a pour objectif les points suivants :
 - que vous acquiériez l'autonomie et les réflexes indispensables permettant de vous débloquer lorsque vous rencontrez un problème.
 
 Bien entendu, comme n'importe quel autre cours que vous trouverez sur Internet, vous aurez à fournir un minimum d'investissement si vous souhaitez en tirer quoi que ce soit.
-N'hésitez pas à prendre connaissance du paragraphe (volontairement moralisateur 💩) ci-dessous.
-
-{{% notice warning %}}
-Si cela ne vous intéresse vraiment pas, je ne souhaite pas vous forcer à travailler et je vous conseille grandement d'aller acquérir vos crédits universitaires dans d'autres matières.
-Le C++ n'étant pas un langage facile à aborder, sachez que la méthode : "je lis le chapitre vite fait la veille du TP noté", ne vous suffira pas à avoir une note potable à la fin du semestre.
-Je préfère donc vous prévenir à l'avance que si vous souhaitez effectivement apprendre le langage via ce cours, il faudra accepter d'y consacrer le temps nécessaire : 6h par semaine me paraîssent être le minimum à consacrer à cette matière.
-Réservez-vous donc à l'avance des créneaux sur votre emploi du temps pour pouvoir travailler et apprendre dans de bonnes conditions.
-{{% /notice %}}
-
-Cette introduction étant terminée, j'espère que vous vous amuserez et que vous apprendrez plein de choses. Bon courage pour la suite ! 😊🎉
 
 ---
 
