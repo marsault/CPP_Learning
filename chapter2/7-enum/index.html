@@ -5,34 +5,26 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.128.0">
     <meta name="generator" content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619">
-    <meta name="description" content="Commençons par quelques piqûres de rappel à propos des notions de POO que vous avez pu voir l’an dernier.
-Objet Dans un programme, un objet est un élément constitué d’un état, et disposant d’une interface permettant d’intéragir avec cet état.
-Classe Un objet est généralement créé à partir d’un modèle, que l’on appelle classe. Un objet créé à partir d’une classe constitue une instance de cette classe.
-Etat L’état d’un objet est composé de valeurs, pouvant ou non varier au cours de l’exécution du programme.">
+    <meta name="description" content="En plus des enums du C (que l’on utilisera pas!) le C&#43;&#43; a introduit des enum class.
+Déclaration d’une enum C&#43;&#43; enum class Color { Red, Green, Blue }; Initialisation d’une enum Les enum C&#43;&#43; sont généralement plus sécurisées. En particulier les valeurs (par exemple Red) doivent être préfixé par le nom de l’enum (par exemple Color::). Par exemple, voici comment stocké la valeur d’une enum dans une variable locale.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="C&#43;&#43;::   C&#39;est quoi un objet déjà ?">
-    <meta name="twitter:description" content="Commençons par quelques piqûres de rappel à propos des notions de POO que vous avez pu voir l’an dernier.
-Objet Dans un programme, un objet est un élément constitué d’un état, et disposant d’une interface permettant d’intéragir avec cet état.
-Classe Un objet est généralement créé à partir d’un modèle, que l’on appelle classe. Un objet créé à partir d’une classe constitue une instance de cette classe.
-Etat L’état d’un objet est composé de valeurs, pouvant ou non varier au cours de l’exécution du programme.">
-    <meta property="og:url" content="/chapter2/1-poo/index.html">
+    <meta name="twitter:title" content="C&#43;&#43;::   Enum">
+    <meta name="twitter:description" content="En plus des enums du C (que l’on utilisera pas!) le C&#43;&#43; a introduit des enum class.
+Déclaration d’une enum C&#43;&#43; enum class Color { Red, Green, Blue }; Initialisation d’une enum Les enum C&#43;&#43; sont généralement plus sécurisées. En particulier les valeurs (par exemple Red) doivent être préfixé par le nom de l’enum (par exemple Color::). Par exemple, voici comment stocké la valeur d’une enum dans une variable locale.">
+    <meta property="og:url" content="/chapter2/7-enum/index.html">
     <meta property="og:site_name" content="C&#43;&#43;::">
-    <meta property="og:title" content="C&#43;&#43;::   C&#39;est quoi un objet déjà ?">
-    <meta property="og:description" content="Commençons par quelques piqûres de rappel à propos des notions de POO que vous avez pu voir l’an dernier.
-Objet Dans un programme, un objet est un élément constitué d’un état, et disposant d’une interface permettant d’intéragir avec cet état.
-Classe Un objet est généralement créé à partir d’un modèle, que l’on appelle classe. Un objet créé à partir d’une classe constitue une instance de cette classe.
-Etat L’état d’un objet est composé de valeurs, pouvant ou non varier au cours de l’exécution du programme.">
+    <meta property="og:title" content="C&#43;&#43;::   Enum">
+    <meta property="og:description" content="En plus des enums du C (que l’on utilisera pas!) le C&#43;&#43; a introduit des enum class.
+Déclaration d’une enum C&#43;&#43; enum class Color { Red, Green, Blue }; Initialisation d’une enum Les enum C&#43;&#43; sont généralement plus sécurisées. En particulier les valeurs (par exemple Red) doivent être préfixé par le nom de l’enum (par exemple Color::). Par exemple, voici comment stocké la valeur d’une enum dans une variable locale.">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Classes">
-    <meta itemprop="name" content="C&#43;&#43;::   C&#39;est quoi un objet déjà ?">
-    <meta itemprop="description" content="Commençons par quelques piqûres de rappel à propos des notions de POO que vous avez pu voir l’an dernier.
-Objet Dans un programme, un objet est un élément constitué d’un état, et disposant d’une interface permettant d’intéragir avec cet état.
-Classe Un objet est généralement créé à partir d’un modèle, que l’on appelle classe. Un objet créé à partir d’une classe constitue une instance de cette classe.
-Etat L’état d’un objet est composé de valeurs, pouvant ou non varier au cours de l’exécution du programme.">
-    <meta itemprop="wordCount" content="486">
-    <title>C&#43;&#43;::   C&#39;est quoi un objet déjà ?</title>
+    <meta itemprop="name" content="C&#43;&#43;::   Enum">
+    <meta itemprop="description" content="En plus des enums du C (que l’on utilisera pas!) le C&#43;&#43; a introduit des enum class.
+Déclaration d’une enum C&#43;&#43; enum class Color { Red, Green, Blue }; Initialisation d’une enum Les enum C&#43;&#43; sont généralement plus sécurisées. En particulier les valeurs (par exemple Red) doivent être préfixé par le nom de l’enum (par exemple Color::). Par exemple, voici comment stocké la valeur d’une enum dans une variable locale.">
+    <meta itemprop="wordCount" content="379">
+    <title>C&#43;&#43;::   Enum</title>
     <link href="../../css/fontawesome-all.min.css?1768321361" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768321361" rel="stylesheet"></noscript>
     <link href="../../css/nucleus.css?1768321361" rel="stylesheet">
     <link href="../../css/auto-complete.css?1768321361" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768321361" rel="stylesheet"></noscript>
@@ -63,7 +55,7 @@ Etat L’état d’un objet est composé de valeurs, pouvant ou non varier au co
       window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../chapter2/1-poo/index.html">
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../chapter2/7-enum/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -74,7 +66,20 @@ Etat L’état d’un objet est composé de valeurs, pouvant ou non varier au co
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#déclaration-dune-enum-c">Déclaration d&rsquo;une enum C++</a></li>
+        <li><a href="#initialisation-dune-enum">Initialisation d&rsquo;une enum</a></li>
+        <li><a href="#des-switchs-plus-sûr">Des switchs plus sûr</a></li>
+        <li><a href="#définition-du-type-sous-jacent-et-des-valeurs-effectivement-stockée">Définition du type sous-jacent et des valeurs effectivement stockée</a></li>
+        <li><a href="#quel-intérêt-">Quel intérêt ?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
@@ -82,12 +87,12 @@ Etat L’état d’un objet est composé de valeurs, pouvant ou non varier au co
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">Accueil</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../chapter2/index.html"><span itemprop="name">Classes</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">C&#39;est quoi un objet déjà ?</span><meta itemprop="position" content="3"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Enum</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter2/index.html" title="Classes (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter2/6-operators/index.html" title="Opérateurs (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter2/2-first-class/index.html" title="Première classe (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter2/test/index.html" title="Questionnaire (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -107,43 +112,102 @@ Etat L’état d’un objet est composé de valeurs, pouvant ou non varier au co
   <header class="headline">
   </header>
 
-<h1 id="cest-quoi-un-objet-déjà-">C&#39;est quoi un objet déjà ?</h1>
+<h1 id="enum">Enum</h1>
 
-<p>Commençons par quelques piqûres de rappel à propos des notions de POO que vous avez pu voir l&rsquo;an dernier.</p>
-<hr>
-<h4 id="objet">Objet</h4>
-<p>Dans un programme, un <strong>objet</strong> est un élément constitué d&rsquo;un <strong>état</strong>, et disposant d&rsquo;une <strong>interface</strong> permettant d&rsquo;intéragir avec cet état.</p>
-<h4 id="classe">Classe</h4>
-<p>Un objet est généralement créé à partir d&rsquo;un modèle, que l&rsquo;on appelle <strong>classe</strong>. Un objet créé à partir d&rsquo;une classe constitue une <strong>instance</strong> de cette classe.</p>
-<h4 id="etat">Etat</h4>
-<p>L&rsquo;état d&rsquo;un objet est composé de valeurs, pouvant ou non varier au cours de l&rsquo;exécution du programme.</p>
-<h4 id="attributs">Attributs</h4>
-<p>Les <strong>attributs</strong> sont les propriétés définies par une classe à partir desquelles on construit l&rsquo;état des instances.<br>
-Si une classe <code>Personne</code> définit deux attributs <code>nom</code> et <code>age</code>, alors l&rsquo;état de chaque instance de <code>Personne</code> sera composé d&rsquo;une valeur pour le nom, et d&rsquo;une valeur pour l&rsquo;âge.</p>
-<h4 id="interface">Interface</h4>
-<p>L&rsquo;interface est l&rsquo;ensemble des procédés permettant d&rsquo;accéder à l&rsquo;état d&rsquo;un objet ou de le modifier.<br>
-Selon les langages, elle ne se présente pas de la même manière. En C++, elle se compose des <strong>fonctions-membres</strong> de la classe (appelées <strong>méthodes</strong> en Java), ainsi que de ses éventuels attributs publics.</p>
-<h4 id="invariant-de-classe">Invariant de classe</h4>
-<p>Un <strong>invariant de classe</strong> est une condition que toutes les instances de cette classe doivent vérifier. Par exemple :</p>
-<ul>
-<li>Pour la classe <code>Carré</code>, l&rsquo;un des invariants stipule que les quatre côtés d&rsquo;une instance doivent toujours avoir la même longueur.</li>
-<li>Dans le cas de la classe <code>Fraction</code>, un invariant essentiel est que le dénominateur de chaque instance ne peut jamais être nul.</li>
-<li>Pour la classe <code>ListeCroissante</code>, le tri des éléments par ordre croissant constitue un invariant.</li>
-</ul>
-<p>Lorsqu&rsquo;une fonction-membre publique est appelée, on peut toujours supposer qu&rsquo;à son entrée, les invariants sont garantis.
-En contre-partie, il faut que l&rsquo;implémentation de la fonction garantisse également qu&rsquo;à la sortie, les invariants seront toujours vrais.<br>
-Par exemple, la fonction <code>ListeCroissante::insert()</code> n&rsquo;a pas besoin de vérifier que la liste est triée au début, car on part du principe que l&rsquo;invariant est forcément vrai dès l&rsquo;entrée.
-On peut donc utiliser la recherche dichotomique pour trouver où doit être inséré le nouvel élément, ce qui est moins coûteux que si on avait à faire une recherche linéaire.<br>
-L&rsquo;invariant permet donc ici de gagner en temps de calcul.</p>
-<h4 id="encapsulation">Encapsulation</h4>
-<p>L&rsquo;<strong>encapsulation</strong> est le principe stipulant que pour pour accéder à l&rsquo;état d&rsquo;un objet ou le modifier, il faut passer par des &ldquo;routines&rdquo; (fonction-membre en C++, méthode en Java, &hellip;).
-Ce principe s&rsquo;accompagne souvent du masquage de l&rsquo;état des objets, c&rsquo;est-à-dire de la déclaration des attributs dans la partie privée de la classe.<br>
-Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de classe plus facilement.</p>
-<p>Reprenons l&rsquo;exemple de la classe <code>ListeCroissante</code>.
-On ne laissera pas l&rsquo;utilisateur accéder directement au tableau contenant les valeurs.
-En effet, il pourrait ajouter un élément à la fin, ce qui aurait de grandes chances de briser l&rsquo;invariant de classe.
-S&rsquo;il veut ajouter un élément, on le forcera à passer par notre fonction-membre qui fera respecter cet invariant.</p>
+<p>En plus des enums du C (que l&rsquo;on utilisera pas!) le C++ a introduit des <code>enum class</code>.</p>
+<h3 id="déclaration-dune-enum-c">Déclaration d&rsquo;une enum C++</h3>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="k">enum</span> <span class="k">class</span> <span class="nc">Color</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Red</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Green</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Blue</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div>
+<h3 id="initialisation-dune-enum">Initialisation d&rsquo;une enum</h3>
+<p>Les enum C++ sont généralement plus sécurisées.  En particulier les valeurs (par exemple <code>Red</code>) doivent être préfixé par le nom de l&rsquo;enum (par exemple <code>Color::</code>). Par exemple, voici comment stocké la valeur d&rsquo;une enum dans une variable locale.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="n">Color</span> <span class="n">my_color</span> <span class="o">=</span> <span class="n">Color</span><span class="o">::</span><span class="n">Red</span><span class="p">;</span></span></span></code></pre></div>
+<h3 id="des-switchs-plus-sûr">Des switchs plus sûr</h3>
+<p>En C++ les enums ne peuvent avoir que les valeurs déclarées.<br>
+Que se passe-til quand on compile suivante avec l&rsquo;option <code>-Wall</code>.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">o</span><span class="p">,</span> <span class="n">Color</span> <span class="n">color</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">switch</span><span class="p">(</span><span class="n">color</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="n">Color</span><span class="o">::</span><span class="nl">Red</span><span class="p">:</span> <span class="n">o</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Red&#34;</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="n">Color</span><span class="o">::</span><span class="nl">Green</span><span class="p">:</span> <span class="n">o</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Green&#34;</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">o</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Le compilateur indique que le switch est incomplet (probablement même qu&rsquo;il manque exactement la valeur Bleu).</p>
+
+        </div>
+    </div>
+
+</div>
+
+<h3 id="définition-du-type-sous-jacent-et-des-valeurs-effectivement-stockée">Définition du type sous-jacent et des valeurs effectivement stockée</h3>
+<p>Pour avoir plus de contrôle, on peut choisir ce qui sera stockée effectivement en mémoire pour chaque valeur de l&rsquo;enum.  On peut aussi spécifier la <em>taille</em> que prend une enum en mémoire, ou plutôt le type sous-jacent qui permettra de la stocker.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="c1">// Une Color est stocké dans un unsigned
+</span></span></span><span class="line"><span class="cl"><span class="c1">//               vvvvvvvvvv
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">enum</span> <span class="k">class</span> <span class="nc">Color</span> <span class="o">:</span> <span class="kt">unsigned</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">None</span> <span class="o">=</span> <span class="mi">0u</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//   ^^^^
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// On peut spécifier (ou non) la valeur
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//  vvvv
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">Red</span> <span class="o">=</span> <span class="mi">1u</span> <span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Green</span> <span class="o">=</span> <span class="mi">2u</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Blue</span> <span class="o">=</span> <span class="mi">3u</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div>
+<h3 id="quel-intérêt-">Quel intérêt ?</h3>
+<p>Le but est de pouvoir caster de façon sûre notre enum dans un autre type.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">color_names</span><span class="o">=</span> <span class="p">{</span><span class="s">&#34;None&#34;</span><span class="p">,</span> <span class="s">&#34;Red&#34;</span><span class="p">,</span> <span class="s">&#34;Green&#34;</span><span class="p">,</span> <span class="s">&#34;Blue&#34;</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">o</span><span class="p">,</span> <span class="n">Color</span> <span class="n">color</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">o</span> <span class="o">&lt;&lt;</span> <span class="n">color_names</span><span class="p">[(</span><span class="kt">unsigned</span><span class="p">)</span><span class="n">color</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<p>En utilisant le vecteur  écrire une fonction <code>stoc</code> qui prend en argument une chaîne de caractère et qui renvoie l&rsquo;enum appropriée ou <code>None</code> si c&rsquo;est une autre.</p>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Color stoc(const std::string&amp; target) {
+for (unsigned i = 0; i &lt; color_names.size(); ++i)
+if (color_names[i] == target)
+return ((Color) i);
+return Color::None;
+}</p>
+
+        </div>
+    </div>
+
+</div>
+
+<p>Cela permet aussi de définir une valeur spécifique de l&rsquo;enum qui aura la valeur 0.   En castant l&rsquo;enum en booléen, ça permet de l&rsquo;utiliser dans les tests, comme le montre le code suivant.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">((</span><span class="kt">bool</span><span class="p">)</span> <span class="n">Color</span><span class="o">::</span><span class="n">None</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">((</span><span class="kt">bool</span><span class="p">)</span> <span class="n">Color</span><span class="o">::</span><span class="n">Red</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;World&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span></span></span></code></pre></div>
+<!-- https://godbolt.org/z/15K6dGvPc -->
   <footer class="footline">
   </footer>
 </article>
@@ -167,12 +231,13 @@ S&rsquo;il veut ajouter un élément, on le forcera à passer par notre fonction
             <li class="" data-nav-id="/chapter0/index.html"><a class="padding" href="../../chapter0/index.html"><span class="chapnum">0.</span>&ensp;Mise en place<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb41caf94f12b8a1a4b5e560230e7851" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter1/index.html"><a class="padding" href="../../chapter1/index.html"><span class="chapnum">1.</span>&ensp;Introduction au C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-6c398714eae4372920aec3a1e6c2e143" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/chapter2/index.html"><a class="padding" href="../../chapter2/index.html"><span class="chapnum">2.</span>&ensp;Classes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b1df0095a9fd74320697a6d478418ec3" class="collapsible-menu">
-            <li class="active " data-nav-id="/chapter2/1-poo/index.html"><a class="padding" href="../../chapter2/1-poo/index.html"><span class="presection-icon">🤔</span>C&#39;est quoi un objet déjà ?<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter2/1-poo/index.html"><a class="padding" href="../../chapter2/1-poo/index.html"><span class="presection-icon">🤔</span>C&#39;est quoi un objet déjà ?<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter2/2-first-class/index.html"><a class="padding" href="../../chapter2/2-first-class/index.html"><span class="presection-icon">✨</span>Première classe<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter2/3-constructor/index.html"><a class="padding" href="../../chapter2/3-constructor/index.html"><span class="presection-icon">🔨</span>Constructeur<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter2/4-destructor/index.html"><a class="padding" href="../../chapter2/4-destructor/index.html"><span class="presection-icon">💥</span>Destructeur<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter2/5-modules/index.html"><a class="padding" href="../../chapter2/5-modules/index.html"><span class="presection-icon">🧱</span>Modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter2/6-operators/index.html"><a class="padding" href="../../chapter2/6-operators/index.html"><span class="presection-icon">⨀</span>Opérateurs<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active hidden " data-nav-id="/chapter2/7-enum/index.html"><a class="padding" href="../../chapter2/7-enum/index.html"><span class="presection-icon">⨀</span>Enum<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter2/test/index.html"><a class="padding" href="../../chapter2/test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu"></ul></li>
@@ -205,7 +270,7 @@ S&rsquo;il veut ajouter un élément, on le forcera à passer par notre fonction
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Langue</label>
                     <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
-                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../chapter2/1-poo/index.html" lang="fr" selected>Français</option>
+                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../chapter2/7-enum/index.html" lang="fr" selected>Français</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -263,7 +328,7 @@ S&rsquo;il veut ajouter un élément, on le forcera à passer par notre fonction
             onchange="updateQuestionFormSubject()" />
         <textarea name="question" rows="7" cols="30" placeholder="Mon message..."></textarea>
         <input type="hidden" name="selection" />
-        <input type="hidden" name="page" value="/chapter2/1-poo/" />
+        <input type="hidden" name="page" value="/chapter2/7-enum/" />
 
         <input type="hidden" name="_replyto" />
         <input type="hidden" name="_subject" />

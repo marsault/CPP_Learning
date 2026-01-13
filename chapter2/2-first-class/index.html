@@ -33,16 +33,16 @@ Méthodologie Ouvrez le fichier chap-02/1-first_class.cpp, dans lequel on vous f
 int main() { // Person p; // p.set_name(&#34;Batman&#34;); // p.set_age(23); // std::cout &lt;&lt; &#34;Person named &#39;&#34; &lt;&lt; p.get_name() &lt;&lt; &#34;&#39; is &#34; &lt;&lt; p.get_age() &lt;&lt; &#34; years old.">
     <meta itemprop="wordCount" content="1679">
     <title>C&#43;&#43;::   Première classe</title>
-    <link href="../../css/fontawesome-all.min.css?1768318072" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768318072" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768318072" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768318072" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768318072" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768318072" rel="stylesheet">
-    <link href="../../css/fonts.css?1768318072" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768318072" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768318072" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768318072" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768318072" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768318072" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768318072"></script>
+    <link href="../../css/fontawesome-all.min.css?1768321361" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768321361" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768321361" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768321361" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768321361" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768321361" rel="stylesheet">
+    <link href="../../css/fonts.css?1768321361" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768321361" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768321361" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768321361" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768321361" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768321361" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768321361"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -286,15 +286,15 @@ Par exemple, si vous avez suivi la correction, vous pouvez indiquer :</p>
 </ul>
 <p>Ici, vous allez placer un breakpoint sur l&rsquo;instruction <code>return 0;</code> du <code>main</code>.
 Pour cela, placez votre curseur sur la ligne en question et appuyez sur F9. Vous pouvez aussi cliquer directement à gauche du numéro de ligne.
-<a href="#R-image-c2fa58767f4e4639118c52ff9686ac90" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-breakpoint.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c2fa58767f4e4639118c52ff9686ac90"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-breakpoint.png"></a></p>
+<a href="#R-image-f9a5cd91b43b7a19c996ea72f2eabd8c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-breakpoint.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f9a5cd91b43b7a19c996ea72f2eabd8c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-breakpoint.png"></a></p>
 <p>Utilisez ensuite F5 pour lancer le programme.
 L&rsquo;éditeur devrait prendre cette apparence, indiquant que le programme est en pause juste avant l&rsquo;exécution de l&rsquo;instruction surlignée :
-<a href="#R-image-6fffeb53cbe6a6110a13fbd64dccb05d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-breaking.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6fffeb53cbe6a6110a13fbd64dccb05d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-breaking.png"></a></p>
+<a href="#R-image-63cce5c88449743cc697594c82d4f199" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-breaking.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-63cce5c88449743cc697594c82d4f199"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-breaking.png"></a></p>
 <p>Ouvrez maintenant le panneau d&rsquo;exécution en allant dans <code>View &gt; Run</code>.
-<a href="#R-image-a513c7399626012f80769fd2bbcd4e2f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-locals.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a513c7399626012f80769fd2bbcd4e2f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-locals.png"></a></p>
+<a href="#R-image-dd8cfc91d7a985b972a6e424074198d7" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-locals.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-dd8cfc91d7a985b972a6e424074198d7"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-locals.png"></a></p>
 <p>Ce panneau contient 3 sections :</p>
 <ul>
 <li>La section <strong>Variables</strong>, dans laquelle vous pouvez voir le contenu de chacune des variables locales à votre fonction.</li>
@@ -362,8 +362,8 @@ Quel type avez-vous utilisé pour l&rsquo;âge de Batman ?</p>
 
         <div class="hidden-solution-content">
             <p>Pour s&rsquo;arrêter au bon endroit, il faut placer le breakpoint sur la ligne de l&rsquo;instruction <code>p.set_age(23);</code>.
-<a href="#R-image-e1365eba3981b64da6cc4b8718538e3a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chap2-ex1-break.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e1365eba3981b64da6cc4b8718538e3a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chap2-ex1-break.png"></a></p>
+<a href="#R-image-dd8070a9f789f6e4c814ec29b59e81ff" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chap2-ex1-break.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-dd8070a9f789f6e4c814ec29b59e81ff"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chap2-ex1-break.png"></a></p>
 
         </div>
     </div>
@@ -564,9 +564,9 @@ Par conséquent, il est fortement recommandé de se <strong>relire systématique
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768318072" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768318072" defer></script>
-    <script src="../../js/theme.js?1768318072" defer></script>
+    <script src="../../js/clipboard.min.js?1768321361" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768321361" defer></script>
+    <script src="../../js/theme.js?1768321361" defer></script>
 
 
 
