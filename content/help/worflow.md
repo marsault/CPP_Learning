@@ -20,12 +20,13 @@ Les sources se récupèrent soit:
 cmake_minimum_required(VERSION 3.1)
 project(my_project)
 
-add_executable(my_executable  # <- Nom de l'executable
+#              vvvvvvvvvvvvv Nom de l'executable
+add_executable(my_executable  
     my_file1.cpp  # \
     my_file2.cpp  #  |
     # ...            |- Sources et headers
-    my_file3.h    #  |
-    my_file3.h    # /
+    my_file1.hpp  #  |
+    my_file3.hpp  # /
 )
 
 add_executable(my_executable2  # <- Eventuellement ajout d'un deuxième éxecutable
