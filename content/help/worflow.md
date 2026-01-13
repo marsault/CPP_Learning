@@ -13,7 +13,7 @@ Les sources se récupèrent soit:
 - directement sur votre machine (dans `$HOME/SUJET`) pour les TPs notés.
 
 
-### Configurer avec CMakeLists.
+### Configurer avec CMake
 
 #### S'il n'est pas fourni, écrire un `CMakeLists.txt`
 ```CMake
