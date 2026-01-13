@@ -29,16 +29,16 @@ Usage de la fonction std::move sur un exemple Considérons le bout de code ci-de
 #include &lt;iostream&gt; #include &lt;vector&gt; // Passage par valeur // vvvvvvvvvvv void f(std::vector&lt;std::string&gt; my_own_data) { for (auto&amp; s : my_own_data) std::cout &lt;&lt; &amp;s &lt;&lt; &#34; &#34;; // ^^ // On affiche l&#39;adresse des chaines de caractères std::cout &lt;&lt; std::endl; } int main() { std::vector&lt;std::string&gt; data = {&#34;Hello&#34;, &#34;World&#34;, &#34;!">
     <meta itemprop="wordCount" content="1376">
     <title>C&#43;&#43;::   Déplacement</title>
-    <link href="../../css/fontawesome-all.min.css?1768321361" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768321361" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768321361" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768321361" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768321361" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768321361" rel="stylesheet">
-    <link href="../../css/fonts.css?1768321361" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768321361" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768321361" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768321361" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768321361" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768321361" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768321361"></script>
+    <link href="../../css/fontawesome-all.min.css?1768332693" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768332693" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768332693" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768332693" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768332693" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768332693" rel="stylesheet">
+    <link href="../../css/fonts.css?1768332693" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768332693" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768332693" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768332693" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768332693" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768332693" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768332693"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -164,11 +164,11 @@ Les chaînes de caractères dans <code>my_own_data</code> sont en fait exactemen
 <p>Rappelez-vous qu&rsquo;un <code>std::vector</code> est un tableau dynamique, donc ses éléments sont en fait sur le tas,
 et ce sont elles qui vont être copiées ou réattribuées à <code>my_own_data</code>, comme le montrent les deux diagrammes en dessous.</p>
 <h4 id="effet-sur-la-mémoire-du-premier-appel-à-f-copie">Effet sur la mémoire du premier appel à <code>f</code> (copie)</h4>
-<p><a href="#R-image-4fda9dd0fac4ea1c09e37f8cddf30013" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_copy.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-4fda9dd0fac4ea1c09e37f8cddf30013"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_copy.svg"></a></p>
+<p><a href="#R-image-ce685aa54a3d0db2b6cea4889f0f92f2" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_copy.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ce685aa54a3d0db2b6cea4889f0f92f2"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_copy.svg"></a></p>
 <h4 id="effet-sur-la-mémoire-du-deuxième-appel-à-f-déplacement">Effet sur la mémoire du deuxième appel à <code>f</code> (déplacement)</h4>
-<p><a href="#R-image-93347c56f06b80d564d99650d54081de" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_move.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-93347c56f06b80d564d99650d54081de"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_move.svg"></a></p>
+<p><a href="#R-image-46da3acc43bc2b2fbc7582bf4468767e" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_move.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-46da3acc43bc2b2fbc7582bf4468767e"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_move.svg"></a></p>
 <h3 id="constructeur-de-déplacement">Constructeur de déplacement</h3>
 <p>Maintenant qu&rsquo;on a compris le principe du déplacement, encore faut-il pouvoir définir comment se déplacent
 nos propres classes.  Etant donné une classe <code>MaClasse</code> le constructeur de déplacement a le prototype suivant.</p>
@@ -429,7 +429,7 @@ En effet toutes les expressions suivantes sont des R-value:</p>
 <p>L&rsquo;élusion de déplacement est une optimisation consistant à éluder (=éviter) un déplacement en utilisant directement la mémoire où l&rsquo;objet sera finalement stocké.
 Dans certaines circonstances, le compilateur <strong>doit</strong> éluder le déplacement d&rsquo;un objet;
 et dans certaines circonstances, le compilateur <strong>peut</strong> éluder le déplacement d&rsquo;un objet.
-Nous ne décrirons pas ces circonstances dans le cours (détails sur <a href="https://igm.univ-mlv.fr/~marsault/cpp/ref/en/cpp/language/copy_elision.html">cppref</a>), mais ne soyez pas surpris si le constructeur de déplacement n&rsquo;est parfois pas appelé: c&rsquo;est sans doute une élusion de déplacement.</p>
+Nous ne décrirons pas ces circonstances dans le cours (détails sur <a href="https://monge.univ-eiffel.fr/~marsault/cpp/ref/en/cpp/language/copy_elision.html">cppref</a>), mais ne soyez pas surpris si le constructeur de déplacement n&rsquo;est parfois pas appelé: c&rsquo;est sans doute une élusion de déplacement.</p>
 <p>Voici deux exemples.</p>
 <hr>
 <p>Dans le code en dessous, le compilateur doit effectuer une élusion de déplacement.</p>
@@ -500,7 +500,7 @@ En fait, suivant le contenu de <code>f</code>, le compilateur peut décider de n
             <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt git des sujets de TPs</a></li>
             <li><a class="padding" href="../../help/slides/index.html"><i class='far fa-file-powerpoint'></i> Planches du CM</a></li>
             <li><a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a></li>
-            <li><a class="padding" href="https://www-igm.univ-mlv.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> (Copie locale de) CPP-Ref</a></li>
+            <li><a class="padding" href="https://www-monge.univ-eiffel.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> (Copie locale de) CPP-Ref</a></li>
           </ul>
         </div>
         <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
@@ -553,9 +553,9 @@ En fait, suivant le contenu de <code>f</code>, le compilateur peut décider de n
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768321361" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768321361" defer></script>
-    <script src="../../js/theme.js?1768321361" defer></script>
+    <script src="../../js/clipboard.min.js?1768332693" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768332693" defer></script>
+    <script src="../../js/theme.js?1768332693" defer></script>
 
 
 
@@ -579,7 +579,7 @@ En fait, suivant le contenu de <code>f</code>, le compilateur peut décider de n
         <input type="hidden" name="_subject" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://igm.univ-mlv.fr/~marsault/cpp/cours/common/question-submitted" />
+        <input type="hidden" name="_next" value="https://monge.univ-eiffel.fr/~marsault/cpp/cours/common/question-submitted" />
 
         <input type="submit" disabled style="display: none" aria-hidden="true" />
         <input type="submit" value="Envoyer" />
