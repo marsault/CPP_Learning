@@ -35,10 +35,10 @@ add_executable(my_executable2  # <- Eventuellement ajout d'un deuxième éxecuta
 target_compile_features(my_executable PUBLIC cxx_std_17)
     # Pour compiler avec le standard C++17   ^^^^^^^^^^
 
-target_compile_options(hello-world PRIVATE # Ajoute des
--Wall  # Ajoute des warnings
--Wextra  # Ajoute plus de warnings
--Werror  # Transforme les warnings en erreurs
+target_compile_options(my_executable PRIVATE  # <- Ajoute des flags à la compilation
+    -Wall  # Ajoute des warnings
+    -Wextra  # Ajoute plus de warnings
+    -Werror  # Transforme les warnings en erreurs
 )
 
 ```
