@@ -25,16 +25,16 @@ Installation Windows Ouvrez un terminal MSYS2 UCRT64. Installez les paquets cmak
 Installation Windows Ouvrez un terminal MSYS2 UCRT64. Installez les paquets cmake et make avec l’instruction suivante : pacman -S mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-make Linux / MacOS Ouvrez un terminal. Utilisez votre gestionnaire de package afin d’installer cmake. Fichier de configuration Vous aurez besoin d’un fichier CMakeLists.txt à la racine de votre répertoire pour configurer le projet. Si celui-ci ne contient qu’un seul programme, vous pouvez copier et adapter dans votre CMakeLists.">
     <meta itemprop="wordCount" content="279">
     <title>C&#43;&#43;::   CMake</title>
-    <link href="../../css/fontawesome-all.min.css?1768296470" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768296470" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768296470" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768296470" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768296470" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768296470" rel="stylesheet">
-    <link href="../../css/fonts.css?1768296470" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768296470" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768296470" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768296470" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768296470" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768296470" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768296470"></script>
+    <link href="../../css/fontawesome-all.min.css?1768318072" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768318072" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768318072" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768318072" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768318072" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768318072" rel="stylesheet">
+    <link href="../../css/fonts.css?1768318072" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768318072" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768318072" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768318072" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768318072" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768318072" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768318072"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -133,7 +133,7 @@ Installation Windows Ouvrez un terminal MSYS2 UCRT64. Installez les paquets cmak
 <h3 id="fichier-de-configuration">Fichier de configuration</h3>
 <p>Vous aurez besoin d&rsquo;un fichier <code>CMakeLists.txt</code> à la racine de votre répertoire pour configurer le projet.
 Si celui-ci ne contient qu&rsquo;un seul programme, vous pouvez copier et adapter dans votre <code>CMakeLists.txt</code> les instructions suivantes.</p>
-<div class="highlight wrap-code"><pre tabindex="0"><code>cmake_minimum_required(VERSION 3.1)
+<div class="highlight wrap-code"><pre tabindex="0"><code>cmake_minimum_required(VERSION 3.16)
 project(my_project)
 
 add_executable(my_executable
@@ -162,8 +162,8 @@ target_compile_features(my_executable PUBLIC cxx_std_17)</code></pre></div>
 <ol>
 <li>Démarrez VSCode.</li>
 <li>Ouvrez le panneau des extensions et recherchez les extensions <code>CMake</code> et <code>CMakeTools</code>.
-<a href="#R-image-90c3e9105d0ad04b169b21931a1e349a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/cmake-ext.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-90c3e9105d0ad04b169b21931a1e349a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/cmake-ext.png"></a></li>
+<a href="#R-image-f8101b96d720ed08d15dfaff86a96a70" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/cmake-ext.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f8101b96d720ed08d15dfaff86a96a70"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/cmake-ext.png"></a></li>
 <li>Cliquez ensuite sur le bouton <code>Install</code> pour chacune d&rsquo;entre elles.</li>
 <li>Redémarrez VSCode.</li>
 <li>Vérifiez que vous avez accès aux commandes <code>CMake</code> depuis le panneau de commandes (<code>View &gt; Command Palette ...</code> ou <code>Ctrl + Shift + P</code>).</li>
@@ -172,16 +172,16 @@ target_compile_features(my_executable PUBLIC cxx_std_17)</code></pre></div>
 <ol>
 <li>Téléchargez et extrayez <a href="../hello.zip">cette archive</a> dans un nouveau dossier.</li>
 <li>Ouvrez ce dossier depuis VSCode.
-<a href="#R-image-fdafd72083cbf6392d39f1c1e0f63c08" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/folder-vscode.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-fdafd72083cbf6392d39f1c1e0f63c08"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/folder-vscode.png"></a></li>
+<a href="#R-image-f7bf0211ef6d68d8247f87068b4813f0" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/folder-vscode.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f7bf0211ef6d68d8247f87068b4813f0"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/folder-vscode.png"></a></li>
 <li>Exécutez la commande <code>CMake: Configure</code>.</li>
 <li>Sélectionnez le compilateur g++ ou clang++ le plus récent dans la liste proposée.</li>
 <li>La configuration et la génération des fichiers de build devraient avoir lieu.
-<a href="#R-image-08c6f0ec1e6e620c08d51d5ccd2842ac" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/cmake-result.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-08c6f0ec1e6e620c08d51d5ccd2842ac"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/cmake-result.png"></a></li>
+<a href="#R-image-832762b5342a736f993d0de6ece4f923" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/cmake-result.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-832762b5342a736f993d0de6ece4f923"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/cmake-result.png"></a></li>
 <li>Cliquez maintenant sur le bouton <code>Build</code> dans la barre en bas (ou F7) pour compiler le projet.
-<a href="#R-image-8bb33ddcf5060b9769b905c87a3f6e1c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/cmake-build.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8bb33ddcf5060b9769b905c87a3f6e1c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/cmake-build.png"></a> &ndash;&gt;</li>
+<a href="#R-image-9e2af2eaa0226de76839b4fa7048c4ab" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/cmake-build.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9e2af2eaa0226de76839b4fa7048c4ab"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/cmake-build.png"></a> &ndash;&gt;</li>
 </ol>
 <!--
 ---
@@ -251,8 +251,7 @@ Votre programme devrait se lancer puis mettre en pause son exécution sur la lig
           <div class="nav-title padding">Accès rapide</div>
           <ul class="space">
             <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt git des sujets de TPs</a></li>
-            <li><a class="padding" href="../../slides/index.html"><i class='far fa-file-powerpoint'></i> Slides</a></li>
-            <li><a class="padding" href="../../chapter0/6-tips/"><i class='fa fa-rocket'></i> Astuces</a></li>
+            <li><a class="padding" href="../../help/slides/index.html"><i class='far fa-file-powerpoint'></i> Planches du CM</a></li>
             <li><a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a></li>
             <li><a class="padding" href="https://www-igm.univ-mlv.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> (Copie locale de) CPP-Ref</a></li>
           </ul>
@@ -307,9 +306,9 @@ Votre programme devrait se lancer puis mettre en pause son exécution sur la lig
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768296470" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768296470" defer></script>
-    <script src="../../js/theme.js?1768296470" defer></script>
+    <script src="../../js/clipboard.min.js?1768318072" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768318072" defer></script>
+    <script src="../../js/theme.js?1768318072" defer></script>
 
 
 

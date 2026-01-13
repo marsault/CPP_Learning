@@ -22,11 +22,18 @@
       <description>Classe Classe abstraite: classe qui contient au moins une fonction-membre virtuelle pure; elle n’est donc pas instanciable. Classe concrète: classe qui n’est pas abstraite. Classe instanciable: classe dont on peut construire des instances, c’est-à-dire qui n’est donc pas abstraite et qui possède au moins un constructeur publique. Classe copiable: classe qui possède un constructeur de copie (publique). Classe déplaçable: classe qui possède un constructeur de déplacement (publique). Classe default-constructible: classe qui possède un constructeur par défaut (publique).</description>
     </item>
     <item>
+      <title>Planches du CM</title>
+      <link>/help/slides/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/help/slides/index.html</guid>
+      <description>Voici les planches utilisés en cours magistral.&#xA;CM du Segment 1 CM du Segment 2 (bientôt) CM du Segment 3 (bientôt)</description>
+    </item>
+    <item>
       <title>Workflow</title>
       <link>/help/worflow/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/help/worflow/index.html</guid>
-      <description>Voici le workflow général que nous suivrons pour faire les exercices.&#xA;Récupérer les sources Les sources se récupèrent soit:&#xA;par un lien direct depuis ce site (exercices du cours); sur ce dépot git pour les TPs; directement sur votre machine (dans $HOME/SUJET) pour les TPs notés. Configurer avec CMake S’il n’est pas fourni, écrire un CMakeLists.txt cmake_minimum_required(VERSION 3.1) project(my_project) # vvvvvvvvvvvvv Nom de l&#39;executable add_executable(my_executable my_file1.cpp # \ my_file2.cpp # | # .</description>
+      <description>Voici le workflow général que nous suivrons pour faire les exercices.&#xA;Récupérer les sources Les sources se récupèrent soit:&#xA;par un lien direct depuis ce site (exercices du cours); sur ce dépot git pour les TPs; directement sur votre machine (dans $HOME/SUJET) pour les TPs notés. Configurer avec CMake S’il n’est pas fourni, écrire un CMakeLists.txt cmake_minimum_required(VERSION 3.16) project(my_project) # ^^^^^^^^^^ nom du projet (ne pas mettre d&#39;espace) # vvvvvvvvvvvvv Nom de l&#39;executable add_executable(my_executable my_file1.</description>
     </item>
   </channel>
 </rss>
