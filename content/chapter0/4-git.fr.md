@@ -30,11 +30,11 @@ Si vous êtes sous Unix (Linux / MacOS), vous devriez pouvoir installer git depu
 Si vous êtes sous Windows, vous pouvez télécharger l'outil depuis {{< open_in_new_tab "https://git-scm.com/download/win/" "cette page" />}}.
 
 ---
-
-### Différents dépôts du cours sur github
+<!-- 
+### Dépo
 
 - Exercices en lien avec le site du cours: https://github.com/marsault/CPP_Learning_Code/
-- Sujets de TPs: https://github.com/marsault/CPP_Exercises/
+- Sujets de TPs: https://github.com/marsault/CPP_Exercises/ -->
 
 <!-- ---
 

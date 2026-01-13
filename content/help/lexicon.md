@@ -1,6 +1,6 @@
 ---
 title: "Lexique"
-pre: '<span class="presection-icon">🎓</span>'
+pre: '<span class="presection-icon">📑</span>'
 ---
 
 

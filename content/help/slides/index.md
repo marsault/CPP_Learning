@@ -1,6 +1,7 @@
 ---
 title: "Planches du CM"
-hidden: true
+pre: '<span class="presection-icon">🎦</span>'
+hidden: false
 ---
 
 Voici les planches utilisés en cours magistral.

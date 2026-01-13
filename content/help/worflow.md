@@ -17,8 +17,9 @@ Les sources se récupèrent soit:
 
 #### S'il n'est pas fourni, écrire un `CMakeLists.txt`
 ```CMake
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.16)
 project(my_project)
+#       ^^^^^^^^^^ nom du projet (ne pas mettre d'espace)
 
 #              vvvvvvvvvvvvv Nom de l'executable
 add_executable(my_executable  
@@ -33,7 +34,7 @@ add_executable(my_executable2  # <- Eventuellement ajout d'un deuxième éxecuta
     # ...
 )
 
-target_compile_features(my_executable PUBLIC cxx_std_17)
+target_compile_features(my_executable PRIVATE cxx_std_17)
     # Pour compiler avec le standard C++17   ^^^^^^^^^^
 
 target_compile_options(my_executable PRIVATE  # <- Ajoute des flags à la compilation

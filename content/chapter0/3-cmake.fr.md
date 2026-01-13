@@ -30,7 +30,7 @@ Afin de générer les artéfacts pour la compilation, nous utiliserons {{< open_
 Vous aurez besoin d'un fichier `CMakeLists.txt` à la racine de votre répertoire pour configurer le projet.
 Si celui-ci ne contient qu'un seul programme, vous pouvez copier et adapter dans votre `CMakeLists.txt` les instructions suivantes.
 ```
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.16)
 project(my_project)
 
 add_executable(my_executable

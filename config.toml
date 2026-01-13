@@ -41,8 +41,8 @@ url = "https://github.com/marsault/CPP_Exercises/"
 weight = 2
 
 [[menu.shortcuts]]
-name = "<i class='far fa-file-powerpoint'></i> Slides"
-url = "/slides"
+name = "<i class='far fa-file-powerpoint'></i> Planches du CM"
+url = "/help/slides"
 weight = 3
 
 #[[menu.shortcuts]]
@@ -54,11 +54,6 @@ weight = 3
 #name = "<i class='fas fa-question-circle'></i> FAQ"
 #url = "/faq"
 #weight = 5
-
-[[menu.shortcuts]]
-name = "<i class='fa fa-rocket'></i> Astuces"
-url = "/chapter0/6-tips/"
-weight = 6
 
 [[menu.shortcuts]]
 name = "<i class='fas fa-cog'></i> Compiler Explorer"
