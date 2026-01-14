@@ -25,16 +25,16 @@ déréférencement avec *it incrémentation avec &#43;&#43;it récupérer les it
 déréférencement avec *it incrémentation avec &#43;&#43;it récupérer les itérateurs de début et de fin d’un conteneur avec ctn.begin() et ctn.end() insérer un élément dans un conteneur avec auto it_on_new = ctn.insert(it, new_value) supprimer un élément d’un conteneur avec auto it_on_next = ctn.erase(it) Vous allez maintenant voir ce qu’il faut faire pour implémenter vos propres itérateurs.">
     <meta itemprop="wordCount" content="1795">
     <title>C&#43;&#43;::   Itérateurs</title>
-    <link href="../../css/fontawesome-all.min.css?1768405492" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768405492" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768405492" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768405492" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768405492" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768405492" rel="stylesheet">
-    <link href="../../css/fonts.css?1768405492" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768405492" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768405492" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768405492" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768405492" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768405492" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768405492"></script>
+    <link href="../../css/fontawesome-all.min.css?1768406635" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768406635" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768406635" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768406635" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768406635" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768406635" rel="stylesheet">
+    <link href="../../css/fonts.css?1768406635" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768406635" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768406635" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768406635" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768406635" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768406635" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768406635"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -129,8 +129,8 @@ Dans le premier cas, l&rsquo;itérateur disposera donc des opérateurs <code>++<
 Vous pouvez trouver sur <a href="https://fr.cppreference.com/w/cpp/iterator" rel="external" target="_blank">cette page</a> toutes les catégories d&rsquo;itérateurs présents dans la STL.
 Vous pouvez ensuite cliquer sur chacune des catégories pour obtenir la liste des conditions à remplir pour qu&rsquo;une classe puisse être assimilée à un itérateur de cette catégorie.</p>
 <p>Par exemple, pour implémenter un itérateur bidirectionnel (c&rsquo;est-à-dire qui permet aussi bien d&rsquo;avancer que de reculer) :
-<a href="#R-image-16b813a021e834bc49918025a10856e1" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter6/doc-it-cat.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-16b813a021e834bc49918025a10856e1"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter6/doc-it-cat.png"></a></p>
+<a href="#R-image-52ce433073654ff8387fceceb358897f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter6/doc-it-cat.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-52ce433073654ff8387fceceb358897f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter6/doc-it-cat.png"></a></p>
 <ul>
 <li>il faut déjà satisfaire aux exigences du <code>ForwardIterator</code> (= itérateur qui permet d&rsquo;avancer dans une plage)</li>
 <li>il faut implémenter l&rsquo;opérateur de décrémentation et l&rsquo;opérateur de post-décrémentation, avec les bons types de retour</li>
@@ -529,9 +529,9 @@ Heureusement, implémenter des itérateurs, ce n&rsquo;est pas quelque chose que
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768405492" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768405492" defer></script>
-    <script src="../../js/theme.js?1768405492" defer></script>
+    <script src="../../js/clipboard.min.js?1768406635" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768406635" defer></script>
+    <script src="../../js/theme.js?1768406635" defer></script>
 
 
 

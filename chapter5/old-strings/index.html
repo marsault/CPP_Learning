@@ -39,18 +39,18 @@ Pour cet exercice, vous modifierez le fichier :
 La cible à compiler est c5-4-strings.
 Opérations standards Parmis les opérations standards que l’on peut effectuer sur des chaînes de caractère, on retrouve :
 la concaténation, l’extration de sous-chaîne, la recherche de caractère ou de sous-chaîne, la comparaison, le remplacement d’une partie de la chaîne.">
-    <meta itemprop="wordCount" content="700">
+    <meta itemprop="wordCount" content="720">
     <title>C&#43;&#43;::   Manipulation de chaînes</title>
-    <link href="../../css/fontawesome-all.min.css?1768405492" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768405492" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768405492" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768405492" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768405492" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768405492" rel="stylesheet">
-    <link href="../../css/fonts.css?1768405492" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768405492" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768405492" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768405492" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768405492" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768405492" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768405492"></script>
+    <link href="../../css/fontawesome-all.min.css?1768406635" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768406635" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768406635" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768406635" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768406635" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768406635" rel="stylesheet">
+    <link href="../../css/fonts.css?1768406635" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768406635" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768406635" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768406635" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768406635" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768406635" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768406635"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -144,47 +144,77 @@ la concaténation, l’extration de sous-chaîne, la recherche de caractère ou 
 <li>le remplacement d&rsquo;une partie de la chaîne.</li>
 </ul>
 <p>Recherchez dans la documentation les fonctions qui permettent d&rsquo;effectuer les opérations ci-dessus.</p>
-<div class="expand">
-  <input type="checkbox" id="R-expand-1e73e7fb1cb8ffdd52ded32fc3915ae6" aria-controls="R-expandcontent-1e73e7fb1cb8ffdd52ded32fc3915ae6">
-  <label class="expand-label" for="R-expand-1e73e7fb1cb8ffdd52ded32fc3915ae6">
-    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
-  </label>
-  <div id="R-expandcontent-1e73e7fb1cb8ffdd52ded32fc3915ae6" class="expand-content">
-<ul>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <ul>
 <li>concaténation -&gt; <code>operator+</code> : <code>auto str_3 = str1 + str2;</code></li>
 <li>extration de sous-chaîne -&gt; <code>substr</code> : <code>auto str_me = std::string { &quot;find me&quot; }.substr(5, 2);</code></li>
 <li>recherche -&gt; <code>find</code> : <code>auto pos = str.find(&quot;abc&quot;);</code></li>
 <li>comparaison -&gt; <code>operator==</code> : <code>auto are_equal = (str1 == str2);</code></li>
 <li>remplacement -&gt; <code>replace</code> : <code>std::string { &quot;this is old&quot; }.replace(8, 3, &quot;new&quot;);</code></li>
 </ul>
-  </div>
+
+        </div>
+    </div>
+
 </div>
+
 <hr>
 <h3 id="conversions">Conversions</h3>
 <p>Quelle fonction permet de convertir des valeurs numériques en chaînes de caractères ?
-<div class="expand">
-  <input type="checkbox" id="R-expand-9ecbaa0411b00610e6e452ab95e2dc7b" aria-controls="R-expandcontent-9ecbaa0411b00610e6e452ab95e2dc7b">
-  <label class="expand-label" for="R-expand-9ecbaa0411b00610e6e452ab95e2dc7b">
-    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
-  </label>
-  <div id="R-expandcontent-9ecbaa0411b00610e6e452ab95e2dc7b" class="expand-content">
-<p>Il s&rsquo;agit de <code>std::to_string</code>.</p>
-  </div>
-</div></p>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Il s&rsquo;agit de <code>std::to_string</code>.</p>
+
+        </div>
+    </div>
+
+</div>
+</p>
 <p>Quelles fonctions permettent maintenant de faire l&rsquo;inverse ? Que se passe-t-il si la chaîne de caractères ne contient pas vraiment une valeur du type attendu ?
-<div class="expand">
-  <input type="checkbox" id="R-expand-330ad2d98bb1990ef421be8729a8d6f0" aria-controls="R-expandcontent-330ad2d98bb1990ef421be8729a8d6f0">
-  <label class="expand-label" for="R-expand-330ad2d98bb1990ef421be8729a8d6f0">
-    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
-  </label>
-  <div id="R-expandcontent-330ad2d98bb1990ef421be8729a8d6f0" class="expand-content">
-<p>Il s&rsquo;agit des fonctions <code>std::stoi</code> (string to int), <code>std::stol</code> (string to long), <code>std::stof</code> (string to float), etc.<br>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Il s&rsquo;agit des fonctions <code>std::stoi</code> (string to int), <code>std::stol</code> (string to long), <code>std::stof</code> (string to float), etc.<br>
 Si la chaîne ne contient pas réellement un nombre, alors, la fonction lance une exception de type <code>std::invalid_argument</code>.</p>
-  </div>
-</div></p>
+
+        </div>
+    </div>
+
+</div>
+</p>
 <hr>
 <h3 id="passage-de-chaînes">Passage de chaînes</h3>
 <p>Pour passer une chaînes de caractères à une fonction, et sachant que cette fonction ne la modifie pas, vous aviez jusqu&rsquo;ici deux options possibles (ou en tout cas, deux options pas trop nulles) :</p>
@@ -221,14 +251,20 @@ Si une <code>string</code> référencée par une <code>string_view</code> est d�
   </div>
 </div>
 <p>Modifiez la signature de la fonction <code>print_in_console</code> de manière à utiliser une <code>string_view</code>. Comme <code>string_view</code> est une classe peu coûteuse à copier, il est préférable de la passer par valeur plutôt que référence.</p>
-<div class="expand">
-  <input type="checkbox" id="R-expand-653c793f10e729db20b6bebe94013e04" aria-controls="R-expandcontent-653c793f10e729db20b6bebe94013e04">
-  <label class="expand-label" for="R-expand-653c793f10e729db20b6bebe94013e04">
-    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
-  </label>
-  <div id="R-expandcontent-653c793f10e729db20b6bebe94013e04" class="expand-content">
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">print_in_console</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">str</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -240,8 +276,12 @@ Si une <code>string</code> référencée par une <code>string_view</code> est d�
 </span></span><span class="line"><span class="cl">    <span class="n">print_in_console</span><span class="p">(</span><span class="s">&#34;print me&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
-  </div>
+
+        </div>
+    </div>
+
 </div>
+
 
   <footer class="footline">
   </footer>
@@ -343,9 +383,9 @@ Si une <code>string</code> référencée par une <code>string_view</code> est d�
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768405492" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768405492" defer></script>
-    <script src="../../js/theme.js?1768405492" defer></script>
+    <script src="../../js/clipboard.min.js?1768406635" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768406635" defer></script>
+    <script src="../../js/theme.js?1768406635" defer></script>
 
 
 
