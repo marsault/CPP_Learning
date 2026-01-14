@@ -197,7 +197,7 @@ grand_son_copy_as_father.fcn_d();   // (6)
 
 Attention, il y a des vilains pièges, donc vérifiez bien la solution à la fin !
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 1/ Ca ne compile pas.\
 La résolution statique n'identifie aucun candidat pour `fcn_a(char, int)` ni dans `Father`, ni dans son parent `GrandFather`.
 
@@ -216,4 +216,4 @@ La résolution statique identifie `fcn_c() const` dans `GrandFather`, et celle-c
 6/ `Father::fcn_d()`\
 La résolution statique identifie `fcn_d()` dans `Father`.
 Comme `grand_son_copy_as_father` n'est pas une référence, il n'y a pas besoin de résolution dynamique : le compilateur peut déduire immédiatement qu'il faut appeler `Father::fcn_d()`.
-{{% /expand %}}
+{{% /hidden-solution %}}

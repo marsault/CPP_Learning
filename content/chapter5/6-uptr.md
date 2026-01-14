@@ -223,7 +223,7 @@ private:
 Pour vous habituez à manipuler les `unique_ptr`, vous allez modifier le code du programme `c3-3-cat`.
 
 Commencez par allouer dynamiquement un objet de type `Cat` et affichez son contenu à l'aide de l'opérateur `<<` déjà défini.
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 #include "Cat.h"
 
@@ -237,18 +237,18 @@ int main()
     return 0;
 }
 ```
-{{% /expand %}} 
+{{% /hidden-solution %}} 
 
 Redéfinissez le destructeur de `Cat` pour afficher du texte et vérifier que l'objet pointé est bien détruit à la sortie du scope, lorsque le `unique_ptr` est détruit.
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 ~Cat() { std::cout << "Cat " << _name << " has died..." << std::endl; }
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Ajoutez un constructeur à 1 paramètre à la classe `Cat` pour initialiser son attribut `_name`.\
 Adaptez l'initialisation du `unique_ptr` afin que le programme puisse compiler.
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 `Cat.h` :
 ```cpp
 class Cat
@@ -275,10 +275,10 @@ int main()
     return 0;
 }
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Créez maintenant un `unique_ptr<Cat>` vide et vérifiez que celui-ci est bien égal à `nullptr`.
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 int main()
 {
@@ -294,10 +294,10 @@ int main()
     return 0;
 }
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Réassignez ce dernier à une nouvelle instance de `Cat` allouée dynamiquement.
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 int main()
 {
@@ -315,10 +315,10 @@ int main()
     return 0;
 }
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Affichez si les deux `unique_ptr` sont égaux, puis si les deux objets pointés sont égaux.
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 int main()
 {
@@ -339,11 +339,11 @@ int main()
     return 0;
 }
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Réinitialisez le premier `unique_ptr` afin que celui-ci détruise l'objet sur lequel il pointe.\
 Vérifiez que celui-ci est maintenant bien égal à `nullptr`.
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 int main()
 {
@@ -370,7 +370,7 @@ int main()
     return 0;
 }
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 ---
 

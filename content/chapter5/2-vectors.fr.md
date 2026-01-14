@@ -24,7 +24,7 @@ Eh bien dans le cas des `vector`, des `array` et de la plupart des autres conten
 Instanciez un `vector<int>` en lui passant les paramètres `4` et `0` avec `{}`. Parcourez ensuite ce tableau à l'aide d'une boucle foreach et affichez son contenu.
 Remplacez ensuite les `{}` dans l'instanciation par `()`. Que constatez-vous ?
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 //std::vector<int> values { 4, 0 };
 std::vector<int> values(4, 0);
@@ -36,12 +36,12 @@ for (const auto v: values)
 ```
 Avec `{ 4, 0 }`, on obtient le tableau `{ 4, 0 }`. Avec `(4, 0)`, on obtient le tableau `{ 0, 0, 0, 0 }`.\
 La syntaxe `{}` permet donc d'initialiser le contenu du conteneur directement, alors que la syntaxe `()` permet d'initialiser le tableau avec 4 éléments valant 0.
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Allez sur la page de documentation des constructeurs de la classe `vector`.\
 En lisant les descriptions de chaque surcharge, essayez d'identifier celles que vous avez appelées en utilisant `(4, 0)` et `{ 4, 0 }`.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 En utilisant `(4, 0)`, vous avez appelé la surcharge du constructeur n°3. Celle-ci attend un un paramètre `count` et un paramètre `value`, qu'elle utilise pour initialiser le tableau avec `count` éléments `value`.
 
 En utilisant `{ 4, 0 }`, vous avez appelé la surcharge n°10, qui attend un paramètre de type **initializer_list** (à ne pas confondre avec le terme "liste d'initialisation").
@@ -50,7 +50,7 @@ En utilisant `{ 4, 0 }`, vous avez appelé la surcharge n°10, qui attend un par
 Si dans une classe, vous avez un constructeur qui attend un paramètre de type `initializer_list`, c'est ce constructeur là qui sera appelé si vous utilisé la syntaxe `{}`.\
 Et si la classe ne contient pas ce genre de constructeur, le compilateur utilisera le premier constructeur qu'il trouve ayant une signature pouvant accepter les arguments fournis, que vous utilisiez la syntaxe `()` ou `{}`.
 {{% /notice %}}
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Vous allez maintenant utiliser un nouveau constructeur, qui vous permettra de convertir un tableau primitif en un `vector`.\
 Il s'agit de la surcharge n° 5 : le constructeur attend deux paramètres `first` et `last`, qui correspondent aux itérateurs de début et fin d'un autre conteneur.
@@ -65,7 +65,7 @@ int* iterator_on_2nd_element = &array[1];
 Construisez maintenant un `vector` en lui fournissant des itérateurs de votre tableau primitif.\
 Essayez dans un premier temps d'avoir dans votre `vector` les valeurs `{ 2, 3, 4 }`, puis essayez ensuite d'obtenir le tableau complet.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 Déja, vu que `vector` a un constructeur par `initializer_list`, on est obligé d'utiliser la syntaxe `()` pour utiliser le constructeur qui nous intéresse.\
 Ensuite, pour aller jusqu'à 4, on se rend compte qu'il faut en fait donner l'itérateur sur la case suivant la dernière que l'on veut inclure.
 ```cpp
@@ -88,7 +88,7 @@ for (const auto v: part)
 Pour `full`, on aurait pu écrire `(&array[0], &array[6])`, mais c'est plus élégant d'écrire `(array, array + 6)`. Cela évite de penser qu'on essaye d'accéder a l'élément `array[6]`, qui est en dehors de l'array.
 {{% /notice %}}
 
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 ---
 
@@ -107,7 +107,7 @@ Utilisez une boucle `for` (et pas foreach) de manière à inverser l'ordre des �
 Afin d'itérer sur le `vector`, vous devrez récupérer sa taille. Quelle fonction faut-il utiliser pour ça ?\
 Sachez également que vous aurez probablement besoin d'utiliser la fonction `std::swap`.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 Dans l'exercice de la page précédente, vous avez appris que `size()` permet d'obtenir le nombre de d'éléments dans un `vector`.\
 Et pour utiliser `swap`, on n'oublie pas d'inclure le header `<utility>`.
 ```cpp
@@ -122,7 +122,7 @@ for (size_t left = 0, right = full.size() - 1; left < right; ++left, --right)
 Il est possible de définir plusieurs itérateurs dans la zone d'intialisation du `for`, du moment qu'ils sont de même type.
 {{% /notice %}}
 
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 {{% notice info %}}
 En C++, rien n'est magique. Si on peut utiliser `array[idx]` alors que `array` est de type `vector`, c'est parce que la classe définit un opérateur `[]`.\
@@ -139,9 +139,9 @@ Vous avez déjà vu que l'on pouvait ajouter des éléments à la fin d'un `vect
 Qu'en est-il si vous souhaitez insérer des éléments en plein milieu de ce tableau ?\
 Essayez de trouver dans la documentation les deux fonctions permettant d'ajouter des éléments n'importe où dans un `vector`. Quelle est la différence entre ces deux fonctions ?
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 Pour insérer des éléments à une position arbitraire, il est possible d'utiliser `insert` ou `emplace`. En utilisant `emplace`, il est possible de fournir les paramètres de construction de l'élément à insérer (comme `emplace_back`), alors que pour `insert`, il faut fournir l'élément à insérer directement (comme `push_back`).
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Vous ne l'avez peut-être pas remarqué, mais ces fonctions attendent un itérateur, et non un indice, pour indiquer où insérer le nouvel élément.\
 Pour obtenir un itérateur sur le début d'un `vector`, il faut utiliser la fonction `begin()`, pour obtenir l'itérateur de fin, il faut utiliser `end()`, et pour incrémenter l'itérateur, vous pouvez utiliser `++it` ou `it += step`. Enfin, si vous voulez récupérer l'élément pointé, vous pouvez écrire `*it` :
@@ -160,7 +160,7 @@ Les itérateurs ont souvent des types compliqués à écrire et à lire, c'est d
 En utilisant une fonction d'insertion, faites en sorte de dupliquer chacun des éléments de votre tableau. Par exemple, `{ 1, 2, 3 }` devrait devenir `{ 1, 1, 2, 2, 3, 3 }`.\
 **Prenez garde à l'invalidation des itérateurs !**
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 for (auto it = full.begin(); it != full.end(); it += 2)
 {
@@ -173,7 +173,7 @@ En cas de réallocations du tableau pendant l'insertion (parce que la capacité 
 C'est pour cela que l'on doit assigner le résultat de `insert` à `it` à chaque tour de boucle. 
 {{% /notice %}}
 
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 ---
 
@@ -185,38 +185,38 @@ La fonction la plus simple à utiliser est celle permettant de retirer le dernie
 Cherchez de quelle fonction il s'agit, et utilisez-la sur votre tableau à l'intérieur d'une boucle `while` jusqu'à ce que celui-ci soit vide.\
 Quelle fonction allez-vous utiliser dans la condition du `while` pour savoir si le tableau est vide ?
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 while (!full.empty())
 {
     full.pop_back();
 }
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Ca, c'était la partie façile. Pour supprimer des éléments à une position bien particulière, c'est un tout petit peu plus compliqué.\
 Pour cela, il faut utiliser la fonction `erase`. A priori, on pourrait penser que l'on peut écrire `v.erase(3)` pour supprimer le 3e élément du tableau, sauf que cela ne va pas marcher.\
 Consultez la documentation pour comprendre ce qui ne va pas et trouvez-y ce qu'il faut écrire à la place.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 La fonction `erase` fonctionne avec des itérateurs et non des indices, comme pour `insert` ou `emplace`.\
 En regardant l'exemple, on voit qu'il est possible de récupérer un itérateur sur la n-ieme case d'un tableau en écrivant `v.begin() + n`.
 Pour supprimer le 3e élément du tableau, on peut donc écrire :
 ```cpp
 v.erase(v.begin() + 3);
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Utilisez maintenant `erase` pour supprimer les éléments allant de l'indice 2 à l'indice 6 inclus d'un tableau contenant initialement `{ 0, 1, ..., 10 }`.\
 Faites le nécessaire pour que `erase` ne soit appelé qu'une seule fois par votre programme (=> pas le droit de faire de boucles).
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 `erase` dispose d'une surcharge acceptant deux itérateurs, qui permet de supprimer tous les éléments présents entre ces deux itérateurs.\
 Comme d'habitude, l'élément pointé par l'itérateur de fin est exclu. On doit donc écrire :
 ```cpp
 v.erase(v.begin() + 2, v.begin() + 7);
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 
 Supposons maintenant que vous souhaitez retirer un élément du tableau en fonction de sa valeur, et non plus de sa position.\
@@ -242,7 +242,7 @@ Ca fonctionne, mais bon, ce n'est pas très concis...\
 Afin de pouvoir supprimer la boucle qui se charge de la recherche, il est possible d'utiliser la fonction `std::find`. Attention, il s'agit d'une fonction libre, et non pas d'une fonction-membre de `vector`.\
 Modifiez le code ci-dessus afin d'utiliser `std::find`.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 Déjà, il faut penser à inclure `<algorithm>`.
 
 ```cpp
@@ -257,7 +257,7 @@ if (it != v.end())
 Attention à bien vérifier `it != v.end()` avant d'appeler `erase`. En effet, `find(it1, it2, val)` renvoie `it2` si la valeur n'est pas trouvée, et il est clairement indiqué dans la documentation de `erase` qu'il ne faut pas passer `v.end()` à son paramètre `pos`.
 {{% /notice %}}
 
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 ---
 
@@ -272,7 +272,7 @@ Essayez de remplacer le contenu d'un `vector` existant par un tableau contenant 
 Faites de même, mais en lui attribuant cette fois-ci les valeurs `{ 0, 2, 32, -4, 3 }`.\
 Enfin, arrangez-vous pour supprimer tout le contenu du tableau.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 En regardant les exemples d'utilisation d'`assign`, on voit que pour appeler la surcharge prenant un `initializer_list`, il faut écrire `v.assign({ ... })`.
 ```cpp
 std::vector<int> v;
@@ -280,4 +280,4 @@ v.assign(5, 2);
 v.assign({ 0, 2, 32, -4, 3 });
 v.clear();
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}

@@ -25,7 +25,7 @@ Un set est un conteneur dans lequel les éléments sont "indexés par eux-mêmes
 
 Dans la librairie standard, vous pouvez trouver `std::set` et `std::unordered_set` qui permettent de manipuler des sets. En analysant leur documentation, pouvez-vous identifier les différences principales entre ces deux classes ?
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 Complexité :
 - `std::set` est implémenté (généralement) comme un arbre binaire de recherche. Les opérations d'insertions, de recherches et de comparaison s'effectuent donc en temps logarithmique. En ce qui concerne l'espace mémoire utilisé, les arbres binaires de recherche ont généralement besoin d'autant de mémoire qu'il y a d'éléments à stocker, c'est-à-dire O(n).
 - `std::unordered_set` est implémenté en utilisant des "buckets", indexés par le hash de l'objet (comme dans une hashmap). Les opérations d'insertions, de recherches et de comparaison s'effectuent donc en temps constant amorti ("amorti", car si deux objets ont le même hash, il faut potentiellement parcourir une liste d'objects ensuite). La documentation ne donne pas de détail concernant l'espace mémoire alloué par un `unordered_set`, mais si vous vous rappelez de votre cours d'algorithmique, pour qu'une hashmap soit efficace, il faut limiter le nombre de conflits possibles. Cela implique que l'espace alloué doit être très largement supérieur à l'espace réellement occupé par les éléments.
@@ -33,7 +33,7 @@ Complexité :
 Contraintes :
 - `std::set` attend que ses éléments soient comparables (= qu'il existe une fonction permettant de dire si un élément est plus petit qu'un autre).
 - `std::unordered_set` attend que ses éléments soient hashables (= qu'il existe une fonction permettant de convertir un élément en un entier, respectant le fait que si deux éléments sont considérés égaux, alors les deux entiers obtenus sont égaux également) et qu'il existe une fonction permettant de savoir si deux éléments sont égaux ou non (il n'est pas nécessaire ici d'avoir une relation d'ordre sur les éléments).
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Dans les fichiers de l'exercice, on vous fournit deux classes `ComparableDog` et `HashableDog`. Ces deux classes sont pour le moment identique : elles contiennent deux attributs `_name` et `_species`.\
 Votre objectif sera d'ajouter les fonctions nécessaires pour utiliser ces classes dans des sets.
@@ -80,26 +80,26 @@ Notez bien que si vous voulez utiliser une fonction libre, vous devrez peut-êtr
 Commencez par définir un `set` contenant des `ComparableDog` dans la fonction `main`. Essayez de compiler. Jusque là, tout devrait bien se passer.\
 Instanciez maintenant une variable de type `ComparableDog`, et ajoutez-là à votre `set`.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 std::set<ComparableDog> dogs;
 
 ComparableDog medor { "medor", "labrador" };
 dogs.emplace(medor);
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Essayez à nouveau de compiler. Vos yeux devraient désormais commencer à saigner, ce qui est normal. Je vous rassure, avec un peu d'entraînement, cela n'arrivera plus.\
 Du coup, essuyez vos larmes et enfilez vos lunettes si vous en avez, et tentez d'identifier ce que le compilateur essaye de vous communiquer.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 Le compilateur essaye simplement de vous dire qu'il n'arrive pas à trouver de fonction permettant d'évaluer l'expression `x < y`.\
 Vous allez donc devoir définir un opérateur de comparaison pour la classe `ComparableDog`.  
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Implémentez ce qu'il manque pour que votre programme compile.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 class ComparableDog
 {
@@ -129,24 +129,24 @@ private:
     std::string _species;
 };
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Créez maintenant une nouvelle instance de `ComparableDog`, différente de la première, et ajoutez-là au set.\
 Affichez le nombre d'éléments du set pour vérifier qu'il en contient maintenant 2.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 ComparableDog gus { "gus", "bordercollie" };
 dogs.emplace(gus);
 
 std::cout << dogs.size() << std::endl;
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Instanciez maintenant une copie de votre premier chien, et ajoutez-là à votre set.\
 Combien y a-t-il d'éléments dans le `set` après cette opération ? Pourquoi ?
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 ComparableDog medor_clone = medor;
 dogs.emplace(medor_clone);
@@ -157,7 +157,7 @@ std::cout << dogs.size() << std::endl;
 Votre `set` ne devrait contenir que 2 éléments, car par définition, dans un set, les éléments sont uniques. Comme `medor` existe déjà dans l'ensemble, `medor_clone` qui lui est égal n'est pas ajouté.
 
 Si ce n'est pas le cas chez vous et que la copie est ajoutée malgré tout, c'est probablement que l'implémentation de votre opérateur de comparaison est un peu bancale.
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 #### `std::unordered_set`
 
@@ -166,7 +166,7 @@ Vous allez maintenant faire le même exercice, mais avec un `std::unordered_set`
 Commencez par définir un `unordered_set` contenant des `HashableDog` dans la fonction `main` et essayez de compiler. Vous devriez vous retrouver avec un paquet d'erreurs.\
 Comme tout à l'heure, essayez d'identifier la cause de leur déclenchement.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 std::unordered_set<HashableDog> dogs;
 ```
@@ -175,7 +175,7 @@ Ici, la première erreur n'aide pas du tout : "use of deleted function 'std::uno
 Il faut donc scroller plus bas, jusqu'à tomber sur celle-ci : "use of deleted function 'std::hash<HashableDog>::hash()'.
 
 Rappelez-vous, pour utiliser un `unordered_set`, une des contraintes est que le type des éléments doit être hashable. Et d'après l'erreur, ce n'est pas le cas de `HashableDog`. 
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Afin de rendre une classe hashable, il faut spécialiser une fonction de la librairie standard que l'on appelle `hash`. Pour ce faire, vous devez d'abord inclure le header `<functional>`, puis écrire le code suivant :
 ```cpp
@@ -215,7 +215,7 @@ Lorsqu'on défini un `operator()` dans une classe, il est ensuite possible d'uti
 Implémentez le contenu de `hash<HashableDog>::operator()`.\
 Afin de pouvoir accéder aux attributs de `HashableDog` depuis cette fonction, vous pouvez les déplacer dans la partie publique.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 size_t operator()(const HashableDog& dog) const
 {
@@ -223,13 +223,13 @@ size_t operator()(const HashableDog& dog) const
     return hash_fcn(dog._name) ^ hash_fcn(dog._species);
 } 
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 
 Une fois que cela compile, refactorisez votre code pour remettre les attributs dans la partie privée.\
 Pour cela, définissez une fonction-membre publique `get_hash` dans la classe `HashableDog`, que vous appelerez depuis `hash<HashableDog>::operator()`.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 N'oubliez pas le `const` dans la signature de `get_hash`. En effet, vous ne pourrez pas appeler `get_hash` sur un `const HashableDog&` si vous oubliez de le mettre.
 
 ```cpp
@@ -261,12 +261,12 @@ struct hash<HashableDog>
 
 }
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Instanciez maintenant une variable de type `HashableDog`, ajoutez-là à votre set et essayez de compiler.\
 Comme vous pouvez le voir, aujourd'hui, le compilateur de vous apprécie pas. Déterminez à partir des erreurs de compilation ce qu'il manque dans la classe `HashableDog` pour que le programme compile.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 std::unordered_set<HashableDog> dogs;
 
@@ -275,11 +275,11 @@ dogs.emplace(medor);
 ```
 
 D'après l'erreur, il faut implémentez un `operator==` dans la classe.
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Ajoutez la fonction manquante (même signature que `operator<`) et vérifiez ensuite que tout fonctionne.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 class HashableDog
 {
@@ -294,7 +294,7 @@ public:
     ...
 };
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Vous pouvez ensuite essayer d'ajouter de nouveaux éléments dans votre `unordered_set`. Vous devriez avoir le même comportement qu'avec la classe `set` : les éléments sont ajoutés seulement s'ils n'apparaissent pas déjà dans le conteneur.
 
@@ -312,17 +312,17 @@ En particulier, vous retrouvez les mêmes contraintes sur le type des clefs :
 Vous allez maintenant définir une variable de type `std::map<key, value>` qui stocke pour chaque chien (= clef) le nom et prénom de son propriétaire (= valeur).\
 Quel type pouvez-vous utiliser pour la clef ? Pour la valeur, vous pouvez utiliser une `std::pair<std::string, std::string>` (n'hésitez pas à créer un alias).
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 Pour la clef, on peut réutiliser la classe `ComparableDog`, qui dispose déjà d'un opérateur de comparaison.
 ```cpp
 using Owner = std::pair<std::string, std::string>;
 std::map<ComparableDog, Owner> owners_by_dog;
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Pour insérer des éléments dans une `map`, vous pouvez utiliser plein de fonctions différentes. Consultez la documentation pour trouver le nom de ces fonctions et identifiez leurs différences (comportement / syntaxe).
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 Comportement :
 - `insert` / `emplace` / `try_emplace` : insère l'élément dans la map seulement si la clef n'est pas déjà présente,
 - `insert_or_assign` : insère l'élément dans la map et remplace l'élément existant si la clef était déjà présente,
@@ -332,10 +332,10 @@ Syntaxe :
 - `insert_or_assign` : on peut passer la clef et la valeur directement : `dict.insert_or_assign(key, value);`
 - `emplace` : on peut aussi passer la clef et la valeur directement : `dict.emplace(key, value);`
 - `try_emplace` : on peut passer la clef en premier, puis les paramètres de construction de la valeur à la suite : `dict.try_emplace(key, p1, p2, p3);`
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Essayez d'ajouter plusieurs éléments à votre map, en utilisant chacune de ces fonctions.\
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 Pour la clef, on peut réutiliser la classe `ComparableDog`, qui dispose déjà d'un opérateur de comparaison.
 ```cpp
 std::map<ComparableDog, Owner> owners_by_dog;
@@ -356,10 +356,10 @@ owners_by_dog.emplace(gus, Owner { "Claire", "David" });
 owners_by_dog.insert_or_assign(gus, Owner { "Vincent", "Nozick" });
 // -> gus is now owned by Vincent (insert_or_assign reassign values with existing keys)
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Que faut-il maintenant faire si vous souhaitez utiliser une `unordered_map` plutôt qu'une `map` ?
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 Il suffit d'utiliser des clefs de type `HashableDog` plutôt que `ComparableDog`.
-{{% /expand %}}
+{{% /hidden-solution %}}

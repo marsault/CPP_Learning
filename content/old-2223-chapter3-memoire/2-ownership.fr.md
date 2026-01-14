@@ -63,7 +63,7 @@ Si un objet A est propriétaire d'un objet B, qui lui-même est propriétaire d'
 Analysez maintenant le code du programme `Reminders` du TP2 (vous pouvez trouver la correction [ici](https://github.com/Laefy/CPP_Learning_Code/tree/tp2_solution/tp-02)) et essayez d'identifier toutes les relations d'ownership qu'il contient.\
 Déduisez-en les durées de vie des différents objets du programme.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 `clock`:
 - la durée de vie de `clock` va de la ligne 15 à la ligne 33 du `main`
 - propriétaire de `clock._min_hand`, `clock._sec_hand` et `clock._events`
@@ -90,7 +90,7 @@ Déduisez-en les durées de vie des différents objets du programme.
 - sa durée de vie s'étend de `main` : 13-33
 - propriétaire des éléments du tableau `events`
 - mais pas des éléments du tableau `clock._events`
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 ---
 

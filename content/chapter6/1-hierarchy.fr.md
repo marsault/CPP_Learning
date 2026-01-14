@@ -32,7 +32,7 @@ Vous allez commencer par créer une classe contenant l'ensemble du code dupliqu�
 Placez-la dans un ou des fichiers séparés et modifiez le CMakeLists.txt (celui dans chap-04) pour qu'il les ajoute bien à la compilation de l'exécutable.
 Pour le nom de la classe, essayez de trouver quelque chose qui soit digne de son contenu.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 Afin de pouvoir retourner le grade (`get_rank()`) de chaque employé, on ajoute un attribut `_rank` à la classe.\
 Et on n'oublie pas de définir un constructeur pour initialiser chacun des membres de la nouvelle classe.
 
@@ -66,7 +66,7 @@ private:
     Rank              _rank;
 };
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Vous allez maintenant modifier la définition de la classe `Boss` afin de la faire hériter de votre nouvelle classe.
 Pour cela, il faut écrire le code suivant :
@@ -109,7 +109,7 @@ que vous devez initialiser vos propres attributs à la suite de l'appel au const
 
 Refactorisez maintenant les deux autres classes `Staff` et `Intern` de manière à supprimer le code dupliqué en les faisant hériter de `Employee`.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 Staff.h:
 ```cpp
 #include "Employee.h"
@@ -178,7 +178,7 @@ Intern::Intern(std::string name, std::string surname, unsigned int salary, bool 
 
 ...
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 ---
 

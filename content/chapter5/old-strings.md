@@ -27,28 +27,28 @@ Parmis les opérations standards que l'on peut effectuer sur des chaînes de car
 
 Recherchez dans la documentation les fonctions qui permettent d'effectuer les opérations ci-dessus.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 - concaténation -> `operator+` : `auto str_3 = str1 + str2;`
 - extration de sous-chaîne -> `substr` : `auto str_me = std::string { "find me" }.substr(5, 2);`
 - recherche -> `find` : `auto pos = str.find("abc");`
 - comparaison -> `operator==` : `auto are_equal = (str1 == str2);`
 - remplacement -> `replace` : `std::string { "this is old" }.replace(8, 3, "new");`
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 ---
 
 ### Conversions
 
 Quelle fonction permet de convertir des valeurs numériques en chaînes de caractères ?
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 Il s'agit de `std::to_string`.
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Quelles fonctions permettent maintenant de faire l'inverse ? Que se passe-t-il si la chaîne de caractères ne contient pas vraiment une valeur du type attendu ?
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 Il s'agit des fonctions `std::stoi` (string to int), `std::stol` (string to long), `std::stof` (string to float), etc.\
 Si la chaîne ne contient pas réellement un nombre, alors, la fonction lance une exception de type `std::invalid_argument`.
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 ---
 
@@ -95,7 +95,7 @@ Si une `string` référencée par une `string_view` est détruite, et que l'on e
 
 Modifiez la signature de la fonction `print_in_console` de manière à utiliser une `string_view`. Comme `string_view` est une classe peu coûteuse à copier, il est préférable de la passer par valeur plutôt que référence.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 #include <iostream>
 
@@ -110,6 +110,6 @@ int main()
     return 0;
 }
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 

@@ -201,7 +201,7 @@ Comme vous pouvez le voir, une fois le `emplace_back` exécuté, le contenu de `
 Il est donc possible de transférer des données d'une variable à une autre en utilisant `std::move`.\
 Remplacez les `unique_ptr<int>` par des `string` et adaptez le restant du programme pour vérifier que les `string` peuvent également être déplacées.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 Attention à bien spécifier que l'on construit une `std::string` et pas un `const char*` en remplaçant le `auto` ou bien en écrivant le type à droite du `=`.
 ```cpp
 #include <iostream>
@@ -226,7 +226,7 @@ int main()
     return 0;
 }
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 ---
 
@@ -249,7 +249,7 @@ Il faudra que vous puissiez l'utiliser de cette manière :
 display("i1", i1); // -> affiche "i1 contains X" ou "i1 is empty"
 ```
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 #include <iostream>
 #include <memory>
@@ -322,4 +322,4 @@ i1 is empty
 i2 contains 3
 --------------------------
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
