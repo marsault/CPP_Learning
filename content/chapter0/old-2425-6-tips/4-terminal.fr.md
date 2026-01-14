@@ -1,6 +1,7 @@
 ---
 title: "Compilation en terminal"
 weight: 4
+hidden: true 
 ---
 
 ## Options g++ et clang++
