@@ -5,36 +5,40 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.128.0">
     <meta name="generator" content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619">
-    <meta name="description" content="En plus des enums du C (que l’on utilisera pas!) le C&#43;&#43; a introduit des enum class.
-Déclaration d’une enum C&#43;&#43; enum class Color { Red, Green, Blue }; Initialisation d’une enum Les enum C&#43;&#43; sont généralement plus sécurisées. En particulier les valeurs (par exemple Red) doivent être préfixé par le nom de l’enum (par exemple Color::). Par exemple, voici comment stocké la valeur d’une enum dans une variable locale.">
+    <meta name="description" content="En plus des enums du C, le C&#43;&#43; a introduit des enum class. On les appelera plus simplement des enum C&#43;&#43; ou juste enum parce qu’on n’utilisera pas les enum du C.
+Une enum C&#43;&#43; est un type qui n’a qu’un nombre d’instances connus au moment de la compilation. Ça permet d’éviter d’utiliser une std::string qui coûte plus cher à manipuler, ou d’utiliser un entier qui n’est pas clair.
+Déclaration d’une enum C&#43;&#43; Une enum C&#43;&#43; se définit avec la syntaxe suivante.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="C&#43;&#43;::   Enum">
-    <meta name="twitter:description" content="En plus des enums du C (que l’on utilisera pas!) le C&#43;&#43; a introduit des enum class.
-Déclaration d’une enum C&#43;&#43; enum class Color { Red, Green, Blue }; Initialisation d’une enum Les enum C&#43;&#43; sont généralement plus sécurisées. En particulier les valeurs (par exemple Red) doivent être préfixé par le nom de l’enum (par exemple Color::). Par exemple, voici comment stocké la valeur d’une enum dans une variable locale.">
+    <meta name="twitter:description" content="En plus des enums du C, le C&#43;&#43; a introduit des enum class. On les appelera plus simplement des enum C&#43;&#43; ou juste enum parce qu’on n’utilisera pas les enum du C.
+Une enum C&#43;&#43; est un type qui n’a qu’un nombre d’instances connus au moment de la compilation. Ça permet d’éviter d’utiliser une std::string qui coûte plus cher à manipuler, ou d’utiliser un entier qui n’est pas clair.
+Déclaration d’une enum C&#43;&#43; Une enum C&#43;&#43; se définit avec la syntaxe suivante.">
     <meta property="og:url" content="/chapter2/7-enum/index.html">
     <meta property="og:site_name" content="C&#43;&#43;::">
     <meta property="og:title" content="C&#43;&#43;::   Enum">
-    <meta property="og:description" content="En plus des enums du C (que l’on utilisera pas!) le C&#43;&#43; a introduit des enum class.
-Déclaration d’une enum C&#43;&#43; enum class Color { Red, Green, Blue }; Initialisation d’une enum Les enum C&#43;&#43; sont généralement plus sécurisées. En particulier les valeurs (par exemple Red) doivent être préfixé par le nom de l’enum (par exemple Color::). Par exemple, voici comment stocké la valeur d’une enum dans une variable locale.">
+    <meta property="og:description" content="En plus des enums du C, le C&#43;&#43; a introduit des enum class. On les appelera plus simplement des enum C&#43;&#43; ou juste enum parce qu’on n’utilisera pas les enum du C.
+Une enum C&#43;&#43; est un type qui n’a qu’un nombre d’instances connus au moment de la compilation. Ça permet d’éviter d’utiliser une std::string qui coûte plus cher à manipuler, ou d’utiliser un entier qui n’est pas clair.
+Déclaration d’une enum C&#43;&#43; Une enum C&#43;&#43; se définit avec la syntaxe suivante.">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Classes">
     <meta itemprop="name" content="C&#43;&#43;::   Enum">
-    <meta itemprop="description" content="En plus des enums du C (que l’on utilisera pas!) le C&#43;&#43; a introduit des enum class.
-Déclaration d’une enum C&#43;&#43; enum class Color { Red, Green, Blue }; Initialisation d’une enum Les enum C&#43;&#43; sont généralement plus sécurisées. En particulier les valeurs (par exemple Red) doivent être préfixé par le nom de l’enum (par exemple Color::). Par exemple, voici comment stocké la valeur d’une enum dans une variable locale.">
-    <meta itemprop="wordCount" content="379">
+    <meta itemprop="description" content="En plus des enums du C, le C&#43;&#43; a introduit des enum class. On les appelera plus simplement des enum C&#43;&#43; ou juste enum parce qu’on n’utilisera pas les enum du C.
+Une enum C&#43;&#43; est un type qui n’a qu’un nombre d’instances connus au moment de la compilation. Ça permet d’éviter d’utiliser une std::string qui coûte plus cher à manipuler, ou d’utiliser un entier qui n’est pas clair.
+Déclaration d’une enum C&#43;&#43; Une enum C&#43;&#43; se définit avec la syntaxe suivante.">
+    <meta itemprop="wordCount" content="470">
     <title>C&#43;&#43;::   Enum</title>
-    <link href="../../css/fontawesome-all.min.css?1768334648" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768334648" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768334648" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768334648" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768334648" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768334648" rel="stylesheet">
-    <link href="../../css/fonts.css?1768334648" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768334648" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768334648" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768334648" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768334648" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768334648" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768334648"></script>
+    <link href="../../css/fontawesome-all.min.css?1768405492" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768405492" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768405492" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768405492" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768405492" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768405492" rel="stylesheet">
+    <link href="../../css/fonts.css?1768405492" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768405492" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768405492" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768405492" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768405492" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768405492" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768405492"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -72,9 +76,9 @@ Déclaration d’une enum C&#43;&#43; enum class Color { Red, Green, Blue }; Ini
     <li>
       <ul>
         <li><a href="#déclaration-dune-enum-c">Déclaration d&rsquo;une enum C++</a></li>
-        <li><a href="#initialisation-dune-enum">Initialisation d&rsquo;une enum</a></li>
+        <li><a href="#construction-dune-enum">Construction d&rsquo;une enum</a></li>
         <li><a href="#des-switchs-plus-sûr">Des switchs plus sûr</a></li>
-        <li><a href="#définition-du-type-sous-jacent-et-des-valeurs-effectivement-stockée">Définition du type sous-jacent et des valeurs effectivement stockée</a></li>
+        <li><a href="#définition-du-type-et-des-valeurs-sous-jacentes">Définition du type et des valeurs sous-jacentes</a></li>
         <li><a href="#quel-intérêt-">Quel intérêt ?</a></li>
       </ul>
     </li>
@@ -114,19 +118,22 @@ Déclaration d’une enum C&#43;&#43; enum class Color { Red, Green, Blue }; Ini
 
 <h1 id="enum">Enum</h1>
 
-<p>En plus des enums du C (que l&rsquo;on utilisera pas!) le C++ a introduit des <code>enum class</code>.</p>
+<p>En plus des enums du C, le C++ a introduit des <code>enum class</code>.
+On les appelera plus simplement des <em>enum C++</em> ou juste <em>enum</em> parce qu&rsquo;on n&rsquo;utilisera <strong>pas</strong> les enum du C.</p>
+<p>Une enum C++ est un type qui n&rsquo;a qu&rsquo;un nombre d&rsquo;instances connus au moment de la compilation. Ça permet d&rsquo;éviter d&rsquo;utiliser une <code>std::string</code> qui coûte plus cher à manipuler, ou d&rsquo;utiliser un entier qui n&rsquo;est pas clair.</p>
 <h3 id="déclaration-dune-enum-c">Déclaration d&rsquo;une enum C++</h3>
+<p>Une enum C++ se définit avec la syntaxe suivante.</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="k">enum</span> <span class="k">class</span> <span class="nc">Color</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Red</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Green</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Blue</span>
 </span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div>
-<h3 id="initialisation-dune-enum">Initialisation d&rsquo;une enum</h3>
-<p>Les enum C++ sont généralement plus sécurisées.  En particulier les valeurs (par exemple <code>Red</code>) doivent être préfixé par le nom de l&rsquo;enum (par exemple <code>Color::</code>). Par exemple, voici comment stocké la valeur d&rsquo;une enum dans une variable locale.</p>
+<h3 id="construction-dune-enum">Construction d&rsquo;une enum</h3>
+<p>Les enum C++ sont généralement plus sécurisées que les enum C.  En particulier les valeurs (par exemple <code>Red</code>) doivent être préfixé par le nom de l&rsquo;enum (par exemple <code>Color::</code>). Par exemple, voici comment stocké la valeur d&rsquo;une enum dans une variable locale.</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="n">Color</span> <span class="n">my_color</span> <span class="o">=</span> <span class="n">Color</span><span class="o">::</span><span class="n">Red</span><span class="p">;</span></span></span></code></pre></div>
 <h3 id="des-switchs-plus-sûr">Des switchs plus sûr</h3>
-<p>En C++ les enums ne peuvent avoir que les valeurs déclarées.<br>
-Que se passe-til quand on compile suivante avec l&rsquo;option <code>-Wall</code>.</p>
+<p>Les enums C++ ne peuvent avoir que les valeurs déclarées (ce qui n&rsquo;est pas le cas des enums C).
+Ceci permet au compilateur de faire des messages plus intelligents.  Par exemple, que se passe-t-l quand on compile suivante avec l&rsquo;option <code>-Wall</code> ?</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">o</span><span class="p">,</span> <span class="n">Color</span> <span class="n">color</span><span class="p">)</span> 
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">switch</span><span class="p">(</span><span class="n">color</span><span class="p">)</span> <span class="p">{</span>
@@ -148,35 +155,35 @@ Que se passe-til quand on compile suivante avec l&rsquo;option <code>-Wall</code
         </button>
 
         <div class="hidden-solution-content">
-            <p>Le compilateur indique que le switch est incomplet (probablement même qu&rsquo;il manque exactement la valeur Bleu).</p>
+            <p>Le compilateur indique que le switch est incomplet (probablement même qu&rsquo;il manque exactement la valeur <code>Blue</code>).</p>
 
         </div>
     </div>
 
 </div>
 
-<h3 id="définition-du-type-sous-jacent-et-des-valeurs-effectivement-stockée">Définition du type sous-jacent et des valeurs effectivement stockée</h3>
+<h3 id="définition-du-type-et-des-valeurs-sous-jacentes">Définition du type et des valeurs sous-jacentes</h3>
 <p>Pour avoir plus de contrôle, on peut choisir ce qui sera stockée effectivement en mémoire pour chaque valeur de l&rsquo;enum.  On peut aussi spécifier la <em>taille</em> que prend une enum en mémoire, ou plutôt le type sous-jacent qui permettra de la stocker.</p>
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="c1">// Une Color est stocké dans un unsigned
-</span></span></span><span class="line"><span class="cl"><span class="c1">//               vvvvvvvvvv
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">enum</span> <span class="k">class</span> <span class="nc">Color</span> <span class="o">:</span> <span class="kt">unsigned</span> <span class="p">{</span>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="c1">// Une ColorBis est stocké dans un unsigned
+</span></span></span><span class="line"><span class="cl"><span class="c1">//                  vvvvvvvvvv
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">enum</span> <span class="k">class</span> <span class="nc">ColorBis</span> <span class="o">:</span> <span class="kt">unsigned</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">None</span> <span class="o">=</span> <span class="mi">0u</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">//   ^^^^
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// On peut spécifier (ou non) la valeur
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//  vvvv
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">Red</span> <span class="o">=</span> <span class="mi">1u</span> <span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Green</span> <span class="o">=</span> <span class="mi">2u</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Blue</span> <span class="o">=</span> <span class="mi">3u</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// On peut spécifier la valeur
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//     vvvv
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">Orange</span> <span class="o">=</span> <span class="mi">1u</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Indigo</span> <span class="o">=</span> <span class="mi">2u</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Violet</span> <span class="o">=</span> <span class="mi">3u</span>
 </span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div>
 <h3 id="quel-intérêt-">Quel intérêt ?</h3>
-<p>Le but est de pouvoir caster de façon sûre notre enum dans un autre type.</p>
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">color_names</span><span class="o">=</span> <span class="p">{</span><span class="s">&#34;None&#34;</span><span class="p">,</span> <span class="s">&#34;Red&#34;</span><span class="p">,</span> <span class="s">&#34;Green&#34;</span><span class="p">,</span> <span class="s">&#34;Blue&#34;</span><span class="p">};</span>
+<p>Le but est de pouvoir caster de façon sécurisée notre enum dans un autre type, comme ce qui est fait dans le code suivant.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">color_names</span><span class="o">=</span> <span class="p">{</span><span class="s">&#34;None&#34;</span><span class="p">,</span> <span class="s">&#34;Orange&#34;</span><span class="p">,</span> <span class="s">&#34;Indigo&#34;</span><span class="p">,</span> <span class="s">&#34;Violet&#34;</span><span class="p">};</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">o</span><span class="p">,</span> <span class="n">Color</span> <span class="n">color</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">o</span><span class="p">,</span> <span class="n">ColorBis</span> <span class="n">color</span><span class="p">)</span> 
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">o</span> <span class="o">&lt;&lt;</span> <span class="n">color_names</span><span class="p">[(</span><span class="kt">unsigned</span><span class="p">)</span><span class="n">color</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
-<p>En utilisant le vecteur  écrire une fonction <code>stoc</code> qui prend en argument une chaîne de caractère et qui renvoie l&rsquo;enum appropriée ou <code>None</code> si c&rsquo;est une autre.</p>
+<p>En utilisant le tableau dynamique <code> color_names</code> écrire une fonction <code>stoc</code> qui prend en argument une chaîne de caractère et qui renvoie la <code>ColorBis</code> appropriée, ou <code>None</code> si c&rsquo;est une autre.</p>
 
 <div class="hidden-solution">
 
@@ -190,12 +197,12 @@ Que se passe-til quand on compile suivante avec l&rsquo;option <code>-Wall</code
         </button>
 
         <div class="hidden-solution-content">
-            <p>Color stoc(const std::string&amp; target) {
-for (unsigned i = 0; i &lt; color_names.size(); ++i)
-if (color_names[i] == target)
-return ((Color) i);
-return Color::None;
-}</p>
+            <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="n">ColorBis</span> <span class="nf">stoc</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">color_names</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">color_names</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="p">((</span><span class="n">ColorBis</span><span class="p">)</span> <span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ColorBis</span><span class="o">::</span><span class="n">None</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 
         </div>
     </div>
@@ -203,11 +210,11 @@ return Color::None;
 </div>
 
 <p>Cela permet aussi de définir une valeur spécifique de l&rsquo;enum qui aura la valeur 0.   En castant l&rsquo;enum en booléen, ça permet de l&rsquo;utiliser dans les tests, comme le montre le code suivant.</p>
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">((</span><span class="kt">bool</span><span class="p">)</span> <span class="n">Color</span><span class="o">::</span><span class="n">None</span><span class="p">)</span>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">((</span><span class="kt">bool</span><span class="p">)</span><span class="n">ColorBis</span><span class="o">::</span><span class="n">None</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">((</span><span class="kt">bool</span><span class="p">)</span> <span class="n">Color</span><span class="o">::</span><span class="n">Red</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">((</span><span class="kt">bool</span><span class="p">)</span><span class="n">ColorBis</span><span class="o">::</span><span class="n">Indigo</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;World&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span></span></span></code></pre></div>
-<!-- https://godbolt.org/z/15K6dGvPc -->
+<!-- https://godbolt.org/z/1hEde8j16 -->
   <footer class="footline">
   </footer>
 </article>
@@ -237,7 +244,7 @@ return Color::None;
             <li class="" data-nav-id="/chapter2/4-destructor/index.html"><a class="padding" href="../../chapter2/4-destructor/index.html"><span class="presection-icon">💥</span>Destructeur<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter2/5-modules/index.html"><a class="padding" href="../../chapter2/5-modules/index.html"><span class="presection-icon">🧱</span>Modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter2/6-operators/index.html"><a class="padding" href="../../chapter2/6-operators/index.html"><span class="presection-icon">⨀</span>Opérateurs<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active hidden " data-nav-id="/chapter2/7-enum/index.html"><a class="padding" href="../../chapter2/7-enum/index.html"><span class="presection-icon">⨀</span>Enum<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/chapter2/7-enum/index.html"><a class="padding" href="../../chapter2/7-enum/index.html"><span class="presection-icon">🔠</span>Enum<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter2/test/index.html"><a class="padding" href="../../chapter2/test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu"></ul></li>
@@ -308,9 +315,9 @@ return Color::None;
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768334648" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768334648" defer></script>
-    <script src="../../js/theme.js?1768334648" defer></script>
+    <script src="../../js/clipboard.min.js?1768405492" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768405492" defer></script>
+    <script src="../../js/theme.js?1768405492" defer></script>
 
 
 

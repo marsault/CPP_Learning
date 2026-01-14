@@ -37,16 +37,16 @@ La cible à compiler est vehicles.
 Introduction du permis Dans le programme que l’on vous fournit, n’importe qui peut conduire n’importe quoi.">
     <meta itemprop="wordCount" content="1104">
     <title>C&#43;&#43;::   Véhicule partagé</title>
-    <link href="../../css/fontawesome-all.min.css?1768334648" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768334648" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768334648" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768334648" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768334648" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768334648" rel="stylesheet">
-    <link href="../../css/fonts.css?1768334648" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768334648" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768334648" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768334648" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768334648" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768334648" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768334648"></script>
+    <link href="../../css/fontawesome-all.min.css?1768405492" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768405492" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768405492" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768405492" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768405492" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768405492" rel="stylesheet">
+    <link href="../../css/fonts.css?1768405492" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768405492" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768405492" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768405492" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768405492" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768405492" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768405492"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -143,12 +143,12 @@ Mais avec les nouvelles régulations, les conducteurs de voiture doivent mainten
 <p>Modifiez la classe <code>Driver</code> de manière à pouvoir savoir si un conducteur à passer son permis ou non.
 A la construction, aucun conducteur n&rsquo;a son permis et il peut l&rsquo;obtenir ensuite via une fonction <code>pass_car_licence_exam</code>.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-f460a0291c6efa51e06c38a1aedd058a" aria-controls="R-expandcontent-f460a0291c6efa51e06c38a1aedd058a">
-  <label class="expand-label" for="R-expand-f460a0291c6efa51e06c38a1aedd058a">
+  <input type="checkbox" id="R-expand-058f98daca17a6364d4ac94677cfaa37" aria-controls="R-expandcontent-058f98daca17a6364d4ac94677cfaa37">
+  <label class="expand-label" for="R-expand-058f98daca17a6364d4ac94677cfaa37">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-f460a0291c6efa51e06c38a1aedd058a" class="expand-content">
+  <div id="R-expandcontent-058f98daca17a6364d4ac94677cfaa37" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Driver</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
@@ -172,12 +172,12 @@ Le problème, c&rsquo;est que <code>_driver</code> n&rsquo;est accessible que de
 Afin de pouvoir y accéder depuis les sous-classes, changez sa visibilité à <code>protected</code>.</p>
 <p>Modifiez ensuite l&rsquo;implémentation de <code>Car::drive</code>, de façon à ce que si le conduteur n&rsquo;ait pas son permis, la voiture n&rsquo;avance pas.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-c7db4d84e5442aa218c385d0166b3d35" aria-controls="R-expandcontent-c7db4d84e5442aa218c385d0166b3d35">
-  <label class="expand-label" for="R-expand-c7db4d84e5442aa218c385d0166b3d35">
+  <input type="checkbox" id="R-expand-ecf12bd5cc5ff9c66729f7335470b597" aria-controls="R-expandcontent-ecf12bd5cc5ff9c66729f7335470b597">
+  <label class="expand-label" for="R-expand-ecf12bd5cc5ff9c66729f7335470b597">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-c7db4d84e5442aa218c385d0166b3d35" class="expand-content">
+  <div id="R-expandcontent-ecf12bd5cc5ff9c66729f7335470b597" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Vehicle</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
@@ -215,12 +215,12 @@ Afin de pouvoir y accéder depuis les sous-classes, changez sa visibilité à <c
 Les voitures volantes ont toutes les fonctionnalités des voitures normales, si ce n&rsquo;est que lorsque vous rouler en l&rsquo;air, vous allez 10x plus vite qu&rsquo;en roulant au sol.</p>
 <p>Introduisez la classe <code>FlyingCar</code>, dérivée de <code>Car</code>, et redéfinissez sa fonction <code>drive</code> pour parcourir 10 fois la distance que vous auriez parcouru avec une voiture normale.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-15af6dc0213d7b0a129d0999a5163ada" aria-controls="R-expandcontent-15af6dc0213d7b0a129d0999a5163ada">
-  <label class="expand-label" for="R-expand-15af6dc0213d7b0a129d0999a5163ada">
+  <input type="checkbox" id="R-expand-c67c009d017ab82f2fd68a156b5de03d" aria-controls="R-expandcontent-c67c009d017ab82f2fd68a156b5de03d">
+  <label class="expand-label" for="R-expand-c67c009d017ab82f2fd68a156b5de03d">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-15af6dc0213d7b0a129d0999a5163ada" class="expand-content">
+  <div id="R-expandcontent-c67c009d017ab82f2fd68a156b5de03d" class="expand-content">
 <p>On peut :</p>
 <ul>
 <li>soit créer un nouvel attribut <code>flying_speed</code>, et l&rsquo;utiliser dans <code>FlyingCar::drive</code>,</li>
@@ -249,12 +249,12 @@ Les voitures volantes ont toutes les fonctionnalités des voitures normales, si 
 Dans le cas de la voiture volante, le conducteur doit désormais être en possession d&rsquo;un permis de l&rsquo;air pour pouvoir s&rsquo;en servir.
 Commencez par ajouter ce qu&rsquo;il faut dans <code>Driver</code> pour passer le permis adéquat et savoir s&rsquo;il l&rsquo;a.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-89f33a104e47de1ba9f55c9a9d6ea167" aria-controls="R-expandcontent-89f33a104e47de1ba9f55c9a9d6ea167">
-  <label class="expand-label" for="R-expand-89f33a104e47de1ba9f55c9a9d6ea167">
+  <input type="checkbox" id="R-expand-d4eb15dae9e2c4900e581592206192e4" aria-controls="R-expandcontent-d4eb15dae9e2c4900e581592206192e4">
+  <label class="expand-label" for="R-expand-d4eb15dae9e2c4900e581592206192e4">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-89f33a104e47de1ba9f55c9a9d6ea167" class="expand-content">
+  <div id="R-expandcontent-d4eb15dae9e2c4900e581592206192e4" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Driver</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
@@ -297,12 +297,12 @@ Testez ensuite les trois situations suivantes :<br>
 - sinon, si le conducteur a son permis classique =&gt; mode roulant,<br>
 - sinon =&gt; la voiture n&rsquo;avance pas.</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-d26f07c25e30eb19b2acb874f439179d" aria-controls="R-expandcontent-d26f07c25e30eb19b2acb874f439179d">
-  <label class="expand-label" for="R-expand-d26f07c25e30eb19b2acb874f439179d">
+  <input type="checkbox" id="R-expand-327aaaf2718121131ac3a04ef794efd8" aria-controls="R-expandcontent-327aaaf2718121131ac3a04ef794efd8">
+  <label class="expand-label" for="R-expand-327aaaf2718121131ac3a04ef794efd8">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-d26f07c25e30eb19b2acb874f439179d" class="expand-content">
+  <div id="R-expandcontent-327aaaf2718121131ac3a04ef794efd8" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">FlyingCar</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Car</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="p">...</span>
@@ -346,12 +346,12 @@ Vous pouvez néanmoins empêcher un utilisateur d&rsquo;instancier une classe qu
 </span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div>
 <p>Déclarez le constructeur de <code>Vehicle</code> dans la partie protégée de la classe, et essayez d&rsquo;instancier un <code>Vehicle</code> depuis le <code>main</code>. Quelle erreur de compilation obtenez-vous ?</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-8ab9182e90bf33dbb4127f32c2339ae2" aria-controls="R-expandcontent-8ab9182e90bf33dbb4127f32c2339ae2">
-  <label class="expand-label" for="R-expand-8ab9182e90bf33dbb4127f32c2339ae2">
+  <input type="checkbox" id="R-expand-0ddc9226d2ba80fa45490542ff83b424" aria-controls="R-expandcontent-0ddc9226d2ba80fa45490542ff83b424">
+  <label class="expand-label" for="R-expand-0ddc9226d2ba80fa45490542ff83b424">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-8ab9182e90bf33dbb4127f32c2339ae2" class="expand-content">
+  <div id="R-expandcontent-0ddc9226d2ba80fa45490542ff83b424" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Vehicle</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">protected</span><span class="o">:</span>
@@ -385,12 +385,12 @@ Vous pourrez ensuite instancier ces classes-filles, du moment que vous avez bien
 <p>Remettez le constructeur de <code>Vehicle</code> dans la partie publique, puis supprimez l&rsquo;implémentation de <code>Vehicle::drive</code> et transformez-la en fonction virtuelle pure.<br>
 Quelles erreurs de compilation obtenez-vous maintenant ?</p>
 <div class="expand">
-  <input type="checkbox" id="R-expand-3b3c7bff35888f7b403af10987f62e0e" aria-controls="R-expandcontent-3b3c7bff35888f7b403af10987f62e0e">
-  <label class="expand-label" for="R-expand-3b3c7bff35888f7b403af10987f62e0e">
+  <input type="checkbox" id="R-expand-f538e96fa52f8239a317267bbf027bba" aria-controls="R-expandcontent-f538e96fa52f8239a317267bbf027bba">
+  <label class="expand-label" for="R-expand-f538e96fa52f8239a317267bbf027bba">
     <i class="expander-icon fa-fw fas fa-chevron-down"></i>
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
   </label>
-  <div id="R-expandcontent-3b3c7bff35888f7b403af10987f62e0e" class="expand-content">
+  <div id="R-expandcontent-f538e96fa52f8239a317267bbf027bba" class="expand-content">
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Vehicle</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
@@ -511,9 +511,9 @@ Quelles erreurs de compilation obtenez-vous maintenant ?</p>
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768334648" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768334648" defer></script>
-    <script src="../../js/theme.js?1768334648" defer></script>
+    <script src="../../js/clipboard.min.js?1768405492" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768405492" defer></script>
+    <script src="../../js/theme.js?1768405492" defer></script>
 
 
 

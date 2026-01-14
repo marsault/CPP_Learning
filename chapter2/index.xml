@@ -54,7 +54,7 @@
       <link>/chapter2/7-enum/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter2/7-enum/index.html</guid>
-      <description>En plus des enums du C (que l’on utilisera pas!) le C++ a introduit des enum class.&#xA;Déclaration d’une enum C++ enum class Color { Red, Green, Blue }; Initialisation d’une enum Les enum C++ sont généralement plus sécurisées. En particulier les valeurs (par exemple Red) doivent être préfixé par le nom de l’enum (par exemple Color::). Par exemple, voici comment stocké la valeur d’une enum dans une variable locale.</description>
+      <description>En plus des enums du C, le C++ a introduit des enum class. On les appelera plus simplement des enum C++ ou juste enum parce qu’on n’utilisera pas les enum du C.&#xA;Une enum C++ est un type qui n’a qu’un nombre d’instances connus au moment de la compilation. Ça permet d’éviter d’utiliser une std::string qui coûte plus cher à manipuler, ou d’utiliser un entier qui n’est pas clair.&#xA;Déclaration d’une enum C++ Une enum C++ se définit avec la syntaxe suivante.</description>
     </item>
     <item>
       <title>Questionnaire</title>

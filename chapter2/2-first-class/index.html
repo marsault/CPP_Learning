@@ -33,16 +33,16 @@ Méthodologie Ouvrez le fichier chap-02/1-first_class.cpp, dans lequel on vous f
 int main() { // Person p; // p.set_name(&#34;Batman&#34;); // p.set_age(23); // std::cout &lt;&lt; &#34;Person named &#39;&#34; &lt;&lt; p.get_name() &lt;&lt; &#34;&#39; is &#34; &lt;&lt; p.get_age() &lt;&lt; &#34; years old.">
     <meta itemprop="wordCount" content="1679">
     <title>C&#43;&#43;::   Première classe</title>
-    <link href="../../css/fontawesome-all.min.css?1768334648" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768334648" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768334648" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768334648" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768334648" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768334648" rel="stylesheet">
-    <link href="../../css/fonts.css?1768334648" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768334648" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768334648" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768334648" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768334648" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768334648" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768334648"></script>
+    <link href="../../css/fontawesome-all.min.css?1768405492" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768405492" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768405492" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768405492" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768405492" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768405492" rel="stylesheet">
+    <link href="../../css/fonts.css?1768405492" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768405492" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768405492" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768405492" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768405492" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768405492" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768405492"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -286,15 +286,15 @@ Par exemple, si vous avez suivi la correction, vous pouvez indiquer :</p>
 </ul>
 <p>Ici, vous allez placer un breakpoint sur l&rsquo;instruction <code>return 0;</code> du <code>main</code>.
 Pour cela, placez votre curseur sur la ligne en question et appuyez sur F9. Vous pouvez aussi cliquer directement à gauche du numéro de ligne.
-<a href="#R-image-121ac3041f05060bd539244e1ffd3baf" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-breakpoint.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-121ac3041f05060bd539244e1ffd3baf"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-breakpoint.png"></a></p>
+<a href="#R-image-0a57e7b87f36578b7046e631940983c6" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-breakpoint.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0a57e7b87f36578b7046e631940983c6"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-breakpoint.png"></a></p>
 <p>Utilisez ensuite F5 pour lancer le programme.
 L&rsquo;éditeur devrait prendre cette apparence, indiquant que le programme est en pause juste avant l&rsquo;exécution de l&rsquo;instruction surlignée :
-<a href="#R-image-adef25b809446849bd4835726d88a0f9" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-breaking.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-adef25b809446849bd4835726d88a0f9"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-breaking.png"></a></p>
+<a href="#R-image-dce33c251451801749f7f1e3c3fe9d7f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-breaking.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-dce33c251451801749f7f1e3c3fe9d7f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-breaking.png"></a></p>
 <p>Ouvrez maintenant le panneau d&rsquo;exécution en allant dans <code>View &gt; Run</code>.
-<a href="#R-image-36c1254035450cd47fe98e96967fa06a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-locals.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-36c1254035450cd47fe98e96967fa06a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-locals.png"></a></p>
+<a href="#R-image-2055e47f6125c74d07cd2cb5dc6a8a81" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-locals.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2055e47f6125c74d07cd2cb5dc6a8a81"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-locals.png"></a></p>
 <p>Ce panneau contient 3 sections :</p>
 <ul>
 <li>La section <strong>Variables</strong>, dans laquelle vous pouvez voir le contenu de chacune des variables locales à votre fonction.</li>
@@ -362,8 +362,8 @@ Quel type avez-vous utilisé pour l&rsquo;âge de Batman ?</p>
 
         <div class="hidden-solution-content">
             <p>Pour s&rsquo;arrêter au bon endroit, il faut placer le breakpoint sur la ligne de l&rsquo;instruction <code>p.set_age(23);</code>.
-<a href="#R-image-e6d2f9a442d83493247d109fb94f0050" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chap2-ex1-break.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e6d2f9a442d83493247d109fb94f0050"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chap2-ex1-break.png"></a></p>
+<a href="#R-image-c060677f443ccf9201aab779a420b467" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chap2-ex1-break.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c060677f443ccf9201aab779a420b467"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chap2-ex1-break.png"></a></p>
 
         </div>
     </div>
@@ -494,6 +494,7 @@ Par conséquent, il est fortement recommandé de se <strong>relire systématique
             <li class="" data-nav-id="/chapter2/4-destructor/index.html"><a class="padding" href="../../chapter2/4-destructor/index.html"><span class="presection-icon">💥</span>Destructeur<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter2/5-modules/index.html"><a class="padding" href="../../chapter2/5-modules/index.html"><span class="presection-icon">🧱</span>Modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter2/6-operators/index.html"><a class="padding" href="../../chapter2/6-operators/index.html"><span class="presection-icon">⨀</span>Opérateurs<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter2/7-enum/index.html"><a class="padding" href="../../chapter2/7-enum/index.html"><span class="presection-icon">🔠</span>Enum<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter2/test/index.html"><a class="padding" href="../../chapter2/test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter3/index.html"><a class="padding" href="../../chapter3/index.html"><span class="chapnum">3.</span>&ensp;Cycle de vie<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9f6546bce6f8e9a77063b71c880fd5b8" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter4/index.html"><a class="padding" href="../../chapter4/index.html"><span class="chapnum">4.</span>&ensp;Copie et déplacement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-48065e8b6e7e69533ca73b3931c8a0a1" class="collapsible-menu"></ul></li>
@@ -564,9 +565,9 @@ Par conséquent, il est fortement recommandé de se <strong>relire systématique
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768334648" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768334648" defer></script>
-    <script src="../../js/theme.js?1768334648" defer></script>
+    <script src="../../js/clipboard.min.js?1768405492" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768405492" defer></script>
+    <script src="../../js/theme.js?1768405492" defer></script>
 
 
 
