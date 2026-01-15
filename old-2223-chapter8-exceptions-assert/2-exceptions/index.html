@@ -9,32 +9,32 @@
 C’est donc un mécanisme extrêmement utilisé pour le traitement des erreurs (autant de programmation que d’utilisation), puisque l’erreur est remontée automatiquement jusqu’à l’endroit qui peut la traiter, sans avoir besoin de toucher au code des fonctions intermédiaires.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Exceptions :: C&#43;&#43;">
+    <meta name="twitter:title" content="C&#43;&#43;::   Exceptions">
     <meta name="twitter:description" content="Qu’est-ce qu’une exception ? En C&#43;&#43;, une exception sert à interrompre le flot classique d’exécution du programme lorsqu’un événement particulier se produit. Lorsqu’une exception est lancée, on sort du bloc courant, et on remonte la callstack autant que nécessaire, jusqu’à atteindre un bloc capable de traiter l’exception.
 C’est donc un mécanisme extrêmement utilisé pour le traitement des erreurs (autant de programmation que d’utilisation), puisque l’erreur est remontée automatiquement jusqu’à l’endroit qui peut la traiter, sans avoir besoin de toucher au code des fonctions intermédiaires.">
     <meta property="og:url" content="/old-2223-chapter8-exceptions-assert/2-exceptions/index.html">
-    <meta property="og:site_name" content="C&#43;&#43;">
-    <meta property="og:title" content="Exceptions :: C&#43;&#43;">
+    <meta property="og:site_name" content="C&#43;&#43;::">
+    <meta property="og:title" content="C&#43;&#43;::   Exceptions">
     <meta property="og:description" content="Qu’est-ce qu’une exception ? En C&#43;&#43;, une exception sert à interrompre le flot classique d’exécution du programme lorsqu’un événement particulier se produit. Lorsqu’une exception est lancée, on sort du bloc courant, et on remonte la callstack autant que nécessaire, jusqu’à atteindre un bloc capable de traiter l’exception.
 C’est donc un mécanisme extrêmement utilisé pour le traitement des erreurs (autant de programmation que d’utilisation), puisque l’erreur est remontée automatiquement jusqu’à l’endroit qui peut la traiter, sans avoir besoin de toucher au code des fonctions intermédiaires.">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Traitement d&#39;erreurs (2022-22023)">
-    <meta itemprop="name" content="Exceptions :: C&#43;&#43;">
+    <meta itemprop="name" content="C&#43;&#43;::   Exceptions">
     <meta itemprop="description" content="Qu’est-ce qu’une exception ? En C&#43;&#43;, une exception sert à interrompre le flot classique d’exécution du programme lorsqu’un événement particulier se produit. Lorsqu’une exception est lancée, on sort du bloc courant, et on remonte la callstack autant que nécessaire, jusqu’à atteindre un bloc capable de traiter l’exception.
 C’est donc un mécanisme extrêmement utilisé pour le traitement des erreurs (autant de programmation que d’utilisation), puisque l’erreur est remontée automatiquement jusqu’à l’endroit qui peut la traiter, sans avoir besoin de toucher au code des fonctions intermédiaires.">
     <meta itemprop="wordCount" content="1280">
-    <title>Exceptions :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1741613501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1741613501" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1741613501" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1741613501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1741613501" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1741613501" rel="stylesheet">
-    <link href="../../css/fonts.css?1741613501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1741613501" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1741613501" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1741613501" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1741613501" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1741613501" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1741613501"></script>
+    <title>C&#43;&#43;::   Exceptions</title>
+    <link href="../../css/fontawesome-all.min.css?1768505563" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768505563" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768505563" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768505563" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768505563" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768505563" rel="stylesheet">
+    <link href="../../css/fonts.css?1768505563" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768505563" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768505563" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768505563" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768505563" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768505563" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768505563"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -439,6 +439,7 @@ Chacune d&rsquo;entre elle attend un message à sa construction, qui sera retour
             <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter8/index.html"><a class="padding" href="../../chapter8/index.html"><span class="chapnum">8.</span>&ensp;Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7cf6d9bdd794f38d7006506bdc38c58f" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter9/index.html"><a class="padding" href="../../chapter9/index.html"><span class="chapnum">9.</span>&ensp;Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/help/index.html"><a class="padding" href="../../help/index.html"><span class="chapnum">?</span>&ensp;Aide<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7ddc2c3e2cb52a293678470c01b99070" class="collapsible-menu"></ul></li>
             <li class="parent hidden " data-nav-id="/old-2223-chapter8-exceptions-assert/index.html"><a class="padding" href="../../old-2223-chapter8-exceptions-assert/index.html">Traitement d&#39;erreurs (2022-22023)<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-1dbd34000e19cc0adf82fd36079dd581" class="collapsible-menu">
             <li class="" data-nav-id="/old-2223-chapter8-exceptions-assert/1-assertions/index.html"><a class="padding" href="../../old-2223-chapter8-exceptions-assert/1-assertions/index.html">Assertions<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="active " data-nav-id="/old-2223-chapter8-exceptions-assert/2-exceptions/index.html"><a class="padding" href="../../old-2223-chapter8-exceptions-assert/2-exceptions/index.html">Exceptions<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -448,14 +449,10 @@ Chacune d&rsquo;entre elle attend un message à sa construction, qui sera retour
         <div id="R-shortcuts">
           <div class="nav-title padding">Accès rapide</div>
           <ul class="space">
-            <li><a class="padding" href="https://github.com/marsault/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt exercice du cours</a></li>
-            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt TPs</a></li>
-            <li><a class="padding" href="../../slides/index.html"><i class='far fa-file-powerpoint'></i> Slides</a></li>
-            <li><a class="padding" href="../../workflow/index.html"><i class='far fa-list-alt'></i> Workflow</a></li>
-            <li><a class="padding" href="../../faq/index.html"><i class='fas fa-question-circle'></i> FAQ</a></li>
-            <li><a class="padding" href="../../chapter0/6-tips/index.html"><i class='fa fa-rocket'></i> Astuces</a></li>
+            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt git des sujets de TPs</a></li>
+            <li><a class="padding" href="../../help/slides/index.html"><i class='far fa-file-powerpoint'></i> Planches du CM</a></li>
             <li><a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a></li>
-            <li><a class="padding" href="https://www-igm.univ-mlv.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> CPP-Ref</a></li>
+            <li><a class="padding" href="https://monge.univ-eiffel.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> (Copie locale de) CPP-Ref</a></li>
           </ul>
         </div>
         <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
@@ -508,9 +505,9 @@ Chacune d&rsquo;entre elle attend un message à sa construction, qui sera retour
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1741613501" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1741613501" defer></script>
-    <script src="../../js/theme.js?1741613501" defer></script>
+    <script src="../../js/clipboard.min.js?1768505563" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768505563" defer></script>
+    <script src="../../js/theme.js?1768505563" defer></script>
 
 
 
@@ -534,7 +531,7 @@ Chacune d&rsquo;entre elle attend un message à sa construction, qui sera retour
         <input type="hidden" name="_subject" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://igm.univ-mlv.fr/~marsault/cpp/cours/common/question-submitted" />
+        <input type="hidden" name="_next" value="https://monge.univ-eiffel.fr/~marsault/cpp/cours/common/question-submitted" />
 
         <input type="submit" disabled style="display: none" aria-hidden="true" />
         <input type="submit" value="Envoyer" />

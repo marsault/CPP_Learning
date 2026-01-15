@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Algorithmes :: C&#43;&#43;</title>
+    <title>C&#43;&#43;::   Algorithmes</title>
     <link>/chapter7/index.html</link>
     <description>Comme vous le savez déjà, la STL fournit tout un tas de conteneurs pour répondre à différents usages. Ces conteneurs proposent des fonctions permettant l’insertion et la suppression d’éléments, mais rarement de quoi effectuer des recherches ou des transformations. Le but de ce chapitre sera donc de vous présenter comment faire pour réaliser ces opérations, notamment en s’appuyant sur la bibliothèque algorithmique fournie par la librairie standard.&#xA;Nous ne présenterons pas l’ensemble des fonctions de la librairie (il y en a beaucoup trop), mais si cela vous intéresse, vous pourrez retrouver tout ce qu’elle propose sur cette page.</description>
     <generator>Hugo</generator>
@@ -40,7 +40,7 @@
       <link>/chapter7/test/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter7/test/index.html</guid>
-      <description>C’est l’heure du test ! N’oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.&#xA;Bon courage à vous 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Henri Derycke) Initiaux GR2 (avec Anthony Labarre) Alternants GR3 (avec Victor Marsault) 1. Quel type de boucle faut-il utiliser pour modifier la structure d’un conteneur lors d’un parcours ?&#xA;2. Dans quel cas peut-il être intéressant d’utiliser la fonction std::for_each ?</description>
+      <description>C’est l’heure du test ! N’oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.&#xA;Bon courage à vous 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Anthony Labarre) Initiaux GR2 (avec Victor Marsault) Apprentis GR3 (avec Henri Derycke) 1. Quel type de boucle faut-il utiliser pour modifier la structure d’un conteneur lors d’un parcours ?&#xA;2. Dans quel cas peut-il être intéressant d’utiliser la fonction std::for_each ?</description>
     </item>
   </channel>
 </rss>

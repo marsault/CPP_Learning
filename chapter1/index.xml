@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Introduction au C&#43;&#43; :: C&#43;&#43;</title>
+    <title>C&#43;&#43;::   Introduction au C&#43;&#43;</title>
     <link>/chapter1/index.html</link>
     <description>Dans ce premier chapitre, nous commençons par présenter les principales caractéristiques du langage. Juste après, nous débutons la pratique en montrant comment implémenter des premiers programmes et comment utiliser quelques fonctionnalités basiques du C++ et de sa librairie standard.</description>
     <generator>Hugo</generator>

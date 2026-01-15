@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Classes :: C&#43;&#43;</title>
+    <title>C&#43;&#43;::   Classes</title>
     <link>/chapter2/index.html</link>
     <description>L’objectif de ce chapitre est de vous apprendre à créer et utiliser des classes en C++.</description>
     <generator>Hugo</generator>
@@ -19,14 +19,14 @@
       <link>/chapter2/2-first-class/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter2/2-first-class/index.html</guid>
-      <description>C’est parti pour la pratique ! Vous allez ici apprendre à définir une classe en C++ et à l’instancier.&#xA;Commencez par ouvrir le dépôt d’exercices dans VSCode.&#xA;Méthodologie Ouvrez le fichier chap-02/1-first_class.cpp, dans lequel on vous fournit le code de la fonction main.&#xA;int main() { // Person p; // p.set_name(&#34;Batman&#34;); // p.set_age(23); // std::cout &lt;&lt; &#34;Person named &#39;&#34; &lt;&lt; p.get_name() &lt;&lt; &#34;&#39; is &#34; &lt;&lt; p.get_age() &lt;&lt; &#34; years old.</description>
+      <description>C’est parti pour la pratique ! Vous allez ici apprendre à définir une classe en C++ et à l’instancier.&#xA;Méthodologie Téléchargez et ouvrez le fichier 2-first-class.cpp, dans lequel on vous fournit le code de la fonction main.&#xA;int main() { // Person p; // p.set_name(&#34;Batman&#34;); // p.set_age(23); // std::cout &lt;&lt; &#34;Person named &#39;&#34; &lt;&lt; p.get_name() &lt;&lt; &#34;&#39; is &#34; &lt;&lt; p.get_age() &lt;&lt; &#34; years old.&#34; &lt;&lt; std::endl; return 0; } Vous allez procéder ici en suivant plus ou moins la méthodologie Test Driven Development (ou TDD), qui consiste à écrire le code des tests avant d’écrire le code appelé.</description>
     </item>
     <item>
       <title>Constructeur</title>
       <link>/chapter2/3-constructor/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter2/3-constructor/index.html</guid>
-      <description>Dans cet exercice, vous apprendrez à paramétrer la construction de vos objets.&#xA;Constructeur à paramètres Ouvrez le fichier chap-02/2-constructor.cpp. Il contient une correction de l’exercice précédent.&#xA;Vous aviez implémenté une fonction-membre set_name dans la classe Person pour initialiser l’attribut _name. Or, ce serait bien d’une part de réellement pouvoir initialiser cet attribut plutôt que de le modifier après l’instanciation, et d’autre part, de supprimer ce setter, afin qu’une fois initialisé, il ne soit plus possible de modifier _name.</description>
+      <description>Dans cet exercice, vous apprendrez à paramétrer la construction de vos objets.&#xA;Constructeur à paramètres Téléchargez et ouvrez le fichier 3-constructor.cpp. Il contient une correction de l’exercice précédent.&#xA;Vous aviez implémenté une fonction-membre set_name dans la classe Person pour initialiser l’attribut _name. Or, ce serait bien d’une part de réellement pouvoir initialiser cet attribut plutôt que de le modifier après l’instanciation, et d’autre part, de supprimer ce setter, afin qu’une fois initialisé, il ne soit plus possible de modifier _name.</description>
     </item>
     <item>
       <title>Destructeur</title>
@@ -40,7 +40,7 @@
       <link>/chapter2/5-modules/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter2/5-modules/index.html</guid>
-      <description>Cet exercice vous permettra de découvrir :&#xA;comment écrire des headers en C++, comment extraire l’implémentation des fonctions d’une classe en dehors de cette classe, à quoi correspondent les membres statiques d’une classe et comment les définir, comment déléguer un appel à un autre constructeur. Séparer l’implémentation des fonctions-membres Ouvrez le dossier chap-02/4-modules. Celui-ci est composé de 3 fichiers :&#xA;main.cpp, qui contient une fonction main déjà écrite Rectangle.h, qui contient une classe Rectangle, Rectangle.</description>
+      <description>Cet exercice vous permettra de découvrir :&#xA;comment écrire des headers en C++, comment extraire l’implémentation des fonctions d’une classe en dehors de cette classe, à quoi correspondent les membres statiques d’une classe et comment les définir, comment déléguer un appel à un autre constructeur. Séparer l’implémentation des fonctions-membres Téléchargez cette archive et la décompresser. Elle contient un dossier 5-modules et placer vous dedans. Il avec 3 fichiers :&#xA;main.cpp, qui contient une fonction main déjà écrite Rectangle.</description>
     </item>
     <item>
       <title>Opérateurs</title>
@@ -50,11 +50,18 @@
       <description>Sur cette page, nous vous montrerons comment implémenter vos propres opérateurs.&#xA;Nous en profiterons aussi pour vous expliquer comment définir un alias de type et comment définir des fonctions amies.&#xA;Définition Un opérateur est une fonction, mais qui peut être appelée avec une syntaxe “simplifiée”.&#xA;Prenons l’exemple de la concaténation de std::string :&#xA;auto a = std::string { &#34;a&#34; }; auto b = std::string { &#34;b&#34; }; auto ab = a + b; Dans le code ci-dessus, l’expression a + b est en fait un appel à une fonction dont la signature est quelque chose comme: operator+(std::string, std::string).</description>
     </item>
     <item>
+      <title>Enum</title>
+      <link>/chapter2/7-enum/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter2/7-enum/index.html</guid>
+      <description>En plus des enums du C, le C++ a introduit des enum class. On les appelera plus simplement des enum C++ ou juste enum parce qu’on n’utilisera pas les enum du C.&#xA;Une enum C++ est un type qui n’a qu’un nombre d’instances connus au moment de la compilation. Ça permet d’éviter d’utiliser une std::string qui coûte plus cher à manipuler, ou d’utiliser un entier qui n’est pas clair.&#xA;Déclaration d’une enum C++ Une enum C++ se définit avec la syntaxe suivante.</description>
+    </item>
+    <item>
       <title>Questionnaire</title>
       <link>/chapter2/test/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter2/test/index.html</guid>
-      <description>Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Henri Derycke) Initiaux GR2 (avec Anthony Labarre) Alternants GR3 (avec Victor Marsault) 1. Quel est le terme C++ permettant de désigner les “méthodes” d’une classe ?&#xA;2. Supposons deux classes: Points qui implémente un point dans le plan et Cercle disposant d’un attribut _points de type std::vector&lt;point&gt;. Quel invariant cette classe pourrait-on décider d’implémenter dans Cercle ?</description>
+      <description>Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Anthony Labarre) Initiaux GR2 (avec Victor Marsault) Apprentis GR3 (avec Henri Derycke) 1. Quel est le terme C++ permettant de désigner les “méthodes” d’une classe ?&#xA;2. Supposons deux classes: Points qui implémente un point dans le plan et Cercle disposant d’un attribut _points de type std::vector&lt;point&gt;. Quel invariant cette classe pourrait-on décider d’implémenter dans Cercle ?</description>
     </item>
   </channel>
 </rss>

@@ -11,14 +11,14 @@ Considérons un autre exemple :
 std::vector&lt;Box&gt; boxes; boxes.emplace_back(&#34;gift1&#34;); Box&amp; gift2 = boxes.emplace_back(&#34;gift2&#34;); Box gift3 = boxes.emplace_back(&#34;gift3&#34;); Ici, le tableau boxes est le propriétaire des objets boxes[0], boxes[1] et boxes[2]. Il est également propriétaire de l’objet gift2, puisqu’il s’agit d’une référence sur boxes[1].">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Ownership :: C&#43;&#43;">
+    <meta name="twitter:title" content="C&#43;&#43;::   Ownership">
     <meta name="twitter:description" content="Ownership On dit qu’un objet A est le propriétaire, ou le owner, d’un objet B lorsque la destruction de A entraîne la destruction de B.
 Dans l’exercice précédent, on peut donc dire que box était propriétaire de box._content.
 Considérons un autre exemple :
 std::vector&lt;Box&gt; boxes; boxes.emplace_back(&#34;gift1&#34;); Box&amp; gift2 = boxes.emplace_back(&#34;gift2&#34;); Box gift3 = boxes.emplace_back(&#34;gift3&#34;); Ici, le tableau boxes est le propriétaire des objets boxes[0], boxes[1] et boxes[2]. Il est également propriétaire de l’objet gift2, puisqu’il s’agit d’une référence sur boxes[1].">
     <meta property="og:url" content="/old-2223-chapter3-memoire/2-ownership/index.html">
-    <meta property="og:site_name" content="C&#43;&#43;">
-    <meta property="og:title" content="Ownership :: C&#43;&#43;">
+    <meta property="og:site_name" content="C&#43;&#43;::">
+    <meta property="og:title" content="C&#43;&#43;::   Ownership">
     <meta property="og:description" content="Ownership On dit qu’un objet A est le propriétaire, ou le owner, d’un objet B lorsque la destruction de A entraîne la destruction de B.
 Dans l’exercice précédent, on peut donc dire que box était propriétaire de box._content.
 Considérons un autre exemple :
@@ -26,23 +26,23 @@ std::vector&lt;Box&gt; boxes; boxes.emplace_back(&#34;gift1&#34;); Box&amp; gift
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Gestion mémoire (2022-2023)">
-    <meta itemprop="name" content="Ownership :: C&#43;&#43;">
+    <meta itemprop="name" content="C&#43;&#43;::   Ownership">
     <meta itemprop="description" content="Ownership On dit qu’un objet A est le propriétaire, ou le owner, d’un objet B lorsque la destruction de A entraîne la destruction de B.
 Dans l’exercice précédent, on peut donc dire que box était propriétaire de box._content.
 Considérons un autre exemple :
 std::vector&lt;Box&gt; boxes; boxes.emplace_back(&#34;gift1&#34;); Box&amp; gift2 = boxes.emplace_back(&#34;gift2&#34;); Box gift3 = boxes.emplace_back(&#34;gift3&#34;); Ici, le tableau boxes est le propriétaire des objets boxes[0], boxes[1] et boxes[2]. Il est également propriétaire de l’objet gift2, puisqu’il s’agit d’une référence sur boxes[1].">
-    <meta itemprop="wordCount" content="575">
-    <title>Ownership :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1741613501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1741613501" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1741613501" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1741613501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1741613501" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1741613501" rel="stylesheet">
-    <link href="../../css/fonts.css?1741613501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1741613501" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1741613501" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1741613501" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1741613501" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1741613501" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1741613501"></script>
+    <meta itemprop="wordCount" content="580">
+    <title>C&#43;&#43;::   Ownership</title>
+    <link href="../../css/fontawesome-all.min.css?1768505563" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768505563" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768505563" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768505563" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768505563" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768505563" rel="stylesheet">
+    <link href="../../css/fonts.css?1768505563" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768505563" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768505563" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768505563" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768505563" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768505563" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768505563"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -166,14 +166,20 @@ La relation d&rsquo;ownership est donc une relation transitive.
 Si un objet A est propriétaire d&rsquo;un objet B, qui lui-même est propriétaire d&rsquo;un objet C, alors A est également propriétaire de C.</p>
 <p>Analysez maintenant le code du programme <code>Reminders</code> du TP2 (vous pouvez trouver la correction <a href="https://github.com/Laefy/CPP_Learning_Code/tree/tp2_solution/tp-02" rel="external" target="_blank">ici</a>) et essayez d&rsquo;identifier toutes les relations d&rsquo;ownership qu&rsquo;il contient.<br>
 Déduisez-en les durées de vie des différents objets du programme.</p>
-<div class="expand">
-  <input type="checkbox" id="R-expand-eb70e9550527eb37d48842793b90a00a" aria-controls="R-expandcontent-eb70e9550527eb37d48842793b90a00a">
-  <label class="expand-label" for="R-expand-eb70e9550527eb37d48842793b90a00a">
-    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
-  </label>
-  <div id="R-expandcontent-eb70e9550527eb37d48842793b90a00a" class="expand-content">
-<p><code>clock</code>:</p>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p><code>clock</code>:</p>
 <ul>
 <li>la durée de vie de <code>clock</code> va de la ligne 15 à la ligne 33 du <code>main</code></li>
 <li>propriétaire de <code>clock._min_hand</code>, <code>clock._sec_hand</code> et <code>clock._events</code></li>
@@ -206,8 +212,12 @@ Déduisez-en les durées de vie des différents objets du programme.</p>
 <li>propriétaire des éléments du tableau <code>events</code></li>
 <li>mais pas des éléments du tableau <code>clock._events</code></li>
 </ul>
-  </div>
+
+        </div>
+    </div>
+
 </div>
+
 <hr>
 <h3 id="les-pièges-de-la-mémoire">Les pièges de la mémoire</h3>
 <p>Etre attentifs aux relations d&rsquo;ownership permet généralement de déterminer les durées de vie des objets.
@@ -250,6 +260,7 @@ En effet, les objets référencés pourraient être détruits à tout moment, et
             <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter8/index.html"><a class="padding" href="../../chapter8/index.html"><span class="chapnum">8.</span>&ensp;Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7cf6d9bdd794f38d7006506bdc38c58f" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter9/index.html"><a class="padding" href="../../chapter9/index.html"><span class="chapnum">9.</span>&ensp;Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/help/index.html"><a class="padding" href="../../help/index.html"><span class="chapnum">?</span>&ensp;Aide<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7ddc2c3e2cb52a293678470c01b99070" class="collapsible-menu"></ul></li>
             <li class="parent hidden " data-nav-id="/old-2223-chapter3-memoire/index.html"><a class="padding" href="../../old-2223-chapter3-memoire/index.html">Gestion mémoire (2022-2023)<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e2b2fe39bbf9794869eeec25a6a70c68" class="collapsible-menu">
             <li class="" data-nav-id="/old-2223-chapter3-memoire/1-lifespan/index.html"><a class="padding" href="../../old-2223-chapter3-memoire/1-lifespan/index.html">Durée de vie<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="active " data-nav-id="/old-2223-chapter3-memoire/2-ownership/index.html"><a class="padding" href="../../old-2223-chapter3-memoire/2-ownership/index.html">Ownership<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -262,14 +273,10 @@ En effet, les objets référencés pourraient être détruits à tout moment, et
         <div id="R-shortcuts">
           <div class="nav-title padding">Accès rapide</div>
           <ul class="space">
-            <li><a class="padding" href="https://github.com/marsault/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt exercice du cours</a></li>
-            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt TPs</a></li>
-            <li><a class="padding" href="../../slides/index.html"><i class='far fa-file-powerpoint'></i> Slides</a></li>
-            <li><a class="padding" href="../../workflow/index.html"><i class='far fa-list-alt'></i> Workflow</a></li>
-            <li><a class="padding" href="../../faq/index.html"><i class='fas fa-question-circle'></i> FAQ</a></li>
-            <li><a class="padding" href="../../chapter0/6-tips/index.html"><i class='fa fa-rocket'></i> Astuces</a></li>
+            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt git des sujets de TPs</a></li>
+            <li><a class="padding" href="../../help/slides/index.html"><i class='far fa-file-powerpoint'></i> Planches du CM</a></li>
             <li><a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a></li>
-            <li><a class="padding" href="https://www-igm.univ-mlv.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> CPP-Ref</a></li>
+            <li><a class="padding" href="https://monge.univ-eiffel.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> (Copie locale de) CPP-Ref</a></li>
           </ul>
         </div>
         <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
@@ -322,9 +329,9 @@ En effet, les objets référencés pourraient être détruits à tout moment, et
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1741613501" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1741613501" defer></script>
-    <script src="../../js/theme.js?1741613501" defer></script>
+    <script src="../../js/clipboard.min.js?1768505563" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768505563" defer></script>
+    <script src="../../js/theme.js?1768505563" defer></script>
 
 
 
@@ -348,7 +355,7 @@ En effet, les objets référencés pourraient être détruits à tout moment, et
         <input type="hidden" name="_subject" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://igm.univ-mlv.fr/~marsault/cpp/cours/common/question-submitted" />
+        <input type="hidden" name="_next" value="https://monge.univ-eiffel.fr/~marsault/cpp/cours/common/question-submitted" />
 
         <input type="submit" disabled style="display: none" aria-hidden="true" />
         <input type="submit" value="Envoyer" />

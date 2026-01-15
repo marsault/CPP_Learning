@@ -13,7 +13,7 @@ Micro rappel sur les pair La classe pair est un type templaté avec deux paramè
 std::pair&lt;int, float&gt; such_a_nice_pair { 1, 3.f }; On accède aux éléments de la pair directement via ses attributs first et second (pas de getters) :">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Paires, tuples et options :: C&#43;&#43;">
+    <meta name="twitter:title" content="C&#43;&#43;::   Paires, tuples et options">
     <meta name="twitter:description" content="Vous avez déjà utilisé le type pair au cours d’exercices précédents. Nous allons maintenant vous présenter son cousin, la classe tuple.
 Pour cet exercice, vous modifierez le fichier :
 - chap-05/5-tuples.cpp
@@ -21,8 +21,8 @@ La cible à compiler est c5-5-tuples.
 Micro rappel sur les pair La classe pair est un type templaté avec deux paramètres :
 std::pair&lt;int, float&gt; such_a_nice_pair { 1, 3.f }; On accède aux éléments de la pair directement via ses attributs first et second (pas de getters) :">
     <meta property="og:url" content="/chapter5/5-tuples/index.html">
-    <meta property="og:site_name" content="C&#43;&#43;">
-    <meta property="og:title" content="Paires, tuples et options :: C&#43;&#43;">
+    <meta property="og:site_name" content="C&#43;&#43;::">
+    <meta property="og:title" content="C&#43;&#43;::   Paires, tuples et options">
     <meta property="og:description" content="Vous avez déjà utilisé le type pair au cours d’exercices précédents. Nous allons maintenant vous présenter son cousin, la classe tuple.
 Pour cet exercice, vous modifierez le fichier :
 - chap-05/5-tuples.cpp
@@ -32,25 +32,25 @@ std::pair&lt;int, float&gt; such_a_nice_pair { 1, 3.f }; On accède aux élémen
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Librairie standard">
-    <meta itemprop="name" content="Paires, tuples et options :: C&#43;&#43;">
+    <meta itemprop="name" content="C&#43;&#43;::   Paires, tuples et options">
     <meta itemprop="description" content="Vous avez déjà utilisé le type pair au cours d’exercices précédents. Nous allons maintenant vous présenter son cousin, la classe tuple.
 Pour cet exercice, vous modifierez le fichier :
 - chap-05/5-tuples.cpp
 La cible à compiler est c5-5-tuples.
 Micro rappel sur les pair La classe pair est un type templaté avec deux paramètres :
 std::pair&lt;int, float&gt; such_a_nice_pair { 1, 3.f }; On accède aux éléments de la pair directement via ses attributs first et second (pas de getters) :">
-    <meta itemprop="wordCount" content="481">
-    <title>Paires, tuples et options :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1741613501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1741613501" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1741613501" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1741613501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1741613501" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1741613501" rel="stylesheet">
-    <link href="../../css/fonts.css?1741613501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1741613501" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1741613501" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1741613501" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1741613501" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1741613501" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1741613501"></script>
+    <meta itemprop="wordCount" content="488">
+    <title>C&#43;&#43;::   Paires, tuples et options</title>
+    <link href="../../css/fontawesome-all.min.css?1768505563" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768505563" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768505563" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768505563" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768505563" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768505563" rel="stylesheet">
+    <link href="../../css/fonts.css?1768505563" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768505563" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768505563" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768505563" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768505563" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768505563" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768505563"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -169,76 +169,83 @@ std::pair&lt;int, float&gt; such_a_nice_pair { 1, 3.f }; On accède aux élémen
 Lorsqu&rsquo;une fonction devait vous retourner plusieurs valeurs, vous étiez souvent contraints d&rsquo;ajouter des &ldquo;paramètres de retour&rdquo; à la fonction.<br>
 Maintenant, vous saurez que vous pouvez utiliser des tuples.</p>
 <p>Modifiez le code du fichier <code>5-tuples.cpp</code> afin d&rsquo;appliquer ce principe.</p>
-<div class="expand">
-  <input type="checkbox" id="R-expand-9ad9c25c2d624b7e49cb59f750df2870" aria-controls="R-expandcontent-9ad9c25c2d624b7e49cb59f750df2870">
-  <label class="expand-label" for="R-expand-9ad9c25c2d624b7e49cb59f750df2870">
-    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
-  </label>
-  <div id="R-expandcontent-9ad9c25c2d624b7e49cb59f750df2870" class="expand-content">
-<div class="highlight wrap-code" hl_lines="3 5 7 12 18 19 29 35 38 41 43 48 49 54 55 56 58"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
-</span></span></span><span class="line hl"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;tuple&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line hl"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">bool</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">parse_params</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="k">const</span><span class="o">*</span> <span class="n">argv</span><span class="p">)</span>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <div class="highlight wrap-code" hl_lines="3 5 7 12 18 19 29 35 38 41 43 48 49 54 55 56 58"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">iostream</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span></span></span><span class="line hl"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;tuple&gt;</span><span class="cp">&lt;/p&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="kt">bool</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">parse_params</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="k">const</span><span class="o">*</span> <span class="n">argv</span><span class="p">)</span>
+</span></span><span class="line hl"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="kt">bool</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">error</span> <span class="p">{</span> <span class="nb">false</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">};</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span></span><span class="line hl"><span class="cl"><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line hl"><span class="cl">    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">bool</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">error</span> <span class="p">{</span> <span class="nb">false</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Program expects 2 parameters!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line hl"><span class="cl">        <span class="k">return</span> <span class="n">error</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">num_str</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">den_str</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line hl"><span class="cl">    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line hl"><span class="cl">    <span class="kt">int</span> <span class="n">den</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">try</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">num</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">stoi</span><span class="p">(</span><span class="n">num_str</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">den</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">stoi</span><span class="p">(</span><span class="n">den_str</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Program expects 2 integer parameters!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line hl"><span class="cl">        <span class="k">return</span> <span class="n">error</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">den</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Denominator cannot be null!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line hl"><span class="cl">        <span class="k">return</span> <span class="n">error</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line hl"><span class="cl">    <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">tuple</span> <span class="p">{</span> <span class="nb">true</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">den</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="n">Program</span> <span class="n">expects</span> <span class="mi">2</span> <span class="n">parameters</span><span class="o">!&amp;</span><span class="n">quot</span><span class="p">;</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">error</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line hl"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">num_str</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">den_str</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line hl"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">divide</span><span class="p">(</span><span class="kt">int</span> <span class="n">numerator</span><span class="p">,</span> <span class="kt">int</span> <span class="n">denominator</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">den</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line hl"><span class="cl">
+</span></span><span class="line hl"><span class="cl"><span class="k">try</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line hl"><span class="cl">    <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">tuple</span> <span class="p">{</span> <span class="n">numerator</span> <span class="o">/</span> <span class="n">denominator</span><span class="p">,</span> <span class="n">numerator</span> <span class="o">%</span> <span class="n">denominator</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="n">num</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">stoi</span><span class="p">(</span><span class="n">num_str</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">den</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">stoi</span><span class="p">(</span><span class="n">den_str</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line hl"><span class="cl">    <span class="k">const</span> <span class="k">auto</span> <span class="n">parse_res</span> <span class="o">=</span> <span class="n">parse_params</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">);</span>
-</span></span><span class="line hl"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">parse_res</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="n">Program</span> <span class="n">expects</span> <span class="mi">2</span> <span class="n">integer</span> <span class="n">parameters</span><span class="o">!&amp;</span><span class="n">quot</span><span class="p">;</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">error</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line hl"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">den</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="n">Denominator</span> <span class="n">cannot</span> <span class="n">be</span> <span class="n">null</span><span class="o">!&amp;</span><span class="n">quot</span><span class="p">;</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">error</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line hl"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">tuple</span> <span class="p">{</span> <span class="nb">true</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">den</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span></span><span class="line hl"><span class="cl"><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">divide</span><span class="p">(</span><span class="kt">int</span> <span class="n">numerator</span><span class="p">,</span> <span class="kt">int</span> <span class="n">denominator</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line hl"><span class="cl"><span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">tuple</span> <span class="p">{</span> <span class="n">numerator</span> <span class="o">/</span> <span class="n">denominator</span><span class="p">,</span> <span class="n">numerator</span> <span class="o">%</span> <span class="n">denominator</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span></span><span class="line hl"><span class="cl"><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">parse_res</span> <span class="o">=</span> <span class="n">parse_params</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="mi">0</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;(</span><span class="n">parse_res</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line hl"><span class="cl"><span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line hl"><span class="cl"><span class="p">}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">const</span> <span class="k">auto</span> <span class="n">num</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="mi">1</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;(</span><span class="n">parse_res</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">den</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="mi">2</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;(</span><span class="n">parse_res</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">div_res</span> <span class="o">=</span> <span class="n">divide</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line hl"><span class="cl">    <span class="k">const</span> <span class="k">auto</span> <span class="n">num</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">parse_res</span><span class="p">);</span>
-</span></span><span class="line hl"><span class="cl">    <span class="k">const</span> <span class="k">auto</span> <span class="n">den</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">2</span><span class="o">&gt;</span><span class="p">(</span><span class="n">parse_res</span><span class="p">);</span>
-</span></span><span class="line hl"><span class="cl">    <span class="k">const</span> <span class="k">auto</span> <span class="n">div_res</span> <span class="o">=</span> <span class="n">divide</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line hl"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">num</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">den</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; * &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">div_res</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; + &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">div_res</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>   
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
-  </div>
+</span></span><span class="line hl"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">num</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">den</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span> <span class="o">*</span> <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="mi">0</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;(</span><span class="n">div_res</span><span class="p">)</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span> <span class="o">+</span> <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="mi">1</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;(</span><span class="n">div_res</span><span class="p">)</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>   
+</span></span><span class="line hl"><span class="cl">
+</span></span><span class="line hl"><span class="cl"><span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span></span><span class="line hl"><span class="cl"><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span></span></span></code></pre></div>
+
+        </div>
+    </div>
+
 </div>
+
 
   <footer class="footline">
   </footer>
@@ -277,19 +284,16 @@ Maintenant, vous saurez que vous pouvez utiliser des tuples.</p>
             <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter8/index.html"><a class="padding" href="../../chapter8/index.html"><span class="chapnum">8.</span>&ensp;Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7cf6d9bdd794f38d7006506bdc38c58f" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter9/index.html"><a class="padding" href="../../chapter9/index.html"><span class="chapnum">9.</span>&ensp;Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/help/index.html"><a class="padding" href="../../help/index.html"><span class="chapnum">?</span>&ensp;Aide<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7ddc2c3e2cb52a293678470c01b99070" class="collapsible-menu"></ul></li>
           </ul>
         </div>
         <div id="R-shortcuts">
           <div class="nav-title padding">Accès rapide</div>
           <ul class="space">
-            <li><a class="padding" href="https://github.com/marsault/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt exercice du cours</a></li>
-            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt TPs</a></li>
-            <li><a class="padding" href="../../slides/index.html"><i class='far fa-file-powerpoint'></i> Slides</a></li>
-            <li><a class="padding" href="../../workflow/index.html"><i class='far fa-list-alt'></i> Workflow</a></li>
-            <li><a class="padding" href="../../faq/index.html"><i class='fas fa-question-circle'></i> FAQ</a></li>
-            <li><a class="padding" href="../../chapter0/6-tips/index.html"><i class='fa fa-rocket'></i> Astuces</a></li>
+            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt git des sujets de TPs</a></li>
+            <li><a class="padding" href="../../help/slides/index.html"><i class='far fa-file-powerpoint'></i> Planches du CM</a></li>
             <li><a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a></li>
-            <li><a class="padding" href="https://www-igm.univ-mlv.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> CPP-Ref</a></li>
+            <li><a class="padding" href="https://monge.univ-eiffel.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> (Copie locale de) CPP-Ref</a></li>
           </ul>
         </div>
         <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
@@ -342,9 +346,9 @@ Maintenant, vous saurez que vous pouvez utiliser des tuples.</p>
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1741613501" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1741613501" defer></script>
-    <script src="../../js/theme.js?1741613501" defer></script>
+    <script src="../../js/clipboard.min.js?1768505563" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768505563" defer></script>
+    <script src="../../js/theme.js?1768505563" defer></script>
 
 
 
@@ -368,7 +372,7 @@ Maintenant, vous saurez que vous pouvez utiliser des tuples.</p>
         <input type="hidden" name="_subject" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://igm.univ-mlv.fr/~marsault/cpp/cours/common/question-submitted" />
+        <input type="hidden" name="_next" value="https://monge.univ-eiffel.fr/~marsault/cpp/cours/common/question-submitted" />
 
         <input type="submit" disabled style="display: none" aria-hidden="true" />
         <input type="submit" value="Envoyer" />

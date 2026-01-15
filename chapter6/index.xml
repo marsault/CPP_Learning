@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Héritage :: C&#43;&#43;</title>
+    <title>C&#43;&#43;::   Héritage</title>
     <link>/chapter6/index.html</link>
     <description>Vous apprendrez dans ce chapitre comment fonctionne l’héritage en C++. Vous verrez qu’il existe de nombreuses différences avec l’héritage en Java, bien qu’on retrouve des concepts similaires.&#xA;Pour la pratique, nous vous montrerons comment créer une hiérarchie de classes, puis comment faire pour redéfinir le comportement des classes-filles.</description>
     <generator>Hugo</generator>
@@ -12,14 +12,14 @@
       <link>/chapter6/1-hierarchy/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter6/1-hierarchy/index.html</guid>
-      <description>Dans cette première partie, vous apprendrez comment définir des relations de parenté entre vos classes.&#xA;Nous ne parlerons sur cette page que d’héritage dit “statique”, c’est-à-dire que nous ne chercherons pas à modifier dans les classes-fille le comportement hérité de la classe-mère.&#xA;Pour cet exercice, vous modifierez les fichiers :&#xA;- chap-04/1-hierarchy/Boss.cpp&#xA;- chap-04/1-hierarchy/Boss.h&#xA;- chap-04/1-hierarchy/Staff.cpp&#xA;- chap-04/1-hierarchy/Staff.h&#xA;- chap-04/1-hierarchy/Intern.cpp&#xA;- chap-04/1-hierarchy/Intern.h&#xA;La cible à compiler est c4-1-hierarchy.&#xA;Définir une classe-mère Commencez par jeter un coup d’oeil à chacun des fichiers fournis.</description>
+      <description>Dans cette première partie, vous apprendrez comment définir des relations de parenté entre vos classes.&#xA;Nous ne parlerons sur cette page que d’héritage dit “statique”, c’est-à-dire que nous ne chercherons pas à modifier dans les classes-fille le comportement hérité de la classe-mère.&#xA;Pour cet exercice, on utilisera vous modifierez les fichiers :&#xA;1-hierarchy/Boss.cpp 1-hierarchy/Boss.h 1-hierarchy/Staff.cpp 1-hierarchy/Staff.h 1-hierarchy/Intern.cpp 1-hierarchy/Intern.h se trouvant dans code.zip.&#xA;La cible à compiler est hierarchy.&#xA;Définir une classe-mère Commencez par jeter un coup d’oeil à chacun des fichiers fournis.</description>
     </item>
     <item>
       <title>Concerto animalier</title>
       <link>/chapter6/2-farm/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter6/2-farm/index.html</guid>
-      <description>Vous allez maintenant apprendre à définir des classes permettant à leurs enfants de spécialiser leur comportement. On parle alors de classe polymorphe.&#xA;Nous ferons un petit récapitulatif en fin de page, pour rappelez les points essentiels auxquels il faut faire attention lorsque vous définissez des classes polymorphes pour éviter les bugs.&#xA;Pour cet exercice, vous modifierez les fichiers :&#xA;- chap-04/2-farm/FarmHouse.cpp&#xA;- chap-04/2-farm/Animal.h&#xA;- chap-04/2-farm/Dog.h&#xA;- chap-04/2-farm/Cat.h&#xA;- chap-04/2-farm/Chicken.h&#xA;- chap-04/2-farm/Cow.</description>
+      <description>Vous allez maintenant apprendre à définir des classes permettant à leurs enfants de spécialiser leur comportement. On parle alors de classe polymorphe.&#xA;Nous ferons un petit récapitulatif en fin de page, pour rappelez les points essentiels auxquels il faut faire attention lorsque vous définissez des classes polymorphes pour éviter les bugs.&#xA;Pour cet exercice, vous modifierez les fichiers :\&#xA;2-farm/FarmHouse.cpp 2-farm/Animal.h 2-farm/Cat.h 2-farm/Chicken.h 2-farm/Cow.h 2-farm/Dog.h se trouvant dans code.zip.&#xA;La cible à compiler est farm.</description>
     </item>
     <item>
       <title>Résolution d&#39;appel virtuel</title>
@@ -40,14 +40,14 @@
       <link>/chapter6/5-vehicles/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter6/5-vehicles/index.html</guid>
-      <description>Pour terminer ce chapitre, nous allons voir comment faire pour accéder directement aux attributs de votre classe de base, comment appeler la fonction parent depuis la rédéfinition de cette fonction dans la classe-fille et enfin, comment modéliser des classes abstraites.&#xA;Pour cet exercice, vous modifierez les fichiers :&#xA;- chap-04/3-vehicles/Program.cpp&#xA;- chap-04/3-vehicles/Vehicle.h&#xA;- chap-04/3-vehicles/Car.h&#xA;- chap-04/3-vehicles/Scooter.h&#xA;La cible à compiler est c4-3-vehicles.&#xA;Introduction du permis Dans le programme que l’on vous fournit, n’importe qui peut conduire n’importe quoi.</description>
+      <description>Pour terminer ce chapitre, nous allons voir comment faire pour accéder directement aux attributs de votre classe de base, comment appeler la fonction parent depuis la rédéfinition de cette fonction dans la classe-fille et enfin, comment modéliser des classes abstraites.&#xA;Pour cet exercice, vous modifierez les fichiers :\&#xA;3-vehicles/Program.cpp\ 3-vehicles/Vehicle.h\ 3-vehicles/Car.h\ 3-vehicles/Scooter.h se trouvant dans code.zip.&#xA;La cible à compiler est vehicles.&#xA;Introduction du permis Dans le programme que l’on vous fournit, n’importe qui peut conduire n’importe quoi.</description>
     </item>
     <item>
       <title>Questionnaire</title>
       <link>/chapter6/test/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter6/test/index.html</guid>
-      <description>Vous avez terminé le Chapitre 4 ! C’est donc maintenant le moment de connecter vos neurones pour répondre aux questions suivantes.&#xA;Bon courage à vous 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Henri Derycke) Initiaux GR2 (avec Anthony Labarre) Alternants GR3 (avec Victor Marsault) 1. Qu’est-ce qu’une classe polymorphe ?&#xA;2. Définissez une classe polymorphe Nothing qui ne fait rien.&#xA;3. Comment représenter une classe abstraite en C++ ?</description>
+      <description>Vous avez terminé le Chapitre 4 ! C’est donc maintenant le moment de connecter vos neurones pour répondre aux questions suivantes.&#xA;Bon courage à vous 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Anthony Labarre) Initiaux GR2 (avec Victor Marsault) Apprentis GR3 (avec Henri Derycke) 1. Qu’est-ce qu’une classe polymorphe ?&#xA;2. Définissez une classe polymorphe Nothing qui ne fait rien.&#xA;3. Comment représenter une classe abstraite en C++ ?</description>
     </item>
     <item>
       <title>Synthèse</title>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Copie et déplacement :: C&#43;&#43;</title>
+    <title>C&#43;&#43;::   Copie et déplacement</title>
     <link>/chapter4/index.html</link>
-    <description>Dans ce chapitre, nous allons revenir en détail sur la notion de copie et aborder celle de déplacement. Plus particulièrement, nous allons voir comment définir la façon dont une classe se copie et se déplace, et quand.&#xA;Pour savoir quand un objet est déplacé ou copié, il faut d’abord comprendre les deux principales catégories de valeurs : L-value et R-value.&#xA;Nouveau chapitre Ce chapitre a été écrit cette année. Il contient probablement de nombreuses erreurs.</description>
+    <description>Dans ce chapitre, nous allons revenir en détail sur la notion de copie et aborder celle de déplacement. Plus particulièrement, nous allons voir comment définir la façon dont une classe se copie et se déplace, et quand.&#xA;Pour savoir quand un objet est déplacé ou copié, il faut d’abord comprendre les deux principales catégories de valeurs : L-value et R-value.</description>
     <generator>Hugo</generator>
     <language>fr</language>
     <atom:link href="/chapter4/index.xml" rel="self" type="application/rss+xml" />
@@ -54,7 +54,7 @@
       <link>/chapter4/9-test/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter4/9-test/index.html</guid>
-      <description>Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Henri Derycke) Initiaux GR2 (avec Anthony Labarre) Alternants GR3 (avec Victor Marsault) Considérons la fonction pour les questions ci-dessous.&#xA;int f(int a, int&amp; b, const int&amp; c, int&amp;&amp; d, int* e) { return *(new int{a+b+c+d+*e}); } 1. Pour chacune des expressions suivantes, indiquez s’il s’agit d’une L-value ou d’une R-value:&#xA;a, b, c, d, e, *e, a+b+c+d+*e, new int{a+b+c+d+*e}; *(new int{a+b+c+d+*e}); Les questions ci-dessous s’appliquent à la classe SomeClass ci-dessous.</description>
+      <description>Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Anthony Labarre) Initiaux GR2 (avec Victor Marsault) Apprentis GR3 (avec Henri Derycke) Considérons la fonction pour les questions ci-dessous.&#xA;int f(int a, int&amp; b, const int&amp; c, int&amp;&amp; d, int* e) { return *(new int{a+b+c+d+*e}); } 1. Pour chacune des expressions suivantes, indiquez s’il s’agit d’une L-value ou d’une R-value:&#xA;a, b, c, d, e, *e, a+b+c+d+*e, new int{a+b+c+d+*e}; *(new int{a+b+c+d+*e}); Les questions ci-dessous s’appliquent à la classe SomeClass ci-dessous.</description>
     </item>
   </channel>
 </rss>

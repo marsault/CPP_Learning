@@ -9,32 +9,32 @@
 Si on définit une variable dans une fonction, la portée de celle-ci démarre à sa définition et se termine à la fin du bloc dans lequel celle-ci a été définie.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Durée de vie :: C&#43;&#43;">
+    <meta name="twitter:title" content="C&#43;&#43;::   Durée de vie">
     <meta name="twitter:description" content="Portée d’une variable locale Afin de parler de durée de vie, nous allons commencer par parler de la portée de nos variables. Comme vous le savez peut-être, la portée d’une variable définit la portion de code dans laquelle le compilateur nous permet de l’utiliser.
 Si on définit une variable dans une fonction, la portée de celle-ci démarre à sa définition et se termine à la fin du bloc dans lequel celle-ci a été définie.">
     <meta property="og:url" content="/old-2223-chapter3-memoire/1-lifespan/index.html">
-    <meta property="og:site_name" content="C&#43;&#43;">
-    <meta property="og:title" content="Durée de vie :: C&#43;&#43;">
+    <meta property="og:site_name" content="C&#43;&#43;::">
+    <meta property="og:title" content="C&#43;&#43;::   Durée de vie">
     <meta property="og:description" content="Portée d’une variable locale Afin de parler de durée de vie, nous allons commencer par parler de la portée de nos variables. Comme vous le savez peut-être, la portée d’une variable définit la portion de code dans laquelle le compilateur nous permet de l’utiliser.
 Si on définit une variable dans une fonction, la portée de celle-ci démarre à sa définition et se termine à la fin du bloc dans lequel celle-ci a été définie.">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Gestion mémoire (2022-2023)">
-    <meta itemprop="name" content="Durée de vie :: C&#43;&#43;">
+    <meta itemprop="name" content="C&#43;&#43;::   Durée de vie">
     <meta itemprop="description" content="Portée d’une variable locale Afin de parler de durée de vie, nous allons commencer par parler de la portée de nos variables. Comme vous le savez peut-être, la portée d’une variable définit la portion de code dans laquelle le compilateur nous permet de l’utiliser.
 Si on définit une variable dans une fonction, la portée de celle-ci démarre à sa définition et se termine à la fin du bloc dans lequel celle-ci a été définie.">
-    <meta itemprop="wordCount" content="1465">
-    <title>Durée de vie :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1741613501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1741613501" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1741613501" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1741613501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1741613501" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1741613501" rel="stylesheet">
-    <link href="../../css/fonts.css?1741613501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1741613501" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1741613501" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1741613501" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1741613501" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1741613501" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1741613501"></script>
+    <meta itemprop="wordCount" content="1485">
+    <title>C&#43;&#43;::   Durée de vie</title>
+    <link href="../../css/fontawesome-all.min.css?1768505563" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768505563" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768505563" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768505563" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768505563" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768505563" rel="stylesheet">
+    <link href="../../css/fonts.css?1768505563" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768505563" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768505563" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768505563" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768505563" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768505563" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768505563"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -193,14 +193,20 @@ La durée de vie d&rsquo;un objet démarre de l&rsquo;appel de son constructeur 
 <p>Modifiez le constructeur de la classe <code>Box</code> et redéfinissez son destructeur afin qu&rsquo;ils affichent <code>Box created</code> et <code>Box destroyed</code>.<br>
 Faites de même pour <code>Content</code> et testez le programme.<br>
 Pouvez-vous en déduire à quel moment la durée de vie de <code>_content</code> démarre, et à quel moment celle-ci termine ?</p>
-<div class="expand">
-  <input type="checkbox" id="R-expand-b4bd3f0eb6f135b458af72574c8fc41a" aria-controls="R-expandcontent-b4bd3f0eb6f135b458af72574c8fc41a">
-  <label class="expand-label" for="R-expand-b4bd3f0eb6f135b458af72574c8fc41a">
-    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
-  </label>
-  <div id="R-expandcontent-b4bd3f0eb6f135b458af72574c8fc41a" class="expand-content">
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Content</span>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Content</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Content</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="o">:</span> <span class="n">name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
@@ -245,8 +251,12 @@ Pouvez-vous en déduire à quel moment la durée de vie de <code>_content</code>
 <p>On peut en déduire que <code>Box::_content</code> :<br>
 - est construit pendant l&rsquo;appel du constructeur de <code>Box</code>, juste avant de rentrer dans le corps de la fonction,<br>
 - est détruit pendant l&rsquo;appel du destructeur <code>Box</code>, juste après être sorti du corps de la fonction.</p>
-  </div>
+
+        </div>
+    </div>
+
 </div>
+
 <hr>
 <h3 id="validité-dun-objet">Validité d&rsquo;un objet</h3>
 <p>La durée de vie d&rsquo;un objet détermine la période durant laquelle il est valide d&rsquo;utiliser cet objet et son contenu.</p>
@@ -264,14 +274,20 @@ Testez le code suivant et déterminez les durées de vie des objets <code>box</c
 </span></span><span class="line"><span class="ln">10</span><span class="cl">     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln">11</span><span class="cl"> <span class="p">}</span></span></span></code></pre></div>
 </p>
-<div class="expand">
-  <input type="checkbox" id="R-expand-dfc28f4332f6c24fe51d7e3d473b8961" aria-controls="R-expandcontent-dfc28f4332f6c24fe51d7e3d473b8961">
-  <label class="expand-label" for="R-expand-dfc28f4332f6c24fe51d7e3d473b8961">
-    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
-  </label>
-  <div id="R-expandcontent-dfc28f4332f6c24fe51d7e3d473b8961" class="expand-content">
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">Main begin
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">Main begin
 </span></span></span><span class="line"><span class="cl"><span class="c">Content created
 </span></span></span><span class="line"><span class="cl"><span class="c">Box created
 </span></span></span><span class="line"><span class="cl"><span class="c">gift
@@ -279,8 +295,12 @@ Testez le code suivant et déterminez les durées de vie des objets <code>box</c
 </span></span></span><span class="line"><span class="cl"><span class="c">Content destroyed
 </span></span></span><span class="line"><span class="cl"><span class="c">Main end</span></span></span></code></pre></div>
 <p>Les durées de vie des objets <code>box</code> et <code>box-&gt;_content</code> démarrent à la ligne 5 (<code>new</code>) et s&rsquo;achèvent à la ligne 7 (<code>delete</code>).</p>
-  </div>
+
+        </div>
+    </div>
+
 </div>
+
 <p>Analysez maintenant le code ci-dessous.<br>
 Quelle est selon vous la durée de vie de la variable <code>content</code> ?
 <div class="highlight wrap-code" linenos="inline"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln"> 1</span><span class="cl"> <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
@@ -304,14 +324,20 @@ Quelle est selon vous la durée de vie de la variable <code>content</code> ?
 <p>Testez le code pour vérifier ce qu&rsquo;il se passe réellement.</p>
 <p>Pour mieux comprendre, vous allez redéfinir le constructeur de copie de <code>Content</code> afin qu&rsquo;il affiche <code>Content copied</code>.
 Combien d&rsquo;objets de type <code>Content</code> ont donc été créés par le programme précédent ? Quelles étaient leurs durées de vie respectives ?</p>
-<div class="expand">
-  <input type="checkbox" id="R-expand-2517b8a447e072702113640654481321" aria-controls="R-expandcontent-2517b8a447e072702113640654481321">
-  <label class="expand-label" for="R-expand-2517b8a447e072702113640654481321">
-    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
-  </label>
-  <div id="R-expandcontent-2517b8a447e072702113640654481321" class="expand-content">
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">Main start
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">Main start
 </span></span></span><span class="line"><span class="cl"><span class="c">Content created
 </span></span></span><span class="line"><span class="cl"><span class="c">Box created
 </span></span></span><span class="line"><span class="cl"><span class="c">Content copied
@@ -324,8 +350,12 @@ Combien d&rsquo;objets de type <code>Content</code> ont donc été créés par l
 <p>Deux objets de type <code>Content</code> ont été créés par le programme.<br>
 La durée de vie du premier, <code>box-&gt;_content</code>, démarre à la ligne 5 (construction de <code>*box</code>) et termine à la ligne 10 (destruction de <code>*box</code>).<br>
 La durée de vie du second, <code>content</code>, démarre à la ligne 6 (copie de <code>box-&gt;_content</code>) et termine à la ligne 17 (sortie du <code>main</code>).</p>
-  </div>
+
+        </div>
+    </div>
+
 </div>
+
 <p>Analysez enfin le code suivant.<br>
 Quelle est maintenant la durée de vie de <code>content_ref</code> ? A votre avis, que peut-il se passer lors de l&rsquo;exécution de la ligne 12 ?<br>
 Commentez ensuite la ligne 12 et retestez une dernière fois le programme.
@@ -347,21 +377,31 @@ Commentez ensuite la ligne 12 et retestez une dernière fois le programme.
 </span></span><span class="line"><span class="ln">16</span><span class="cl">     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln">17</span><span class="cl"> <span class="p">}</span></span></span></code></pre></div>
 </p>
-<div class="expand">
-  <input type="checkbox" id="R-expand-6a11afbba2d61ce35cfa8cdf5ce60205" aria-controls="R-expandcontent-6a11afbba2d61ce35cfa8cdf5ce60205">
-  <label class="expand-label" for="R-expand-6a11afbba2d61ce35cfa8cdf5ce60205">
-    <i class="expander-icon fa-fw fas fa-chevron-down"></i>
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> Solution
-  </label>
-  <div id="R-expandcontent-6a11afbba2d61ce35cfa8cdf5ce60205" class="expand-content">
-<p>Comme <code>content_ref</code> est une référence, la variable correspond au même objet que <code>box-&gt;_content</code>.
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="this.classList.add('off'); this.nextElementSibling.classList.remove('off');">
+        ⮟<span class="hidden-sol-space"></span>Afficher la solution<span class="hidden-sol-space"></span>⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="this.parentElement.classList.add('off'); this.parentElement.previousElementSibling.classList.remove('off');">
+            ⮝<span class="hidden-sol-space"></span>Masquer la solution<span class="hidden-sol-space"></span>⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Comme <code>content_ref</code> est une référence, la variable correspond au même objet que <code>box-&gt;_content</code>.
 Sa durée de vie s&rsquo;étend donc de la ligne 5 à la ligne 10 du programme.</p>
 <p>De mon côté, le programme déclenche forcément une segfault.<br>
 Lorsque la ligne 12 est commentée, le programme crashe sur la ligne 13 (accès à <code>content_ref.name</code>) et lorsqu&rsquo;elle est décommenté, il crashe à la sortie du programme.</p>
 <p>En réalité, on est dans une situation qualifiée d&rsquo;<strong>undefined behavior</strong>.
 Le comportement exact du programme dépendra donc de votre compilateur et de la manière dont votre système d&rsquo;exploitation gère les accès mémoire.</p>
-  </div>
+
+        </div>
+    </div>
+
 </div>
+
 <p>Les différents tests effectués nous permettent de conclure les points suivants.<br>
 Tant qu&rsquo;on manipule des objets via des variables qui ne sont pas des références, ces objets existent forcément au moment de l&rsquo;utilisation et il n&rsquo;y a aucun risque d&rsquo;avoir un problème.<br>
 En revanche, dès lors que l&rsquo;on manipule des objets via des références, il est nécessaire d&rsquo;être prudent, car la portée de la variable ne correspondra pas nécessairement à la durée de vie de l&rsquo;objet référencé.</p>
@@ -403,6 +443,7 @@ Pour éviter de corrompre les données des autres programmes, le système devrai
             <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter8/index.html"><a class="padding" href="../../chapter8/index.html"><span class="chapnum">8.</span>&ensp;Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7cf6d9bdd794f38d7006506bdc38c58f" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter9/index.html"><a class="padding" href="../../chapter9/index.html"><span class="chapnum">9.</span>&ensp;Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/help/index.html"><a class="padding" href="../../help/index.html"><span class="chapnum">?</span>&ensp;Aide<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7ddc2c3e2cb52a293678470c01b99070" class="collapsible-menu"></ul></li>
             <li class="parent hidden " data-nav-id="/old-2223-chapter3-memoire/index.html"><a class="padding" href="../../old-2223-chapter3-memoire/index.html">Gestion mémoire (2022-2023)<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e2b2fe39bbf9794869eeec25a6a70c68" class="collapsible-menu">
             <li class="active " data-nav-id="/old-2223-chapter3-memoire/1-lifespan/index.html"><a class="padding" href="../../old-2223-chapter3-memoire/1-lifespan/index.html">Durée de vie<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/old-2223-chapter3-memoire/2-ownership/index.html"><a class="padding" href="../../old-2223-chapter3-memoire/2-ownership/index.html">Ownership<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -415,14 +456,10 @@ Pour éviter de corrompre les données des autres programmes, le système devrai
         <div id="R-shortcuts">
           <div class="nav-title padding">Accès rapide</div>
           <ul class="space">
-            <li><a class="padding" href="https://github.com/marsault/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt exercice du cours</a></li>
-            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt TPs</a></li>
-            <li><a class="padding" href="../../slides/index.html"><i class='far fa-file-powerpoint'></i> Slides</a></li>
-            <li><a class="padding" href="../../workflow/index.html"><i class='far fa-list-alt'></i> Workflow</a></li>
-            <li><a class="padding" href="../../faq/index.html"><i class='fas fa-question-circle'></i> FAQ</a></li>
-            <li><a class="padding" href="../../chapter0/6-tips/index.html"><i class='fa fa-rocket'></i> Astuces</a></li>
+            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt git des sujets de TPs</a></li>
+            <li><a class="padding" href="../../help/slides/index.html"><i class='far fa-file-powerpoint'></i> Planches du CM</a></li>
             <li><a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a></li>
-            <li><a class="padding" href="https://www-igm.univ-mlv.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> CPP-Ref</a></li>
+            <li><a class="padding" href="https://monge.univ-eiffel.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> (Copie locale de) CPP-Ref</a></li>
           </ul>
         </div>
         <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
@@ -475,9 +512,9 @@ Pour éviter de corrompre les données des autres programmes, le système devrai
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1741613501" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1741613501" defer></script>
-    <script src="../../js/theme.js?1741613501" defer></script>
+    <script src="../../js/clipboard.min.js?1768505563" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768505563" defer></script>
+    <script src="../../js/theme.js?1768505563" defer></script>
 
 
 
@@ -501,7 +538,7 @@ Pour éviter de corrompre les données des autres programmes, le système devrai
         <input type="hidden" name="_subject" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://igm.univ-mlv.fr/~marsault/cpp/cours/common/question-submitted" />
+        <input type="hidden" name="_next" value="https://monge.univ-eiffel.fr/~marsault/cpp/cours/common/question-submitted" />
 
         <input type="submit" disabled style="display: none" aria-hidden="true" />
         <input type="submit" value="Envoyer" />

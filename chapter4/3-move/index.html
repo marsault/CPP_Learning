@@ -10,35 +10,35 @@ Usage de la fonction std::move sur un exemple Considérons le bout de code ci-de
 #include &lt;iostream&gt; #include &lt;vector&gt; // Passage par valeur // vvvvvvvvvvv void f(std::vector&lt;std::string&gt; my_own_data) { for (auto&amp; s : my_own_data) std::cout &lt;&lt; &amp;s &lt;&lt; &#34; &#34;; // ^^ // On affiche l&#39;adresse des chaines de caractères std::cout &lt;&lt; std::endl; } int main() { std::vector&lt;std::string&gt; data = {&#34;Hello&#34;, &#34;World&#34;, &#34;!">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Déplacement :: C&#43;&#43;">
+    <meta name="twitter:title" content="C&#43;&#43;::   Déplacement">
     <meta name="twitter:description" content="Sur cette page vous allez apprendre ce qu’est le déplacement en C&#43;&#43;. En un mot, il s’agit de permettre de vider un objet pour en construire un autre ailleurs, et on utilise pour cela la fonction std::move.
 Usage de la fonction std::move sur un exemple Considérons le bout de code ci-dessous.
 #include &lt;iostream&gt; #include &lt;vector&gt; // Passage par valeur // vvvvvvvvvvv void f(std::vector&lt;std::string&gt; my_own_data) { for (auto&amp; s : my_own_data) std::cout &lt;&lt; &amp;s &lt;&lt; &#34; &#34;; // ^^ // On affiche l&#39;adresse des chaines de caractères std::cout &lt;&lt; std::endl; } int main() { std::vector&lt;std::string&gt; data = {&#34;Hello&#34;, &#34;World&#34;, &#34;!">
     <meta property="og:url" content="/chapter4/3-move/index.html">
-    <meta property="og:site_name" content="C&#43;&#43;">
-    <meta property="og:title" content="Déplacement :: C&#43;&#43;">
+    <meta property="og:site_name" content="C&#43;&#43;::">
+    <meta property="og:title" content="C&#43;&#43;::   Déplacement">
     <meta property="og:description" content="Sur cette page vous allez apprendre ce qu’est le déplacement en C&#43;&#43;. En un mot, il s’agit de permettre de vider un objet pour en construire un autre ailleurs, et on utilise pour cela la fonction std::move.
 Usage de la fonction std::move sur un exemple Considérons le bout de code ci-dessous.
 #include &lt;iostream&gt; #include &lt;vector&gt; // Passage par valeur // vvvvvvvvvvv void f(std::vector&lt;std::string&gt; my_own_data) { for (auto&amp; s : my_own_data) std::cout &lt;&lt; &amp;s &lt;&lt; &#34; &#34;; // ^^ // On affiche l&#39;adresse des chaines de caractères std::cout &lt;&lt; std::endl; } int main() { std::vector&lt;std::string&gt; data = {&#34;Hello&#34;, &#34;World&#34;, &#34;!">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Copie et déplacement">
-    <meta itemprop="name" content="Déplacement :: C&#43;&#43;">
+    <meta itemprop="name" content="C&#43;&#43;::   Déplacement">
     <meta itemprop="description" content="Sur cette page vous allez apprendre ce qu’est le déplacement en C&#43;&#43;. En un mot, il s’agit de permettre de vider un objet pour en construire un autre ailleurs, et on utilise pour cela la fonction std::move.
 Usage de la fonction std::move sur un exemple Considérons le bout de code ci-dessous.
 #include &lt;iostream&gt; #include &lt;vector&gt; // Passage par valeur // vvvvvvvvvvv void f(std::vector&lt;std::string&gt; my_own_data) { for (auto&amp; s : my_own_data) std::cout &lt;&lt; &amp;s &lt;&lt; &#34; &#34;; // ^^ // On affiche l&#39;adresse des chaines de caractères std::cout &lt;&lt; std::endl; } int main() { std::vector&lt;std::string&gt; data = {&#34;Hello&#34;, &#34;World&#34;, &#34;!">
     <meta itemprop="wordCount" content="1376">
-    <title>Déplacement :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1741613501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1741613501" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1741613501" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1741613501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1741613501" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1741613501" rel="stylesheet">
-    <link href="../../css/fonts.css?1741613501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1741613501" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1741613501" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1741613501" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1741613501" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1741613501" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1741613501"></script>
+    <title>C&#43;&#43;::   Déplacement</title>
+    <link href="../../css/fontawesome-all.min.css?1768505563" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768505563" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768505563" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768505563" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768505563" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768505563" rel="stylesheet">
+    <link href="../../css/fonts.css?1768505563" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768505563" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768505563" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768505563" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768505563" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768505563" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768505563"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -164,11 +164,11 @@ Les chaînes de caractères dans <code>my_own_data</code> sont en fait exactemen
 <p>Rappelez-vous qu&rsquo;un <code>std::vector</code> est un tableau dynamique, donc ses éléments sont en fait sur le tas,
 et ce sont elles qui vont être copiées ou réattribuées à <code>my_own_data</code>, comme le montrent les deux diagrammes en dessous.</p>
 <h4 id="effet-sur-la-mémoire-du-premier-appel-à-f-copie">Effet sur la mémoire du premier appel à <code>f</code> (copie)</h4>
-<p><a href="#R-image-34125ef3f82c00e445fb712f3e628509" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_copy.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-34125ef3f82c00e445fb712f3e628509"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_copy.svg"></a></p>
+<p><a href="#R-image-d4f145539ff191145c0c9642f014126d" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_copy.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d4f145539ff191145c0c9642f014126d"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_copy.svg"></a></p>
 <h4 id="effet-sur-la-mémoire-du-deuxième-appel-à-f-déplacement">Effet sur la mémoire du deuxième appel à <code>f</code> (déplacement)</h4>
-<p><a href="#R-image-d2b082b36e97e6637519d5e4a2016df5" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_move.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d2b082b36e97e6637519d5e4a2016df5"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_move.svg"></a></p>
+<p><a href="#R-image-5f25cb46721f1285b398e57fad5a967c" class="lightbox-link"><img alt="test" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../memory_move.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5f25cb46721f1285b398e57fad5a967c"><img alt="test" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../memory_move.svg"></a></p>
 <h3 id="constructeur-de-déplacement">Constructeur de déplacement</h3>
 <p>Maintenant qu&rsquo;on a compris le principe du déplacement, encore faut-il pouvoir définir comment se déplacent
 nos propres classes.  Etant donné une classe <code>MaClasse</code> le constructeur de déplacement a le prototype suivant.</p>
@@ -429,7 +429,7 @@ En effet toutes les expressions suivantes sont des R-value:</p>
 <p>L&rsquo;élusion de déplacement est une optimisation consistant à éluder (=éviter) un déplacement en utilisant directement la mémoire où l&rsquo;objet sera finalement stocké.
 Dans certaines circonstances, le compilateur <strong>doit</strong> éluder le déplacement d&rsquo;un objet;
 et dans certaines circonstances, le compilateur <strong>peut</strong> éluder le déplacement d&rsquo;un objet.
-Nous ne décrirons pas ces circonstances dans le cours (détails sur <a href="https://igm.univ-mlv.fr/~marsault/cpp/ref/en/cpp/language/copy_elision.html">cppref</a>), mais ne soyez pas surpris si le constructeur de déplacement n&rsquo;est parfois pas appelé: c&rsquo;est sans doute une élusion de déplacement.</p>
+Nous ne décrirons pas ces circonstances dans le cours (détails sur <a href="https://monge.univ-eiffel.fr/~marsault/cpp/ref/en/cpp/language/copy_elision.html">cppref</a>), mais ne soyez pas surpris si le constructeur de déplacement n&rsquo;est parfois pas appelé: c&rsquo;est sans doute une élusion de déplacement.</p>
 <p>Voici deux exemples.</p>
 <hr>
 <p>Dans le code en dessous, le compilateur doit effectuer une élusion de déplacement.</p>
@@ -452,7 +452,7 @@ En réalité, le constructeur de déplacement ne sera pas appelé: le constructe
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 <p>Dans le code ci-dessus, la fonction <code>f</code> crée un <code>MyClass</code> sur la pile, fait des opérations dessus, puis retourne le <code>MyClass</code>.
 Ensuite, dans le <code>main</code>, l&rsquo;expression <code>f()</code> est une R-value donc le constructeur de déplacement devrait être appelé pour construire <code>n</code>.
-En fait, suivant le contenu de <code>f</code>, le compilateur peut décider de ne pas allouer de mémoire pour <code>x</code> et de construire directement le <code>MyClass</code> dans la mémoire allouée pour <code>m</code>.</p>
+En fait, suivant le contenu de <code>f</code>, le compilateur peut décider de ne pas allouer de mémoire pour <code>x</code> et de construire directement le <code>MyClass</code> dans la mémoire allouée pour <code>n</code>.</p>
 
   <footer class="footline">
   </footer>
@@ -491,19 +491,16 @@ En fait, suivant le contenu de <code>f</code>, le compilateur peut décider de n
             <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter8/index.html"><a class="padding" href="../../chapter8/index.html"><span class="chapnum">8.</span>&ensp;Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7cf6d9bdd794f38d7006506bdc38c58f" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter9/index.html"><a class="padding" href="../../chapter9/index.html"><span class="chapnum">9.</span>&ensp;Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/help/index.html"><a class="padding" href="../../help/index.html"><span class="chapnum">?</span>&ensp;Aide<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7ddc2c3e2cb52a293678470c01b99070" class="collapsible-menu"></ul></li>
           </ul>
         </div>
         <div id="R-shortcuts">
           <div class="nav-title padding">Accès rapide</div>
           <ul class="space">
-            <li><a class="padding" href="https://github.com/marsault/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt exercice du cours</a></li>
-            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt TPs</a></li>
-            <li><a class="padding" href="../../slides/index.html"><i class='far fa-file-powerpoint'></i> Slides</a></li>
-            <li><a class="padding" href="../../workflow/index.html"><i class='far fa-list-alt'></i> Workflow</a></li>
-            <li><a class="padding" href="../../faq/index.html"><i class='fas fa-question-circle'></i> FAQ</a></li>
-            <li><a class="padding" href="../../chapter0/6-tips/index.html"><i class='fa fa-rocket'></i> Astuces</a></li>
+            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt git des sujets de TPs</a></li>
+            <li><a class="padding" href="../../help/slides/index.html"><i class='far fa-file-powerpoint'></i> Planches du CM</a></li>
             <li><a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a></li>
-            <li><a class="padding" href="https://www-igm.univ-mlv.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> CPP-Ref</a></li>
+            <li><a class="padding" href="https://monge.univ-eiffel.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> (Copie locale de) CPP-Ref</a></li>
           </ul>
         </div>
         <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
@@ -556,9 +553,9 @@ En fait, suivant le contenu de <code>f</code>, le compilateur peut décider de n
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1741613501" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1741613501" defer></script>
-    <script src="../../js/theme.js?1741613501" defer></script>
+    <script src="../../js/clipboard.min.js?1768505563" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768505563" defer></script>
+    <script src="../../js/theme.js?1768505563" defer></script>
 
 
 
@@ -582,7 +579,7 @@ En fait, suivant le contenu de <code>f</code>, le compilateur peut décider de n
         <input type="hidden" name="_subject" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://igm.univ-mlv.fr/~marsault/cpp/cours/common/question-submitted" />
+        <input type="hidden" name="_next" value="https://monge.univ-eiffel.fr/~marsault/cpp/cours/common/question-submitted" />
 
         <input type="submit" disabled style="display: none" aria-hidden="true" />
         <input type="submit" value="Envoyer" />

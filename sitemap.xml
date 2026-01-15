@@ -34,16 +34,16 @@
     <loc>/chapter7/1-searches/index.html</loc>
   </url>
   <url>
-    <loc>/chapter0/6-tips/1-snippets/index.html</loc>
+    <loc>/chapter0/old-2425-6-tips/1-snippets/index.html</loc>
   </url>
   <url>
     <loc>/chapter1/1-language/index.html</loc>
   </url>
   <url>
-    <loc>/chapter0/6-tips/2-vscode/index.html</loc>
+    <loc>/chapter0/old-2425-6-tips/2-vscode/index.html</loc>
   </url>
   <url>
-    <loc>/chapter0/6-tips/3-keybinds-commands/index.html</loc>
+    <loc>/chapter0/old-2425-6-tips/3-keybinds-commands/index.html</loc>
   </url>
   <url>
     <loc>/chapter9/1-universal-ref/index.html</loc>
@@ -106,9 +106,6 @@
     <loc>/chapter3/index.html</loc>
   </url>
   <url>
-    <loc>/chapter8/3-syntaxe/index.html</loc>
-  </url>
-  <url>
     <loc>/chapter4/3-move/index.html</loc>
   </url>
   <url>
@@ -127,10 +124,13 @@
     <loc>/chapter9/3-specializations/index.html</loc>
   </url>
   <url>
+    <loc>/chapter8/3-syntaxe/index.html</loc>
+  </url>
+  <url>
     <loc>/chapter4/4-assign/index.html</loc>
   </url>
   <url>
-    <loc>/chapter0/6-tips/4-terminal/index.html</loc>
+    <loc>/chapter0/old-2425-6-tips/4-terminal/index.html</loc>
   </url>
   <url>
     <loc>/chapter5/4-associatives/index.html</loc>
@@ -163,7 +163,7 @@
     <loc>/chapter3/4-references/index.html</loc>
   </url>
   <url>
-    <loc>/chapter0/5-clang-format/index.html</loc>
+    <loc>/chapter0/old-2525-5-clang-format/index.html</loc>
   </url>
   <url>
     <loc>/chapter1/5-compilation/index.html</loc>
@@ -187,7 +187,7 @@
     <loc>/chapter6/5-vehicles/index.html</loc>
   </url>
   <url>
-    <loc>/chapter0/6-tips/index.html</loc>
+    <loc>/chapter0/old-2425-6-tips/index.html</loc>
   </url>
   <url>
     <loc>/chapter6/index.html</loc>
@@ -208,6 +208,9 @@
     <loc>/chapter7/index.html</loc>
   </url>
   <url>
+    <loc>/chapter2/7-enum/index.html</loc>
+  </url>
+  <url>
     <loc>/chapter5/7-shared-ptr/index.html</loc>
   </url>
   <url>
@@ -215,6 +218,9 @@
   </url>
   <url>
     <loc>/chapter9/index.html</loc>
+  </url>
+  <url>
+    <loc>/help/index.html</loc>
   </url>
   <url>
     <loc>/old-2223-chapter3-memoire/index.html</loc>
@@ -244,6 +250,9 @@
     <loc>/chapter7/test/index.html</loc>
   </url>
   <url>
+    <loc>/chapter8/test/index.html</loc>
+  </url>
+  <url>
     <loc>/chapter9/test/index.html</loc>
   </url>
   <url>
@@ -251,9 +260,6 @@
   </url>
   <url>
     <loc>/old-2223-chapter8-exceptions-assert/test/index.html</loc>
-  </url>
-  <url>
-    <loc>/chapter8/test/index.html</loc>
   </url>
   <url>
     <loc>/chapter0/test/index.html</loc>
@@ -271,10 +277,16 @@
     <loc>/categories/index.html</loc>
   </url>
   <url>
+    <loc>/help/comon-mistakes/index.html</loc>
+  </url>
+  <url>
     <loc>/faq/index.html</loc>
   </url>
   <url>
-    <loc>/slides/index.html</loc>
+    <loc>/help/lexicon/index.html</loc>
+  </url>
+  <url>
+    <loc>/help/slides/index.html</loc>
   </url>
   <url>
     <loc>/common/question-submitted/index.html</loc>
@@ -286,6 +298,6 @@
     <loc>/tags/index.html</loc>
   </url>
   <url>
-    <loc>/workflow/index.html</loc>
+    <loc>/help/workflow/index.html</loc>
   </url>
 </urlset>

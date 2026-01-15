@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Librairie standard :: C&#43;&#43;</title>
+    <title>C&#43;&#43;::   Librairie standard</title>
     <link>/chapter5/index.html</link>
     <description>Dans ce chapitre, nous vous présenterons les différents types de conteneurs que vous pourrez trouver dans la librairie standard. Les exercices vous permettrons de vous familiariser avec certains d’entre-eux : vector bien sûr, mais aussi array, list, map ou encore pair. Nous en profiterons également pour vous expliquer comment la documentation est organisée sur le site cppref, afin que vous sachiez toujours à quel endroit d’une page regarder pour trouver les informations dont vous avez besoin.</description>
     <generator>Hugo</generator>

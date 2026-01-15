@@ -6,47 +6,35 @@
     <meta name="generator" content="Hugo 0.128.0">
     <meta name="generator" content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619">
     <meta name="description" content="Un template variadique, c’est un template qui attend un nombre variable de paramètres. Vous en avez déjà utilisé plusieurs, comme :
-- la fonction-template emplace_back de std::vector, qui attend n’importe quels nombres et types d’arguments, et les utilisent pour construire le nouvel élément,
-- la fonction-template std::make_unique, qui fonctionne sur le même principe,
-- la classe-template std::tuple, qui permet de représenter un N-uplet contenant n’importe quels types.
-L’objectif de cette section sera de vous apprendre à définir vos propres templates variadiques.">
+la fonction-template emplace_back de std::vector, qui attend n’importe quels nombres et types d’arguments, et les utilisent pour construire le nouvel élément, la fonction-template std::make_unique, qui fonctionne sur le même principe, la classe-template std::tuple, qui permet de représenter un N-uplet contenant n’importe quels types. L’objectif de cette section sera de vous apprendre à définir vos propres templates variadiques.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Template variadique :: C&#43;&#43;">
+    <meta name="twitter:title" content="C&#43;&#43;::   Template variadique">
     <meta name="twitter:description" content="Un template variadique, c’est un template qui attend un nombre variable de paramètres. Vous en avez déjà utilisé plusieurs, comme :
-- la fonction-template emplace_back de std::vector, qui attend n’importe quels nombres et types d’arguments, et les utilisent pour construire le nouvel élément,
-- la fonction-template std::make_unique, qui fonctionne sur le même principe,
-- la classe-template std::tuple, qui permet de représenter un N-uplet contenant n’importe quels types.
-L’objectif de cette section sera de vous apprendre à définir vos propres templates variadiques.">
+la fonction-template emplace_back de std::vector, qui attend n’importe quels nombres et types d’arguments, et les utilisent pour construire le nouvel élément, la fonction-template std::make_unique, qui fonctionne sur le même principe, la classe-template std::tuple, qui permet de représenter un N-uplet contenant n’importe quels types. L’objectif de cette section sera de vous apprendre à définir vos propres templates variadiques.">
     <meta property="og:url" content="/chapter9/2-variadiac/index.html">
-    <meta property="og:site_name" content="C&#43;&#43;">
-    <meta property="og:title" content="Template variadique :: C&#43;&#43;">
+    <meta property="og:site_name" content="C&#43;&#43;::">
+    <meta property="og:title" content="C&#43;&#43;::   Template variadique">
     <meta property="og:description" content="Un template variadique, c’est un template qui attend un nombre variable de paramètres. Vous en avez déjà utilisé plusieurs, comme :
-- la fonction-template emplace_back de std::vector, qui attend n’importe quels nombres et types d’arguments, et les utilisent pour construire le nouvel élément,
-- la fonction-template std::make_unique, qui fonctionne sur le même principe,
-- la classe-template std::tuple, qui permet de représenter un N-uplet contenant n’importe quels types.
-L’objectif de cette section sera de vous apprendre à définir vos propres templates variadiques.">
+la fonction-template emplace_back de std::vector, qui attend n’importe quels nombres et types d’arguments, et les utilisent pour construire le nouvel élément, la fonction-template std::make_unique, qui fonctionne sur le même principe, la classe-template std::tuple, qui permet de représenter un N-uplet contenant n’importe quels types. L’objectif de cette section sera de vous apprendre à définir vos propres templates variadiques.">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Paramètres de templates">
-    <meta itemprop="name" content="Template variadique :: C&#43;&#43;">
+    <meta itemprop="name" content="C&#43;&#43;::   Template variadique">
     <meta itemprop="description" content="Un template variadique, c’est un template qui attend un nombre variable de paramètres. Vous en avez déjà utilisé plusieurs, comme :
-- la fonction-template emplace_back de std::vector, qui attend n’importe quels nombres et types d’arguments, et les utilisent pour construire le nouvel élément,
-- la fonction-template std::make_unique, qui fonctionne sur le même principe,
-- la classe-template std::tuple, qui permet de représenter un N-uplet contenant n’importe quels types.
-L’objectif de cette section sera de vous apprendre à définir vos propres templates variadiques.">
-    <meta itemprop="wordCount" content="1773">
-    <title>Template variadique :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1741613501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1741613501" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1741613501" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1741613501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1741613501" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1741613501" rel="stylesheet">
-    <link href="../../css/fonts.css?1741613501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1741613501" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1741613501" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1741613501" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1741613501" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1741613501" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1741613501"></script>
+la fonction-template emplace_back de std::vector, qui attend n’importe quels nombres et types d’arguments, et les utilisent pour construire le nouvel élément, la fonction-template std::make_unique, qui fonctionne sur le même principe, la classe-template std::tuple, qui permet de représenter un N-uplet contenant n’importe quels types. L’objectif de cette section sera de vous apprendre à définir vos propres templates variadiques.">
+    <meta itemprop="wordCount" content="1767">
+    <title>C&#43;&#43;::   Template variadique</title>
+    <link href="../../css/fontawesome-all.min.css?1768505563" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768505563" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768505563" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768505563" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768505563" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768505563" rel="stylesheet">
+    <link href="../../css/fonts.css?1768505563" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768505563" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768505563" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768505563" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768505563" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768505563" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768505563"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -127,16 +115,22 @@ L’objectif de cette section sera de vous apprendre à définir vos propres tem
 <h1 id="template-variadique">Template variadique</h1>
 
 <p>Un template variadique, c&rsquo;est un template qui attend un nombre variable de paramètres.
-Vous en avez déjà utilisé plusieurs, comme :<br>
-- la fonction-template <code>emplace_back</code> de <code>std::vector</code>, qui attend n&rsquo;importe quels nombres et types d&rsquo;arguments, et les utilisent pour construire le nouvel élément,<br>
-- la fonction-template <code>std::make_unique</code>, qui fonctionne sur le même principe,<br>
-- la classe-template <code>std::tuple</code>, qui permet de représenter un N-uplet contenant n&rsquo;importe quels types.</p>
+Vous en avez déjà utilisé plusieurs, comme :</p>
+<ul>
+<li>la fonction-template <code>emplace_back</code> de <code>std::vector</code>, qui attend n&rsquo;importe quels nombres et types d&rsquo;arguments, et les utilisent pour construire le nouvel élément,</li>
+<li>la fonction-template <code>std::make_unique</code>, qui fonctionne sur le même principe,</li>
+<li>la classe-template <code>std::tuple</code>, qui permet de représenter un N-uplet contenant n&rsquo;importe quels types.</li>
+</ul>
 <p>L&rsquo;objectif de cette section sera de vous apprendre à définir vos propres templates variadiques.</p>
 <hr>
 <h3 id="parameter-packs-et-substitutions">Parameter packs et substitutions</h3>
 <p>Commençons par la syntaxe permettant d&rsquo;indiquer qu&rsquo;un template peut recevoir un nombre variable de paramètres.</p>
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>   <span class="c1">// -&gt; on écrit `...` entre le type (ici typename) et le nom du paramètre (ici T)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="n">fcn</span><span class="p">(</span><span class="n">Ts</span><span class="p">...</span> <span class="n">params</span><span class="p">)</span>      <span class="c1">// -&gt; on écrit encore `...` entre le type (ici Ts) et le nom du paramètre (ici params) 
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// On écrit `...` entre le type et le nom du paramètre template
+</span></span></span><span class="line"><span class="cl"><span class="c1">//                vvv
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>    <span class="o">-&gt;</span> 
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">fcn</span><span class="p">(</span><span class="n">Ts</span><span class="p">...</span> <span class="n">params</span><span class="p">)</span>      
+</span></span><span class="line"><span class="cl"><span class="c1">//         ^^^
+</span></span></span><span class="line"><span class="cl"><span class="c1">// On écrit de nouveau `...` entre le type et le nom du paramètre
 </span></span></span></code></pre></div>
 <p>On parlera de <strong>parameter pack de template</strong> pour désigner <code>Ts</code> et de <strong>parameter pack de fonction</strong> pour désigner <code>params</code>.</p>
 <p>Comme n&rsquo;importe quel paramètre de fonction-template, il est possible de qualifier <code>Ts</code> avec <code>&amp;</code> (l-value non-constante), <code>const &amp;</code> (l-value constante) ou <code>&amp;&amp;</code> (référence universelle) :</p>
@@ -410,19 +404,16 @@ Retenez qu&rsquo;en général l&rsquo;opérateur comma est utilisé pour implém
             <li class="" data-nav-id="/chapter9/3-specializations/index.html"><a class="padding" href="../../chapter9/3-specializations/index.html"><span class="presection-icon">🤯</span>Spécialisations<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter9/4-sfinae/index.html"><a class="padding" href="../../chapter9/4-sfinae/index.html"><span class="presection-icon">🤪</span>SFINAE<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter9/test/index.html"><a class="padding" href="../../chapter9/test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/help/index.html"><a class="padding" href="../../help/index.html"><span class="chapnum">?</span>&ensp;Aide<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7ddc2c3e2cb52a293678470c01b99070" class="collapsible-menu"></ul></li>
           </ul>
         </div>
         <div id="R-shortcuts">
           <div class="nav-title padding">Accès rapide</div>
           <ul class="space">
-            <li><a class="padding" href="https://github.com/marsault/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt exercice du cours</a></li>
-            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt TPs</a></li>
-            <li><a class="padding" href="../../slides/index.html"><i class='far fa-file-powerpoint'></i> Slides</a></li>
-            <li><a class="padding" href="../../workflow/index.html"><i class='far fa-list-alt'></i> Workflow</a></li>
-            <li><a class="padding" href="../../faq/index.html"><i class='fas fa-question-circle'></i> FAQ</a></li>
-            <li><a class="padding" href="../../chapter0/6-tips/index.html"><i class='fa fa-rocket'></i> Astuces</a></li>
+            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt git des sujets de TPs</a></li>
+            <li><a class="padding" href="../../help/slides/index.html"><i class='far fa-file-powerpoint'></i> Planches du CM</a></li>
             <li><a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a></li>
-            <li><a class="padding" href="https://www-igm.univ-mlv.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> CPP-Ref</a></li>
+            <li><a class="padding" href="https://monge.univ-eiffel.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> (Copie locale de) CPP-Ref</a></li>
           </ul>
         </div>
         <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
@@ -475,9 +466,9 @@ Retenez qu&rsquo;en général l&rsquo;opérateur comma est utilisé pour implém
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1741613501" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1741613501" defer></script>
-    <script src="../../js/theme.js?1741613501" defer></script>
+    <script src="../../js/clipboard.min.js?1768505563" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768505563" defer></script>
+    <script src="../../js/theme.js?1768505563" defer></script>
 
 
 
@@ -501,7 +492,7 @@ Retenez qu&rsquo;en général l&rsquo;opérateur comma est utilisé pour implém
         <input type="hidden" name="_subject" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://igm.univ-mlv.fr/~marsault/cpp/cours/common/question-submitted" />
+        <input type="hidden" name="_next" value="https://monge.univ-eiffel.fr/~marsault/cpp/cours/common/question-submitted" />
 
         <input type="submit" disabled style="display: none" aria-hidden="true" />
         <input type="submit" value="Envoyer" />

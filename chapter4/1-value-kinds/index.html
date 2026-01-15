@@ -10,35 +10,35 @@ Remarque La catégorisation des expressions est en fait encore plus complexe que
 L-value Pour illustrer ce que sont les L-values, on utilisera le bout de code ci-dessous.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="L-value vs R-value :: C&#43;&#43;">
+    <meta name="twitter:title" content="C&#43;&#43;::   L-value vs R-value">
     <meta name="twitter:description" content="Sur cette page, on va parler des catégories des expressions (L-values et R-values), ce qui permet de mieux comprendre comment le compilateur les traite.
 Remarque La catégorisation des expressions est en fait encore plus complexe que celle décrite ici. Il existe en C&#43;&#43; des GL-values, PR-values et X-values, mais ces notions ne sont pas au programme du cours.
 L-value Pour illustrer ce que sont les L-values, on utilisera le bout de code ci-dessous.">
     <meta property="og:url" content="/chapter4/1-value-kinds/index.html">
-    <meta property="og:site_name" content="C&#43;&#43;">
-    <meta property="og:title" content="L-value vs R-value :: C&#43;&#43;">
+    <meta property="og:site_name" content="C&#43;&#43;::">
+    <meta property="og:title" content="C&#43;&#43;::   L-value vs R-value">
     <meta property="og:description" content="Sur cette page, on va parler des catégories des expressions (L-values et R-values), ce qui permet de mieux comprendre comment le compilateur les traite.
 Remarque La catégorisation des expressions est en fait encore plus complexe que celle décrite ici. Il existe en C&#43;&#43; des GL-values, PR-values et X-values, mais ces notions ne sont pas au programme du cours.
 L-value Pour illustrer ce que sont les L-values, on utilisera le bout de code ci-dessous.">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Copie et déplacement">
-    <meta itemprop="name" content="L-value vs R-value :: C&#43;&#43;">
+    <meta itemprop="name" content="C&#43;&#43;::   L-value vs R-value">
     <meta itemprop="description" content="Sur cette page, on va parler des catégories des expressions (L-values et R-values), ce qui permet de mieux comprendre comment le compilateur les traite.
 Remarque La catégorisation des expressions est en fait encore plus complexe que celle décrite ici. Il existe en C&#43;&#43; des GL-values, PR-values et X-values, mais ces notions ne sont pas au programme du cours.
 L-value Pour illustrer ce que sont les L-values, on utilisera le bout de code ci-dessous.">
-    <meta itemprop="wordCount" content="934">
-    <title>L-value vs R-value :: C&#43;&#43;</title>
-    <link href="../../css/fontawesome-all.min.css?1741613501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1741613501" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1741613501" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1741613501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1741613501" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1741613501" rel="stylesheet">
-    <link href="../../css/fonts.css?1741613501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1741613501" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1741613501" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1741613501" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1741613501" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1741613501" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1741613501"></script>
+    <meta itemprop="wordCount" content="903">
+    <title>C&#43;&#43;::   L-value vs R-value</title>
+    <link href="../../css/fontawesome-all.min.css?1768505563" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768505563" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768505563" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768505563" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768505563" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768505563" rel="stylesheet">
+    <link href="../../css/fonts.css?1768505563" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768505563" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768505563" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768505563" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768505563" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768505563" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768505563"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -77,7 +77,7 @@ L-value Pour illustrer ce que sont les L-values, on utilisera le bout de code ci
     <li><a href="#r-value">R-value</a></li>
     <li><a href="#la-fonction-stdmove">La fonction <code>std::move</code></a></li>
     <li><a href="#pourquoi-l-et-r-">Pourquoi L et R ?</a></li>
-    <li><a href="#chaînes-de-caractères-litérales">Chaînes de caractères litérales</a></li>
+    <li><a href="#chaînes-de-caractères-littérales">Chaînes de caractères littérales</a></li>
   </ul>
 </nav>
                 </div>
@@ -154,7 +154,7 @@ Il existe en C++ des GL-values, PR-values et X-values, mais ces notions ne sont 
     <i class="fa-fw fas fa-bolt"></i> Important
   </div>
   <div class="box-content">
-<p>Une L-value est une expression dont on calcule la valeur est stockée dans une adresse en mémoire déterminée (pile ou tas).</p>
+<p>Une L-value est une expression dont la valeur est stockée dans une adresse en mémoire déterminée (pile ou tas).</p>
   </div>
 </div>
 Etant donné une variable <code>a</code>, l&rsquo;expression <code>a</code> est une L-value.
@@ -208,7 +208,7 @@ En fait, le compilateur le stockera directement dans la case mémoire
 réservée pour l&rsquo;argument <code>x</code> de la function <code>my_func</code>.
 C&rsquo;est la même chose pour <code>MyClass{}</code> (expression 2), il s&rsquo;agit d&rsquo;une
 nouvelle instance de <code>MyClass</code> qui sera construite directement dans la case <code>y</code> de <code>my_func</code>.</p>
-<p>Si un expression <em>E</em> est une R-value dont le type est une classe qui a un attribut <code>c</code>, alors <em>R</em><code>.c</code> est aussi une R-value.
+<p>Si une expression <em>E</em> est une R-value dont le type est une classe qui a un attribut <code>c</code>, alors <em>R</em><code>.c</code> est aussi une R-value.
 C&rsquo;est pour cela que <code>(MyClass{}).my_att</code> (l&rsquo;expression 4) est une R-value.</p>
 <p>L&rsquo;expression <code>f(..)</code> est une R-value si la fonction  <code>f</code> ne renvoie pas
 une référence, comme <code>my_func(MyClass{}, 42)</code> (expresion 3) dans le code ci-dessus.
@@ -231,19 +231,18 @@ Les R-value ne peuvent apparaître qu&rsquo;à droite d&rsquo;un <code>=</code> 
 </span></span></span><span class="line"><span class="cl"><span class="c1">// 6 ne peut apparaître qu&#39;à droite du signe = donc c&#39;est une R-value
 </span></span></span><span class="line"><span class="cl"><span class="c1">// (a+6) ne peut apparaître qu&#39;à droite du signe = donc c&#39;est une R-value
 </span></span></span></code></pre></div>
-<p>Cette explication par <em>left/right</em> est un bon moyen mnémotechnique, mais n&rsquo;est plus parfaitement alignée avec ce qu&rsquo;il se passe en C++.
-Référez-vous plutôt aux définitions plus haut.</p>
-<div class="box notices cstyle tip">
+<div class="box notices cstyle warning">
   <div class="box-label">
-    <i class="fa-fw fas fa-lightbulb"></i> Astuce
+    <i class="fa-fw fas fa-exclamation-triangle"></i> Avertissement
   </div>
   <div class="box-content">
-<p>Pour comprendre cette histoire de stockage en mémoire d&rsquo;une expression <em>E</em>, on peut se poser la question suivante : Est-ce que l&rsquo;expression <code>&amp;</code><em>E</em> a un sens?</p>
-<p>Par exemple, on voit bien que <code>&amp;42</code> n&rsquo;a pas de sens alors que <code>&amp;a</code> oui.</p>
+<p>Cette explication par <em>left/right</em> est un bon moyen mnémotechnique.
+Néanmoins ce n&rsquo;est plus parfaitement alignée avec ce qu&rsquo;il se passe en C++, car on peut entre autre, redéfinir le comportement des opérateurs d&rsquo;affectations.
+Référez-vous plutôt aux définitions plus haut.</p>
   </div>
 </div>
-<h2 id="chaînes-de-caractères-litérales">Chaînes de caractères litérales</h2>
-<p>Attenion, les chaînes de caractères litérales, comme <code>&quot;Hello World!&quot;</code> sont des <em>L</em>-value comme le montre le code en dessous.</p>
+<h2 id="chaînes-de-caractères-littérales">Chaînes de caractères littérales</h2>
+<p>Attention, les chaînes de caractères littérales, comme <code>&quot;Hello World!&quot;</code> sont des <em>L</em>-values comme le montre le code en dessous.</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">   <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">&amp;</span><span class="p">(</span><span class="s">&#34;Hello World&#34;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; and &#34;</span> <span class="o">&lt;&lt;</span> <span class="o">&amp;</span><span class="p">(</span><span class="s">&#34;Hello World&#34;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="c1">//               ^^^^^^^^^^^^^^^^               ^^^^^^^^^^^^^^^^
@@ -291,19 +290,16 @@ Référez-vous plutôt aux définitions plus haut.</p>
             <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter8/index.html"><a class="padding" href="../../chapter8/index.html"><span class="chapnum">8.</span>&ensp;Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7cf6d9bdd794f38d7006506bdc38c58f" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter9/index.html"><a class="padding" href="../../chapter9/index.html"><span class="chapnum">9.</span>&ensp;Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/help/index.html"><a class="padding" href="../../help/index.html"><span class="chapnum">?</span>&ensp;Aide<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7ddc2c3e2cb52a293678470c01b99070" class="collapsible-menu"></ul></li>
           </ul>
         </div>
         <div id="R-shortcuts">
           <div class="nav-title padding">Accès rapide</div>
           <ul class="space">
-            <li><a class="padding" href="https://github.com/marsault/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt exercice du cours</a></li>
-            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt TPs</a></li>
-            <li><a class="padding" href="../../slides/index.html"><i class='far fa-file-powerpoint'></i> Slides</a></li>
-            <li><a class="padding" href="../../workflow/index.html"><i class='far fa-list-alt'></i> Workflow</a></li>
-            <li><a class="padding" href="../../faq/index.html"><i class='fas fa-question-circle'></i> FAQ</a></li>
-            <li><a class="padding" href="../../chapter0/6-tips/index.html"><i class='fa fa-rocket'></i> Astuces</a></li>
+            <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt git des sujets de TPs</a></li>
+            <li><a class="padding" href="../../help/slides/index.html"><i class='far fa-file-powerpoint'></i> Planches du CM</a></li>
             <li><a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a></li>
-            <li><a class="padding" href="https://www-igm.univ-mlv.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> CPP-Ref</a></li>
+            <li><a class="padding" href="https://monge.univ-eiffel.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> (Copie locale de) CPP-Ref</a></li>
           </ul>
         </div>
         <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
@@ -356,9 +352,9 @@ Référez-vous plutôt aux définitions plus haut.</p>
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1741613501" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1741613501" defer></script>
-    <script src="../../js/theme.js?1741613501" defer></script>
+    <script src="../../js/clipboard.min.js?1768505563" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768505563" defer></script>
+    <script src="../../js/theme.js?1768505563" defer></script>
 
 
 
@@ -382,7 +378,7 @@ Référez-vous plutôt aux définitions plus haut.</p>
         <input type="hidden" name="_subject" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://igm.univ-mlv.fr/~marsault/cpp/cours/common/question-submitted" />
+        <input type="hidden" name="_next" value="https://monge.univ-eiffel.fr/~marsault/cpp/cours/common/question-submitted" />
 
         <input type="submit" disabled style="display: none" aria-hidden="true" />
         <input type="submit" value="Envoyer" />
