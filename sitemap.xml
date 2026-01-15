@@ -214,6 +214,9 @@
     <loc>/chapter5/7-shared-ptr/index.html</loc>
   </url>
   <url>
+    <loc>/chapter5/old-summary/index.html</loc>
+  </url>
+  <url>
     <loc>/chapter8/index.html</loc>
   </url>
   <url>
@@ -238,7 +241,7 @@
     <loc>/chapter3/test/index.html</loc>
   </url>
   <url>
-    <loc>/chapter4/9-test/index.html</loc>
+    <loc>/chapter4/test/index.html</loc>
   </url>
   <url>
     <loc>/chapter5/test/index.html</loc>
@@ -278,9 +281,6 @@
   </url>
   <url>
     <loc>/help/comon-mistakes/index.html</loc>
-  </url>
-  <url>
-    <loc>/faq/index.html</loc>
   </url>
   <url>
     <loc>/help/lexicon/index.html</loc>

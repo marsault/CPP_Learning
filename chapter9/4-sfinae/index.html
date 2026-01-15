@@ -29,16 +29,16 @@ Le besoin Supposons que nous souhaitions pouvoir récupérer une clef pour diff�
 class Person { public: Person(const std::string&amp; name) : _name { name } {} const std::string&amp; get_name() const { return _name; } private: const std::string _name; }; // Overload pour notre classe Person.">
     <meta itemprop="wordCount" content="1573">
     <title>C&#43;&#43;::   SFINAE</title>
-    <link href="../../css/fontawesome-all.min.css?1768505497" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768505497" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768505497" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768505497" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768505497" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768505497" rel="stylesheet">
-    <link href="../../css/fonts.css?1768505497" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768505497" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768505497" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768505497" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768505497" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768505497" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768505497"></script>
+    <link href="../../css/fontawesome-all.min.css?1768509696" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768509696" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768509696" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768509696" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768509696" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768509696" rel="stylesheet">
+    <link href="../../css/fonts.css?1768509696" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768509696" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768509696" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768509696" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768509696" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768509696" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768509696"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -94,7 +94,7 @@ class Person { public: Person(const std::string&amp; name) : _name { name } {} c
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter9/3-specializations/index.html" title="Spécialisations (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter9/test/index.html" title="Questionnaire (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../help/index.html" title="Aide (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -483,8 +483,7 @@ Voici par exemple une façon de définir une fonction qui n&rsquo;existe que pou
             <li class="" data-nav-id="/chapter9/1-universal-ref/index.html"><a class="padding" href="../../chapter9/1-universal-ref/index.html"><span class="presection-icon">🤨</span>Référence universelle<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter9/2-variadiac/index.html"><a class="padding" href="../../chapter9/2-variadiac/index.html"><span class="presection-icon">🤕</span>Template variadique<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter9/3-specializations/index.html"><a class="padding" href="../../chapter9/3-specializations/index.html"><span class="presection-icon">🤯</span>Spécialisations<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active " data-nav-id="/chapter9/4-sfinae/index.html"><a class="padding" href="../../chapter9/4-sfinae/index.html"><span class="presection-icon">🤪</span>SFINAE<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter9/test/index.html"><a class="padding" href="../../chapter9/test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="active " data-nav-id="/chapter9/4-sfinae/index.html"><a class="padding" href="../../chapter9/4-sfinae/index.html"><span class="presection-icon">🤪</span>SFINAE<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/help/index.html"><a class="padding" href="../../help/index.html"><span class="chapnum">?</span>&ensp;Aide<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7ddc2c3e2cb52a293678470c01b99070" class="collapsible-menu"></ul></li>
           </ul>
         </div>
@@ -547,9 +546,9 @@ Voici par exemple une façon de définir une fonction qui n&rsquo;existe que pou
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768505497" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768505497" defer></script>
-    <script src="../../js/theme.js?1768505497" defer></script>
+    <script src="../../js/clipboard.min.js?1768509696" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768509696" defer></script>
+    <script src="../../js/theme.js?1768509696" defer></script>
 
 
 
