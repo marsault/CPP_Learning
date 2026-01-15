@@ -100,7 +100,7 @@ Modifiez le constructeur de la classe `Box` et redéfinissez son destructeur afi
 Faites de même pour `Content` et testez le programme.\
 Pouvez-vous en déduire à quel moment la durée de vie de `_content` démarre, et à quel moment celle-ci termine ?
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 struct Content
 {
@@ -152,7 +152,7 @@ box2 block end
 On peut en déduire que `Box::_content` :\
 \- est construit pendant l'appel du constructeur de `Box`, juste avant de rentrer dans le corps de la fonction,\
 \- est détruit pendant l'appel du destructeur `Box`, juste après être sorti du corps de la fonction.
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 ---
 
@@ -176,7 +176,7 @@ Testez le code suivant et déterminez les durées de vie des objets `box` et `bo
  }
 {{< /highlight >}}
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```b
 Main begin
 Content created
@@ -188,7 +188,7 @@ Main end
 ```
 
 Les durées de vie des objets `box` et `box->_content` démarrent à la ligne 5 (`new`) et s'achèvent à la ligne 7 (`delete`).
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Analysez maintenant le code ci-dessous.\
 Quelle est selon vous la durée de vie de la variable `content` ?
@@ -217,7 +217,7 @@ Testez le code pour vérifier ce qu'il se passe réellement.
 Pour mieux comprendre, vous allez redéfinir le constructeur de copie de `Content` afin qu'il affiche `Content copied`.
 Combien d'objets de type `Content` ont donc été créés par le programme précédent ? Quelles étaient leurs durées de vie respectives ?
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```b
 Main start
 Content created
@@ -234,7 +234,7 @@ Content destroyed
 Deux objets de type `Content` ont été créés par le programme.\
 La durée de vie du premier, `box->_content`, démarre à la ligne 5 (construction de `*box`) et termine à la ligne 10 (destruction de `*box`).\
 La durée de vie du second, `content`, démarre à la ligne 6 (copie de `box->_content`) et termine à la ligne 17 (sortie du `main`).
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Analysez enfin le code suivant.\
 Quelle est maintenant la durée de vie de `content_ref` ? A votre avis, que peut-il se passer lors de l'exécution de la ligne 12 ?\
@@ -259,7 +259,7 @@ Commentez ensuite la ligne 12 et retestez une dernière fois le programme.
  }
 {{< /highlight >}}
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 Comme `content_ref` est une référence, la variable correspond au même objet que `box->_content`.
 Sa durée de vie s'étend donc de la ligne 5 à la ligne 10 du programme.
 
@@ -268,7 +268,7 @@ Lorsque la ligne 12 est commentée, le programme crashe sur la ligne 13 (accès 
 
 En réalité, on est dans une situation qualifiée d'**undefined behavior**.
 Le comportement exact du programme dépendra donc de votre compilateur et de la manière dont votre système d'exploitation gère les accès mémoire.
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 
 Les différents tests effectués nous permettent de conclure les points suivants.\

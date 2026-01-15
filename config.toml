@@ -13,12 +13,13 @@ relativeURLs = true
   disableLanguageSwitchingButton = true
   disableSearch = true
   custom_css = ["css/syntax.css"]
-  finalURL = "https://igm.univ-mlv.fr/~marsault/cpp/cours/"
-  cpprefURL = "https://igm.univ-mlv.fr/~marsault/cpp/ref/en/"
+  finalURL = "https://monge.univ-eiffel.fr/~marsault/cpp/cours/"
+  cpprefURL = "https://monge.univ-eiffel.fr/~marsault/cpp/ref/en/"
   tpURL = "https://github.com/marsault/CPP_Exercises/"
   exoducoursURL = "https://github.com/marsault/CPP_Learning_Code/"
   formsubmitco_token = "08af4b8e13fc3ec785faa99820631150"
-
+  titleSeparator = ' '
+  reverse = true
 
   
 [markup]
@@ -29,39 +30,30 @@ relativeURLs = true
 
 [Languages]
 [Languages.fr]
-title = "C++"
+title = "C++::"
 weight = 1
 languageName = "Français"
 
-[[menu.shortcuts]]
-name = "<i class='fab fa-github'></i> Dépôt exercice du cours"
-url = "https://github.com/marsault/CPP_Learning_Code/"
-weight = 1
 
 [[menu.shortcuts]]
-name = "<i class='fab fa-github'></i> Dépôt TPs"
+name = "<i class='fab fa-github'></i> Dépôt git des sujets de TPs"
 url = "https://github.com/marsault/CPP_Exercises/"
 weight = 2
 
 [[menu.shortcuts]]
-name = "<i class='far fa-file-powerpoint'></i> Slides"
-url = "/slides"
+name = "<i class='far fa-file-powerpoint'></i> Planches du CM"
+url = "/help/slides"
 weight = 3
 
-[[menu.shortcuts]]
-name = "<i class='far fa-list-alt'></i> Workflow"
-url = "/workflow"
-weight = 4
+#[[menu.shortcuts]]
+#name = "<i class='far fa-list-alt'></i> Workflow"
+#url = "/workflow"
+#weight = 4
 
-[[menu.shortcuts]]
-name = "<i class='fas fa-question-circle'></i> FAQ"
-url = "/faq"
-weight = 5
-
-[[menu.shortcuts]]
-name = "<i class='fa fa-rocket'></i> Astuces"
-url = "/chapter0/6-tips/"
-weight = 6
+#[[menu.shortcuts]]
+#name = "<i class='fas fa-question-circle'></i> FAQ"
+#url = "/faq"
+#weight = 5
 
 [[menu.shortcuts]]
 name = "<i class='fas fa-cog'></i> Compiler Explorer"
@@ -69,6 +61,6 @@ url = "https://godbolt.org/"
 weight = 7
 
 [[menu.shortcuts]]
-name = "<i class='fas fa-passport'></i> CPP-Ref"
-url = "https://www-igm.univ-mlv.fr/~marsault/cpp/ref/en/"
+name = "<i class='fas fa-passport'></i> (Copie locale de) CPP-Ref"
+url = "https://monge.univ-eiffel.fr/~marsault/cpp/ref/en/"
 weight = 8

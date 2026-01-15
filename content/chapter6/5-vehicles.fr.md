@@ -10,12 +10,14 @@ comment appeler la fonction parent depuis la rédéfinition de cette fonction da
 ---
 
 Pour cet exercice, vous modifierez les fichiers :\
-\- `chap-04/3-vehicles/Program.cpp`\
-\- `chap-04/3-vehicles/Vehicle.h`\
-\- `chap-04/3-vehicles/Car.h`\
-\- `chap-04/3-vehicles/Scooter.h`
+- `3-vehicles/Program.cpp`\
+- `3-vehicles/Vehicle.h`\
+- `3-vehicles/Car.h`\
+- `3-vehicles/Scooter.h`
 
-La cible à compiler est `c4-3-vehicles`.
+se trouvant dans [code.zip](../code.zip).
+
+La cible à compiler est `vehicles`.
 
 ---
 
@@ -27,7 +29,7 @@ Mais avec les nouvelles régulations, les conducteurs de voiture doivent mainten
 Modifiez la classe `Driver` de manière à pouvoir savoir si un conducteur à passer son permis ou non.
 A la construction, aucun conducteur n'a son permis et il peut l'obtenir ensuite via une fonction `pass_car_licence_exam`.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 class Driver
 {
@@ -46,7 +48,7 @@ private:
     bool _has_car_licence = false;
 };
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Il va maintenant falloir que vous utilisiez cette fonction depuis `Car`.
 Le problème, c'est que `_driver` n'est accessible que depuis `Vehicle`, car c'est un attribut privé.
@@ -54,7 +56,7 @@ Afin de pouvoir y accéder depuis les sous-classes, changez sa visibilité à `p
 
 Modifiez ensuite l'implémentation de `Car::drive`, de façon à ce que si le conduteur n'ait pas son permis, la voiture n'avance pas.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 class Vehicle
 {
@@ -86,7 +88,7 @@ class Car : public Vehicle
     ...
 };
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 ---
 
@@ -97,7 +99,7 @@ Les voitures volantes ont toutes les fonctionnalités des voitures normales, si 
 
 Introduisez la classe `FlyingCar`, dérivée de `Car`, et redéfinissez sa fonction `drive` pour parcourir 10 fois la distance que vous auriez parcouru avec une voiture normale.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 On peut :
 - soit créer un nouvel attribut `flying_speed`, et l'utiliser dans `FlyingCar::drive`,
 - soit rendre `Car::_speed` `protected`, et retourner `10u * _speed` dans `FlyingCar::drive`.
@@ -121,13 +123,13 @@ private:
     unsigned int _flying_speed = 0;
 };
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Chaque fois qu'une nouvelle technologie arrive sur le marché, les régulations mettent un peu de temps à arriver.
 Dans le cas de la voiture volante, le conducteur doit désormais être en possession d'un permis de l'air pour pouvoir s'en servir.
 Commencez par ajouter ce qu'il faut dans `Driver` pour passer le permis adéquat et savoir s'il l'a.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 class Driver
 {
@@ -149,7 +151,7 @@ private:
     bool _has_air_licence = false;
 };
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Vous allez maintenant devoir modifier la fonction `FlyingCar::drive`, afin que le conducteur ne puisse utiliser le mode volant que s'il est équippé d'un permis de l'air.
 Autrement, s'il a son permis classique, il peut utiliser le mode roulant.
@@ -176,7 +178,7 @@ Testez ensuite les trois situations suivantes :\
 \- sinon, si le conducteur a son permis classique => mode roulant,\
 \- sinon => la voiture n'avance pas.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 class FlyingCar : public Car
 {
@@ -198,7 +200,7 @@ class FlyingCar : public Car
     ...
 };
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 ---
 
@@ -231,7 +233,7 @@ public:
 
 Déclarez le constructeur de `Vehicle` dans la partie protégée de la classe, et essayez d'instancier un `Vehicle` depuis le `main`. Quelle erreur de compilation obtenez-vous ? 
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 class Vehicle
 {
@@ -251,7 +253,7 @@ A l'instanciation, on obtient une erreur du style :
 ```bash
 'Vehicle::Vehicle': cannot access protected member declared in class 'Vehicle'
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 **2. Fonction virtuelle pure**
 
@@ -276,16 +278,15 @@ public:
 Remettez le constructeur de `Vehicle` dans la partie publique, puis supprimez l'implémentation de `Vehicle::drive` et transformez-la en fonction virtuelle pure.\
 Quelles erreurs de compilation obtenez-vous maintenant ?
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 class Vehicle
 {
-protected:
+public:
     Vehicle(const Driver& driver)
         : _driver { driver }
     {}
-
-public:
+    
     virtual ~Vehicle() {}
 
     virtual unsigned int drive() const = 0;
@@ -301,4 +302,4 @@ see declaration of 'Vehicle'
 due to following members:
 'unsigned int Vehicle::drive(void) const': is abstract
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}

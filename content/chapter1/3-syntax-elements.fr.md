@@ -40,7 +40,7 @@ float        f7 = 3;        // type f7 = float
 auto         b8 = true;     // type b8 = bool
 ```
 
-La liste complète des types fondamentaux est accessible [ici]({{% param cpprefURL %}}en/cpp/language/types.html).
+La liste complète des types fondamentaux est accessible [ici]({{% param cpprefURL %}}cpp/language/types.html).
 
 ---
 

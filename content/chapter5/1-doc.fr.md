@@ -107,7 +107,7 @@ Sur chaque ligne est indiquée le nom de la fonction, une brève description de 
 
 #### 6. Exemple
 
-Tout en bas de la page, vous trouvez généralement un exemple permettant de comprendre très rapidement comme la classe peut s'utiliser.
+Tout en bas de la page, vous trouvez généralement un exemple permettant de comprendre très rapidement comment la classe peut s'utiliser.
 ![](/images/chapter5/doc-vector-ex.png)
 
 ---
@@ -168,24 +168,38 @@ En fin de page, vous trouverez finalement le ou les exemples d'utilisation de la
 
 Vous allez maintenant partir en mission. Votre objectif est de collecter les renseignements nécessaires pour répondre aux questions suivantes :
 1. Quelle est la complexité d'insertion dans une `std::map` ?
+{{% hidden-solution %}}
+On peut trouver ce genre d'information dans l'en-tête de la documentation de la classe `map`. Il y est indiqué que les opérations de recherche, suppression et insertion sont de complexité logarithmique.
+{{% /hidden-solution %}}
+
 2. Quelles différences y a-t-il entre les fonctions `push_back()` et `emplace_back()` de la classe `std::vector` ? 
+{{% hidden-solution %}}
+En comparant les signatures de `push_back` et `emplace_back`, on se rend compte qu'il faut fournir directement à `push_back` l'élément à insérer (un seul élément de type `T`), alors qu'on peut fournir à `emplace_back` les paramètres permettant de construire le nouvel élément.
+{{% /hidden-solution %}}
+
 3. Quelle fonction permet de savoir si un conteneur est vide ?
-4. Quelle est la différence entre `std::vector::size()` et `std::vector::capacity()` ?
-5. A quoi sert la classe `std::stack` ?
-6. Quelle fonction permet de retirer le dernier élément d'un objet de type `std::queue` ?
-
-{{% expand "Solution" %}}
-1/ On peut trouver ce genre d'information dans l'en-tête de la documentation de la classe `map`. Il y est indiqué que les opérations de recherche, suppression et insertion sont de complexité logarithmique.
-
-2/ En comparant les signatures de `push_back` et `emplace_back`, on se rend compte qu'il faut fournir directement à `push_back` l'élément à insérer (un seul élément de type `T`), alors qu'on peut fournir à `emplace_back` les paramètres permettant de construire le nouvel élément.
-
+{{% hidden-solution %}}
 3/ En regardant sur les pages de différentes classes de conteneurs (`vector`, `array`, `map`, `set`, etc), on se rend qu'elles ont toutes une fonction membre `empty()`, qui renvoie `true` si le conteneur est vide.
+{{% /hidden-solution %}}
 
+4. Quelle est la différence entre `std::vector::size()` et `std::vector::capacity()` ?
+{{% hidden-solution %}}
 4/ Il suffit de lire la description des deux fonctions pour se rendre compte que `size()` renvoie le nombre d'éléments du tableau, tandis que `capacity()` renvoie le nombre d'éléments pouvant tenir dans l'espace mémoire actuellement alloué par le tableau. L'exemple fourni sur la page de `capacity()` met bien en valeur cette distinction.
+{{% /hidden-solution %}}
 
+5. A quoi sert la classe `std::stack` ?
+{{% hidden-solution %}}
 5/ D'après la description dans l'en-tête de `stack`, il s'agit d'une pile LIFO (last-in-first-out).
+{{% /hidden-solution %}}
 
+6. Quelle fonction permet de retirer le dernier élément d'un objet de type `std::queue` ?
+{{% hidden-solution %}}
 6/ En parcourant la liste des fonctions sur la page de `std::queue`, on se rend compte qu'il n'existe pas de fonction permettant de retirer son dernier élément.
-{{% /expand %}}
+{{% /hidden-solution %}}
+
+
+
+
+
 
 

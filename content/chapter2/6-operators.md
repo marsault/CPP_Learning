@@ -82,10 +82,10 @@ L'opérateur `+` étant un **opérateur binaire** (c'est-à-dire qu'il attend 2 
 
 ### Méthodologie de l'exercice
 
-Pour assimiler un peu ces notions, nous vous proposons un petit exercice.  
-Commencez par ouvrir le fichier `chap-02/5-operators/main.cpp`.
+Pour assimiler un peu ces notions, nous vous proposons un petit exercice.
+Créez un répertoire `6-operators` et y placer ce fichier [`main.cpp`](/chapter2/6-operators/main.cpp).
 
-Vous utiliserez la même méthodologie que pour `1-first_class.cpp` : 
+Vous utiliserez la même méthodologie que pour `2-first_class.cpp` : 
 1. Décommentez la prochaine ligne du `main`.
 2. Ecrivez le code permettant de la faire compiler.
 3. Compilez et testez.
@@ -94,7 +94,8 @@ Vous utiliserez la même méthodologie que pour `1-first_class.cpp` :
 
 Vous aurez à implémenter une classe `Polygon` contenant un tableau dynamique de `Vertex`.
 
-Vous ajouterez deux fichiers `Polygon.h` et `Polygon.cpp`, afin de contenir la définition de votre classe et l'implémentation de ses fonctions.
+Vous ajouterez deux fichiers `Polygon.hpp` et `Polygon.cpp`, afin de contenir la définition de votre classe et l'implémentation de ses fonctions.
+Il est conseillé d'utiliser CMake.
 
 ---
 
@@ -105,12 +106,12 @@ Décommentez la première instruction du `main` :
 Polygon polygon;
 ```
 
-Créez un nouveau fichier `Polygon.h` et ajoutez-y la définition d'une classe `Polygon`, pour le moment vide.  
+Créez un nouveau fichier `Polygon.hpp` et ajoutez-y la définition d'une classe `Polygon`, pour le moment vide.  
 Que faut-il mettre au début du header ? Que devez-vous penser à faire dans `main.cpp` ?
 
 {{% hidden-solution %}}
 Au début des headers, il faut écrire `#pragma once`.\
-Dans le fichier `main.cpp`, on pense à inclure le nouveau fichier `Polygon.h`.
+Dans le fichier `main.cpp`, on pense à inclure le nouveau fichier `Polygon.hpp`.
 
 ```cpp
 #pragma once
@@ -159,7 +160,7 @@ Pour définir un alias (équivalent au `typedef` en C), on utilise le mot-clef `
 using AliasName = OriginalType;
 ```
 
-Adaptez cette instruction et placez-la dans `Polygon.h`, juste avant la définition de votre classe. Modifiez la définition de `_vertices` afin d'utiliser cet alias.
+Adaptez cette instruction et placez-la dans `Polygon.hpp`, juste avant la définition de votre classe. Modifiez la définition de `_vertices` afin d'utiliser cet alias.
 {{% hidden-solution %}}
 ```cpp {hl_lines=[6,10]}
 #pragma once
@@ -296,11 +297,11 @@ On peut voir qu'on utilise une référence (`std::ostream&`) et une référence 
 
 
 Essayez d'implémenter cette fonction.
-Vous placerez la déclaration dans `Polygon.h` et la définition dans `Polygon.cpp`.
+Vous placerez la déclaration dans `Polygon.hpp` et la définition dans `Polygon.cpp`.
 Pour son contenu, faites pour le moment en sorte qu'elle affiche `"This is a polygon"` dans le flux.
 
 {{% hidden-solution %}}
-Dans `Polygon.h` :
+Dans `Polygon.hpp` :
 ```cpp {hl_lines=[3,14]}
 #pragma once
 
@@ -368,7 +369,7 @@ Déclarez `operator<<` en tant qu'amie de la classe `Polygon`, puis modifiez son
 L'endroit où vous placez la déclaration dans la classe n'a pas d'importance.
 Les modificateurs de visibilité n'ont pas d'effet sur une déclaration d'amitié. 
 
-Dans `Polygon.h` :
+Dans `Polygon.hpp` :
 ```cpp {hl_lines=[11]}
 #pragma once
 

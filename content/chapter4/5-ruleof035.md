@@ -44,7 +44,7 @@ Au contraire, on veut que certaines classes ne suivent pas la gestion par défau
 ##### Exercice
 
 Par exemple, le fichier [RuleOfThree.cpp](../RuleOfThree.cpp) contient une classe
-qui stocke un entier à travers un pointeur ownant.
+qui stocke un entier à travers un pointeur ownant (et l'on maintiendra l'invariant que ce n'est jamais un `nullptr`)
 Pour éviter les fuite mémoire, elle redéfinit son destructeur comme 
 indiqué ci-dessous.
 ```cpp
@@ -107,11 +107,11 @@ Ecrivez le code du constructeur par copie de `RuleOfThree` pour régler ce probl
 ```cpp
 class RuleofThree {
     /* .. */
-    RuleOfThree(const RuleOfThree& other) 
-    {
-      // We allocate a new int and copy the value pointed by other.int_ptr
-      int_ptr = new int{*(other.int_ptr)};
-    }
+    RuleOfThree(const RuleOfThree& other)
+    : int_ptr{new int{*(other.int_ptr)}};
+    //        ^^^^^^^^^^^^^^^^^^^^^^^^^ 
+    // We allocate a new int on the heap and copy the value pointed by other.int_ptr
+    {}
     /* .. */
 };
 {{% /hidden-solution %}}
@@ -148,9 +148,11 @@ class RuleofThree {
     /* .. */
     RuleOfThree& operator=(const RuleOfThree& other) 
     {
-      // this object existed before so int_ptr is already allocated
-      // we simply copy the value pointed by other.int_ptr
-      *int_ptr = *(other.int_ptr);
+      if (this != &other) {
+        // this object existed before so int_ptr is already allocated
+        // we simply copy the value pointed by other.int_ptr
+        *int_ptr = *(other.int_ptr);
+      }
       return *this;
     }
     /* .. */
@@ -160,7 +162,7 @@ class RuleofThree {
 ### Règle des 5
 
 Les classes qui suivent la règle des 5 sont celles qui suivent déjà la règle 
-des 3 et qui veulent tout de même pouvoir être déplacée efficacement.
+des 3 et qui veulent tout de même pouvoir être déplacés efficacement.
 
 En effet, quand on définit un des trois éléments de la règle des 3, le
 compilateur ne génère pas d'implémentation par défaut ni pour le constructeur

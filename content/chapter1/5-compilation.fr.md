@@ -22,11 +22,11 @@ La **compilation d'un programme** est constituée de deux phases bien distinctes
 2. L'**édition des liens**, qui permet de créer un exécutable à partir de tous vos fichiers-objet, réalisée par le linker.
 
 `g++` est à la fois un compilateur et un linker.  
-Lorsque vous exécutez `g++ -o program.exe a.cpp b.cpp c.cpp`, l'outil réalise donc 4 opérations :
+Lorsque vous exécutez `g++ -o program a.cpp b.cpp c.cpp`, l'outil réalise donc 4 opérations :
 1. La compilation de `a.cpp` ➔ `g++ -c a.cpp`
 2. La compilation de `b.cpp` ➔ `g++ -c b.cpp`
 3. La compilation de `c.cpp` ➔ `g++ -c c.cpp`
-4. L'édition des liens pour générer `program.exe` ➔ `g++ -o program.exe a.o b.o c.o`
+4. L'édition des liens pour générer `program` ➔ `g++ -o program a.o b.o c.o`
 
 {{< mermaid >}}
 flowchart TD;
@@ -40,7 +40,7 @@ flowchart TD;
     Ao --- L
     Bo --- L
     Co --- L
-    L --> E[program.exe]
+    L --> E[program]
 {{< /mermaid >}}
 
 ---
@@ -237,7 +237,7 @@ Il nous apparaît utile de faire un petit tour des situations d'erreurs les plus
 
 Et vous les rencontrerez forcément, eheheh... 😈
 
-Commencez par vous placer dans le répertoire `chap-01/3-build-errors`, car c'est là que vous devrez compiler les différents fichiers.
+[Télécharger](../5-build-errors.zip), décompresser puis placez vous dans le répertoire `5-build-errors`, car c'est là que vous devrez compiler les différents fichiers.
 
 #### 1. expected ';' after class definition
 
@@ -590,7 +590,7 @@ Idéalement, attendez même d'avoir passé une bonne nuit de sommeil avant de re
 Une fois le fonctionnement du compilateur bien assimilé, il est temps de passer à celui du linker.  
 Dans le cadre de la génération d'un programme, l'objectif du linker est de regrouper, depuis les fichiers-objet fournis, les instructions strictement nécessaires à son exécution.
 
-Supposons que l'on essaye de linker deux fichiers objets `main.o` et `math.o` avec la commande : `g++ -o program.exe main.o math.o`.  
+Supposons que l'on essaye de linker deux fichiers objets `main.o` et `math.o` avec la commande : `g++ -o program main.o math.o`.  
 On suppose que `main.o` est le résultat de la compilation de :
 ```cpp {linenos=table}
 #include "math.hpp"
@@ -734,7 +734,7 @@ Cela lui permet d'identifier l'ensemble des éléments à placer dans l'exécuta
 ```mermaid
 graph LR
 
-subgraph D[program.exe]
+subgraph D[program]
     f_main(["main()"])
     f_half(["half: Fraction"])
     f_create_half(["create_half()"])
@@ -774,7 +774,7 @@ La fonction `invert(Fraction)` présente dans `math.o` et qui n'est jamais appel
 
 De la même façon que nous l'avons fait avec les erreurs de compilation, nous allons vous présenter quelques situations d'erreurs émises au cours de l'édition des liens.
 
-Commencez par vous placer dans le répertoire `chap-01/4-link-errors`.
+[Télécharger](../5-link-errors.zip), décompresser puis placez vous dans le répertoire `5-link-errors`, car c'est là que vous devrez compiler les différents fichiers.
 
 #### 1. undefined reference to `main'
 

@@ -65,8 +65,8 @@ Maintenant, vous saurez que vous pouvez utiliser des tuples.
 
 Modifiez le code du fichier `5-tuples.cpp` afin d'appliquer ce principe.
 
-{{< expand "Solution" >}}
-{{< highlight cpp "hl_lines=3 5 7 12 18 19 29 35 38 41 43 48 49 54 55 56 58" >}}
+{{% hidden-solution %}}
+{{% highlight cpp "hl_lines=3 5 7 12 18 19 29 35 38 41 43 48 49 54 55 56 58" %}}
 #include <iostream>
 #include <string>
 #include <tuple>
@@ -128,6 +128,6 @@ int main(int argc, char** argv)
 
     return 0;
 }
-{{< /highlight >}}
-{{< /expand >}}
+{{% /highlight %}}
+{{% /hidden-solution %}}
 

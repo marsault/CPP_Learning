@@ -10,14 +10,16 @@ Nous ferons un petit récapitulatif en fin de page, pour rappelez les points ess
 ---
 
 Pour cet exercice, vous modifierez les fichiers :\
-\- `chap-04/2-farm/FarmHouse.cpp`\
-\- `chap-04/2-farm/Animal.h`\
-\- `chap-04/2-farm/Dog.h`\
-\- `chap-04/2-farm/Cat.h`\
-\- `chap-04/2-farm/Chicken.h`\
-\- `chap-04/2-farm/Cow.h`
+- `2-farm/FarmHouse.cpp`
+- `2-farm/Animal.h`
+- `2-farm/Cat.h`
+- `2-farm/Chicken.h`
+- `2-farm/Cow.h`
+- `2-farm/Dog.h`
 
-La cible à compiler est `c4-2-farm`.
+se trouvant dans [code.zip](../code.zip).
+
+La cible à compiler est `farm`.
 
 ---
 
@@ -28,7 +30,7 @@ Vous devriez avoir une erreur au niveau de l'appel à `sing_a_lot` dans le `main
 Selon vous, que faut-il faire dans chacune de ces classes pour que l'on puisse passer une variable de ce type à une fonction attendant une référence sur un `Animal` ?\
 Modifiez le programme en conséquence pour qu'il compile.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 Il faut que chacune de ces classes hérite de `Animal`. Et comme spécifié précédemment, on n'oublie pas d'indiquer le mot-clef `public` dans la relation de parenté.
 
 ```cpp
@@ -37,7 +39,7 @@ class Chicken : public Animal { ... };
 class Cow : public Animal { ... };
 class Dog : public Animal { ... };
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Essayez maintenant d'exécuter le programme. Comme vous pouvez le constater, c'est la fonction `sing` de la classe `Animal` qui est appelée à chaque fois, et non pas les fonctions `sing` de chacune des sous-classes.
 
@@ -68,7 +70,7 @@ Cotcotcotcodet Cotcotcotcodet
 
 Réalisez les modifications dans le programme pour obtenir la sortie ci-dessus. Néanmoins, comme vous n'avez pas pris votre café ce matin, et vous allez (in)volontairement oublier de modifier le contenu de Cow.h.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 Animal.h :
 ```cpp
 virtual void sing(char next_char) const { std::cout << "..." << next_char; }
@@ -92,7 +94,7 @@ void sing_a_lot(const Animal& animal, unsigned int times)
     }
 }
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Vous devriez constater que malgré votre étourderie, le programme compile toujours. Cependant, c'est de nouveau l'implémentation de `sing` dans `Animal` qui est appelée, plutôt que celle de `Cow`.
 
@@ -122,7 +124,7 @@ Lorsqu'une fonction est marquée `override`, le compilateur effectue les deux v�
 
 Ajoutez le mot-clef `override` à la fin du prototype de `sing` (donc derrière le `const`) dans chacune des classes-fille, et vérifier que le compilateur refuse maintenant de compiler la fonction `Cow::sing`.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 Cow :
 ```cpp
 void sing() const override { std::cout << "Mewwwwwh" << std::endl; }
@@ -131,15 +133,15 @@ Autres classes dérivées :
 ```cpp
 void sing(char next_char) const override { std::cout << "<some noise>" << next_char; }
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Modifiez maintenant la signature et l'implémentation de `Cow::sing` de manière à ce que le programme compile et qu'il affiche le résultat attendu.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 void sing(char next_char) const override { std::cout << "Mewwwwwh" << next_char; }
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 {{% notice info %}}
 Les mots-clef `virtual` et `override` ne font pas partie de la signature des fonctions-membre.
@@ -156,7 +158,7 @@ Commencez par instancier un `std::vector<Animal>` et essayez d'insérer dedans l
 Créez ensuite une fonction `sing_chorus` prenant ce tableau en paramètres et dans laquelle vous appelerez `sing` sur chacun de ces éléments.
 Que pouvez-vous constater en testant le programme ?
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 #include <iostream>
 
@@ -187,7 +189,7 @@ int main()
 ```
 
 En testant, on s'aperçoit que c'est de nouveau `Animal::sing` qui est appelé et non pas les fonctions dérivées...
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 **D'où vient le problème ?**
 
@@ -209,7 +211,7 @@ Or, les références ne sont pas réassignables...
 Du coup, à défaut de pouvoir utiliser des références, **vous allez devoir passer par des pointeurs**.\
 Modifiez votre code pour de manière à remplacer le `vector<Animal>` par un `vector<Animal*>` et vérifiez que le programme fonctionne maintenant comme il faut.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 void sing_chorus(const std::vector<Animal*>& animals)
 {
@@ -236,7 +238,7 @@ int main()
     return 0;
 }
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 ---
 
@@ -259,7 +261,7 @@ Définissez la classe `Opera` en respectant les contraintes suivantes :\
 
 Instanciez et utiliser cette classe dans le `main` pour vérifier que tout fonctionne.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 Opera.h
 ```cpp
 #pragma once
@@ -314,7 +316,7 @@ int main()
     return 0;
 }
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 {{% notice warning %}}
 Je m'excuse par avance pour les âmes sensibles.
@@ -326,7 +328,7 @@ Comme ici, nous avons affaire à des artistes et non pas des athlètes, nous all
 Ajoutez un destructeur à la classe `Chicken`, dans lequel vous afficherez le râle d'agonie de votre poulet. Un truc du style `"CotCooooooooot!"` fera parfaitement l'affaire.\
 Combien d'objets de type `Chicken` avez-vous construits dans votre programme ? Obtenez-vous le nombre de `"CotCooooooooot!"` attendus ?
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 class Chicken : public Animal
 {
@@ -339,7 +341,7 @@ public:
 
 Vous devriez avoir construits au moins deux objets de type `Chicken` (un dans le `main`, et un dans la classe `Opera`).
 Pourtant, il semblerait que l'un des appels au destructeur ne soit pas réalisé...  
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 **Pourquoi le destructeur de `Chicken` n'est pas tout le temps appelé ?**
 
@@ -398,7 +400,7 @@ N'oubliez pas d'ajouter le `override` sur `~Chicken`, pour indiquer au compilate
 
 Testez le programme pour vérifier que désormais, `~Chicken` est bien appelé durant la destruction de la variable `opera`.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 Animal.h:
 ```cpp
 class Animal
@@ -420,7 +422,7 @@ public:
     void sing(char next_char) const override { std::cout << "Cotcotcotcodet" << next_char; }
 };
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 ---
 

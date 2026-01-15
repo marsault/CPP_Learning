@@ -51,8 +51,8 @@ class Dog
 {
     friend std::ostream& operator<<(std::ostream& stream, const Dog& dog)
     {
-        return stream << "I have a " << dog.breed 
-                      << " named " << dog.name << "." << std::endl;
+        return stream << "I have a " << dog._breed 
+                      << " named " << dog._name << "." << std::endl;
     }
 
 public:
@@ -223,7 +223,7 @@ private:
 Pour vous habituez à manipuler les `unique_ptr`, vous allez modifier le code du programme `c3-3-cat`.
 
 Commencez par allouer dynamiquement un objet de type `Cat` et affichez son contenu à l'aide de l'opérateur `<<` déjà défini.
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 #include "Cat.h"
 
@@ -237,18 +237,18 @@ int main()
     return 0;
 }
 ```
-{{% /expand %}} 
+{{% /hidden-solution %}} 
 
 Redéfinissez le destructeur de `Cat` pour afficher du texte et vérifier que l'objet pointé est bien détruit à la sortie du scope, lorsque le `unique_ptr` est détruit.
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 ~Cat() { std::cout << "Cat " << _name << " has died..." << std::endl; }
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Ajoutez un constructeur à 1 paramètre à la classe `Cat` pour initialiser son attribut `_name`.\
 Adaptez l'initialisation du `unique_ptr` afin que le programme puisse compiler.
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 `Cat.h` :
 ```cpp
 class Cat
@@ -275,10 +275,10 @@ int main()
     return 0;
 }
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Créez maintenant un `unique_ptr<Cat>` vide et vérifiez que celui-ci est bien égal à `nullptr`.
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 int main()
 {
@@ -294,10 +294,10 @@ int main()
     return 0;
 }
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Réassignez ce dernier à une nouvelle instance de `Cat` allouée dynamiquement.
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 int main()
 {
@@ -315,10 +315,10 @@ int main()
     return 0;
 }
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Affichez si les deux `unique_ptr` sont égaux, puis si les deux objets pointés sont égaux.
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 int main()
 {
@@ -339,11 +339,11 @@ int main()
     return 0;
 }
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Réinitialisez le premier `unique_ptr` afin que celui-ci détruise l'objet sur lequel il pointe.\
 Vérifiez que celui-ci est maintenant bien égal à `nullptr`.
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 int main()
 {
@@ -370,7 +370,7 @@ int main()
     return 0;
 }
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 ---
 
@@ -490,16 +490,16 @@ La référence `my_thing` qui pointe sur l'un d'entre eux reste donc valide auss
 
 ---
 
-### Passer un `shared_ptr`
+### Passer un `unique_ptr`
 
-Ce n'est pas visible dans les exemples ci-dessus, mais il reste un problème dont on a pas encore parlé: comme faire pour passer un `shared_ptr` à une fonction, constructeur ou autre?
+Ce n'est pas visible dans les exemples ci-dessus, mais il reste un problème dont on a pas encore parlé: comme faire pour passer un `unique_ptr` à une fonction, constructeur ou autre?
 
 Par exemple, considérons le bout de code en dessous.
 
 ```cpp
-int my_func(std::shared_ptr<Dog>> p) { /* ... */ }
+int my_func(std::unique_ptr<Dog>> p) { /* ... */ }
 int main() {
-    std::shared_ptr<Dog> my_ptr = std::make_shared<Dog>("Lassie", "Colley");
+    std::unique_ptr<Dog> my_ptr = std::make_unique<Dog>("Lassie", "Colley");
 
     // On veut appeler my_func !
 
@@ -508,12 +508,12 @@ int main() {
 }
 ```
 
-Pour construire `p`, on ne pourra pas utiliser le constructeur de copie de `std::shared_ptr<Dog>>` car il n'existe pas, il faut donc passer à `my_func` une R-value !!
+Pour construire `p`, on ne pourra pas utiliser le constructeur de copie de `std::unique_ptr<Dog>` car il n'existe pas, il faut donc passer à `my_func` une R-value !!
 
 1. Soit on utilise `std::move` si jamais on n'a plus besoin de `my_ptr`.
 ```cpp
 int main() {
-    std::shared_ptr<Dog> my_ptr = std::make_shared<Dog>("Lassie", "Colley");
+    std::unique_ptr<Dog> my_ptr = std::make_unique<Dog>("Lassie", "Colley");
     my_func( std::move(my_ptr) );
 //           ^^^^^^^^^^^^^^^^^
 //           R-value
@@ -526,13 +526,13 @@ int main() {
 
 ```cpp
 int main() {
-    std::shared_ptr<Dog> my_ptr = std::make_shared<Dog>("Lassie", "Colley");
-    my_func( std::make_shared<Dog>(*my_ptr) );
+    std::unique_ptr<Dog> my_ptr = std::make_unique<Dog>("Lassie", "Colley");
+    my_func( std::make_unique<Dog>(*my_ptr) );
 //           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 //           R-value
 }
 ```
 
 Notez que dans les deux cas, on est parfaitement aligné avec l'ownership visible dans le programme.
-Puisque `f` déclare un argument de type `std::shared_ptr<Dog>>`, ça signifie  qu'il veut `own` le `Dog` pointé par `p`.
+Puisque `f` déclare un argument de type `std::unique_ptr<Dog>>`, ça signifie  qu'il veut `own` le `Dog` pointé par `p`.
 De l'autre côté, c'est `main` qui own le `Dog` pointé par `my_ptr`.  Donc  soit `main` cède l'ownership à `f` (premier cas) soit il en fait une copie pour `f` (deuxième cas).

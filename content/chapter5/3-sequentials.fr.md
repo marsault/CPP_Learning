@@ -41,7 +41,7 @@ Pour définir et utiliser des `enum` en C++, c'est un peu plus simple qu'en C : 
 Dans le code de base du fichier, vous pouvez trouver une énumération `Fruit`, contenant les valeurs `Apricot`, `Cherry`, `Mango` et `Raspberry`. Vous avez également une dernière valeur `Fruit_Count`, qui contient donc le nombre de valeurs de l'enum.\
 Définissez un `array` servant à indiquer pour chaque fruit possible le nom de ce fruit. Assignez ensuite dans chaque case la valeur appropriée.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 std::array<std::string, Fruit_Count> fruit_names;
 fruit_names[Apricot] = "apricot";
@@ -49,7 +49,7 @@ fruit_names[Cherry] = "cherry";
 fruit_names[Mango] = "mango";
 fruit_names[Raspberry] = "raspberry";
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 **C'est quoi l'intérêt d'utiliser un `array`, alors qu'on peut faire la même chose, et même plus, avec un `vector` ?**
 
@@ -66,13 +66,13 @@ La librairie standard implémente les classes `std::list` et `std::forward_list`
 
 L'intérêt des listes vis-à-vis des tableaux, c'est qu'il est possible d'insérer ou de supprimer des éléments en O(1). De nouvelles fonctions de modifications sont donc disponibles dans l'interface de la liste, comme `merge` (fusionner deux listes), `splice` (insérer une liste au milieu d'une autre), `remove` (retirer des éléments selon leur valeur) ou encore `sort` (trier la liste).
 
-L'inconvénient, c'est qu'il n'est plus possible d'accéder à un élément depuis sa position en O(1). D'ailleurs, l'opérateur `[]` n'est pas disponible sur les listes de la STL.
+L'inconvénient, c'est qu'il n'est plus possible d'accéder à un élément depuis sa position en O(1). D'ailleurs, l'opérateur `[]` n'est pas disponible sur les listes de la STL (Standard Template Library).
 
 Dans la fonction `try_lists`, quatres listes vides sont définies. Commencez par leur ajouter des valeurs (de la manière de votre choix).\
 Faites ensuite en sorte de regrouper `l1` et `l2` dans une même liste ordonnée. Faites de même avec `l3` et `l4`.\
 Placez enfin le résultat du deuxième groupement en plein milieu du premier groupement.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 // There are many differentes ways to put values in a list.
 std::list<int> l1 { -2, -3, 7, 200, -8, 6 };
@@ -100,7 +100,7 @@ auto mid = l1.begin();
 std::advance(mid, l1.size() / 2);
 l1.splice(mid, l3);
 ```
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 **Concrètement, que peut-on faire avec une `list` que l'on ne peut pas faire avec une `forward_list` ?**
 
@@ -111,7 +111,7 @@ A part cela, les autres opérations sont disponibles avec la même complexité.
 
 ### Pile ou File
 
-Les derniers conteneurs que nous allons ici sont les piles `std::stack` et les files `std::queue`. Nous n'allons pas rappeler en détail ce que sont les piles ou les files, mais si vous avez tout oublier de vos cours d'algorithmique, sachez au moins que dans une pile, les insertions et suppressions sont effectuées en fin de conteneur, alors que dans une file, les suppressions s'effectuent en tête et les insertions en fin de conteneur.
+Les derniers conteneurs que nous allons voir ici sont les piles `std::stack` et les files `std::queue`. Nous n'allons pas rappeler en détail ce que sont les piles ou les files, mais si vous avez tout oublier de vos cours d'algorithmique, sachez au moins que dans une pile, les insertions et suppressions sont effectuées en fin de conteneur, alors que dans une file, les suppressions s'effectuent en tête et les insertions en fin de conteneur.
 
 Dans le cas de la STL, `stack` et `queue` ont la particularité d'être des adapteurs. Cela signifie que vous pouvez choisir l'implémentation que vous souhaitez utiliser en interne. La seule contrainte, c'est que la classe sous-jacente doit fournir certaines fonctions. Par exemple, dans le cas de la pile, on pourrait utiliser `vector` ou `list`, mais pas `forward_list` car elle ne définit pas `push_back` :\
 ![](/images/chapter5/doc-stack-constraints.png)
@@ -119,14 +119,14 @@ Dans le cas de la STL, `stack` et `queue` ont la particularité d'être des adap
 Sur l'image ci-dessus, on vous précise quel conteneur est utilisé par défaut si vous n'en spécifier aucun (c'est-à-dire si vous écrivez juste `std::stack<int>`, au lieu de `std::stack<int, smtg>`). De quelle classe s'agit-il ?\
 En cherchant un petit peu dans sa documentation, essayez de trouver une raison pour laquelle la librairie a décidé d'utiliser ce conteneur là par défaut.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 Par défaut, `stack` est implémentée au moyen d'une `std::deque`. L'avantage de cette classe pour l'implémentation d'une pile, c'est qu'elle est très efficace pour ajouter et retirer des éléments en fin de conteneur (complexité en O(1)), et lors de ces opérations, les itérateurs sur les autres éléments ne sont jamais invalidés (= plus de sécurité). Elle est aussi plus performante que le `vector` lors des réallocations (pas de copie des éléments existants).
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Vous allez maintenant instancier une `stack` utilisant comme implémentation sous-jacente un `vector<int>`, plutôt qu'une `deque`. Pour cela, il suffit de spécifier le type de conteneur dans un second paramètre de template.\
 Faites en sorte que la `stack` contienne à la fin `{ 0, 1, 2 }`.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 ```cpp
 // The stack can be initialized from nothing, and then values are added with push or emplace.
 std::stack<int, std::vector<int>> s1;
@@ -140,18 +140,18 @@ std::stack<int, std::vector<int>> s2 { v };
 ```
 
 Notez que les deux syntaxe `s2 { v }` et `s2(v)` fonctionnent, puisque `stack` n'a pas de constructeur par initializer_list.
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Essayez maintenant de parcourir la `stack` via une boucle `for` pour l'afficher (pas foreach). Qu'est-ce qui pose problème ?
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 Dans une pile, on ne peut accéder qu'au premier élément. La classe `stack` ne fournit donc pas l'ensemble des fonctions dont dispose le conteneur sous-jacent, et c'est bien là son intérêt.\
 Si on décide de définir un attribut d'une classe en tant que `stack` plutôt qu'en tant que `vector`, on ajoute en fait des contraintes sur les opérations qu'il est possible d'effectuer sur ce membre. Cela permet donc d'enforcer les invariants de la classe plus facilement.
-{{% /expand %}}
+{{% /hidden-solution %}}
 
 Retentez maintenant le parcours via une boucle `foreach`. Essayez de compiler, et déduisez-en le nom des fonctions attendues par le compilateur pour pouvoir parcourir un conteneur via une boucle `foreach`.
 
-{{% expand "Solution" %}}
+{{% hidden-solution %}}
 Le compilateur nous dit ceci :
 ```shell
 error: 'begin' was not declared in this scope
@@ -159,4 +159,4 @@ error: 'end' was not declared in this scope
 ```
 
 On peut donc en déduire que pour qu'une classe soit itérable via une boucle foreach, il semblerait qu'elle doive fournir deux fonctions appelées `begin` et `end`.
-{{% /expand %}}
+{{% /hidden-solution %}}

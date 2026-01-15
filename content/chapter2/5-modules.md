@@ -14,11 +14,11 @@ Cet exercice vous permettra de découvrir :
 
 ### Séparer l'implémentation des fonctions-membres
 
-Ouvrez le dossier `chap-02/4-modules`.
-Celui-ci est composé de 3 fichiers :
+[Téléchargez cette archive](/chapter2/5-modules.zip) et la décompresser. Elle contient un dossier `5-modules` et placer vous dedans.
+Il avec 3 fichiers :
 - `main.cpp`, qui contient une fonction `main` déjà écrite
-- `Rectangle.h`, qui contient une classe `Rectangle`,
-- `Rectangle.cpp`, qui est lui tout vide.
+- `Rectangle.hpp`, qui contient une classe `Rectangle`,
+- `Rectangle.cpp`, qui est vide.
 
 Il est très courant de placer la définition de chaque classe dans un header différent et d'extraire l'implémentation des ses fonctions-membres dans l'**unité de compilation** (`.cpp`) associée.  
 Cela permet de réduire drastiquement les temps de compilation dans les gros projets, car :
@@ -380,6 +380,52 @@ Rectangle s4; // -> size is 7.f
 Rectangle s5; // -> size is 7.f
 ```
 {{% /hidden-solution %}}
+
+--- 
+
+### Ecrire un CMakeLists.txt
+
+Ecrivez un `CMakeLists.txt` en vous inspirant de celui donné [dans l'aide](/help/workflow/), puis compilez et éxécutez votre code avec.
+
+{{% hidden-solution %}}
+Voici le fichier `CMakeLists.txt`
+```cmake
+cmake_minimum_required(VERSION 3.16)
+project(cours3-5)
+
+add_executable(cours3-5
+    main.cpp
+    Rectangle.cpp
+    Rectangle.hpp
+)
+
+target_compile_features(cours3-5 PRIVATE cxx_std_17)
+
+target_compile_options(cours3-5 PRIVATE 
+    -Wall
+    -Wextra
+    -Werror 
+)
+```
+Pour configurer (une seule fois):
+```bash
+#depuis le répertoire 5-modules
+mkdir build
+cd build
+cmake ..
+```
+Pour compiler/recompiler:
+```bash
+#depuis le répertoire 5-modules/build
+make
+```
+Pour exécuter le programme:
+```bash
+#depuis le répertoire 5-modules/build
+./cours3-5
+```
+{{% /hidden-solution %}}
+
 
 ---
 

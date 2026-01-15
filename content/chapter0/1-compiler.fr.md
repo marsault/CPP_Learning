@@ -32,9 +32,9 @@ Testez maintenant que tout fonctionne en suivant les étapes ci-dessous.
 1. Téléchargez [ce fichier](/chapter0/helloworld.cpp).
 2. Ouvrez une fenêtre Powershell dans le répertoire contenant le fichier (vous pouvez utiliser `Shift + Clic Droit` depuis l'explorateur de fichiers pour faire apparaître l'option dans le menu contextuel).
 ![](/images/chapter0/powershell.png)
-3. Exécutez la commande `g++ .\helloworld.cpp -o hello`\
-Un fichier `hello.exe` devrait avoir été généré.
-4. Exécutez `.\hello.exe`.
+3. Exécutez la commande `g++ helloworld.cpp -o hello`\
+Un fichier `hello` devrait avoir été généré.
+4. Exécutez `.\hello`.
 Le programme devrait vous répondre `"Hello!"`.
 
 ---
@@ -48,7 +48,7 @@ Assurez-vous que la dernière ligne indique bien une version de gcc >= 9.
 Vérifiez une nouvelle fois que votre g++ est bien à jour.
 
 Testez maintenant que tout fonctionne en suivant les étapes ci-dessous.
-1. Téléchargez {{< open_in_new_tab "/code/helloworld.cpp" "ce fichier" />}}.
+1. Téléchargez [ce fichier](/chapter0/helloworld.cpp).
 2. Ouvrez un terminal et placez-vous dans le répertoire contenant le fichier téléchargé : `cd path/to/folder`
 3. Exécutez la commande `g++ ./helloworld.cpp -o hello`\
 Un fichier `hello` devrait avoir été généré.
@@ -63,9 +63,22 @@ Le programme devrait vous répondre `"Hello!"`.
 2. Si la commande échoue, installez clang en exécutant `xcode-select --install`
 
 Testez maintenant que tout fonctionne en suivant les étapes ci-dessous.
-1. Téléchargez {{< open_in_new_tab "/code/helloworld.cpp" "ce fichier" />}}.
+1. Téléchargez [ce fichier](/chapter0/helloworld.cpp).
 2. Ouvrez un terminal et placez-vous dans le répertoire contenant le fichier téléchargé : `cd path/to/folder`
 3. Exécutez la commande `clang++ ./helloworld.cpp -o hello`\
 Un fichier `hello` devrait avoir été généré.
 4. Exécutez `./hello`.
 Le programme devrait vous répondre `"Hello!"`.
+
+---
+
+## Options g++ et clang++
+
+Si vous compilez via le terminal ou avec [Compiler Explorer](https://godbolt.org/), nous vous conseillons d'utiliser les options ci-dessous, car nous les activerons pour vos rendus de projet :
+- `-std=c++17` : spécifie que le projet sera compilé en C++17 (sans cette option, certains fichiers peuvent ne pas compiler)
+- `-Wall -W` : permet d'activer un certain nombre de warnings
+- `-Werror` : transforme les warnings en erreurs, donc tant qu'il y a des warnings, le programme ne compile pas
+
+Sachez par ailleurs que vous pouvez également utiliser :
+- `-g` : ajoute des informations supplémentaires à l'exécutable, afin de pouvoir le débugger plus facilement
+

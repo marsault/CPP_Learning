@@ -9,7 +9,7 @@ Bon courage à vous 🙂
 
 ---
 
-{{% test chapter=4 %}}
+{{% test chapter=6 %}}
 
 {{% test_item id=1 desc="class-polymorph" %}}Qu'est-ce qu'une classe polymorphe ?{{% /test_item %}}
 {{% test_item id=2 lines="5" desc="poly-code" %}}Définissez une classe polymorphe `Nothing` qui ne fait rien.{{% /test_item %}}
