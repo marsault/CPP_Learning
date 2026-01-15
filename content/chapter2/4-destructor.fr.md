@@ -74,7 +74,7 @@ En effet, comme ce n'est pas vous qui appelez le destructeur, mais le compilateu
 Comme le destructeur ne prend aucun paramètre, il n'a qu'une seule signature possible, et il ne peut donc exister qu'une seule version de destructeur par classe.
 {{% /notice %}}
 
-1. Ouvrez le fichier `chap-02/3-destructor.cpp` et ajoutez un destructeur à la classe `Person`.  
+1. Téléchargez et ouvrez le fichier [`4-destructor.cpp`](chapter2/4-destructor.cpp) et ajoutez un destructeur à la classe `Person`.  
 À l'intérieur, ajoutez une instruction qui affichera, dans le cas de Batman, `"Bruce Wayne died at 23 years old"`.
 
 {{% hidden-solution %}}

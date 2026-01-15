@@ -5,13 +5,12 @@ weight: 2
 ---
 
 C'est parti pour la pratique ! Vous allez ici apprendre à définir une classe en C++ et à l'instancier.  
-Commencez par ouvrir le [dépôt d'exercices](https://github.com/Laefy/CPP_Learning_Code/) dans VSCode.
 
 ---
 
 ### Méthodologie
 
-Ouvrez le fichier `chap-02/1-first_class.cpp`, dans lequel on vous fournit le code de la fonction `main`.
+Téléchargez et ouvrez le fichier [`2-first-class.cpp`](/chapter2/2-first-class.cpp), dans lequel on vous fournit le code de la fonction `main`.
 ```cpp
 int main()
 {
@@ -73,7 +72,7 @@ int main()
 ```
 Pour la compilation, on peut se placer dans le répertoire `chap-02` et exécuter :
 ```
-g++ -std=c++17 -o 1-first_class 1-first_class.cpp
+g++ -std=c++17 -o 2-first-class 2-first-class.cpp
 ```
 {{% /hidden-solution %}}
 
@@ -143,14 +142,14 @@ C'est la raison pour laquelle je vous ai demandé d'installer un vrai IDE. Nous 
 Pour commencer, il faut recompiler le programme en ajoutant l'option `-g`.  
 Cette option sert à ajouter les **symboles de debug** à l'intérieur des fichiers produits par la compilation.
 ```b
-g++ -g -std=c++17 -o 1-first_class 1-first_class.cpp
+g++ -g -std=c++17 -o 2-first-class 2-first-class.cpp
 ```
 
 Ensuite, pour pouvoir lancer le programme depuis VSCode, vous devez configurer le fichier `.vscode/launch.json`.  
 Si ce n'est pas encore fait, rendez vous sur [cette section](/chapter0/6-tips/2-vscode/#configuration-du-fichier-launchjson), et remplacez bien le paramètre `program` par le chemin de l'exécutable.
 Par exemple, si vous avez suivi la correction, vous pouvez indiquer :
 ```json
-"program": "${workspaceFolder}/chap-02/1-first_class",
+"program": "${workspaceFolder}/chap-02/2-first-class",
 ```
 
 Une fois l'environnement correctement configuré, il faut ajouter un **breakpoint**, c'est-à-dire un point d'arrêt : cela permet au programme de se mettre en pause, juste avant l'exécution d'une instruction particulière.  

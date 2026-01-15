@@ -59,11 +59,12 @@ target_compile_options(my_executable PRIVATE  # <- Ajoute des flags à la compil
 #### Sans CMake (non recommandé)
 
 ```bash
-    g++ fichier1.cpp fichier2.cpp -o nom_de_lexecutable
+    g++ fichier1.cpp fichier2.cpp -o my_executable
 ```
 
 #### Avec CMake
 ```bash
+# Depuis le répertoire `build`
     make  # Compile toutes les cibles
 # ou
     make my_executable # Compile uniquement l'executable my_executable
@@ -71,11 +72,15 @@ target_compile_options(my_executable PRIVATE  # <- Ajoute des flags à la compil
 
 ### Exécuter
 
+```bash
+# Depuis le répertoire `build` avec CMake
+    ./my_executable
+```
 
 
 ### Pour les TP notés (et les TPs de révisions)
 
-#### Lancer les tests (TPs de révisions ou TP notés)
+#### Lancer les tests
 
 Le script `run_tests.sh` compile et éxécute les tests
 
