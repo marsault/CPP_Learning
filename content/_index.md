@@ -37,7 +37,7 @@ Le planning est le suivant :
 
 Les cours magistraux sont l'occasion d'aborder les notions que vous pourrez revoir et creuser dans les chapitres du cours en ligne.  
 C'est également un bon moment pour poser des questions sur le cours ou les TPs précédents.  
-Les slides sont disponible [ici](slides).
+Les slides sont disponible [ici](/help/slides).
 
 #### Cours en ligne
 

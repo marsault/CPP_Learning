@@ -1,11 +1,8 @@
 ---
 title: "Synthèse"
-weight: 101
-draft: true
+weight: 8
+hidden: true
 ---
-
----
-
 ### Ce qu'il faut retenir
 
 ##### Théorie

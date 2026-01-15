@@ -135,54 +135,6 @@ private:
 
 ---
 
-**Comment s'assurer que le code est juste, sachant que la ligne qui affiche le résultat est toujours commentée ?**
-
-C'est la raison pour laquelle je vous ai demandé d'installer un vrai IDE. Nous allons voir comment inspecter les valeurs du programme au cours de l'exécution à l'aide du débuggeur.
-
-Pour commencer, il faut recompiler le programme en ajoutant l'option `-g`.  
-Cette option sert à ajouter les **symboles de debug** à l'intérieur des fichiers produits par la compilation.
-```b
-g++ -g -std=c++17 -o 2-first-class 2-first-class.cpp
-```
-
-Ensuite, pour pouvoir lancer le programme depuis VSCode, vous devez configurer le fichier `.vscode/launch.json`.  
-Si ce n'est pas encore fait, rendez vous sur [cette section](/chapter0/6-tips/2-vscode/#configuration-du-fichier-launchjson), et remplacez bien le paramètre `program` par le chemin de l'exécutable.
-Par exemple, si vous avez suivi la correction, vous pouvez indiquer :
-```json
-"program": "${workspaceFolder}/chap-02/2-first-class",
-```
-
-Une fois l'environnement correctement configuré, il faut ajouter un **breakpoint**, c'est-à-dire un point d'arrêt : cela permet au programme de se mettre en pause, juste avant l'exécution d'une instruction particulière.  
-
-Par défaut, VSCode propose des raccourcis clavier pour les différentes fonctions du débuggeur. Les plus utiles sont :
-- **F5** pour lancer ou reprendre l'exécution du programme (il se mettra en pause lorsqu'il atteindra un prochain point d'arrêt),
-- **F9** pour ajouter ou supprimer un point d'arrêt à la ligne actuelle,
-- **F10** pour passer à l'instruction suivante (étape par étape), sans descendre dans les fonctions,
-- **F11** pour passer à l'instruction suivante en descendant dans les fonctions si nécessaire,
-- **Shift + F11** pour remonter dans la fonction appelante.
-
-Ici, vous allez placer un breakpoint sur l'instruction `return 0;` du `main`. 
-Pour cela, placez votre curseur sur la ligne en question et appuyez sur F9. Vous pouvez aussi cliquer directement à gauche du numéro de ligne.
-![](/images/vscode-breakpoint.png)
-
-Utilisez ensuite F5 pour lancer le programme.
-L'éditeur devrait prendre cette apparence, indiquant que le programme est en pause juste avant l'exécution de l'instruction surlignée :
-![](/images/vscode-breaking.png)
-
-Ouvrez maintenant le panneau d'exécution en allant dans `View > Run`.
-![](/images/vscode-locals.png)
-
-Ce panneau contient 3 sections :
-- La section **Variables**, dans laquelle vous pouvez voir le contenu de chacune des variables locales à votre fonction.
-- La section **Watch**, qui vous permet d'entrer des expressions pour en récupérer le contenu. Vous pouvez par exemple entrer `8 + 3 * 5` pour obtenir le résultat du calcul, ou `p._name` pour obtenir la valeur de l'attribut `_name` de `p`, ou encore `&p` pour récupérer l'adresse de `p`.
-- La section **Call Stack**, qui vous permet de suivre la trace des appels de fonctions, et de vous positionner à un point spécifique de la pile d'appels. Ce n'est pas très intéressant ici, vu qu'on n'a que le `main`, mais nous y reviendrons.
-
-Dans la section des **Variables**, si vous pouvez constater comme sur le screenshot que `p._name` vaut bien `"Batman"`, alors c'est que votre code est correct.
-
-Appuyez ensuite sur F5 pour reprendre l'exécution du programme.
-
----
-
 ### Modification d'un attribut
 
 Décommentez l'instruction faisant l'appel à `set_age`, et définissez la fonction ainsi que l'attribut correspondants.\
@@ -201,7 +153,7 @@ Voici le nouveau code :
 class Person
 {
 public:
-    void set_name(const std::string& name) { _name = name; }
+    void set_name(std::string name) { _name = name; }
     void set_age(unsigned int age) { _age = age; }
 
 private:
@@ -211,25 +163,45 @@ private:
 ```
 {{% /hidden-solution %}}
 
-Testez à nouveau votre code avec le débuggeur. En plus du breakpoint final, ajoutez un breakpoint supplémentaire de manière à vous arrêter juste après l'exécution du `set_name` et juste avant l'exécution du `set_age`.
+Il y a un problème dans le code solution donné juste au dessus. Trouvez-le et corrigez-le.
 
 {{% hidden-solution %}}
-Pour s'arrêter au bon endroit, il faut placer le breakpoint sur la ligne de l'instruction `p.set_age(23);`.
-![](/images/chap2-ex1-break.png)
-{{% /hidden-solution %}}
+Aucune valeur par défaut n'est donné à l'attribut `_age`, dont le type est fondamental.
+Donc quand on construit un nouveau `Person`, cet attribut ne sera pas initialisé et il contiendra n'importe quoi.  
+C'est ce qu'il ce passe dans le code ci-dessous.  Quand on aura fait fonctionner la ligne surlignée, elle affichera n'importe quoi
+```C++ {hl_lines=[8]}
+int main()
+{
+    Person p;
 
-Si vous inspectez la valeur de `p._age` avant l'exécution de `set_age`, il est possible que celle-ci soit complètement aléatoire. Eh oui, de la même manière que les variables locales de types fondamentaux, il faut également initialiser les attributs de types fondamentaux de vos classes. Faites les changements nécessaires pour que l'âge de Batman vaille 0 tant que celui-ci n'a pas été modifié. Testez à nouveau.
+    p.set_name("Batman");
+    // p.set_age(23);
 
-{{% hidden-solution %}}
-```cpp
+    // std::cout << "Person named '" << p.get_name() << "' is " << p.get_age() << " years old." << std::endl;
+
+    return 0;
+}
+```
+Il faut donc corriger la classe `Person` comme suit:
+```C++
+class Person
+{
+public:
+    void set_name(std::string name) { _name = name; }
+    void set_age(unsigned int age) { _age = age; }
+
 private:
     std::string  _name;
     unsigned int _age = 0u;
+};
 ```
 
-{{% notice info %}}
-`0u` permet de faire référence au `0` entier non-signé. Cela n'a pas beaucoup d'importance ici, puisque `_age` est explicitement typé, mais si on écrivait dans une fonction `auto v = 0u;` alors `v` serait de type `unsigned int` plutôt que de type `int`. 
-{{% /notice %}}
+{{% /hidden-solution %}}
+
+Pourquoi le même problème ne se pose pas pour l'autre attribut?
+
+{{% hidden-solution %}}
+Parce que `std::string` est une classe et est donc toujours instanciée.
 {{% /hidden-solution %}}
 
 ---
