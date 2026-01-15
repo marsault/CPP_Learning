@@ -156,11 +156,11 @@ Le programme devra écrire :
 > Craow Coucou  
 > Craow Ca va ?
 
-1. Télchargez et ouvrez le fichier [`2-parrot.cpp`](../2-parrot.cpp).  
+1. Télchargez et ouvrez le fichier [`4-parrot.cpp`](../4-parrot.cpp).  
 Vérifiez qu'il compile et qu'il affiche `"Craow"` lorsque vous le lancez.
 
 {{% hidden-solution %}}
-Pour compiler, on peut ouvrir le terminal VSCode et écrire : `g++ -std=c++17 -o parrot 2-parrot.cpp` après s'être placé dans le bon répertoire avec `cd`.
+Pour compiler, on peut ouvrir le terminal VSCode et écrire : `g++ -std=c++17 -o parrot 4-parrot.cpp` après s'être placé dans le bon répertoire avec `cd`.
 {{% /hidden-solution %}}
 
 2. Utilisez la fonction `std::getline` pour récupérer la ligne de texte entrée par l'utilisateur et affichez-la dans la console.
