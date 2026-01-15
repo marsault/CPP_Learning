@@ -19,7 +19,7 @@
       <link>/help/lexicon/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/help/lexicon/index.html</guid>
-      <description>Classe Classe abstraite: classe qui contient au moins une fonction-membre virtuelle pure; elle n’est donc pas instanciable. Classe concrète: classe qui n’est pas abstraite. Classe instanciable: classe dont on peut construire des instances, c’est-à-dire qui n’est donc pas abstraite et qui possède au moins un constructeur publique. Classe copiable: classe qui possède un constructeur de copie (publique). Classe déplaçable: classe qui possède un constructeur de déplacement (publique). Classe default-constructible: classe qui possède un constructeur par défaut (publique).</description>
+      <description>En construction Cette page est en construction. N’hésitez pas à suggérer des ajouts ou signaler ce qui vous semble faux ou étrange.&#xA;Classe Classe abstraite: classe qui contient au moins une fonction-membre virtuelle pure; elle n’est donc pas instanciable. Classe concrète: classe qui n’est pas abstraite. Classe instanciable: classe dont on peut construire des instances, c’est-à-dire qui n’est donc pas abstraite et qui possède au moins un constructeur publique. Classe copiable: classe qui possède un constructeur de copie (publique).</description>
     </item>
     <item>
       <title>Planches du CM</title>
