@@ -62,5 +62,5 @@ weight = 7
 
 [[menu.shortcuts]]
 name = "<i class='fas fa-passport'></i> (Copie locale de) CPP-Ref"
-url = "https://www-monge.univ-eiffel.fr/~marsault/cpp/ref/en/"
+url = "https://monge.univ-eiffel.fr/~marsault/cpp/ref/en/"
 weight = 8
