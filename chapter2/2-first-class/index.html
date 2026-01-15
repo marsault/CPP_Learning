@@ -29,16 +29,16 @@ Méthodologie Téléchargez et ouvrez le fichier 2-first-class.cpp, dans lequel 
 int main() { // Person p; // p.set_name(&#34;Batman&#34;); // p.set_age(23); // std::cout &lt;&lt; &#34;Person named &#39;&#34; &lt;&lt; p.get_name() &lt;&lt; &#34;&#39; is &#34; &lt;&lt; p.get_age() &lt;&lt; &#34; years old.&#34; &lt;&lt; std::endl; return 0; } Vous allez procéder ici en suivant plus ou moins la méthodologie Test Driven Development (ou TDD), qui consiste à écrire le code des tests avant d’écrire le code appelé.">
     <meta itemprop="wordCount" content="1673">
     <title>C&#43;&#43;::   Première classe</title>
-    <link href="../../css/fontawesome-all.min.css?1768488233" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768488233" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768488233" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768488233" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768488233" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768488233" rel="stylesheet">
-    <link href="../../css/fonts.css?1768488233" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768488233" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768488233" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768488233" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768488233" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768488233" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768488233"></script>
+    <link href="../../css/fontawesome-all.min.css?1768505497" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768505497" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768505497" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768505497" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768505497" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768505497" rel="stylesheet">
+    <link href="../../css/fonts.css?1768505497" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768505497" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768505497" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768505497" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768505497" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768505497" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768505497"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -281,15 +281,15 @@ Par exemple, si vous avez suivi la correction, vous pouvez indiquer :</p>
 </ul>
 <p>Ici, vous allez placer un breakpoint sur l&rsquo;instruction <code>return 0;</code> du <code>main</code>.
 Pour cela, placez votre curseur sur la ligne en question et appuyez sur F9. Vous pouvez aussi cliquer directement à gauche du numéro de ligne.
-<a href="#R-image-a8231957c823bcde0c715f5b23af05c3" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-breakpoint.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a8231957c823bcde0c715f5b23af05c3"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-breakpoint.png"></a></p>
+<a href="#R-image-1219dc0359c5cd26bb1972785c3a33c5" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-breakpoint.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1219dc0359c5cd26bb1972785c3a33c5"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-breakpoint.png"></a></p>
 <p>Utilisez ensuite F5 pour lancer le programme.
 L&rsquo;éditeur devrait prendre cette apparence, indiquant que le programme est en pause juste avant l&rsquo;exécution de l&rsquo;instruction surlignée :
-<a href="#R-image-7dd0ff092b656d70b6512159ec854107" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-breaking.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-7dd0ff092b656d70b6512159ec854107"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-breaking.png"></a></p>
+<a href="#R-image-8502b0f20652f7644ba32d929ec578ef" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-breaking.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-8502b0f20652f7644ba32d929ec578ef"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-breaking.png"></a></p>
 <p>Ouvrez maintenant le panneau d&rsquo;exécution en allant dans <code>View &gt; Run</code>.
-<a href="#R-image-8ad2377b0d30941c757f6720f7a4142a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-locals.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8ad2377b0d30941c757f6720f7a4142a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-locals.png"></a></p>
+<a href="#R-image-aff8c53c32edca793c842f9aeb050e25" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-locals.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-aff8c53c32edca793c842f9aeb050e25"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-locals.png"></a></p>
 <p>Ce panneau contient 3 sections :</p>
 <ul>
 <li>La section <strong>Variables</strong>, dans laquelle vous pouvez voir le contenu de chacune des variables locales à votre fonction.</li>
@@ -357,8 +357,8 @@ Quel type avez-vous utilisé pour l&rsquo;âge de Batman ?</p>
 
         <div class="hidden-solution-content">
             <p>Pour s&rsquo;arrêter au bon endroit, il faut placer le breakpoint sur la ligne de l&rsquo;instruction <code>p.set_age(23);</code>.
-<a href="#R-image-4ce8102d1adb9f7b30eee4d846544444" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chap2-ex1-break.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-4ce8102d1adb9f7b30eee4d846544444"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chap2-ex1-break.png"></a></p>
+<a href="#R-image-cad5acccab5c1a430881f6d093ac4f7c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chap2-ex1-break.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-cad5acccab5c1a430881f6d093ac4f7c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chap2-ex1-break.png"></a></p>
 
         </div>
     </div>
@@ -507,7 +507,7 @@ Par conséquent, il est fortement recommandé de se <strong>relire systématique
             <li><a class="padding" href="https://github.com/marsault/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt git des sujets de TPs</a></li>
             <li><a class="padding" href="../../help/slides/index.html"><i class='far fa-file-powerpoint'></i> Planches du CM</a></li>
             <li><a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a></li>
-            <li><a class="padding" href="https://www-monge.univ-eiffel.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> (Copie locale de) CPP-Ref</a></li>
+            <li><a class="padding" href="https://monge.univ-eiffel.fr/~marsault/cpp/ref/en/"><i class='fas fa-passport'></i> (Copie locale de) CPP-Ref</a></li>
           </ul>
         </div>
         <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
@@ -560,9 +560,9 @@ Par conséquent, il est fortement recommandé de se <strong>relire systématique
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768488233" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768488233" defer></script>
-    <script src="../../js/theme.js?1768488233" defer></script>
+    <script src="../../js/clipboard.min.js?1768505497" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768505497" defer></script>
+    <script src="../../js/theme.js?1768505497" defer></script>
 
 
 
