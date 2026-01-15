@@ -14,7 +14,7 @@ par un lien direct depuis ce site (exercices du cours); sur ce dépot git pour l
     <meta name="twitter:description" content="Voici le workflow général que nous suivrons pour faire les exercices.
 Récupérer les sources Les sources se récupèrent soit:
 par un lien direct depuis ce site (exercices du cours); sur ce dépot git pour les TPs; directement sur votre machine (dans $HOME/SUJET) pour les TPs notés. Configurer avec CMake S’il n’est pas fourni, écrire un CMakeLists.txt cmake_minimum_required(VERSION 3.16) project(my_project) # ^^^^^^^^^^ nom du projet (ne pas mettre d&#39;espace) # vvvvvvvvvvvvv Nom de l&#39;executable add_executable(my_executable my_file1.">
-    <meta property="og:url" content="/help/worflow/index.html">
+    <meta property="og:url" content="/help/workflow/index.html">
     <meta property="og:site_name" content="C&#43;&#43;::">
     <meta property="og:title" content="C&#43;&#43;::   Workflow">
     <meta property="og:description" content="Voici le workflow général que nous suivrons pour faire les exercices.
@@ -27,18 +27,18 @@ par un lien direct depuis ce site (exercices du cours); sur ce dépot git pour l
     <meta itemprop="description" content="Voici le workflow général que nous suivrons pour faire les exercices.
 Récupérer les sources Les sources se récupèrent soit:
 par un lien direct depuis ce site (exercices du cours); sur ce dépot git pour les TPs; directement sur votre machine (dans $HOME/SUJET) pour les TPs notés. Configurer avec CMake S’il n’est pas fourni, écrire un CMakeLists.txt cmake_minimum_required(VERSION 3.16) project(my_project) # ^^^^^^^^^^ nom du projet (ne pas mettre d&#39;espace) # vvvvvvvvvvvvv Nom de l&#39;executable add_executable(my_executable my_file1.">
-    <meta itemprop="wordCount" content="372">
+    <meta itemprop="wordCount" content="379">
     <title>C&#43;&#43;::   Workflow</title>
-    <link href="../../css/fontawesome-all.min.css?1768463168" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768463168" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768463168" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768463168" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768463168" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768463168" rel="stylesheet">
-    <link href="../../css/fonts.css?1768463168" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768463168" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768463168" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768463168" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768463168" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768463168" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768463168"></script>
+    <link href="../../css/fontawesome-all.min.css?1768465552" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768465552" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768465552" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768465552" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768465552" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768465552" rel="stylesheet">
+    <link href="../../css/fonts.css?1768465552" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768465552" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768465552" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768465552" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768465552" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768465552" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768465552"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -59,7 +59,7 @@ par un lien direct depuis ce site (exercices du cours); sur ce dépot git pour l
       window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../help/worflow/index.html">
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../help/workflow/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -160,14 +160,17 @@ par un lien direct depuis ce site (exercices du cours); sur ce dépot git pour l
 </span></span><span class="line"><span class="cl">    cmake ..    <span class="c1"># lancer CMake sur le répertoire `..` où se trouve donc le `CMakeLists.txt`</span></span></span></code></pre></div>
 <h3 id="compiler">Compiler</h3>
 <h4 id="sans-cmake-non-recommandé">Sans CMake (non recommandé)</h4>
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">    g++ fichier1.cpp fichier2.cpp -o nom_de_lexecutable</span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">    g++ fichier1.cpp fichier2.cpp -o my_executable</span></span></code></pre></div>
 <h4 id="avec-cmake">Avec CMake</h4>
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">    make  <span class="c1"># Compile toutes les cibles</span>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Depuis le répertoire `build`</span>
+</span></span><span class="line"><span class="cl">    make  <span class="c1"># Compile toutes les cibles</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># ou</span>
 </span></span><span class="line"><span class="cl">    make my_executable <span class="c1"># Compile uniquement l&#39;executable my_executable</span></span></span></code></pre></div>
 <h3 id="exécuter">Exécuter</h3>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Depuis le répertoire `build` avec CMake</span>
+</span></span><span class="line"><span class="cl">    ./my_executable</span></span></code></pre></div>
 <h3 id="pour-les-tp-notés-et-les-tps-de-révisions">Pour les TP notés (et les TPs de révisions)</h3>
-<h4 id="lancer-les-tests-tps-de-révisions-ou-tp-notés">Lancer les tests (TPs de révisions ou TP notés)</h4>
+<h4 id="lancer-les-tests">Lancer les tests</h4>
 <p>Le script <code>run_tests.sh</code> compile et éxécute les tests</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Se placer dans le répertoire build</span>
 </span></span><span class="line"><span class="cl">    ...
@@ -227,7 +230,7 @@ par un lien direct depuis ce site (exercices du cours); sur ce dépot git pour l
             <li class="" data-nav-id="/help/comon-mistakes/index.html"><a class="padding" href="../../help/comon-mistakes/index.html"><span class="presection-icon">🤕</span>Erreur incompréhensible<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/help/lexicon/index.html"><a class="padding" href="../../help/lexicon/index.html"><span class="presection-icon">📑</span>Lexique<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/help/slides/index.html"><a class="padding" href="../../help/slides/index.html"><span class="presection-icon">🎦</span>Planches du CM<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active " data-nav-id="/help/worflow/index.html"><a class="padding" href="../../help/worflow/index.html"><span class="presection-icon">🌊</span>Workflow<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="active " data-nav-id="/help/workflow/index.html"><a class="padding" href="../../help/workflow/index.html"><span class="presection-icon">🌊</span>Workflow<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
           </ul>
         </div>
         <div id="R-shortcuts">
@@ -251,7 +254,7 @@ par un lien direct depuis ce site (exercices du cours); sur ce dépot git pour l
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Langue</label>
                     <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
-                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../help/worflow/index.html" lang="fr" selected>Français</option>
+                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../help/workflow/index.html" lang="fr" selected>Français</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -289,9 +292,9 @@ par un lien direct depuis ce site (exercices du cours); sur ce dépot git pour l
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768463168" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768463168" defer></script>
-    <script src="../../js/theme.js?1768463168" defer></script>
+    <script src="../../js/clipboard.min.js?1768465552" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768465552" defer></script>
+    <script src="../../js/theme.js?1768465552" defer></script>
 
 
 
@@ -309,7 +312,7 @@ par un lien direct depuis ce site (exercices du cours); sur ce dépot git pour l
             onchange="updateQuestionFormSubject()" />
         <textarea name="question" rows="7" cols="30" placeholder="Mon message..."></textarea>
         <input type="hidden" name="selection" />
-        <input type="hidden" name="page" value="/help/worflow/" />
+        <input type="hidden" name="page" value="/help/workflow/" />
 
         <input type="hidden" name="_replyto" />
         <input type="hidden" name="_subject" />

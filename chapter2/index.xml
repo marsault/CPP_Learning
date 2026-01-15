@@ -19,14 +19,14 @@
       <link>/chapter2/2-first-class/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter2/2-first-class/index.html</guid>
-      <description>C’est parti pour la pratique ! Vous allez ici apprendre à définir une classe en C++ et à l’instancier.&#xA;Commencez par ouvrir le dépôt d’exercices dans VSCode.&#xA;Méthodologie Ouvrez le fichier chap-02/1-first_class.cpp, dans lequel on vous fournit le code de la fonction main.&#xA;int main() { // Person p; // p.set_name(&#34;Batman&#34;); // p.set_age(23); // std::cout &lt;&lt; &#34;Person named &#39;&#34; &lt;&lt; p.get_name() &lt;&lt; &#34;&#39; is &#34; &lt;&lt; p.get_age() &lt;&lt; &#34; years old.</description>
+      <description>C’est parti pour la pratique ! Vous allez ici apprendre à définir une classe en C++ et à l’instancier.&#xA;Méthodologie Téléchargez et ouvrez le fichier 2-first-class.cpp, dans lequel on vous fournit le code de la fonction main.&#xA;int main() { // Person p; // p.set_name(&#34;Batman&#34;); // p.set_age(23); // std::cout &lt;&lt; &#34;Person named &#39;&#34; &lt;&lt; p.get_name() &lt;&lt; &#34;&#39; is &#34; &lt;&lt; p.get_age() &lt;&lt; &#34; years old.&#34; &lt;&lt; std::endl; return 0; } Vous allez procéder ici en suivant plus ou moins la méthodologie Test Driven Development (ou TDD), qui consiste à écrire le code des tests avant d’écrire le code appelé.</description>
     </item>
     <item>
       <title>Constructeur</title>
       <link>/chapter2/3-constructor/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter2/3-constructor/index.html</guid>
-      <description>Dans cet exercice, vous apprendrez à paramétrer la construction de vos objets.&#xA;Constructeur à paramètres Ouvrez le fichier chap-02/2-constructor.cpp. Il contient une correction de l’exercice précédent.&#xA;Vous aviez implémenté une fonction-membre set_name dans la classe Person pour initialiser l’attribut _name. Or, ce serait bien d’une part de réellement pouvoir initialiser cet attribut plutôt que de le modifier après l’instanciation, et d’autre part, de supprimer ce setter, afin qu’une fois initialisé, il ne soit plus possible de modifier _name.</description>
+      <description>Dans cet exercice, vous apprendrez à paramétrer la construction de vos objets.&#xA;Constructeur à paramètres Téléchargez et ouvrez le fichier 3-constructor.cpp. Il contient une correction de l’exercice précédent.&#xA;Vous aviez implémenté une fonction-membre set_name dans la classe Person pour initialiser l’attribut _name. Or, ce serait bien d’une part de réellement pouvoir initialiser cet attribut plutôt que de le modifier après l’instanciation, et d’autre part, de supprimer ce setter, afin qu’une fois initialisé, il ne soit plus possible de modifier _name.</description>
     </item>
     <item>
       <title>Destructeur</title>
@@ -40,7 +40,7 @@
       <link>/chapter2/5-modules/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter2/5-modules/index.html</guid>
-      <description>Cet exercice vous permettra de découvrir :&#xA;comment écrire des headers en C++, comment extraire l’implémentation des fonctions d’une classe en dehors de cette classe, à quoi correspondent les membres statiques d’une classe et comment les définir, comment déléguer un appel à un autre constructeur. Séparer l’implémentation des fonctions-membres Ouvrez le dossier chap-02/4-modules. Celui-ci est composé de 3 fichiers :&#xA;main.cpp, qui contient une fonction main déjà écrite Rectangle.h, qui contient une classe Rectangle, Rectangle.</description>
+      <description>Cet exercice vous permettra de découvrir :&#xA;comment écrire des headers en C++, comment extraire l’implémentation des fonctions d’une classe en dehors de cette classe, à quoi correspondent les membres statiques d’une classe et comment les définir, comment déléguer un appel à un autre constructeur. Séparer l’implémentation des fonctions-membres Téléchargez cette archive et la décompresser. Elle contient un dossier 5-modules et placer vous dedans. Il avec 3 fichiers :&#xA;main.cpp, qui contient une fonction main déjà écrite Rectangle.</description>
     </item>
     <item>
       <title>Opérateurs</title>

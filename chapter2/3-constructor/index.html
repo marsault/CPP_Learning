@@ -6,39 +6,39 @@
     <meta name="generator" content="Hugo 0.128.0">
     <meta name="generator" content="Relearn 7.0.1+72a875f1db967152c77914cff4d53f8fcee0e619">
     <meta name="description" content="Dans cet exercice, vous apprendrez à paramétrer la construction de vos objets.
-Constructeur à paramètres Ouvrez le fichier chap-02/2-constructor.cpp. Il contient une correction de l’exercice précédent.
+Constructeur à paramètres Téléchargez et ouvrez le fichier 3-constructor.cpp. Il contient une correction de l’exercice précédent.
 Vous aviez implémenté une fonction-membre set_name dans la classe Person pour initialiser l’attribut _name. Or, ce serait bien d’une part de réellement pouvoir initialiser cet attribut plutôt que de le modifier après l’instanciation, et d’autre part, de supprimer ce setter, afin qu’une fois initialisé, il ne soit plus possible de modifier _name.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="C&#43;&#43;::   Constructeur">
     <meta name="twitter:description" content="Dans cet exercice, vous apprendrez à paramétrer la construction de vos objets.
-Constructeur à paramètres Ouvrez le fichier chap-02/2-constructor.cpp. Il contient une correction de l’exercice précédent.
+Constructeur à paramètres Téléchargez et ouvrez le fichier 3-constructor.cpp. Il contient une correction de l’exercice précédent.
 Vous aviez implémenté une fonction-membre set_name dans la classe Person pour initialiser l’attribut _name. Or, ce serait bien d’une part de réellement pouvoir initialiser cet attribut plutôt que de le modifier après l’instanciation, et d’autre part, de supprimer ce setter, afin qu’une fois initialisé, il ne soit plus possible de modifier _name.">
     <meta property="og:url" content="/chapter2/3-constructor/index.html">
     <meta property="og:site_name" content="C&#43;&#43;::">
     <meta property="og:title" content="C&#43;&#43;::   Constructeur">
     <meta property="og:description" content="Dans cet exercice, vous apprendrez à paramétrer la construction de vos objets.
-Constructeur à paramètres Ouvrez le fichier chap-02/2-constructor.cpp. Il contient une correction de l’exercice précédent.
+Constructeur à paramètres Téléchargez et ouvrez le fichier 3-constructor.cpp. Il contient une correction de l’exercice précédent.
 Vous aviez implémenté une fonction-membre set_name dans la classe Person pour initialiser l’attribut _name. Or, ce serait bien d’une part de réellement pouvoir initialiser cet attribut plutôt que de le modifier après l’instanciation, et d’autre part, de supprimer ce setter, afin qu’une fois initialisé, il ne soit plus possible de modifier _name.">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Classes">
     <meta itemprop="name" content="C&#43;&#43;::   Constructeur">
     <meta itemprop="description" content="Dans cet exercice, vous apprendrez à paramétrer la construction de vos objets.
-Constructeur à paramètres Ouvrez le fichier chap-02/2-constructor.cpp. Il contient une correction de l’exercice précédent.
+Constructeur à paramètres Téléchargez et ouvrez le fichier 3-constructor.cpp. Il contient une correction de l’exercice précédent.
 Vous aviez implémenté une fonction-membre set_name dans la classe Person pour initialiser l’attribut _name. Or, ce serait bien d’une part de réellement pouvoir initialiser cet attribut plutôt que de le modifier après l’instanciation, et d’autre part, de supprimer ce setter, afin qu’une fois initialisé, il ne soit plus possible de modifier _name.">
-    <meta itemprop="wordCount" content="1661">
+    <meta itemprop="wordCount" content="1663">
     <title>C&#43;&#43;::   Constructeur</title>
-    <link href="../../css/fontawesome-all.min.css?1768463168" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768463168" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768463168" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768463168" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768463168" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768463168" rel="stylesheet">
-    <link href="../../css/fonts.css?1768463168" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768463168" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768463168" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768463168" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768463168" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768463168" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768463168"></script>
+    <link href="../../css/fontawesome-all.min.css?1768465552" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768465552" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768465552" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768465552" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768465552" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768465552" rel="stylesheet">
+    <link href="../../css/fonts.css?1768465552" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768465552" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768465552" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768465552" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768465552" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768465552" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768465552"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -121,7 +121,7 @@ Vous aviez implémenté une fonction-membre set_name dans la classe Person pour 
 <p>Dans cet exercice, vous apprendrez à paramétrer la construction de vos objets.</p>
 <hr>
 <h3 id="constructeur-à-paramètres">Constructeur à paramètres</h3>
-<p>Ouvrez le fichier <code>chap-02/2-constructor.cpp</code>. Il contient une correction de l&rsquo;exercice précédent.</p>
+<p>Téléchargez et ouvrez le fichier <a href="chapter2/3-constructor.cpp"><code>3-constructor.cpp</code></a>. Il contient une correction de l&rsquo;exercice précédent.</p>
 <p>Vous aviez implémenté une fonction-membre <code>set_name</code> dans la classe <code>Person</code> pour initialiser l&rsquo;attribut <code>_name</code>. Or, ce serait bien d&rsquo;une part de réellement pouvoir initialiser cet attribut plutôt que de le modifier après l&rsquo;instanciation, et d&rsquo;autre part, de supprimer ce <strong>setter</strong>, afin qu&rsquo;une fois initialisé, il ne soit plus possible de modifier <code>_name</code>.</p>
 <p>Pour faire cela, il va falloir que vous définissiez une fonction spéciale appelée <strong>constructeur</strong>.
 Voici la syntaxe générique d&rsquo;un constructeur :</p>
@@ -511,9 +511,9 @@ Vous pouvez très bien implémenter vous-même un constructeur par défaut, et l
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768463168" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768463168" defer></script>
-    <script src="../../js/theme.js?1768463168" defer></script>
+    <script src="../../js/clipboard.min.js?1768465552" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768465552" defer></script>
+    <script src="../../js/theme.js?1768465552" defer></script>
 
 
 

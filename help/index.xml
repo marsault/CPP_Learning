@@ -30,9 +30,9 @@
     </item>
     <item>
       <title>Workflow</title>
-      <link>/help/worflow/index.html</link>
+      <link>/help/workflow/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/help/worflow/index.html</guid>
+      <guid>/help/workflow/index.html</guid>
       <description>Voici le workflow général que nous suivrons pour faire les exercices.&#xA;Récupérer les sources Les sources se récupèrent soit:&#xA;par un lien direct depuis ce site (exercices du cours); sur ce dépot git pour les TPs; directement sur votre machine (dans $HOME/SUJET) pour les TPs notés. Configurer avec CMake S’il n’est pas fourni, écrire un CMakeLists.txt cmake_minimum_required(VERSION 3.16) project(my_project) # ^^^^^^^^^^ nom du projet (ne pas mettre d&#39;espace) # vvvvvvvvvvvvv Nom de l&#39;executable add_executable(my_executable my_file1.</description>
     </item>
   </channel>
