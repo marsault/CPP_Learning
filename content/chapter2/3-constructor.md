@@ -10,7 +10,7 @@ Dans cet exercice, vous apprendrez à paramétrer la construction de vos objets.
 
 ### Constructeur à paramètres
 
-Téléchargez et ouvrez le fichier [`3-constructor.cpp`](chapter2/3-constructor.cpp). Il contient une correction de l'exercice précédent.
+Téléchargez et ouvrez le fichier [`3-constructor.cpp`](/chapter2/3-constructor.cpp). Il contient une correction de l'exercice précédent.
 
 Vous aviez implémenté une fonction-membre `set_name` dans la classe `Person` pour initialiser l'attribut `_name`. Or, ce serait bien d'une part de réellement pouvoir initialiser cet attribut plutôt que de le modifier après l'instanciation, et d'autre part, de supprimer ce **setter**, afin qu'une fois initialisé, il ne soit plus possible de modifier `_name`.
 
