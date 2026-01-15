@@ -131,7 +131,7 @@ int main()
 Vous devriez maintenant pouvoir compiler le programme sans souci. Exécutez-le et vérifiez que vous obtenez bien un résultat similaire à celui-ci :
 ```b
 Hello World!
-The program '[2288] 1-hello_world.exe' has exited with code 0 (0x0).
+The program '[2288] 1-hello_world' has exited with code 0 (0x0).
 ```
 
 Par ailleurs, sachez qu'il est possible de chaîner l'opérateur `<<` et de lui fournir d'autres éléments que des chaînes de caractères. \

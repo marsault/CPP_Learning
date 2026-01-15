@@ -33,8 +33,8 @@ Testez maintenant que tout fonctionne en suivant les étapes ci-dessous.
 2. Ouvrez une fenêtre Powershell dans le répertoire contenant le fichier (vous pouvez utiliser `Shift + Clic Droit` depuis l'explorateur de fichiers pour faire apparaître l'option dans le menu contextuel).
 ![](/images/chapter0/powershell.png)
 3. Exécutez la commande `g++ .\helloworld.cpp -o hello`\
-Un fichier `hello.exe` devrait avoir été généré.
-4. Exécutez `.\hello.exe`.
+Un fichier `hello` devrait avoir été généré.
+4. Exécutez `.\hello`.
 Le programme devrait vous répondre `"Hello!"`.
 
 ---
