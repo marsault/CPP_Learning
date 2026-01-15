@@ -27,18 +27,18 @@ int main() { // Person p; // p.set_name(&#34;Batman&#34;); // p.set_age(23); // 
     <meta itemprop="description" content="C’est parti pour la pratique ! Vous allez ici apprendre à définir une classe en C&#43;&#43; et à l’instancier.
 Méthodologie Téléchargez et ouvrez le fichier 2-first-class.cpp, dans lequel on vous fournit le code de la fonction main.
 int main() { // Person p; // p.set_name(&#34;Batman&#34;); // p.set_age(23); // std::cout &lt;&lt; &#34;Person named &#39;&#34; &lt;&lt; p.get_name() &lt;&lt; &#34;&#39; is &#34; &lt;&lt; p.get_age() &lt;&lt; &#34; years old.&#34; &lt;&lt; std::endl; return 0; } Vous allez procéder ici en suivant plus ou moins la méthodologie Test Driven Development (ou TDD), qui consiste à écrire le code des tests avant d’écrire le code appelé.">
-    <meta itemprop="wordCount" content="1673">
+    <meta itemprop="wordCount" content="997">
     <title>C&#43;&#43;::   Première classe</title>
-    <link href="../../css/fontawesome-all.min.css?1768505563" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768505563" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768505563" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768505563" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768505563" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768505563" rel="stylesheet">
-    <link href="../../css/fonts.css?1768505563" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768505563" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768505563" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768505563" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768505563" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768505563" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768505563"></script>
+    <link href="../../css/fontawesome-all.min.css?1768509785" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768509785" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768509785" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768509785" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768509785" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768509785" rel="stylesheet">
+    <link href="../../css/fonts.css?1768509785" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768509785" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768509785" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768509785" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768509785" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768509785" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768509785"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -261,44 +261,6 @@ En revanche, <code>set_name</code> doit être publique, car on l&rsquo;utilise d
 </div>
 
 <hr>
-<p><strong>Comment s&rsquo;assurer que le code est juste, sachant que la ligne qui affiche le résultat est toujours commentée ?</strong></p>
-<p>C&rsquo;est la raison pour laquelle je vous ai demandé d&rsquo;installer un vrai IDE. Nous allons voir comment inspecter les valeurs du programme au cours de l&rsquo;exécution à l&rsquo;aide du débuggeur.</p>
-<p>Pour commencer, il faut recompiler le programme en ajoutant l&rsquo;option <code>-g</code>.<br>
-Cette option sert à ajouter les <strong>symboles de debug</strong> à l&rsquo;intérieur des fichiers produits par la compilation.</p>
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">g</span><span class="nb">++</span><span class="c"> </span><span class="nb">-</span><span class="c">g </span><span class="nb">-</span><span class="c">std=c</span><span class="nb">++</span><span class="c">17 </span><span class="nb">-</span><span class="c">o 2</span><span class="nb">-</span><span class="c">first</span><span class="nb">-</span><span class="c">class 2</span><span class="nb">-</span><span class="c">first</span><span class="nb">-</span><span class="c">class</span><span class="nt">.</span><span class="c">cpp</span></span></span></code></pre></div>
-<p>Ensuite, pour pouvoir lancer le programme depuis VSCode, vous devez configurer le fichier <code>.vscode/launch.json</code>.<br>
-Si ce n&rsquo;est pas encore fait, rendez vous sur <a href="../../chapter0/6-tips/2-vscode/#configuration-du-fichier-launchjson">cette section</a>, et remplacez bien le paramètre <code>program</code> par le chemin de l&rsquo;exécutable.
-Par exemple, si vous avez suivi la correction, vous pouvez indiquer :</p>
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;program&#34;</span><span class="err">:</span> <span class="s2">&#34;${workspaceFolder}/chap-02/2-first-class&#34;</span><span class="err">,</span></span></span></code></pre></div>
-<p>Une fois l&rsquo;environnement correctement configuré, il faut ajouter un <strong>breakpoint</strong>, c&rsquo;est-à-dire un point d&rsquo;arrêt : cela permet au programme de se mettre en pause, juste avant l&rsquo;exécution d&rsquo;une instruction particulière.</p>
-<p>Par défaut, VSCode propose des raccourcis clavier pour les différentes fonctions du débuggeur. Les plus utiles sont :</p>
-<ul>
-<li><strong>F5</strong> pour lancer ou reprendre l&rsquo;exécution du programme (il se mettra en pause lorsqu&rsquo;il atteindra un prochain point d&rsquo;arrêt),</li>
-<li><strong>F9</strong> pour ajouter ou supprimer un point d&rsquo;arrêt à la ligne actuelle,</li>
-<li><strong>F10</strong> pour passer à l&rsquo;instruction suivante (étape par étape), sans descendre dans les fonctions,</li>
-<li><strong>F11</strong> pour passer à l&rsquo;instruction suivante en descendant dans les fonctions si nécessaire,</li>
-<li><strong>Shift + F11</strong> pour remonter dans la fonction appelante.</li>
-</ul>
-<p>Ici, vous allez placer un breakpoint sur l&rsquo;instruction <code>return 0;</code> du <code>main</code>.
-Pour cela, placez votre curseur sur la ligne en question et appuyez sur F9. Vous pouvez aussi cliquer directement à gauche du numéro de ligne.
-<a href="#R-image-c4d448e34ec5f50da935458cb39de101" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-breakpoint.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c4d448e34ec5f50da935458cb39de101"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-breakpoint.png"></a></p>
-<p>Utilisez ensuite F5 pour lancer le programme.
-L&rsquo;éditeur devrait prendre cette apparence, indiquant que le programme est en pause juste avant l&rsquo;exécution de l&rsquo;instruction surlignée :
-<a href="#R-image-0f4b4627f2c4af7ec5e9f33041c330ff" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-breaking.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-0f4b4627f2c4af7ec5e9f33041c330ff"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-breaking.png"></a></p>
-<p>Ouvrez maintenant le panneau d&rsquo;exécution en allant dans <code>View &gt; Run</code>.
-<a href="#R-image-4177a8cc087907a2fcd56bf912921ddf" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/vscode-locals.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-4177a8cc087907a2fcd56bf912921ddf"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/vscode-locals.png"></a></p>
-<p>Ce panneau contient 3 sections :</p>
-<ul>
-<li>La section <strong>Variables</strong>, dans laquelle vous pouvez voir le contenu de chacune des variables locales à votre fonction.</li>
-<li>La section <strong>Watch</strong>, qui vous permet d&rsquo;entrer des expressions pour en récupérer le contenu. Vous pouvez par exemple entrer <code>8 + 3 * 5</code> pour obtenir le résultat du calcul, ou <code>p._name</code> pour obtenir la valeur de l&rsquo;attribut <code>_name</code> de <code>p</code>, ou encore <code>&amp;p</code> pour récupérer l&rsquo;adresse de <code>p</code>.</li>
-<li>La section <strong>Call Stack</strong>, qui vous permet de suivre la trace des appels de fonctions, et de vous positionner à un point spécifique de la pile d&rsquo;appels. Ce n&rsquo;est pas très intéressant ici, vu qu&rsquo;on n&rsquo;a que le <code>main</code>, mais nous y reviendrons.</li>
-</ul>
-<p>Dans la section des <strong>Variables</strong>, si vous pouvez constater comme sur le screenshot que <code>p._name</code> vaut bien <code>&quot;Batman&quot;</code>, alors c&rsquo;est que votre code est correct.</p>
-<p>Appuyez ensuite sur F5 pour reprendre l&rsquo;exécution du programme.</p>
-<hr>
 <h3 id="modification-dun-attribut">Modification d&rsquo;un attribut</h3>
 <p>Décommentez l&rsquo;instruction faisant l&rsquo;appel à <code>set_age</code>, et définissez la fonction ainsi que l&rsquo;attribut correspondants.<br>
 Quel type avez-vous utilisé pour l&rsquo;âge de Batman ?</p>
@@ -329,7 +291,7 @@ Quel type avez-vous utilisé pour l&rsquo;âge de Batman ?</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Person</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">set_name</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="n">_name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">set_name</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="n">_name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">set_age</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span> <span class="p">{</span> <span class="n">_age</span> <span class="o">=</span> <span class="n">age</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
@@ -342,7 +304,7 @@ Quel type avez-vous utilisé pour l&rsquo;âge de Batman ?</p>
 
 </div>
 
-<p>Testez à nouveau votre code avec le débuggeur. En plus du breakpoint final, ajoutez un breakpoint supplémentaire de manière à vous arrêter juste après l&rsquo;exécution du <code>set_name</code> et juste avant l&rsquo;exécution du <code>set_age</code>.</p>
+<p>Il y a un problème dans le code solution donné juste au dessus. Trouvez-le et corrigez-le.</p>
 
 <div class="hidden-solution">
 
@@ -356,16 +318,38 @@ Quel type avez-vous utilisé pour l&rsquo;âge de Batman ?</p>
         </button>
 
         <div class="hidden-solution-content">
-            <p>Pour s&rsquo;arrêter au bon endroit, il faut placer le breakpoint sur la ligne de l&rsquo;instruction <code>p.set_age(23);</code>.
-<a href="#R-image-ddd0662b5b51e9933de67f9cd2b064ea" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chap2-ex1-break.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ddd0662b5b51e9933de67f9cd2b064ea"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chap2-ex1-break.png"></a></p>
+            <p>Aucune valeur par défaut n&rsquo;est donné à l&rsquo;attribut <code>_age</code>, dont le type est fondamental.
+Donc quand on construit un nouveau <code>Person</code>, cet attribut ne sera pas initialisé et il contiendra n&rsquo;importe quoi.<br>
+C&rsquo;est ce qu&rsquo;il ce passe dans le code ci-dessous.  Quand on aura fait fonctionner la ligne surlignée, elle affichera n&rsquo;importe quoi</p>
+<div class="highlight wrap-code" hl_lines=[['\a' '\a']]><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Person</span> <span class="n">p</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">p</span><span class="p">.</span><span class="n">set_name</span><span class="p">(</span><span class="s">&#34;Batman&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// p.set_age(23);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line hl"><span class="cl">    <span class="c1">// std::cout &lt;&lt; &#34;Person named &#39;&#34; &lt;&lt; p.get_name() &lt;&lt; &#34;&#39; is &#34; &lt;&lt; p.get_age() &lt;&lt; &#34; years old.&#34; &lt;&lt; std::endl;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<p>Il faut donc corriger la classe <code>Person</code> comme suit:</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Person</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">set_name</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="n">_name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">set_age</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span> <span class="p">{</span> <span class="n">_age</span> <span class="o">=</span> <span class="n">age</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span>  <span class="n">_name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">_age</span> <span class="o">=</span> <span class="mi">0u</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div>
 
         </div>
     </div>
 
 </div>
 
-<p>Si vous inspectez la valeur de <code>p._age</code> avant l&rsquo;exécution de <code>set_age</code>, il est possible que celle-ci soit complètement aléatoire. Eh oui, de la même manière que les variables locales de types fondamentaux, il faut également initialiser les attributs de types fondamentaux de vos classes. Faites les changements nécessaires pour que l&rsquo;âge de Batman vaille 0 tant que celui-ci n&rsquo;a pas été modifié. Testez à nouveau.</p>
+<p>Pourquoi le même problème ne se pose pas pour l&rsquo;autre attribut?</p>
 
 <div class="hidden-solution">
 
@@ -379,17 +363,7 @@ Quel type avez-vous utilisé pour l&rsquo;âge de Batman ?</p>
         </button>
 
         <div class="hidden-solution-content">
-            <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span>  <span class="n">_name</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">_age</span> <span class="o">=</span> <span class="mi">0u</span><span class="p">;</span></span></span></code></pre></div>
-<div class="box notices cstyle info">
-  <div class="box-label">
-    <i class="fa-fw fas fa-info-circle"></i> Information
-  </div>
-  <div class="box-content">
-<p><code>0u</code> permet de faire référence au <code>0</code> entier non-signé. Cela n&rsquo;a pas beaucoup d&rsquo;importance ici, puisque <code>_age</code> est explicitement typé, mais si on écrivait dans une fonction <code>auto v = 0u;</code> alors <code>v</code> serait de type <code>unsigned int</code> plutôt que de type <code>int</code>.</p>
-  </div>
-</div>
+            <p>Parce que <code>std::string</code> est une classe et est donc toujours instanciée.</p>
 
         </div>
     </div>
@@ -560,9 +534,9 @@ Par conséquent, il est fortement recommandé de se <strong>relire systématique
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768505563" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768505563" defer></script>
-    <script src="../../js/theme.js?1768505563" defer></script>
+    <script src="../../js/clipboard.min.js?1768509785" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768509785" defer></script>
+    <script src="../../js/theme.js?1768509785" defer></script>
 
 
 

@@ -98,12 +98,5 @@
       <guid>/old-2223-chapter8-exceptions-assert/index.html</guid>
       <description>Dans ce court chapitre, nous allons présenter deux mécanismes permettant traiter les erreurs dans un programme : les assertions et les exceptions.</description>
     </item>
-    <item>
-      <title>FAQ</title>
-      <link>/faq/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/faq/index.html</guid>
-      <description>Pourquoi je n’arrive pas à lancer mon projet avec CMake ? Cela peut-être dû à plusieurs raisons :&#xA;1. Vous n’avez pas ouvert le bon dossier dans VSCode. Il faut toujours ouvrir le dossier qui contient tous les chapitres et tous les TPs, pas le dossier d’un chapitre ou d’un TP en particulier.&#xA;2. Vous avez essayé de lancer le programme via le menu Run de VSCode. Si vous tentez de lancer un programme de cette manière, VSCode va générer un fichier launch.</description>
-    </item>
   </channel>
 </rss>
