@@ -23,18 +23,18 @@ Classe Classe abstraite: classe qui contient au moins une fonction-membre virtue
     <meta itemprop="name" content="C&#43;&#43;::   Lexique">
     <meta itemprop="description" content="En construction Cette page est en construction. N’hésitez pas à suggérer des ajouts ou signaler ce qui vous semble faux ou étrange.
 Classe Classe abstraite: classe qui contient au moins une fonction-membre virtuelle pure; elle n’est donc pas instanciable. Classe concrète: classe qui n’est pas abstraite. Classe instanciable: classe dont on peut construire des instances, c’est-à-dire qui n’est donc pas abstraite et qui possède au moins un constructeur publique. Classe copiable: classe qui possède un constructeur de copie (publique).">
-    <meta itemprop="wordCount" content="631">
+    <meta itemprop="wordCount" content="1029">
     <title>C&#43;&#43;::   Lexique</title>
-    <link href="../../css/fontawesome-all.min.css?1768509696" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768509696" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768509696" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768509696" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768509696" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768509696" rel="stylesheet">
-    <link href="../../css/fonts.css?1768509696" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768509696" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768509696" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768509696" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768509696" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768509696" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768509696"></script>
+    <link href="../../css/fontawesome-all.min.css?1768556347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768556347" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768556347" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768556347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768556347" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768556347" rel="stylesheet">
+    <link href="../../css/fonts.css?1768556347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768556347" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768556347" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768556347" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768556347" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768556347" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768556347"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -73,9 +73,9 @@ Classe Classe abstraite: classe qui contient au moins une fonction-membre virtue
       <ul>
         <li><a href="#classe">Classe</a></li>
         <li><a href="#vie-dun-objet">Vie d&rsquo;un objet</a></li>
-        <li><a href="#fonction">Fonction</a></li>
+        <li><a href="#fonctions">Fonctions</a></li>
         <li><a href="#statique-vs-dynamique">Statique vs Dynamique</a></li>
-        <li><a href="#types-standard">Types standard</a></li>
+        <li><a href="#types">Types</a></li>
       </ul>
     </li>
   </ul>
@@ -131,18 +131,19 @@ Classe Classe abstraite: classe qui contient au moins une fonction-membre virtue
 <li>Classe <strong>déplaçable</strong>: classe qui possède un constructeur de déplacement (publique).</li>
 <li>Classe <strong><em>default-constructible</em></strong>: classe qui possède un constructeur par défaut (publique).</li>
 <li>Classe <strong>stable en mémoire</strong>: classe dont les données ne risquent pas de changement d&rsquo;adresse mémoire.</li>
+<li>Classe <strong>polymorphe</strong>: fonction qui déclare ou hérite d&rsquo;au moins une fonction virtuelle.</li>
 </ul>
 <h3 id="vie-dun-objet">Vie d&rsquo;un objet</h3>
 <ul>
 <li><strong>Allocation</strong> d&rsquo;un objet: réservation d&rsquo;un segment de mémoire de la taille de l&rsquo;objet
 <ul>
-<li><del><code>malloc</code> permet d&rsquo;allouer de la mémoire</del>, mais on ne l&rsquo;utilisera pas.</li>
+<li><del><code>m</code><p></p><code>alloc</code> permet d&rsquo;allouer de la mémoire</del>, mais on ne l&rsquo;utilisera pas.</li>
 </ul>
 </li>
 <li><strong>Construction</strong> d&rsquo;un objet: appel d&rsquo;un des constructeurs de la classe, ce qui va commencer par appeler un constructeur pour chacun des attributs.</li>
 <li><strong>Instanciation</strong> d&rsquo;un objet: allocation+construction
 <ul>
-<li>Le mot-clef <code>new</code> permet d&rsquo;instancier un objet sur le tas</li>
+<li>Le mot-clef <code>new</code> permet d&rsquo;instancier un objet sur le tas.</li>
 </ul>
 </li>
 <li><strong>Désallocation</strong> d&rsquo;un objet: réservation d&rsquo;un segment de mémoire
@@ -158,46 +159,51 @@ Classe Classe abstraite: classe qui contient au moins une fonction-membre virtue
 </li>
 <li><strong>Désinstanciation</strong> d&rsquo;un objet:destruction+désallocation
 <ul>
-<li>Le mot-clef <code>delete</code> permet de désinstancier un objet sur le tas</li>
+<li>Le mot-clef <code>delete</code> permet de désinstancier un objet sur le tas.</li>
 </ul>
 </li>
-<li><strong>Affectation</strong> d&rsquo;un objet: remplir le contenu d&rsquo;un objet avec celui d&rsquo;un autre objet (en général du même type) grâce à un l&rsquo;operateur d&rsquo;affectation (<code>operator=</code>).
-<ul>
-<li>L&rsquo;affectation <strong>par copie</strong></li>
-<li>L&rsquo;affectation <strong>par déplacement</strong></li>
+<li><strong>Affectation</strong> d&rsquo;un objet (<em>assignment</em>): remplir le contenu d&rsquo;un objet~<code>d</code> à partir celui d&rsquo;un autre objet~<code>g</code> (en général du même type) grâce à un l&rsquo;operateur d&rsquo;affectation (<code>operator=</code>). <code>g</code> est à gauche du signe <code>=</code> et <code>d</code> est à droite.
+L&rsquo;affectation peut soit copier le contenu de <code>d</code> dans <code>g</code> (affectation <strong>par copie</strong>) ou déplacer le contenu de <code>d</code> dans <code>g</code> (affectation <strong>par déplacement</strong>).</li>
+<li><strong>Copie</strong> d&rsquo;un objet: construction d&rsquo;un nouvel objet en copiant le contenu d&rsquo;un autre objet.</li>
+<li><strong>Déplacement</strong> d&rsquo;un objet: construction d&rsquo;un nouvel objet en déplaçant le contenu d&rsquo;un autre objet dans le nouvel objet. On peut souvent forcer le déplacement d&rsquo;un objet avec <code>std::move</code>.</li>
 </ul>
-</li>
-</ul>
-<h3 id="fonction">Fonction</h3>
+<h3 id="fonctions">Fonctions</h3>
 <ul>
 <li>Fonction <strong>libre</strong>: fonction qui n&rsquo;est pas dans une classe.</li>
-<li><strong>Fonction-membre</strong>: fonction dans une classe.</li>
-<li>Fonction-membre <strong>virtuelle</strong>: fonction-membre qui peut-être redéfinie dans une classe dérivée.</li>
-<li>Fonction-membre <strong>virtuelle pure</strong>: fonction-membre virtuelle qui n&rsquo;a pas d&rsquo;implémentation du tout dans la classe de base.</li>
+<li><strong>Fonction-membre</strong> ou méthode: fonction dans une classe.</li>
+<li>Fonction-membre <strong>virtuelle</strong>: fonction-membre qui peut-être redéfinie dans une classe dérivée. Dès lors qu&rsquo;une fonction est virtuelle, la résolution d&rsquo;appel est dynamique.</li>
+<li>Fonction-membre <strong>virtuelle pure</strong>: fonction-membre virtuelle qui n&rsquo;a pas d&rsquo;implémentation du tout. Usuellement, on l&rsquo;implémente dans les classe filles.</li>
 <li><strong>Prototype</strong> d&rsquo;une fonction ou fonction-membre: informations données au compilateur lors de la <strong>déclaration</strong> d&rsquo;une fonction.</li>
-<li><strong>Signature</strong> d&rsquo;une fonction ou fonction-membre: la partie du prototype qui est prise en compte pour la surcharge. Notamment le type de retour ne fait pas partie de la signature mais l&rsquo;attribut <code>const</code> à droite d&rsquo;une fonction-membre en fait partie.  On peut pas avoir deux fonctions ou fonctions-membre avec la même signature.</li>
+<li><strong>Signature</strong> d&rsquo;une fonction ou fonction-membre: la partie du prototype qui est prise en compte pour la surcharge. Notamment le type de retour ne fait pas partie de la signature mais les qualificatifs (le <code>const</code> éventuel à droite d&rsquo;une fonction-membre) en fait partie.  On peut pas avoir deux fonctions ou fonctions avec la même signature.</li>
+<li><strong>Corps</strong> d&rsquo;une fonction: partie de la fonction entre <code>{}</code>.</li>
+<li><strong>Déclaration</strong> d&rsquo;une fonction: indication au compilateur de l&rsquo;existence d&rsquo;une fonction et de son prototype, sans corps. On peut déclarer plusieurs fois une fonction.</li>
+<li><strong>Définition</strong> d&rsquo;une fonction:  écriture du corps de la fonction. On ne peut pas définir deux fois une fonction.  On peut définir et déclarer une fonction en même temps, mais pour les fonction-membres ce doit être dans la déclaration de la classe.</li>
 </ul>
 <h3 id="statique-vs-dynamique">Statique vs Dynamique</h3>
 <table>
 <thead>
 <tr>
-<th><strong>Statique</strong> = au moment de l&rsquo;execution</th>
+<th><strong>Statique</strong> = au moment de la compilation</th>
 <th><strong>Dynamique</strong> = seulement au moment de l&rsquo;exécution</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Type statique</strong>: type déclaré dans le code</td>
-<td><strong>Type dynamique</strong>: type réel à l&rsquo;éxecution (ne peut pas toujours être connu)</td>
+<td><strong>Type statique</strong>: type d&rsquo;une variable tel que déclaré dans le code ou d&rsquo;une expression telle que calculé par le compilateur.</td>
+<td><strong>Type dynamique</strong>: type réel d&rsquo;un objet à l&rsquo;éxecution. Ne peut pas toujours être connu au moment de la compilation.</td>
 </tr>
 <tr>
-<td><strong>Appel statique</strong>: la fonction appelée est choisie au moment de la compilation (résolution de la surcharge)</td>
-<td><strong>Appel dynamique:</strong> la fonction appelée n&rsquo;est pas connue au moment de la compilation (typiquement une fonction virtuelle)</td>
+<td><strong>Appel statique</strong>: la fonction appelée est choisie au moment de la compilation.  Il y a un choix en cas de surcharge.  La résolution d&rsquo;un appel statique se fait à partir des types statiques des paramètres.</td>
+<td><strong>Appel dynamique:</strong> la fonction appelée n&rsquo;est pas connue au moment de la compilation. Il s&rsquo;agit toujours de l&rsquo;appel à une fonction-membre virtuelle <code>fct(..)</code> sur un objet <code>o</code>. La résolution d&rsquo;un appel dynamique se fait à partir du type dynamique de <code>o</code>.</td>
+</tr>
+<tr>
+<td><strong>Allocation sur la pile</strong>. Les variables locales sont allouées sur la pile et la taille pour stocker leur type doit donc être connue par le compilateur.</td>
+<td><strong>Allocation sur la tas</strong> ou allocation dynamique. Allocation via <code>new</code> <del>(ou <code>m</code><p></p><code>alloc</code> )</del> ou implicitement par l&rsquo;utilisation d&rsquo;un type de la bibliothèque standard (<code>std::vector&lt;MaClasse&gt;</code> alloue des <code>MaClasse</code> sur le tas). La taille du segment allouée peut être spécifié à l&rsquo;exécution.</td>
 </tr>
 </tbody>
 </table>
-<p>Attention le mot-clef <code>static</code> ne fait pas référence à l&rsquo;utilisation de l&rsquo;adjectif <em>statique</em>.</p>
-<h3 id="types-standard">Types standard</h3>
+<p>Attention le mot-clef <code>static</code> ne correspond pas entièrement à l&rsquo;utilisation de l&rsquo;adjectif <em>statique</em>. Il fait référence à la zone-mémoire <code>static</code> qui fait partie du code compilé (et qui n&rsquo;est ni sur la pile ni sur le tas).</p>
+<h3 id="types">Types</h3>
 <ul>
 <li><strong>Type fondamentaux</strong>: booléens (<code>bool</code>), les types de caractères (<code>char</code>, unsigned <code>char</code>, etc), les types d&rsquo;entiers (<code>int</code>, <code>unsigned</code>, <code>long</code>, etc), et les types de nombres floatant (<code>float</code>, <code>double</code>, etc).
 <ul>
@@ -205,18 +211,21 @@ Classe Classe abstraite: classe qui contient au moins une fonction-membre virtue
 </ul>
 </li>
 <li><strong>Liste</strong> ou Liste chainée ou liste doublement chainée: instance de <code>std::list</code></li>
-<li><strong>Tableau dynamique</strong> ou vecteurr: instance de <code>std::vector</code></li>
-<li><strong>Tableau statique</strong>: instance de type <code>std::array</code></li>
+<li><strong>Tableau dynamique</strong> ou vecteur ou parfois simplement tableau: instance de <code>std::vector</code></li>
+<li><strong>Tableau statique</strong>: instance de <code>std::array</code></li>
+<li><strong>Ensemble</strong>: instance de <code>std::set</code> (<em>tree-set</em>) ou <code>std::unordered_set</code> (<em>hash-set</em>).</li>
+<li><strong>Dictionnaire</strong>: instance de <code>std::map</code> (<em>tree-map</em>) ou <code>std::unordered_map</code>  (<em>hash-map</em>).</li>
 <li><strong>Tuple</strong>: instance de type <code>std::tuple</code></li>
-<li><strong>Pointeur brut</strong> (<em>raw pointer</em>): un pointeur &ldquo;normal&rdquo; comme en C, c&rsquo;est-à-dire dont le type est <code>un_type*</code>.</li>
-<li><strong>Un unique-pointeur</strong> (<em>unique pointer</em>): une instance de <code>std::unique_ptr&lt;un_type&gt;</code>.</li>
-<li><strong>Pointeur nul</strong> (<em>null pointer</em>): le pointeur brut ou le unique-pointeur indiquant qu&rsquo;aucun objet n&rsquo;est pointé.</li>
+<li><strong>Pointeur brut</strong> ou pointeur nu (<em>raw pointer</em>): un pointeur &ldquo;normal&rdquo; comme en C, c&rsquo;est-à-dire dont le type est <code>un_type*</code>.</li>
+<li><strong>Unique-pointeur</strong> (<em>unique pointer</em>): une instance de <code>std::unique_ptr&lt;...&gt;</code>.</li>
+<li><strong>Pointeur nul</strong>: le pointeur brut ou le unique-pointeur indiquant qu&rsquo;aucun objet n&rsquo;est pointé.</li>
 <li><strong>Déréfencer</strong> un pointeur: suivre un pointeur (typiquement si <code>ptr</code> est un pointeur <code>*ptr</code> déréférence ce pointeur).</li>
-<li><strong>Référence</strong>: alias vers une autre case mémoire, c&rsquo;est-à-dire dont le type est <code>un_type&amp;</code>.
+<li><strong>Référence</strong>: alias vers un segment mémoire, c&rsquo;est-à-dire dont le type est <code>un_type&amp;</code>.
 <ul>
-<li>On ne fera pas la différence dans ce cours entre les <em>R-value reference</em> et les <em>L-value reference</em>.</li>
+<li>Référence <strong>constante</strong>: référence qui pointe vers un type qualifiée avec <code>const</code>, c&rsquo;est-à-dire dont le type est <code>const un_type&amp;</code> ou <code>un_type const&amp;</code>.</li>
 </ul>
 </li>
+<li><strong>Qualificatif</strong> (<em>qualifier</em>): Les types et prototype de fonctions peuvent contenir des qualificatifs.  Dans ce cours, on ne verra que le qualificatif <code>const</code>.  Les qualificatifs font partie du type et le qualificatif d&rsquo;une fonction-membre fait partie de sa signature (et permet donc à la )</li>
 </ul>
 
   <footer class="footline">
@@ -315,9 +324,9 @@ Classe Classe abstraite: classe qui contient au moins une fonction-membre virtue
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768509696" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768509696" defer></script>
-    <script src="../../js/theme.js?1768509696" defer></script>
+    <script src="../../js/clipboard.min.js?1768556347" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768556347" defer></script>
+    <script src="../../js/theme.js?1768556347" defer></script>
 
 
 

@@ -382,6 +382,6 @@ span.presection-icon>img {
 }
 
 span.hidden-sol-space {
-  display: inline-block;
-  width: 1em;
+    display: inline-block;
+    width: 1em;
 }
