@@ -8,10 +8,7 @@ Vous allez maintenant manipuler les autres conteneurs séquentiels que la librai
 
 ---
 
-Pour cet exercice, vous modifierez le fichier :\
-\- `chap-05/2-sequentials.cpp`
-
-La cible à compiler est `c5-2-sequentials`.
+Pour cet exercice, on partira du fichier [`3-sequentials.cpp`](/chapter5/3-sequentials.cpp).
 
 ---
 

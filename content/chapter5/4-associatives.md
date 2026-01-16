@@ -9,11 +9,7 @@ Vous allez donc ici voir les différents types de conteneurs associatifs propos�
 
 ---
 
-Pour cet exercice, vous modifierez les fichiers :\
-\- `chap-05/3-associatives/main.cpp`\
-\- `chap-05/3-associatives/keys.h`
-
-La cible à compiler est `c5-3-associatives`.
+Pour cet exercice, partira de l'archive [`4-associatives.zip`](/chapter5/4-associatives.zip).
 
 ---
 

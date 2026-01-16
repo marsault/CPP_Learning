@@ -8,10 +8,8 @@ Vous apprendrez ici à utiliser des `vector` de manière un peu plus avancée : 
 
 ---
 
-Pour cet exercice, vous modifierez le fichier :\
-\- `chap-05/1-vectors.cpp`
+Pour cet exercice, commencez à partir d'un fichier vide.
 
-La cible à compiler est `c5-1-vectors`.
 
 ---
 
