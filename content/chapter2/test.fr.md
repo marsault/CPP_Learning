@@ -11,28 +11,10 @@ Quel est le terme C++ permettant de désigner les "méthodes" d'une classe ?
 {{% /test_item %}}
 
 {{% test_item %}}
-Supposons deux classes: `Points` qui implémente un point dans le plan et `Cercle` disposant d'un attribut `_points` de type `std::vector<point>`. Quel invariant cette classe pourrait-on décider d'implémenter dans `Cercle` ?
-{{% /test_item %}}
-
-{{% test_item %}}
 Citez une règle permettant de respecter le principe d'encapsulation en C++.
 {{% /test_item %}}
 
 ---
-
-{{% test_item %}}
-En quoi consiste la méthodologie TDD ?
-{{% /test_item %}}
-
-{{% test_item %}}
-Donnez un avantage de cette pratique.
-{{% /test_item %}}
-
----
-
-{{% test_item %}}
-Quel est le nom de la fonctionnalité permettant d'initialiser un attribut sur la même ligne que sa définition ?
-{{% /test_item %}}
 
 {{% test_item %}}
 Quel nom donne-t-on au constructeur d'une classe acceptant 0 paramètre ?
@@ -54,7 +36,7 @@ Que faut-il écrire pour l'implémenter dans un .cpp séparé ?
 {{% /test_item %}}
 
 {{% test_item %}}
-Soit un attribut statique déclaré par `static float _attr` dans une classe `UneClasse`.  
+Soit un attribut déclaré par `static float _attr` dans une classe `UneClasse`.  
 Comment faut-il faire pour le définir ?
 {{% /test_item %}}
 
@@ -102,11 +84,9 @@ Identifiez un autre problème lié au constructeur à 1 paramètre.
 Il ne s'agit pas d'un problème de compilation.
 {{% /test_item %}}
 
-{{% /test %}}
+---
 
-<!-- 
-A partir du code ci-dessous, indiquez si les instructions (que l'on suppose en dehors de la classe) compilent ou non.  
-Si ce n'est pas le cas, précisez la raison.
+On considère une classe `Dog` dont le *header* est donné ci-dessous.   On suppose toutes les fonctions implémentées dans un cpp non-donné.
 ```cpp
 class Dog
 {
@@ -117,57 +97,45 @@ public:
     void set(int v);
     int get() const;
 
-    static int _nb;
     static void call(const Dog& d);
 
 private:
     void move();
-
     static void speak();
-    friend void print(std::ostream& stream, const Dog& dog);
+    int _age = 0;
 };
 ```
+Est-ce que chacune des `main` ci-dessous compile et pourquoi?
 
-{{% test_item %}}
-`Dog d; auto v = d.get();`
+
+
+{{% test_item %}}`int main(){ Dog d { -1, 3 }; }`
 {{% /test_item %}}
 
-{{% test_item %}}
-`Dog d; print(std::cout, d);`
+{{% test_item %}}`int main(){ const Dog d; d.set(8); }`
 {{% /test_item %}}
 
-{{% test_item %}}
-`Dog::speak();`
+{{% test_item %}}`int main(){ const Dog d; auto v = d.get(); }`
 {{% /test_item %}}
 
-{{% test_item %}}
-`auto a = Dog::get();`
+{{% test_item %}}`int main(){ auto a = Dog::get(); }`
 {{% /test_item %}}
 
-{{% test_item %}}
-`Dog d1; Dog d2 = d1;`
+{{% test_item %}}`int main(){ Dog d; d.call(d); }`
 {{% /test_item %}}
 
-{{% test_item %}}
-`const Dog d; d.set(8);`
+{{% test_item %}}`int main(){ Dog d; d.move(); }`
 {{% /test_item %}}
 
-{{% test_item %}}
-`Dog d; d.move();`
+{{% test_item %}}`int main(){ Dog::speak(); }`
 {{% /test_item %}}
 
-{{% test_item %}}
-`std::cout << Dog::_nb << std::endl;`
+{{% test_item %}}`int main(){ const Dog d; int age = d._age; }`
 {{% /test_item %}}
 
-{{% test_item %}}
-`Dog d();`
-{{% /test_item %}}
 
-{{% test_item %}}
-`Dog d; Dog::call(d);`
-{{% /test_item %}}
 
-{{% test_item %}}
-`Dog d { -1, 3 };`
-{{% /test_item %}} -->
+{{% /test %}}
+
+
+
