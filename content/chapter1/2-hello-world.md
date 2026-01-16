@@ -76,8 +76,8 @@ En C++, il est possible de définir des **espaces de noms**, ou **namespaces**.
 Si on écrit `std::cout`, c'est donc pour référencer un symbole nommé `cout` défini par la librairie standard.
 
 {{% notice note %}}
-Les librairies développées en C++ définissent généralement des namespaces pour contenir leurs symboles. Cela permet d'éviter des conflits de noms dans les programmes qui les utilisent. Par exemple, {{% open_in_new_tab "https://ogrecave.github.io/ogre/api/latest/" "Ogre" /%}} définit ses symboles dans `Ogre`, la {{% open_in_new_tab "https://www.sfml-dev.org/documentation/" "SFML" /%}} dans `sf`, etc.\
-Ce problème existe aussi en C bien sûr, et pour y pallier, certaines APIs préfixent tous leurs symboles (la {{% open_in_new_tab "https://wiki.libsdl.org/CategoryAPI" "SDL" /%}} par exemple)... Ce n'est pas très pratique, d'où la bonne idée d'avoir introduit les namespaces en C++.
+Les librairies développées en C++ définissent généralement des namespaces pour contenir leurs symboles. Cela permet d'éviter des conflits de noms dans les programmes qui les utilisent. Par exemple, Ogre définit ses symboles dans `Ogre::`, la SFML dans `sf::`, etc.\
+Ce problème existe aussi en C bien sûr, et pour y pallier, certaines APIs préfixent tous leurs symboles (la SDL par exemple)... Ce n'est pas très pratique, d'où la bonne idée d'avoir introduit les namespaces en C++.
 {{% /notice %}}
 
 `cout`\

@@ -27,7 +27,7 @@ Ensuite, pour référencer votre clef nouvellement générée sur votre compte G
 ### Installation
 
 Si vous êtes sous Unix (Linux / MacOS), vous devriez pouvoir installer git depuis votre gestionnaire de paquets.\
-Si vous êtes sous Windows, vous pouvez télécharger l'outil depuis {{< open_in_new_tab "https://git-scm.com/download/win/" "cette page" />}}.
+Si vous êtes sous Windows, vous pouvez télécharger l'outil depuis [cette page](https://git-scm.com/install/windows).
 
 ---
 <!-- 
