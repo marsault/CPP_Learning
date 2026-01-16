@@ -61,7 +61,7 @@
       <link>/chapter2/test/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter2/test/index.html</guid>
-      <description>Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Anthony Labarre) Initiaux GR2 (avec Victor Marsault) Apprentis GR3 (avec Henri Derycke) 1. Quel est le terme C++ permettant de désigner les “méthodes” d’une classe ?&#xA;2. Supposons deux classes: Points qui implémente un point dans le plan et Cercle disposant d’un attribut _points de type std::vector&lt;point&gt;. Quel invariant cette classe pourrait-on décider d’implémenter dans Cercle ?</description>
+      <description>Vous êtes : Votre adresse mail : Votre groupe de TP: Initiaux GR1 (avec Anthony Labarre) Initiaux GR2 (avec Victor Marsault) Apprentis GR3 (avec Henri Derycke) 1. Quel est le terme C++ permettant de désigner les “méthodes” d’une classe ?&#xA;2. Citez une règle permettant de respecter le principe d’encapsulation en C++.&#xA;3. Quel nom donne-t-on au constructeur d’une classe acceptant 0 paramètre ?&#xA;4. Dans un constructeur, comment s’appelle la zone dans laquelle on initialise les attributs de la classe ?</description>
     </item>
   </channel>
 </rss>
