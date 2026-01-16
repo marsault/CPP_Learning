@@ -62,7 +62,7 @@ Attention le mot-clef `static` ne correspond pas entièrement à l'utilisation d
 
 ### Types
 
-- **Type fondamentaux**: booléens (`bool`), les types de caractères (`char`, unsigned `char`, etc), les types d'entiers (`int`, `unsigned`, `long`, etc), et les types de nombres floatant (`float`, `double`, etc).
+- **Type fondamentaux**: booléens (`bool`), les types de caractères (`char`, unsigned `char`, etc), les types d'entiers (`int`, `unsigned`, `uint16`, etc), et les types de nombres flottants (`float`, `double`, etc).
     - `size_t` est un alias vers un type d'entiers signé, donc un type fondamental.
 - **Liste** ou Liste chainée ou liste doublement chainée: instance de `std::list`
 - **Tableau dynamique** ou vecteur ou parfois simplement tableau: instance de `std::vector`
