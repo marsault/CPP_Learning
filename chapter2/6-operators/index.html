@@ -37,16 +37,16 @@ Prenons l’exemple de la concaténation de std::string :
 auto a = std::string { &#34;a&#34; }; auto b = std::string { &#34;b&#34; }; auto ab = a &#43; b; Dans le code ci-dessus, l’expression a &#43; b est en fait un appel à une fonction dont la signature est quelque chose comme: operator&#43;(std::string, std::string).">
     <meta itemprop="wordCount" content="716">
     <title>C&#43;&#43;::   Opérateurs</title>
-    <link href="../../css/fontawesome-all.min.css?1768509785" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768509785" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768509785" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768509785" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768509785" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768509785" rel="stylesheet">
-    <link href="../../css/fonts.css?1768509785" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768509785" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768509785" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768509785" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768509785" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768509785" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768509785"></script>
+    <link href="../../css/fontawesome-all.min.css?1768557460" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768557460" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768557460" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768557460" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768557460" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768557460" rel="stylesheet">
+    <link href="../../css/fonts.css?1768557460" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768557460" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768557460" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768557460" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768557460" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768557460" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768557460"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -361,18 +361,18 @@ Plutôt pratique, non ?</p>
 <p>Pour vérifier que le programme fonctionne correctement, vous allez utiliser le debuggeur.<br>
 Pensez bien à compiler votre programme avec <code>-g</code> et à modifier la valeur de <code>program</code> dans le fichier <code>.vscode/launch.json</code>.</p>
 <p>Placez ensuite un breakpoint sur la ligne <code>polygon.add_vertex(2, 3);</code> du <code>main</code>.<br>
-<a href="#R-image-f11472993d611d333dd347fae815edeb" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter2/6-breakpoint-v2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f11472993d611d333dd347fae815edeb"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter2/6-breakpoint-v2.png"></a></p>
+<a href="#R-image-d9399a84834b4ac0f6776a6965f8c105" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter2/6-breakpoint-v2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d9399a84834b4ac0f6776a6965f8c105"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter2/6-breakpoint-v2.png"></a></p>
 <p>Lancez ensuite le programme avec F5.<br>
 Votre vue devrait désormais ressembler à celle-ci si vous vous placez dans l&rsquo;onglet <code>Exécution</code> à gauche :
-<a href="#R-image-524d47d898e200ab18ec590a008d2b6b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter2/6-execution-v2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-524d47d898e200ab18ec590a008d2b6b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter2/6-execution-v2.png"></a></p>
+<a href="#R-image-0d6b7bc9b125fc9c534f49bc51440ce6" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter2/6-execution-v2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0d6b7bc9b125fc9c534f49bc51440ce6"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter2/6-execution-v2.png"></a></p>
 <p>Dans la fenêtre des variables, en haut à gauche, cliquez sur la variable <code>polygon</code>, puis sur son membre <code>_vertices</code>.<br>
 Celui-ci ne devrait rien contenir.</p>
 <p>Appuyez sur F10 pour exécuter l&rsquo;instruction sur la ligne 9.<br>
 Vous devriez constater que <code>_vertices</code> contient désormais le sommet (2, 3).
-<a href="#R-image-428f2d238dd459b9dc18c11b53a6d67e" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter2/6-vertices.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-428f2d238dd459b9dc18c11b53a6d67e"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter2/6-vertices.png"></a></p>
+<a href="#R-image-ae4aa9f1bd77eb42e1369ea35a91d908" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter2/6-vertices.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ae4aa9f1bd77eb42e1369ea35a91d908"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter2/6-vertices.png"></a></p>
 <hr>
 <h3 id="opérateur-dindice">Opérateur d&rsquo;indice</h3>
 <p>Décommentez les instructions :</p>
@@ -695,9 +695,9 @@ Dans le cas ci-dessus, c&rsquo;est acceptable car on ne peut pas définir l&rsqu
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768509785" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768509785" defer></script>
-    <script src="../../js/theme.js?1768509785" defer></script>
+    <script src="../../js/clipboard.min.js?1768557460" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768557460" defer></script>
+    <script src="../../js/theme.js?1768557460" defer></script>
 
 
 

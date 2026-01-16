@@ -19,21 +19,21 @@
       <link>/chapter5/2-vectors/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter5/2-vectors/index.html</guid>
-      <description>Vous apprendrez ici à utiliser des vector de manière un peu plus avancée : construction, accès, insertions, suppressions et recherches n’auront plus de secrets pour vous !&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-05/1-vectors.cpp&#xA;La cible à compiler est c5-1-vectors.&#xA;Construction Au chapitre précédent, nous vous avions présenté différentes syntaxes permettant d’instancier une classe. Nous vous avions en particulier indiquer qu’il était possible d’utiliser la syntaxe Class c { p1, p2 }; ou bien la syntaxe Class c(p1, p2);.</description>
+      <description>Vous apprendrez ici à utiliser des vector de manière un peu plus avancée : construction, accès, insertions, suppressions et recherches n’auront plus de secrets pour vous !&#xA;Pour cet exercice, commencez à partir d’un fichier vide.&#xA;Construction Au chapitre précédent, nous vous avions présenté différentes syntaxes permettant d’instancier une classe. Nous vous avions en particulier indiquer qu’il était possible d’utiliser la syntaxe Class c { p1, p2 }; ou bien la syntaxe Class c(p1, p2);.</description>
     </item>
     <item>
       <title>Autres conteneurs séquentiels</title>
       <link>/chapter5/3-sequentials/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter5/3-sequentials/index.html</guid>
-      <description>Vous allez maintenant manipuler les autres conteneurs séquentiels que la libraire propose.&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-05/2-sequentials.cpp&#xA;La cible à compiler est c5-2-sequentials.&#xA;Tableaux de taille fixe Pour créer des tableaux de taille fixe, il est bien entendu possible d’utiliser les tableaux primitifs. L’inconvénient, c’est qu’il faut penser à les initialiser, ce que tout le monde ne pense pas toujours à faire….&#xA;Du coup, pour pallier à ce problème, il est possible d’utiliser la classe std::array.</description>
+      <description>Vous allez maintenant manipuler les autres conteneurs séquentiels que la libraire propose.&#xA;Pour cet exercice, on partira du fichier 3-sequentials.cpp.&#xA;Tableaux de taille fixe Pour créer des tableaux de taille fixe, il est bien entendu possible d’utiliser les tableaux primitifs. L’inconvénient, c’est qu’il faut penser à les initialiser, ce que tout le monde ne pense pas toujours à faire….&#xA;Du coup, pour pallier à ce problème, il est possible d’utiliser la classe std::array.</description>
     </item>
     <item>
       <title>Conteneurs associatifs</title>
       <link>/chapter5/4-associatives/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter5/4-associatives/index.html</guid>
-      <description>Un conteneur associatif est un conteneur dans lequel les éléments peuvent être indexés par des objets, et non plus seulement par des entiers.&#xA;Vous allez donc ici voir les différents types de conteneurs associatifs proposés par la STL.&#xA;Pour cet exercice, vous modifierez les fichiers :&#xA;- chap-05/3-associatives/main.cpp&#xA;- chap-05/3-associatives/keys.h&#xA;La cible à compiler est c5-3-associatives.&#xA;Les sets (ensembles) Un set est un conteneur dans lequel les éléments sont “indexés par eux-mêmes”.</description>
+      <description>Un conteneur associatif est un conteneur dans lequel les éléments peuvent être indexés par des objets, et non plus seulement par des entiers.&#xA;Vous allez donc ici voir les différents types de conteneurs associatifs proposés par la STL.&#xA;Pour cet exercice, partira de l’archive 4-associatives.zip.&#xA;Les sets (ensembles) Un set est un conteneur dans lequel les éléments sont “indexés par eux-mêmes”. Il y a deux cas d’utilisation classiques d’un set:</description>
     </item>
     <item>
       <title>Manipulation de chaînes</title>
@@ -47,7 +47,7 @@
       <link>/chapter5/5-tuples/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter5/5-tuples/index.html</guid>
-      <description>Vous avez déjà utilisé le type pair au cours d’exercices précédents. Nous allons maintenant vous présenter son cousin, la classe tuple.&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-05/5-tuples.cpp&#xA;La cible à compiler est c5-5-tuples.&#xA;Micro rappel sur les pair La classe pair est un type templaté avec deux paramètres :&#xA;std::pair&lt;int, float&gt; such_a_nice_pair { 1, 3.f }; On accède aux éléments de la pair directement via ses attributs first et second (pas de getters) :</description>
+      <description>Vous avez déjà utilisé le type pair au cours d’exercices précédents. Nous allons maintenant vous présenter son cousin, la classe tuple.&#xA;Pour cet exercice, on partira du fichier 5-tuples.cpp.&#xA;Micro point sur les pair La classe pair est un type templaté avec deux paramètres :&#xA;std::pair&lt;int, float&gt; such_a_nice_pair { 1, 3.f }; On accède aux éléments de la pair directement via ses attributs first et second (pas de getters) :</description>
     </item>
     <item>
       <title>Unique-pointeur</title>
