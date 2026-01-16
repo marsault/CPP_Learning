@@ -8,14 +8,12 @@ Vous avez déjà utilisé le type `pair` au cours d'exercices précédents. Nous
 
 ---
 
-Pour cet exercice, vous modifierez le fichier :\
-\- `chap-05/5-tuples.cpp`
 
-La cible à compiler est `c5-5-tuples`.
+Pour cet exercice, on partira du fichier [`5-tuples.cpp`](/chapter5/5-tuples.cpp).
 
 ---
 
-### Micro rappel sur les `pair`
+### Micro point sur les `pair`
 
 La classe `pair` est un type templaté avec deux paramètres :
 ```cpp

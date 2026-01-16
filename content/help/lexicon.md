@@ -66,7 +66,9 @@ Attention le mot-clef `static` ne correspond pas entièrement à l'utilisation d
     - `size_t` est un alias vers un type d'entiers signé, donc un type fondamental.
 - **Liste** ou Liste chainée ou liste doublement chainée: instance de `std::list`
 - **Tableau dynamique** ou vecteur ou parfois simplement tableau: instance de `std::vector`
-- **Tableau statique**: instance de type `std::array`
+- **Tableau statique**: instance de `std::array`
+- **Ensemble**: instance de `std::set` (*tree-set*) ou `std::unordered_set` (*hash-set*).
+- **Dictionnaire**: instance de `std::map` (*tree-map*) ou `std::unordered_map`  (*hash-map*).
 - **Tuple**: instance de type `std::tuple`
 - **Pointeur brut** ou pointeur nu (*raw pointer*): un pointeur "normal" comme en C, c'est-à-dire dont le type est `un_type*`.
 - **Unique-pointeur** (*unique pointer*): une instance de `std::unique_ptr<...>`.
