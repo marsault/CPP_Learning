@@ -9,6 +9,7 @@ relativeURLs = true
   themeVariant = "mine"
   showVisitedLinks = true
   disableInlineCopyToClipBoard = true
+  disableHoverBlockCopyToClipBoard = true
   disableLandingPageButton = true
   disableLanguageSwitchingButton = true
   disableSearch = true

@@ -383,3 +383,7 @@ span.hidden-sol-space {
     display: inline-block;
     width: 1em;
 }
+
+del span.copy-to-clipboard {
+    text-decoration-line: line-through;
+}
