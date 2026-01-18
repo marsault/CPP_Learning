@@ -21,7 +21,7 @@ Cette page est en construction. N'hésitez pas à suggérer des ajouts ou signal
 ### Vie d'un objet
 
 - **Allocation** d'un objet: réservation d'un segment de mémoire de la taille de l'objet
-    - ~~`m`<p></p>`alloc` permet d'allouer de la mémoire~~, mais on ne l'utilisera pas.
+    - ~~`malloc` permet d'allouer de la mémoire~~, mais on ne l'utilisera pas.
 - **Construction** d'un objet: appel d'un des constructeurs de la classe, ce qui va commencer par appeler un constructeur pour chacun des attributs.
 - **Instanciation** d'un objet: allocation+construction
     - Le mot-clef `new` permet d'instancier un objet sur le tas.
