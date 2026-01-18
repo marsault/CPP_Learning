@@ -12,7 +12,7 @@
       <link>/chapter0/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/chapter0/index.html</guid>
-      <description>Cette première partie a pour objectif de vous permettre d’installer et de configurer tous les outils qui vous serons nécessaires pour suivre ce cours dans les meilleures conditions.&#xA;Vous aurez besoin d’un compilateur, d’un IDE (éditeur + debugger), d’un outil pour générer les projets de code et d’un gestionnaire de version. Nous vous fournirons des liens pour télécharger les logiciels à installer. Si vous préférez utiliser d’autres logiciels que ceux que nous proposons ici, le choix vous appartient, mais nous ne pourrons pas vous aidez à les configurer au cours des TPs.</description>
+      <description>Cette première partie a pour objectif de vous permettre d’installer et de configurer tous les outils qui vous serons nécessaires pour suivre ce cours dans les meilleures conditions.&#xA;Vous aurez besoin d’un compilateur, d’un IDE, d’un outil pour générer les projets de code et d’un gestionnaire de version. Nous vous fournirons des liens pour télécharger les logiciels à installer. Si vous préférez utiliser d’autres logiciels que ceux que nous proposons ici, le choix vous appartient, mais nous ne pourrons pas vous aidez à les configurer au cours des TPs.</description>
     </item>
     <item>
       <title>Introduction au C&#43;&#43;</title>
