@@ -23,18 +23,18 @@ Classe Classe abstraite: classe qui contient au moins une fonction-membre virtue
     <meta itemprop="name" content="C&#43;&#43;::   Lexique">
     <meta itemprop="description" content="En construction Cette page est en construction. N’hésitez pas à suggérer des ajouts ou signaler ce qui vous semble faux ou étrange.
 Classe Classe abstraite: classe qui contient au moins une fonction-membre virtuelle pure; elle n’est donc pas instanciable. Classe concrète: classe qui n’est pas abstraite. Classe instanciable: classe dont on peut construire des instances, c’est-à-dire qui n’est donc pas abstraite et qui possède au moins un constructeur publique. Classe copiable: classe qui possède un constructeur de copie (publique).">
-    <meta itemprop="wordCount" content="1028">
+    <meta itemprop="wordCount" content="1023">
     <title>C&#43;&#43;::   Lexique</title>
-    <link href="../../css/fontawesome-all.min.css?1768725680" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768725680" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768725680" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768725680" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768725680" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768725680" rel="stylesheet">
-    <link href="../../css/fonts.css?1768725680" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768725680" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768725680" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768725680" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768725680" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768725680" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768725680"></script>
+    <link href="../../css/fontawesome-all.min.css?1768727670" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768727670" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768727670" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768727670" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768727670" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768727670" rel="stylesheet">
+    <link href="../../css/fonts.css?1768727670" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768727670" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768727670" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768727670" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768727670" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768727670" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768727670"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -55,7 +55,7 @@ Classe Classe abstraite: classe qui contient au moins une fonction-membre virtue
       window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../help/lexicon/index.html">
+  <body class="mobile-support html disableInlineCopyToClipboard disableHoverBlockCopyToClipBoard" data-url="../../help/lexicon/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -148,7 +148,7 @@ Classe Classe abstraite: classe qui contient au moins une fonction-membre virtue
 </li>
 <li><strong>Désallocation</strong> d&rsquo;un objet: réservation d&rsquo;un segment de mémoire
 <ul>
-<li><del><code>free</code> permet deséallouer de la mémoire</del>, mais on ne l&rsquo;utilisera pas.</li>
+<li><del><code>free</code> permet desallouer de la mémoire</del>, mais on ne l&rsquo;utilisera pas.</li>
 </ul>
 </li>
 <li><strong>Destruction</strong> d&rsquo;un objet: appel du destructeur de la classe, suite à quoi le destructeur des attributs qui ne sont pas des références sera appelé.
@@ -162,10 +162,10 @@ Classe Classe abstraite: classe qui contient au moins une fonction-membre virtue
 <li>Le mot-clef <code>delete</code> permet de désinstancier un objet sur le tas.</li>
 </ul>
 </li>
-<li><strong>Affectation</strong> d&rsquo;un objet (<em>assignment</em>): remplir le contenu d&rsquo;un objet~<code>d</code> à partir celui d&rsquo;un autre objet~<code>g</code> (en général du même type) grâce à un l&rsquo;operateur d&rsquo;affectation (<code>operator=</code>). <code>g</code> est à gauche du signe <code>=</code> et <code>d</code> est à droite.
-L&rsquo;affectation peut soit copier le contenu de <code>d</code> dans <code>g</code> (affectation <strong>par copie</strong>) ou déplacer le contenu de <code>d</code> dans <code>g</code> (affectation <strong>par déplacement</strong>).</li>
 <li><strong>Copie</strong> d&rsquo;un objet: construction d&rsquo;un nouvel objet en copiant le contenu d&rsquo;un autre objet.</li>
 <li><strong>Déplacement</strong> d&rsquo;un objet: construction d&rsquo;un nouvel objet en déplaçant le contenu d&rsquo;un autre objet dans le nouvel objet. On peut souvent forcer le déplacement d&rsquo;un objet avec <code>std::move</code>.</li>
+<li><strong>Affectation</strong> d&rsquo;un objet (<em>assignment</em>): remplir le contenu d&rsquo;un objet <code>d</code> à partir celui d&rsquo;un autre objet <code>g</code> (en général du même type) grâce à un l&rsquo;operateur d&rsquo;affectation (<code>operator=</code>). <code>g</code> est à gauche du signe <code>=</code> et <code>d</code> est à droite.
+L&rsquo;affectation peut soit copier le contenu de <code>d</code> dans <code>g</code> (affectation <strong>par copie</strong>) ou déplacer le contenu de <code>d</code> dans <code>g</code> (affectation <strong>par déplacement</strong>).</li>
 </ul>
 <h3 id="fonctions">Fonctions</h3>
 <ul>
@@ -198,7 +198,7 @@ L&rsquo;affectation peut soit copier le contenu de <code>d</code> dans <code>g</
 </tr>
 <tr>
 <td><strong>Allocation sur la pile</strong>. Les variables locales sont allouées sur la pile et la taille pour stocker leur type doit donc être connue par le compilateur.</td>
-<td><strong>Allocation sur la tas</strong> ou allocation dynamique. Allocation via <code>new</code> <del>(ou <code>m</code><p></p><code>alloc</code> )</del> ou implicitement par l&rsquo;utilisation d&rsquo;un type de la bibliothèque standard (<code>std::vector&lt;MaClasse&gt;</code> alloue des <code>MaClasse</code> sur le tas). La taille du segment allouée peut être spécifié à l&rsquo;exécution.</td>
+<td><strong>Allocation sur la tas</strong> ou allocation dynamique. Allocation via <code>new</code> <del>(ou <code>malloc</code> )</del> ou implicitement par l&rsquo;utilisation d&rsquo;un type de la bibliothèque standard (<code>std::vector&lt;MaClasse&gt;</code> alloue des <code>MaClasse</code> sur le tas). La taille du segment allouée peut être spécifié à l&rsquo;exécution.</td>
 </tr>
 </tbody>
 </table>
@@ -225,7 +225,7 @@ L&rsquo;affectation peut soit copier le contenu de <code>d</code> dans <code>g</
 <li>Référence <strong>constante</strong>: référence qui pointe vers un type qualifiée avec <code>const</code>, c&rsquo;est-à-dire dont le type est <code>const un_type&amp;</code> ou <code>un_type const&amp;</code>.</li>
 </ul>
 </li>
-<li><strong>Qualificatif</strong> (<em>qualifier</em>): Les types et prototype de fonctions peuvent contenir des qualificatifs.  Dans ce cours, on ne verra que le qualificatif <code>const</code>.  Les qualificatifs font partie du type et le qualificatif d&rsquo;une fonction-membre fait partie de sa signature (et permet donc à la )</li>
+<li><strong>Qualificatif</strong> (<em>qualifier</em>): Les types et prototype de fonctions peuvent contenir des qualificatifs.  Dans ce cours, on ne verra que le qualificatif <code>const</code>.  Les qualificatifs font partie du type et le qualificatif d&rsquo;une fonction-membre fait partie de sa signature.</li>
 </ul>
 
   <footer class="footline">
@@ -324,9 +324,9 @@ L&rsquo;affectation peut soit copier le contenu de <code>d</code> dans <code>g</
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768725680" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768725680" defer></script>
-    <script src="../../js/theme.js?1768725680" defer></script>
+    <script src="../../js/clipboard.min.js?1768727670" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768727670" defer></script>
+    <script src="../../js/theme.js?1768727670" defer></script>
 
 
 
