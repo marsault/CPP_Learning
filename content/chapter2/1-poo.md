@@ -45,7 +45,7 @@ L'invariant permet donc ici de gagner en temps de calcul.
 
 #### Encapsulation
 
-L'**encapsulation** est le principe stipulant que pour pour accéder à l'état d'un objet ou le modifier, il faut passer par des "routines" (fonction-membre en C++, méthode en Java, ...).
+L'**encapsulation** est le principe stipulant que pour accéder à l'état d'un objet ou le modifier, il faut passer par des "routines" (fonction-membre en C++, méthode en Java, ...).
 Ce principe s'accompagne souvent du masquage de l'état des objets, c'est-à-dire de la déclaration des attributs dans la partie privée de la classe.  
 Respecter le principe d'encapsulation permet de garantir les invariants de classe plus facilement.
 
