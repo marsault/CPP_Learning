@@ -48,6 +48,7 @@ struct MyStruct
 int main()
 {
     MyStruct s {};
+    s.value = 5;
     return 0;
 }
 ```
