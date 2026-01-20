@@ -194,7 +194,7 @@ Dans notre cas, cela fonctionne car `_name` est un attribut de la classe. Il n'y
 ### Nommer des expressions
 
 Pour clarifier le code, certains programmeurs ont tendance à vouloir mettre des commentaires partout.  
-Sachez que c'est très caca de faire ça 💩
+Mais les commentaires, c'est comme tout, il faut en user avec modération 🍺
 
 Voici un exemple :
 ```cpp

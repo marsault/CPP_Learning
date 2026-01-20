@@ -113,50 +113,56 @@ Si un pointeur est désinstanciée, la donnée pointée ne l'est généralement 
 
 Mais du coup, vous devez vous demander quel est leur intérêt, sachant qu'on a déjà les références...  
 Eh bien les références ne permettent pas de faire autant de choses que les pointeurs.  
-Par exemple, vous ne pouvez pas créer de référence qui ne référence rien, alors qu'un pointeur peut être vide :
-```cpp
-int& ref_on_nothing;
-// => Aïe, ça compile pas
 
-int* ptr_on_nothing = nullptr;
-// => Ok
-```
-Une fois une référence définie, celle-ci référencera la même donnée pour toujours, tandis qu'un pointeur est réassignable :
-```cpp
-int& ref = data_1;
-ref = data_2;
-// => ref fait toujours référence à data_1, le contenu de data_2 a simplement été assigné à data_1 
+1. Vous ne pouvez pas créer de référence qui ne référence rien, alors qu'un pointeur peut être nul :
+    ```cpp
+    int& ref_on_nothing;
+    // => Aïe, ça compile pas
 
-int* ptr = &data_1;
-ptr = &data_2;
-// => data_1 n'a pas changé et ptr pointe désormais sur data_2
-```
+    int* ptr_on_nothing = nullptr;
+    // => Ok
+    ```
 
-Comment pourriez-vous dessiner le graphe d'ownership du programme suivant, une fois arrivé à la ligne 8 :
-```cpp {linenos=table}
-int main()
-{
-    auto toto = Driver {};
-    auto jacquot = Driver {};
-    auto leon = Driver {};
- 
-    auto all_drivers = std::vector<const Driver*> { &toto, &jacquot, &leon };
+2. Une fois une référence définie, celle-ci référencera la même donnée pour toujours, tandis qu'un pointeur peut être réaffecté :
+    ```cpp
+    int& ref = data_1;
+    ref = data_2;
+    // => ref fait toujours référence à data_1, le contenu de data_2 a simplement été assigné à data_1 
 
-    return 0;
-}
-```
-<br/>
-{{% hidden-solution %}}
+    int* ptr = &data_1;
+    ptr = &data_2;
+    // => data_1 n'a pas changé et ptr pointe désormais sur data_2
+    ```
+
+    Comment pourriez-vous dessiner le graphe d'ownership du programme suivant, une fois arrivé à la ligne 8 :
+    ```cpp {linenos=table}
+    int main()
+    {
+        auto toto = Driver {};
+        auto jacquot = Driver {};
+        auto leon = Driver {};
+    
+        auto all_drivers = std::vector<const Driver*> { &toto, &jacquot, &leon };
+
+        return 0;
+    }
+    ```
+    
+    {{% hidden-solution %}}
 Les éléments de `all_drivers` étant des pointeurs, on utilise un contour plein pour les cases du tableau.  
 En revanche, comme ces pointeurs ne contrôlent pas le cycle de vie de chacun des `Drivers`, on les relie vers eux avec des flèches en pointillé.
 ![Pointeur-observant](/images/chapter3/ownership/06-observing-ptr.svg)
-{{% /hidden-solution %}}
+    {{% /hidden-solution %}}
+
+3. Les réferences ne peuvent pas.  Typiquement, on ne peut pas créer un `std::vector<const Driver&>`, alors on est obligé d'utiliser des astuces que nous verrons plus tard.
+
+En revanche, rappelez vous que les pointeurs nuls sont la cause première des *segfault*, donc il est généralement préférable d'utiliser une référence si on le peut.
 
 ---
 #### Pointeur-ownant
 
 En C++, rien  n'est simple, et les pointeurs sont parfois des **pointer-ownant**, c'est-à-dire des pointeurs responsables de la ressource pointée.
-C'est généralement déconseillé et on trouve ça plutôt dans le code légacy.  Si on veut un pointer qui own la ressource pointée, on utilise plutôt des `std::unique_ptr` que l'on verra dans le [chapitre 5](chapter5).
+C'est généralement déconseillé et on trouve ça plutôt dans le code légacy.  Si on veut un pointer qui own la ressource pointée explicitement, on utilise plutôt des `std::unique_ptr` que l'on verra dans le [chapitre 5](chapter5).
 
 Un pointer est ownant s'il gère *manifestement* la donnée pointée.  Le problème avec cette phrase est le "manifestement", qui demande d'analyser le code en détail.
 
@@ -181,7 +187,7 @@ Il est par conséquent *manifestement* responsable du cycle de vie de cet entier
 Puisque `get_int` renvoie ce pointeur, c'est ensuite `calling_function` qui en devient *manifestement* responsable, puisque personne d'autre n'y a accès.
 
 On voit bien que c'est une mauvaise pratique.  Imaginons que c'est à vous d'écrire `calling_function`. Pour savoir si vous devez détruire `five` ou non, il faut analyser le code de `get_int`.
-Par exemple, si on implémente `get_int` comme en dessous, il ne faudrait pas.
+Par exemple, si on implémente `get_int` comme en dessous, il ne faudrait pas détruire `five` dans `calling_function`.
 
 ```cpp
 std::vector<int*> my_int_vect;

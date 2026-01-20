@@ -6,4 +6,4 @@ Ce fichier s'adresse au personnel de l'université qui voudrait mettre à jour l
 - modifier le div avec id "foorter-question-window" dans le fichier `layouts/partials/custom-footer.html`
 
 # Redirection du site vers la bonne addresse
-On utilise un fichier `.htaccess` (dans `/static`) pour toujours rediriger vers l'adresse `https://monge.univ-eiffel.fr` .
+On utilise un fichier `.htaccess` (dans `/W3/cpp` sur monge) pour toujours rediriger vers l'adresse `https://monge.univ-eiffel.fr` .

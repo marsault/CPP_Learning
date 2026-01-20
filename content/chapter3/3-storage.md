@@ -87,12 +87,12 @@ Attention cependant, notez bien que cela modifie aussi l'ordre dans lequel ils s
 
 ### La mémoire statique
 
-La **mémoire statique** est la zone contenant les données associées aux variables globales du programme.
+La **mémoire statique** est la zone contenant les données associées aux variables globales du programme.  C'est généralement à cette zone de la mémoire que fait référence le mot-clef `static`.
 
 Comme la taille d'une variable dépend uniquement de son type, la compilation permet de déterminer la quantité d'espace à allouer pour le segment de mémoire statique.
 Il est réservé une fois pour toute par le système d'exploitation au lancement du programme, et est restitué une fois la fonction `main` terminée.
 
-Il n'est pas possible d'augmenter ou de réduire l'espace réservé au cours de l'exécution du programme, et c'est pour cela qu'on parle de mémoire "statique".
+Il n'est pas possible d'augmenter ou de réduire l'espace réservé au cours de l'exécution du programme, et c'est pour cela qu'on parle de mémoire **statique**: la taille de ce segment de mémoire est déterminée au moment de la compilation.
 
 ---
 
@@ -137,6 +137,14 @@ Notez bien que ce scénario n'est qu'une hypothèse de ce qu'il pourrait se pass
 En fonction de l'implémentation de votre compilateur et des instructions qu'il produit, le contenu de la pile ne sera pas le même.
 Par exemple, à des fins d'optimisation, il est fort probable que certaines variables soient stockées directement dans les registres du processeur plutôt que sur la pile.
 {{% /notice %}} 
+
+
+L'espace alloué sur la pile à chaque appel de fonction est hardcodé au moment où la fonction est compilée.  Cela signifie que le compilateur doit déterminer au moment de la compilation (statiquement) la taille des objets qui sont stockée sur la pile pendant l'appel de fonction.
+C'est pour ça que les conteneurs dont la taille est dynamique (comme les `std::vecteur`) **ne** stockent **pas** leurs elements sur la pile.
+
+Il se peut aussi que le compilateur ne puisse pas déterminer la taille que prend un objet d'une certaine classe `MaClasse`.
+Dans ce cas, les objets de ce type ne peuvent pas être stockée sur la pile.  Donc si on déclare une variable locale de type `MaClasse`, le compilateur va indiquer un warning oue une erreur plus ou moins compréhensible.
+Nous verrons dans le [chapter6](chapter6) que c'est pourquoi dans un contexte de polymorphisme dynamique, les objets doivent être stockées sur le tas.
 
 ---
 
@@ -187,8 +195,11 @@ int main()
 
 ### Synthèse
 
-- Les variables globales et statiques sont allouées dans la **mémoire statique** du programme.
+- Les variables globales et `static` sont allouées dans la **mémoire statique** du programme.
 - Les variables locales sont allouées sur la **pile** ou dans les registres du processeur.  
-Sa taille est limitée, mais l'allocation des données est immédiate et les accès très rapides.
+    - Sa taille est limitée.
+    - L'allocation des données est immédiate et les accès très rapides.
+    - La taille des objets stockée doit-être connue statiquement.
 - Les données allouées dynamiquement sont placées dans le **tas**.  
-L'allocation et les accès peuvent être longs, mais la quantité d'espace disponible est très importante.
+    - L'allocation et les accès peuvent être longs.
+    - La quantité d'espace disponible est très importante.
