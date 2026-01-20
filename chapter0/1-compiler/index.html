@@ -29,16 +29,16 @@ Windows Ouvrez un terminal et exécutez g&#43;&#43; -v. Si la commande réussit,
 MSYS2 contient en particulier MinGW, qui est l’équivalent du compilateur gcc/g&#43;&#43; pour Windows.">
     <meta itemprop="wordCount" content="562">
     <title>C&#43;&#43;::   Compilateur</title>
-    <link href="../../css/fontawesome-all.min.css?1768907909" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768907909" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768907909" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768907909" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768907909" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768907909" rel="stylesheet">
-    <link href="../../css/fonts.css?1768907909" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768907909" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768907909" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768907909" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768907909" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768907909" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768907909"></script>
+    <link href="../../css/fontawesome-all.min.css?1768940430" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768940430" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768940430" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768940430" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768940430" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768940430" rel="stylesheet">
+    <link href="../../css/fonts.css?1768940430" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768940430" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768940430" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768940430" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768940430" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768940430" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768940430"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -131,14 +131,14 @@ MSYS2 contient en particulier MinGW, qui est l&rsquo;équivalent du compilateur 
 </span></span><span class="line"><span class="cl">pacman -S mingw-w64-ucrt-x86_64-gdb</span></span></code></pre></div>
 </li>
 <li>Ouvrez l&rsquo;éditeur de variables d&rsquo;environnement Windows.
-<a href="#R-image-e38c67bd0ba220c4f0eaf464da84dbac" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/env-var.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e38c67bd0ba220c4f0eaf464da84dbac"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/env-var.png"></a></li>
+<a href="#R-image-43e9e439bfd84b93b33996934df6721a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/env-var.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-43e9e439bfd84b93b33996934df6721a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/env-var.png"></a></li>
 <li>Dans la variable <code>Path</code> (utilisateur ou système, peu importe), ajoutez <code>&quot;C:\msys64\ucrt64\bin&quot;</code>.
-<a href="#R-image-792be864d854675fe08cbc09e535141a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/add-path-v2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-792be864d854675fe08cbc09e535141a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/add-path-v2.png"></a></li>
+<a href="#R-image-9db28fa1004ca261160b75d46c76d807" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/add-path-v2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9db28fa1004ca261160b75d46c76d807"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/add-path-v2.png"></a></li>
 <li>Si vous aviez une autre version de MinGW d&rsquo;installée (en général dans C:\mingw), c&rsquo;est <strong>très important</strong> que vous supprimiez son répertoire bin/ du <code>Path</code> utilisateur <strong>et</strong> du <code>Path</code> système.
-<a href="#R-image-8a34b471ddf64b016d13d4162864531a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/rm-path-v2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8a34b471ddf64b016d13d4162864531a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/rm-path-v2.png"></a></li>
+<a href="#R-image-1444b5a0da48f599286806bce8865a43" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/rm-path-v2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1444b5a0da48f599286806bce8865a43"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/rm-path-v2.png"></a></li>
 <li>Ouvrez un terminal Window et exécutez <code>g++ -v</code><br>
 La dernière ligne devrait maintenant indiquer une version de gcc &gt;= 9.</li>
 </ol>
@@ -146,8 +146,8 @@ La dernière ligne devrait maintenant indiquer une version de gcc &gt;= 9.</li>
 <ol>
 <li>Téléchargez <a href="../../chapter0/helloworld.cpp">ce fichier</a>.</li>
 <li>Ouvrez une fenêtre Powershell dans le répertoire contenant le fichier (vous pouvez utiliser <code>Shift + Clic Droit</code> depuis l&rsquo;explorateur de fichiers pour faire apparaître l&rsquo;option dans le menu contextuel).
-<a href="#R-image-d0a842b8b65370e63e72389f1787e011" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/powershell.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d0a842b8b65370e63e72389f1787e011"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/powershell.png"></a></li>
+<a href="#R-image-5d2abc026caba95578e7a970fa1b4baa" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter0/powershell.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5d2abc026caba95578e7a970fa1b4baa"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter0/powershell.png"></a></li>
 <li>Exécutez la commande <code>g++ helloworld.cpp -o hello</code><br>
 Un fichier <code>hello</code> devrait avoir été généré.</li>
 <li>Exécutez <code>.\hello</code>.
@@ -296,9 +296,9 @@ Le programme devrait vous répondre <code>&quot;Hello!&quot;</code>.</li>
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768907909" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768907909" defer></script>
-    <script src="../../js/theme.js?1768907909" defer></script>
+    <script src="../../js/clipboard.min.js?1768940430" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768940430" defer></script>
+    <script src="../../js/theme.js?1768940430" defer></script>
 
 
 

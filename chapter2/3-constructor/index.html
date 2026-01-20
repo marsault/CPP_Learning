@@ -27,18 +27,18 @@ Vous aviez implémenté une fonction-membre set_name dans la classe Person pour 
     <meta itemprop="description" content="Dans cet exercice, vous apprendrez à paramétrer la construction de vos objets.
 Constructeur à paramètres Téléchargez et ouvrez le fichier 3-constructor.cpp. Il contient une correction de l’exercice précédent.
 Vous aviez implémenté une fonction-membre set_name dans la classe Person pour initialiser l’attribut _name. Or, ce serait bien d’une part de réellement pouvoir initialiser cet attribut plutôt que de le modifier après l’instanciation, et d’autre part, de supprimer ce setter, afin qu’une fois initialisé, il ne soit plus possible de modifier _name.">
-    <meta itemprop="wordCount" content="1663">
+    <meta itemprop="wordCount" content="1804">
     <title>C&#43;&#43;::   Constructeur</title>
-    <link href="../../css/fontawesome-all.min.css?1768907909" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768907909" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768907909" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768907909" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768907909" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768907909" rel="stylesheet">
-    <link href="../../css/fonts.css?1768907909" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768907909" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768907909" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768907909" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768907909" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768907909" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768907909"></script>
+    <link href="../../css/fontawesome-all.min.css?1768940430" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768940430" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768940430" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768940430" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768940430" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768940430" rel="stylesheet">
+    <link href="../../css/fonts.css?1768940430" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768940430" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768940430" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768940430" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768940430" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768940430" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768940430"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -354,6 +354,33 @@ Contrairement à l&rsquo;initialisation des variables, on peut écrire <code>: _
   </div>
 </div>
 <hr>
+<p>Pour ne rien simplifier, le C++ est compatible avec instanciation des <code>struct</code> du C.  On peut l&rsquo;utiliser quand tous les attributs ont une visibilité <code>public</code> et qu&rsquo;aucun constructeur n&rsquo;est défini.  Comme par exemple dans les classes <code>MaStruct1</code> et <code>MaStruct2</code> donné ci-dessous.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">MaStruct1</span> <span class="p">{</span>  <span class="c1">// Ressemble à du C
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">MaStruct2</span> <span class="p">{</span> <span class="c1">// Ne ressemble pas du tout à du C,  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                  <span class="c1">// mais bon, c&#39;est autorisé quand même
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">incr</span><span class="p">()</span> <span class="p">{</span><span class="n">c</span><span class="o">++</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">d</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">to_string</span><span class="p">()</span> <span class="p">{</span> <span class="n">incr</span><span class="p">();</span> <span class="k">return</span> <span class="n">d</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div>
+<p>Dans ce cas, on peut initizaliser les classes &ldquo;comme un tableau&rdquo;.</p>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//         mon_objet1.a  mon_objet1.b
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//                    v  vvvvvvv               
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">MaStruct1</span> <span class="n">mon_objet1</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#34;Hello&#34;</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MaStruct2</span> <span class="n">mon_objet2</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="s">&#34;World!&#34;</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//                    ^  ^^^^^^^^
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//         mon_objet2.c   mon_objet2_.d
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">mon_objet2</span><span class="p">.</span><span class="n">to_string</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<p>Il va sans dire qu&rsquo;on ne les utilisera quasiment jamais.</p>
+<hr>
 <h3 id="à-bas-les-setters">À bas les setters</h3>
 <p>L&rsquo;ajout de votre constructeur vous a permis de supprimer le setter pour <code>_name</code>, afin que l&rsquo;on ne puisse plus modifier l&rsquo;attribut après son initialisation.<br>
 Il reste le setter pour <code>_age</code>, qui ne pose pas spécialement de problème, si ce n&rsquo;est qu&rsquo;on peut remonter le temps avec. Et là, c&rsquo;est <em>Batman</em>, pas <em>Retour vers le futur</em> 🦇</p>
@@ -511,9 +538,9 @@ Vous pouvez très bien implémenter vous-même un constructeur par défaut, et l
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768907909" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768907909" defer></script>
-    <script src="../../js/theme.js?1768907909" defer></script>
+    <script src="../../js/clipboard.min.js?1768940430" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768940430" defer></script>
+    <script src="../../js/theme.js?1768940430" defer></script>
 
 
 
