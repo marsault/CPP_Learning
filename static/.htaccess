@@ -1,4 +1,0 @@
-RewriteEngine On
-RewriteCond %{HTTP_HOST} !monge.univ-eiffel.fr [OR]
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://monge.univ-eiffel.fr/~marsault/cpp/cours/$1 [R=301,L]
