@@ -26,16 +26,23 @@ Cette page est en construction. N'hésitez pas à suggérer des ajouts ou signal
 - **Instanciation** d'un objet: allocation+construction
     - Le mot-clef `new` permet d'instancier un objet sur le tas.
 - **Désallocation** d'un objet: réservation d'un segment de mémoire 
-    - ~~`free` permet deséallouer de la mémoire~~, mais on ne l'utilisera pas.
+    - ~~`free` permet desallouer de la mémoire~~, mais on ne l'utilisera pas.
 - **Destruction** d'un objet: appel du destructeur de la classe, suite à quoi le destructeur des attributs qui ne sont pas des références sera appelé.
     - Par définition, la destruction d'un objet provoque la destruction des objets **owned**.
     - La destruction d'un pointeur brut **ne** provoque **pas** la destruction
 - **Désinstanciation** d'un objet:destruction+désallocation
     - Le mot-clef `delete` permet de désinstancier un objet sur le tas.
+<<<<<<< HEAD
 - **Affectation** d'un objet (*assignment*): remplir le contenu d'un objet~`d` à partir celui d'un autre objet~`g` (en général du même type) grâce à un l'operateur d'affectation (`operator=`). `g` est à gauche du signe `=` et `d` est à droite.
     L'affectation peut soit copier le contenu de `d` dans `g` (affectation **par copie**) ou déplacer le contenu de `d` dans `g` (affectation **par déplacement**).
 - **Copie** d'un objet: construction d'un nouvel objet en copiant le contenu d'un autre objet.
 - **Déplacement** d'un objet: construction d'un nouvel objet en déplaçant le contenu d'un autre objet dans le nouvel objet. On peut souvent forcer le déplacement d'un objet avec `std::move`.
+=======
+- **Copie** d'un objet: construction d'un nouvel objet en copiant le contenu d'un autre objet.
+- **Déplacement** d'un objet: construction d'un nouvel objet en déplaçant le contenu d'un autre objet dans le nouvel objet. On peut souvent forcer le déplacement d'un objet avec `std::move`.
+- **Affectation** d'un objet (*assignment*): remplir le contenu d'un objet `d` à partir celui d'un autre objet `g` (en général du même type) grâce à un l'operateur d'affectation (`operator=`). `g` est à gauche du signe `=` et `d` est à droite.
+    L'affectation peut soit copier le contenu de `d` dans `g` (affectation **par copie**) ou déplacer le contenu de `d` dans `g` (affectation **par déplacement**).
+>>>>>>> master
     
 
 ### Fonctions
@@ -56,7 +63,7 @@ Cette page est en construction. N'hésitez pas à suggérer des ajouts ou signal
 |-|-|
 |**Type statique**: type d'une variable tel que déclaré dans le code ou d'une expression telle que calculé par le compilateur. |**Type dynamique**: type réel d'un objet à l'éxecution. Ne peut pas toujours être connu au moment de la compilation.|
 |**Appel statique**: la fonction appelée est choisie au moment de la compilation.  Il y a un choix en cas de surcharge.  La résolution d'un appel statique se fait à partir des types statiques des paramètres. | **Appel dynamique:** la fonction appelée n'est pas connue au moment de la compilation. Il s'agit toujours de l'appel à une fonction-membre virtuelle `fct(..)` sur un objet `o`. La résolution d'un appel dynamique se fait à partir du type dynamique de `o`.|
-|**Allocation sur la pile**. Les variables locales sont allouées sur la pile et la taille pour stocker leur type doit donc être connue par le compilateur. | **Allocation sur la tas** ou allocation dynamique. Allocation via `new` ~~(ou `m`<p></p>`alloc` )~~ ou implicitement par l'utilisation d'un type de la bibliothèque standard (`std::vector<MaClasse>` alloue des `MaClasse` sur le tas). La taille du segment allouée peut être spécifié à l'exécution. |
+|**Allocation sur la pile**. Les variables locales sont allouées sur la pile et la taille pour stocker leur type doit donc être connue par le compilateur. | **Allocation sur la tas** ou allocation dynamique. Allocation via `new` ~~(ou `malloc` )~~ ou implicitement par l'utilisation d'un type de la bibliothèque standard (`std::vector<MaClasse>` alloue des `MaClasse` sur le tas). La taille du segment allouée peut être spécifié à l'exécution. |
 
 Attention le mot-clef `static` ne correspond pas entièrement à l'utilisation de l'adjectif *statique*. Il fait référence à la zone-mémoire `static` qui fait partie du code compilé (et qui n'est ni sur la pile ni sur le tas).
 
@@ -76,4 +83,4 @@ Attention le mot-clef `static` ne correspond pas entièrement à l'utilisation d
 - **Déréfencer** un pointeur: suivre un pointeur (typiquement si `ptr` est un pointeur `*ptr` déréférence ce pointeur).
 - **Référence**: alias vers un segment mémoire, c'est-à-dire dont le type est `un_type&`.
     - Référence **constante**: référence qui pointe vers un type qualifiée avec `const`, c'est-à-dire dont le type est `const un_type&` ou `un_type const&`.
-- **Qualificatif** (*qualifier*): Les types et prototype de fonctions peuvent contenir des qualificatifs.  Dans ce cours, on ne verra que le qualificatif `const`.  Les qualificatifs font partie du type et le qualificatif d'une fonction-membre fait partie de sa signature (et permet donc à la )
+- **Qualificatif** (*qualifier*): Les types et prototype de fonctions peuvent contenir des qualificatifs.  Dans ce cours, on ne verra que le qualificatif `const`.  Les qualificatifs font partie du type et le qualificatif d'une fonction-membre fait partie de sa signature.

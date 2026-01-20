@@ -208,27 +208,6 @@ Plutôt pratique, non ?
 
 ---
 
-### Inspection des variables
-
-Pour vérifier que le programme fonctionne correctement, vous allez utiliser le debuggeur.  
-Pensez bien à compiler votre programme avec `-g` et à modifier la valeur de `program` dans le fichier `.vscode/launch.json`.
-
-Placez ensuite un breakpoint sur la ligne `polygon.add_vertex(2, 3);` du `main`.  
-![](/images/chapter2/6-breakpoint-v2.png)
-
-Lancez ensuite le programme avec F5.  
-Votre vue devrait désormais ressembler à celle-ci si vous vous placez dans l'onglet `Exécution` à gauche :
-![](/images/chapter2/6-execution-v2.png)
-
-Dans la fenêtre des variables, en haut à gauche, cliquez sur la variable `polygon`, puis sur son membre `_vertices`.  
-Celui-ci ne devrait rien contenir.
-
-Appuyez sur F10 pour exécuter l'instruction sur la ligne 9.  
-Vous devriez constater que `_vertices` contient désormais le sommet (2, 3). 
-![](/images/chapter2/6-vertices.png)
-
----
-
 ### Opérateur d'indice
 
 Décommentez les instructions :
