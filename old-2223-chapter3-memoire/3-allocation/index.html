@@ -33,16 +33,16 @@ Voici la syntaxe permettant d’allouer de la mémoire pour un entier :
 #include &lt;iostream&gt; #include &lt;memory&gt; void fcn() { std::unique_ptr&lt;int&gt; int_on_heap = std::make_unique&lt;int&gt;(3); std::cout &lt;&lt; *int_on_heap &lt;&lt; std::endl; // affiche 3 *int_on_heap = 5; std::cout &lt;&lt; *int_on_heap &lt;&lt; std::endl; // affiche 5 } La classe unique_ptr est donc un symbole que l’on template par le type qu’il doit contenir.">
     <meta itemprop="wordCount" content="1547">
     <title>C&#43;&#43;::   Allocation dynamique</title>
-    <link href="../../css/fontawesome-all.min.css?1768561165" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768561165" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768561165" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768561165" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768561165" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768561165" rel="stylesheet">
-    <link href="../../css/fonts.css?1768561165" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768561165" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768561165" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768561165" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768561165" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768561165" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768561165"></script>
+    <link href="../../css/fontawesome-all.min.css?1768898878" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768898878" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768898878" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768898878" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768898878" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768898878" rel="stylesheet">
+    <link href="../../css/fonts.css?1768898878" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768898878" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768898878" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768898878" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768898878" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768898878" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768898878"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -607,13 +607,13 @@ Testez le code suivant et vérifiez qu&rsquo;il fonctionne correctement :</p>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 <p>Le programme fonctionne comme attendu car nous avons introduit un niveau intermédiaire entre la mémoire du <code>vector</code> à la mémoire des objets de type <code>Content</code>.</p>
 <p>Avant, pendant la réallocation, chacun des objets <code>Content</code> était déplacé vers une nouvelle zone de la mémoire, d&rsquo;où l&rsquo;invalidation des références.
-<a href="#R-image-ff1142d35ac16db7254a57d10f5d4738" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/bag-realloc-content.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ff1142d35ac16db7254a57d10f5d4738"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/bag-realloc-content.svg"></a></p>
+<a href="#R-image-0ed645569d65003f6ce53e330d872d89" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/bag-realloc-content.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0ed645569d65003f6ce53e330d872d89"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/bag-realloc-content.svg"></a></p>
 <p>Désormais, ce sont les <code>unique_ptr</code> qui sont déplacés ailleurs.
 Les éléments de type <code>Content</code> restent à leur place.<br>
 La référence <code>my_thing</code> qui pointe sur l&rsquo;un d&rsquo;entre eux reste donc valide aussi longtemps que <code>bag</code> l&rsquo;est aussi.
-<a href="#R-image-b6f47ff93631bc0d9bddc5eda7a156e1" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/bag-realloc-ptr.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-b6f47ff93631bc0d9bddc5eda7a156e1"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/bag-realloc-ptr.svg"></a></p>
+<a href="#R-image-b13801a86a4bf4a9bb2edd34b93063de" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter3/bag-realloc-ptr.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b13801a86a4bf4a9bb2edd34b93063de"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter3/bag-realloc-ptr.svg"></a></p>
 
   <footer class="footline">
   </footer>
@@ -714,9 +714,9 @@ La référence <code>my_thing</code> qui pointe sur l&rsquo;un d&rsquo;entre eux
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768561165" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768561165" defer></script>
-    <script src="../../js/theme.js?1768561165" defer></script>
+    <script src="../../js/clipboard.min.js?1768898878" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768898878" defer></script>
+    <script src="../../js/theme.js?1768898878" defer></script>
 
 
 
