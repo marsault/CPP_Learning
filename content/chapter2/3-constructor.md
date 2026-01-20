@@ -229,7 +229,7 @@ Contrairement à l'initialisation des variables, on peut écrire `: _attr()` san
 
 ---
 
-Pour ne rien simplifier, le C++ est compatible avec instanciation des `struct` du C.  On peut l'utiliser quand tous les attributs ont une visibilité `public` et qu'aucun constructeur n'est défini.  Comme par exemple dans les classes `MaStruct1` et `MaStruct2` donné ci-dessous.
+Pour ne rien simplifier, le C++ est compatible avec instanciation des `struct` du C.  On peut l'utiliser quand tous les attributs ont une visibilité `public` et qu'aucun constructeur n'est défini.  C'est le cas  par exemple dans les classes `MaStruct1` et `MaStruct2` donné ci-dessous.
 
 ```C++
 struct MaStruct1 {  // Ressemble à du C
