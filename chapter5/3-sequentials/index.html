@@ -33,16 +33,16 @@ Tableaux de taille fixe Pour créer des tableaux de taille fixe, il est bien ent
 Du coup, pour pallier à ce problème, il est possible d’utiliser la classe std::array.">
     <meta itemprop="wordCount" content="1373">
     <title>C&#43;&#43;::   Autres conteneurs séquentiels</title>
-    <link href="../../css/fontawesome-all.min.css?1768727670" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768727670" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768727670" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768727670" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768727670" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768727670" rel="stylesheet">
-    <link href="../../css/fonts.css?1768727670" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768727670" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768727670" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768727670" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768727670" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768727670" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768727670"></script>
+    <link href="../../css/fontawesome-all.min.css?1768899195" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768899195" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768899195" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768899195" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768899195" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768899195" rel="stylesheet">
+    <link href="../../css/fonts.css?1768899195" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768899195" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768899195" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768899195" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768899195" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768899195" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768899195"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -237,8 +237,8 @@ A part cela, les autres opérations sont disponibles avec la même complexité.<
 <h3 id="pile-ou-file">Pile ou File</h3>
 <p>Les derniers conteneurs que nous allons voir ici sont les piles <code>std::stack</code> et les files <code>std::queue</code>. Nous n&rsquo;allons pas rappeler en détail ce que sont les piles ou les files, mais si vous avez tout oublier de vos cours d&rsquo;algorithmique, sachez au moins que dans une pile, les insertions et suppressions sont effectuées en fin de conteneur, alors que dans une file, les suppressions s&rsquo;effectuent en tête et les insertions en fin de conteneur.</p>
 <p>Dans le cas de la STL, <code>stack</code> et <code>queue</code> ont la particularité d&rsquo;être des adapteurs. Cela signifie que vous pouvez choisir l&rsquo;implémentation que vous souhaitez utiliser en interne. La seule contrainte, c&rsquo;est que la classe sous-jacente doit fournir certaines fonctions. Par exemple, dans le cas de la pile, on pourrait utiliser <code>vector</code> ou <code>list</code>, mais pas <code>forward_list</code> car elle ne définit pas <code>push_back</code> :<br>
-<a href="#R-image-ccfe7d6aaf2c0fe2b5b518911650481b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter5/doc-stack-constraints.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ccfe7d6aaf2c0fe2b5b518911650481b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter5/doc-stack-constraints.png"></a></p>
+<a href="#R-image-4c6a147fd071422c66f755131f9e9f1d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../images/chapter5/doc-stack-constraints.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4c6a147fd071422c66f755131f9e9f1d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../images/chapter5/doc-stack-constraints.png"></a></p>
 <p>Sur l&rsquo;image ci-dessus, on vous précise quel conteneur est utilisé par défaut si vous n&rsquo;en spécifier aucun (c&rsquo;est-à-dire si vous écrivez juste <code>std::stack&lt;int&gt;</code>, au lieu de <code>std::stack&lt;int, smtg&gt;</code>). De quelle classe s&rsquo;agit-il ?<br>
 En cherchant un petit peu dans sa documentation, essayez de trouver une raison pour laquelle la librairie a décidé d&rsquo;utiliser ce conteneur là par défaut.</p>
 
@@ -369,7 +369,7 @@ Si on décide de définir un attribut d&rsquo;une classe en tant que <code>stack
             <li class="" data-nav-id="/chapter5/2-vectors/index.html"><a class="padding" href="../../chapter5/2-vectors/index.html"><span class="presection-icon">🖼</span>Tableaux dynamiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="active " data-nav-id="/chapter5/3-sequentials/index.html"><a class="padding" href="../../chapter5/3-sequentials/index.html"><span class="presection-icon">➠</span>Autres conteneurs séquentiels<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter5/4-associatives/index.html"><a class="padding" href="../../chapter5/4-associatives/index.html"><span class="presection-icon">🔑</span>Conteneurs associatifs<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter5/5-tuples/index.html"><a class="padding" href="../../chapter5/5-tuples/index.html"><span class="presection-icon">🍒</span>Paires et tuples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/5-tuples/index.html"><a class="padding" href="../../chapter5/5-tuples/index.html"><span class="presection-icon">🍒</span>Paires, tuples et options<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter5/6-uptr/index.html"><a class="padding" href="../../chapter5/6-uptr/index.html"><span class="presection-icon"><i class="fa-solid fa-snowflake"></i></span>Unique-pointeur<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter5/test/index.html"><a class="padding" href="../../chapter5/test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
@@ -438,9 +438,9 @@ Si on décide de définir un attribut d&rsquo;une classe en tant que <code>stack
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768727670" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768727670" defer></script>
-    <script src="../../js/theme.js?1768727670" defer></script>
+    <script src="../../js/clipboard.min.js?1768899195" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768899195" defer></script>
+    <script src="../../js/theme.js?1768899195" defer></script>
 
 
 

@@ -29,16 +29,16 @@ Premier std::unique_ptr Pour créer un objet sur le tas, nous allons nous servir
 Voici la syntaxe permettant d’allouer de la mémoire pour un entier :">
     <meta itemprop="wordCount" content="1892">
     <title>C&#43;&#43;::   Unique-pointeur</title>
-    <link href="../../css/fontawesome-all.min.css?1768727670" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768727670" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768727670" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768727670" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768727670" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768727670" rel="stylesheet">
-    <link href="../../css/fonts.css?1768727670" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768727670" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768727670" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768727670" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768727670" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768727670" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768727670"></script>
+    <link href="../../css/fontawesome-all.min.css?1768899195" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768899195" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1768899195" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1768899195" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768899195" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1768899195" rel="stylesheet">
+    <link href="../../css/fonts.css?1768899195" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768899195" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1768899195" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1768899195" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1768899195" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1768899195" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1768899195"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -96,7 +96,7 @@ Voici la syntaxe permettant d’allouer de la mémoire pour un entier :">
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Unique-pointeur</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter5/5-tuples/index.html" title="Paires et tuples (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter5/5-tuples/index.html" title="Paires, tuples et options (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter5/test/index.html" title="Questionnaire (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
@@ -628,13 +628,13 @@ Testez le code suivant et vérifiez qu&rsquo;il fonctionne correctement :</p>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 <p>Le programme fonctionne comme attendu car nous avons introduit un niveau intermédiaire entre la mémoire du <code>vector</code> à la mémoire des objets de type <code>Content</code>.</p>
 <p>Avant, pendant la réallocation, chacun des objets <code>Content</code> était déplacé vers une nouvelle zone de la mémoire, d&rsquo;où l&rsquo;invalidation des références.
-<a href="#R-image-8016082e7c3fafd4cf4252f395ec9ac8" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../chapter5/bag-realloc-content.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8016082e7c3fafd4cf4252f395ec9ac8"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../chapter5/bag-realloc-content.svg"></a></p>
+<a href="#R-image-5326460365e7f7f68978f88ddd8b4915" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../chapter5/bag-realloc-content.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5326460365e7f7f68978f88ddd8b4915"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../chapter5/bag-realloc-content.svg"></a></p>
 <p>Désormais, ce sont les <code>unique_ptr</code> qui sont déplacés ailleurs.
 Les éléments de type <code>Content</code> restent à leur place.<br>
 La référence <code>my_thing</code> qui pointe sur l&rsquo;un d&rsquo;entre eux reste donc valide aussi longtemps que <code>bag</code> l&rsquo;est aussi.
-<a href="#R-image-ed9605a8b735b2ed5516eea3921de56b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../chapter5/bag-realloc-ptr.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ed9605a8b735b2ed5516eea3921de56b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../chapter5/bag-realloc-ptr.svg"></a></p>
+<a href="#R-image-6d1167bd6d53623ff6b08d960eac524a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../chapter5/bag-realloc-ptr.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6d1167bd6d53623ff6b08d960eac524a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../chapter5/bag-realloc-ptr.svg"></a></p>
 <hr>
 <h3 id="passer-un-unique_ptr">Passer un <code>unique_ptr</code></h3>
 <p>Ce n&rsquo;est pas visible dans les exemples ci-dessus, mais il reste un problème dont on a pas encore parlé: comme faire pour passer un <code>unique_ptr</code> à une fonction, constructeur ou autre?</p>
@@ -703,7 +703,7 @@ De l&rsquo;autre côté, c&rsquo;est <code>main</code> qui own le <code>Dog</cod
             <li class="" data-nav-id="/chapter5/2-vectors/index.html"><a class="padding" href="../../chapter5/2-vectors/index.html"><span class="presection-icon">🖼</span>Tableaux dynamiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter5/3-sequentials/index.html"><a class="padding" href="../../chapter5/3-sequentials/index.html"><span class="presection-icon">➠</span>Autres conteneurs séquentiels<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter5/4-associatives/index.html"><a class="padding" href="../../chapter5/4-associatives/index.html"><span class="presection-icon">🔑</span>Conteneurs associatifs<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter5/5-tuples/index.html"><a class="padding" href="../../chapter5/5-tuples/index.html"><span class="presection-icon">🍒</span>Paires et tuples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter5/5-tuples/index.html"><a class="padding" href="../../chapter5/5-tuples/index.html"><span class="presection-icon">🍒</span>Paires, tuples et options<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="active " data-nav-id="/chapter5/6-uptr/index.html"><a class="padding" href="../../chapter5/6-uptr/index.html"><span class="presection-icon"><i class="fa-solid fa-snowflake"></i></span>Unique-pointeur<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter5/test/index.html"><a class="padding" href="../../chapter5/test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
@@ -772,9 +772,9 @@ De l&rsquo;autre côté, c&rsquo;est <code>main</code> qui own le <code>Dog</cod
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768727670" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768727670" defer></script>
-    <script src="../../js/theme.js?1768727670" defer></script>
+    <script src="../../js/clipboard.min.js?1768899195" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1768899195" defer></script>
+    <script src="../../js/theme.js?1768899195" defer></script>
 
 
 
