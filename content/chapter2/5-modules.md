@@ -70,7 +70,7 @@ main.o:main.cpp:(.text+0xc9): undefined reference to `Rectangle::scale(float)'
 Pour définir une fonction-membre en dehors de sa classe, il suffit de préfixer l'identifiant de la fonction par le nom de la classe, suivi de `::`.  
 Par exemple :
 ```cpp
-struct ClassName
+class ClassName
 {
     void fcn(int p);
 };

@@ -229,6 +229,42 @@ Contrairement à l'initialisation des variables, on peut écrire `: _attr()` san
 
 ---
 
+Pour ne rien simplifier, le C++ est compatible avec instanciation des `struct` du C.  On peut l'utiliser quand tous les attributs ont une visibilité `public` et qu'aucun constructeur n'est défini.  Comme par exemple dans les classes `MaStruct1` et `MaStruct2` donné ci-dessous.
+
+```C++
+struct MaStruct1 {  // Ressemble à du C
+    int a;
+    const char* b;
+};
+
+class MaStruct2 { // Ne ressemble pas du tout à du C,  
+                  // mais bon, c'est autorisé quand même
+private:
+    int incr() {c++;}
+public:
+    int c;
+    std::string d;
+    std::string to_string() { incr(); return d; }
+};
+```
+Dans ce cas, on peut initizaliser les classes "comme un tableau".
+
+```C++
+int main() {
+    //         mon_objet1.a  mon_objet1.b
+    //                    v  vvvvvvv               
+    MaStruct1 mon_objet1 {1, "Hello"};
+    MaStruct2 mon_objet2 {2, "World!"};
+    //                    ^  ^^^^^^^^
+    //         mon_objet2.c   mon_objet2_.d
+    std::cout << mon_objet2.to_string() << std::endl;
+}
+```
+
+Il va sans dire qu'on ne les utilisera quasiment jamais.
+
+---
+
 ### À bas les setters
 
 L'ajout de votre constructeur vous a permis de supprimer le setter pour `_name`, afin que l'on ne puisse plus modifier l'attribut après son initialisation.  

@@ -236,13 +236,13 @@ int main()
 Un type structuré est un type décomposé en sous-attributs.
 On utilisera souvent le terme **classe** pour parler des types structurés.
 
-Pour définir des types structurés, vous pouvez utiliser les mots-clefs `struct` ou `class`.  
+Pour définir des types structurés, vous pouvez utiliser les mots-clefs `struct` ou `class`.  (La seule différence entre les deux est la visibilité par défaut: `public` pour `struct`; `private` pour `class`).
 On peut ensuite définir des **attributs** et des **fonctions-membre** dans le type.  
 Pour spécifier la visibilité des champs, on écrit `public:` ou `private:` devant un ensemble de champs.
 
 Voici un exemple de définition et d'utilisation d'un type structuré :
 ```cpp
-struct Fraction
+classFraction
 {
 public:
     void set_num(int num)
@@ -318,7 +318,7 @@ Eh bien la seule différence réside dans la visibilité par défaut des champs.
 Si vous ne précisez ni `public`, ni `private`, alors par défaut les champs seront publics pour une `struct` et privés pour une `class`.
 
 ```cpp
-struct S
+class S
 {
     int v = 0;
 };

@@ -47,7 +47,7 @@ struct MyStruct
 
 int main()
 {
-    MyStruct s { 5 };
+    MyStruct s {};
     return 0;
 }
 ```
@@ -62,16 +62,19 @@ On peut dire plus simplement que `s` own `s.value`.
 Ici, ça devient un peu plus compliqué !
 
 ```cpp
-struct Driver
+class Driver
 {
 };
 
-struct Car
+class Car
 {
-    Driver& driver;
+public:
+    Car(Driver& driver) : _driver{driver} {}
+private:
+    Driver& _driver;
 };
 
-int main()
+class main()
 {
     Driver gontrand;
     Car clio { gontrand };
