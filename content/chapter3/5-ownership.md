@@ -88,7 +88,7 @@ La donnée portée par `clio.driver` correspond à la variable `gontrand` défin
 Le owner de `clio.driver` n'est donc pas `clio`, puisque la destruction de `clio` n'entrainera pas la destruction de `gontrand`.  
 Dans ce cas précis, c'est la fonction `main` qui own le contenu de `clio.driver`.
 
-![Attribut-référence](/images/chapter3/ownership/03-ref-attribute.svg)
+![Attribut-référence](/images/chapter3/ownership/03-ref-attribute-v2.svg)
 
 #### Ressources gérées par une classe
 
