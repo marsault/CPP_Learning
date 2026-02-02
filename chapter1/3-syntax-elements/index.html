@@ -31,18 +31,18 @@ les entiers (signés ou non-signés) : int, short, unsigned int, … les flottan
 Comme vous pourrez le constater, mis à part quelques subtilités, la plupart des informations que vous allez lire ici devrait être similaire à ce que vous avez déjà appris en C ou en Java.
 Variables et types fondamentaux Comme dans tous les langages ou presque, on retrouve :
 les entiers (signés ou non-signés) : int, short, unsigned int, … les flottants : float, double les types caractère : char, unsigned char le type booléen : bool (et non pas boolean comme en Java ⚠️) dont les deux valeurs sont true et false Pour définir des variables, c’est comme d’habitude : &lt;type&gt; &lt;nom&gt; = &lt;valeur&gt;;">
-    <meta itemprop="wordCount" content="1872">
+    <meta itemprop="wordCount" content="1888">
     <title>C&#43;&#43;::   Eléments de syntaxe</title>
-    <link href="../../css/fontawesome-all.min.css?1768901369" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768901369" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768901369" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768901369" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768901369" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768901369" rel="stylesheet">
-    <link href="../../css/fonts.css?1768901369" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768901369" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768901369" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768901369" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768901369" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768901369" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768901369"></script>
+    <link href="../../css/fontawesome-all.min.css?1770016848" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1770016848" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1770016848" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1770016848" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1770016848" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1770016848" rel="stylesheet">
+    <link href="../../css/fonts.css?1770016848" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1770016848" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1770016848" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1770016848" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1770016848" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1770016848" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1770016848"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -325,11 +325,11 @@ Mais si vous définissez votre paramètre comme étant une référence, alors le
 <h3 id="types-structurés">Types structurés</h3>
 <p>Un type structuré est un type décomposé en sous-attributs.
 On utilisera souvent le terme <strong>classe</strong> pour parler des types structurés.</p>
-<p>Pour définir des types structurés, vous pouvez utiliser les mots-clefs <code>struct</code> ou <code>class</code>.<br>
+<p>Pour définir des types structurés, vous pouvez utiliser les mots-clefs <code>struct</code> ou <code>class</code>.  (La seule différence entre les deux est la visibilité par défaut: <code>public</code> pour <code>struct</code>; <code>private</code> pour <code>class</code>).
 On peut ensuite définir des <strong>attributs</strong> et des <strong>fonctions-membre</strong> dans le type.<br>
 Pour spécifier la visibilité des champs, on écrit <code>public:</code> ou <code>private:</code> devant un ensemble de champs.</p>
 <p>Voici un exemple de définition et d&rsquo;utilisation d&rsquo;un type structuré :</p>
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Fraction</span>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">classFraction</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">set_num</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span>
@@ -404,7 +404,7 @@ Cela n&rsquo;aurait absolument rien changé dans ce cas.</p>
 <p>Vous vous demandez donc probablement quelle est la différence entre une <code>struct</code> et une <code>class</code>, puisqu&rsquo;on peut faire la même chose avec les deux.<br>
 Eh bien la seule différence réside dans la visibilité par défaut des champs.
 Si vous ne précisez ni <code>public</code>, ni <code>private</code>, alors par défaut les champs seront publics pour une <code>struct</code> et privés pour une <code>class</code>.</p>
-<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">S</span>
+<div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">S</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
@@ -559,9 +559,9 @@ Néanmoins, ce n&rsquo;est pas une prérogative et vous êtes libres d&rsquo;uti
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768901369" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768901369" defer></script>
-    <script src="../../js/theme.js?1768901369" defer></script>
+    <script src="../../js/clipboard.min.js?1770016848" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1770016848" defer></script>
+    <script src="../../js/theme.js?1770016848" defer></script>
 
 
 

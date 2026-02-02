@@ -9,9 +9,9 @@
     <atom:link href="/help/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Erreur incompréhensible</title>
-      <link>/help/comon-mistakes/index.html</link>
+      <link>/help/common-mistakes/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/help/comon-mistakes/index.html</guid>
+      <guid>/help/common-mistakes/index.html</guid>
       <description>Voici une liste non-exhaustive d’erreurs dans le code qui peuvent provoquer des messages d’erreurs incompréhensibles.&#xA;Erreurs générales Oubli d’un ; à la fin de la déclaration d’une classe Oubli du #pragma once au début d’un .hpp Oubli du MyClass:: devant la définition d’une fonction dans le .cpp Ce n’est pas la bonne fonction-membre qui est appelée dans un contexte d’héritage Oubli d’un virtual Typo dans le nom de la fonction membre dans la classe dérivée (majuscule qui devient une minuscule, etc) Changement d’un type; par exemple passage par référence dans la fonction-membre de la classe de base devient un passage par copie dans la fonction-membre de la classe dérivée Un const en trop ou qui manque dans la déclaration de la fonction-membre de la classe fille indiquant que la fonction-membre ne modifie pas l’objet courant Le compilateur refuse de construire un objet de type MyClass L’ajout d’un constructeur (quel qu’il soit) a pu empêcher au compilateur de générer le constructeur par défaut.</description>
     </item>
     <item>

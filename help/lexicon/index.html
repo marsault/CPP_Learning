@@ -23,18 +23,18 @@ Classe Classe abstraite: classe qui contient au moins une fonction-membre virtue
     <meta itemprop="name" content="C&#43;&#43;::   Lexique">
     <meta itemprop="description" content="En construction Cette page est en construction. N’hésitez pas à suggérer des ajouts ou signaler ce qui vous semble faux ou étrange.
 Classe Classe abstraite: classe qui contient au moins une fonction-membre virtuelle pure; elle n’est donc pas instanciable. Classe concrète: classe qui n’est pas abstraite. Classe instanciable: classe dont on peut construire des instances, c’est-à-dire qui n’est donc pas abstraite et qui possède au moins un constructeur publique. Classe copiable: classe qui possède un constructeur de copie (publique).">
-    <meta itemprop="wordCount" content="1132">
+    <meta itemprop="wordCount" content="1024">
     <title>C&#43;&#43;::   Lexique</title>
-    <link href="../../css/fontawesome-all.min.css?1768901369" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1768901369" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1768901369" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1768901369" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1768901369" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1768901369" rel="stylesheet">
-    <link href="../../css/fonts.css?1768901369" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1768901369" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1768901369" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1768901369" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1768901369" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1768901369" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1768901369"></script>
+    <link href="../../css/fontawesome-all.min.css?1770016848" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1770016848" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1770016848" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1770016848" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1770016848" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1770016848" rel="stylesheet">
+    <link href="../../css/fonts.css?1770016848" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1770016848" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1770016848" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1770016848" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1770016848" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1770016848" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1770016848"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -90,7 +90,7 @@ Classe Classe abstraite: classe qui contient au moins une fonction-membre virtue
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Lexique</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../help/comon-mistakes/index.html" title="Erreur incompréhensible (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../help/common-mistakes/index.html" title="Erreur incompréhensible (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../help/slides/index.html" title="Planches du CM (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
@@ -159,35 +159,14 @@ Classe Classe abstraite: classe qui contient au moins une fonction-membre virtue
 </li>
 <li><strong>Désinstanciation</strong> d&rsquo;un objet:destruction+désallocation
 <ul>
-<li>Le mot-clef <code>delete</code> permet de désinstancier un objet sur le tas.
-&laquo;&laquo;&laquo;&lt; HEAD</li>
+<li>Le mot-clef <code>delete</code> permet de désinstancier un objet sur le tas.</li>
 </ul>
 </li>
-<li><strong>Affectation</strong> d&rsquo;un objet (<em>assignment</em>): remplir le contenu d&rsquo;un objet~<code>d</code> à partir celui d&rsquo;un autre objet~<code>g</code> (en général du même type) grâce à un l&rsquo;operateur d&rsquo;affectation (<code>operator=</code>). <code>g</code> est à gauche du signe <code>=</code> et <code>d</code> est à droite.
-L&rsquo;affectation peut soit copier le contenu de <code>d</code> dans <code>g</code> (affectation <strong>par copie</strong>) ou déplacer le contenu de <code>d</code> dans <code>g</code> (affectation <strong>par déplacement</strong>).</li>
-<li><strong>Copie</strong> d&rsquo;un objet: construction d&rsquo;un nouvel objet en copiant le contenu d&rsquo;un autre objet.</li>
-<li><strong>Déplacement</strong> d&rsquo;un objet: construction d&rsquo;un nouvel objet en déplaçant le contenu d&rsquo;un autre objet dans le nouvel objet. On peut souvent forcer le déplacement d&rsquo;un objet avec <code>std::move</code>.
-=======</li>
 <li><strong>Copie</strong> d&rsquo;un objet: construction d&rsquo;un nouvel objet en copiant le contenu d&rsquo;un autre objet.</li>
 <li><strong>Déplacement</strong> d&rsquo;un objet: construction d&rsquo;un nouvel objet en déplaçant le contenu d&rsquo;un autre objet dans le nouvel objet. On peut souvent forcer le déplacement d&rsquo;un objet avec <code>std::move</code>.</li>
 <li><strong>Affectation</strong> d&rsquo;un objet (<em>assignment</em>): remplir le contenu d&rsquo;un objet <code>d</code> à partir celui d&rsquo;un autre objet <code>g</code> (en général du même type) grâce à un l&rsquo;operateur d&rsquo;affectation (<code>operator=</code>). <code>g</code> est à gauche du signe <code>=</code> et <code>d</code> est à droite.
 L&rsquo;affectation peut soit copier le contenu de <code>d</code> dans <code>g</code> (affectation <strong>par copie</strong>) ou déplacer le contenu de <code>d</code> dans <code>g</code> (affectation <strong>par déplacement</strong>).</li>
 </ul>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>master</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
 <h3 id="fonctions">Fonctions</h3>
 <ul>
 <li>Fonction <strong>libre</strong>: fonction qui n&rsquo;est pas dans une classe.</li>
@@ -280,7 +259,7 @@ L&rsquo;affectation peut soit copier le contenu de <code>d</code> dans <code>g</
             <li class="" data-nav-id="/chapter8/index.html"><a class="padding" href="../../chapter8/index.html"><span class="chapnum">8.</span>&ensp;Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7cf6d9bdd794f38d7006506bdc38c58f" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter9/index.html"><a class="padding" href="../../chapter9/index.html"><span class="chapnum">9.</span>&ensp;Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/help/index.html"><a class="padding" href="../../help/index.html"><span class="chapnum">?</span>&ensp;Aide<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7ddc2c3e2cb52a293678470c01b99070" class="collapsible-menu">
-            <li class="" data-nav-id="/help/comon-mistakes/index.html"><a class="padding" href="../../help/comon-mistakes/index.html"><span class="presection-icon">🤕</span>Erreur incompréhensible<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/help/common-mistakes/index.html"><a class="padding" href="../../help/common-mistakes/index.html"><span class="presection-icon">🤕</span>Erreur incompréhensible<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="active " data-nav-id="/help/lexicon/index.html"><a class="padding" href="../../help/lexicon/index.html"><span class="presection-icon">📑</span>Lexique<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/help/slides/index.html"><a class="padding" href="../../help/slides/index.html"><span class="presection-icon">🎦</span>Planches du CM<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/help/workflow/index.html"><a class="padding" href="../../help/workflow/index.html"><span class="presection-icon">🌊</span>Workflow<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
@@ -345,9 +324,9 @@ L&rsquo;affectation peut soit copier le contenu de <code>d</code> dans <code>g</
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1768901369" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1768901369" defer></script>
-    <script src="../../js/theme.js?1768901369" defer></script>
+    <script src="../../js/clipboard.min.js?1770016848" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1770016848" defer></script>
+    <script src="../../js/theme.js?1770016848" defer></script>
 
 
 
