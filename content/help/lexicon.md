@@ -32,17 +32,10 @@ Cette page est en construction. N'hésitez pas à suggérer des ajouts ou signal
     - La destruction d'un pointeur brut **ne** provoque **pas** la destruction
 - **Désinstanciation** d'un objet:destruction+désallocation
     - Le mot-clef `delete` permet de désinstancier un objet sur le tas.
-<<<<<<< HEAD
-- **Affectation** d'un objet (*assignment*): remplir le contenu d'un objet~`d` à partir celui d'un autre objet~`g` (en général du même type) grâce à un l'operateur d'affectation (`operator=`). `g` est à gauche du signe `=` et `d` est à droite.
-    L'affectation peut soit copier le contenu de `d` dans `g` (affectation **par copie**) ou déplacer le contenu de `d` dans `g` (affectation **par déplacement**).
-- **Copie** d'un objet: construction d'un nouvel objet en copiant le contenu d'un autre objet.
-- **Déplacement** d'un objet: construction d'un nouvel objet en déplaçant le contenu d'un autre objet dans le nouvel objet. On peut souvent forcer le déplacement d'un objet avec `std::move`.
-=======
 - **Copie** d'un objet: construction d'un nouvel objet en copiant le contenu d'un autre objet.
 - **Déplacement** d'un objet: construction d'un nouvel objet en déplaçant le contenu d'un autre objet dans le nouvel objet. On peut souvent forcer le déplacement d'un objet avec `std::move`.
 - **Affectation** d'un objet (*assignment*): remplir le contenu d'un objet `d` à partir celui d'un autre objet `g` (en général du même type) grâce à un l'operateur d'affectation (`operator=`). `g` est à gauche du signe `=` et `d` est à droite.
     L'affectation peut soit copier le contenu de `d` dans `g` (affectation **par copie**) ou déplacer le contenu de `d` dans `g` (affectation **par déplacement**).
->>>>>>> master
     
 
 ### Fonctions
