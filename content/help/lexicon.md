@@ -58,7 +58,11 @@ Cette page est en construction. N'hésitez pas à suggérer des ajouts ou signal
 |**Appel statique**: la fonction appelée est choisie au moment de la compilation.  Il y a un choix en cas de surcharge.  La résolution d'un appel statique se fait à partir des types statiques des paramètres. | **Appel dynamique:** la fonction appelée n'est pas connue au moment de la compilation. Il s'agit toujours de l'appel à une fonction-membre virtuelle `fct(..)` sur un objet `o`. La résolution d'un appel dynamique se fait à partir du type dynamique de `o`.|
 |**Allocation sur la pile**. Les variables locales sont allouées sur la pile et la taille pour stocker leur type doit donc être connue par le compilateur. | **Allocation sur la tas** ou allocation dynamique. Allocation via `new` ~~(ou `malloc` )~~ ou implicitement par l'utilisation d'un type de la bibliothèque standard (`std::vector<MaClasse>` alloue des `MaClasse` sur le tas). La taille du segment allouée peut être spécifié à l'exécution. |
 
-Attention le mot-clef `static` ne correspond pas entièrement à l'utilisation de l'adjectif *statique*. Il fait référence à la zone-mémoire `static` qui fait partie du code compilé (et qui n'est ni sur la pile ni sur le tas).
+{{% notice warning %}}
+Le mot-clef `static` ne correspond pas entièrement à l'utilisation de l'adjectif *statique*. 
+Il fait référence à la zone mémoire `static` qui fait partie du code compilé (et qui n'est ni sur la pile ni sur le tas).
+La taille de la zone mémoire `static` est déterminée au moment de la compilation.
+{{% /notice %}}
 
 ### Types
 
