@@ -23,18 +23,18 @@ Classe Classe abstraite: classe qui contient au moins une fonction-membre virtue
     <meta itemprop="name" content="C&#43;&#43;::   Lexique">
     <meta itemprop="description" content="En construction Cette page est en construction. N’hésitez pas à suggérer des ajouts ou signaler ce qui vous semble faux ou étrange.
 Classe Classe abstraite: classe qui contient au moins une fonction-membre virtuelle pure; elle n’est donc pas instanciable. Classe concrète: classe qui n’est pas abstraite. Classe instanciable: classe dont on peut construire des instances, c’est-à-dire qui n’est donc pas abstraite et qui possède au moins un constructeur publique. Classe copiable: classe qui possède un constructeur de copie (publique).">
-    <meta itemprop="wordCount" content="1024">
+    <meta itemprop="wordCount" content="1039">
     <title>C&#43;&#43;::   Lexique</title>
-    <link href="../../css/fontawesome-all.min.css?1770016782" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1770016782" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1770016782" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1770016782" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1770016782" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1770016782" rel="stylesheet">
-    <link href="../../css/fonts.css?1770016782" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1770016782" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1770016782" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1770016782" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1770016782" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1770016782" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1770016782"></script>
+    <link href="../../css/fontawesome-all.min.css?1770017949" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1770017949" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1770017949" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1770017949" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1770017949" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1770017949" rel="stylesheet">
+    <link href="../../css/fonts.css?1770017949" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1770017949" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1770017949" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1770017949" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1770017949" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1770017949" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1770017949"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -202,7 +202,16 @@ L&rsquo;affectation peut soit copier le contenu de <code>d</code> dans <code>g</
 </tr>
 </tbody>
 </table>
-<p>Attention le mot-clef <code>static</code> ne correspond pas entièrement à l&rsquo;utilisation de l&rsquo;adjectif <em>statique</em>. Il fait référence à la zone-mémoire <code>static</code> qui fait partie du code compilé (et qui n&rsquo;est ni sur la pile ni sur le tas).</p>
+<div class="box notices cstyle warning">
+  <div class="box-label">
+    <i class="fa-fw fas fa-exclamation-triangle"></i> Avertissement
+  </div>
+  <div class="box-content">
+<p>Le mot-clef <code>static</code> ne correspond pas entièrement à l&rsquo;utilisation de l&rsquo;adjectif <em>statique</em>.
+Il fait référence à la zone mémoire <code>static</code> qui fait partie du code compilé (et qui n&rsquo;est ni sur la pile ni sur le tas).
+La taille de la zone mémoire <code>static</code> est déterminée au moment de la compilation.</p>
+  </div>
+</div>
 <h3 id="types">Types</h3>
 <ul>
 <li><strong>Type fondamentaux</strong>: booléens (<code>bool</code>), les types de caractères (<code>char</code>, unsigned <code>char</code>, etc), les types d&rsquo;entiers (<code>int</code>, <code>unsigned</code>, <code>uint16</code>, etc), et les types de nombres flottants (<code>float</code>, <code>double</code>, etc).
@@ -324,9 +333,9 @@ L&rsquo;affectation peut soit copier le contenu de <code>d</code> dans <code>g</
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1770016782" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1770016782" defer></script>
-    <script src="../../js/theme.js?1770016782" defer></script>
+    <script src="../../js/clipboard.min.js?1770017949" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1770017949" defer></script>
+    <script src="../../js/theme.js?1770017949" defer></script>
 
 
 
