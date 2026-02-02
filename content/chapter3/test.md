@@ -50,7 +50,7 @@ Dans quel ordre sont instanciés les attributs de la classe ?
 {{% /test_item %}}
 
 {{% test_item %}}
-Quelles sont leurs valeurs après la construction d'une instance de `Toto` ?
+Quelles sont leurs valeurs après la construction d'une instance de `Toto` construite avec `Toto{6}` ?
 {{% /test_item %}}
 
 ---

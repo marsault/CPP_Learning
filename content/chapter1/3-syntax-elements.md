@@ -318,7 +318,7 @@ Eh bien la seule différence réside dans la visibilité par défaut des champs.
 Si vous ne précisez ni `public`, ni `private`, alors par défaut les champs seront publics pour une `struct` et privés pour une `class`.
 
 ```cpp
-class S
+struct S
 {
     int v = 0;
 };
