@@ -3,7 +3,7 @@
   <channel>
     <title>C&#43;&#43;::   Planches du CM</title>
     <link>/help/slides/index.html</link>
-    <description>Voici les planches utilisés en cours magistral.&#xA;CM du Segment 1 CM du Segment 2 (bientôt) CM du Segment 3 (bientôt)</description>
+    <description>Voici les planches utilisés en cours magistral.&#xA;CM du Segment 1 CM du Segment 2 CM du Segment 3 (bientôt)</description>
     <generator>Hugo</generator>
     <language>fr</language>
     <atom:link href="/help/slides/index.xml" rel="self" type="application/rss+xml" />
