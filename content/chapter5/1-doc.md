@@ -189,7 +189,7 @@ En comparant les signatures de `push_back` et `emplace_back`, on se rend compte 
 
 5. A quoi sert la classe `std::stack` ?
 {{% hidden-solution %}}
-5/ D'après la description dans l'en-tête de `stack`, il s'agit d'une pile LIFO (last-in-first-out).
+5/ D'après la description dans l'en-tête de `stack`, il s'agit d'une pile, c'est-à-dire une structure LIFO (*last-in-first-out*).  Ceci veut dire que c'est le dernier élément rajouté (`push`) qui est retiré en premier (`pop`). On peut aussi dire structure FILO (*first-in-last-out*).
 {{% /hidden-solution %}}
 
 6. Quelle fonction permet de retirer le dernier élément d'un objet de type `std::queue` ?
