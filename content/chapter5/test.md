@@ -51,9 +51,6 @@ Pour pouvoir utiliser un `std::set<Key>`, quelle contrainte la classe `Key` doit
 Afin de respecter cette contrainte, quelle est la signature de la fonction à définir ?
 {{% /test_item %}}
 
-{{% test_item lines=3 %}}
-Quelles fonctions doivent être définies dans `MyOwnContainer` pour utiliser un objet de type `std::queue<float, MyOwnContainer>` ? Indiquez leurs signatures.
-{{% /test_item %}}
 
 ---
 
