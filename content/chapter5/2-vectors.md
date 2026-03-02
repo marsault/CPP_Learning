@@ -40,9 +40,13 @@ Allez sur la page de documentation des constructeurs de la classe `vector`.\
 En lisant les descriptions de chaque surcharge, essayez d'identifier celles que vous avez appelées en utilisant `(4, 0)` et `{ 4, 0 }`.
 
 {{% hidden-solution %}}
-En utilisant `(4, 0)`, vous avez appelé la surcharge du constructeur n°3. Celle-ci attend un un paramètre `count` et un paramètre `value`, qu'elle utilise pour initialiser le tableau avec `count` éléments `value`.
+En utilisant `(4, 0)`, vous avez appelé la surcharge du constructeur:
+![](/images/chapter5/doc-vector-constr_twovals.png)
+Celle-ci attend un un paramètre `count` et un paramètre `value`, qu'elle utilise pour initialiser le tableau avec `count` éléments `value`.
 
-En utilisant `{ 4, 0 }`, vous avez appelé la surcharge n°10, qui attend un paramètre de type **initializer_list** (à ne pas confondre avec le terme "liste d'initialisation").
+En utilisant `{ 4, 0 }`, vous avez appelé la surcharge:
+![](/images/chapter5/doc-vector-constr_initializerlist.png)
+Elle attend un paramètre de type **initializer_list** (à ne pas confondre avec le terme "liste d'initialisation").
 
 {{% notice info %}}
 Si dans une classe, vous avez un constructeur qui attend un paramètre de type `initializer_list`, c'est ce constructeur là qui sera appelé si vous utilisé la syntaxe `{}`.\
