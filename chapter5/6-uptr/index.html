@@ -29,16 +29,16 @@ Premier std::unique_ptr Pour créer un objet sur le tas, nous allons nous servir
 Voici la syntaxe permettant d’allouer de la mémoire pour un entier :">
     <meta itemprop="wordCount" content="1892">
     <title>C&#43;&#43;::   Unique-pointeur</title>
-    <link href="../../css/fontawesome-all.min.css?1772443028" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1772443028" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1772443028" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1772443028" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1772443028" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1772443028" rel="stylesheet">
-    <link href="../../css/fonts.css?1772443028" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1772443028" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1772443028" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1772443028" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1772443028" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1772443028" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1772443028"></script>
+    <link href="../../css/fontawesome-all.min.css?1772443825" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1772443825" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1772443825" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1772443825" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1772443825" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1772443825" rel="stylesheet">
+    <link href="../../css/fonts.css?1772443825" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1772443825" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1772443825" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1772443825" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1772443825" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1772443825" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1772443825"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -628,13 +628,13 @@ Testez le code suivant et vérifiez qu&rsquo;il fonctionne correctement :</p>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 <p>Le programme fonctionne comme attendu car nous avons introduit un niveau intermédiaire entre la mémoire du <code>vector</code> à la mémoire des objets de type <code>Content</code>.</p>
 <p>Avant, pendant la réallocation, chacun des objets <code>Content</code> était déplacé vers une nouvelle zone de la mémoire, d&rsquo;où l&rsquo;invalidation des références.
-<a href="#R-image-92bf851ef5c07763f9670815c3f61633" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../chapter5/bag-realloc-content.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-92bf851ef5c07763f9670815c3f61633"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../chapter5/bag-realloc-content.svg"></a></p>
+<a href="#R-image-27cc8d83ade6df3aac7f3492aa70cf07" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../chapter5/bag-realloc-content.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-27cc8d83ade6df3aac7f3492aa70cf07"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../chapter5/bag-realloc-content.svg"></a></p>
 <p>Désormais, ce sont les <code>unique_ptr</code> qui sont déplacés ailleurs.
 Les éléments de type <code>Content</code> restent à leur place.<br>
 La référence <code>my_thing</code> qui pointe sur l&rsquo;un d&rsquo;entre eux reste donc valide aussi longtemps que <code>bag</code> l&rsquo;est aussi.
-<a href="#R-image-0c3dbb8503cb08f36c0c10910323b989" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../chapter5/bag-realloc-ptr.svg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-0c3dbb8503cb08f36c0c10910323b989"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../chapter5/bag-realloc-ptr.svg"></a></p>
+<a href="#R-image-9c8a735aa1b055be52dc2c247ade1420" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../chapter5/bag-realloc-ptr.svg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9c8a735aa1b055be52dc2c247ade1420"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../chapter5/bag-realloc-ptr.svg"></a></p>
 <hr>
 <h3 id="passer-un-unique_ptr">Passer un <code>unique_ptr</code></h3>
 <p>Ce n&rsquo;est pas visible dans les exemples ci-dessus, mais il reste un problème dont on a pas encore parlé: comme faire pour passer un <code>unique_ptr</code> à une fonction, constructeur ou autre?</p>
@@ -772,9 +772,9 @@ De l&rsquo;autre côté, c&rsquo;est <code>main</code> qui own le <code>Dog</cod
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1772443028" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1772443028" defer></script>
-    <script src="../../js/theme.js?1772443028" defer></script>
+    <script src="../../js/clipboard.min.js?1772443825" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1772443825" defer></script>
+    <script src="../../js/theme.js?1772443825" defer></script>
 
 
 
