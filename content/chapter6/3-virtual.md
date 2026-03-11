@@ -137,7 +137,7 @@ son_as_grand_father.fcn_b();
 son_as_father.fcn_b();
 ```
 
-1. Le type statique de `son_as_grand_father` est `Father`. Dans la classe `Father`, on trouve la fonction `fcn_b()`.
+1. Le type statique de `son_as_father` est `Father`. Dans la classe `Father`, on trouve la fonction `fcn_b()`.
 2. Celle-ci n'est pas virtuelle, puisqu'elle n'est pas référencée dans la virtual table de `Father`.
 3. Le compilateur décide que l'instruction appelera `Father::fcn_b()`.
 
