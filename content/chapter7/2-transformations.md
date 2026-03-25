@@ -53,7 +53,7 @@ dst.resize(src.size());
 std::copy(src.begin(), src.end(), dst.begin());
 
 // Avec copy_n : src_begin, nb_elem, dst_begin
-std::copy_n(src.begin(), src.count(), dst.begin());
+std::copy_n(src.begin(), src.size(), dst.begin());
 ```
 
 Comme vous pouvez le constater, avant d'effectuer l'appel à `std::copy` / `std::copy_n`, il a fallu appeler `dst.resize(...)`.
@@ -69,7 +69,7 @@ std::vector<int> dst;
 
 // Chaque fois que l'algorithme va essayer de modifier le contenu de l'itérateur, ce dernier va appeler dst.push_back().
 std::copy(src.begin(), src.end(), std::back_inserter(dst));
-std::copy_n(src.begin(), src.count(), std::back_inserter(dst));
+std::copy_n(src.begin(), src.size(), std::back_inserter(dst));
 ```
 
 La STL propose également la fonction `copy_if`.
