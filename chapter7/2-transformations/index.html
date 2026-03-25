@@ -25,16 +25,16 @@ Suppressions Afin de supprimer des éléments d’une plage, on utilise la fonct
 Suppressions Afin de supprimer des éléments d’une plage, on utilise la fonction std::remove. Cette fonction a pour effet de déplacer les éléments à conserver au début de la plage, en préservant leur ordre. Elle renvoie un itérateur sur le nouvel itérateur de fin de plage.">
     <meta itemprop="wordCount" content="1042">
     <title>C&#43;&#43;::   Transformations</title>
-    <link href="../../css/fontawesome-all.min.css?1773992506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1773992506" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1773992506" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1773992506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1773992506" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1773992506" rel="stylesheet">
-    <link href="../../css/fonts.css?1773992506" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1773992506" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1773992506" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1773992506" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1773992506" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1773992506" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1773992506"></script>
+    <link href="../../css/fontawesome-all.min.css?1774455777" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1774455777" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1774455777" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1774455777" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1774455777" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1774455777" rel="stylesheet">
+    <link href="../../css/fonts.css?1774455777" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1774455777" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1774455777" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1774455777" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1774455777" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1774455777" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1774455777"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -156,7 +156,7 @@ Si vous voulez supprimer les éléments du conteneur, il faut bien penser à app
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">dst</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Avec copy_n : src_begin, nb_elem, dst_begin
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">copy_n</span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">count</span><span class="p">(),</span> <span class="n">dst</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span></span></span></code></pre></div>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">copy_n</span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">dst</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span></span></span></code></pre></div>
 <p>Comme vous pouvez le constater, avant d&rsquo;effectuer l&rsquo;appel à <code>std::copy</code> / <code>std::copy_n</code>, il a fallu appeler <code>dst.resize(...)</code>.
 Et oui, comme pour <code>remove</code>, <code>copy</code> ne permet pas de modifier la structure du conteneur d&rsquo;éléments.
 On doit donc s&rsquo;assurer du fait que <code>dst</code> pointe sur un emplacement mémoire correctement alloué.</p>
@@ -168,7 +168,7 @@ On peut donc réécrire le code de cette manière :</p>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Chaque fois que l&#39;algorithme va essayer de modifier le contenu de l&#39;itérateur, ce dernier va appeler dst.push_back().
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">back_inserter</span><span class="p">(</span><span class="n">dst</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">copy_n</span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">count</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">back_inserter</span><span class="p">(</span><span class="n">dst</span><span class="p">));</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">copy_n</span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">back_inserter</span><span class="p">(</span><span class="n">dst</span><span class="p">));</span></span></span></code></pre></div>
 <p>La STL propose également la fonction <code>copy_if</code>.
 Celle-ci accepte un prédicat, qui permet de spécifier quels sont les éléments que l&rsquo;on souhaite copier.</p>
 <div class="highlight wrap-code"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">src</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
@@ -365,9 +365,9 @@ Avant d&rsquo;implémenter un algorithme à la main, pensez donc toujours à all
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1773992506" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1773992506" defer></script>
-    <script src="../../js/theme.js?1773992506" defer></script>
+    <script src="../../js/clipboard.min.js?1774455777" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1774455777" defer></script>
+    <script src="../../js/theme.js?1774455777" defer></script>
 
 
 
