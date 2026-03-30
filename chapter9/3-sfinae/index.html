@@ -14,7 +14,7 @@ class Person { public: Person(const std::string&amp; name) : _name { name } {} c
     <meta name="twitter:description" content="Nous allons maintenant vous expliquer ce que signifie SFINAE, le besoin auquel ce mécanisme répond et comment le mettre en oeuvre dans votre code.
 Le besoin Supposons que nous souhaitions pouvoir récupérer une clef pour différents type à l’aide d’une fonction get_key(const Type&amp;), en utilisant des overloads.
 class Person { public: Person(const std::string&amp; name) : _name { name } {} const std::string&amp; get_name() const { return _name; } private: const std::string _name; }; // Overload pour notre classe Person.">
-    <meta property="og:url" content="/chapter9/4-sfinae/index.html">
+    <meta property="og:url" content="/chapter9/3-sfinae/index.html">
     <meta property="og:site_name" content="C&#43;&#43;::">
     <meta property="og:title" content="C&#43;&#43;::   SFINAE">
     <meta property="og:description" content="Nous allons maintenant vous expliquer ce que signifie SFINAE, le besoin auquel ce mécanisme répond et comment le mettre en oeuvre dans votre code.
@@ -29,16 +29,16 @@ Le besoin Supposons que nous souhaitions pouvoir récupérer une clef pour diff�
 class Person { public: Person(const std::string&amp; name) : _name { name } {} const std::string&amp; get_name() const { return _name; } private: const std::string _name; }; // Overload pour notre classe Person.">
     <meta itemprop="wordCount" content="1573">
     <title>C&#43;&#43;::   SFINAE</title>
-    <link href="../../css/fontawesome-all.min.css?1774455777" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1774455777" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1774455777" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1774455777" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1774455777" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1774455777" rel="stylesheet">
-    <link href="../../css/fonts.css?1774455777" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1774455777" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1774455777" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1774455777" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1774455777" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1774455777" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1774455777"></script>
+    <link href="../../css/fontawesome-all.min.css?1774858695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1774858695" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1774858695" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1774858695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1774858695" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1774858695" rel="stylesheet">
+    <link href="../../css/fonts.css?1774858695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1774858695" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1774858695" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1774858695" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1774858695" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1774858695" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1774858695"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -59,7 +59,7 @@ class Person { public: Person(const std::string&amp; name) : _name { name } {} c
       window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html disableInlineCopyToClipboard disableHoverBlockCopyToClipBoard" data-url="../../chapter9/4-sfinae/index.html">
+  <body class="mobile-support html disableInlineCopyToClipboard disableHoverBlockCopyToClipBoard" data-url="../../chapter9/3-sfinae/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -92,7 +92,7 @@ class Person { public: Person(const std::string&amp; name) : _name { name } {} c
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">SFINAE</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter9/3-specializations/index.html" title="Spécialisations (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter9/2-variadiac/index.html" title="Template variadique (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../help/index.html" title="Aide (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
@@ -482,8 +482,7 @@ Voici par exemple une façon de définir une fonction qui n&rsquo;existe que pou
             <li class="parent " data-nav-id="/chapter9/index.html"><a class="padding" href="../../chapter9/index.html"><span class="chapnum">9.</span>&ensp;Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu">
             <li class="" data-nav-id="/chapter9/1-universal-ref/index.html"><a class="padding" href="../../chapter9/1-universal-ref/index.html"><span class="presection-icon">🤨</span>Référence universelle<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/chapter9/2-variadiac/index.html"><a class="padding" href="../../chapter9/2-variadiac/index.html"><span class="presection-icon">🤕</span>Template variadique<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter9/3-specializations/index.html"><a class="padding" href="../../chapter9/3-specializations/index.html"><span class="presection-icon">🤯</span>Spécialisations<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active " data-nav-id="/chapter9/4-sfinae/index.html"><a class="padding" href="../../chapter9/4-sfinae/index.html"><span class="presection-icon">🤪</span>SFINAE<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="active " data-nav-id="/chapter9/3-sfinae/index.html"><a class="padding" href="../../chapter9/3-sfinae/index.html"><span class="presection-icon">🤯</span>SFINAE<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/help/index.html"><a class="padding" href="../../help/index.html"><span class="chapnum">?</span>&ensp;Aide<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7ddc2c3e2cb52a293678470c01b99070" class="collapsible-menu"></ul></li>
           </ul>
         </div>
@@ -508,7 +507,7 @@ Voici par exemple une façon de définir une fonction qui n&rsquo;existe que pou
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Langue</label>
                     <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
-                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../chapter9/4-sfinae/index.html" lang="fr" selected>Français</option>
+                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../chapter9/3-sfinae/index.html" lang="fr" selected>Français</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -546,9 +545,9 @@ Voici par exemple une façon de définir une fonction qui n&rsquo;existe que pou
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1774455777" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1774455777" defer></script>
-    <script src="../../js/theme.js?1774455777" defer></script>
+    <script src="../../js/clipboard.min.js?1774858695" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1774858695" defer></script>
+    <script src="../../js/theme.js?1774858695" defer></script>
 
 
 
@@ -566,7 +565,7 @@ Voici par exemple une façon de définir une fonction qui n&rsquo;existe que pou
             onchange="updateQuestionFormSubject()" />
         <textarea name="question" rows="7" cols="30" placeholder="Mon message..."></textarea>
         <input type="hidden" name="selection" />
-        <input type="hidden" name="page" value="/chapter9/4-sfinae/" />
+        <input type="hidden" name="page" value="/chapter9/3-sfinae/" />
 
         <input type="hidden" name="_replyto" />
         <input type="hidden" name="_subject" />

@@ -29,6 +29,13 @@
       <description>Définition d’un template Pour définir un template, il faut écrire template &lt;...&gt; devant la définition de la classe ou fonction templatée.&#xA;Les chevrons contiennent la liste des paramètres du template. Chaque paramètre est typé par :&#xA;- typename : il faut donc passer un nom de type en paramètre,&#xA;- un type intégral, comme size_t, char, int, … : il faut passer une expression du bon type évaluable à la compilation,</description>
     </item>
     <item>
+      <title>Spécialisations</title>
+      <link>/chapter8/4-specializations/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/chapter8/4-specializations/index.html</guid>
+      <description>Cette section sera consacrée à la spécialisation de templates de fonctions et de classes.&#xA;Une spécialisation est la redéfinition d’une entitée templatée, qui va s’appliquer pour des paramètres particuliers. Il y a de nombreux cas d’utilisation des spécialisation, l’un d’entre eux étant de définir de traiter des cas particuliers.&#xA;Spécialisation de fonctions Soit la fonction templatée suivante, permettant d’afficher des valeurs dans le terminal :&#xA;template &lt;typename T&gt; void print(const T&amp; value) { std::cout &lt;&lt; value &lt;&lt; std::endl; } Si on lui passe des booléens, cette fonction affichera 0 ou 1.</description>
+    </item>
+    <item>
       <title>Questionnaire</title>
       <link>/chapter8/test/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

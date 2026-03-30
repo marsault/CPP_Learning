@@ -16,7 +16,7 @@ template &lt;typename T&gt; void print(const T&amp; value) { std::cout &lt;&lt; 
 Une spécialisation est la redéfinition d’une entitée templatée, qui va s’appliquer pour des paramètres particuliers. Il y a de nombreux cas d’utilisation des spécialisation, l’un d’entre eux étant de définir de traiter des cas particuliers.
 Spécialisation de fonctions Soit la fonction templatée suivante, permettant d’afficher des valeurs dans le terminal :
 template &lt;typename T&gt; void print(const T&amp; value) { std::cout &lt;&lt; value &lt;&lt; std::endl; } Si on lui passe des booléens, cette fonction affichera 0 ou 1.">
-    <meta property="og:url" content="/chapter9/3-specializations/index.html">
+    <meta property="og:url" content="/chapter8/4-specializations/index.html">
     <meta property="og:site_name" content="C&#43;&#43;::">
     <meta property="og:title" content="C&#43;&#43;::   Spécialisations">
     <meta property="og:description" content="Cette section sera consacrée à la spécialisation de templates de fonctions et de classes.
@@ -25,7 +25,7 @@ Spécialisation de fonctions Soit la fonction templatée suivante, permettant d�
 template &lt;typename T&gt; void print(const T&amp; value) { std::cout &lt;&lt; value &lt;&lt; std::endl; } Si on lui passe des booléens, cette fonction affichera 0 ou 1.">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
-    <meta property="article:section" content="Paramètres de templates">
+    <meta property="article:section" content="Templates">
     <meta itemprop="name" content="C&#43;&#43;::   Spécialisations">
     <meta itemprop="description" content="Cette section sera consacrée à la spécialisation de templates de fonctions et de classes.
 Une spécialisation est la redéfinition d’une entitée templatée, qui va s’appliquer pour des paramètres particuliers. Il y a de nombreux cas d’utilisation des spécialisation, l’un d’entre eux étant de définir de traiter des cas particuliers.
@@ -33,16 +33,16 @@ Spécialisation de fonctions Soit la fonction templatée suivante, permettant d�
 template &lt;typename T&gt; void print(const T&amp; value) { std::cout &lt;&lt; value &lt;&lt; std::endl; } Si on lui passe des booléens, cette fonction affichera 0 ou 1.">
     <meta itemprop="wordCount" content="857">
     <title>C&#43;&#43;::   Spécialisations</title>
-    <link href="../../css/fontawesome-all.min.css?1774455777" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1774455777" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1774455777" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1774455777" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1774455777" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1774455777" rel="stylesheet">
-    <link href="../../css/fonts.css?1774455777" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1774455777" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1774455777" rel="stylesheet">
-    <link href="../../css/theme-mine.css?1774455777" rel="stylesheet" id="R-variant-style">
-    <link href="../../css/chroma-relearn-light.css?1774455777" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="../../css/print.css?1774455777" rel="stylesheet" media="print">
-    <script src="../../js/variant.js?1774455777"></script>
+    <link href="../../css/fontawesome-all.min.css?1774858695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1774858695" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1774858695" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1774858695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1774858695" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1774858695" rel="stylesheet">
+    <link href="../../css/fonts.css?1774858695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1774858695" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1774858695" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1774858695" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-relearn-light.css?1774858695" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/print.css?1774858695" rel="stylesheet" media="print">
+    <script src="../../js/variant.js?1774858695"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -63,7 +63,7 @@ template &lt;typename T&gt; void print(const T&amp; value) { std::cout &lt;&lt; 
       window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html disableInlineCopyToClipboard disableHoverBlockCopyToClipBoard" data-url="../../chapter9/3-specializations/index.html">
+  <body class="mobile-support html disableInlineCopyToClipboard disableHoverBlockCopyToClipBoard" data-url="../../chapter8/4-specializations/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -91,13 +91,13 @@ template &lt;typename T&gt; void print(const T&amp; value) { std::cout &lt;&lt; 
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">Accueil</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../chapter9/index.html"><span itemprop="name">Paramètres de templates</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../chapter8/index.html"><span itemprop="name">Templates</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Spécialisations</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter9/2-variadiac/index.html" title="Template variadique (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter8/3-syntaxe/index.html" title="Syntaxe (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter9/4-sfinae/index.html" title="SFINAE (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../chapter8/test/index.html" title="Questionnaire (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -111,7 +111,7 @@ template &lt;typename T&gt; void print(const T&amp; value) { std::cout &lt;&lt; 
         </div>
       </nav>
       <div id="R-main-overlay"></div>
-      <main id="R-body-inner" class="highlightable chapter9" tabindex="-1">
+      <main id="R-body-inner" class="highlightable chapter8" tabindex="-1">
         <div class="flex-block-wrapper">
 <article class="default">
   <header class="headline">
@@ -348,12 +348,13 @@ Par exemple, il est possible de spécialiser une classe-template pour un contene
             <li class="" data-nav-id="/chapter5/index.html"><a class="padding" href="../../chapter5/index.html"><span class="chapnum">5.</span>&ensp;Librairie standard<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-86528e6ba587b53932a1dafaa9cd375c" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter6/index.html"><a class="padding" href="../../chapter6/index.html"><span class="chapnum">6.</span>&ensp;Héritage<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-016ee40825ff7c4aeecbac08a8ca264b" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/chapter7/index.html"><a class="padding" href="../../chapter7/index.html"><span class="chapnum">7.</span>&ensp;Algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c693a96f34a37f80c48b126489f638b9" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/chapter8/index.html"><a class="padding" href="../../chapter8/index.html"><span class="chapnum">8.</span>&ensp;Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7cf6d9bdd794f38d7006506bdc38c58f" class="collapsible-menu"></ul></li>
-            <li class="parent " data-nav-id="/chapter9/index.html"><a class="padding" href="../../chapter9/index.html"><span class="chapnum">9.</span>&ensp;Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu">
-            <li class="" data-nav-id="/chapter9/1-universal-ref/index.html"><a class="padding" href="../../chapter9/1-universal-ref/index.html"><span class="presection-icon">🤨</span>Référence universelle<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter9/2-variadiac/index.html"><a class="padding" href="../../chapter9/2-variadiac/index.html"><span class="presection-icon">🤕</span>Template variadique<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active " data-nav-id="/chapter9/3-specializations/index.html"><a class="padding" href="../../chapter9/3-specializations/index.html"><span class="presection-icon">🤯</span>Spécialisations<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/chapter9/4-sfinae/index.html"><a class="padding" href="../../chapter9/4-sfinae/index.html"><span class="presection-icon">🤪</span>SFINAE<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/chapter8/index.html"><a class="padding" href="../../chapter8/index.html"><span class="chapnum">8.</span>&ensp;Templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7cf6d9bdd794f38d7006506bdc38c58f" class="collapsible-menu">
+            <li class="" data-nav-id="/chapter8/1-introduction/index.html"><a class="padding" href="../../chapter8/1-introduction/index.html"><span class="presection-icon">🐣</span>Introduction<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter8/2-examples/index.html"><a class="padding" href="../../chapter8/2-examples/index.html"><span class="presection-icon">🐥</span>Exemples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter8/3-syntaxe/index.html"><a class="padding" href="../../chapter8/3-syntaxe/index.html"><span class="presection-icon">🐓</span>Syntaxe<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/chapter8/4-specializations/index.html"><a class="padding" href="../../chapter8/4-specializations/index.html"><span class="presection-icon">🍗</span>Spécialisations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/chapter8/test/index.html"><a class="padding" href="../../chapter8/test/index.html"><span class="presection-icon">✅</span>Questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/chapter9/index.html"><a class="padding" href="../../chapter9/index.html"><span class="chapnum">9.</span>&ensp;Paramètres de templates<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-24ddf636ccd0ce3ef39c8060d1779332" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/help/index.html"><a class="padding" href="../../help/index.html"><span class="chapnum">?</span>&ensp;Aide<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-7ddc2c3e2cb52a293678470c01b99070" class="collapsible-menu"></ul></li>
           </ul>
         </div>
@@ -378,7 +379,7 @@ Par exemple, il est possible de spécialiser une classe-template pour un contene
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Langue</label>
                     <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
-                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../chapter9/3-specializations/index.html" lang="fr" selected>Français</option>
+                      <option id="R-select-language-fr" value="#R-select-language-fr" data-url="../../chapter8/4-specializations/index.html" lang="fr" selected>Français</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -416,9 +417,9 @@ Par exemple, il est possible de spécialiser une classe-template pour un contene
         </div>
       </div>
     </aside>
-    <script src="../../js/clipboard.min.js?1774455777" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1774455777" defer></script>
-    <script src="../../js/theme.js?1774455777" defer></script>
+    <script src="../../js/clipboard.min.js?1774858695" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1774858695" defer></script>
+    <script src="../../js/theme.js?1774858695" defer></script>
 
 
 
@@ -436,7 +437,7 @@ Par exemple, il est possible de spécialiser une classe-template pour un contene
             onchange="updateQuestionFormSubject()" />
         <textarea name="question" rows="7" cols="30" placeholder="Mon message..."></textarea>
         <input type="hidden" name="selection" />
-        <input type="hidden" name="page" value="/chapter9/3-specializations/" />
+        <input type="hidden" name="page" value="/chapter8/4-specializations/" />
 
         <input type="hidden" name="_replyto" />
         <input type="hidden" name="_subject" />
@@ -455,7 +456,7 @@ Par exemple, il est possible de spécialiser une classe-template pour un contene
 
     function updateQuestionFormSubject() {
         let email = document.querySelector('#question>input[name="email"]').value;
-        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chap 9] " + email + ", retour sur ta question";
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chap 8] " + email + ", retour sur ta question";
     }
 
     function cleanQuestionFormContent() {

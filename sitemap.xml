@@ -121,9 +121,6 @@
     <loc>/chapter6/3-virtual/index.html</loc>
   </url>
   <url>
-    <loc>/chapter9/3-specializations/index.html</loc>
-  </url>
-  <url>
     <loc>/chapter8/3-syntaxe/index.html</loc>
   </url>
   <url>
@@ -157,7 +154,10 @@
     <loc>/chapter6/4-polymorphism/index.html</loc>
   </url>
   <url>
-    <loc>/chapter9/4-sfinae/index.html</loc>
+    <loc>/chapter9/3-sfinae/index.html</loc>
+  </url>
+  <url>
+    <loc>/chapter8/4-specializations/index.html</loc>
   </url>
   <url>
     <loc>/chapter3/4-references/index.html</loc>
