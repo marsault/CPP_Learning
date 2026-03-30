@@ -1,7 +1,7 @@
 ---
 title: "Spécialisations"
-pre: '<span class="presection-icon">🤯</span>'
-weight: 3
+pre: '<span class="presection-icon">🍗</span>'
+weight: 4
 ---
 
 Cette section sera consacrée à la spécialisation de templates de fonctions et de classes.

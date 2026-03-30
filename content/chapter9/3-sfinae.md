@@ -1,6 +1,6 @@
 ---
 title: "SFINAE"
-pre: '<span class="presection-icon">🤪</span>'
+pre: '<span class="presection-icon">🤯</span>'
 weight: 4
 ---
 
