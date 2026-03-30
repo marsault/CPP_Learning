@@ -1,5 +1,5 @@
 ---
-title: "Spécialisations"
+title: "Spécialisation"
 pre: '<span class="presection-icon">🍗</span>'
 weight: 4
 ---
