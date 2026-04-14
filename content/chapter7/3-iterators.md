@@ -111,15 +111,15 @@ On devra également s'occuper s'arranger pour être un `LegacyOutputIterator`, c
 On peut tester que c'est bien le cas en essayant de compiler le code suivant :
 ```cpp
 std::vector<int> values { 1, 2, 3 }; 
-JumpIterator original { values, 2 };
+JumpIterator original { values};
 JumpIterator copy { original };
 ```
 
 \* `CopyAssignable` : Pareil. On peut vérifier avec :
 ```cpp
 std::vector<int> values { 1, 2, 3 }; 
-JumpIterator original { values, 2 };
-JumpIterator copy { values, 5 };
+JumpIterator original { values };
+JumpIterator copy { values };
 copy = original;
 ```
 
@@ -128,8 +128,8 @@ copy = original;
 \* `Swappable` : On vérifie que c'est bon en compilant le code suivant :
 ```cpp
 std::vector<int> values { 1, 2, 3 }; 
-JumpIterator original { values, 2 };
-JumpIterator copy { values, 5 };
+JumpIterator original { values };
+JumpIterator copy { values };
 std::swap(copy, original);
 ```
 
